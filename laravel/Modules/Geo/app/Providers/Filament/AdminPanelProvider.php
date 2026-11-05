@@ -8,21 +8,12 @@ use Filament\Panel;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
-<<<<<<< HEAD
-=======
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Log;
->>>>>>> laraxot/dev
 use Illuminate\Support\Facades\Vite;
 use Modules\Xot\Providers\Filament\XotBasePanelProvider;
 
 /**
-<<<<<<< HEAD
- * Undocumented class.
- */
-class AdminPanelProvider extends XotBasePanelProvider
-{
-=======
  * Pannello Filament del modulo Geo.
  *
  * Registra gli asset del coordinate picker (Lit + Leaflet) per tutti i pannelli
@@ -43,7 +34,6 @@ class AdminPanelProvider extends XotBasePanelProvider
      */
     public const string BUILD_DIRECTORY = 'assets/geo';
 
->>>>>>> laraxot/dev
     protected string $module = 'Geo';
 
     #[\Override]
@@ -55,13 +45,6 @@ class AdminPanelProvider extends XotBasePanelProvider
             return $panel;
         }
 
-<<<<<<< HEAD
-        FilamentAsset::register([
-            Js::make('coordinate-picker', Vite::asset('resources/js/components/coordinate-picker-lit.js', 'assets/geo'))->module(),
-            // app.css is intentionally an empty Vite entry; the map styles
-            // are emitted next to the Lit entry and must be registered as CSS.
-            Css::make('coordinate-picker', asset('assets/geo/assets/coordinate-picker-lit.css')),
-=======
         if (! static::assetsAreAvailable()) {
             Log::warning('Geo: build Vite assente, coordinate picker non registrato.', [
                 'manifest' => public_path(self::BUILD_DIRECTORY.'/manifest.json'),
@@ -75,13 +58,10 @@ class AdminPanelProvider extends XotBasePanelProvider
             // app.css is intentionally an empty Vite entry; the map styles
             // are emitted next to the Lit entry and must be registered as CSS.
             Css::make('coordinate-picker', asset(self::BUILD_DIRECTORY.'/assets/coordinate-picker-lit.css')),
->>>>>>> laraxot/dev
         ]);
 
         return $panel;
     }
-<<<<<<< HEAD
-=======
 
     /**
      * Vero se gli asset del coordinate picker possono essere risolti:
@@ -97,5 +77,4 @@ class AdminPanelProvider extends XotBasePanelProvider
         return File::exists($root.DIRECTORY_SEPARATOR.'hot')
             || File::exists($root.DIRECTORY_SEPARATOR.self::BUILD_DIRECTORY.'/manifest.json');
     }
->>>>>>> laraxot/dev
 }

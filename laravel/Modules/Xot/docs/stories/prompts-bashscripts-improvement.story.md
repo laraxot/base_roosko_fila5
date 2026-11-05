@@ -5,7 +5,7 @@ module: Xot
 phase: BMAD Quick Flow, analisi, implementazione, QA
 status: done
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-05
 tags: [prompts, bashscripts, second-brain, bmad, phpstan, wave3, wave5, wave6]
 qmd: "miglioramento prompt bashscripts docs prompts scopo perche quando usarlo passi gate anti-pattern alias canonici lezioni apprese inventario duplicati wave3 wave4 wave5 wave6 phpstan zero vittoria verificata a zero non ti fermi prompt stickiness catena permanente single-neon services-to-actions ProfileTest DELETED Hindsight non blocca"
 related:
@@ -172,3 +172,33 @@ Richiesta dell'utente: "prima esegui e poi migliora il prompt 98". Fase BMAD: Qu
   Cinque righe nuove nella tabella "Errori gia' commessi", bullet su `detail` aggiornato con la misura del giorno (257 test, 7 propri), frontmatter `updated: 2026-11-03`. I tre blocchi modificati sono stati eseguiti cosi' come sono scritti nel prompt. Una sola copia del prompt nel repo (verificato con `find`).
 - **Regola d'oro non soddisfatta:** `verify` sul 2026-10-29 da' 7 problemi (registro da 25 a 30 commit, difetto 4) e sul 2026-10-22 10 problemi (registro da 48 a 109 commit). Va rieseguito il prompt su due giorni passati, con revisione dichiarata (Passo 6): 30 e 109 commit, lavoro da chiedere all'utente. Anche il 2026-11-03 cambiera' quando verranno committati i file di questo run.
 - **Aperto:** il worklog del 2026-10-29 scrive "da 381 commit di modulo": con il blocco nuovo sono 140 versioni copiate. Va corretto alla prossima revisione di quel giorno.
+
+## Aggiornamento: 64-audit, 2026-11-05
+
+Fase BMAD: Quick Flow, implementazione e verifica; lane DOCS-PROMPTS. Il prompt
+`bashscripts/docs/prompts/64-audit.md` è stato riesaminato come prompt su se stesso e
+ridotto da un master generico descrittivo a un contratto operativo eseguibile.
+
+### Correzioni applicate
+
+- BMAD, Second Brain, Hindsight, QMD e Graphify hanno ora un ordine e un fallback
+  espliciti; Graphify è richiesto prima della lettura del codice quando il grafo esiste.
+- Il lavoro è vincolato a owner, story esistente, lock, un writer per file e worktree
+  forward-only; sono esplicitamente vietate scritture in `bmad-output/` e scorciatoie
+  distruttive.
+- L'audit produce finding con evidenza A/B/C, priorità, causa radice, blast radius,
+  acceptance criteria e stato finale verificabile (`fixed`, `accepted-risk`, `blocked`,
+  `out-of-scope`).
+- ECC è integrato come ciclo `baseline → eval → implementazione → review → rerun`.
+- Le regole Laraxot locali, il divieto di Resource Filament diretto, i contesti di test,
+  la verifica responsive e la distinzione `unverified`/`passed` sono diventati vincoli
+  operativi invece di raccomandazioni generiche.
+- Il report finale richiede comandi, exit code, file fuori scope, blocker e rischio
+  residuo; non consente di dichiarare completamento per assenza di errori osservati.
+
+### Verifica della modifica
+
+- `git diff --check` e controllo frontmatter/link sono i gate di chiusura della lane.
+- Il prompt resta l'unica copia canonica di `64-audit`; nessun alias o file eseguibile
+  nuovo è stato creato.
+- Nessun codice applicativo o configurazione runtime è stato modificato.

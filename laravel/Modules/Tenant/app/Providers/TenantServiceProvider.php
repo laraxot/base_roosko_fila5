@@ -67,14 +67,6 @@ class TenantServiceProvider extends XotBaseServiceProvider
 
         /** @var array<string, mixed> $data */
         $data = $this->loadTenantDatabaseConfig($preMergeDefaultConn);
-<<<<<<< HEAD
-        $data = Arr::set($data, 'connections', $this->mergeModuleConnections($data, $preMergeDefaultConn));
-
-        Config::set('database', $data);
-        $this->reconnectDatabaseUnlessTesting();
-    }
-
-=======
         /** @var array<string, mixed> $explicitConnections */
         $explicitConnections = Arr::get($data, 'connections', []);
         $data = Arr::set($data, 'connections', $this->mergeModuleConnections($data, $preMergeDefaultConn));
@@ -113,7 +105,6 @@ class TenantServiceProvider extends XotBaseServiceProvider
         }
     }
 
->>>>>>> laraxot/dev
     #[Override]
     public function register(): void
     {

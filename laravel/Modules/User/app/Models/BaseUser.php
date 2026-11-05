@@ -129,25 +129,16 @@ use Spatie\Permission\Models\Permission;
  */
 abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuthentications, HasMedia, HasName, HasTeamsContract, HasTenants, MustVerifyEmail, OAuthenticatable, UserContract, UserNotificationsContract
 {
-<<<<<<< HEAD
     use BaseUserMutators, BaseUserRelations, HasSpatiePermission, HasTeams, Notifiable, HasAuthenticationLogTrait {
-=======
-    use BaseUserMutators, BaseUserRelations, HasApiTokens, HasAuthenticationLogTrait, HasSpatiePermission, HasTeams, Notifiable {
->>>>>>> laraxot/dev
         HasSpatiePermission::teams insteadof HasTeams;
         HasTeams::teams as membershipTeams;
         BaseUserRelations::notifications insteadof Notifiable;
         BaseUserRelations::unreadNotifications insteadof Notifiable;
         BaseUserRelations::clients insteadof HasApiTokens;
-<<<<<<< HEAD
         BaseUserRelations::latestAuthentication as baseUserRelationsLatestAuthentication;
         HasAuthenticationLogTrait::latestAuthentication insteadof BaseUserRelations;
     }
     use HasApiTokens;
-=======
-        BaseUserRelations::latestAuthentication insteadof HasAuthenticationLogTrait;
-    }
->>>>>>> laraxot/dev
     use HasChildren;
     use HasDevices;
     use HasModules;
@@ -347,14 +338,11 @@ abstract class BaseUser extends Authenticatable implements FilamentUser, HasAuth
         return $this->membershipTeams ?? new Collection;
     }
 
-<<<<<<< HEAD
     // public function authentications(): MorphMany
     // {
     //    return $this->morphMany(\Modules\User\Models\Authentication::class, 'authenticatable');
     // }
 
-=======
->>>>>>> laraxot/dev
     /**
      * Find the user instance for the given username.
      */
