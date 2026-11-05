@@ -18,8 +18,6 @@ use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 use Illuminate\Http\Request;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpKernel\Exception\TooManyRequestsHttpException;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -56,36 +54,5 @@ return Application::configure(basePath: dirname(__DIR__))
         });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
-        // 404 del front office con il layout del tema (DCP-151). Solo richieste HTML di un cittadino: API, JSON, Livewire, file e back office
-        // restano alla risposta standard. Se il rendering fallisce si ricade sulla pagina di Laravel: un errore del layout non diventa un 500.
-        $exceptions->render(static function (NotFoundHttpException $exception, Request $request) {
-            if ($request->expectsJson() || $request->is('api/*', 'livewire/*', 'themes/*', 'storage/*', 'data/*', '*/assets/*', 'fixcity/*', '*/admin/*')) {
-                return;
-            }
-
-            try {
-                $first = $request->segment(1);
-                if (is_string($first) && in_array($first, ['it', 'en', 'de', 'es'], true)) {
-                    app()->setLocale($first);
-                }
-
-                return response()->view('fixcity::errors.not-found', [], 404);
-            } catch (Throwable) {
-                return;
-            }
-        });
-        $exceptions->render(static function (TooManyRequestsHttpException $exception, Request $request) {
-            // il tracciamento e la conferma con `?code=` sono serviti dalle pagine del tema (nome di rotta `container0.view`): `routeIs('tickets.track')`
-            // vale solo per la pagina Folio del modulo, oscurata, e il cittadino vedeva la pagina nuda di Laravel (DCP-149)
-            if (! $request->routeIs('tickets.track') && ! $request->is('*/tickets/track', '*/tickets/confirmation')) {
-                return;
-            }
-
-            return response()->view(
-                'fixcity::errors.too-many-requests',
-                [],
-                429,
-                $exception->getHeaders(),
-            );
-        });
+        // Roosko non ha un front office pubblico: errori HTTP con le pagine standard di Laravel e di Filament.
     })->create();

@@ -14,7 +14,7 @@ use Modules\Comment\Notifications\PendingCommentNotification;
 use Modules\Comment\Policies\CommentPolicy;
 use Modules\Comment\Policies\ReactionPolicy;
 use Modules\Comment\Transformers\MarkdownToHtmlTransformer;
-use Modules\Fixcity\Models\User;
+use Modules\User\Models\User;
 
 return [
     /*

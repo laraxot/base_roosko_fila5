@@ -19,7 +19,7 @@ return [
     |
     */
 
-    'default' => config('logging.default', 'stack'),
+    'default' => env('LOG_CHANNEL', 'stack'),
 
     /*
     |--------------------------------------------------------------------------

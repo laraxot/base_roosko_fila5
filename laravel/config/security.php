@@ -112,7 +112,8 @@ return [
         // geolocation=(self): il pulsante «Usa la tua posizione» del passo 2 usa navigator.geolocation (con () sarebbe disattivato).
         'permissions_policy' => [
             'geolocation' => '(self)',
-            'camera' => '()',
+            // camera=(self): lo scanner QR della pagina operatore di Roosko usa getUserMedia (con () sarebbe bloccato).
+            'camera' => '(self)',
             'microphone' => '()',
             'payment' => '()',
             'usb' => '()',
