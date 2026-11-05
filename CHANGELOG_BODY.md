@@ -1,4 +1,4 @@
-## 🚀 Release v1.0.1
+## 🚀 Release v1.0.4
 
 ### 📋 Summary
 This release includes important updates and improvements across the healthcare_app Fila5 Mono platform.
@@ -8,11 +8,11 @@ This release includes important updates and improvements across the healthcare_a
 🐛 Bug Fixes
 
 🔧 Maintenance
- - c2defc0a docs: README di Roosko al posto di quello di un altro progetto
- - 615e2c47 chore: update version to 1.0.0 [skip ci]
 
 ### 📊 Module Changes
+ - **UI**: 2 changes
+ - **Xot**: 5 changes
 
 ### 👥 Contributors
- -       1 Marco Sottana
- -       1 GitHub Action
+ -       5 marco
+ -       5 dependabot[bot]
