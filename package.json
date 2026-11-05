@@ -1,6 +1,6 @@
 {
   "name": "fixcity-platform",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "FixCity Platform - Quality Tools",
   "scripts": {
     "quality": "npm run quality:biome && npm run quality:eslint && npm run quality:htmlhint && npm run quality:markdownlint",
