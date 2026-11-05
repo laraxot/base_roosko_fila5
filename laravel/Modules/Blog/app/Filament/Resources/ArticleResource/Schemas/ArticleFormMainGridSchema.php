@@ -23,11 +23,7 @@ final class ArticleFormMainGridSchema
             TextInput::make('title')
                 ->columnSpan(1)
                 ->required()
-<<<<<<< HEAD
-                ->lazy()
-=======
                 ->live(onBlur: true)
->>>>>>> laraxot/dev
                 ->afterStateUpdated(static function (mixed $set, mixed $get, mixed $state): void {
                     Assert::isCallable($set, 'set must be callable');
                     Assert::isCallable($get, 'get must be callable');

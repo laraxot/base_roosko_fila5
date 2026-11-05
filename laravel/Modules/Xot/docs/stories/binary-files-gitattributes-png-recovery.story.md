@@ -81,3 +81,19 @@ conflitto di merge mai risolti (`<<<<<<<`, `=======`, `>>>>>>>`).
   "mirror al root" li riporterebbe qui. La stessa correzione va applicata a
   monte, e il template `bashscripts/templates/sync-gitattributes-modules.sh`
   non deve più generare righe `!text`.
+
+## Aggiornamento 2026-11-05 - bonifica dei file presenti nel checkout
+
+- Fase BMAD: Quick Flow, implementazione e verifica; owner Xot.
+- Tutti i `.gitattributes` root di `laravel/Modules/*` e `laravel/Themes/*` sono stati
+  riallineati alla policy `binary !filter`; i file annidati di `Geo/docs`, `Geo/resources`
+  e `Xot/packages` sono stati lasciati nel loro perimetro.
+- Rimossi i marker di conflitto e le vecchie righe `!text !filter !merge !diff` che
+  annullavano `binary` e permettevano conversioni CRLF/LF sui binari.
+- Rimossi i blocchi locali `[lfs]` dai repository annidati senza eseguire comandi
+  `git lfs`; la configurazione globale/system non è stata modificata.
+- Verifica `.gitattributes` nativa su tutti i repository: nessun marker e nessun attributo
+  attivo `filter=lfs`, `diff=lfs` o `merge=lfs`.
+- Rischio residuo separato: `check-no-git-lfs.sh` rileva ancora due pointer LFS già
+  presenti in `Modules/Weighing/laravel/Modules/Geo/docs/img/`; non sono stati alterati
+  perché questa tranche riguarda esclusivamente gli attributi Git.

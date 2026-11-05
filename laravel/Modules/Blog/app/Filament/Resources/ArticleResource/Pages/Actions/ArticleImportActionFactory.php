@@ -20,11 +20,7 @@ final class ArticleImportActionFactory
                 FileUpload::make('file')
                     ->label('')
                     ->imagePreviewHeight('250')
-<<<<<<< HEAD
-                    ->reactive()
-=======
                     ->live()
->>>>>>> laraxot/dev
                     ->afterStateUpdated(static function (callable $set, TemporaryUploadedFile $state): void {
                         $set('fileContent', File::get($state->getRealPath()));
                     }),

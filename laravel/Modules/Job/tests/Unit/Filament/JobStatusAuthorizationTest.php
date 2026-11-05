@@ -15,11 +15,8 @@ use Modules\Job\Actions\Console\AssertAllowedArtisanCommandAction;
 use Modules\Job\Filament\Pages\JobStatus;
 use Modules\Xot\Contracts\UserContract;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Job\Tests\TestCase::class);
 
->>>>>>> laraxot/dev
 /*
  * Test puri: nessun database, nessun bootstrap dell'app, nessun TestCase del modulo (usa
  * DatabaseTransactions). Application vuota (solo binding di base) + utenti/kernel Artisan mock;
