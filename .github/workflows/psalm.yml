@@ -1,5 +1,7 @@
 name: psalm
-on: [push]
+# Solo manuale: su push faceva commit automatici sul branch in uso (audit Roosko, devops).
+on:
+  workflow_dispatch:
 
 jobs:
     phpinsights:
