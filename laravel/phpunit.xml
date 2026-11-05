@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+>
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+            <!-- Chart was removed from the module inventory; these orphan tests
+                 reference classes that are not part of this application. -->
+            <exclude>tests/Unit/Modules/Chart</exclude>
+        </testsuite>
+        <testsuite name="Feature">
+            <directory>tests/Feature</directory>
+        </testsuite>
+    </testsuites>
+    <source>
+        <include>
+            <directory>app</directory>
+            <directory>Modules/*/app</directory>
+        </include>
+    </source>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_MAINTENANCE_DRIVER" value="file"/>
+        <!-- DCP-90: i test non usano le cache di bootstrap costruite dall'ambiente di sviluppo (percorsi inesistenti = cache ignorata):
+             config.php fa ignorare .env.testing (scrittura sul DB di sviluppo), routes-v7.php ha l'URI di update Livewire dell'APP_KEY di sviluppo (POST 405, call()/set() no-op) -->
+        <env name="APP_CONFIG_CACHE" value="bootstrap/cache/phpunit-no-config-cache.php"/>
+        <env name="APP_ROUTES_CACHE" value="bootstrap/cache/phpunit-no-routes-cache.php"/>
+        <env name="BCRYPT_ROUNDS" value="4"/>
+        <env name="CACHE_STORE" value="array"/>
+        <!-- DB_* da laravel/.env.testing (sync da .env, suffisso _test su DB_DATABASE*) -->
+        <env name="MAIL_MAILER" value="array"/>
+        <env name="PULSE_ENABLED" value="false"/>
+        <env name="QUEUE_CONNECTION" value="sync"/>
+        <env name="SESSION_DRIVER" value="array"/>
+        <env name="TELESCOPE_ENABLED" value="false"/>
+    </php>
+</phpunit>

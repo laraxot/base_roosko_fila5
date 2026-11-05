@@ -1,0 +1,25 @@
+includes:
+    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+    level: max
+
+    paths:
+        - ./Modules/AI/tests
+        - ./Modules/Activity/tests
+        - ./Modules/Blog/tests
+        - ./Modules/Cms/tests
+        - ./Modules/Comment/tests
+        - ./Modules/Fixcity/tests
+        - ./Modules/Gdpr/tests
+        - ./Modules/Geo/tests
+        - ./Modules/Job/tests
+        - ./Modules/Lang/tests
+        - ./Modules/Media/tests
+        - ./Modules/Notify/tests
+        - ./Modules/Rating/tests
+        - ./Modules/Seo/tests
+        - ./Modules/Tenant/tests
+        - ./Modules/UI/tests
+        - ./Modules/User/tests
+        - ./Modules/Xot/tests

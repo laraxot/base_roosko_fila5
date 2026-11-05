@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">FixCity</title>
+  <desc id="logo-desc">Megafono cittadino con skyline e onde sonore, in stile outline.</desc>
+
+  <g fill="none" stroke="#0B2A4A" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="14" y="14" width="228" height="228" rx="44" stroke-width="7"/>
+
+    <!-- Megafono: bocca ellittica e cono leggibile anche a piccole dimensioni. -->
+    <path stroke-width="7" d="M54 101 138 64c11-5 23 3 23 15v92c0 12-12 20-23 15l-84-38Z"/>
+    <ellipse cx="160" cy="125" rx="22" ry="56" stroke-width="7"/>
+    <path stroke-width="7" d="M54 101c-12 3-20 13-20 25s8 22 20 25"/>
+
+    <!-- Impugnatura. -->
+    <path stroke-width="7" d="m83 151 13 54c2 8 10 12 18 10l9-3c8-2 12-10 10-18l-12-47"/>
+
+    <!-- Skyline cittadino integrato nel cono. -->
+    <path stroke-width="5" d="M69 139v-21l12-10 12 10v16m0 5V92h20v41m0 0v-25l13-14 13 14v20"/>
+    <path stroke-width="4" d="M102 101v6m0 10v6m24-25v6"/>
+    <path stroke-width="5" d="M68 145c24-10 50-12 79-7"/>
+
+    <!-- Onde sonore aperte, coerenti con il linguaggio Heroicons Outline. -->
+    <path stroke-width="7" d="m194 78 20-18m-12 45 26-8m-25 43 25 9"/>
+  </g>
+</svg>

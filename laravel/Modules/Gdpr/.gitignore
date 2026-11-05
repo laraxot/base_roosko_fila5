@@ -1,0 +1,110 @@
+
+*~BASE
+*~head
+*~HEAD
+*~LOCAL
+*~REMOTE
+# 🚫 File specifici del progetto
+agentdb.rvf
+app/storage/
+*.backup
+*.backup.*
+# Backup files
+*.bak
+bootstrap/compiled.php
+/build
+/build/
+build/
+# Build and compiled files
+# Build directories
+*.cache
+cache/
+# Cache and temporary files
+composer.lock
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+.cursor/
+# Database directories
+database/Factories_
+database/Factories_old
+database/Migrations_old
+database_old
+database/Seeders_old
+# Dependencies
+# Dependencies and packages
+.devcontainer/
+# Development tools
+_docs/
+docs/archive/
+docs/cache/
+docs/phpstan/
+/docs/vendor/
+# Documentation and cache
+.DS_Store
+.env
+.env.*
+!.env.example
+error_log
+*.exe
+*.fila2
+.git-blame-ignore-revs
+# Git related
+.git-rewrite
+.git-rewrite/
+# Git specific
+Homestead.json
+Homestead.yaml
+/.idea
+# IDE specific
+*.jar
+lang/lang/
+laravel
+# Laravel specific
+# Laraxot — IDE folders forbidden at module/theme root (see module-theme-root-hygiene)
+# Local configurations
+*.lock
+# Lock files and cache
+*.log
+# Log files
+*.new
+/node_modules/
+node_modules/
+npm-debug.log
+*.old
+*.old1
+# Old directories
+*.orig
+# Other
+package-lock.json
+*.phar
+.php-cs-fixer.cache
+.phpintel
+# PHPStan documentation
+.phpunit.result.cache
+public/hot
+public_html
+public_html/hot
+public_html/storage
+public/storage
+*.rej
+resources/views/Components_old
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+*.stackdump
+storage/*.key
+*.swo
+*.swp
+# Temporary and system files
+tests/AuditCoverage/
+*.tmp
+/.vagrant
+/vendor/
+vendor/
+.vscode/
+.windsurf/
+yarn-error.log
+*:Zone.Identifier
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+.claude/
+.claude-audit/
+test-results/
+gdpr.code-workspace

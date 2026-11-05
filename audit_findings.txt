@@ -1,0 +1,60 @@
+=== LARAVEL SECURITY AUDIT REPORT ===
+Generated: Thu Jul  9 15:06:30 CEST 2026
+
+=== CRITICAL: DEBUG MODE ===
+/var/www/_bases/base_fixcity_fila5/laravel/.env:APP_DEBUG=true
+/var/www/_bases/base_fixcity_fila5/laravel/.env.latest:APP_DEBUG=true
+/var/www/_bases/base_fixcity_fila5/laravel/.env.testing:APP_DEBUG=true
+
+=== CRITICAL: HARDCODED CREDENTIALS ===
+/var/www/_bases/base_fixcity_fila5/laravel/.env:DB_USERNAME=marco
+/var/www/_bases/base_fixcity_fila5/laravel/.env:DB_PASSWORD=[segreto locale, non nel repo]
+/var/www/_bases/base_fixcity_fila5/laravel/.env:DB_USERNAME_USER=marco
+/var/www/_bases/base_fixcity_fila5/laravel/.env:DB_PASSWORD_USER=marco
+/var/www/_bases/base_fixcity_fila5/laravel/.env:MAIL_PASSWORD=null
+
+=== HIGH: SQL INJECTION (Raw Queries) ===
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/database/seeders/UserSeeder.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Job/app/Filament/Resources/JobResource/Widgets/JobStatsOverview.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Job/app/Filament/Resources/JobsWaitingResource/Widgets/JobsWaitingOverview.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Job/app/Filament/Resources/JobManagerResource/Widgets/JobStatsOverview.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Job/app/Models/Result.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Comment/app/Support/CommentReactionHelper.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Comment/packages/spatie/laravel-comments/src/Models/Comment.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Geo/docs/database/seeding/generic-module-seeding.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Fixcity/app/Actions/GetTicketKpiAggregateAction.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Xot/app/Console/Commands/OptimizeFilamentMemoryCommand.php
+
+=== HIGH: XSS (Unescaped Output) ===
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/resources/views/index.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/index.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/pages/index.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/pages/learn/index.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/components/ui/button.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/components/blocks/paragraph/simple.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/components/blocks/hero.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/components/text-input.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/components/mail/text/layout.blade.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/resources/views/filament/pages/socialite-settings.blade.php
+
+=== MEDIUM: MASS ASSIGNMENT ===
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/app/Models/Activity.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/app/Models/Snapshot.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/app/Models/TestModel.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/app/Models/StoredEvent.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/Activity/tests/Unit/Models/BaseModelTest.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/TeamInvitation.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/BaseMorphPivot.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/RoleHasPermission.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/Notification.php
+/var/www/_bases/base_fixcity_fila5/laravel/Modules/User/app/Models/PersonalAccessToken.php
+
+=== MEDIUM: CSRF CHECK ===
+8
+
+=== HIGH: API KEY EXPOSURE ===
+IMAP_PASSWORD=secret
+GOOGLE_MAPS_API_KEY=AIzaSyAHe-ZCl4zd8d001AixbuREpBHkWri6nNk
+FILAMENT_GOOGLE_MAPS_SERVER_API_KEY=AIzaSyAHe-ZCl4zd8d001AixbuREpBHkWri6nNk
+SUPERMEMORY_API_KEY=sm_BzH3Cugxk1hMDm5V1EHC2N_Jr9NfJdUqxlnPe21yb9q7FtbYMevTsoPtKZJEfBqdP4i81z6aJA34SF32Gx3PUa9
+

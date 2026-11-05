@@ -1,0 +1,46 @@
+/.phpunit.cache
+/node_modules
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/clockwork/
+/storage/pail
+/vendor
+.env
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+npm-debug.log
+yarn-error.log
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+laravel/storage/framework/views/*.php
+/storage/framework/views/*
+storage/framework/views/*
+/storage/debugbar/**
+/storage/clockwork/**
+# Archive directories
+**/docs/archive/
+**/archive/
+
+
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+*~HEAD
+*~BASE
+*~LOCAL
+*~REMOTE
+*.orig
+*.rej
+*~head
+laravel/config/local/quaeris/database/content/information_schema_tables.json
+# IDE workspace files
+*.code-workspace
+tools/freellmapi

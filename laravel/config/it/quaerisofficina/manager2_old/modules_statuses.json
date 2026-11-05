@@ -1,0 +1,15 @@
+{
+    "<nome progetto>": true,
+    "Tenant": true,
+    "Notify": true,
+    "Cms": false,
+    "UI": true,
+    "Xot": false,
+    "LU": false,
+    "Chart": true,
+    "Lang": false,
+    "Job": true,
+    "Limesurvey": false,
+    "User": true,
+    "Setting": true
+}

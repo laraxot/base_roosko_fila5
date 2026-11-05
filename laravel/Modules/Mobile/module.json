@@ -1,0 +1,18 @@
+{
+    "name": "Mobile",
+    "alias": "mobile",
+    "description": "App Mobile FixCity — citizen + operator (NativePHP + PWA)",
+    "keywords": ["mobile", "nativephp", "pwa", "ios", "android", "fixcity"],
+    "active": true,
+    "priority": 100,
+    "providers": [
+        "Modules\\Mobile\\Providers\\MobileServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": [
+        "fixcity",
+        "geo",
+        "user"
+    ]
+}

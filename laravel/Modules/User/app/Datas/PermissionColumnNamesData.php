@@ -1,0 +1,19 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Modules\User\Datas;
+
+use Spatie\LaravelData\Data;
+
+/**
+ * Undocumented class.
+ */
+class PermissionColumnNamesData extends Data
+{
+    // => null, // default 'permission_id',
+    public string $model_morph_key;
+
+    // => 'model_id',
+    public string $team_foreign_key; // => 'team_id',
+}

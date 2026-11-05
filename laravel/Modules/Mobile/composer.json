@@ -1,0 +1,25 @@
+{
+    "name": "fixcity/mobile",
+    "description": "NativePHP for Mobile — iOS and Android apps built with Laravel",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4",
+        "nativephp/mobile": "^4.5",
+        "ext-json": "*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\Mobile\\Providers\\MobileServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Mobile\\": "app/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

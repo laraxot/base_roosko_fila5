@@ -1,0 +1,17 @@
+.env
+<<<<<<< .merge_file_XTJQgq
+<<<<<<< .merge_file_nFn4A2
+=======
+*.lock
+>>>>>>> .merge_file_hC5r2d
+=======
+*.lock
+>>>>>>> .merge_file_wu6Maa
+.env.*
+!.env.example
+
+test-results/
+mobile.code-workspace
+docs/archive/
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/

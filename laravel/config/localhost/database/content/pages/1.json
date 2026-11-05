@@ -1,0 +1,30 @@
+{
+    "id": "1",
+    "title": {
+        "it": "home"
+    },
+    "slug": "home",
+    "content": null,
+    "content_blocks": {
+        "it": [
+            {
+                "type": "ticket_list",
+                "data": {
+                    "title": "aaa",
+                    "sub_title": null,
+                    "method": "aaaa",
+                    "limit": null,
+                    "view": "fixcity::components.blocks.ticket_list.map"
+                }
+            }
+        ]
+    },
+    "sidebar_blocks": {
+        "it": []
+    },
+    "footer_blocks": null,
+    "created_at": "2024-12-17T19:52:00.000000Z",
+    "updated_at": "2024-12-17T19:52:00.000000Z",
+    "created_by": "9c63325e-ce65-4632-bc54-1ef576839de5",
+    "updated_by": "9c63325e-ce65-4632-bc54-1ef576839de5"
+}

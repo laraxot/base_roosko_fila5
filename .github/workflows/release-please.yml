@@ -1,0 +1,37 @@
+name: Release Please
+
+# Automazione del semantic versioning per il repo root.
+# Strategia: release-please (Google) in modalita' manifest.
+# - Analizza i Conventional Commits su push verso il branch di rilascio.
+# - Mantiene aperta una "Release PR" che accumula CHANGELOG + bump di versione.
+# - Al merge della Release PR crea tag git + GitHub Release.
+# Usa esclusivamente il GITHUB_TOKEN integrato: nessun PAT / secret aggiuntivo.
+# Config: release-please-config.json + .release-please-manifest.json (root).
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    name: Release Please
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run release-please
+        uses: googleapis/release-please-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+          # Branch di rilascio = quello che ha fatto scattare il workflow.
+          target-branch: ${{ github.ref_name }}

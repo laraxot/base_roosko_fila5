@@ -1,0 +1,21 @@
+# Asset e dipendenze — non inviare a Ollama (diff troppo grandi / inutili per commit message)
+laravel/vendor/**
+**/node_modules/**
+**/*.min.js
+**/*.min.css
+**/*.map
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.gif
+**/*.webp
+**/*.ico
+**/*.pdf
+**/*.zip
+**/*.sqlite
+**/*.woff
+**/*.woff2
+**/*.ttf
+public/build/**
+storage/**
+bootstrap/cache/**
