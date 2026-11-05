@@ -2,14 +2,14 @@
 <<<<<<< HEAD
     "name": "laraxot/theme-meetup-fila5",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tema Meetup — Fixcity/Laraxot",
     "devDependencies": {
         "fontaine": "^1.0.1"
     }
 =======
   "name": "meetup-theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Laravel Pizza theme with Tailwind CSS and Vite",
   "type": "module",
   "scripts": {

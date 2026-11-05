@@ -1,7 +1,7 @@
 {
     "name": "laraxot/theme-twentyone-fila3",
     "private": true,
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Tema TwentyOne per il progetto",
     "type": "module",
     "scripts": {
