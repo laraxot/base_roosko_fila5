@@ -1,0 +1,40 @@
+{
+    "name": "laraxot/theme-meetup",
+    "description": "Tema Meetup per laravelpizza",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Themes\\Meetup\\": "app/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Themes\\Meetup\\Providers\\ThemeServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "filament/actions": "^5.1",
+        "filament/forms": "^5.1",
+        "filament/infolists": "^5.1",
+        "filament/notifications": "^5.1",
+        "filament/schemas": "^5.1",
+        "filament/support": "^5.1",
+        "filament/tables": "^5",
+        "filament/widgets": "^5.1"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

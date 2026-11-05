@@ -9,6 +9,10 @@ use Modules\Notify\Actions\Mail\GetMailLayoutAction;
 use Modules\Xot\Actions\Theme\GetThemeContextAction;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('resolves christmas professional layout when context is christmas', function (): void {
     Config::set('xra.pub_theme', 'TwentyOne');
 

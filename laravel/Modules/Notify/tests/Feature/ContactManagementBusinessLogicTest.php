@@ -9,6 +9,10 @@ use Modules\Notify\Models\Contact;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('Contact Management Business Logic', function () {
     it('can create contact with basic information', function () {
         $contactData = [

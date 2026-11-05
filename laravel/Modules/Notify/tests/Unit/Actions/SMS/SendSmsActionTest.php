@@ -10,6 +10,10 @@ use Modules\Notify\Actions\SMS\NormalizePhoneNumberAction;
 use Modules\Notify\Actions\SMS\SendSmsAction;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 beforeEach(function (): void {
     $this->sendAction = app(SendSmsAction::class);
     $this->normalizeAction = app(NormalizePhoneNumberAction::class);

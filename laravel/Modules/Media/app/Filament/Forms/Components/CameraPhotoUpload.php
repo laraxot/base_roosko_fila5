@@ -5,15 +5,7 @@ declare(strict_types=1);
 namespace Modules\Media\Filament\Forms\Components;
 
 <<<<<<< HEAD
-<<<<<<< .merge_file_NBHdMU
-<<<<<<< .merge_file_Lsa4PJ
 use Modules\Xot\Filament\Forms\Components\XotBaseSpatieMediaLibraryFileUpload;
-=======
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
->>>>>>> .merge_file_TENcev
-=======
-use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
->>>>>>> .merge_file_PztAqK
 =======
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 >>>>>>> laraxot/dev
@@ -27,15 +19,7 @@ use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
  * The field's own calls still override these defaults; server-side validation is unchanged.
  */
 <<<<<<< HEAD
-<<<<<<< .merge_file_NBHdMU
-<<<<<<< .merge_file_Lsa4PJ
 class CameraPhotoUpload extends XotBaseSpatieMediaLibraryFileUpload
-=======
-class CameraPhotoUpload extends SpatieMediaLibraryFileUpload
->>>>>>> .merge_file_TENcev
-=======
-class CameraPhotoUpload extends SpatieMediaLibraryFileUpload
->>>>>>> .merge_file_PztAqK
 =======
 class CameraPhotoUpload extends SpatieMediaLibraryFileUpload
 >>>>>>> laraxot/dev

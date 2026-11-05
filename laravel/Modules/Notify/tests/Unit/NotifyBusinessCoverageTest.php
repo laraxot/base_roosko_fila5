@@ -7,6 +7,10 @@ namespace Modules\Notify\Tests\Unit;
 use Mockery;
 use Modules\Xot\Tests\ModuleBusinessCoverage;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 afterEach(function (): void {
     Mockery::close();
 });

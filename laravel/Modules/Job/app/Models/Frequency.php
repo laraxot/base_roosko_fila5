@@ -12,10 +12,6 @@ use Illuminate\Support\Carbon;
 use Modules\Job\Database\Factories\FrequencyFactory;
 use Modules\Job\Models\Traits\FrequencyRelations;
 use Modules\Xot\Contracts\ProfileContract;
-<<<<<<< HEAD
-use Modules\Job\Models\Traits\FrequencyRelations;
-=======
->>>>>>> laraxot/dev
 
 // use Modules\Job\Models\Traits\HasParameters;
 /**

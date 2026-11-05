@@ -7,6 +7,10 @@ namespace Modules\UI\Tests\Feature;
 use Modules\UI\Filament\Tables\Columns\OrderColumn;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\UI\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('OrderColumn (Table) — order_column badge display', function (): void {
     it('can be instantiated with make() using the default name', function (): void {
         $column = OrderColumn::make();

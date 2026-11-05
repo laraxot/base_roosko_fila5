@@ -40,6 +40,7 @@ Il sito legge JSON per tenant: per `local/fixcity` ci sono 113 file in `laravel/
 | Header e navigazione da Builder a JSON | [wiki/concepts/header-nav-block-architecture.md](./wiki/concepts/header-nav-block-architecture.md), [wiki/concepts/headernavblock-filament-builder.md](./wiki/concepts/headernavblock-filament-builder.md) |
 | Come si verifica un URL | [stories/dcp-41-url-to-json-resolver.story.md](./stories/dcp-41-url-to-json-resolver.story.md) |
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_wUhF38
 <<<<<<< .merge_file_1lvZlh
 =======
@@ -48,6 +49,9 @@ Il sito legge JSON per tenant: per `local/fixcity` ci sono 113 file in `laravel/
 =======
 | Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
 >>>>>>> .merge_file_RYa1nH
+=======
+| Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
+>>>>>>> laraxot/dev
 =======
 | Come si scrive un testo in una Blade (quattro lingue) | [stories/blade-i18n-no-hardcoded-text.story.md](./stories/blade-i18n-no-hardcoded-text.story.md) |
 >>>>>>> laraxot/dev

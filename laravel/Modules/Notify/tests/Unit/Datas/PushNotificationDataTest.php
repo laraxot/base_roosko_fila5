@@ -7,6 +7,10 @@ namespace Modules\Notify\Tests\Unit\Datas;
 use Modules\Notify\Datas\PushNotificationData;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('PushNotificationData DTO', function (): void {
     it('creates with notification fields for FCM and Web Push', function (): void {
         $dto = new PushNotificationData(

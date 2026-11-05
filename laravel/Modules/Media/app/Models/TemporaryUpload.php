@@ -7,6 +7,10 @@ namespace Modules\Media\Models;
 use Closure;
 use Exception;
 use Illuminate\Database\Eloquent\Builder;
+<<<<<<< HEAD
+=======
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
+>>>>>>> laraxot/dev
 use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Carbon;
@@ -75,10 +79,22 @@ use Webmozart\Assert\Assert;
  */
 class TemporaryUpload extends BaseModel implements HasMedia
 {
+<<<<<<< HEAD
+=======
+    use HasUuids;
+>>>>>>> laraxot/dev
     use HasXotFactory;
     use InteractsWithMedia;
     use MassPrunable;
 
+<<<<<<< HEAD
+=======
+    public $incrementing = false;
+
+    /** @var string */
+    protected $keyType = 'string';
+
+>>>>>>> laraxot/dev
     public static ?Closure $manipulatePreview = null;
 
     public static ?string $disk = null;

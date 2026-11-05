@@ -36,12 +36,19 @@ trait HasTenants
      */
     public function getTenants(Panel $_panel): array|Collection
     {
+<<<<<<< HEAD
         /** @var Collection<int, Model> $result */
         $result = $this->tenants->map(
             static fn (Model $tenant): Model => $tenant,
         );
 
         return $result;
+=======
+        /** @var Collection<int, Model> $tenants */
+        $tenants = $this->tenants;
+
+        return $tenants;
+>>>>>>> laraxot/dev
     }
 
     /**

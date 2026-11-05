@@ -7,6 +7,10 @@ namespace Modules\Notify\Tests\Unit\Enums;
 use Modules\Notify\Enums\NotificationTypeEnum;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('has correct cases', function (): void {
     Assert::assertCount(3, NotificationTypeEnum::cases());
 

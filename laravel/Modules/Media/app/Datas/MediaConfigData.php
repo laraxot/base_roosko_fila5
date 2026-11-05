@@ -21,14 +21,8 @@ class MediaConfigData extends Data
     use MakesFromTenantConfig;
 
 <<<<<<< HEAD
-<<<<<<< .merge_file_osVAi3
-<<<<<<< .merge_file_XTQhyq
     public string $name = 'Media';
 
-=======
->>>>>>> .merge_file_TUyGiQ
-=======
->>>>>>> .merge_file_bvBWy4
 =======
 >>>>>>> laraxot/dev
     /** Dimensione massima degli allegati delle Resource, in KB (prima 10240 in GetAttachmentsSchemaAction). */

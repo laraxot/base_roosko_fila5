@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace Modules\User\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+=======
+use Illuminate\Support\Carbon;
+use Modules\User\Models\Traits\TeamPermissionRelationsTrait;
+>>>>>>> laraxot/dev
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
@@ -68,6 +73,7 @@ class TeamPermission extends BaseModel
         'permission',
     ];
 
+<<<<<<< HEAD
     /**
      * @return BelongsTo<Team, $this>
      */
@@ -83,4 +89,7 @@ class TeamPermission extends BaseModel
     {
         return $this->belongsTo(User::class);
     }
+=======
+    use TeamPermissionRelationsTrait;
+>>>>>>> laraxot/dev
 }

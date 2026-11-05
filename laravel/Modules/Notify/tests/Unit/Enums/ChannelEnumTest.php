@@ -14,6 +14,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\preg_replace;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 test('notification channel mapping is correct', function () {
     Assert::assertSame('mail', ChannelEnum::Mail->getNotificationChannel());
     Assert::assertSame(SmsChannel::class, ChannelEnum::Sms->getNotificationChannel());

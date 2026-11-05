@@ -8,6 +8,10 @@ use Modules\Notify\Channels\WhatsAppChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('WhatsAppChannel', function () {
     it('can be instantiated', function () {
         // WhatsAppChannel requires WhatsAppActionFactory in constructor

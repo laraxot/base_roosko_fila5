@@ -9,6 +9,10 @@ use Modules\Notify\Factories\SmsActionFactory;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('SmsChannel', function () {
     it('can be instantiated', function () {
         // SmsChannel requires SmsActionFactory in constructor

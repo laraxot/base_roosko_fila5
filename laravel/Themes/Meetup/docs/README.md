@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 ---
 title: "Meetup: ingresso alla documentazione"
 type: readme
@@ -34,6 +37,7 @@ Regole che valgono qui: radice del tema con al massimo 5 `.md` e zero `.txt` (`d
 
 Non creare `docs/archive/`: la cartella e' esclusa dal `.gitignore` del tema e
 la regola condivisa e' [no-docs-archive](../../../../bashscripts/ai/wiki/concepts/no-docs-archive-rule.md).
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 # Meetup theme docs
@@ -89,4 +93,6 @@ Developers are encouraged to contribute to this documentation to keep it accurat
     - **Visuals**: Uses Tailwind CSS grid layout.
 
 >>>>>>> laraxot/dev
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev

@@ -1,5 +1,6 @@
 .env
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_XTJQgq
 <<<<<<< .merge_file_nFn4A2
 =======
@@ -8,6 +9,9 @@
 =======
 *.lock
 >>>>>>> .merge_file_wu6Maa
+=======
+*.lock
+>>>>>>> laraxot/dev
 =======
 *.lock
 >>>>>>> laraxot/dev

@@ -11,19 +11,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 use Modules\Media\Models\Media;
 use Modules\Notify\Enums\NotificationLogStatusEnum;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-use Modules\Notify\Models\Traits\NotificationLogRelations;
->>>>>>> laraxot/dev
-use Modules\Xot\Contracts\ProfileContract;
-use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
-use Modules\Notify\Models\Traits\NotificationLogRelations;
-=======
 use Modules\Notify\Models\Traits\NotificationLogRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
->>>>>>> laraxot/dev
 
 /**
  * @property-read ProfileContract|null $creator
@@ -105,22 +95,9 @@ class NotificationLog extends BaseModel
         'tenant_id'];
 
     /** @return MorphTo<Model, $this> */
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 
     /** @return BelongsTo<NotificationTemplate, $this> */
 
-=======
-
-    /** @return BelongsTo<NotificationTemplate, $this> */
->>>>>>> laraxot/dev
-
-=======
-
-    /** @return BelongsTo<NotificationTemplate, $this> */
-
->>>>>>> laraxot/dev
     /**
      * @param  Builder<static>  $query
      * @return Builder<static>

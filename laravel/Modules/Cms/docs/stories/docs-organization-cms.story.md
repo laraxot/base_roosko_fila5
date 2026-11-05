@@ -27,7 +27,11 @@ Fase BMAD documentazione (lane DOCS, Cms, dopo Lang). Ordine permanente dell'ute
 
 ## Modifiche
 - **Gemelli per maiuscole**: canonico = nome minuscolo (eccezioni `README.md`, `AGENTS.md`, `00-INDEX.md`; per `INDEX.md`/`index.md` nelle sottocartelle, chi ha piu' riferimenti entranti). 30 gemelli marcati `status: superseded` con `superseded_by` (corpo invariato); 5 gia' superseded o merged non toccati. 1 cancellato: `design-comuni/screenshots/TESTS_ROUTING_NORMALIZATION.md` (corpo identico a `tests_routing_normalization.md`, frontmatter uguale a meno delle maiuscole, tracciato, pulito in git, zero riferimenti entranti con due metodi indipendenti e controprova positiva, mtime oltre 120 secondi; dopo la cancellazione `rg -F` sul nome = 0 risultati).
+<<<<<<< HEAD
 - **Rinomina con `md-filenames.py apply`**, solo dove il dry-run preciso non riscrive nulla fuori dal modulo: `quality-status.md` diventa `quality-status-cms-module-november.md`, `fix-session-2026-07-13.md` diventa `fix-session.md`, `coverage-pest-80.md` diventa `coverage-pest.md`, `roadmap/roadmap.md` diventa `roadmap/roadmap-cms-module-q4.md` (0 riferimenti riscritti, 4 file mossi).
+=======
+- **Rinomina con `md-filenames.py apply`**, solo dove il dry-run preciso non riscrive nulla fuori dal modulo: `quality-status.md` diventa `quality-status-cms-module-november.md`, `fix-session-2026-07-13.md` diventa `fix-session.md`, `coverage-pest.md` diventa `coverage-pest.md`, `roadmap/roadmap.md` diventa `roadmap/roadmap-cms-module-q4.md` (0 riferimenti riscritti, 4 file mossi).
+>>>>>>> laraxot/dev
 - **Frontmatter minimo** (title, type, status: draft, created, updated, module, tags) a 21 file senza, corpo invariato. Il titolo di `coverage-pest.md` e' ricavato solo dalla prima riga logica: il file contiene `\n` letterali al posto degli a capo.
 - **Indice**: `00-INDEX.md` aggiornato con i conteggi reali e la sezione "Riordino della docs". `index.md` e' il catalogo per argomento e rimanda gia' a `00-INDEX.md` con una nota in testa: non marcato superseded.
 

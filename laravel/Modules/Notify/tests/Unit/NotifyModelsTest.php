@@ -19,6 +19,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('can create a notification', function () {
     $notification = NotificationFactory::new()->createOne([
         'type' => 'App\Notifications\UserRegistered',

@@ -7,6 +7,10 @@ namespace Modules\Notify\Tests\Unit\Enums;
 use Modules\Notify\Enums\WhatsAppDriverEnum;
 use PHPUnit\Framework\TestCase;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 class WhatsAppDriverEnumTest extends TestCase
 {
     /** @test */

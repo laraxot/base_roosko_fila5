@@ -1,0 +1,23 @@
+# opencommit — Ollama locale (Laraxot)
+# Doc: bashscripts/ai/wiki/concepts/opencommit-ollama-local.md
+
+OCO_AI_PROVIDER=ollama
+OCO_API_URL=http://127.0.0.1:11434
+OCO_API_KEY=ollama
+
+# 1.5b = commit rapidi (~5–15s dopo warmup); 7b = qualità migliore ma cold-start >120s
+OCO_MODEL=qwen2.5-coder:1.5b
+
+OCO_TOKENS_MAX_INPUT=4096
+OCO_TOKENS_MAX_OUTPUT=256
+OCO_DESCRIPTION=false
+OCO_EMOJI=false
+OCO_LANGUAGE=en
+OCO_MESSAGE_TEMPLATE_PLACEHOLDER=$msg
+OCO_PROMPT_MODULE=conventional-commit
+OCO_ONE_LINE_COMMIT=true
+OCO_TEST_MOCK_TYPE=commit-message
+OCO_WHY=false
+OCO_OMIT_SCOPE=false
+OCO_GITPUSH=false
+OCO_HOOK_AUTO_UNCOMMENT=false

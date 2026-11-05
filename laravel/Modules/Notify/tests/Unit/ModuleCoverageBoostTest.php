@@ -10,6 +10,10 @@ use ReflectionClass;
 
 use function Safe\glob;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /**
  * @return list<class-string>
  */

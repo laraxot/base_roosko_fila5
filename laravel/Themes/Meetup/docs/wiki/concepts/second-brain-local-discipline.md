@@ -12,18 +12,27 @@ discussions:
   - "https://github.com/laraxot/base_fixcity_fila5/discussions/273"
 related:
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
   - ../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md  # target mancante, verificato 2026-10-08
   - ../../../docs/wiki/concepts/ai-harness-theme-discipline.md  # target mancante, verificato 2026-10-08
   - ../../../../../../docs/wiki/concepts/second-brain-operating-model.md
   - ../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
   - ../../../../../../bashscripts/tools/prompts/llm-wiki.txt  # target mancante, verificato 2026-10-08
 status: active
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> laraxot/dev
   - ../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md
   - ../../../docs/wiki/concepts/ai-harness-theme-discipline.md
   - ../../../docs/wiki/concepts/second-brain-operating-model.md
   - ../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
   - ../../../../../../bashscripts/tools/prompts/llm-wiki.txt
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 ---
 
@@ -32,15 +41,24 @@ status: active
 | Risorsa | Link |
 |---------|------|
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 | **Canon** | [Xot second-brain-local-discipline.md](../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md) _(target mancante, verificato 2026-10-08)_ |
 | **Harness temi** | [ai-harness-theme-discipline.md](../../../docs/wiki/concepts/ai-harness-theme-discipline.md) _(target mancante, verificato 2026-10-08)_ |
 | **Tips 001–022** | [hackernoon map](../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md) |
 | **Prompt router** | [llm-wiki.txt](../../../../../../bashscripts/tools/prompts/llm-wiki.txt) _(target mancante, verificato 2026-10-08)_ |
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> laraxot/dev
 | **Canon** | [Xot second-brain-local-discipline.md](../../../../Xot/docs/wiki/concepts/second-brain-local-discipline.md) |
 | **Harness temi** | [ai-harness-theme-discipline.md](../../../docs/wiki/concepts/ai-harness-theme-discipline.md) |
 | **Tips 001–022** | [hackernoon map](../../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md) |
 | **Prompt router** | [llm-wiki.txt](../../../../../../bashscripts/tools/prompts/llm-wiki.txt) |
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 Solo decisioni **Meetup** in `docs/wiki/`; FO attivo su Sixteen.

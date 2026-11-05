@@ -5,6 +5,10 @@ declare(strict_types=1);
 use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Notifications\GenericNotification;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 // Basic unit tests focusing on business logic of recipient name resolution
 
 describe('GenericNotification getRecipientName', function (): void {

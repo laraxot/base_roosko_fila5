@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Mail;
 use Modules\Notify\Providers\NotifyServiceProvider;
 use Modules\Tenant\Actions\Config\ResolveTenantConfigValueAction;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 test('notify service provider boot sets fallback recipient when configured', function () {
     app()->instance(ResolveTenantConfigValueAction::class, new class
     {

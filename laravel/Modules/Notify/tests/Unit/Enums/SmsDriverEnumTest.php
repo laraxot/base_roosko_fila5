@@ -12,6 +12,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('has correct cases', function (): void {
     Assert::assertCount(1, SmsDriverEnum::cases());
 

@@ -9,6 +9,10 @@ use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\AddressColumn;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\UI\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('AddressColumn — controparte di AddressField', function (): void {
     it('can be instantiated with make() using the default name', function (): void {
         $column = AddressColumn::make();

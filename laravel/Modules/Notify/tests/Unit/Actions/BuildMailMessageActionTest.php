@@ -13,6 +13,10 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('BuildMailMessageAction', function () {
     // Test strutturali - non richiede container per la classe
     it('has correct class definition', function () {

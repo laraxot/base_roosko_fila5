@@ -6,6 +6,10 @@ namespace Modules\Notify\Tests\Unit\Datas\SMS;
 
 use Modules\Notify\Datas\SMS\TwilioData;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('TwilioData', function () {
     it('has default auth type', function () {
         $data = new TwilioData;

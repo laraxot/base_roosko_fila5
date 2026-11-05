@@ -1,0 +1,116 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "php",
+            "args": [
+                "artisan",
+                "boost:mcp"
+            ]
+        },
+        "fetch": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-fetch"
+            ]
+        },
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                ".."
+            ]
+        },
+        "sqlite": {
+            "command": "uvx",
+            "args": [
+                "--with",
+                "mcp<2",
+                "mcp-server-sqlite",
+                "--db-path",
+                "database/test_data.sqlite"
+            ]
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ]
+        },
+        "github": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+            }
+        },
+        "context7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp"
+            ],
+            "env": {
+                "CONTEXT7_API_KEY": "${CONTEXT7_API_KEY}"
+            }
+        },
+        "supermemory": {
+            "type": "http",
+            "url": "https://mcp.supermemory.ai/mcp"
+        },
+        "qmd": {
+            "command": "qmd",
+            "args": [
+                "--index",
+                "fixcity",
+                "mcp"
+            ],
+            "env": {
+                "XDG_CONFIG_HOME": "${HOME}/.cache/fixcity/qmd-config",
+                "XDG_CACHE_HOME": "${HOME}/.cache/fixcity/qmd-cache",
+                "HOME": "${HOME}/.cache/fixcity/qmd-home"
+            }
+        },
+        "context-mode": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "context-mode@1.0.169"
+            ]
+        },
+        "playwright": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@playwright/mcp@latest",
+                "--headless",
+                "--browser",
+                "chromium",
+                "--output-dir",
+                "/tmp/playwright-mcp",
+                "--timeout-navigation",
+                "90000",
+                "--timeout-action",
+                "90000"
+            ]
+        },
+        "flowbite": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "flowbite-mcp"
+            ]
+        }
+    }
+}

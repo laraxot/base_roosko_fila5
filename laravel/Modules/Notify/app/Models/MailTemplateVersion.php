@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Media\Models\Media;
@@ -14,10 +13,6 @@ use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
 use RuntimeException;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
-<<<<<<< HEAD
-use Modules\Notify\Models\Traits\MailTemplateVersionRelations;
-=======
->>>>>>> laraxot/dev
 
 /**
  * @property-read ProfileContract|null $creator
@@ -68,21 +63,18 @@ use Modules\Notify\Models\Traits\MailTemplateVersionRelations;
 class MailTemplateVersion extends BaseModel
 {
     use MailTemplateVersionRelations;
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev
     use SoftDeletes, Updater;
 
     protected $connection = 'notify';
 
     /** @var list<string> */
     protected $fillable = [
+<<<<<<< HEAD
         'template_id',
         'mailable',
+=======
+        'mail_template_id',
+>>>>>>> laraxot/dev
         'subject',
         'html_template',
         'text_template',
@@ -90,21 +82,6 @@ class MailTemplateVersion extends BaseModel
         'created_by',
         'change_notes'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /** @return BelongsTo<MailTemplate, $this> */
-
-
-=======
-    /**
-     * @return MailTemplate
-     */
->>>>>>> laraxot/dev
-=======
-    /**
-     * @return MailTemplate
-     */
->>>>>>> laraxot/dev
     public function restoreTemplate(): MailTemplate
     {
         $template = $this->template;

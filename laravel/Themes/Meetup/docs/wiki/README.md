@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 ---
 title: "README"
 type: note
@@ -11,6 +14,9 @@ discussions: []
 status: active
 ---
 
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 =======
 >>>>>>> laraxot/dev
 # LLM Wiki: compiled knowledge

@@ -6,6 +6,10 @@ namespace Modules\Notify\Tests\Unit;
 
 use Modules\Xot\Tests\ModuleDeepCoverage;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /**
  * @return array{string, string} radice `app/` del modulo e namespace corrispondente
  */

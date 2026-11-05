@@ -1,0 +1,80 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "schema": "https://opencode.ai/config.json",
+  "theme": "palenight",
+  "autoupdate": true,
+  "permission": {
+    "websearch": "allow",
+    "question": "allow"
+  },
+  "instructions": [
+    "CLAUDE.md",
+    "docs/wiki/rules/00-TRIGGER_MAP.md"
+  ],
+  "agent": {
+    "orchestrator": {
+      "mode": "primary",
+      "model": "anthropic/claude-sonnet-4-5"
+    },
+    "coder": {
+      "mode": "subagent",
+      "model": "openai/gpt-5.1-codex"
+    }
+  },
+  "plugin": [
+    "@dietrichgebert/ponytail",
+    "@daytona/opencode",
+    "opencode-wakatime"
+  ],
+  "snapshot": false,
+  "mcp": {
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    },
+    "context7": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ]
+    },
+    "laravel-boost": {
+      "type": "local",
+      "command": [
+        "php",
+        "laravel/artisan",
+        "boost:mcp"
+      ]
+    },
+    "playwright": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    },
+    "filesystem": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ]
+    },
+    "filamentphp": {
+      "type": "local",
+      "command": [
+        "npx",
+        "-y",
+        "filamentphp-mcp"
+      ]
+    }
+  }
+}

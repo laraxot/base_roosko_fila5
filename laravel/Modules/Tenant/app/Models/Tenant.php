@@ -13,6 +13,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 use Modules\Tenant\Models\Traits\TenantMutators;
 use Modules\Tenant\Models\Traits\TenantRelations;
+<<<<<<< HEAD
+=======
+use Modules\Xot\Contracts\UserContract;
+>>>>>>> laraxot/dev
 
 /**
  * Modello Tenant per la gestione multi-tenant dell'applicazione.
@@ -35,7 +39,11 @@ use Modules\Tenant\Models\Traits\TenantRelations;
  * @property string|null $tax_code
  * @property string|null $vat_number
  * @property-read string $url
+<<<<<<< HEAD
  * @property-read Collection<int, Model&\Modules\Xot\Contracts\UserContract> $users
+=======
+ * @property-read Collection<int, Model&UserContract> $users
+>>>>>>> laraxot/dev
  * @property-read int|null $users_count
  *
  * @method static \Modules\Tenant\Database\Factories\TenantFactory factory($count = null, $state = [])

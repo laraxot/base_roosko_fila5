@@ -1,0 +1,85 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon  
+    - ./vendor/nesbot/carbon/extension.neon
+    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - ./vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+    - ./vendor/pestphp/pest/extension.neon
+
+parameters:
+    level: max
+
+    paths:
+        - ./Modules/AI/tests
+        - ./Modules/Activity/tests
+        - ./Modules/Blog/tests
+        - ./Modules/Cms/tests
+        - ./Modules/Comment/tests
+        - ./Modules/Fixcity/tests
+        - ./Modules/Fixcity/Tests
+        - ./Modules/Gdpr/tests
+        - ./Modules/Geo/tests
+        - ./Modules/Geo/Tests
+        - ./Modules/Job/tests
+        - ./Modules/Lang/tests
+        - ./Modules/Media/tests
+        - ./Modules/Media/Tests
+        - ./Modules/Notify/tests
+        - ./Modules/Rating/tests
+        - ./Modules/Seo/tests
+        - ./Modules/Tenant/tests
+        - ./Modules/Tenant/Tests
+        - ./Modules/UI/tests
+        - ./Modules/User/tests
+        - ./Modules/User/Tests
+        - ./Modules/Xot/tests
+        - ./Modules/Xot/Tests
+
+    ignoreErrors:
+        - '#PHPDoc tag @mixin contains unknown class #'
+        - '#Static call to instance method Nwidart#'
+        - '#is used zero times and is not analysed#'
+        - "#^Unsafe usage of new static#"
+        - '#Cannot cast mixed to (string|float|double|int|bool|boolean).#'
+        - identifier: missingType.generics
+        - identifier: missingType.iterableValue
+        - identifier: larastan.noEnvCallsOutsideOfConfig
+        - identifier: method.unused
+        - identifier: method.internalClass
+
+    excludePaths:
+        - ./*/vendor/*
+        - ./*/build/*
+        - ./*/docs/*
+        - ./*/packages/*
+
+    bootstrapFiles:
+        - ./phpstan_constants.php
+
+    scanDirectories:
+        - ./Modules/AI/app
+        - ./Modules/Activity/app
+        - ./Modules/Blog/app
+        - ./Modules/Cms/app
+        - ./Modules/Comment/app
+        - ./Modules/Fixcity/app
+        - ./Modules/Fixcity/Jobs
+        - ./Modules/Gdpr/app
+        - ./Modules/Geo/app
+        - ./Modules/Job/app
+        - ./Modules/Lang/app
+        - ./Modules/Media/app
+        - ./Modules/Notify/app
+        - ./Modules/Rating/app
+        - ./Modules/Seo/app
+        - ./Modules/Tenant/app
+        - ./Modules/UI/app
+        - ./Modules/User/app
+        - ./Modules/Xot/app
+
+    scanFiles:
+        - ./Modules/Xot/Helpers/Helper.php
+
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
+    tmpDir: /tmp/phpstan-tests
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false

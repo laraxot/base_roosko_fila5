@@ -1,6 +1,12 @@
 <?php
-<<<<<<< HEAD
 
+<<<<<<< HEAD
+use Livewire\Volt\Component;
+use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+
+use function Laravel\Folio\middleware;
+use function Laravel\Folio\name;
+=======
 use function Laravel\Folio\{middleware, name};
 use Livewire\Volt\Component;
 
@@ -13,7 +19,6 @@ middleware($base_middleware);
 new class extends Component
 {
 };
-=======
 use function Laravel\Folio\{middleware, name};
 use Filament\Notifications\Notification;
 use Filament\Notifications\Livewire\Notifications;
@@ -24,18 +29,17 @@ use Livewire\Volt\Component;
 use Modules\Tenant\Services\TenantService;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 
+>>>>>>> laraxot/dev
 
 name('home');
 middleware(PageSlugMiddleware::class);
 
 new class extends Component {};
->>>>>>> laraxot/dev
 
 ?>
 
 <x-layouts.app>
     @volt('home')
-<<<<<<< HEAD
     <div class="min-h-screen bg-gray-100">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
             {{-- Contenuto Principale (3/4 larghezza) - Occupa 3 colonne su 4 --}}
@@ -53,6 +57,7 @@ new class extends Component {};
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 =======
         <div>
             <x-page side="content" slug="home" />

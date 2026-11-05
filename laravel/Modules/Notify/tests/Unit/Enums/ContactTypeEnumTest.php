@@ -13,6 +13,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('has correct cases', function (): void {
     Assert::assertCount(6, ContactTypeEnum::cases());
     Assert::assertSame('phone', ContactTypeEnum::PHONE->value);

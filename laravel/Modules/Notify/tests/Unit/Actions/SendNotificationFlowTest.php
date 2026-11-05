@@ -15,6 +15,10 @@ use Modules\Notify\Models\NotificationTemplate;
 use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('Send notification flow', function (): void {
     test('template lookup returns null when code missing', function (): void {
         $result = NotificationTemplate::query()

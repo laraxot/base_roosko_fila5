@@ -12,7 +12,12 @@ status: draft
 
 # Migrations: Lang Module
 
+<<<<<<< HEAD
 Questo documento descrive le migrazioni nel modulo Lang e come mantengono la conformità con il pattern XotBaseMigration.
+=======
+Questo documento descrive le migrazioni nel modulo Lang e il loro contratto con
+`XotBaseMigration`.
+>>>>>>> laraxot/dev
 
 ## Philosophy
 
@@ -21,11 +26,19 @@ Nel modulo Lang, ogni modello database-backed ha esattamente una migrazione corr
 | Model | Migration | Status |
 |-------|-----------|--------|
 | `LanguageLine` | `2024_03_20_000001_create_language_lines_table.php` | ✅ DB-backed |
+<<<<<<< HEAD
 | `Post` | `2026_01_21_211814_create_posts_table.php` | ✅ DB-backed |
 | `Translation` | `2026_01_21_211815_create_translations_table.php` | ✅ DB-backed |
 | `TranslationFile` | *none* (uses Sushi trait) | ✅ In-memory |
 
 **Parity Rule**: `TranslationFile` estende `BaseModel` con il trait `Sushi` (in-memory model), quindi non richiede una migrazione. Le 3 migrazioni coprono interamente i 3 modelli database-backed.
+=======
+| `Post` | `2026_01_21_211814_create_posts_table.php` + update UUID | ✅ DB-backed |
+| `Translation` | `2026_01_21_211815_create_translations_table.php` + update UUID | ✅ DB-backed |
+| `TranslationFile` | *none* (uses Sushi trait) | ✅ In-memory |
+
+**Parity Rule**: `TranslationFile` estende `BaseModel` con il trait `Sushi` (in-memory model), quindi non richiede una migrazione di creazione. Le migrazioni additive di aggiornamento sono distinte dalle migrazioni di creazione e non violano la parità modello/tabella.
+>>>>>>> laraxot/dev
 
 ## Key Models Explained
 
@@ -63,6 +76,7 @@ Modello Sushi (in-memory, non-persistent) che carica dinamicamente file di tradu
 
 ## Migration Naming Convention
 
+<<<<<<< HEAD
 Tutte le migrazioni nel modulo Lang seguono il standard:
 
 ```
@@ -79,6 +93,37 @@ YYYY_MM_DD_HHMMSS_create_<table>_table.php
 - ✅ Format: lowercase snake_case table name
 - ✅ Suffix: `_table.php`
 - ✅ Timestamp: YYYY_MM_DD_HHMMSS ensures chronological ordering
+=======
+Tutti i filename mantengono timestamp, azione, tabella owner plurale in
+`snake_case` e suffisso `_table.php`. Le creazioni seguono
+`YYYY_MM_DD_HHMMSS_create_<table_plurale>_table.php`; `XotBaseMigration`
+singularizza la tabella e ricava il modello. Le migrazioni additive usano un
+verbo descrittivo (per esempio `update_<table_plurale>_table`) e dichiarano
+`$model_class`, perché il modello non è derivabile dal pattern `create_*_table`.
+
+Esempi:
+
+- `2024_03_20_000001_create_language_lines_table.php`: creazione `LanguageLine`.
+- `2026_01_21_211814_create_posts_table.php`: creazione `Post`.
+- `2026_01_21_211815_create_translations_table.php`: creazione `Translation`.
+- `2026_11_05_100000_update_posts_table.php`: aggiornamento `Post`.
+- `2026_11_05_100001_update_translations_table.php`: aggiornamento `Translation`.
+
+L'audit del naming sulle migrazioni dei moduli è documentato nella
+[story BMAD di convenzione](./bmad/stories/user-id-uuid-migration-convention.story.md):
+245 file su 252 in `Modules/*/database/migrations/` rispettano il formato
+`timestamp_azione_modello-plurale_table.php`; `Themes/*/database/migrations/`
+non contiene migrazioni. Le sette eccezioni già pubblicate sono censite nella
+story BMAD Xot e non si rinominano retroattivamente: una variazione del filename
+cambia la chiave nel ledger Laravel.
+
+Il ledger Laravel identifica una migrazione per filename: una rinomina può far
+considerare pendente lo stesso file. Queste due migrazioni additive mantengono il
+timestamp, dichiarano `$model_class` e delegano a un helper idempotente che salta
+una colonna già UUID e rifiuta dati legacy non mappati. Per gli altri file già
+distribuiti, verificare sempre il ledger e usare una correzione forward-only;
+non rinominare alla cieca una migrazione non idempotente.
+>>>>>>> laraxot/dev
 
 ## Timestamp & Audit Columns
 

@@ -1,5 +1,8 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 title: "README"
 type: note
 tags: [documentation]
@@ -8,6 +11,9 @@ updated: 2026-09-26
 qmd: "README"
 issues: []
 discussions: []
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 =======
 >>>>>>> laraxot/dev
 module: theme

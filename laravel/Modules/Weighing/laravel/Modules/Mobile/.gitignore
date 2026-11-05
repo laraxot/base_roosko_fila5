@@ -1,0 +1,10 @@
+.env
+*.lock
+.env.*
+!.env.example
+
+test-results/
+mobile.code-workspace
+docs/archive/
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/

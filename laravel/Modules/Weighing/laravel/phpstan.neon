@@ -1,0 +1,63 @@
+includes:
+    # - ./phpstan-baseline.neon  # DISABLED: Gli errori vanno corretti, non ignorati!
+    # Larastan is loaded by phpstan/extension-installer.
+    # - ./vendor/nesbot/carbon/extension.neon
+    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    # - ./vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+    # Pest extension is loaded by phpstan/extension-installer.
+
+parameters:
+    level: max
+    #parallel:
+    #    maximumNumberOfProcesses: 34
+    #    jobSize: 1
+    #    minimumNumberOfJobsPerProcess: 1
+
+    paths:
+        - ./Modules/
+        # - ./Themes/
+        # - ./app
+
+    ignoreErrors:
+        # - '#Static call to instance method Nwidart#'
+        # - "#^Unsafe usage of new static#"
+        # - identifier: missingType.generics
+        # - identifier: missingType.iterableValue
+        # - identifier: method.unused
+        # - identifier: larastan.noEnvCallsOutsideOfConfig
+        # - '#is used zero times and is not analysed#'
+        # - '#Cannot cast mixed to (string|float|double|int|bool|boolean).#' # Ignora errori di cast da mixed a tipi specifici
+
+    excludePaths:
+        - ./*/vendor/*
+        - ./*/node_modules/*
+        - ./*/build/*
+        - ./*/docs/*
+        - ./*/packages/*
+        - ./*/audit-coverage/*
+        # - ./*/tests/* #da togliere
+        - ./*/phpinsights.php
+        - ./*/rector.php
+        - ./*/*.blade.php
+
+
+    bootstrapFiles:
+        # - ./phpstan_bootstrap.php
+        - ./phpstan_constants.php
+        # - ./vendor/amenadiel/jpgraph/src/config.inc.php
+
+    scanFiles:
+        - ./Modules/Xot/helpers/Helper.php
+        #- ./.phpstan-stubs/morph-to-one.stub
+        #- ./.phpstan-stubs/laravel-pdf.stub
+        # - ./_ide_helper_models.php
+
+    stubFiles:
+        #- ./.phpstan-stubs/morph-to-one.stub
+        #- ./.phpstan-stubs/laravel-pdf.stub
+        # - .phpstan-stubs/blade-icons.stub
+
+    editorUrl: 'vscode://file/%%file%%:%%line%%'
+    tmpDir: /tmp/phpstan
+    treatPhpDocTypesAsCertain: false
+    # reportUnmatchedIgnoredErrors: false

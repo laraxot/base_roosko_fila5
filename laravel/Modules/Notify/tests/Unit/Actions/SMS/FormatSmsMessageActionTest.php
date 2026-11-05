@@ -12,6 +12,10 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\class_uses;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('FormatSmsMessageAction', function () {
     it('can be instantiated', function () {
         Assert::assertSame(

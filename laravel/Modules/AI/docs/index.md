@@ -135,7 +135,11 @@ La guida numerata `mcp/NN-topic.md` e' la versione canonica di ciascun argomento
 | [cyclomatic-complexity-report.md](./cyclomatic-complexity-report.md) | Report complessita' ciclomatica |
 | [duplicate-methods-analysis.md](./duplicate-methods-analysis.md) | Analisi metodi duplicati (2025-10-15) |
 | [dry-kiss-analysis.md](./dry-kiss-analysis.md) | Analisi DRY & KISS |
+<<<<<<< HEAD
 | redundancy-audit-2026-05-21.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Audit ridondanza 2026-05-21 |
+=======
+| redundancy-audit.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Audit ridondanza 2026-05-21 |
+>>>>>>> laraxot/dev
 | copilot-redundancy-audit-2026-05-25.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Audit ridondanza 2026-05-25 |
 | ponytail-audit-user-module-findings.md _(riferimento non presente nel repository, verificato 2026-10-14)_ | Ponytail audit: SentimentAction driver selection in config |
 | [ponytail-audit-over-engineering.md](./ponytail-audit-over-engineering.md) | Ponytail audit su over-engineering |

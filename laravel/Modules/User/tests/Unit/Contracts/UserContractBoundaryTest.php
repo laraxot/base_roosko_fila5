@@ -6,6 +6,11 @@ use Symfony\Component\Finder\Finder;
 
 use function Safe\preg_match;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\User\Tests\TestCase::class);
+
+>>>>>>> laraxot/dev
 test('user boundaries depend on UserContract instead of BaseUser', function (): void {
     $root = dirname(__DIR__, 5);
 

@@ -12,6 +12,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('Notification Type Business Logic', function () {
     it('can create notification type with basic information', function () {
         $typeData = [

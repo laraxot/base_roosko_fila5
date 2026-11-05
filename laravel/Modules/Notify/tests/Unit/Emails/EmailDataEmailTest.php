@@ -9,6 +9,10 @@ use Modules\Notify\Datas\EmailData;
 use Modules\Notify\Emails\EmailDataEmail;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 test('email data email envelope uses explicit sender and subject', function (): void {
     $emailData = new EmailData(
         recipient: 'recipient@example.test',

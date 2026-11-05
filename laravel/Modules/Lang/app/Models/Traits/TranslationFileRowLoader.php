@@ -43,33 +43,15 @@ trait TranslationFileRowLoader
     /**
      * Aggiunge id/name/content alla riga restituita da GetAllTranslationAction.
      *
-<<<<<<< HEAD
-<<<<<<< .merge_file_4Chf6u
-     * @param  array{key: string, path: string}  $item
-=======
-=======
->>>>>>> laraxot/dev
      * `path` e' opzionale: una riga senza path produce `content` vuoto
      * invece di far fallire l'intero caricamento.
      *
      * @param  array{key: string, path?: string}  $item
-<<<<<<< HEAD
->>>>>>> .merge_file_2rmC8j
-=======
->>>>>>> laraxot/dev
      * @return array<string, mixed>
      */
     private function enrichTranslationRow(array $item): array
     {
-<<<<<<< HEAD
-<<<<<<< .merge_file_4Chf6u
-        $path = $item['path'];
-=======
         $path = $item['path'] ?? '';
->>>>>>> .merge_file_2rmC8j
-=======
-        $path = $item['path'] ?? '';
->>>>>>> laraxot/dev
 
         return [
             ...$item,
@@ -100,15 +82,7 @@ trait TranslationFileRowLoader
 
     private function isRunningIdeHelper(): bool
     {
-<<<<<<< HEAD
-<<<<<<< .merge_file_4Chf6u
-        if (defined('PHPSTAN_RUNNING')) {
-=======
         if (defined('PHPSTAN_RUNNING') || config('app.phpstan_running') === true) {
->>>>>>> .merge_file_2rmC8j
-=======
-        if (defined('PHPSTAN_RUNNING') || config('app.phpstan_running') === true) {
->>>>>>> laraxot/dev
             return true;
         }
 

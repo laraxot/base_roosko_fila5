@@ -1,0 +1,481 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - link "Vai ai contenuti" [ref=e3] [cursor=pointer]:
+      - /url: "#main-container"
+    - link "Vai al footer" [ref=e4] [cursor=pointer]:
+      - /url: "#footer"
+  - banner [ref=e5]:
+    - generic [ref=e10]:
+      - link "Vai al portale Nome della Regione - link esterno - apertura nuova scheda" [ref=e11] [cursor=pointer]:
+        - /url: "#"
+        - text: Nome della Regione
+      - navigation [ref=e12]:
+        - 'button "Lingua attiva: ITA" [ref=e14] [cursor=pointer]':
+          - generic [ref=e15]: "Lingua attiva:"
+          - generic [ref=e16]: ITA
+          - img [ref=e17]
+        - link "Area personale" [ref=e19] [cursor=pointer]:
+          - /url: http://localhost:8000/it/auth/login
+          - img [ref=e21]
+          - generic [ref=e23]: Area personale
+    - generic [ref=e24]:
+      - generic [ref=e29]:
+        - link "Il mio Comune Un comune da vivere" [ref=e31] [cursor=pointer]:
+          - /url: /
+          - img [ref=e32]
+          - generic [ref=e34]:
+            - generic [ref=e35]: Il mio Comune
+            - generic [ref=e36]: Un comune da vivere
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - generic [ref=e39]: Seguici su
+            - list [ref=e40]:
+              - listitem [ref=e41]:
+                - link "Twitter" [ref=e42] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e43]
+                  - generic [ref=e45]: Twitter
+              - listitem [ref=e46]:
+                - link "Facebook" [ref=e47] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e48]
+                  - generic [ref=e50]: Facebook
+              - listitem [ref=e51]:
+                - link "YouTube" [ref=e52] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e53]
+                  - generic [ref=e55]: YouTube
+              - listitem [ref=e56]:
+                - link "Telegram" [ref=e57] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e58]
+                  - generic [ref=e60]: Telegram
+              - listitem [ref=e61]:
+                - link "Whatsapp" [ref=e62] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e63]
+                  - generic [ref=e65]: Whatsapp
+              - listitem [ref=e66]:
+                - link "RSS" [ref=e67] [cursor=pointer]:
+                  - /url: "#"
+                  - img [ref=e68]
+                  - generic [ref=e70]: RSS
+          - generic [ref=e71]:
+            - generic [ref=e72]: Cerca
+            - button "Cerca nel sito" [ref=e73] [cursor=pointer]:
+              - img [ref=e74]
+      - generic [ref=e82]:
+        - navigation "Principale" [ref=e83]:
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - link "Amministrazione" [ref=e86] [cursor=pointer]:
+                - /url: http://localhost:8000/it/administration
+                - generic [ref=e87]: Amministrazione
+            - listitem [ref=e88]:
+              - link "Novità" [ref=e89] [cursor=pointer]:
+                - /url: http://localhost:8000/it/news
+                - generic [ref=e90]: Novità
+            - listitem [ref=e91]:
+              - link "Servizi" [ref=e92] [cursor=pointer]:
+                - /url: http://localhost:8000/it/services
+                - generic [ref=e93]: Servizi
+            - listitem [ref=e94]:
+              - link "Vivere il Comune" [ref=e95] [cursor=pointer]:
+                - /url: http://localhost:8000/it/events
+                - generic [ref=e96]: Vivere il Comune
+        - navigation "Secondaria" [ref=e97]:
+          - list [ref=e98]:
+            - listitem [ref=e99]:
+              - link "Iscrizioni" [ref=e100] [cursor=pointer]:
+                - /url: http://localhost:8000/it/registrations
+                - generic [ref=e101]: Iscrizioni
+            - listitem [ref=e102]:
+              - link "Estate in Città" [ref=e103] [cursor=pointer]:
+                - /url: http://localhost:8000/it/summer-in-the-city
+                - generic [ref=e104]: Estate in Città
+            - listitem [ref=e105]:
+              - link "Polizia Locale" [ref=e106] [cursor=pointer]:
+                - /url: http://localhost:8000/it/local-police
+                - generic [ref=e107]: Polizia Locale
+            - listitem [ref=e108]:
+              - link "Tutti gli argomenti" [ref=e109] [cursor=pointer]:
+                - /url: http://localhost:8000/it/topics
+                - generic [ref=e110]:
+                  - text: Tutti gli argomenti
+                  - img [ref=e111]
+  - main [ref=e113]:
+    - generic [ref=e115]:
+      - generic [ref=e116]:
+        - generic [ref=e117]:
+          - navigation [ref=e118]:
+            - navigation "breadcrumb" [ref=e119]:
+              - list [ref=e120]:
+                - listitem [ref=e121]:
+                  - link "Home" [ref=e122] [cursor=pointer]:
+                    - /url: /it
+                  - generic [ref=e123]: /
+                - listitem [ref=e124]: / Segnalazioni
+          - generic [ref=e125]:
+            - heading "Segnalazioni" [level=1] [ref=e126]
+            - paragraph [ref=e127]: Consulta le segnalazioni aperte nel territorio e filtra i risultati per categoria.
+        - separator
+      - generic [ref=e128]:
+        - generic "Filtra per categoria" [ref=e129]:
+          - group "Filtra per categoria" [ref=e130]:
+            - generic [ref=e131]: Filtra per categoria
+            - list [ref=e133]:
+              - listitem [ref=e134]:
+                - generic [ref=e136]:
+                  - checkbox "Illuminazione Pubblica (2)" [ref=e137] [cursor=pointer]
+                  - generic [ref=e139] [cursor=pointer]: Illuminazione Pubblica (2)
+              - listitem [ref=e140]:
+                - generic [ref=e142]:
+                  - checkbox "Edifici Pubblici (1)" [ref=e143] [cursor=pointer]
+                  - generic [ref=e145] [cursor=pointer]: Edifici Pubblici (1)
+              - listitem [ref=e146]:
+                - generic [ref=e148]:
+                  - checkbox "Segnalazioni Ambientali (2)" [ref=e149] [cursor=pointer]
+                  - generic [ref=e151] [cursor=pointer]: Segnalazioni Ambientali (2)
+              - listitem [ref=e152]:
+                - generic [ref=e154]:
+                  - checkbox "Manutenzione Stradale (3)" [ref=e155] [cursor=pointer]
+                  - generic [ref=e157] [cursor=pointer]: Manutenzione Stradale (3)
+              - listitem [ref=e158]:
+                - generic [ref=e160]:
+                  - checkbox "Trasporti Pubblici (2)" [ref=e161] [cursor=pointer]
+                  - generic [ref=e163] [cursor=pointer]: Trasporti Pubblici (2)
+              - listitem [ref=e164]:
+                - generic [ref=e166]:
+                  - checkbox "Sicurezza Pubblica (2)" [ref=e167] [cursor=pointer]
+                  - generic [ref=e169] [cursor=pointer]: Sicurezza Pubblica (2)
+              - listitem [ref=e170]:
+                - generic [ref=e172]:
+                  - checkbox "Fognature e Drenaggi (2)" [ref=e173] [cursor=pointer]
+                  - generic [ref=e175] [cursor=pointer]: Fognature e Drenaggi (2)
+              - listitem [ref=e176]:
+                - generic [ref=e178]:
+                  - checkbox "Raccolta Rifiuti (1)" [ref=e179] [cursor=pointer]
+                  - generic [ref=e181] [cursor=pointer]: Raccolta Rifiuti (1)
+              - listitem [ref=e182]:
+                - generic [ref=e184]:
+                  - checkbox "Arredo Urbano (2)" [ref=e185] [cursor=pointer]
+                  - generic [ref=e187] [cursor=pointer]: Arredo Urbano (2)
+              - listitem [ref=e188]:
+                - generic [ref=e190]:
+                  - checkbox "Aree Verdi e Parchi (2)" [ref=e191] [cursor=pointer]
+                  - generic [ref=e193] [cursor=pointer]: Aree Verdi e Parchi (2)
+          - group "fixcity::ticket.filters.status.legend.label" [ref=e194]:
+            - generic [ref=e195]: fixcity::ticket.filters.status.legend.label
+            - list [ref=e197]:
+              - listitem [ref=e198]:
+                - generic [ref=e200]:
+                  - checkbox "In lavorazione (5)" [ref=e201] [cursor=pointer]
+                  - generic [ref=e204] [cursor=pointer]: In lavorazione (5)
+              - listitem [ref=e205]:
+                - generic [ref=e207]:
+                  - checkbox "In sospeso (1)" [ref=e208] [cursor=pointer]
+                  - generic [ref=e211] [cursor=pointer]: In sospeso (1)
+              - listitem [ref=e212]:
+                - generic [ref=e214]:
+                  - checkbox "Risolto (1)" [ref=e215] [cursor=pointer]
+                  - generic [ref=e218] [cursor=pointer]: Risolto (1)
+              - listitem [ref=e219]:
+                - generic [ref=e221]:
+                  - checkbox "Aperto (12)" [ref=e222] [cursor=pointer]
+                  - generic [ref=e225] [cursor=pointer]: Aperto (12)
+        - generic [ref=e226]:
+          - generic [ref=e227]:
+            - generic [ref=e228]: 19 segnalazioni trovate
+            - button "Rimuovi filtri" [ref=e229] [cursor=pointer]
+          - generic [ref=e230]:
+            - tablist [ref=e231]:
+              - tab "Mappa" [ref=e232]:
+                - button "Mappa" [ref=e233] [cursor=pointer]
+              - tab "Elenco" [ref=e234]:
+                - button "Elenco" [ref=e235] [cursor=pointer]
+            - tabpanel [ref=e237]:
+              - generic [ref=e238]:
+                - generic "Mappa delle segnalazioni" [ref=e241]:
+                  - generic [ref=e242]:
+                    - generic [ref=e243]:
+                      - generic [ref=e532]:
+                        - generic:
+                          - button "5" [ref=e533] [cursor=pointer]:
+                            - generic [ref=e534]:
+                              - strong [ref=e535]: "5"
+                              - generic [ref=e536]:
+                                - img [ref=e537]
+                                - img [ref=e539]
+                                - img [ref=e541]
+                          - button "14" [ref=e543] [cursor=pointer]:
+                            - generic [ref=e544]:
+                              - strong [ref=e545]: "14"
+                              - generic [ref=e546]:
+                                - img [ref=e547]
+                                - img [ref=e549]
+                      - link "Leaflet" [ref=e245] [cursor=pointer]:
+                        - /url: https://leafletjs.com
+                        - img [ref=e246]
+                        - text: Leaflet
+                    - generic [ref=e250]:
+                      - button "Cerca" [ref=e251] [cursor=pointer]:
+                        - img [ref=e252]
+                      - button "Schermo intero" [ref=e255] [cursor=pointer]:
+                        - img [ref=e256]
+                      - button "Usa la mia posizione" [ref=e258] [cursor=pointer]:
+                        - img [ref=e259]
+                      - button "Cambia layer" [ref=e262] [cursor=pointer]:
+                        - img [ref=e263]
+                      - button "Aumenta zoom" [ref=e267] [cursor=pointer]:
+                        - img [ref=e268]
+                      - button "Diminuisci zoom" [ref=e269] [cursor=pointer]:
+                        - img [ref=e270]
+                - generic [ref=e272]:
+                  - heading "Hai notato un disservizio?" [level=2] [ref=e273]
+                  - paragraph [ref=e275]: Invia una nuova segnalazione e aiuta il Comune a intervenire in modo più rapido.
+                  - link "Segnala un disservizio" [ref=e277] [cursor=pointer]:
+                    - /url: /it/segnalazione-crea
+                    - generic [ref=e278]: Segnala un disservizio
+    - generic [ref=e285] [cursor=pointer]:
+      - heading "Quanto sono chiare le informazioni su questa pagina?" [level=2] [ref=e287]
+      - group "Valuta da 1 a 5 stelle la pagina" [ref=e289]:
+        - generic [ref=e290]: Valuta da 1 a 5 stelle la pagina
+        - generic [ref=e291]:
+          - img "Valuta 5 stelle su 5" [ref=e292]
+          - generic [ref=e295]: Valuta 5 stelle su 5
+        - generic [ref=e296]:
+          - img "Valuta 4 stelle su 5" [ref=e297]
+          - generic [ref=e300]: Valuta 4 stelle su 5
+        - generic [ref=e301]:
+          - img "Valuta 3 stelle su 5" [ref=e302]
+          - generic [ref=e305]: Valuta 3 stelle su 5
+        - generic [ref=e306]:
+          - img "Valuta 2 stelle su 5" [ref=e307]
+          - generic [ref=e310]: Valuta 2 stelle su 5
+        - generic [ref=e311]:
+          - img "Valuta 1 stella su 5" [ref=e312]
+          - generic [ref=e315]: Valuta 1 stella su 5
+    - generic [ref=e322]:
+      - heading "Contatta il comune" [level=2] [ref=e323]
+      - list [ref=e324]:
+        - listitem [ref=e325]:
+          - link "Leggi le domande frequenti" [ref=e326] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e327]
+            - generic [ref=e329]: Leggi le domande frequenti
+        - listitem [ref=e330]:
+          - link "Richiedi assistenza" [ref=e331] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e332]
+            - generic [ref=e334]: Richiedi assistenza
+        - listitem [ref=e335]:
+          - link "Chiama il numero verde 05 0505" [ref=e336] [cursor=pointer]:
+            - /url: tel:050505
+            - img [ref=e337]
+            - generic [ref=e338]: Chiama il numero verde 05 0505
+        - listitem [ref=e339]:
+          - link "Prenota appuntamento" [ref=e340] [cursor=pointer]:
+            - /url: "#"
+            - img [ref=e341]
+            - generic [ref=e343]: Prenota appuntamento
+  - contentinfo [ref=e344]:
+    - generic [ref=e346]:
+      - generic [ref=e348]:
+        - img "logo Unione Europea" [ref=e349]
+        - link "Nome del Comune" [ref=e351] [cursor=pointer]:
+          - /url: "#"
+          - img [ref=e352]
+          - heading "Nome del Comune" [level=2] [ref=e355]
+      - generic [ref=e356]:
+        - generic [ref=e357]:
+          - heading "Amministrazione" [level=4] [ref=e358]
+          - list [ref=e359]:
+            - listitem [ref=e360]:
+              - link "Organi di governo" [ref=e361] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e362]:
+              - link "Aree amministrative" [ref=e363] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e364]:
+              - link "Uffici" [ref=e365] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e366]:
+              - link "Enti e fondazioni" [ref=e367] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e368]:
+              - link "Politici" [ref=e369] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e370]:
+              - link "Personale amministrativo" [ref=e371] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e372]:
+              - link "Documenti e dati" [ref=e373] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e374]:
+          - heading "Categorie di servizio" [level=4] [ref=e375]
+          - generic [ref=e376]:
+            - list [ref=e378]:
+              - listitem [ref=e379]:
+                - link "Anagrafe e stato civile" [ref=e380] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e381]:
+                - link "Cultura e tempo libero" [ref=e382] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e383]:
+                - link "Vita lavorativa" [ref=e384] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e385]:
+                - link "Imprese e commercio" [ref=e386] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e387]:
+                - link "Appalti pubblici" [ref=e388] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e389]:
+                - link "Catasto e urbanistica" [ref=e390] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e391]:
+                - link "Turismo" [ref=e392] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e393]:
+                - link "Mobilità e trasporti" [ref=e394] [cursor=pointer]:
+                  - /url: "#"
+            - list [ref=e396]:
+              - listitem [ref=e397]:
+                - link "Educazione e formazione" [ref=e398] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e399]:
+                - link "Giustizia e sicurezza pubblica" [ref=e400] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e401]:
+                - link "Tributi, finanze e contravvenzioni" [ref=e402] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e403]:
+                - link "Ambiente" [ref=e404] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e405]:
+                - link "Salute, benessere e assistenza" [ref=e406] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e407]:
+                - link "Autorizzazioni" [ref=e408] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e409]:
+                - link "Agricoltura e pesca" [ref=e410] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e411]:
+          - heading "Novità" [level=4] [ref=e412]
+          - list [ref=e413]:
+            - listitem [ref=e414]:
+              - link "Notizie" [ref=e415] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e416]:
+              - link "Comunicati" [ref=e417] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e418]:
+              - link "Avvisi" [ref=e419] [cursor=pointer]:
+                - /url: "#"
+          - heading "Vivere il comune15" [level=4] [ref=e420]
+          - list [ref=e421]:
+            - listitem [ref=e422]:
+              - link "Luoghi" [ref=e423] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e424]:
+              - link "Eventi" [ref=e425] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e426]:
+          - heading "Contatti" [level=4] [ref=e427]
+          - generic [ref=e428]:
+            - paragraph [ref=e430]:
+              - text: Comune di Nome Comune
+              - text: Via Roma 123 - 00100 Comune
+              - text: "Codice fiscale / P. IVA: 00123456789"
+              - link "Ufficio Relazioni con il Pubblico" [ref=e431] [cursor=pointer]:
+                - /url: "#"
+              - text: "Numero verde: 800 016 123"
+              - text: "SMS e WhatsApp: +39 320 1234567"
+              - text: Posta Elettronica Certificata
+              - text: "Centralino unico: 012 3456"
+            - list [ref=e433]:
+              - listitem [ref=e434]:
+                - link "Leggi le FAQ" [ref=e435] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e436]:
+                - link "Prenotazione appuntamento" [ref=e437] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e438]:
+                - link "Segnalazione disservizio" [ref=e439] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e440]:
+                - link "Richiesta d'assistenza" [ref=e441] [cursor=pointer]:
+                  - /url: "#"
+            - list [ref=e443]:
+              - listitem [ref=e444]:
+                - link "Amministrazione trasparente" [ref=e445] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e446]:
+                - link "Informativa privacy" [ref=e447] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e448]:
+                - link "Note legali" [ref=e449] [cursor=pointer]:
+                  - /url: "#"
+              - listitem [ref=e450]:
+                - link "Dichiarazione di accessibilità" [ref=e451] [cursor=pointer]:
+                  - /url: "#"
+        - generic [ref=e452]:
+          - heading "Seguici su" [level=4] [ref=e453]
+          - list [ref=e454]:
+            - listitem [ref=e455]:
+              - link "Twitter" [ref=e456] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e457]
+                - generic [ref=e459]: Twitter
+            - listitem [ref=e460]:
+              - link "Facebook" [ref=e461] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e462]
+                - generic [ref=e464]: Facebook
+            - listitem [ref=e465]:
+              - link "YouTube" [ref=e466] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e467]
+                - generic [ref=e469]: YouTube
+            - listitem [ref=e470]:
+              - link "Telegram" [ref=e471] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e472]
+                - generic [ref=e474]: Telegram
+            - listitem [ref=e475]:
+              - link "Whatsapp" [ref=e476] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e477]
+                - generic [ref=e479]: Whatsapp
+            - listitem [ref=e480]:
+              - link "RSS" [ref=e481] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e482]
+                - generic [ref=e484]: RSS
+      - generic [ref=e487]:
+        - link "Media policy" [ref=e488] [cursor=pointer]:
+          - /url: "#"
+        - link "Mappa del sito" [ref=e489] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e492]:
+    - generic [ref=e494]:
+      - generic [ref=e497] [cursor=pointer]: "0"
+      - generic [ref=e499] [cursor=pointer]: "0"
+      - generic [ref=e502] [cursor=pointer]: "0"
+      - generic [ref=e505] [cursor=pointer]: "0"
+      - generic [ref=e507] [cursor=pointer]: "0"
+      - generic [ref=e509] [cursor=pointer]: "0"
+      - generic [ref=e511] [cursor=pointer]: "0"
+      - generic [ref=e513] [cursor=pointer]: "0"
+      - generic [ref=e516] [cursor=pointer]: "0"
+    - generic [ref=e517]:
+      - generic [ref=e524] [cursor=pointer]:
+        - generic [ref=e564]: "5"
+        - generic [ref=e525]: POST /_boost/browser-logs
+      - generic [ref=e526] [cursor=pointer]:
+        - generic: 8.4.20
+      - generic [ref=e528] [cursor=pointer]:
+        - generic: 288ms
+      - generic [ref=e530] [cursor=pointer]:
+        - generic: 6MB

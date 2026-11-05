@@ -1,0 +1,50 @@
+<?php
+
+declare(strict_types=1);
+// app/Filament/Components/TranslationEditor.php
+
+namespace Modules\Lang\Filament\Forms\Components;
+
+use Filament\Forms\Components\TextInput;
+use Filament\Schemas\Components\Section;
+use Modules\Xot\Filament\Forms\Components\XotBaseField;
+
+class TranslationEditor extends XotBaseField
+{
+    protected string $view = 'lang::filament.forms.components.translation-editor';
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+
+        $this->afterStateHydrated(function (TranslationEditor $component, $state): void {
+            $component->state($state ?? []);
+        });
+    }
+
+    public function getDefaultChildComponents(?string $key = null): array
+    {
+        $components = [];
+        $state = $this->getState() ?? [];
+        if (! is_array($state)) {
+            return $components;
+        }
+
+        foreach ($state as $key => $value) {
+            $keyStr = (string) $key;
+            if (is_array($value)) {
+                $components[] = Section::make($keyStr)->schema([
+                    TranslationEditor::make($keyStr)->label('')->state($value),
+                ]);
+            } else {
+                /** @var string|int|float|bool|null $valueNarrowed */
+                $valueNarrowed = $value;
+                $valueStr = is_string($valueNarrowed) ? $valueNarrowed : (string) $valueNarrowed;
+                $label = str_replace('_', ' ', $keyStr);
+                $components[] = TextInput::make($keyStr)->label($label)->default($valueStr);
+            }
+        }
+
+        return $components;
+    }
+}

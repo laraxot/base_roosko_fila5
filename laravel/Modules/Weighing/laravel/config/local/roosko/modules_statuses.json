@@ -1,0 +1,21 @@
+{
+    "Xot": true,
+    "Tenant": true,
+    "User": true,
+    "UI": true,
+    "Lang": true,
+    "Media": true,
+    "Geo": true,
+    "Job": true,
+    "Activity": true,
+    "Notify": true,
+    "Cms": true,
+    "Gdpr": true,
+    "Labeling": true,
+    "Weighing": true,
+    "Warehouse": true,
+    "Processing": true,
+    "Waste": true,
+    "Rentri": true,
+    "Roosko": true
+}

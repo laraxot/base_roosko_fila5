@@ -21,11 +21,6 @@ use Modules\Xot\Models\Traits\HasXotFactory;
 use Webmozart\Assert\Assert;
 
 use function Safe\json_decode;
-<<<<<<< HEAD
-use Modules\Job\Models\Traits\TaskMutators;
-use Modules\Job\Models\Traits\TaskRelations;
-=======
->>>>>>> laraxot/dev
 
 /**
  * Modules\Job\Models\Task.
@@ -100,27 +95,14 @@ use Modules\Job\Models\Traits\TaskRelations;
  */
 class Task extends BaseModel
 {
-<<<<<<< HEAD
-    use TaskMutators;
-    use TaskRelations;
-
     // use HasFrequencies;
     use FrontendSortable;
-<<<<<<< .merge_file_ZET0Ji
 
-=======
->>>>>>> .merge_file_4mjzdi
-=======
-    // use HasFrequencies;
-    use FrontendSortable;
->>>>>>> laraxot/dev
     /** > */
     use HasXotFactory;
 
     use Notifiable;
-
     use TaskMutators;
-
     use TaskRelations;
 
     protected $fillable = [
@@ -186,13 +168,6 @@ class Task extends BaseModel
     /**
      * Activated Accessor.
      */
-<<<<<<< HEAD
-<<<<<<< .merge_file_ZET0Ji
-
-=======
->>>>>>> .merge_file_4mjzdi
-=======
->>>>>>> laraxot/dev
 
     /**
      * Upcoming Accessor.
@@ -200,13 +175,9 @@ class Task extends BaseModel
      * throws \Exception
      */
 <<<<<<< HEAD
-<<<<<<< .merge_file_ZET0Ji
+=======
 
-=======
->>>>>>> .merge_file_4mjzdi
-=======
 >>>>>>> laraxot/dev
-
     /**
      * Frequencies Relation.
      *
@@ -222,15 +193,6 @@ class Task extends BaseModel
     /**
      * Returns the most recent result entry for this task.
      */
-<<<<<<< HEAD
-<<<<<<< .merge_file_ZET0Ji
-
-
-
-=======
->>>>>>> .merge_file_4mjzdi
-=======
->>>>>>> laraxot/dev
 
     /**
      * Route notifications for the mail channel.

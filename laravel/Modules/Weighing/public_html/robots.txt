@@ -1,0 +1,114 @@
+# robots.txt — FixCity
+#
+# PERCHE' ESISTE QUESTO FILE
+# =========================
+# Il template del Comune dichiara una parita' con Design Comuni e con la trasparenza
+#/amministrazione pubblica. Con `Disallow:` VUOTO, come era prima di questo file,
+# ogni pagina del sito era dichiarata indicizzabile: comprese le pagine di prova e di
+# vetrina, che rispondono 200 e sono linkate dal filesystem delle rotte.
+#
+# Misurato 2026-09-27: 9 pagine di sviluppo raggiungibili e indicizzabili
+#
+#   /it/tests                      200   indice delle vetrine
+#   /it/tests/news-showcase        200
+#   /it/tests/services-showcase    200
+#   /it/tests/tickets-showcase     200
+#   /it/tests/segnalazione-create  200
+#   /it/prova                      200
+#   /it/prova01                    200
+#   /it/counter                    200
+#   /it/show                       200
+#   /it/bootstrap-italia-showcase  200
+#   /it/genesis/power-ups          500   (gia' rotta, ma la rotta esiste)
+#
+# Su un sito che segnala un disservizio alla pubblica amministrazione, indicizzare le
+# pagine di prova significa esporre contenuti non revisionati. Il rischio qui non e'
+# teorico: `/it/prova01` contiene 172 occorrenze di testo in italiano non tradotto,
+# il doppio di qualunque pagina pubblicata.
+#
+# `Disallow` NON e' una protezione: un crawler rispettoso lo segue, ma il contenuto
+# resta pubblico. Serve a non farlo indicizzare, non a nasconderlo. Per chiudere
+# davvero serve rimuovere le pagine di prova dal percorso pubblico: vedi
+# `Modules/Fixcity/docs/bmad/stories/STORY-517-design-comuni-coverage.md`.
+#
+# SINTASSI
+# =======
+# Il file segue la grammatica di Google: `Disallow:` vuoto significa "nessun
+# vincolo". I pattern sono prefissi, e `*` non e' un carattere jolly ma un
+# letterale: per escludere `/it/tests` e le sue sottopagine serve la riga senza
+# `*` finale, che li esclude per intero.
+
+User-agent: *
+Allow: /
+
+# --- Sviluppo, prova e vetrine ---------------------------------------------
+# Non indicizzare: contenuti non revisionati, test e dimostrazioni.
+Disallow: /it/tests
+Disallow: /it/prova
+Disallow: /it/counter
+Disallow: /it/show
+Disallow: /it/bootstrap-italia-showcase
+Disallow: /it/learn
+Disallow: /it/genesis
+Disallow: /it/dashboard
+Disallow: /it/artisan-commands-manager
+
+# Stesse pagine sotto le altre locali pubblicate (DCP-272: prima mancavano 14 righe, fra cui /es/auth e /es/area-personale;
+# il test SeoLinksTest «closes the same private and development areas in every language» le deriva da /it/).
+Disallow: /en/tests
+Disallow: /en/prova
+Disallow: /en/counter
+Disallow: /en/show
+Disallow: /en/bootstrap-italia-showcase
+Disallow: /en/learn
+Disallow: /en/genesis
+Disallow: /en/dashboard
+Disallow: /en/artisan-commands-manager
+Disallow: /de/tests
+Disallow: /de/prova
+Disallow: /de/counter
+Disallow: /de/show
+Disallow: /de/bootstrap-italia-showcase
+Disallow: /de/learn
+Disallow: /de/genesis
+Disallow: /de/dashboard
+Disallow: /de/artisan-commands-manager
+Disallow: /es/tests
+Disallow: /es/prova
+Disallow: /es/counter
+Disallow: /es/show
+Disallow: /es/bootstrap-italia-showcase
+Disallow: /es/learn
+Disallow: /es/genesis
+Disallow: /es/dashboard
+Disallow: /es/artisan-commands-manager
+
+# --- Backoffice --------------------------------------------------------------
+# Il backoffice vive in `/{modulo}/admin` (misurato: /user/admin, /fixcity/admin,
+# /cms/admin, ... 22 pannelli): non esiste un `/admin` nudo, e dichiararlo sarebbe
+# un pattern che non copre nulla. `/*/admin` copre tutti i moduli.
+Disallow: /*/admin
+Disallow: /api
+Disallow: /it/api
+Disallow: /en/api
+Disallow: /de/api
+Disallow: /es/api
+
+# --- Account e area personale -----------------------------------------------
+# Dati personali: mai indicizzati.
+Disallow: /it/area-personale
+Disallow: /en/area-personale
+Disallow: /de/area-personale
+Disallow: /es/area-personale
+Disallow: /it/auth
+Disallow: /en/auth
+Disallow: /de/auth
+Disallow: /es/auth
+
+# --- Fine --------------------------------------------------------------------
+# NOTA: `Sitemap:` non e' dichiarato, anche se la sitemap esiste (/sitemap.xml, BuildSitemapAction, DCP-166).
+# La riga vuole un URL assoluto e questo file e' statico: e' identico in sviluppo e in produzione, e il dominio
+# di produzione non e' fissato nel repository. Un URL sbagliato e' peggio di nessun URL.
+# La sitemap si invia dal report Sitemap di Search Console (o dall'API), sulla proprieta' del dominio vero:
+# il report mostra comunque solo le sitemap inviate cosi', non quelle scoperte da robots.txt.
+# Coerenza: nessun URL della sitemap puo' cadere sotto un Disallow (test SeoLinksTest, DCP-272).

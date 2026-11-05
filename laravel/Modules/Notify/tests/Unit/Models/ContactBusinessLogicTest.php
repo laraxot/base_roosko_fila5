@@ -7,6 +7,10 @@ use Modules\Notify\Models\BaseModel;
 use Modules\Notify\Models\Contact;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('Contact Business Logic', function (): void {
     test('contact extends base model', function (): void {
         Assert::assertSame(BaseModel::class, get_parent_class(Contact::class));

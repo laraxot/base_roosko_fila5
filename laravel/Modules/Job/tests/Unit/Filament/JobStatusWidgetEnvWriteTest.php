@@ -23,6 +23,11 @@ use function Safe\putenv;
 use function Safe\tempnam;
 use function Safe\unlink;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Job\Tests\TestCase::class);
+
+>>>>>>> laraxot/dev
 /*
  * Test puri: nessun database, nessun bootstrap dell'app, nessun TestCase del modulo (usa
  * DatabaseTransactions), mai il vero .env: la scrittura va su un file temporaneo. Application vuota

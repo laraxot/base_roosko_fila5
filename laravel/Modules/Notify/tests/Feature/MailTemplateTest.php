@@ -9,6 +9,10 @@ use Modules\Notify\Models\MailTemplate;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('MailTemplate Model Tests', function () {
     it('can create a mail template', function () {
         $template = MailTemplateFactory::new()->createOne([

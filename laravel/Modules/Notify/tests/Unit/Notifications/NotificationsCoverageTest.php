@@ -26,6 +26,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 function notificationsCoverageTicketModel(int $id = 10): Model
 {
     $ticket = new class extends Model

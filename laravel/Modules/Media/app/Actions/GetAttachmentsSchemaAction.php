@@ -8,18 +8,7 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Schemas\Components\Utilities\Set;
 use Illuminate\Support\Arr;
 use Modules\Media\Datas\MediaConfigData;
-<<<<<<< HEAD
-<<<<<<< .merge_file_qV8zWT
-<<<<<<< .merge_file_SviFJq
-=======
 use Spatie\QueueableAction\QueueableAction;
->>>>>>> .merge_file_k8UVy5
-=======
-use Spatie\QueueableAction\QueueableAction;
->>>>>>> .merge_file_ZPLYEm
-=======
-use Spatie\QueueableAction\QueueableAction;
->>>>>>> laraxot/dev
 use Webmozart\Assert\Assert;
 
 class GetAttachmentsSchemaAction

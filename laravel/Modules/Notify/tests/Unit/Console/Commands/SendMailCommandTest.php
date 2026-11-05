@@ -7,6 +7,10 @@ namespace Modules\Notify\Tests\Unit\Console\Commands;
 use Modules\Notify\Console\Commands\SendMailCommand;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('SendMailCommand', function () {
     it('has correct signature', function () {
         $command = new SendMailCommand;

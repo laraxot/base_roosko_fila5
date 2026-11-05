@@ -5,13 +5,12 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Media\Models\Media;
+use Modules\Notify\Models\Traits\NotificationTemplateVersionRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
 use RuntimeException;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
-use Modules\Notify\Models\Traits\NotificationTemplateVersionRelations;
 
 // BaseModel in same namespace provides common behaviors
 /**
@@ -38,7 +37,6 @@ use Modules\Notify\Models\Traits\NotificationTemplateVersionRelations;
 class NotificationTemplateVersion extends BaseModel
 {
     use NotificationTemplateVersionRelations;
-
     use Updater;
 
     protected $fillable = [
@@ -53,21 +51,6 @@ class NotificationTemplateVersion extends BaseModel
         'created_by',
         'change_notes'];
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    /** @return BelongsTo<NotificationTemplate, $this> */
-
-
-=======
-    /**
-     * @return NotificationTemplate
-     */
->>>>>>> laraxot/dev
-=======
-    /**
-     * @return NotificationTemplate
-     */
->>>>>>> laraxot/dev
     public function restoreTemplate(): NotificationTemplate
     {
         $template = $this->template;

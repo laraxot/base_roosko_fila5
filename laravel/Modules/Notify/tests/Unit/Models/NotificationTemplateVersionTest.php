@@ -19,6 +19,10 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 use function Safe\class_implements;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /*
  * Scopo: ogni versione salvata di un NotificationTemplate e' un modello Notify con tracking
  * creator/updater e media, che sa ripristinare il template d'origine con restoreTemplate().

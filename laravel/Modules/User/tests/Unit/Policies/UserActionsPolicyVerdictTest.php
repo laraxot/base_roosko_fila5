@@ -8,6 +8,11 @@ use Modules\User\Models\Policies\UserPolicy;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\UserContract;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\User\Tests\TestCase::class);
+
+>>>>>>> laraxot/dev
 /*
  * Le azioni di riga sugli utenti (cambio password, verifica email, "deactivate") chiedono al Gate `update` o `delete`:
  * qui si fissa il verdetto che la policy da' loro, senza database e senza app (utenti Mockery con ruolo e id).

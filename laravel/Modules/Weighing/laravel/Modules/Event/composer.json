@@ -1,0 +1,33 @@
+{
+    "name": "laraxot/module_event_fila5",
+    "description": "Placeholder owner del dominio eventi per il progetto: modello Event, migration e decisioni BMAD. Modulo non attivo in modules_statuses.json.",
+    "keywords": [
+        "laraxot",
+        "laravel",
+        "module_event"
+    ],
+    "homepage": "https://github.com/laraxot/module_event_fila5",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Sottana",
+            "email": "marco.sottana@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Modules\\Event\\": "app/"
+        }
+    },
+    "require": {
+        "php": "^8.3"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "wikimedia/composer-merge-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

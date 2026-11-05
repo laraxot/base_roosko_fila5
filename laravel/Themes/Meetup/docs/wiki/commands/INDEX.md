@@ -1,9 +1,15 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 qmd: "INDEX"
 issues: []
 discussions: []
 =======
+>>>>>>> laraxot/dev
+=======
+qmd: "INDEX"
+issues: []
+discussions: []
 >>>>>>> laraxot/dev
 title: "Commands Index"
 type: index
@@ -12,10 +18,18 @@ updated: 2026-05-11
 tags: [commands, index, on-demand]
 related:
 <<<<<<< HEAD
+<<<<<<< HEAD
   - ../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md
   - ../../../../../../docs/wiki/rules/on-demand-pattern.md
 status: active
 =======
+  - ../rules/00-TRIGGER_MAP.md
+  - ../rules/on-demand-pattern.md
+>>>>>>> laraxot/dev
+=======
+  - ../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md
+  - ../../../../../../docs/wiki/rules/on-demand-pattern.md
+status: active
   - ../rules/00-TRIGGER_MAP.md
   - ../rules/on-demand-pattern.md
 >>>>>>> laraxot/dev
@@ -26,8 +40,13 @@ status: active
 Le Commands progettuali vivono qui, nel wiki del Theme **Meetup**, e vengono caricate **on-demand**.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Vedi anche → [Trigger Map](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 =======
+> Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
+>>>>>>> laraxot/dev
+=======
+> Vedi anche → [Trigger Map](../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md)
 > Vedi anche → [Trigger Map](../rules/00-TRIGGER_MAP.md)
 >>>>>>> laraxot/dev
 
@@ -35,8 +54,13 @@ Le Commands progettuali vivono qui, nel wiki del Theme **Meetup**, e vengono car
 
 1. individua il trigger del task
 <<<<<<< HEAD
+<<<<<<< HEAD
 2. consulta `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md`
 =======
+2. consulta `../rules/00-TRIGGER_MAP.md`
+>>>>>>> laraxot/dev
+=======
+2. consulta `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md`
 2. consulta `../rules/00-TRIGGER_MAP.md`
 >>>>>>> laraxot/dev
 3. se serve, esegui `qmd search "<topic>"`
@@ -49,8 +73,13 @@ Le Commands progettuali vivono qui, nel wiki del Theme **Meetup**, e vengono car
 | Carica Commands specifica | `Read ../commands/<name>.md` |
 | Ricerca semantica | `qmd search "<topic>"` |
 <<<<<<< HEAD
+<<<<<<< HEAD
 | Via trigger map | Consulta `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md` |
 =======
+| Via trigger map | Consulta `../rules/00-TRIGGER_MAP.md` |
+>>>>>>> laraxot/dev
+=======
+| Via trigger map | Consulta `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md` |
 | Via trigger map | Consulta `../rules/00-TRIGGER_MAP.md` |
 >>>>>>> laraxot/dev
 
@@ -59,17 +88,26 @@ Le Commands progettuali vivono qui, nel wiki del Theme **Meetup**, e vengono car
 - La sorgente di verita' per le Commands e' sempre il wiki locale
 - Non embeddare Commands nei prompt di avvio
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md) _(target mancante, verificato 2026-10-08)_
 =======
 - Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md)
+>>>>>>> laraxot/dev
+=======
+- Per Commands globali, consulta il [wiki root](../../docs/wiki/commands/INDEX.md) _(target mancante, verificato 2026-10-08)_
 >>>>>>> laraxot/dev
 
 ## Aggiungere una Nuova COMMANDS
 
 1. Crea `../commands/<nome>.md` con contenuto completo
 <<<<<<< HEAD
+<<<<<<< HEAD
 2. Aggiungi la voce in `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md`
 =======
+2. Aggiungi la voce in `../rules/00-TRIGGER_MAP.md`
+>>>>>>> laraxot/dev
+=======
+2. Aggiungi la voce in `../../../../../../docs/wiki/rules/00-TRIGGER_MAP.md`
 2. Aggiungi la voce in `../rules/00-TRIGGER_MAP.md`
 >>>>>>> laraxot/dev
 3. Aggiorna questo indice se la Commands e' ricorrente

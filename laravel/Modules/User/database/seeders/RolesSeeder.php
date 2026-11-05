@@ -50,26 +50,11 @@ final class RolesSeeder extends Seeder
      */
     private function displayResults(array $roles): void
     {
-<<<<<<< HEAD
-<<<<<<< .merge_file_l0fxod
-        $command = $this->getConsoleCommand();
-        if ($command === null) {
-            return;
-        }
-
-        $command->info('Roles seeded successfully:');
-=======
-=======
->>>>>>> laraxot/dev
         if ($this->command === null) {
             return;
         }
 
         $this->command->info('Roles seeded successfully:');
-<<<<<<< HEAD
->>>>>>> .merge_file_KfE2cd
-=======
->>>>>>> laraxot/dev
         $rows = collect($roles)
             ->map(static fn (Role $role, int $index) => [
                 $index + 1,
@@ -77,19 +62,6 @@ final class RolesSeeder extends Seeder
                 $role->guard_name,
             ])
             ->toArray();
-<<<<<<< HEAD
-<<<<<<< .merge_file_l0fxod
-        $command->table(self::$OUTPUT_TABLE_HEADERS, $rows);
-    }
-
-    private function getConsoleCommand(): ?Command
-    {
-        return $this->command;
-=======
         $this->command->table(self::$OUTPUT_TABLE_HEADERS, $rows);
->>>>>>> .merge_file_KfE2cd
-=======
-        $this->command->table(self::$OUTPUT_TABLE_HEADERS, $rows);
->>>>>>> laraxot/dev
     }
 }

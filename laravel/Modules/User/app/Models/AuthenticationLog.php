@@ -10,8 +10,13 @@ namespace Modules\User\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Database\Eloquent\Model;
+<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
+=======
+use Illuminate\Support\Carbon;
+use Modules\User\Models\Traits\AuthenticationLogRelationsTrait;
+>>>>>>> laraxot/dev
 use Modules\Xot\Contracts\ProfileContract;
 
 /**
@@ -99,6 +104,7 @@ class AuthenticationLog extends BaseModel
         return static::query()->where('created_at', '<', now()->subDays(config()->integer('gdpr.retention.authentication_log_days', 365)));
     }
 
+<<<<<<< HEAD
     /**
      * @return MorphTo<Model, $this>
      */
@@ -107,6 +113,8 @@ class AuthenticationLog extends BaseModel
         return $this->morphTo();
     }
 
+=======
+>>>>>>> laraxot/dev
     /** @return array<string, string> */
     #[\Override]
     protected function casts(): array
@@ -119,4 +127,9 @@ class AuthenticationLog extends BaseModel
             'logout_at' => 'datetime',
         ];
     }
+<<<<<<< HEAD
+=======
+
+    use AuthenticationLogRelationsTrait;
+>>>>>>> laraxot/dev
 }

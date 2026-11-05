@@ -3,7 +3,10 @@
 declare(strict_types=1);
 use Illuminate\Database\Eloquent\Model;
 use Modules\Activity\Actions\LogModelCreatedAction;
+<<<<<<< HEAD
 use Modules\Activity\Models\Activity;
+=======
+>>>>>>> laraxot/dev
 use Modules\Activity\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
 use PHPUnit\Framework\Assert;
@@ -15,7 +18,11 @@ test('LogModelCreatedAction can execute for a model', function (): void {
     $action = new LogModelCreatedAction;
     $activity = $action->execute($model);
 
+<<<<<<< HEAD
     Assert::assertInstanceOf(Activity::class, $activity);
+=======
+    Assert::assertSame('created', $activity->event);
+>>>>>>> laraxot/dev
     Assert::assertSame($model->getKey(), $activity->subject_id);
 });
 
@@ -27,7 +34,13 @@ test('LogModelCreatedAction accepts any Eloquent model', function (): void {
         protected $fillable = ['name'];
     };
     $action = new LogModelCreatedAction;
+<<<<<<< HEAD
     Assert::assertInstanceOf(Activity::class, $action->execute($model));
+=======
+    $activity = $action->execute($model);
+
+    Assert::assertSame($model::class, $activity->subject_type);
+>>>>>>> laraxot/dev
 
     $user = UserFactory::new()->createOne();
     $action = new LogModelCreatedAction($model, $user);

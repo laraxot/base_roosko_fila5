@@ -78,6 +78,10 @@ use function Pest\Laravel\artisan;
 use function Safe\file_put_contents;
 use function Safe\unlink;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /**
  * @param  class-string  $class
  */

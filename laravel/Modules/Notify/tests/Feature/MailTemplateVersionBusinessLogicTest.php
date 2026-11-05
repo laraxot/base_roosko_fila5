@@ -12,6 +12,10 @@ use RuntimeException;
 
 use function Safe\preg_match_all;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /*
  * Scopo: ogni modifica di un MailTemplate lascia una MailTemplateVersion (storico
  * versionato soft-deletable) da cui si puo' ripristinare il contenuto con restoreTemplate().
@@ -26,7 +30,11 @@ describe('Mail Template Version Business Logic', function (): void {
         $createdBy = 'admin@'.config()->string('app.domain', 'example.com');
 
         $version = MailTemplateVersion::create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'subject' => 'Conferma Appuntamento - Versione 2.0',
             'html_template' => '<h1>Conferma Appuntamento</h1><p>Gentile {{patient_name}}, il suo appuntamento e\' confermato per il {{appointment_date}}.</p>',
             'text_template' => 'Gentile {{patient_name}}, il suo appuntamento e\' confermato per il {{appointment_date}}.',
@@ -49,7 +57,11 @@ describe('Mail Template Version Business Logic', function (): void {
 
     test('can manage mail template version relationships', function (): void {
         $template = MailTemplate::factory()->create();
+<<<<<<< HEAD
         $version = MailTemplateVersion::factory()->create(['template_id' => $template->id]);
+=======
+        $version = MailTemplateVersion::factory()->create(['mail_template_id' => $template->id]);
+>>>>>>> laraxot/dev
 
         Assert::assertInstanceOf(MailTemplate::class, $version->template);
         Assert::assertSame($template->id, $version->template->id);
@@ -62,7 +74,11 @@ describe('Mail Template Version Business Logic', function (): void {
             'text_template' => 'Template corrente',
         ]);
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'subject' => 'Versione Precedente',
             'html_template' => '<p>Template versione precedente</p>',
             'text_template' => 'Template versione precedente',
@@ -84,7 +100,11 @@ describe('Mail Template Version Business Logic', function (): void {
 
     test('throws exception when restoring without template', function (): void {
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => 99999,
+=======
+            'mail_template_id' => 99999,
+>>>>>>> laraxot/dev
             'html_template' => '<p>orfana</p>',
             'version' => 1,
         ]);
@@ -98,7 +118,11 @@ describe('Mail Template Version Business Logic', function (): void {
         $createdBy = 'developer@'.config()->string('app.domain', 'example.com');
 
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'version' => 3,
             'created_by' => $createdBy,
             'metadata' => ['author' => 'admin@example.com', 'review_status' => 'approved'],
@@ -121,7 +145,11 @@ describe('Mail Template Version Business Logic', function (): void {
         $text = "Gentile {{patient_name}},\nData: {{appointment_date}}\nDottore: {{doctor_name}}\nStudio: {{clinic_name}}\nArrivare 15 minuti prima";
 
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'html_template' => $html,
             'text_template' => $text,
             'version' => 4,
@@ -142,7 +170,11 @@ describe('Mail Template Version Business Logic', function (): void {
         $text = 'Gentile {{patient_name}}, appuntamento il {{appointment_date}} con {{doctor_name}}.';
 
         MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'html_template' => $html,
             'text_template' => $text,
             'version' => 1,
@@ -161,7 +193,11 @@ describe('Mail Template Version Business Logic', function (): void {
     test('can soft delete and restore a version', function (): void {
         $template = MailTemplate::factory()->create();
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'html_template' => '<p>soft</p>',
             'version' => 1,
         ]);
@@ -180,7 +216,11 @@ describe('Mail Template Version Business Logic', function (): void {
         $template = MailTemplate::factory()->create();
 
         $version = MailTemplateVersion::factory()->create([
+<<<<<<< HEAD
             'template_id' => $template->id,
+=======
+            'mail_template_id' => $template->id,
+>>>>>>> laraxot/dev
             'subject' => null,
             'text_template' => null,
             'change_notes' => null,

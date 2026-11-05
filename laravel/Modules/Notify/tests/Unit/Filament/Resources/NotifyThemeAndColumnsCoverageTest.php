@@ -20,6 +20,10 @@ use Modules\Notify\Filament\Tables\Columns\ContactColumn;
 use Modules\Notify\Tests\Fixtures\EditNotifyThemeTestProxy;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
 {
     return new EditNotifyThemeTestProxy;

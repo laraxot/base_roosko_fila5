@@ -32,7 +32,11 @@ class ListBanners extends XotBaseListRecords
                         ->label('')
                         // ->acceptedFileTypes(['application/json', 'json'])
                         ->imagePreviewHeight('250')
+<<<<<<< HEAD
                         ->reactive()
+=======
+                        ->live()
+>>>>>>> laraxot/dev
                         ->afterStateUpdated(static function (callable $set, TemporaryUploadedFile $state): void {
                             $set('fileContent', File::get($state->getRealPath()));
                         }),

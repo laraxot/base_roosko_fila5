@@ -1,0 +1,32 @@
+includes:
+    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+    level: max
+
+    paths:
+        - ./Modules/
+
+    excludePaths:
+        - ./*/vendor/*
+        - ./*/node_modules/*
+        - ./*/build/*
+        - ./*/docs/*
+        - ./*/packages/*
+        - ./*/audit-coverage/*
+        - ./*/phpinsights.php
+        - ./*/rector.php
+        - ./*/*.blade.php
+
+    bootstrapFiles:
+        - ./phpstan_constants.php
+
+    scanFiles:
+        - ./Modules/Xot/helpers/Helper.php
+
+    tmpDir: /tmp/phpstan-vu
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+    parallel:
+        maximumNumberOfProcesses: 16
+        jobSize: 10

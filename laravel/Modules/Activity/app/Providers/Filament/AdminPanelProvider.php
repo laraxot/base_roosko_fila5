@@ -12,7 +12,10 @@ class AdminPanelProvider extends XotBasePanelProvider
 {
     protected string $module = 'Activity';
 
+<<<<<<< HEAD
     #[Override]
+=======
+>>>>>>> laraxot/dev
     public function panel(Panel $panel): Panel
     {
         return parent::panel($panel);

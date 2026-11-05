@@ -25,7 +25,11 @@ final class CategoryFormSchema
             TextInput::make('title')
                 ->required()
                 ->maxLength(2048)
+<<<<<<< HEAD
                 ->reactive()
+=======
+                ->live()
+>>>>>>> laraxot/dev
                 ->unique()
                 ->afterStateUpdated(static function (Set $set, mixed $state): void {
                     $set('slug', Str::slug(is_string($state) ? $state : ''));

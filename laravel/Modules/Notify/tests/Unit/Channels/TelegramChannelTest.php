@@ -8,6 +8,10 @@ use Modules\Notify\Channels\TelegramChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('TelegramChannel', function () {
     it('can be instantiated', function () {
         // TelegramChannel requires TelegramActionFactory in constructor

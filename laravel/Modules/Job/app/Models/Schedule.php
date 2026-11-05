@@ -16,10 +16,6 @@ use Modules\Job\Enums\Status;
 use Modules\Job\Models\Traits\ScheduleRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Override;
-<<<<<<< HEAD
-use Modules\Job\Models\Traits\ScheduleRelations;
-=======
->>>>>>> laraxot/dev
 
 /**
  * Modules\Job\Models\Schedule.
@@ -99,11 +95,6 @@ use Modules\Job\Models\Traits\ScheduleRelations;
  */
 class Schedule extends BaseModel
 {
-<<<<<<< HEAD
-    use ScheduleRelations;
-
-=======
->>>>>>> laraxot/dev
     use ManagesFrequencies;
     use ScheduleRelations;
 

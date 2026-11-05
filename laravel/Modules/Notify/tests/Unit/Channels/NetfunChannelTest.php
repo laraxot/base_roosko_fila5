@@ -8,6 +8,10 @@ use Modules\Notify\Channels\NetfunChannel;
 use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('NetfunChannel', function () {
     it('can be instantiated', function () {
         $reflection = new \ReflectionClass(NetfunChannel::class);

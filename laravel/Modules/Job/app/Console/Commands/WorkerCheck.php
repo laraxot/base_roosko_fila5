@@ -52,7 +52,11 @@ class WorkerCheck extends Command
     private function isQueueListenerRunning(): bool
     {
         $pid = $this->getLastQueueListenerPID();
+<<<<<<< HEAD
+        if (! is_string($pid) || ! ctype_digit($pid) || in_array($pid, ['0'], true)) {
+=======
         if (in_array($pid, ['', '0', false, null], true)) {
+>>>>>>> laraxot/dev
             return false;
         }
 

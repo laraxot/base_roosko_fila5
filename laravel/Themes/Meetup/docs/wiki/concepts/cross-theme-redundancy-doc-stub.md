@@ -1,9 +1,15 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 qmd: "cross theme redundancy doc stub"
 issues: []
 discussions: []
 =======
+>>>>>>> laraxot/dev
+=======
+qmd: "cross theme redundancy doc stub"
+issues: []
+discussions: []
 >>>>>>> laraxot/dev
 title: "stub redondancy analysis cross-theme"
 type: concept
@@ -15,14 +21,20 @@ related:
   - ../../../../../../docs/wiki/concepts/code-redundancy-audit.md
 sources: []
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 status: stale
 ---
 
 > Nota 2026-10-08 (docs-audit): cita laravel/Modules/Sixteen/docs/REDUNDANCY_ANALYSIS.md (Sixteen e' un tema, non un modulo) e docs/analysis/redundancies/summary.md, che non esiste. Contenuto non riscritto, verificare prima di usarlo.
 
+<<<<<<< HEAD
 =======
 ---
 
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 # Stub `REDUNDANCY_ANALYSIS.md` (Meetup e altri temi)
 
@@ -42,8 +54,13 @@ File osservati (stesso testo sostanzialmente):
 ## Direzione tecnica canonica
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Inventario tecnico **cross-modulo** (codice PHP + Filament): [`Modules/docs/redundancy-report`](../../../../../Modules/docs/redundancy-report.md) _(target mancante, verificato 2026-10-08)_ (cwd `laravel/`).
 =======
+- Inventario tecnico **cross-modulo** (codice PHP + Filament): [`Modules/docs/redundancy-report`](../../../../../Modules/docs/redundancy-report.md) (cwd `laravel/`).
+>>>>>>> laraxot/dev
+=======
+- Inventario tecnico **cross-modulo** (codice PHP + Filament): [`Modules/docs/redundancy-report`](../../../../../Modules/docs/redundancy-report.md) _(target mancante, verificato 2026-10-08)_ (cwd `laravel/`).
 - Inventario tecnico **cross-modulo** (codice PHP + Filament): [`Modules/docs/redundancy-report`](../../../../../Modules/docs/redundancy-report.md) (cwd `laravel/`).
 >>>>>>> laraxot/dev
 - Indice navigazione **Xot** + overlap doc wizard: [`redundancy-catalog`](../../../../../Modules/Xot/docs/wiki/concepts/redundancy-catalog.md).

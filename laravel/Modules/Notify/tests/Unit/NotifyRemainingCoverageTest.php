@@ -41,6 +41,10 @@ use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use Safe\DateTime;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 afterEach(function (): void {
     Mockery::close();
 });

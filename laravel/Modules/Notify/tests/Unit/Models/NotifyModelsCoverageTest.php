@@ -13,6 +13,10 @@ use Modules\Notify\Tests\Fixtures\NotifyBasePivotProxy;
 use Modules\Notify\Tests\Fixtures\NotifyNotificationTemplateProxy;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 function makeNotifyBaseMorphPivotProxy(): NotifyBaseMorphPivotProxy
 {
     return new NotifyBaseMorphPivotProxy;

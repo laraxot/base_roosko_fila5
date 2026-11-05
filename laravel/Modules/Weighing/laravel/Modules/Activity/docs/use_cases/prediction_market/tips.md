@@ -1,0 +1,30 @@
+---
+title: "Consigli e Best Practice - <nome progetto>ion Market"
+type: note
+status: draft
+updated: 2026-10-07
+tags: [docs, activity, use_cases]
+qmd: "consigli e best practice - <nome progetto>ion market activity"
+---
+# Consigli e Best Practice - <nome progetto>ion Market
+
+## Refactoring e Miglioramenti
+- Separare sempre comandi (write) e query (read) secondo CQRS
+- Usare aggregate per incapsulare la logica di dominio
+- Gestire la validazione lato comando e lato evento
+- Implementare proiezioni per query performanti
+- Usare snapshot periodici per mercati molto attivi
+- Integrare fallback su activitylog per audit trail
+
+## Checklist di Implementazione
+- [ ] Definire eventi e comandi principali
+- [ ] Implementare aggregate Market, Bet, Outcome
+- [ ] Gestire proiezioni e query
+- [ ] Scrivere test per ogni evento/aggregate
+- [ ] Documentare i flussi principali
+- [ ] Prevedere rollback e replay
+
+## Errori Comuni
+- Non validare input lato comando
+- Non gestire la concorrenza sugli aggregate
+- Dimenticare il rollback in caso di errore

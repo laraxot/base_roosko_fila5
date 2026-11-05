@@ -67,12 +67,53 @@ class TenantServiceProvider extends XotBaseServiceProvider
 
         /** @var array<string, mixed> $data */
         $data = $this->loadTenantDatabaseConfig($preMergeDefaultConn);
+<<<<<<< HEAD
         $data = Arr::set($data, 'connections', $this->mergeModuleConnections($data, $preMergeDefaultConn));
 
         Config::set('database', $data);
         $this->reconnectDatabaseUnlessTesting();
     }
 
+=======
+        /** @var array<string, mixed> $explicitConnections */
+        $explicitConnections = Arr::get($data, 'connections', []);
+        $data = Arr::set($data, 'connections', $this->mergeModuleConnections($data, $preMergeDefaultConn));
+
+        Config::set('database', $data);
+        $this->aliasModuleConnectionsToDefault(array_keys(\is_array($explicitConnections) ? $explicitConnections : []), $preMergeDefaultConn);
+        $this->reconnectDatabaseUnlessTesting();
+    }
+
+    /**
+     * Le connessioni di modulo create copiando la default puntano allo stesso database:
+     * le risolve sulla stessa istanza `Connection` della default.
+     *
+     * Senza alias ogni modulo apre una propria sessione sul database, e una transazione
+     * che scrive su piu' moduli (es. registro rifiuti + magazzino) non e' atomica: il
+     * commit avviene connessione per connessione. Con l'alias c'e' una sola sessione e
+     * una sola transazione, come gia' avviene nei test. Le connessioni dichiarate
+     * esplicitamente nella config del tenant (database diverso) restano separate.
+     *
+     * @param  list<int|string>  $explicitNames
+     */
+    private function aliasModuleConnectionsToDefault(array $explicitNames, string $defaultConnection): void
+    {
+        foreach (Module::getOrdered() as $module) {
+            if (! $module instanceof LaravelModule) {
+                continue;
+            }
+
+            $name = $module->getSnakeName();
+            if ($name === $defaultConnection || \in_array($name, $explicitNames, true)) {
+                continue;
+            }
+
+            DB::purge($name);
+            DB::extend($name, static fn (): \Illuminate\Database\ConnectionInterface => DB::connection($defaultConnection));
+        }
+    }
+
+>>>>>>> laraxot/dev
     #[Override]
     public function register(): void
     {

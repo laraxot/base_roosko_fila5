@@ -3820,7 +3820,11 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Media/docs/risoluzione-conflitti-ffmpeg.md`: Risoluzione Conflitti per l'Integrazione FFmpeg nel Modulo Media
 - `laravel/Modules/Media/docs/risoluzione-conflitti-subtitleservice.md`: Risoluzione Conflitti Git - SubtitleService.php
 - `laravel/Modules/Media/docs/risoluzione-conflitti-video-entry.md`: Risoluzione Conflitto in VideoEntry
+<<<<<<< HEAD
 - `laravel/Modules/Media/docs/roadmap-root-symlink-1.md`: roadmap-root-symlink-1
+=======
+- `laravel/Modules/Media/docs/roadmap-root-symlink-collegamenti-versioni.md`: roadmap-root-symlink-1
+>>>>>>> laraxot/dev
 - `laravel/Modules/Media/docs/roadmap-root-symlink.md`: roadmap-root-symlink
 - `laravel/Modules/Media/docs/roadmap.md`: Media Module - Complete Roadmap
 - `laravel/Modules/Media/docs/rules-index.md`: Rules Index

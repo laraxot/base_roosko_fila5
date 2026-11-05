@@ -334,32 +334,11 @@ class UserMassSeeder extends Seeder
 
     private function info(string $message): void
     {
-<<<<<<< HEAD
-<<<<<<< .merge_file_ykv8Ez
-        $this->getConsoleCommand()?->info($message);
-=======
         $this->command?->info($message);
->>>>>>> .merge_file_Qxk7i3
-=======
-        $this->command?->info($message);
->>>>>>> laraxot/dev
     }
 
     private function error(string $message): void
     {
-<<<<<<< HEAD
-<<<<<<< .merge_file_ykv8Ez
-        $this->getConsoleCommand()?->error($message);
-    }
-
-    private function getConsoleCommand(): ?Command
-    {
-        return $this->command;
-=======
         $this->command?->error($message);
->>>>>>> .merge_file_Qxk7i3
-=======
-        $this->command?->error($message);
->>>>>>> laraxot/dev
     }
 }

@@ -10,6 +10,10 @@ use PHPUnit\Framework\Assert;
 use ReflectionClass;
 use ReflectionNamedType;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 it('SendAgiletelecomSMSAction can be instantiated', function () {
     Assert::assertTrue(class_exists(SendAgiletelecomSMSAction::class));
 });

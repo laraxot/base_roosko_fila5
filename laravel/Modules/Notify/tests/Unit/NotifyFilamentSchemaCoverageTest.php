@@ -9,6 +9,10 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\glob;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /**
  * @return array{string, string} radice `app/` del modulo e namespace corrispondente
  */

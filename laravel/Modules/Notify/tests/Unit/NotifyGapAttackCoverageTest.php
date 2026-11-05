@@ -34,6 +34,10 @@ use Modules\Notify\Notifications\RecordNotification;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 afterEach(function (): void {
     Mockery::close();
 });

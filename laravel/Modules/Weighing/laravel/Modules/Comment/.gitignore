@@ -1,0 +1,39 @@
+
+.env
+.env.*
+!.env.example
+
+*~BASE
+*~head
+*~HEAD
+*~LOCAL
+*~REMOTE
+agentdb.rvf
+*.backup
+*.backup.*
+# Backup files
+cache/
+.claude-audit/
+# Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
+.cursor/
+.devcontainer/
+_docs/
+docs/archive/
+docs/cache/
+docs/phpstan/
+# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out/
+lang/lang/
+*.lock
+*.old
+*.old1
+*.orig
+# PHPStan documentation
+*.rej
+# Second brain: no-docs-archive (wiki) — non tracciare albero legacy docs/archive/
+tests/AuditCoverage/
+vendor/
+.vscode/
+.windsurf/
+test-results/
+comment.code-workspace

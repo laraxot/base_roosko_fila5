@@ -9,6 +9,10 @@ use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\PersonColumn;
 use PHPUnit\Framework\Assert;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\UI\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('PersonColumn — controparte di PersonSection', function (): void {
     it('can be instantiated with make() using the default name', function (): void {
         $column = PersonColumn::make();

@@ -12,6 +12,10 @@ use ReflectionClass;
 use ReflectionNamedType;
 use Spatie\QueueableAction\QueueableAction;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 test('gammu sms action has the expected public contract', function (): void {
     $reflection = new ReflectionClass(SendGammuSMSAction::class);
     $method = $reflection->getMethod('execute');

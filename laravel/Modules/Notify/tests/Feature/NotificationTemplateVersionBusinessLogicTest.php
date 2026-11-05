@@ -11,6 +11,10 @@ use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use RuntimeException;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 describe('Notification Template Version Business Logic', function (): void {
     test('_can_create_template_version_with_basic_information', function (): void {
         $template = NotificationTemplateFactory::new()->createOne();

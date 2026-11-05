@@ -29,6 +29,10 @@ use PHPUnit\Framework\Assert;
 
 use function Pest\Laravel\withoutExceptionHandling;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 beforeEach(function (): void {
     withoutExceptionHandling();
 });

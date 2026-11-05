@@ -21,6 +21,10 @@ use Modules\Xot\Tests\ModuleRemainingCoverage;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 afterEach(function (): void {
     Mockery::close();
     try {

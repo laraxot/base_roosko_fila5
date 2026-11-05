@@ -14,6 +14,10 @@ use Spatie\QueueableAction\QueueableAction;
 
 use function Safe\json_encode;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 test('netfun sms action has the expected public contract', function (): void {
     $reflection = new ReflectionClass(SendNetfunSMSAction::class);
     $method = $reflection->getMethod('execute');

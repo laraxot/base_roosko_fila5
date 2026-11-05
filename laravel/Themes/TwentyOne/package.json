@@ -2,6 +2,10 @@
     "name": "laraxot/theme-twentyone-fila3",
     "private": true,
     "version": "1.1.0",
+<<<<<<< HEAD
+=======
+    "version": "1.0.0",
+>>>>>>> laraxot/dev
     "description": "Tema TwentyOne per il progetto",
     "type": "module",
     "scripts": {

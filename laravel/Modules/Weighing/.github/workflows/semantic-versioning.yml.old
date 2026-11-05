@@ -1,0 +1,84 @@
+name: 🏷️ Semantic Versioning
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  semantic-versioning:
+    name: Semantic Versioning
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+      
+      - name: Install semantic-release
+        run: |
+          npm install -g semantic-release @semantic-release/git @semantic-release/changelog @semantic-release/exec
+      
+      - name: Run semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: GitHub Action
+          GIT_AUTHOR_EMAIL: action@github.com
+          GIT_COMMITTER_NAME: GitHub Action
+          GIT_COMMITTER_EMAIL: action@github.com
+        run: |
+          echo "🏷️ Running semantic versioning..."
+          
+          # Create .releaserc.json if not exists
+          if [ ! -f .releaserc.json ]; then
+            cat > .releaserc.json << 'EOF'
+          {
+            "branches": ["main", "dev"],
+            "plugins": [
+              "@semantic-release/commit-analyzer",
+              "@semantic-release/release-notes-generator",
+              "@semantic-release/changelog",
+              [
+                "@semantic-release/git",
+                {
+                  "assets": ["CHANGELOG.md", "package.json"],
+                  "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+                }
+              ],
+              "@semantic-release/github"
+            ]
+          }
+          EOF
+          fi
+          
+          # Run semantic-release
+          npx semantic-release --dry-run || npx semantic-release || echo "No release needed"
+      
+      - name: Commit version changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          
+          if [ -f CHANGELOG.md ]; then
+            git add CHANGELOG.md
+            git commit -m "chore: update CHANGELOG.md [skip ci]" || true
+            git push origin HEAD:${{ github.ref_name }} || true
+          fi
+      
+      - name: Output version info
+        run: |
+          echo "✅ Semantic versioning complete!"
+          echo "📊 Check releases at: https://github.com/${{ github.repository }}/releases"

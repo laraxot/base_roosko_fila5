@@ -1,0 +1,19 @@
+---
+title: "strategy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "strategy"
+issues: []
+discussions: []
+status: draft
+---
+
+# Product Strategy: Gdpr Module
+
+## 🌍 Market Context
+Specialized requirement for Gdpr within the Public Administration sector.
+
+## 💎 Unique Value Proposition
+Agnostic, modular, and type-safe implementation of Gdpr logic.

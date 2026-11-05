@@ -1,9 +1,15 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 qmd: "INDEX"
 issues: []
 discussions: []
 =======
+>>>>>>> laraxot/dev
+=======
+qmd: "INDEX"
+issues: []
+discussions: []
 >>>>>>> laraxot/dev
 title: "concepts index — Meetup"
 type: index
@@ -11,8 +17,12 @@ tags: [concepts, Meetup]
 created: 2026-05-11
 updated: 2026-05-23
 <<<<<<< HEAD
+<<<<<<< HEAD
 status: active
 =======
+>>>>>>> laraxot/dev
+=======
+status: active
 >>>>>>> laraxot/dev
 ---
 

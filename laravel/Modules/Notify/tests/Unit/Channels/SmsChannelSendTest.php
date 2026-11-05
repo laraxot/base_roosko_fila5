@@ -10,6 +10,10 @@ use Modules\Notify\Channels\SmsChannel;
 use PHPUnit\Framework\Assert;
 use stdClass;
 
+<<<<<<< HEAD
+=======
+uses(\Modules\Notify\Tests\TestCase::class);
+>>>>>>> laraxot/dev
 /**
  * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 17
  * (2026-09-15): `toSms()` e' tipizzato `?SmsData` proprio per poter dire

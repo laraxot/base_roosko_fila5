@@ -28,8 +28,11 @@ class MailTemplateFactory extends Factory
             'subject' => $this->faker->sentence(),
             'html_template' => $this->faker->randomHtml(),
             'text_template' => $this->faker->text(),
+<<<<<<< HEAD
             'type' => $this->faker->randomElement(['email', 'notification', 'sms']),
             'is_active' => $this->faker->boolean(80),
+=======
+>>>>>>> laraxot/dev
             'created_at' => $this->faker->dateTimeBetween('-1 year'),
             'updated_at' => $this->faker->dateTimeBetween('-1 year')];
     }

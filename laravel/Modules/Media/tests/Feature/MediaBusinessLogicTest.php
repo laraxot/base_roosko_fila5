@@ -99,7 +99,11 @@ describe('Media Business Logic', function () {
             ->and($media->mime_type)
             ->toBe($mediaPayload['mime_type']);
 
+<<<<<<< HEAD
         assertMediaTableHas('media', [
+=======
+        $this->assertMediaTableHas('media', [
+>>>>>>> laraxot/dev
             'id' => $media->id,
             'file_name' => $mediaPayload['file_name'],
             'mime_type' => $mediaPayload['mime_type'],
@@ -142,7 +146,11 @@ describe('Media Business Logic', function () {
             ->and($mediaConvert->getAttribute('target_format'))
             ->toBe('png');
 
+<<<<<<< HEAD
         assertMediaTableHas('media_converts', [
+=======
+        $this->assertMediaTableHas('media_converts', [
+>>>>>>> laraxot/dev
             'id' => $mediaConvert->id,
             'media_id' => $media->id,
             'original_format' => 'jpeg',
@@ -200,7 +208,11 @@ describe('Media Business Logic', function () {
             $expected['user_id'] = $user->id;
         }
 
+<<<<<<< HEAD
         assertMediaTableHas('temporary_uploads', $expected);
+=======
+        $this->assertMediaTableHas('temporary_uploads', $expected);
+>>>>>>> laraxot/dev
     });
 
     it('can manage media collections', function (): void {
@@ -236,7 +248,11 @@ describe('Media Business Logic', function () {
         $profileMediaId = $profileMedia->getKey();
         Assert::assertIsInt($profileMediaId);
 
+<<<<<<< HEAD
         assertMediaTableHas('media', [
+=======
+        $this->assertMediaTableHas('media', [
+>>>>>>> laraxot/dev
             'id' => $profileMediaId,
             'collection_name' => 'profile',
         ]);
@@ -244,7 +260,11 @@ describe('Media Business Logic', function () {
         $documentMediaId = $documentMedia->getKey();
         Assert::assertIsInt($documentMediaId);
 
+<<<<<<< HEAD
         assertMediaTableHas('media', [
+=======
+        $this->assertMediaTableHas('media', [
+>>>>>>> laraxot/dev
             'id' => $documentMediaId,
             'collection_name' => 'documents',
         ]);
@@ -317,7 +337,11 @@ describe('Media Business Logic', function () {
 
         expect($mediaConvert->fresh()?->getAttribute('status'))->toBe('completed');
 
+<<<<<<< HEAD
         assertMediaTableHas('media_converts', [
+=======
+        $this->assertMediaTableHas('media_converts', [
+>>>>>>> laraxot/dev
             'id' => $mediaConvert->id,
             'status' => 'completed',
         ]);
@@ -357,7 +381,11 @@ describe('Media Business Logic', function () {
 
         $media->delete();
 
+<<<<<<< HEAD
         assertMediaTableMissing('media', [
+=======
+        $this->assertMediaTableMissing('media', [
+>>>>>>> laraxot/dev
             'id' => $mediaId,
         ]);
     });
@@ -376,6 +404,7 @@ describe('Media Business Logic', function () {
     it('can validate file size limits', function (): void {
         $user = UserFactory::new()->createOne();
 
+<<<<<<< HEAD
         $columns = mediaTableColumns();
 
         $makePayload = function (int $size) use ($user, $columns): array {
@@ -388,6 +417,27 @@ describe('Media Business Logic', function () {
             $payload = mediaPayloadSet($payload, $columns, 'mime_type', 'application/pdf');
             $payload = mediaPayloadSet($payload, $columns, 'created_at', now());
             $payload = mediaPayloadSet($payload, $columns, 'updated_at', now());
+=======
+        $columns = TestCase::mediaTableColumns();
+
+        $makePayload = function (int $size) use ($user, $columns): array {
+            $payload = TestCase::mediaPayloadSet([], $columns, 'user_id', $user->id);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'model_type', $user->getMorphClass());
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'model_id', $user->id);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'file_size', $size);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'size', $size);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'file_name', 'test-file.pdf');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'name', 'test-file');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'disk', 'public');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'collection_name', 'default');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'mime_type', 'application/pdf');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'manipulations', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'custom_properties', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'generated_conversions', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'responsive_images', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'created_at', now());
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'updated_at', now());
+>>>>>>> laraxot/dev
 
             return $payload;
         };
@@ -409,6 +459,7 @@ describe('Media Business Logic', function () {
     it('can track media usage statistics', function (): void {
         $user = UserFactory::new()->createOne();
 
+<<<<<<< HEAD
         $columns = mediaTableColumns();
 
         $makePayload = function (string $mime, string $fileName) use ($user, $columns): array {
@@ -421,6 +472,27 @@ describe('Media Business Logic', function () {
             $payload = mediaPayloadSet($payload, $columns, 'size', 123);
             $payload = mediaPayloadSet($payload, $columns, 'created_at', now());
             $payload = mediaPayloadSet($payload, $columns, 'updated_at', now());
+=======
+        $columns = TestCase::mediaTableColumns();
+
+        $makePayload = function (string $mime, string $fileName) use ($user, $columns): array {
+            $payload = TestCase::mediaPayloadSet([], $columns, 'user_id', $user->id);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'model_type', $user->getMorphClass());
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'model_id', $user->id);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'mime_type', $mime);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'file_name', $fileName);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'name', pathinfo($fileName, PATHINFO_FILENAME));
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'disk', 'public');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'collection_name', 'default');
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'file_size', 123);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'size', 123);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'manipulations', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'custom_properties', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'generated_conversions', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'responsive_images', []);
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'created_at', now());
+            $payload = TestCase::mediaPayloadSet($payload, $columns, 'updated_at', now());
+>>>>>>> laraxot/dev
 
             return $payload;
         };
