@@ -18,6 +18,7 @@ use Modules\Notify\Models\NotificationTemplate;
 trait NotificationLogRelations
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     function notifiable(): MorphTo
         {
             return $this->morphTo();
@@ -28,6 +29,8 @@ trait NotificationLogRelations
             return $this->belongsTo(NotificationTemplate::class, 'template_id');
         }
 =======
+=======
+>>>>>>> laraxot/dev
     /**
      * @phpstan-return MorphTo<\Illuminate\Database\Eloquent\Model, $this>
      */
@@ -43,6 +46,9 @@ trait NotificationLogRelations
     {
         return $this->belongsTo(NotificationTemplate::class, 'template_id');
     }
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 }

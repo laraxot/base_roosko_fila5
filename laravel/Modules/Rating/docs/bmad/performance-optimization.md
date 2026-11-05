@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 <<<<<<< .merge_file_SrH00v
 <<<<<<< .merge_file_4HFx7y
 title: "Performance Optimization — Module Rating"
@@ -8,12 +9,16 @@ title: "Performance Optimization: Module Rating"
 =======
 title: "Performance Optimization: Module Rating"
 >>>>>>> .merge_file_rCgul1
+=======
+title: "Performance Optimization: Module Rating"
+>>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "bmad/PERFORMANCE-OPTIMIZATION.md"
 qmd: "performance-optimization alias superseded"
 ---
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_SrH00v
 <<<<<<< .merge_file_4HFx7y
 # Performance Optimization — Module Rating
@@ -23,6 +28,9 @@ qmd: "performance-optimization alias superseded"
 =======
 # Performance Optimization: Module Rating
 >>>>>>> .merge_file_rCgul1
+=======
+# Performance Optimization: Module Rating
+>>>>>>> laraxot/dev
 
 Documento identico al canonico: [PERFORMANCE-OPTIMIZATION.md](PERFORMANCE-OPTIMIZATION.md).
 

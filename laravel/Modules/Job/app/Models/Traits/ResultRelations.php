@@ -15,12 +15,18 @@ use Modules\Job\Models\Task;
 
 trait ResultRelations
 {
+<<<<<<< HEAD
 <<<<<<< .merge_file_dNWMCf
 =======
     /**
      * @phpstan-return BelongsTo<Task, $this>
      */
 >>>>>>> .merge_file_zBTNSh
+=======
+    /**
+     * @phpstan-return BelongsTo<Task, $this>
+     */
+>>>>>>> laraxot/dev
     function task(): BelongsTo
         {
             return $this->belongsTo(Task::class);

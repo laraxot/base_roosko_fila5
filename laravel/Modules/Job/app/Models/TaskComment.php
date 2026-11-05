@@ -10,7 +10,10 @@ use Modules\Job\Database\Factories\TaskCommentFactory;
 use Modules\Job\Models\Traits\TaskCommentRelations;
 use Modules\User\Models\User;
 use Modules\Xot\Contracts\ProfileContract;
+<<<<<<< HEAD
 use Modules\Job\Models\Traits\TaskCommentRelations;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Class TaskComment.

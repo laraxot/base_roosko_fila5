@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 <<<<<<< .merge_file_VRbXUw
 <<<<<<< .merge_file_rZW3T9
 title: "Best practices — Rating"
@@ -8,6 +9,9 @@ title: "Best practices: Rating"
 =======
 title: "Best practices: Rating"
 >>>>>>> .merge_file_kUpVZO
+=======
+title: "Best practices: Rating"
+>>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "bmad/best-practices.md"

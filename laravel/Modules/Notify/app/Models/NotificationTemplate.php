@@ -13,7 +13,10 @@ use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 use Spatie\Translatable\HasTranslations;
+<<<<<<< HEAD
 use Modules\Notify\Models\Traits\NotificationTemplateMutators;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Class NotificationTemplate.
@@ -56,17 +59,23 @@ use Modules\Notify\Models\Traits\NotificationTemplateMutators;
  */
 class NotificationTemplate extends BaseModel implements HasMedia
 {
+<<<<<<< HEAD
     use NotificationTemplateMutators;
 
+=======
+>>>>>>> laraxot/dev
     use HasTranslations;
     use NotificationTemplateMutators;
 
     /** La chiave e' un UUID char(36): niente auto-increment, altrimenti dopo l'insert l'id diventa '0'. */
     public $incrementing = false;
 
+<<<<<<< HEAD
     /** La chiave e' un UUID char(36): niente auto-increment, altrimenti dopo l'insert l'id diventa '0'. */
     public $incrementing = false;
 
+=======
+>>>>>>> laraxot/dev
     /** @var list<string> */
     public array $translatable = [
         'subject',
@@ -229,7 +238,10 @@ class NotificationTemplate extends BaseModel implements HasMedia
      * Get the channels label attribute.
      */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
 =======
 >>>>>>> laraxot/dev
 

@@ -3,6 +3,10 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
+=======
+    'navigation_sort' => 5,
+>>>>>>> laraxot/dev
     'name' => 'Labeling',
     'description' => 'Etichette, identificatori e stampanti per i modelli Labelable',
     'icon' => 'heroicon-o-qr-code',

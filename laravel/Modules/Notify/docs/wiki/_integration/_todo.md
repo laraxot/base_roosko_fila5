@@ -1,10 +1,14 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_Ryy4AT
 title: "Notify Module — Document"
 =======
 title: "Notify Module: Document"
 >>>>>>> .merge_file_zLuuT8
+=======
+title: "Notify Module: Document"
+>>>>>>> laraxot/dev
 =======
 title: "Notify Module: Document"
 >>>>>>> laraxot/dev
@@ -15,11 +19,15 @@ qmd: "_todo alias superseded"
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_Ryy4AT
 # Notify Module — Document
 =======
 # Notify Module: Document
 >>>>>>> .merge_file_zLuuT8
+=======
+# Notify Module: Document
+>>>>>>> laraxot/dev
 =======
 # Notify Module: Document
 >>>>>>> laraxot/dev

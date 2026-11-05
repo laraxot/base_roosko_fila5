@@ -16,11 +16,14 @@ use Modules\Notify\Models\NotificationTemplate;
 trait NotificationTemplateVersionRelations
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     function template(): BelongsTo
         {
             return $this->belongsTo(NotificationTemplate::class, 'template_id');
         }
 =======
+=======
+>>>>>>> laraxot/dev
     /**
      * @phpstan-return BelongsTo<NotificationTemplate, $this>
      */
@@ -28,6 +31,9 @@ trait NotificationTemplateVersionRelations
     {
         return $this->belongsTo(NotificationTemplate::class, 'template_id');
     }
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 }

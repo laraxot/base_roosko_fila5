@@ -54,9 +54,15 @@ class NotificationTemplateVersion extends BaseModel
         'change_notes'];
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /** @return BelongsTo<NotificationTemplate, $this> */
 
 
+=======
+    /**
+     * @return NotificationTemplate
+     */
+>>>>>>> laraxot/dev
 =======
     /**
      * @return NotificationTemplate

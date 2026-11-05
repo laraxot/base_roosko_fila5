@@ -6,6 +6,7 @@ namespace Modules\Media\Filament\Pages;
 
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
+<<<<<<< HEAD
 <<<<<<< .merge_file_NcfD3v
 <<<<<<< .merge_file_uQVW2Q
 =======
@@ -14,6 +15,9 @@ use Modules\Media\Actions\Upload\GetEffectiveUploadLimitAction;
 =======
 use Modules\Media\Actions\Upload\GetEffectiveUploadLimitAction;
 >>>>>>> .merge_file_oj5g34
+=======
+use Modules\Media\Actions\Upload\GetEffectiveUploadLimitAction;
+>>>>>>> laraxot/dev
 use Modules\Media\Datas\MediaConfigData;
 use Modules\Xot\Filament\Pages\BaseSettingPage;
 
@@ -34,6 +38,7 @@ class SettingPage extends BaseSettingPage
                 ->numeric()
                 ->integer()
                 ->minValue(1)
+<<<<<<< HEAD
 <<<<<<< .merge_file_NcfD3v
 <<<<<<< .merge_file_uQVW2Q
                 ->required(),
@@ -41,14 +46,19 @@ class SettingPage extends BaseSettingPage
 =======
 =======
 >>>>>>> .merge_file_oj5g34
+=======
+>>>>>>> laraxot/dev
                 ->maxValue(fn (): int => intdiv(app(GetEffectiveUploadLimitAction::class)->execute(), 1024))
                 ->required(),
             'attachment_mime_types' => TagsInput::make('attachment_mime_types')
                 ->nestedRecursiveRules(['regex:#^[a-z0-9.+-]+/([a-z0-9.+-]+|\*)$#i'])
+<<<<<<< HEAD
 <<<<<<< .merge_file_NcfD3v
 >>>>>>> .merge_file_DU5LLJ
 =======
 >>>>>>> .merge_file_oj5g34
+=======
+>>>>>>> laraxot/dev
                 ->required(),
         ];
     }

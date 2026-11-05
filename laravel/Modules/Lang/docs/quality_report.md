@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 <<<<<<< .merge_file_8oRr3c
 <<<<<<< .merge_file_110cjO
 title: "Quality Report — Lang"
@@ -8,6 +9,9 @@ title: "Quality Report: Lang"
 =======
 title: "Quality Report: Lang"
 >>>>>>> .merge_file_XX2rwr
+=======
+title: "Quality Report: Lang"
+>>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "QUALITY_REPORT.md"

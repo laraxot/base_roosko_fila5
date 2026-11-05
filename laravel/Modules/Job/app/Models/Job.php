@@ -16,12 +16,15 @@ use Modules\Xot\Contracts\ProfileContract;
 use Override;
 use Webmozart\Assert\Assert;
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_hgVwzP
 use function Safe\json_decode;
 use Modules\Job\Models\Traits\JobMutators;
 
 =======
 >>>>>>> .merge_file_EjpmOo
+=======
+>>>>>>> laraxot/dev
 /**
  * Modules\Job\Models\Job.
  *

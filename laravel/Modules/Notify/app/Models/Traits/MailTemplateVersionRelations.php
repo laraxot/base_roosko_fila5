@@ -18,11 +18,14 @@ use Modules\Notify\Models\MailTemplate;
 trait MailTemplateVersionRelations
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     function template(): BelongsTo
         {
             return $this->belongsTo(MailTemplate::class, 'template_id');
         }
 =======
+=======
+>>>>>>> laraxot/dev
     /**
      * @phpstan-return BelongsTo<MailTemplate, $this>
      */
@@ -30,6 +33,9 @@ trait MailTemplateVersionRelations
     {
         return $this->belongsTo(MailTemplate::class, 'template_id');
     }
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 }

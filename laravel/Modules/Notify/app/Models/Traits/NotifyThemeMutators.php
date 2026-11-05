@@ -19,7 +19,11 @@ trait NotifyThemeMutators
     /**
      * @param array<string, int> $value
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return array<string, int>
+=======
+     * @return array<string, int|string>
+>>>>>>> laraxot/dev
 =======
      * @return array<string, int|string>
 >>>>>>> laraxot/dev
@@ -30,6 +34,7 @@ trait NotifyThemeMutators
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     function getLogo(): array
         {
             return [
@@ -39,6 +44,8 @@ trait NotifyThemeMutators
                 'height' => $this->logo_height ?? 50];
         }
 =======
+=======
+>>>>>>> laraxot/dev
     /**
      * @return array<string, int|string>
      */
@@ -50,6 +57,9 @@ trait NotifyThemeMutators
             'width' => (int) ($this->logo_width ?? 50),
             'height' => (int) ($this->logo_height ?? 50)];
     }
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 }

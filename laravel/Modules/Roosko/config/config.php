@@ -3,6 +3,10 @@
 declare(strict_types=1);
 
 return [
+<<<<<<< HEAD
+=======
+    'navigation_sort' => 1,
+>>>>>>> laraxot/dev
     'name' => 'Roosko',
     'description' => 'Gestione impianto di trattamento e cernita rifiuti',
     'icon' => 'heroicon-o-truck',

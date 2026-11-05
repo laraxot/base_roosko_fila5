@@ -251,6 +251,7 @@ tests/activity_coverage.xml
 /.github/skills/
 docs/graphify
 resources/lang
+<<<<<<< HEAD
 <<<<<<< .merge_file_7BWPHP
 <<<<<<< .merge_file_m89d36
 =======
@@ -261,3 +262,7 @@ Activity
 Activity
 *.lock
 >>>>>>> .merge_file_HOTHW9
+=======
+Activity
+*.lock
+>>>>>>> laraxot/dev

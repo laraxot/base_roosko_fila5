@@ -19,6 +19,9 @@ trait NotifiesDomainErrors
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
      * `$successTitle` puo' dipendere dal risultato della action (es. il codice dell'unita' creata).
      *
      * @template TResult
@@ -30,6 +33,7 @@ trait NotifiesDomainErrors
     {
         try {
             $result = $callback();
+<<<<<<< HEAD
 =======
      * @param  Closure(): mixed  $callback
      */
@@ -37,6 +41,8 @@ trait NotifiesDomainErrors
     {
         try {
             $callback();
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
         } catch (DomainException|InvalidArgumentException|WeighingException $exception) {
             Notification::make()
@@ -47,6 +53,9 @@ trait NotifiesDomainErrors
 
             $this->halt();
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 
             return;
         }
@@ -55,10 +64,13 @@ trait NotifiesDomainErrors
             ->success()
             ->title($successTitle instanceof Closure ? $successTitle($result) : $successTitle)
             ->send();
+<<<<<<< HEAD
 =======
         }
 
         Notification::make()->success()->title($successTitle)->send();
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
     }
 }

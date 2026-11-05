@@ -9,8 +9,11 @@ use Modules\Labeling\Actions\AssignIdentifierAction;
 use Modules\Labeling\Enums\IdentifierTypeEnum;
 use Modules\Processing\Actions\RegisterProcessingOutputAction;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Modules\Processing\Models\ProcessingInput;
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 use Modules\Processing\Models\ProcessingOrder;
 use Modules\Roosko\Datas\TreatmentOutputData;
@@ -24,8 +27,11 @@ use Modules\Waste\Enums\RegisterEntryTypeEnum;
 use Modules\Warehouse\Datas\StockUnitData;
 use Modules\Warehouse\Models\StockUnit;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use Modules\Warehouse\Models\Warehouse;
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 use Spatie\QueueableAction\QueueableAction;
 
@@ -36,9 +42,13 @@ use Spatie\QueueableAction\QueueableAction;
  * di nuova produzione sul registro; End of Waste e sottoprodotti non vanno sul registro rifiuti.
  *
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Il magazzino e' quello delle unita' in input dell'ordine (ResolveOrderWarehouseAction).
 =======
  * Il magazzino e' quello delle unita' in input dell'ordine.
+>>>>>>> laraxot/dev
+=======
+ * Il magazzino e' quello delle unita' in input dell'ordine (ResolveOrderWarehouseAction).
 >>>>>>> laraxot/dev
  */
 class RegisterTreatmentOutputAction
@@ -52,9 +62,13 @@ class RegisterTreatmentOutputAction
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         $warehouse = app(ResolveOrderWarehouseAction::class)->execute($order);
 =======
         $warehouse = $this->orderWarehouse($order);
+>>>>>>> laraxot/dev
+=======
+        $warehouse = app(ResolveOrderWarehouseAction::class)->execute($order);
 >>>>>>> laraxot/dev
 
         $unit = app(RunInPlantTransactionAction::class)->execute(function () use ($order, $data, $warehouse): StockUnit {
@@ -107,6 +121,7 @@ class RegisterTreatmentOutputAction
         return $unit;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
     private function orderWarehouse(ProcessingOrder $order): Warehouse
@@ -120,5 +135,7 @@ class RegisterTreatmentOutputAction
 
         return Warehouse::query()->findOrFail($unit->warehouse_id);
     }
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 }

@@ -15,8 +15,11 @@ use Modules\Notify\Models\Traits\NotifyThemeMutators;
 use Modules\Notify\Models\Traits\NotifyThemeRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
+<<<<<<< HEAD
 use Modules\Notify\Models\Traits\NotifyThemeMutators;
 use Modules\Notify\Models\Traits\NotifyThemeRelations;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Modules\Notify\Models\NotifyTheme.
@@ -125,7 +128,10 @@ class NotifyTheme extends BaseModel
      */
     /** @return MorphTo<Model, $this> */
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> laraxot/dev
 =======
 >>>>>>> laraxot/dev
 

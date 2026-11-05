@@ -18,7 +18,11 @@ trait NotifyThemeRelations
 {
     /**
 <<<<<<< HEAD
+<<<<<<< HEAD
      * @return MorphTo<Media, static>
+=======
+     * @phpstan-return MorphTo<\Illuminate\Database\Eloquent\Model, $this>
+>>>>>>> laraxot/dev
 =======
      * @phpstan-return MorphTo<\Illuminate\Database\Eloquent\Model, $this>
 >>>>>>> laraxot/dev

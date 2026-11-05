@@ -1,10 +1,14 @@
 ---
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_0TDtz2
 title: "Notify Module — Document"
 =======
 title: "Notify Module: Document"
 >>>>>>> .merge_file_iof29n
+=======
+title: "Notify Module: Document"
+>>>>>>> laraxot/dev
 =======
 title: "Notify Module: Document"
 >>>>>>> laraxot/dev
@@ -15,11 +19,15 @@ qmd: "_repos alias superseded"
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_0TDtz2
 # Notify Module — Document
 =======
 # Notify Module: Document
 >>>>>>> .merge_file_iof29n
+=======
+# Notify Module: Document
+>>>>>>> laraxot/dev
 =======
 # Notify Module: Document
 >>>>>>> laraxot/dev

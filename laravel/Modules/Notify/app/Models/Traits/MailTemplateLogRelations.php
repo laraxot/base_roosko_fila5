@@ -17,6 +17,7 @@ use Modules\Notify\Models\MailTemplate;
 trait MailTemplateLogRelations
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
     function template(): BelongsTo
         {
             return $this->belongsTo(MailTemplate::class, 'template_id');
@@ -27,6 +28,8 @@ trait MailTemplateLogRelations
             return $this->morphTo();
         }
 =======
+=======
+>>>>>>> laraxot/dev
     /**
      * @phpstan-return BelongsTo<MailTemplate, $this>
      */
@@ -42,6 +45,9 @@ trait MailTemplateLogRelations
     {
         return $this->morphTo();
     }
+<<<<<<< HEAD
+>>>>>>> laraxot/dev
+=======
 >>>>>>> laraxot/dev
 
 }

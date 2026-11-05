@@ -13,6 +13,7 @@ qmd: "decision log - modulo media media"
 
 # Decision Log - Modulo Media
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_qRIZ9s
 <<<<<<< .merge_file_7tmu8U
 ## 2026-10-27 — Story Media per Imagick e runtime
@@ -22,11 +23,15 @@ qmd: "decision log - modulo media media"
 =======
 ## 2026-10-27: Story Media per Imagick e runtime
 >>>>>>> .merge_file_cSl97P
+=======
+## 2026-10-27: Story Media per Imagick e runtime
+>>>>>>> laraxot/dev
 
 - **Decisione:** Media possiede due stories separate: fallback HEIC server-side e runtime ImageMagick/libheif/multipart.
 - **Razionale:** Imagick può agire solo dopo il trasporto; capability applicativa e configurazione del server devono avere criteri distinti.
 - **Riferimento:** [1.3](./stories/1.3.imagick-heic-fallback.story.md), [1.4](./stories/1.4.image-processing-runtime.story.md).
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_qRIZ9s
 <<<<<<< .merge_file_7tmu8U
 ## 2026-10-27 — Coordinamento operativo nelle BMAD stories
@@ -36,6 +41,9 @@ qmd: "decision log - modulo media media"
 =======
 ## 2026-10-27: Coordinamento operativo nelle BMAD stories
 >>>>>>> .merge_file_cSl97P
+=======
+## 2026-10-27: Coordinamento operativo nelle BMAD stories
+>>>>>>> laraxot/dev
 
 - **Decisione:** le story BMAD del modulo sono il luogo per ownership, handoff, decisioni e verifiche; `docs/chat/` resta archivio storico.
 - **Impatto:** il fix camera mobile resta coordinato dalla story owner [FIXCITY-MEDIA-001](../../Fixcity/docs/bmad/stories/mobile-camera-upload.story.md), senza nuovo canale documentale.

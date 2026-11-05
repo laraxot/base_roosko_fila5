@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\DB;
 use Modules\Job\Models\Traits\ResultRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Override;
+<<<<<<< HEAD
 use Modules\Job\Models\Traits\ResultRelations;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Modules\Job\Models\Result.
@@ -61,10 +64,13 @@ class Result extends BaseModel
     /**
      * @return \Illuminate\Database\Query\Builder
      */
+<<<<<<< HEAD
 <<<<<<< .merge_file_D6oZ8n
 
 =======
 >>>>>>> .merge_file_sdIjHD
+=======
+>>>>>>> laraxot/dev
     public function getLastRun(): Builder
     {
         return $this->select('ran_at')

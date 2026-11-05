@@ -50,6 +50,10 @@ recupero, smaltimento, bonifica), registro di carico/scarico, invii RENTRI e UI 
 | `Shipment` | `shipments` | uscita `USC-{anno}-{progr}`; documento `ShipmentDocumentEnum`; `operation` R/D a destino |
 | `ShipmentItem` | `shipment_items` | unità caricata, snapshot dei kg |
 | `AreaWasteRule` | `area_waste_rules` | codice autorizzato (AuthorizedWaste) ammesso in un'area (R13/D15), limite d'area |
+<<<<<<< HEAD
+=======
+| `Profile` | `profiles` | profilo utente del progetto: Xot lo usa quando `xra.main_module` è Roosko |
+>>>>>>> laraxot/dev
 
 Enum: `DeliveryStatusEnum`, `ShipmentStatusEnum` (con `canTransitionTo()`), `LotClassificationEnum`,
 `LotDestinationEnum`, `ShipmentDocumentEnum`. Etichette/colori/icone in `lang/{it,en}/*_enum.php`.
@@ -76,9 +80,13 @@ Supporto: `RunInPlantTransactionAction`, `GenerateDocumentCodeAction` (progressi
 d'area), `ResolvePlantRegisterAction`, `FindRentriCredentialAction`, `SubmitDigitalFirAcceptanceAction`,
 `QueueUnitLabelAction`, `GetLotLoadEntryIdsAction`, `GetLotStockKgAction`, `TraceLotOriginAction`,
 <<<<<<< HEAD
+<<<<<<< HEAD
 `ResolveScannedCodeAction`, `ResolveOrderWarehouseAction`, `GetLocationOptionsAction`, `CastHazardPropertiesAction`, `GetQueueNameAction`.
 =======
 `ResolveScannedCodeAction`, `GetLocationOptionsAction`, `CastHazardPropertiesAction`, `GetQueueNameAction`.
+>>>>>>> laraxot/dev
+=======
+`ResolveScannedCodeAction`, `ResolveOrderWarehouseAction`, `GetLocationOptionsAction`, `CastHazardPropertiesAction`, `GetQueueNameAction`.
 >>>>>>> laraxot/dev
 
 ## Flussi
@@ -117,6 +125,9 @@ resource `DeliveryResource` (registra arrivo, pesa tara, accetta con repeater de
 carico da scansione, spedisci), `AreaWasteRuleResource`.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 ### Lavorazioni in corso (`TreatmentPage`, `/roosko/admin/treatments`)
 
 Gruppo «Impianto». Tabella degli ordini di Processing `in_progress` (avviati con «Avvia trattamento»
@@ -137,6 +148,9 @@ Per ogni riga:
 Testi in `lang/{it,en}/treatment.php` (pagina, colonne, bottoni), `register_treatment_product_table.php`
 e `complete_treatment_table.php` (modali e campi).
 
+<<<<<<< HEAD
+=======
+>>>>>>> laraxot/dev
 =======
 >>>>>>> laraxot/dev
 ### UI operatore (`OperatorScanPage`, `/roosko/admin/operator`)

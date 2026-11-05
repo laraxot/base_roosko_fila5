@@ -10,7 +10,10 @@ use Illuminate\Support\Carbon;
 use Modules\Job\Database\Factories\ParameterFactory;
 use Modules\Job\Models\Traits\ParameterRelations;
 use Modules\Xot\Contracts\ProfileContract;
+<<<<<<< HEAD
 use Modules\Job\Models\Traits\ParameterRelations;
+=======
+>>>>>>> laraxot/dev
 
 /**
  * Modules\Job\Models\Parameter.
