@@ -7,11 +7,6 @@ namespace Modules\Notify\Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Modules\Notify\Models\NotificationChannel;
 
-<<<<<<< HEAD
-use function Safe\json_encode;
-
-=======
->>>>>>> laraxot/dev
 /**
  * @extends Factory<NotificationChannel>
  */
@@ -30,11 +25,7 @@ class NotificationChannelFactory extends Factory
         return [
             'name' => $this->faker->word(),
             'driver' => 'email',
-<<<<<<< HEAD
-            'config' => json_encode(['smtp_host' => 'localhost']),
-=======
             'config' => ['smtp_host' => 'localhost'],
->>>>>>> laraxot/dev
             'is_enabled' => true,
             'priority' => 1];
     }

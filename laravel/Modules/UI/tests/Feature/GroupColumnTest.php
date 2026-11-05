@@ -15,14 +15,12 @@ use Mockery\Expectation;
 use Mockery\MockInterface;
 use Modules\UI\Filament\Tables\Columns\GroupColumn;
 use Modules\UI\Tests\Fixtures\UiGroupColumnTypeEnum;
+use Modules\UI\Tests\TestCase;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
+uses(TestCase::class);
 
->>>>>>> laraxot/dev
 /**
  * @return array{getTable: \Closure(): Table}
  */

@@ -8,14 +8,12 @@ use Filament\Support\Contracts\HasColor;
 use Filament\Support\Contracts\HasIcon;
 use Filament\Support\Contracts\HasLabel;
 use Modules\Notify\Enums\SmsDriverEnum;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\class_implements;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 it('has correct cases', function (): void {
     Assert::assertCount(1, SmsDriverEnum::cases());
 

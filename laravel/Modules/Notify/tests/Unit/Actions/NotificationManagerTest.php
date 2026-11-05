@@ -14,10 +14,7 @@ use Modules\Notify\Models\Notification;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Tests\TestCase;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 function actionsNotificationManagerActiveTemplate(string $code): NotificationTemplate
 {
     return NotificationTemplateFactory::new()->createOne([

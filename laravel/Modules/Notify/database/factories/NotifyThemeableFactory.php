@@ -27,40 +27,24 @@ class NotifyThemeableFactory extends Factory
     {
         return [
             'notify_theme_id' => NotifyTheme::factory(),
-<<<<<<< HEAD
-            'themeable_type' => $this->faker->randomElement([
-=======
             'model_type' => $this->faker->randomElement([
->>>>>>> laraxot/dev
                 'Modules\\User\\Models\\User',
                 'Modules\\User\\Models\\User', // Generic fallback instead of project-specific
                 'Modules\\User\\Models\\User', // Generic fallback instead of project-specific
             ]),
-<<<<<<< HEAD
-            'themeable_id' => $this->faker->randomNumber()];
-=======
             'model_id' => $this->faker->randomNumber()];
->>>>>>> laraxot/dev
     }
 
     public function forUser(): static
     {
         return $this->state(fn (array $_attributes): array => [
-<<<<<<< HEAD
-            'themeable_type' => 'Modules\\User\\Models\\User']);
-=======
             'model_type' => 'Modules\\User\\Models\\User']);
->>>>>>> laraxot/dev
     }
 
     public function forPatient(): static
     {
         return $this->state(fn (array $_attributes): array => [
-<<<<<<< HEAD
-            'themeable_type' => 'Modules\\User\\Models\\User', // Generic fallback
-=======
             'model_type' => 'Modules\\User\\Models\\User', // Generic fallback
->>>>>>> laraxot/dev
         ]);
     }
 }

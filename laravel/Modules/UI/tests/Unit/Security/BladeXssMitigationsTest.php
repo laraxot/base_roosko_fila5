@@ -1,14 +1,12 @@
 <?php
 
 declare(strict_types=1);
+use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
 use function Safe\file_get_contents;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 it('button blade renders semantic button or anchor tags', function (): void {
     $path = dirname(__DIR__, 3).'/resources/views/components/ui/button.blade.php';
     $contents = (string) file_get_contents($path);

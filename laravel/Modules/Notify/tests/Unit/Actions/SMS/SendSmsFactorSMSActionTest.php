@@ -13,10 +13,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\class_uses;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 describe('SendSmsFactorSMSAction', function () {
     it('can be referenced via ReflectionClass without instantiation', function () {
         $reflection = new \ReflectionClass(SendSmsFactorSMSAction::class);

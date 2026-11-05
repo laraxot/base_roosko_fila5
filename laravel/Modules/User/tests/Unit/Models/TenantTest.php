@@ -4,16 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\User\Tests\Unit\Models;
 
-<<<<<<< HEAD
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-=======
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Str;
->>>>>>> laraxot/dev
 use Modules\User\Models\Tenant;
 use Tests\TestCase;
 
@@ -260,8 +255,6 @@ class TenantTest extends TestCase
         static::assertCount(1, $darkThemeTenants);
         static::assertSame($darkTenant->id, $darkThemeTenants->firstOrFail()->id);
     }
-<<<<<<< HEAD
-=======
 
     public function test_resolve_route_binding_query_preserve_slug_per_has_slug(): void
     {
@@ -314,5 +307,4 @@ class TenantTest extends TestCase
         static::assertSame($query, $result);
         $this->assertSame(['id', $uuid], $calls);
     }
->>>>>>> laraxot/dev
 }

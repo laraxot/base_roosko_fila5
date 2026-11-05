@@ -5,12 +5,10 @@ declare(strict_types=1);
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 use Modules\Notify\Models\Notification;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 describe('Notification Business Logic', function (): void {
     test('notification extends xot base model', function (): void {
         $notification = new Notification;

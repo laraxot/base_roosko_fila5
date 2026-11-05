@@ -9,13 +9,11 @@ use Modules\Notify\Actions\Telegram\SendOfficialTelegramAction;
 use Modules\Notify\Actions\WhatsApp\SendTwilioWhatsAppAction;
 use Modules\Notify\Factories\TelegramActionFactory;
 use Modules\Notify\Factories\WhatsAppActionFactory;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 test('sms action resolves default smsfactor driver instance', function () {
     config()->set('sms.default', 'smsfactor');
     config()->set('sms.drivers.smsfactor.token', 'token-123');

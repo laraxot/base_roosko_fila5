@@ -6,10 +6,7 @@ use Modules\Notify\Models\MailTemplate;
 use Modules\Notify\Models\MailTemplateLog;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 describe('Mail Template Log Business Logic', function () {
     it('can create mail template log with basic information', function () {
         $template = MailTemplate::factory()->create();

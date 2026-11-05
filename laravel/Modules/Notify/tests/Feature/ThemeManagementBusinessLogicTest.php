@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Tests\Feature;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
 
->>>>>>> laraxot/dev
 /**
  * Theme Management Business Logic: specifica non implementata.
  *

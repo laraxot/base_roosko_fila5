@@ -7,15 +7,13 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Mail\Mailable as LaravelMailable;
 use Modules\Notify\Models\MailTemplate;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 use Spatie\MailTemplates\Models\MailTemplate as SpatieMailTemplate;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Translatable\HasTranslations;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 describe('MailTemplate Business Logic', function (): void {
     test('mail template extends spatie mail template', function (): void {
         Assert::assertSame(SpatieMailTemplate::class, get_parent_class(MailTemplate::class));

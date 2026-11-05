@@ -23,10 +23,7 @@ use PHPUnit\Framework\Assert;
 
 use function Safe\json_encode;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 describe('Notification Management Business Logic', function () {
     it('can create notification with core fields', function () {
         $notification = NotificationFactory::new()->createOne([
@@ -123,11 +120,7 @@ describe('Notification Management Business Logic', function () {
     it('can create mail template version snapshot', function () {
         $template = MailTemplateFactory::new()->createOne();
         $version = MailTemplateVersionFactory::new()->createOne([
-<<<<<<< HEAD
-            'template_id' => $template->id,
-=======
             'mail_template_id' => $template->id,
->>>>>>> laraxot/dev
             'subject' => 'Versione precedente',
             'html_template' => '<p>Snapshot</p>',
             'text_template' => 'Snapshot',

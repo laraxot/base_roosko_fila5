@@ -7,12 +7,10 @@ namespace Modules\Notify\Tests\Unit\Emails;
 use Illuminate\Database\Eloquent\Model;
 use Modules\Notify\Emails\SpatieEmail;
 use Modules\Notify\Models\MailTemplate;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 /**
  * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 16
  * (2026-09-15): `SpatieEmail::__construct()` crea un `MailTemplate` al volo

@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Models;
 
 use Modules\Notify\Models\BaseModel;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Models\XotBaseModel;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 test('base model extends eloquent model', function () {
     $parent = (new \ReflectionClass(BaseModel::class))->getParentClass();
     Assert::assertNotFalse($parent);

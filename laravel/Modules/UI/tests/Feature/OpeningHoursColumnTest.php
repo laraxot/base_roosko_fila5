@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Modules\UI\Tests\Feature;
 
 use Modules\UI\Filament\Tables\Columns\OpeningHoursColumn;
+use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 describe('OpeningHoursColumn — controparte di OpeningHoursField', function (): void {
     it('can be instantiated with make() using the default name', function (): void {
         $column = OpeningHoursColumn::make();

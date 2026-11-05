@@ -13,10 +13,7 @@ use Monolog\Level;
 use Monolog\Logger as Monolog;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 /*
  * DCP-283 (C-08): i template di notifica sono letti dal database. Blade::render eseguiva PHP (`{{ system('id') }}`,
  * `@php`). Il sostituto accetta solo i segnaposto: nome o percorso con punti, con o senza `$`, sempre escapati.

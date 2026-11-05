@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Log;
 use Modules\Notify\Actions\SendAppointmentNotificationAction;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 function sendAppointmentNotificationTestModel(int $patientId = 1): Model
 {
     $appointment = new class extends Model

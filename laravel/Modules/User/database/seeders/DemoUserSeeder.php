@@ -23,8 +23,6 @@ class DemoUserSeeder extends Seeder
 
     public function run(): void
     {
-<<<<<<< HEAD
-=======
         // Utenti demo con password note (tra cui un super-admin): mai fuori da sviluppo e test.
         if (! app()->environment(['local', 'testing'])) {
             $this->command?->warn('DemoUserSeeder: saltato fuori da local/testing.');
@@ -32,7 +30,6 @@ class DemoUserSeeder extends Seeder
             return;
         }
 
->>>>>>> laraxot/dev
         $userClass = XotData::make()->getUserClass();
         \assert(is_subclass_of($userClass, User::class));
 

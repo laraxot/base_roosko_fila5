@@ -11,10 +11,7 @@ use Modules\Notify\Actions\Push\SendPushToTopicAction;
 use Modules\Notify\Datas\PushNotificationData;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 beforeEach(function (): void {
     config(['notify.fcm.server_key' => 'test-key']);
     // Nessuna richiesta reale; ogni test registra il proprio stub FCM (un fake '*' qui vincerebbe su quelli)

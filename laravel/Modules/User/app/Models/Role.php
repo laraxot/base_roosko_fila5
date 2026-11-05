@@ -12,20 +12,10 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Pivot;
-use Illuminate\Support\Carbon;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
-=======
 use Illuminate\Support\Carbon;
 use Modules\User\Models\Traits\RoleRelationsTrait;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
->>>>>>> laraxot/dev
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Models\Traits\RelationX;
 use Modules\Xot\Traits\Updater;
@@ -142,29 +132,6 @@ class Role extends SpatieRole
         return $query->where($query->qualifyColumn('name'), '!=', self::SUPER_ADMIN);
     }
 
-<<<<<<< HEAD
-    /**
-     * @return BelongsTo<Model, $this>
-     */
-    public function team(): BelongsTo
-    {
-        $xotData = XotData::make();
-        /** @var class-string<Model> */
-        $teamClass = $xotData->getTeamClass();
-
-        return $this->belongsTo($teamClass);
-    }
-
-    /**
-     * @return BelongsToMany<Permission, $this, Pivot, 'pivot'>
-     */
-    public function permissions(): BelongsToMany
-    {
-        return $this->belongsToManyX(Permission::class);
-    }
-
-=======
->>>>>>> laraxot/dev
     /** @return array<string, string> */
     protected function casts(): array
     {
@@ -176,9 +143,6 @@ class Role extends SpatieRole
             'updated_at' => 'datetime',
         ];
     }
-<<<<<<< HEAD
-=======
 
     use RoleRelationsTrait;
->>>>>>> laraxot/dev
 }

@@ -9,13 +9,9 @@ use Modules\Notify\Tests\TestCase;
 
 use function Safe\json_encode;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 class MailTemplateTest extends TestCase
 {
-
     protected function setUp(): void
     {
         parent::setUp();
@@ -56,7 +52,7 @@ class MailTemplateTest extends TestCase
     /** @test */
     public function it_has_correct_fillable_fields(): void
     {
-        $template = new MailTemplate();
+        $template = new MailTemplate;
 
         $expectedFillable = [
             'mailable',
@@ -76,7 +72,7 @@ class MailTemplateTest extends TestCase
     /** @test */
     public function it_has_correct_casts(): void
     {
-        $template = new MailTemplate();
+        $template = new MailTemplate;
 
         $expectedCasts = [
             'id' => 'int',
@@ -96,7 +92,7 @@ class MailTemplateTest extends TestCase
     /** @test */
     public function it_has_translatable_fields(): void
     {
-        $template = new MailTemplate();
+        $template = new MailTemplate;
 
         $expectedTranslatable = [
             'subject',
@@ -111,7 +107,7 @@ class MailTemplateTest extends TestCase
     /** @test */
     public function it_uses_notify_connection(): void
     {
-        $template = new MailTemplate();
+        $template = new MailTemplate;
 
         $this->assertEquals('notify', $template->getConnectionName());
     }

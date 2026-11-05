@@ -7,24 +7,12 @@ namespace Modules\User\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Collection;
-use Modules\User\Contracts\TeamContract;
-use Modules\Xot\Contracts\ProfileContract;
-use Modules\Xot\Contracts\UserContract;
-use Modules\Xot\Datas\XotData;
-=======
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Modules\User\Contracts\TeamContract;
 use Modules\User\Models\Traits\BaseTeamRelationsTrait;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Contracts\UserContract;
->>>>>>> laraxot/dev
 
 /**
  * Modules\User\Models\Team.
@@ -91,25 +79,6 @@ abstract class BaseTeam extends BaseModel implements TeamContract
     ];
 
     /**
-<<<<<<< HEAD
-     * @return BelongsTo<Model&UserContract, Model>
-     */
-    #[\Override]
-    public function owner(): BelongsTo
-    {
-        $xotData = XotData::make();
-        /** @var class-string<Model> */
-        $user_class = $xotData->getUserClass();
-
-        /** @var BelongsTo<Model&UserContract, Model> $relation */
-        $relation = $this->belongsTo($user_class, 'user_id');
-
-        return $relation;
-    }
-
-    /**
-=======
->>>>>>> laraxot/dev
      * Get all of the team's users including its owner.
      *
      * @return Collection<int, Model&UserContract>
@@ -125,46 +94,6 @@ abstract class BaseTeam extends BaseModel implements TeamContract
     }
 
     /**
-<<<<<<< HEAD
-     * @return BelongsToMany<Model&UserContract, Model, TeamUser, 'pivot'>
-     */
-    #[\Override]
-    public function users(): BelongsToMany
-    {
-        $xotData = XotData::make();
-        /** @var class-string<Model> */
-        $userClass = $xotData->getUserClass();
-
-        /** @var BelongsToMany<Model&UserContract, Model, TeamUser, 'pivot'> $relation */
-        $relation = $this->belongsToManyX($userClass)
-            ->using(TeamUser::class)
-            ->withPivot(['role', 'permissions']);
-
-        return $relation;
-    }
-
-    /**
-     * Get the team users (memberships) relationship.
-     *
-     * @return HasMany<TeamUser, $this>
-     */
-    public function teamUsers(): HasMany
-    {
-        return $this->hasMany(TeamUser::class);
-    }
-
-    /**
-     * @return BelongsToMany<Model&UserContract, Model, TeamUser, 'pivot'>
-     */
-    #[\Override]
-    public function members(): BelongsToMany
-    {
-        return $this->users();
-    }
-
-    /**
-=======
->>>>>>> laraxot/dev
      * Determina se l'utente specificato appartiene al team.
      *
      * @param  UserContract  $user  L'utente da verificare
@@ -210,21 +139,6 @@ abstract class BaseTeam extends BaseModel implements TeamContract
     }
 
     /**
-<<<<<<< HEAD
-     * @return HasMany<TeamInvitation, Model>
-     */
-    #[\Override]
-    public function teamInvitations(): HasMany
-    {
-        /** @var HasMany<TeamInvitation, Model> $relation */
-        $relation = $this->hasMany(TeamInvitation::class);
-
-        return $relation;
-    }
-
-    /**
-=======
->>>>>>> laraxot/dev
      * Rimuove l'utente specificato dal team.
      *
      * @param  UserContract  $userContract  L'utente da rimuovere dal team
@@ -272,9 +186,6 @@ abstract class BaseTeam extends BaseModel implements TeamContract
             'deleted_at' => 'datetime',
         ];
     }
-<<<<<<< HEAD
-=======
 
     use BaseTeamRelationsTrait;
->>>>>>> laraxot/dev
 }

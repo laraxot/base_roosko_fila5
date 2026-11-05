@@ -14,10 +14,7 @@ use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 /**
  * @param  list<string>  $roles
  * @return Mockery\MockInterface&UserContract

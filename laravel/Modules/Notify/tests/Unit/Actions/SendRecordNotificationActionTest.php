@@ -12,10 +12,7 @@ use Modules\Notify\Enums\ChannelEnum;
 use Modules\Notify\Notifications\RecordNotification;
 use Modules\Xot\Actions\Cast\SafeEloquentCastAction;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 /**
  * @param  array<string, mixed>  $attributes
  */

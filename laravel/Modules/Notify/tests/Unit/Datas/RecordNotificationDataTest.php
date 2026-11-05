@@ -6,14 +6,12 @@ namespace Modules\Notify\Tests\Unit\Datas;
 
 use Modules\Notify\Actions\SMS\NormalizePhoneNumberAction;
 use Modules\Notify\Datas\RecordNotificationData;
+use Modules\Notify\Tests\TestCase;
 use Modules\User\Models\User;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 test('record notification data returns mail route', function (): void {
     $user = new User;
     $user->setAttribute('email', 'recipient@example.test');

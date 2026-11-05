@@ -5,11 +5,9 @@ declare(strict_types=1);
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\EventColumn;
+use Modules\UI\Tests\TestCase;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 it('provides the schema.org event field set', function (): void {
     $column = EventColumn::make();
 

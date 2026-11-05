@@ -69,12 +69,7 @@ class MailTemplateVersion extends BaseModel
 
     /** @var list<string> */
     protected $fillable = [
-<<<<<<< HEAD
-        'template_id',
-        'mailable',
-=======
         'mail_template_id',
->>>>>>> laraxot/dev
         'subject',
         'html_template',
         'text_template',

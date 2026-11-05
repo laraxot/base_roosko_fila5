@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Providers;
 
 use Modules\Notify\Providers\EventServiceProvider;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 test('event service provider has empty listen map', function () {
     $provider = new EventServiceProvider(app());
 

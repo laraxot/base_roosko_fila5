@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Modules\UI\Tests\Feature;
 
 use Modules\UI\Filament\Tables\Columns\TimestampColumn;
+use Modules\UI\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 describe('TimestampColumn — colonna data/ora standard del progetto', function (): void {
     it('requires an explicit name (no universal default)', function (): void {
         $column = TimestampColumn::make('created_at');

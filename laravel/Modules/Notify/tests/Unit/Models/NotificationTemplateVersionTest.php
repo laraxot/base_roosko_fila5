@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Modules\Notify\Models\BaseModel;
 use Modules\Notify\Models\NotificationTemplate;
 use Modules\Notify\Models\NotificationTemplateVersion;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Models\Traits\HasXotFactory;
 use Modules\Xot\Tests\XotBasePest;
 use Modules\Xot\Traits\Updater;
@@ -19,10 +20,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 use function Safe\class_implements;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 /*
  * Scopo: ogni versione salvata di un NotificationTemplate e' un modello Notify con tracking
  * creator/updater e media, che sa ripristinare il template d'origine con restoreTemplate().

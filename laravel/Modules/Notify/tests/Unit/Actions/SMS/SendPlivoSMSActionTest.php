@@ -12,10 +12,7 @@ use ReflectionClass;
 use ReflectionNamedType;
 use Spatie\QueueableAction\QueueableAction;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 test('plivo sms action has the expected public contract', function (): void {
     $reflection = new ReflectionClass(SendPlivoSMSAction::class);
     $method = $reflection->getMethod('execute');

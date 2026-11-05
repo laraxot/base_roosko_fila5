@@ -18,12 +18,10 @@ use Modules\Notify\Filament\Resources\NotifyThemeResource\Schemas\NotifyThemeFor
 use Modules\Notify\Filament\Resources\NotifyThemeResource\Tables\NotifyThemesTable;
 use Modules\Notify\Filament\Tables\Columns\ContactColumn;
 use Modules\Notify\Tests\Fixtures\EditNotifyThemeTestProxy;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 function makeEditNotifyThemeTestProxy(): EditNotifyThemeTestProxy
 {
     return new EditNotifyThemeTestProxy;

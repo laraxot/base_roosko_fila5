@@ -5,11 +5,9 @@ declare(strict_types=1);
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
 use Modules\UI\Filament\Tables\Columns\OrganizationColumn;
+use Modules\UI\Tests\TestCase;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\UI\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 it('provides the schema.org organization field set', function (): void {
     $column = OrganizationColumn::make();
 

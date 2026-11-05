@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 use Filament\Facades\Filament;
 use Illuminate\Contracts\Auth\Guard;
+use Mockery\MockInterface;
 use Modules\Notify\Filament\Clusters\Test;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Filament\Traits\SuperAdminOnlyTrait;
 use PHPUnit\Framework\Assert;
@@ -12,10 +14,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 use function Safe\glob;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 /**
  * Il cluster "Test" invia email/SMS/WhatsApp/Telegram/Push con le credenziali aziendali:
  * deve restare riservato al super-admin (NTF-02). Nessuna query: utente e guard sono mock.
@@ -62,7 +61,7 @@ function notifyTestClusterSession(): ArrayObject
 
 function notifyTestClusterUser(bool $isSuperAdmin): UserContract
 {
-    /** @var Mockery\MockInterface&UserContract $user */
+    /** @var MockInterface&UserContract $user */
     $user = Mockery::mock(UserContract::class);
     $user->shouldReceive('hasRole')->with('super-admin')->andReturn($isSuperAdmin);
 

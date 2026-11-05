@@ -15,16 +15,14 @@ use Modules\Notify\Filament\Clusters\Test\Pages\SendPushNotification;
 use Modules\Notify\Filament\Clusters\Test\Pages\SendPushNotificationPage;
 use Modules\Notify\Filament\Clusters\Test\Pages\SendTelegram;
 use Modules\Notify\Filament\Clusters\Test\Pages\TestSmtpPage;
+use Modules\Notify\Tests\TestCase;
 use Modules\Notify\Tests\Unit\Traits\NotifyTenantDummyModel;
 use Modules\Tenant\Models\Tenant;
 use Modules\Xot\Tests\ModuleRemainingCoverage;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 afterEach(function (): void {
     Mockery::close();
     try {

@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Enums;
 
 use Modules\Notify\Enums\NotificationTypeEnum;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 it('has correct cases', function (): void {
     Assert::assertCount(3, NotificationTypeEnum::cases());
 

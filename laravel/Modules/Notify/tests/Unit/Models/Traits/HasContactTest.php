@@ -6,12 +6,10 @@ namespace Modules\Notify\Tests\Unit\Models\Traits;
 
 use Modules\Notify\Enums\ContactTypeEnum;
 use Modules\Notify\Tests\Fixtures\HasContactDummyModel;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 function makeHasContactDummyModel(): HasContactDummyModel
 {
     return new HasContactDummyModel;

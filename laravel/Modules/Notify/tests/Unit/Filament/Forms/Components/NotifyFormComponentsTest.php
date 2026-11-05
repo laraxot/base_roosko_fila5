@@ -9,12 +9,10 @@ use Modules\Notify\Filament\Forms\Components\ChannelCheckboxList;
 use Modules\Notify\Filament\Forms\Components\HtmlLayoutPathSelect;
 use Modules\Notify\Filament\Forms\Components\MailTemplateSelect;
 use Modules\Notify\Tests\Fixtures\ContactSectionTestProxy;
+use Modules\Notify\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 test('channel checkbox list and selects have expected default names', function () {
     $channels = ChannelCheckboxList::make();
     $mailTemplate = MailTemplateSelect::make();

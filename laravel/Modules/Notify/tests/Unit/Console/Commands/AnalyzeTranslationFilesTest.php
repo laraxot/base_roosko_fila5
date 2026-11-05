@@ -5,13 +5,11 @@ declare(strict_types=1);
 namespace Modules\Notify\Tests\Unit\Console\Commands;
 
 use Modules\Notify\Console\Commands\AnalyzeTranslationFiles;
+use Modules\Notify\Tests\TestCase;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
-uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
+uses(TestCase::class);
 describe('AnalyzeTranslationFiles', function () {
     it('has correct signature', function () {
         $command = new AnalyzeTranslationFiles;
