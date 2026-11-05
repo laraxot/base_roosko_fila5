@@ -86,6 +86,6 @@ Le due azioni "Leggi bilancia" prendono i testi dal lang di Weighing (`read_scal
 
 ## Requisiti del progetto
 
-- La connessione database `weighing` deve esistere in `config/database.php`, anche in ambiente di test. Se si usa un solo database, basta un alias della connessione principale.
+- La connessione database `weighing` la crea il modulo Tenant, copiando la connessione predefinita per ogni modulo attivo. Va definita a mano in `config/{tenant}/database.php` solo se il modulo deve usare un database diverso.
 - Test: `tests/TestCase.php` usa lo sqlite condiviso di Xot e crea le tabelle mancanti con `XotModuleSchema::ensure('Weighing')`. Il test di lettura TCP con dati reali richiede `pcntl` e altrimenti viene saltato.
 - Permessi Spatie usati dalle policy: `scale.*`, `weighing.*` (`viewAny`, `view`, `create`, `update`). I ticket non si cancellano.

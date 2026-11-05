@@ -20,8 +20,8 @@ use Nwidart\Modules\LaravelModulesServiceProvider;
  * The theme is a "vestito" (outfit) - configurable and swappable!
  *
  * Configuration example:
- * - config/localhost/fixcity/xra.php: 'pub_theme' => 'Sixteen'
- * - config/localhost/fixcity/xra.php: 'register_pub_theme' => true
+ * - config/local/roosko/xra.php: 'pub_theme' => 'TwentyOne'
+ * - config/local/roosko/xra.php: 'register_pub_theme' => true
  *
  * The Xot module reads this config and automatically registers
  * the appropriate ThemeServiceProvider at runtime.

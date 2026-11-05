@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'default' => config('filesystems.default', 'local'),
+    'default' => env('FILESYSTEM_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------

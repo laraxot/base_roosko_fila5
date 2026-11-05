@@ -29,25 +29,17 @@ use Livewire\LivewireServiceProvider;
 use Livewire\Volt\VoltServiceProvider;
 use Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider;
 use Modules\Activity\Providers\ActivityServiceProvider;
-use Modules\AI\Providers\AIServiceProvider;
-use Modules\Blog\Providers\BlogServiceProvider;
 use Modules\Cms\Providers\CmsServiceProvider;
-use Modules\Comment\Providers\CommentServiceProvider;
-use Modules\Fixcity\Providers\FixcityServiceProvider;
 use Modules\Gdpr\Providers\GdprServiceProvider;
 use Modules\Geo\Providers\GeoServiceProvider;
 use Modules\Job\Providers\JobServiceProvider;
 use Modules\Lang\Providers\LangServiceProvider;
 use Modules\Media\Providers\MediaServiceProvider;
-use Modules\Mobile\Providers\MobileServiceProvider;
 use Modules\Notify\Providers\NotifyServiceProvider;
-use Modules\Rating\Providers\RatingServiceProvider;
-use Modules\Seo\Providers\SeoServiceProvider;
 use Modules\Tenant\Providers\TenantServiceProvider;
 use Modules\UI\Providers\UIServiceProvider;
 use Modules\User\Providers\UserServiceProvider;
 use Modules\Xot\Providers\XotServiceProvider;
-use Native\Mobile\NativeServiceProvider;
 use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 use Spatie\MediaLibrary\MediaLibraryServiceProvider;
@@ -182,11 +174,11 @@ return [
     | Runtime providers
     |--------------------------------------------------------------------------
     |
-    | NativePHP removes bootstrap/cache from the device bundle and then runs
-    | config:cache. Keep the framework/module runtime contract in the cached
-    | configuration so deferred services (cache, database, views, CMS) remain
-    | available after a cold boot. Laravel deduplicates these entries against
-    | the generated web manifest.
+    | Framework and infrastructure module providers, kept explicit so the cached
+    | configuration boots them in this order. Domain modules (Roosko, Warehouse,
+    | Processing, Weighing, Labeling, Waste, Rentri) are registered by
+    | nwidart/laravel-modules from modules_statuses.json of the tenant.
+    | Laravel deduplicates these entries against the generated manifest.
     */
     'providers' => [
         AuthServiceProvider::class,
@@ -216,7 +208,6 @@ return [
         VoltServiceProvider::class,
         FolioServiceProvider::class,
         LaravelLocalizationServiceProvider::class,
-        NativeServiceProvider::class,
         LaravelModulesServiceProvider::class,
         LaravelDataServiceProvider::class,
         MediaLibraryServiceProvider::class,
@@ -225,20 +216,13 @@ return [
         AppServiceProvider::class,
         App\Providers\FolioServiceProvider::class,
         ActivityServiceProvider::class,
-        AIServiceProvider::class,
-        BlogServiceProvider::class,
         CmsServiceProvider::class,
-        CommentServiceProvider::class,
-        FixcityServiceProvider::class,
         GdprServiceProvider::class,
         GeoServiceProvider::class,
         JobServiceProvider::class,
         LangServiceProvider::class,
         MediaServiceProvider::class,
-        MobileServiceProvider::class,
         NotifyServiceProvider::class,
-        RatingServiceProvider::class,
-        SeoServiceProvider::class,
         TenantServiceProvider::class,
         UIServiceProvider::class,
         UserServiceProvider::class,
