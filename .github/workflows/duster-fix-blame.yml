@@ -3,10 +3,9 @@ name: Duster Fix
 # Commits made in here will not trigger any workflows
 # Checkout Duster's documentation for a workaround
 
+# Solo manuale: su push faceva commit automatici sul branch in uso (audit Roosko, devops).
 on:
-    push:
-        branches: [ master ]
-    pull_request:
+  workflow_dispatch:
 
 jobs:
   duster:
