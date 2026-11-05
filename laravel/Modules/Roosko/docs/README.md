@@ -50,6 +50,7 @@ recupero, smaltimento, bonifica), registro di carico/scarico, invii RENTRI e UI 
 | `Shipment` | `shipments` | uscita `USC-{anno}-{progr}`; documento `ShipmentDocumentEnum`; `operation` R/D a destino |
 | `ShipmentItem` | `shipment_items` | unità caricata, snapshot dei kg |
 | `AreaWasteRule` | `area_waste_rules` | codice autorizzato (AuthorizedWaste) ammesso in un'area (R13/D15), limite d'area |
+| `Profile` | `profiles` | profilo utente del progetto: Xot lo usa quando `xra.main_module` è Roosko |
 
 Enum: `DeliveryStatusEnum`, `ShipmentStatusEnum` (con `canTransitionTo()`), `LotClassificationEnum`,
 `LotDestinationEnum`, `ShipmentDocumentEnum`. Etichette/colori/icone in `lang/{it,en}/*_enum.php`.
@@ -75,11 +76,7 @@ Supporto: `RunInPlantTransactionAction`, `GenerateDocumentCodeAction` (progressi
 `lockForUpdate`), `ResolveWasteLotAction`, `ResolvePlantSiteAction` (magazzino → sito tramite le regole
 d'area), `ResolvePlantRegisterAction`, `FindRentriCredentialAction`, `SubmitDigitalFirAcceptanceAction`,
 `QueueUnitLabelAction`, `GetLotLoadEntryIdsAction`, `GetLotStockKgAction`, `TraceLotOriginAction`,
-<<<<<<< HEAD
 `ResolveScannedCodeAction`, `ResolveOrderWarehouseAction`, `GetLocationOptionsAction`, `CastHazardPropertiesAction`, `GetQueueNameAction`.
-=======
-`ResolveScannedCodeAction`, `GetLocationOptionsAction`, `CastHazardPropertiesAction`, `GetQueueNameAction`.
->>>>>>> laraxot/dev
 
 ## Flussi
 
@@ -116,7 +113,6 @@ resource `DeliveryResource` (registra arrivo, pesa tara, accetta con repeater de
 `WasteLotResource` (view con unità, posizione, tracciabilità a monte), `ShipmentResource` (righe con
 carico da scansione, spedisci), `AreaWasteRuleResource`.
 
-<<<<<<< HEAD
 ### Lavorazioni in corso (`TreatmentPage`, `/roosko/admin/treatments`)
 
 Gruppo «Impianto». Tabella degli ordini di Processing `in_progress` (avviati con «Avvia trattamento»
@@ -137,8 +133,6 @@ Per ogni riga:
 Testi in `lang/{it,en}/treatment.php` (pagina, colonne, bottoni), `register_treatment_product_table.php`
 e `complete_treatment_table.php` (modali e campi).
 
-=======
->>>>>>> laraxot/dev
 ### UI operatore (`OperatorScanPage`, `/roosko/admin/operator`)
 
 - Campo di scansione sempre a fuoco: i lettori in **keyboard wedge** digitano il codice e Invio.

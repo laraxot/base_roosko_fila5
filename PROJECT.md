@@ -1,33 +1,32 @@
-# Base Fixcity Fila5 — PROJECT.md
+# Base Roosko Fila5 — PROJECT.md
 
 ## Context
-Laravel + Filament v5 modular monolith (Laraxot architecture).
-Theme: Sixteen (Bootstrap Italia → Tailwind parity).
-Frontend wizard: Ticket creation wizard via `CreateTicketWizardWidget` (Filament v5 Schemas).
+
+Laravel 13 + Filament 5 modular monolith (Laraxot architecture) for waste treatment and sorting plants. Each module is its own repository and has its own admin panel at `/{module}/admin`; the tenant is `config/local/roosko` (main module: Roosko).
+
+Domain modules: Roosko (product), Warehouse, Processing, Weighing, Labeling (generic and reusable), Waste and Rentri (regulatory). See [README.md](README.md).
 
 ## Current Milestone
-**M0: Fixcity Ticket Wizard — Visual & HTML Parity** ✅ DONE
 
-Target: `segnalazione-crea` wizard page → 90%+ parity with Design Comuni `segnalazione-02-dati.html`
+**M1: first runnable installation**
 
-### Phase Results
-- **Phase 1**: Filament Schemas correction ✅
-  - Replaced non-existent `Text::make()` with `Placeholder` (HTML) + `TextEntry` (data)
-  - Verified: `Filament\Schemas\Components\Text` does NOT exist
-- **Phase 2**: Filament CSS Visual Parity ✅
-  - Created `filament-wizard-parity.css` with scoped overrides
-  - Added `app-test.css` as Vite entry point (841KB build)
-  - Added Filament `.fi-*` classes to Tailwind safelist
-  - Updated `test.blade.php` to use `app-test.css`
-- **Phase 3**: Bootstrap Italia section structure ✅
-  - 3 sections: Luogo, Disservizio, Autore
-  - Grid 3-col for author data (name, fiscal code, phone)
-  - TextEntry with icons for read-only author info
-- **Phase 4**: Responsive parity — pending
-- **Phase 5**: Multilingual verification — IT/EN translations verified
+- Tenant `config/local/roosko` and `config/localhost` with the Roosko module set ✅
+- Domain modules synced from their repositories ✅
+- Install vendor and run PHPStan level 10 and Pest on the seven domain modules — pending
+- Verify the RENTRI integration on the demo environment (`https://demoapi.rentri.gov.it`) with a demo credential — pending
+- User manual screenshots from the running application — pending
+
+## Open Items
+
+- Digital FIR signature with PIN has no button in the panels yet.
+- Unit labels do not print the EWC code and hazard classes yet.
+- Outgoing shipments do not orchestrate an outbound weighing yet.
+- Processing's own "Registra output" button bypasses Roosko lots: hide it in the Roosko installation.
 
 ## Rules
-- Filament Schemas = unified system (v5). Forms + Infolists coexist.
-- Widget → NO model binding (`getFormModel() → null`)
-- CSS scoped overrides → never mutate Filament markup
-- Multilingual: all strings via `__('fixcity::ticket.*')`
+
+- Business logic only in Spatie queueable actions; no Services, no Jobs.
+- DTOs with spatie/laravel-data; states as backed enums with `canTransitionTo()`.
+- No `->label()`: every label comes from `lang/{it,en}`.
+- Cross-module foreign keys are indexed columns without constraints; each module has its own connection.
+- PHPStan level 10, Pest, DRY and KISS.

@@ -6,44 +6,51 @@ product
 
 ## Platform
 
-web
+web (admin panels) and mobile web (operator page on handheld scanners and phones)
 
 ## Users
 
-Fixcity serves citizens who need to report, locate, follow and understand issues in their municipality, and public administration staff who manage those reports. Public users may be on mobile, outdoors, under time pressure or unfamiliar with administrative terminology.
+Roosko serves the staff of a waste treatment and sorting plant:
+
+- **Yard operators** work outdoors with gloves, on rugged handhelds (Zebra, Honeywell, Chainway) or phones. They scan QR codes and RFID tags, move containers, start treatments and load shipments. They need large targets, one action per screen and immediate feedback.
+- **Weighbridge and acceptance office** registers incoming loads with their FIR, records gross and tare weights, accepts or rejects them.
+- **Technical manager** owns legal compliance: authorizations, the loading/unloading register, FIR, RENTRI transmissions, mass balances.
+- **Administrator** configures the plant: authorizations, warehouses and areas, scales, label printers, RENTRI credentials.
 
 ## Product Purpose
 
-Fixcity provides an accessible civic reporting workflow: discover existing reports, understand their state, submit a new report and follow its progress. Success means that citizens can complete these tasks without ambiguity and that the interface remains consistent with Italian public administration patterns.
+Roosko tracks every unit of hazardous and non-hazardous waste from arrival to exit: identification by label, QR or RFID; mapped storage with authorization checks; treatment (e.g. shredding) that produces new labelled units linked to their origin; re-storage with weight, provenance and a new status for sale (End of Waste) or remediation; automatic register entries and RENTRI submissions. Success means the plant always knows where each container is, what it contains, where it came from and whether the stock is within the authorized limits.
 
 ## Positioning
 
-Fixcity's distinguishing claim is transparency of status: once a citizen logs in and submits a report, they can always see its real current state, unlike traditional PA channels where a report disappears into a black hole. Submitting a report requires a registered, authenticated account; the transparency promise applies to what happens after that point.
+Roosko's distinguishing claim is that compliance is a by-product of the yard work: scanning and moving containers writes the register, the FIR acceptance and the RENTRI transmissions, instead of being re-typed in the office afterwards.
 
-Two secondary differentiators reinforce this:
-- **Mobile speed and simplicity**: reporting a problem takes a small number of taps from a phone, without a lengthy form or an account flow that discourages use in the field.
-- **Multi-municipality platform**: Fixcity is a shared platform multiple comuni can adopt, rather than an isolated custom solution each PA builds and maintains on its own.
+Secondary differentiators:
+- **Mapped storage with authorization guards**: a container cannot be put where the plant's authorization does not allow that EWC code or quantity.
+- **Lineage across treatments**: every output unit carries the share of each input it came from, through several treatments.
+- **Reusable modules**: labeling, weighing, warehouse and processing know nothing about waste and can serve other industries.
 
 ## Brand Personality
 
-Clear, trustworthy, civic.
+Practical, reliable, field-ready.
 
 ## Anti-references
 
-- Generic SaaS dashboards that look detached from public administration services.
-- Decorative interfaces that reduce readability or hide workflow state.
-- Custom controls that replace familiar browser, Filament or Design Comuni affordances without a functional reason.
-- Gamification of civic reports (points, leaderboards, badges for submitting or resolving issues) — it would trivialize a public service.
-- A conversational/chatbot interface as the primary reporting flow — the structured form and map keep report status legible and auditable; a chat surface would obscure it.
+- Office-only ERP screens that assume a desk, a mouse and a big monitor.
+- Dashboards full of decorative charts that hide which container is where.
+- Free-text fields where a scan or a constrained choice prevents errors.
+- Interfaces that let the user do something the authorization or the law forbids and complain later.
 
 ## Design Principles
 
-1. Follow Design Comuni and Bootstrap Italia interaction patterns where they improve familiarity.
-2. Make status, next actions and system feedback explicit.
-3. Keep public workflows understandable on mobile and with assistive technology.
-4. Prefer existing project components and tokens over new visual vocabularies.
-5. Verify important interactions in the real browser, not only in source code.
+- Scan first: every flow on the yard starts from a scanned code, never from a search form.
+- One clear next action per state; buttons appear only when the state allows them.
+- Errors explain the rule that was violated and what to do (other area, other operation, rectify).
+- Immutable history: register entries, movements and lineage are never edited, only rectified.
+- Labels come from translation files; Italian is the primary language.
 
 ## Accessibility & Inclusion
 
-Target WCAG AA. Do not rely on color alone, preserve keyboard navigation and visible focus, support reduced motion, use readable text contrast and design for citizens with varied digital literacy.
+- Touch targets sized for gloved hands; high contrast for outdoor light.
+- Operator page usable with a hardware scanner alone, without touching the screen.
+- Status always conveyed by text as well as color.

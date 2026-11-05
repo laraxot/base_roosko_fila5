@@ -59,7 +59,7 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
 
 - PHP 8.4
 - Composer 2, Node e npm
-- Un database supportato da Laravel; ogni modulo usa una propria connessione (`labeling`, `weighing`, `warehouse`, `processing`, `waste`, `rentri`, `roosko`), da definire in `laravel/config/database.php`
+- Un database supportato da Laravel. Ogni modulo usa una connessione con il proprio nome (`labeling`, `weighing`, `warehouse`, `processing`, `waste`, `rentri`, `roosko`): il modulo Tenant la crea copiando la connessione predefinita, e in `laravel/config/local/roosko/database.php` si ridefinisce solo quella che deve puntare a un database diverso
 - HTTPS per la fotocamera della pagina operatore
 
 ## Installazione
@@ -72,8 +72,8 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
    cp .env.example .env
    php artisan key:generate
    ```
-3. Configura il database in `.env` e le connessioni dei moduli in `config/database.php`.
-4. Abilita i moduli in `laravel/modules_statuses.json`, poi esegui le migrazioni:
+3. Configura il database in `.env`. L'host `roosko.local` (`APP_URL` di `.env.example`) usa il tenant `config/local/roosko`, che attiva già i moduli necessari; in locale vale lo stesso per `config/localhost`.
+4. Esegui le migrazioni:
    ```bash
    php artisan migrate
    ```

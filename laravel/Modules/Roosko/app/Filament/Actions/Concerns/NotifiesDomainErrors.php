@@ -18,7 +18,6 @@ use Modules\Weighing\Exceptions\WeighingException;
 trait NotifiesDomainErrors
 {
     /**
-<<<<<<< HEAD
      * `$successTitle` puo' dipendere dal risultato della action (es. il codice dell'unita' creata).
      *
      * @template TResult
@@ -30,14 +29,6 @@ trait NotifiesDomainErrors
     {
         try {
             $result = $callback();
-=======
-     * @param  Closure(): mixed  $callback
-     */
-    protected function runDomainAction(Closure $callback, string $successTitle): void
-    {
-        try {
-            $callback();
->>>>>>> laraxot/dev
         } catch (DomainException|InvalidArgumentException|WeighingException $exception) {
             Notification::make()
                 ->danger()
@@ -46,7 +37,6 @@ trait NotifiesDomainErrors
                 ->send();
 
             $this->halt();
-<<<<<<< HEAD
 
             return;
         }
@@ -55,10 +45,5 @@ trait NotifiesDomainErrors
             ->success()
             ->title($successTitle instanceof Closure ? $successTitle($result) : $successTitle)
             ->send();
-=======
-        }
-
-        Notification::make()->success()->title($successTitle)->send();
->>>>>>> laraxot/dev
     }
 }

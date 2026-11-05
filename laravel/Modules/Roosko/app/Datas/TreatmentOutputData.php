@@ -5,20 +5,14 @@ declare(strict_types=1);
 namespace Modules\Roosko\Datas;
 
 use Modules\Processing\Enums\OutputKindEnum;
-<<<<<<< HEAD
 use Modules\Roosko\Actions\CastHazardPropertiesAction;
-=======
->>>>>>> laraxot/dev
 use Modules\Roosko\Enums\LotClassificationEnum;
 use Modules\Roosko\Enums\LotDestinationEnum;
 use Modules\Waste\Enums\HazardPropertyEnum;
 use Modules\Waste\Enums\PhysicalStateEnum;
 use Modules\Warehouse\Enums\ContainerTypeEnum;
-<<<<<<< HEAD
 use Modules\Xot\Actions\Cast\SafeFloatCastAction;
 use Modules\Xot\Actions\Cast\SafeIntCastAction;
-=======
->>>>>>> laraxot/dev
 use Spatie\LaravelData\Data;
 
 /**
@@ -42,7 +36,6 @@ class TreatmentOutputData extends Data
         public readonly ?int $locationId = null,
         public readonly ?string $eowBatchCode = null,
     ) {}
-<<<<<<< HEAD
 
     /**
      * Dallo stato del form "Registra prodotto" (chiavi snake_case; enum come istanze o valori).
@@ -86,6 +79,4 @@ class TreatmentOutputData extends Data
 
         return $enum::from(\is_string($value) ? $value : '');
     }
-=======
->>>>>>> laraxot/dev
 }

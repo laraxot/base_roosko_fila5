@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 return [
+    'navigation_sort' => 4,
     'name' => 'Weighing',
     'description' => 'Bilance e ticket di pesata',
     'icon' => 'heroicon-o-scale',

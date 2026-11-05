@@ -8,10 +8,6 @@ use Carbon\CarbonImmutable;
 use Modules\Labeling\Actions\AssignIdentifierAction;
 use Modules\Labeling\Enums\IdentifierTypeEnum;
 use Modules\Processing\Actions\RegisterProcessingOutputAction;
-<<<<<<< HEAD
-=======
-use Modules\Processing\Models\ProcessingInput;
->>>>>>> laraxot/dev
 use Modules\Processing\Models\ProcessingOrder;
 use Modules\Roosko\Datas\TreatmentOutputData;
 use Modules\Roosko\Enums\LotClassificationEnum;
@@ -23,10 +19,6 @@ use Modules\Waste\Enums\RegisterCauseEnum;
 use Modules\Waste\Enums\RegisterEntryTypeEnum;
 use Modules\Warehouse\Datas\StockUnitData;
 use Modules\Warehouse\Models\StockUnit;
-<<<<<<< HEAD
-=======
-use Modules\Warehouse\Models\Warehouse;
->>>>>>> laraxot/dev
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -35,11 +27,7 @@ use Spatie\QueueableAction\QueueableAction;
  * stampa etichetta. Se il prodotto e' ancora un rifiuto (es. scarto 19 12 12) scrive il carico
  * di nuova produzione sul registro; End of Waste e sottoprodotti non vanno sul registro rifiuti.
  *
-<<<<<<< HEAD
  * Il magazzino e' quello delle unita' in input dell'ordine (ResolveOrderWarehouseAction).
-=======
- * Il magazzino e' quello delle unita' in input dell'ordine.
->>>>>>> laraxot/dev
  */
 class RegisterTreatmentOutputAction
 {
@@ -51,11 +39,7 @@ class RegisterTreatmentOutputAction
             throw LotException::eowBatchCodeRequired();
         }
 
-<<<<<<< HEAD
         $warehouse = app(ResolveOrderWarehouseAction::class)->execute($order);
-=======
-        $warehouse = $this->orderWarehouse($order);
->>>>>>> laraxot/dev
 
         $unit = app(RunInPlantTransactionAction::class)->execute(function () use ($order, $data, $warehouse): StockUnit {
             $lot = WasteLot::query()->create([
@@ -106,19 +90,4 @@ class RegisterTreatmentOutputAction
 
         return $unit;
     }
-<<<<<<< HEAD
-=======
-
-    private function orderWarehouse(ProcessingOrder $order): Warehouse
-    {
-        $input = ProcessingInput::query()->where('processing_order_id', $order->id)->orderBy('id')->first();
-        if (! $input instanceof ProcessingInput) {
-            throw LotException::orderWithoutInputs($order->code);
-        }
-
-        $unit = StockUnit::query()->withoutGlobalScopes()->findOrFail($input->stock_unit_id);
-
-        return Warehouse::query()->findOrFail($unit->warehouse_id);
-    }
->>>>>>> laraxot/dev
 }
