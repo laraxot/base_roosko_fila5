@@ -116,8 +116,6 @@ class BaseUserPolicy extends XotBasePolicy
         return $this->isUserAdmin($user);
     }
 
-<<<<<<< .merge_file_11aWUl
-=======
     /**
      * Abilita' secondarie: Filament, senza il metodo sulla policy, le considera consentite. Solo il super-admin (via before()).
      */
@@ -145,7 +143,6 @@ class BaseUserPolicy extends XotBasePolicy
         return false;
     }
 
->>>>>>> .merge_file_eUHW4C
     protected function isUserAdmin(UserContract $user): bool
     {
         return $user->hasRole(self::ADMIN_ROLES);
