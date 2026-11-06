@@ -14,6 +14,11 @@ if ($userDatabase === $applicationDatabase) {
     $userDatabase = 'roosko_user';
 }
 
+// SQLite: ':memory:' e percorsi assoluti si usano cosi' come sono, un nome diventa database/{nome}.sqlite.
+$sqlitePath = static fn (string $database): string => $database === ':memory:' || str_starts_with($database, '/')
+    ? $database
+    : database_path(preg_replace('/\.sqlite$/', '', $database).'.sqlite');
+
 $res = [
     'connections' => [
         'mysql' => [
@@ -54,7 +59,7 @@ $res = [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
-            'database' => database_path($applicationDatabase.'.sqlite'),
+            'database' => $sqlitePath((string) $applicationDatabase),
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
