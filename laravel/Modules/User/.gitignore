@@ -506,3 +506,4 @@ graphify-out/
 /.github/skills/
 docs/graphify
 resources/lang
+.merge_file_*

@@ -20,7 +20,10 @@ use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
+<<<<<<< .merge_file_SVUF88
 
+=======
+>>>>>>> .merge_file_rFpL5X
 /**
  * @return array{getTable: \Closure(): Table}
  */

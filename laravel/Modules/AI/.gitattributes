@@ -1,27 +1,27 @@
-# Git LFS is forbidden. Binary files remain normal Git blobs.
+# Git LFS is intentionally disabled for this repository.
+# All binary assets are stored as normal Git blobs.
 * text=auto
 *.css linguist-vendored
 *.scss linguist-vendored
 *.js linguist-vendored
 CHANGELOG.md export-ignore
 
-# Binary files are regular Git blobs; !filter disables inherited Git LFS.
-*.png binary !filter
-*.jpg binary !filter
-*.jpeg binary !filter
-*.gif binary !filter
-*.webp binary !filter
-*.ico binary !filter
-*.svg binary !filter
-*.psd binary !filter
-*.pdf binary !filter
-*.zip binary !filter
-*.woff binary !filter
-*.woff2 binary !filter
-*.ttf binary !filter
-*.eot binary !filter
-*.otf binary !filter
-*.phar binary !filter
-*.db binary !filter
-*.sqlite binary !filter
-
+# Explicitly clear any inherited or local LFS attributes.
+*.png binary !filter !merge !diff
+*.jpg binary !filter !merge !diff
+*.jpeg binary !filter !merge !diff
+*.gif binary !filter !merge !diff
+*.webp binary !filter !merge !diff
+*.ico binary !filter !merge !diff
+*.svg binary !filter !merge !diff
+*.psd binary !filter !merge !diff
+*.pdf binary !filter !merge !diff
+*.zip binary !filter !merge !diff
+*.woff binary !filter !merge !diff
+*.woff2 binary !filter !merge !diff
+*.ttf binary !filter !merge !diff
+*.eot binary !filter !merge !diff
+*.otf binary !filter !merge !diff
+*.phar binary !filter !merge !diff
+*.db binary !filter !merge !diff
+*.sqlite binary !filter !merge !diff

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Models\Policies;
 
+use Illuminate\Database\Eloquent\Model as EloquentModel;
 use Modules\User\Models\BaseUser as Model;
 use Modules\Xot\Actions\Cast\SafeStringCastAction;
 use Modules\Xot\Contracts\UserContract;
@@ -115,6 +116,36 @@ class BaseUserPolicy extends XotBasePolicy
         return $this->isUserAdmin($user);
     }
 
+<<<<<<< .merge_file_11aWUl
+=======
+    /**
+     * Abilita' secondarie: Filament, senza il metodo sulla policy, le considera consentite. Solo il super-admin (via before()).
+     */
+    public function restoreAny(UserContract $user): bool
+    {
+        return false;
+    }
+
+    public function forceDeleteAny(UserContract $user): bool
+    {
+        return false;
+    }
+
+    /**
+     * Replication is intentionally denied for every Eloquent model in this policy.
+     * Keep the base-policy parameter broad so the override remains substitutable.
+     */
+    public function replicate(UserContract $user, EloquentModel $model): bool
+    {
+        return false;
+    }
+
+    public function reorder(UserContract $user): bool
+    {
+        return false;
+    }
+
+>>>>>>> .merge_file_eUHW4C
     protected function isUserAdmin(UserContract $user): bool
     {
         return $user->hasRole(self::ADMIN_ROLES);

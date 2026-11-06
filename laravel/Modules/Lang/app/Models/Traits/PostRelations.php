@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Lang\Models\Traits;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Modules\Lang\Models\Traits\Relationships\PostRelations as ExtractedPostRelations;
 
+/**
+ * Backward-compatible trait name for the extracted Post relations.
+ */
 trait PostRelations
 {
-    /**
-     * @return MorphTo<Model, $this>
-     */
-    public function linkable(): MorphTo
-    {
-        return $this->morphTo('post');
-    }
+    use ExtractedPostRelations;
 }

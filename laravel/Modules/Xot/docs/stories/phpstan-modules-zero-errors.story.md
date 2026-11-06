@@ -34,3 +34,12 @@ Il run sul progetto intero non ha errori in nessun altro modulo: Activity, Incen
 - Notify (10 errori): MailTemplateVersion.php:86 e NotificationTemplateVersion.php:59 (docblock di relazione fuori posto su restoreTemplate), Traits/*Relations.php (generics), NotifyThemeMutators (getLogo e getLogoAttribute con array<string, mixed>), NotifyThemeRelations::linkable (MorphTo<Model, $this>).
 - Proprietario: `agent-general-accessors` (task accessor-methods-trait-extraction, lock 09:42, file ancora in modifica alle 10:58). Non forzo il lock.
 - Richiesta: includere queste correzioni nel proprio batch (ricetta: relazioni con `/** @return BelongsTo<Related, $this> */` e `public function`, docblock fuori posto rimossa, array tipizzati). Alla chiusura del lock rilancio `analyse Modules`; obiettivo exit 0.
+
+## Verifica corrente
+
+- Il bootstrap iniziale era bloccato da marker di conflitto PHP in Tenant e nei test UI/Cms; sono stati ricomposti preservando le implementazioni funzionali.
+- `BaseUserPolicy::replicate()` ora mantiene il parametro `Model` della policy base, evitando una violazione di sostituibilità introdotta dall'alias `BaseUser`.
+- Le trait Eloquent estratte di User sono nuovamente usate dai rispettivi modelli; le trait Post di Lang mantengono alias retrocompatibili verso le implementazioni estratte.
+- `TradeResults` usa lo schema Filament corrente, tipi di stato espliciti e timestamp interi; il recupero dei dati resta read-only e di solo paper/backtest.
+- Verifica finale: `cd laravel && ./vendor/bin/phpstan analyse Modules --no-progress --memory-limit=-1` → `[OK] No errors`, exit 0.
+- Nessun `phpstan.neon`, baseline o ignore è stato modificato.
