@@ -166,11 +166,7 @@ tests/Feature/Filament/Widgets/
 
 - [Widget Structure](widgets-structure.md)
 - [Filament Best Practices](filament_best_practices.md)
-<<<<<<< HEAD
 - [Authentication Architecture](../authentication.md)
-=======
-- [Authentication Architecture](authentication.md)
->>>>>>> laraxot/dev
 - [Widget Structure](../widgets-structure-user.md)
 - [Filament Best Practices](filament_best_practices.md)
 - [Authentication Architecture](../authentication.md)

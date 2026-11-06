@@ -71,7 +71,7 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|MailTemplate whereUpdatedBy($value)
  * @method static Builder<static>|MailTemplate whereVersion($value)
  *
- * @mixin \Eloquent
+ * @mixin \Illuminate\Database\Eloquent\Model
  */
 class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
 {

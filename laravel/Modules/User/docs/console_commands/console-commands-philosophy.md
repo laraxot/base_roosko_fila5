@@ -15,12 +15,8 @@ related:
   - "./console-commands-philosophy.md"
   - "./console-commands.md"
   - "./README.md"
-<<<<<<< HEAD
 status: superseded
 superseded_by: ../commands/console-commands-philosophy.md
-=======
-status: draft
->>>>>>> laraxot/dev
 ---
 
 # Filosofia dei Comandi Console - Modulo User

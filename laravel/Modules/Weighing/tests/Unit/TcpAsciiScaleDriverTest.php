@@ -10,6 +10,12 @@ use Modules\Weighing\Models\Scale;
 use Modules\Weighing\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
+use function Safe\fclose;
+use function Safe\fwrite;
+use function Safe\stream_socket_accept;
+use function Safe\stream_socket_get_name;
+use function Safe\stream_socket_server;
+
 uses(TestCase::class);
 
 function weighingTcpScale(?string $host, int $port): Scale
@@ -32,8 +38,7 @@ function weighingTcpScale(?string $host, int $port): Scale
 function weighingListeningServer(): array
 {
     $server = stream_socket_server('tcp://127.0.0.1:0');
-    Assert::assertNotFalse($server);
-    $name = (string) stream_socket_get_name($server, false);
+    $name = stream_socket_get_name($server, false);
 
     return [$server, (int) substr($name, strrpos($name, ':') + 1)];
 }
@@ -77,12 +82,10 @@ describe('TcpAsciiScaleDriver', function (): void {
         [$server, $port] = weighingListeningServer();
         $pid = pcntl_fork();
         if ($pid === 0) {
-            $client = @stream_socket_accept($server, 2);
-            if ($client !== false) {
-                fwrite($client, "US,GS,+  12300 kg\r\nST,GS,+  12340 kg\r\nST,GS,+  12345 kg\r\n");
-                usleep(200_000);
-                fclose($client);
-            }
+            $client = stream_socket_accept($server, 2);
+            fwrite($client, "US,GS,+  12300 kg\r\nST,GS,+  12340 kg\r\nST,GS,+  12345 kg\r\n");
+            usleep(200_000);
+            fclose($client);
             exit(0);
         }
 

@@ -33,6 +33,8 @@ trait ActivityScopes
      */
     public function scopeHasBatch(Builder $query): Builder
     {
-        return $query->whereNotNull('batch_uuid');
+        $query->whereNotNull('batch_uuid');
+
+        return $query;
     }
 }

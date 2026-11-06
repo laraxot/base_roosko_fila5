@@ -1,16 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< .merge_file_3DQVbW
-<<<<<<< .merge_file_VvuUEJ
-# BMAD Plan — reliable mobile camera uploads
-=======
 # BMAD Plan: reliable mobile camera uploads
->>>>>>> .merge_file_u2Z0Ft
-=======
-# BMAD Plan: reliable mobile camera uploads
->>>>>>> .merge_file_NEWT1z
-=======
-# BMAD Plan: reliable mobile camera uploads
->>>>>>> laraxot/dev
 
 Status: implementation gate
 Owner: `Modules/Media`
@@ -28,19 +16,7 @@ current JPEG/PNG/PDF security allowlist.
 
 ## Plan order
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_3DQVbW
-<<<<<<< .merge_file_VvuUEJ
-### Step 1 — establish the contract
-=======
 ### Step 1: establish the contract
->>>>>>> .merge_file_u2Z0Ft
-=======
-### Step 1: establish the contract
->>>>>>> .merge_file_NEWT1z
-=======
-### Step 1: establish the contract
->>>>>>> laraxot/dev
 
 - Confirm the real Fixcity field state path, temporary-upload rules, collection
   MIME rules, and current infrastructure limits.
@@ -51,19 +27,7 @@ current JPEG/PNG/PDF security allowlist.
 Exit criterion: each failure is attributable to browser normalization,
 Livewire/PHP transport, or permanent persistence.
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_3DQVbW
-<<<<<<< .merge_file_VvuUEJ
-### Step 2 — implement the smallest shared fix
-=======
 ### Step 2: implement the smallest shared fix
->>>>>>> .merge_file_u2Z0Ft
-=======
-### Step 2: implement the smallest shared fix
->>>>>>> .merge_file_NEWT1z
-=======
-### Step 2: implement the smallest shared fix
->>>>>>> laraxot/dev
 
 - Keep camera acquisition in the front-office field/theme, because camera and
   permission APIs are browser concerns.
@@ -75,19 +39,7 @@ Livewire/PHP transport, or permanent persistence.
 - Keep the server collection allowlist unchanged and reject unsafe formats at
   the trust boundary.
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_3DQVbW
-<<<<<<< .merge_file_VvuUEJ
-### Step 3 — verify deployment constraints
-=======
 ### Step 3: verify deployment constraints
->>>>>>> .merge_file_u2Z0Ft
-=======
-### Step 3: verify deployment constraints
->>>>>>> .merge_file_NEWT1z
-=======
-### Step 3: verify deployment constraints
->>>>>>> laraxot/dev
 
 - Configure PHP and the web server with multipart headroom above the 10 MB field
   limit.
@@ -95,19 +47,7 @@ Livewire/PHP transport, or permanent persistence.
 - Do not claim that `.user.ini` changes an already-running built-in server;
   restart/reconfigure the actual FPM/Apache/Nginx process.
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_3DQVbW
-<<<<<<< .merge_file_VvuUEJ
-### Step 4 — evaluate chunking only if required
-=======
 ### Step 4: evaluate chunking only if required
->>>>>>> .merge_file_u2Z0Ft
-=======
-### Step 4: evaluate chunking only if required
->>>>>>> .merge_file_NEWT1z
-=======
-### Step 4: evaluate chunking only if required
->>>>>>> laraxot/dev
 
 Uppy-style chunked upload is a fallback for infrastructure that cannot accept a
 single bounded request. It is out of the first patch because it changes routes,

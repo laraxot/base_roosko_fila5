@@ -8,6 +8,10 @@ use Carbon\CarbonImmutable;
 use Modules\Weighing\Datas\ScaleReadingData;
 use Modules\Weighing\Exceptions\ScaleReadingParseException;
 use Spatie\QueueableAction\QueueableAction;
+use Throwable;
+
+use function Safe\preg_match_all;
+use function Safe\preg_replace;
 
 /**
  * Interpreta una riga ASCII di un indicatore di peso. Funzione pura (testata in unit), parametri
@@ -25,17 +29,18 @@ class ParseScaleReadingAction
 {
     use QueueableAction;
 
-    public const DEFAULT_PATTERN = '/(?<weight>[+-]?\s*\d+(?:[.,]\d+)?)/';
+    public const string DEFAULT_PATTERN = '/(?<weight>[+-]?\s*\d+(?:[.,]\d+)?)/';
 
     public function execute(string $raw, ?CarbonImmutable $readAt = null): ScaleReadingData
     {
         $pattern = config('weighing.tcp_ascii.weight_pattern');
         $pattern = is_string($pattern) && $pattern !== '' ? $pattern : self::DEFAULT_PATTERN;
 
-        $line = trim(preg_replace('/[\x00-\x1F\x7F]+/', ' ', $raw) ?? $raw);
+        $line = trim(preg_replace('/[\x00-\x1F\x7F]+/', ' ', $raw));
 
-        $found = @preg_match_all($pattern, $line, $matches);
-        if ($found === false) {
+        try {
+            $found = preg_match_all($pattern, $line, $matches);
+        } catch (Throwable) {
             throw ScaleReadingParseException::invalidPattern($pattern);
         }
 

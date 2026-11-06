@@ -25,7 +25,7 @@ class AiMessageFactory extends Factory
         $role = $roles[$this->faker->numberBetween(0, count($roles) - 1)];
 
         return [
-            'ai_thread_id' => AiThreadFactory::new()->createOne()->id,
+            'ai_thread_id' => AiThreadFactory::new()->createOne()->getKey(),
             'user_id' => $role->isUser() ? $this->faker->numberBetween(1, 50) : null,
             'role' => $role,
             'content' => $this->faker->sentence(),

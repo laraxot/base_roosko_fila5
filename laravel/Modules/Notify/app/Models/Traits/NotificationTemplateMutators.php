@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Notify\Models\Traits;
 
+use Modules\Xot\Actions\Cast\SafeStringCastAction;
+
 trait NotificationTemplateMutators
 {
     public function getChannelsLabelAttribute(): string
@@ -13,11 +15,14 @@ trait NotificationTemplateMutators
 
     public function getChannelsLabel(): string
     {
-        /** @var array<int, string> $channels */
         $channels = $this->channels;
+        if (! is_array($channels)) {
+            return '';
+        }
 
         return collect($channels)
-            ->map(fn (string $channel): string => (string) __('notify::template.fields.channel.options.'.$channel.'.label'))
+            ->filter(is_string(...))
+            ->map(fn (string $channel): string => SafeStringCastAction::cast(__('notify::template.fields.channel.options.'.$channel.'.label')))
             ->implode(', ');
     }
 }

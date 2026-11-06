@@ -140,13 +140,15 @@ class ActivityLogger
             $userKeyValues[] = $userKey;
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('subject')
             ->whereIn('causer_id', $userKeyValues)
             ->where('causer_type', $user::class)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -156,13 +158,15 @@ class ActivityLogger
      */
     public function getModelActivities(Model $model, int $limit = 50): Collection
     {
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('causer')
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -179,12 +183,14 @@ class ActivityLogger
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -198,11 +204,13 @@ class ActivityLogger
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 
     /**
@@ -214,7 +222,7 @@ class ActivityLogger
             throw new InvalidArgumentException('Days must be positive');
         }
 
-        $deletedCount = Activity::where('created_at', '<', now()->subDays($days))
+        $deletedCount = Activity::typedQuery()->where('created_at', '<', now()->subDays($days))
             ->delete();
 
         $deleted = is_int($deletedCount) ? $deletedCount : 0;
@@ -234,7 +242,7 @@ class ActivityLogger
      */
     public function getStatistics(?UserContract $user = null): array
     {
-        $query = Activity::query();
+        $query = Activity::typedQuery();
 
         if ($user) {
             $query->where('causer_id', $user->getKey())

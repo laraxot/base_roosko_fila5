@@ -16,10 +16,7 @@ updated: 2026-10-09
 - [Brainstorming](./brainstorming/)
 - [Epiche](./epics/)
 - [Stories](./stories/)
-<<<<<<< HEAD
-=======
   - [Migrazioni UUID e convenzione filename](./stories/user-id-uuid-migration-convention.story.md)
->>>>>>> laraxot/dev
 - [Wiki del modulo](../wiki/)
 
 ## Legacy da consultare, non da estendere

@@ -25,7 +25,7 @@ class AiActionProposalsTable extends XotBaseResourceTable
         $actions = parent::getTableActions();
 
         $actions['confirm'] = Action::make('confirm')
-            ->label(__('ai::action_proposal.actions.confirm'))
+            ->label(\trans_string('ai::action_proposal.actions.confirm'))
             ->icon('heroicon-o-check-circle')
             ->color('success')
             ->requiresConfirmation()
@@ -37,7 +37,7 @@ class AiActionProposalsTable extends XotBaseResourceTable
             });
 
         $actions['cancel'] = Action::make('cancel')
-            ->label(__('ai::action_proposal.actions.cancel'))
+            ->label(\trans_string('ai::action_proposal.actions.cancel'))
             ->icon('heroicon-o-x-circle')
             ->color('danger')
             ->requiresConfirmation()

@@ -62,11 +62,7 @@ related:
 
 # TeamContract: perché il contratto (e la nullability)
 
-<<<<<<< HEAD
 Indice: [00-INDEX.md](./00-index.md) · API: [contracts/teamcontract.md](./contracts/teamcontract.md) · scopo: [scopo.md](./scopo.md).
-=======
-Indice: [00-INDEX.md](./00-INDEX.md) · API: [contracts/teamcontract.md](./contracts/teamcontract.md) · scopo: [scopo.md](./scopo.md).
->>>>>>> laraxot/dev
 
 ## Perché `TeamContract` e non `Team`
 

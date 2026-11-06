@@ -146,7 +146,9 @@ class MigrateNotifyThemesToMailTemplateCommand extends Command
 
     private function convertPlaceholders(string $content): string
     {
-        return preg_replace('/##(\w+)##/', '{{$1}}', $content);
+        $converted = preg_replace('/##(\w+)##/', '{{$1}}', $content);
+
+        return is_string($converted) ? $converted : $content;
     }
 
     /**

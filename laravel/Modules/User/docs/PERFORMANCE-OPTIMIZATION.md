@@ -5,11 +5,7 @@ created: 2026-05-11
 updated: 2026-05-11
 tags: [performance, optimization, tokens, context]
 related:
-<<<<<<< HEAD
   - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
-=======
-  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
->>>>>>> laraxot/dev
   - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
 qmd: "performance optimization   module **user** user"
 status: superseded

@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace Modules\Tenant\Models;
 
 use Illuminate\Database\Eloquent\Builder;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-=======
->>>>>>> laraxot/dev
 use Illuminate\Support\Carbon;
 use Modules\Tenant\Models\Traits\TenantSubscriptionRelations;
 
@@ -30,7 +27,6 @@ use Modules\Tenant\Models\Traits\TenantSubscriptionRelations;
  * @method static Builder<static>|TenantSubscription newQuery()
  * @method static Builder<static>|TenantSubscription query()
  *
- * @mixin \Eloquent
  */
 class TenantSubscription extends BaseModel
 {

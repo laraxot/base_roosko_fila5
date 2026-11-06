@@ -65,6 +65,10 @@ final class ClassifyTicketAction
             ]);
         });
 
+        if (! is_string($result)) {
+            return self::DEFAULTS;
+        }
+
         $decoded = AiJsonResponseDecoderAction::decodeObject($result);
 
         return $decoded === [] ? self::DEFAULTS : $decoded;

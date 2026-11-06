@@ -40,7 +40,7 @@ use Modules\Xot\Contracts\ProfileContract;
  * @method static Builder<static>|NotifyThemeable whereUpdatedAt($value)
  * @method static Builder<static>|NotifyThemeable whereUpdatedBy($value)
  *
- * @mixin \Eloquent
+ * @mixin \Illuminate\Database\Eloquent\Model
  */
 class NotifyThemeable extends BaseMorphPivot
 {

@@ -2,15 +2,24 @@
 
 declare(strict_types=1);
 
+use function Safe\file_get_contents;
+use function Safe\file_put_contents;
+use function Safe\preg_match;
+use function Safe\preg_match_all;
+
 /**
  * PHPUnit → Pest DSL Converter
  * Converts class-based PHPUnit tests to Pest function-based DSL
  */
 $testFiles = [];
 foreach (new RecursiveIteratorIterator(
-    new RecursiveDirectoryIterator(__DIR__.'/laravel/Modules'),
+    new RecursiveDirectoryIterator(__DIR__.'/../../Modules'),
     RecursiveIteratorIterator::LEAVES_ONLY
 ) as $file) {
+    if (! $file instanceof SplFileInfo) {
+        continue;
+    }
+
     if ($file->getExtension() === 'php' &&
         strpos($file->getPathname(), 'tests') !== false &&
         strpos($file->getFilename(), 'Test.php') !== false &&
@@ -20,6 +29,7 @@ foreach (new RecursiveIteratorIterator(
 }
 
 $converted = 0;
+/** @var list<string> $failed */
 $failed = [];
 
 foreach ($testFiles as $file) {
@@ -32,7 +42,7 @@ foreach ($testFiles as $file) {
     }
 
     try {
-        $converted_content = convertToPest($content, $filePath);
+        $converted_content = convertToPest($content);
 
         if ($converted_content !== $content) {
             file_put_contents($filePath, $converted_content);
@@ -53,7 +63,7 @@ if (! empty($failed)) {
     }
 }
 
-function convertToPest(string $content, string $filePath): string
+function convertToPest(string $content): string
 {
     // Extract namespace and class name
     if (! preg_match('/namespace\s+([^;]+);/', $content, $nsMatch)) {
@@ -65,7 +75,6 @@ function convertToPest(string $content, string $filePath): string
     }
 
     $namespace = $nsMatch[1];
-    $className = $classMatch[1];
     $baseClass = $classMatch[2];
 
     // Extract imports
@@ -95,13 +104,11 @@ function extractImports(string $content): string
 {
     $lines = explode("\n", $content);
     $imports = [];
-    $in_header = true;
 
     foreach ($lines as $line) {
-        if ($in_header && preg_match('/^use\s+/', $line)) {
+        if (preg_match('/^use\s+/', $line) === 1) {
             $imports[] = $line;
-        } elseif ($in_header && preg_match('/^class\s+/', $line)) {
-            $in_header = false;
+        } elseif (preg_match('/^class\s+/', $line) === 1) {
             break;
         }
     }
@@ -109,6 +116,7 @@ function extractImports(string $content): string
     return implode("\n", $imports);
 }
 
+/** @return list<string> */
 function extractTestMethods(string $content): array
 {
     $methods = [];
@@ -116,7 +124,7 @@ function extractTestMethods(string $content): array
     // Match both #[Test] attribute and public function test_* patterns
     $pattern = '/(?:#\[Test\]\s*)?public\s+function\s+(test_\w+)\s*\(\s*\)\s*:\s*void\s*\{(.*?)\n\s*\}/s';
 
-    if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER)) {
+    if (preg_match_all($pattern, $content, $matches, PREG_SET_ORDER) > 0) {
         foreach ($matches as $match) {
             $methodName = $match[1];
             $methodBody = $match[2];

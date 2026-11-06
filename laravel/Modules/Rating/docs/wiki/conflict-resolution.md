@@ -1,17 +1,5 @@
 ---
-<<<<<<< HEAD
-<<<<<<< .merge_file_nbth9n
-<<<<<<< .merge_file_jAPrJx
-title: "Conflict Resolution — Module Rating"
-=======
 title: "Conflict Resolution: Module Rating"
->>>>>>> .merge_file_Yzc4Kl
-=======
-title: "Conflict Resolution: Module Rating"
->>>>>>> .merge_file_ClmFmh
-=======
-title: "Conflict Resolution: Module Rating"
->>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "bmad/conflict-resolution.md"

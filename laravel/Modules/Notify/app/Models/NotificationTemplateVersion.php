@@ -15,6 +15,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 // BaseModel in same namespace provides common behaviors
 /**
  * @property int|null $template_id
+ * @property string $id
  * @property string|null $subject
  * @property string|null $body_html
  * @property string|null $body_text
@@ -32,7 +33,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|NotificationTemplateVersion newQuery()
  * @method static Builder<static>|NotificationTemplateVersion query()
  *
- * @mixin \Eloquent
+ * @mixin \Illuminate\Database\Eloquent\Model
  */
 class NotificationTemplateVersion extends BaseModel
 {

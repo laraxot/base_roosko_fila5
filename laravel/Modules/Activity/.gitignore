@@ -20,14 +20,10 @@ test-results
 tests/.claude-audit
 # ==============================================
 # LARAXOT MODULE ACTIVITY - .GITIGNORE
-# ==============================================
 # Modulo Activity Laraxot - Template standardizzato
 # Ultimo aggiornamento: 2025-01-31
-# ==============================================
 
-# ==============================================
 # DEPENDENCIES & PACKAGES
-# ==============================================
 /vendor/
 /vendor
 /node_modules/
@@ -39,9 +35,7 @@ composer.lock
 yarn-error.log
 npm-debug.log
 
-# ==============================================
 # BUILD & COMPILED FILES
-# ==============================================
 /build
 /build/
 build/
@@ -49,9 +43,7 @@ dist/
 docs/cache/
 cache/
 
-# ==============================================
 # CACHE & TEMPORARY FILES
-# ==============================================
 *.cache
 *.lock
 *.phar
@@ -65,18 +57,14 @@ v8-compile-cache-*
 .php-cs-fixer.cache
 .phpunit.result.cache
 
-# ==============================================
 # LOG FILES
-# ==============================================
 *.log
 error_log
 npm-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
-# ==============================================
 # LARAVEL SPECIFIC
-# ==============================================
 bootstrap/compiled.php
 app/storage/
 public/storage
@@ -88,9 +76,7 @@ storage/*.key
 .env.*
 !.env.example
 
-# ==============================================
 # ENVIRONMENT & CONFIGURATION
-# ==============================================
 Homestead.yaml
 Homestead.json
 /.vagrant
@@ -98,16 +84,12 @@ Homestead.json
 .phpintel
 .vscode/
 
-# ==============================================
 # GIT SPECIFIC
-# ==============================================
 .git-rewrite/
 .git-rewrite
 .git-blame-ignore-revs
 
-# ==============================================
 # SYSTEM FILES
-# ==============================================
 .DS_Store
 .DS_Store?
 ._*
@@ -117,9 +99,7 @@ ehthumbs.db
 Thumbs.db
 *~
 
-# ==============================================
 # BACKUP FILES
-# ==============================================
 *.old
 *.old1
 *.old2
@@ -131,39 +111,28 @@ Thumbs.db
 *.bakcup
 *.new
 
-# ==============================================
 # DEVELOPMENT TOOLS
-# ==============================================
 .windsurf/
 .cursor/
 .phpstorm.meta.php
 
-# ==============================================
 # DOCUMENTATION CACHE
-# ==============================================
 docs/phpstan/
-docs/cache/
 docs/legacy/
 docs/legacy/**
 
-# ==============================================
 # LANGUAGE FILES
-# ==============================================
 lang/lang/
 resources/lang/
 
-# ==============================================
 # OLD DIRECTORIES (LEGACY CLEANUP)
-# ==============================================
 resources/views/Components_old/
 database/Migrations_old/
 database/Seeders_old/
 database/Factories_old/
 database_old/
 
-# ==============================================
 # MODULE SPECIFIC - ACTIVITY
-# ==============================================
 # File di configurazione locale
 config/local.php
 config/development.php
@@ -176,17 +145,13 @@ storage/logs/
 activity_test_data.json
 test_activity_logs.sql
 
-# ==============================================
 # END OF ACTIVITY .GITIGNORE
-# ==============================================
 
 # File specifici del progetto
 *.fila2
 laravel
 public_html
 tests/coverage
-lang/lang/
-_docs/
 _docs/
 tests/coverage/
 tests/coverage.xml/
@@ -194,17 +159,12 @@ activity_coverage.xml
 
 # -----------------------------------------------------------------------------
 # Copie residue da merge/rebase o editor (mai committare — es. `.agent~HEAD`, `*.md~head`)
-# -----------------------------------------------------------------------------
 *~HEAD
 *~BASE
 *~LOCAL
 *~REMOTE
 *.orig
 *.rej
-*~head
-tests/coverage/
-tests/coverage.xml/
-activity_coverage.xml
 *~head
 agentdb.rvf
 tests/AuditCoverage
@@ -251,18 +211,4 @@ tests/activity_coverage.xml
 /.github/skills/
 docs/graphify
 resources/lang
-<<<<<<< HEAD
-<<<<<<< .merge_file_7BWPHP
-<<<<<<< .merge_file_m89d36
-=======
 Activity
-*.lock
->>>>>>> .merge_file_rb4kGt
-=======
-Activity
-*.lock
->>>>>>> .merge_file_HOTHW9
-=======
-Activity
-*.lock
->>>>>>> laraxot/dev

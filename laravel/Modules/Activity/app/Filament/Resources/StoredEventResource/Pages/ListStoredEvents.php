@@ -25,7 +25,6 @@ class ListStoredEvents extends XotBaseListRecords
      */
     public function getTableColumns(): array
     {
-        /** @phpstan-var view-string */
         $eventPropertiesView = 'activity::filament.tables.columns.event-properties';
 
         return [

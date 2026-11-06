@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
+
 ---
 title: "Meetup theme docs — index"
 type: index
@@ -48,11 +45,7 @@ Indice per argomento di tutti i file `.md` sotto `Themes/Meetup/docs/`. Punto di
 ## Qualita' e audit
 
 - [code-quality-improvement-report.md](./code-quality-improvement-report.md) — baseline qualita' corrente (STORY-001, 2026-07-17)
-<<<<<<< HEAD
-- [redundancy-audit-2026-05-21.md](./redundancy-audit-2026-05-21.md) — audit ridondanza tema (2026-05-21)
-=======
-- [redundancy-audit-2026-05-21.md](./redundancy-audit.md) — audit ridondanza tema (2026-05-21)
->>>>>>> laraxot/dev
+- [redundancy-audit.md](./redundancy-audit.md) — audit ridondanza tema (2026-05-21)
 
 ## LLM wiki / agent instructions
 
@@ -74,10 +67,7 @@ File non cancellati ma superati, duplicati o con puntatore a documentazione cano
 - [PERFORMANCE-OPTIMIZATION.md](./PERFORMANCE-OPTIMIZATION.md) — stub con canonical `../../docs/PERFORMANCE-OPTIMIZATION.md` non presente nel repo
 - [PROJECT-STRUCTURE.md](./PROJECT-STRUCTURE.md) — stub con canonical `../../docs/PROJECT-STRUCTURE.md` non presente nel repo
 - [QMD-SETUP.md](./QMD-SETUP.md) — stub con canonical `../../docs/QMD-SETUP.md` non presente nel repo
-<<<<<<< HEAD
-=======
-=======
->>>>>>> laraxot/dev
+
 # Meetup Theme Documentation
 
 ## Overview
@@ -454,7 +444,3 @@ For issues and questions:
 **
 **Version**: 1.0.0
 **Maintainer**: Laravel Pizza Team
-<<<<<<< HEAD
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev

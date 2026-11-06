@@ -7,11 +7,7 @@ created: 2026-10-26
 updated: 2026-10-26
 tags: [bmad, user, module, stories, remaining-work]
 related:
-<<<<<<< HEAD
   - ../../../../docs/second-brain/project/bmad-architecture.md
-=======
-  - ../../docs/second-brain/project/bmad-architecture.md
->>>>>>> laraxot/dev
 status: draft
 qmd: "user module   bmad stories & remaining work user"
 ---

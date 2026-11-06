@@ -32,9 +32,11 @@ class GetActivityStatisticsAction
         };
         $cacheKey = 'activity.statistics.'.$cacheKeySuffix;
 
-        return Cache::remember($cacheKey, now()->addMinutes(5), function () use ($user): array {
+        $statistics = Cache::remember($cacheKey, now()->addMinutes(5), function () use ($user): array {
             return $this->computeStatistics($user);
         });
+
+        return is_array($statistics) ? $this->normalizeStatistics($statistics) : $this->computeStatistics($user);
     }
 
     /**
@@ -42,7 +44,7 @@ class GetActivityStatisticsAction
      */
     private function computeStatistics(?UserContract $user): array
     {
-        $query = Activity::newQuery();
+        $query = Activity::typedQuery();
 
         if ($user) {
             if (! $user instanceof Model) {
@@ -74,10 +76,10 @@ class GetActivityStatisticsAction
      */
     private function countByType(Builder $query): array
     {
-        $results = $query->clone()
+        $results = Activity::typedGet($query->clone()
             ->selectRaw('event, COUNT(*) as count')
             ->groupBy('event')
-            ->get();
+        );
 
         $byType = [];
         foreach ($results as $activity) {
@@ -96,5 +98,32 @@ class GetActivityStatisticsAction
         }
 
         return $byType;
+    }
+
+    /**
+     * @param array<mixed, mixed> $statistics
+     * @return array{total: int, by_type: array<string, int>, today: int, this_week: int, this_month: int}
+     */
+    private function normalizeStatistics(array $statistics): array
+    {
+        $byType = [];
+        foreach (is_array($statistics['by_type'] ?? null) ? $statistics['by_type'] : [] as $type => $count) {
+            if (is_string($type) && (is_int($count) || is_numeric($count))) {
+                $byType[$type] = (int) $count;
+            }
+        }
+
+        return [
+            'total' => $this->normalizeInteger($statistics['total'] ?? null),
+            'by_type' => $byType,
+            'today' => $this->normalizeInteger($statistics['today'] ?? null),
+            'this_week' => $this->normalizeInteger($statistics['this_week'] ?? null),
+            'this_month' => $this->normalizeInteger($statistics['this_month'] ?? null),
+        ];
+    }
+
+    private function normalizeInteger(mixed $value): int
+    {
+        return is_int($value) ? $value : (is_string($value) && is_numeric($value) ? (int) $value : 0);
     }
 }

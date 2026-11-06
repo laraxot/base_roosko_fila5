@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Modules\Media\Actions\CloudFront\GetCloudFrontSignedUrlAction;
 use Modules\Media\Actions\Diagnostic\S3\TestBucketPermissionsAction;
+use Modules\Media\Actions\Storage\GetFilesystemAdapterAction;
 use Modules\Media\Filament\Clusters\Test;
 use Modules\Xot\Filament\Pages\XotBasePage;
 use Override;
@@ -257,8 +258,8 @@ class S3Test extends XotBasePage
             'data' => [
                 'signedurl' => $signedUrl,
                 'filePath' => $filePath,
-                'url2' => Storage::disk('s3')->url($filePath),
-                'url3' => Storage::disk('s3')->temporaryUrl($filePath, now()->addMinutes(5)),
+                'url2' => app(GetFilesystemAdapterAction::class)->execute('s3')->url($filePath),
+                'url3' => app(GetFilesystemAdapterAction::class)->execute('s3')->temporaryUrl($filePath, now()->addMinutes(5)),
             ],
         ];
         $this->updateDebugOutput();

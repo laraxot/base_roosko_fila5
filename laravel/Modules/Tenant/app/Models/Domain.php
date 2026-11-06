@@ -19,7 +19,6 @@ use Sushi\Sushi;
  * @method static Builder<static>|Domain whereId($value)
  * @method static Builder<static>|Domain whereName($value)
  *
- * @mixin \Eloquent
  */
 class Domain extends BaseModel
 {

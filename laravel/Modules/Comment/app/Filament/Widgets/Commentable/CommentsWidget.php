@@ -33,7 +33,7 @@ class CommentsWidget extends XotBaseSchemaWidget
     // Callers: Themes/Sixteen blog/detail + events/detail + Fixcity ticket-comments
     // (@livewire CommentsWidget). Unique FO comments UI; schema Comment morph.
     // User: «al posto di aggiungere i commenti non si vede piu' il contenuto».
-    protected string $view = 'comment::filament.widgets.commentable.comments';
+    protected string $view;
 
     public ?Model $model = null;
 
@@ -70,6 +70,9 @@ class CommentsWidget extends XotBaseSchemaWidget
 
     public function __construct()
     {
+        /** @phpstan-var view-string $view */
+        $view = 'comment::filament.widgets.commentable.comments';
+        $this->view = $view;
         $this->uiConfig = CommentsWidgetUiData::from([]);
         parent::__construct();
     }

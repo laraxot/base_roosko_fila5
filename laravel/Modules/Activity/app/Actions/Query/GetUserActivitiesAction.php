@@ -30,12 +30,14 @@ class GetUserActivitiesAction
             throw new InvalidArgumentException('Limit must be positive');
         }
 
-        return Activity::query()
+        $query = Activity::typedQuery()
             ->with('subject')
             ->whereIn('causer_id', [$user->getKey()])
             ->where('causer_type', $user::class)
             ->latest()
             ->limit($limit)
-            ->get();
+            ;
+
+        return Activity::typedGet($query);
     }
 }

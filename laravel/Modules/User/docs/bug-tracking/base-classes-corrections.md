@@ -8,11 +8,7 @@ qmd: "base-classes-corrections correzione estensioni classi base - modulo user"
 issues: ["https://github.com/provtv/<nome repository>/issues/124"]
 discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
-<<<<<<< HEAD
   - "../fixes/base-classes-corrections-.md"
-=======
-  - "./base-classes-corrections-.md"
->>>>>>> laraxot/dev
   - "./base-classes-corrections.md"
   - "./base-classes-corrections.md"
   - "./base-classes-corrections.md"
@@ -346,4 +342,3 @@ grep -r "extends Model" laravel/Modules/*/app/Models/*.php | grep -v "BaseModel\
 **Review:** Team Laraxot  
 **Deploy:** ✅ Ready for Production  
 **Breaking Changes:** Nessuna (backward compatible)
-

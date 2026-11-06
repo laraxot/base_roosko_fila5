@@ -12,8 +12,8 @@ use Modules\User\Models\User;
 /**
  * Utente Eloquent che puo' commentare, per i test dei widget Livewire (CMT-022).
  *
- * L'app usa `Modules\Fixcity\Models\User`, l'unico utente reale che implementa {@see CanComment}. Il modulo Comment non puo'
- * dipendere da Fixcity (anche nei test), quindi qui c'e' lo stesso contratto sopra l'utente di base. `CommentPolicy` ha il tipo
+ * I consumer applicativi possono aggiungere {@see CanComment} al proprio utente. Il modulo Comment non puo'
+ * dipendere da un consumer concreto (anche nei test), quindi qui c'e' lo stesso contratto sopra l'utente di base. `CommentPolicy` ha il tipo
  * `?CanComment` nelle firme: con un utente senza il contratto il Gate lancia un TypeError (500) invece di rispondere 403.
  */
 final class CommentatorUser extends User implements CanComment
@@ -23,7 +23,7 @@ final class CommentatorUser extends User implements CanComment
     /** @var string */
     protected $table = 'users';
 
-    // Le tre firme del contratto `CanComment` hanno un tipo di ritorno che i metodi di Eloquent non dichiarano: stesso override dell'utente di Fixcity.
+    // Le tre firme del contratto `CanComment` hanno un tipo di ritorno che i metodi di Eloquent non dichiarano.
     public function getKey(): mixed
     {
         return parent::getKey();

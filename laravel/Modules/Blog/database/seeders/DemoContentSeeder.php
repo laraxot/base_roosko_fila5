@@ -6,14 +6,16 @@ namespace Modules\Blog\Database\Seeders;
 
 use Illuminate\Console\Command;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Factories\Sequence;
 use Modules\Blog\Database\Seeders\Demo\DemoArticleCatalog;
 use Modules\Blog\Models\Article;
+use Modules\Blog\Models\DemoCommentator;
 use Modules\Blog\Models\Event;
 use Modules\Blog\Models\Post;
 use Modules\Comment\Models\Comment;
 use Modules\Comment\Models\Contracts\CanComment;
-use Modules\Fixcity\Database\Seeders\DemoUsersSeeder;
-use Modules\Fixcity\Models\User;
+use Modules\User\Database\Factories\UserFactory;
+use Modules\User\Models\User;
 
 /**
  * Novita' ed Eventi demo (Parental STI `type` = post | event), idempotente per slug.
@@ -78,16 +80,24 @@ class DemoContentSeeder extends Seeder
     }
 
     /**
-     * @return list<User>
+     * @return list<DemoCommentator>
      */
     private function citizens(): array
     {
-        $query = static fn () => User::query()->where('email', 'like', '%@fixcity.demo')->orderBy('email')->limit(12);
-        if (! $query()->exists()) {
-            app(DemoUsersSeeder::class)->run();
+        $query = User::query()->where('email', 'like', '%@fixcity.demo')->orderBy('email')->limit(12);
+        if (! $query->exists()) {
+            UserFactory::new()
+                ->count(12)
+                ->state(new Sequence(static fn (Sequence $sequence): array => [
+                    'email' => 'citizen'.($sequence->index + 1).'@fixcity.demo',
+                ]))
+                ->create();
         }
 
-        return array_values($query()->get()->all());
+        return array_values($query
+            ->get()
+            ->map(static fn (User $user): DemoCommentator => DemoCommentator::fromUser($user))
+            ->all());
     }
 
     /**

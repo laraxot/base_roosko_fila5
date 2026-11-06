@@ -1,18 +1,11 @@
 ---
 title: "BMAD + Second Brain: Session Summary (2026-09-04)"
 type: note
-<<<<<<< HEAD
 updated: 2026-10-21
 tags: [docs, user]
 qmd: "bmad + second brain   session summary (2026-09-04) user"
 status: superseded
 superseded_by: bmad-session.md
-=======
-status: draft
-updated: 2026-10-21
-tags: [docs, user]
-qmd: "bmad + second brain   session summary (2026-09-04) user"
->>>>>>> laraxot/dev
 ---
 
 # BMAD + Second Brain: Session Summary (2026-09-04)

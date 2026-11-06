@@ -318,10 +318,6 @@ public function getTableColumns(): array
 
 - [AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md](./performance/AUTHENTICATION_PERFORMANCE_OPTIMIZATION.md)
 - [optimization-analysis.md](./optimization-analysis.md)
-<<<<<<< HEAD
 - [phpstan-compliance.md](../../phpstan-compliance.md)
-=======
-- [phpstan-compliance.md](./phpstan-compliance.md)
->>>>>>> laraxot/dev
 
 This analysis provides a comprehensive roadmap for improving code quality in the User module while maintaining security and functionality.

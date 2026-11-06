@@ -1014,13 +1014,8 @@ See [ROADMAP.md](./roadmap.md) for details.
 
 ### Internal Modules
 - [Xot Module](../../Xot/docs/README.md) - Core foundation
-<<<<<<< HEAD
 - [Activity Module](../../Activity/docs/README.md) - Activity tracking
 - [Lang Module](../../Lang/docs/README.md) - Translations
-=======
-- [Activity Module](../../Activity/docs/readme.md) - Activity tracking
-- [Lang Module](../../Lang/docs/readme.md) - Translations
->>>>>>> laraxot/dev
 - [Tenant Module](../../Tenant/docs/README.md) - Enhanced tenancy
 
 ### Project Documentation

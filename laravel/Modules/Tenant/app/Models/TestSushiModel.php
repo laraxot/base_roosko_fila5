@@ -39,7 +39,6 @@ use function Safe\json_encode;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TestSushiModel whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder<static>|TestSushiModel whereUpdatedBy($value)
  *
- * @mixin \Eloquent
  */
 class TestSushiModel extends BaseModel implements HasSushiToJson
 {

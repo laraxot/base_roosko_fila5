@@ -43,7 +43,6 @@ use Modules\Xot\Models\XotBaseModel;
  * @method static Builder<static>|AiActionProposal newQuery()
  * @method static Builder<static>|AiActionProposal query()
  *
- * @mixin \Eloquent
  */
 class AiActionProposal extends XotBaseModel
 {

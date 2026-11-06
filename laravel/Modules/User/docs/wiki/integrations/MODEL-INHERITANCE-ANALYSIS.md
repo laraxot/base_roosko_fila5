@@ -154,21 +154,12 @@ Dopo le modifiche, eseguire:
 ## Collegamenti
 
 - [Regole Qualità Codice](../../../.windsurf/rules/code-quality.md)
-<<<<<<< HEAD
 - [BaseModel](../../../app/Models/BaseModel.php)
 - [BasePivot](../../../app/Models/BasePivot.php)
 - [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)
 - [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
 - [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
 - [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
-=======
-- [BaseModel](../app/Models/BaseModel.php)
-- [BasePivot](../app/Models/BasePivot.php)
-- [BaseMorphPivot](../app/Models/BaseMorphPivot.php)
-- [XotBaseModel](../../Xot/app/Models/XotBaseModel.php)
-- [XotBasePivot](../../Xot/app/Models/XotBasePivot.php)
-- [XotBaseMorphPivot](../../Xot/app/Models/XotBaseMorphPivot.php)
->>>>>>> laraxot/dev
 - [BaseModel](../../../app/Models/BaseModel.php)
 - [BasePivot](../../../app/Models/BasePivot.php)
 - [BaseMorphPivot](../../../app/Models/BaseMorphPivot.php)

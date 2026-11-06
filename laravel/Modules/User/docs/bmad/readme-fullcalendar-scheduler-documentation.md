@@ -8,11 +8,7 @@ qmd: "readme-fullcalendar-scheduler-1-1 fullcalendar scheduler documentation - r
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-<<<<<<< HEAD
   - "../00-index-indice-documentazione-modulo-user.md"
-=======
-  - "./00-index-indice-documentazione-modulo-user.md"
->>>>>>> laraxot/dev
   - "./00-index.md"
   - "../2fa-guide.md"
   - "./2fa.md"
@@ -249,4 +245,4 @@ Log::info('FullCalendar configured', [
 **Ultima modifica**: Gennaio 2025  
 **Versione FullCalendar**: v6.1.17  
 **Versione Filament**: v3.x  
-**Progetto**: SaluteOra Multi-Tenant Healthcare Platform 
+**Progetto**: SaluteOra Multi-Tenant Healthcare Platform

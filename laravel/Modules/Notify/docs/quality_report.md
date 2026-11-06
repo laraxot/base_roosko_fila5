@@ -1,17 +1,5 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< .merge_file_3kFlV7
-title: "Quality Report — Notify"
-=======
 title: "Quality Report: Notify"
->>>>>>> .merge_file_eN5FXa
-=======
-title: "Quality Report: Notify"
->>>>>>> laraxot/dev
-=======
-title: "Quality Report: Notify"
->>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "QUALITY_REPORT.md"

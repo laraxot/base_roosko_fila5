@@ -59,7 +59,6 @@ use Spatie\SchemalessAttributes\Casts\SchemalessAttributes;
  *
  * @method static EloquentStoredEventQueryBuilder<static>|StoredEvent whereUpdatedAt($value)
  *
- * @mixin \Eloquent
  */
 // @see Modules/Xot/docs/spatie-schemaless-attributes.md
 class StoredEvent extends SpatieStoredEvent

@@ -27,8 +27,8 @@ class CreateAiActionProposalAction
         array $payload,
         ?string $preview = null,
     ): AiActionProposal {
-        /** @var AiActionProposal $proposal */
-        $proposal = AiActionProposal::query()->create([
+        $proposal = new AiActionProposal;
+        $proposal->fill([
             'public_id' => Uuid::uuid4()->toString(),
             'ai_thread_id' => $thread->getKey(),
             'proposed_by_user_id' => $proposedByUserId,
@@ -37,6 +37,7 @@ class CreateAiActionProposalAction
             'preview' => $preview,
             'status' => AiActionProposalStatusEnum::PENDING,
         ]);
+        $proposal->save();
 
         return $proposal;
     }

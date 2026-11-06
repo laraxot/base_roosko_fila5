@@ -4,12 +4,9 @@ type: story
 module: User
 status: blocked-decision
 created: 2026-10-21
-<<<<<<< HEAD
 updated: 2026-10-27
 tags: [docs, user, bmad]
 qmd: "regola database/ nel gitignore di user user"
-=======
->>>>>>> laraxot/dev
 ---
 
 # Regola Database/ nel gitignore di User

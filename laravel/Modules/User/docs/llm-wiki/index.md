@@ -58,11 +58,7 @@ _No troubleshooting pages created yet_
 ### Related Project Concepts
 
 - [Laraxot Architecture](../../docs/wiki/concepts/laraxot-architecture.md)
-<<<<<<< HEAD
 - [Actions Over Services](../../../../../docs/wiki/concepts/actions-over-services.md)
-=======
-- [Actions Over Services](../../docs/wiki/concepts/actions-over-services.md)
->>>>>>> laraxot/dev
 - [PHPStan Level 10](../../docs/wiki/concepts/phpstan-level10.md)
 - [Actions Over Services](../../../../../docs/wiki/concepts/actions-over-services.md)
 - [PHPStan Level 10](../phpstan-level10.md)

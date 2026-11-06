@@ -51,7 +51,9 @@ Blog seeders/factories; Comment factory; docs Fixcity inbound brainstorming.
 Seed idempotente; nessun Lorem; ambienti non ammessi = no-op.
 
 ## Dev Notes
-Ponytail: riuso Article + Comment. Modulo Event solo con requisiti operativi.
+Ponytail: riuso Article + Comment. Modulo Event solo con requisiti operativi. Il seeder usa
+`DemoCommentator`, un adapter locale al modulo Blog che aggiunge `CanComment` al modello User senza
+far dipendere il core User dal modulo Comment; il morph resta quello del modello User condiviso.
 
 ## Verifica 2026-10-15 (multi-agente)
 

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\AI\Actions\Sentiment;
 
-use Spatie\QueueableAction\QueueableAction;
-
 use function Safe\preg_match_all;
+
+use Spatie\QueueableAction\QueueableAction;
 
 final class AnalyzeBasicSentimentAction
 {
@@ -53,8 +53,18 @@ final class AnalyzeBasicSentimentAction
     private function countPolarity(string $text, array $positiveWords, array $negativeWords): array
     {
         $negations = ['not', 'no', 'never', 'nor', "isn't", "aren't", "wasn't", "don't", "doesn't", "didn't", "can't", "won't"];
+        $matches = [];
         preg_match_all("/[a-z']+/", mb_strtolower($text), $matches);
-        $tokens = $matches[0];
+        if (! isset($matches[0]) || ! is_array($matches[0])) {
+            return [0, 0];
+        }
+
+        $tokens = [];
+        foreach ($matches[0] as $token) {
+            if (is_string($token)) {
+                $tokens[] = $token;
+            }
+        }
         $positive = 0;
         $negative = 0;
 
@@ -64,7 +74,8 @@ final class AnalyzeBasicSentimentAction
                 continue;
             }
 
-            if (array_intersect(array_slice($tokens, max(0, $index - 3), min(3, $index)), $negations) !== []) {
+            $window = array_slice($tokens, max(0, $index - 3), 3);
+            if (array_intersect($window, $negations) !== []) {
                 $polarity = -$polarity;
             }
 

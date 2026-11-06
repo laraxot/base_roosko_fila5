@@ -4,27 +4,27 @@ declare(strict_types=1);
 
 use Filament\Forms\Components\MarkdownEditor;
 use Livewire\Livewire;
+use Modules\Blog\Models\Article;
 use Modules\Comment\Filament\Widgets\Comment\CommentWidget;
 use Modules\Comment\Filament\Widgets\Commentable\CommentsWidget;
 use Modules\Comment\Filament\Widgets\Schemas\CommentTextForm;
 use Modules\Comment\Models\Comment;
 use Modules\Comment\Tests\TestCase;
-use Modules\Fixcity\Models\Ticket;
-use Modules\Fixcity\Models\User;
+use Modules\Comment\Tests\Support\CommentatorUser;
 use Webmozart\Assert\Assert;
 
 uses(TestCase::class);
 
 /**
- * @return array{0: User, 1: Ticket}
+ * @return array{0: CommentatorUser, 1: Article}
  */
-function ownedTicketWithCommentator(): array
+function ownedArticleWithCommentator(): array
 {
-    $user = User::factory()->createOne(['email' => fake()->unique()->safeEmail()]);
-    Assert::isInstanceOf($user, User::class);
-    $ticket = Ticket::factory()->createOne(['owner_id' => $user->getKey()]);
+    $user = CommentatorUser::createOne();
+    Assert::isInstanceOf($user, CommentatorUser::class);
+    $article = Article::factory()->createOne();
 
-    return [$user, $ticket];
+    return [$user, $article];
 }
 
 it('exposes the markdown editor from CommentTextForm for comments and replies', function (): void {
@@ -32,18 +32,18 @@ it('exposes the markdown editor from CommentTextForm for comments and replies', 
 });
 
 it('stores the comment a logged-in user submits', function (): void {
-    [$user, $ticket] = ownedTicketWithCommentator();
+    [$user, $article] = ownedArticleWithCommentator();
     $this->actingAs($user);
 
     Livewire::test(CommentsWidget::class, [
-        'commentableType' => $ticket::class,
-        'commentableKey' => $ticket->getKey(),
+        'commentableType' => $article::class,
+        'commentableKey' => $article->getKey(),
     ])
         ->set('data.text', 'La buca **è ancora lì**')
         ->call('comment')
         ->assertHasNoErrors();
 
-    $comment = Comment::query()->where('commentable_id', $ticket->getKey())->latest('id')->first();
+    $comment = Comment::query()->where('commentable_id', $article->getKey())->latest('id')->first();
 
     expect($comment)->toBeInstanceOf(Comment::class)
         ->and($comment?->original_text)->toBe('La buca **è ancora lì**')
@@ -51,9 +51,9 @@ it('stores the comment a logged-in user submits', function (): void {
 });
 
 it('lets a logged-in user reply to a comment', function (): void {
-    [$user, $ticket] = ownedTicketWithCommentator();
+    [$user, $article] = ownedArticleWithCommentator();
     $this->actingAs($user);
-    $parent = $ticket->comment('Prima segnalazione', $user);
+    $parent = $article->comment('Prima segnalazione', $user);
 
     Livewire::test(CommentWidget::class, ['comment' => $parent, 'showReplies' => true])
         ->call('startReplying')
@@ -65,14 +65,14 @@ it('lets a logged-in user reply to a comment', function (): void {
 });
 
 it('renders an existing thread with the commentator avatar and a reply button', function (): void {
-    [$user, $ticket] = ownedTicketWithCommentator();
+    [$user, $article] = ownedArticleWithCommentator();
     $this->actingAs($user);
-    $parent = $ticket->comment('Commento con risposta', $user);
+    $parent = $article->comment('Commento con risposta', $user);
     $parent->comment('Risposta annidata', $user);
 
     Livewire::test(CommentsWidget::class, [
-        'commentableType' => $ticket::class,
-        'commentableKey' => $ticket->getKey(),
+        'commentableType' => $article::class,
+        'commentableKey' => $article->getKey(),
         'noReplies' => false,
     ])
         ->assertSee('Commento con risposta')

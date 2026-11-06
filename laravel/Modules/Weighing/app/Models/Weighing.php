@@ -60,7 +60,7 @@ use Modules\Weighing\Exceptions\WeighingLockedException;
 class Weighing extends BaseModel
 {
     /** Attributi ancora modificabili su un ticket chiuso o annullato. */
-    public const MUTABLE_WHEN_LOCKED = [
+    public const array MUTABLE_WHEN_LOCKED = [
         'status',
         'voided_at',
         'void_reason',

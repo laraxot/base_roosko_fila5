@@ -24,7 +24,6 @@ use Modules\Xot\Models\XotBaseModel;
  * @method static Builder<static>|AiMessage newQuery()
  * @method static Builder<static>|AiMessage query()
  *
- * @mixin \Eloquent
  */
 class AiMessage extends XotBaseModel
 {

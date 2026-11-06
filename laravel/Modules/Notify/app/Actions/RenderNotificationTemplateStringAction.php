@@ -33,7 +33,9 @@ final class RenderNotificationTemplateStringAction
     {
         $replace = fn (array $match): string => $this->substitute($match, $data);
 
-        return preg_replace_callback('/\{\{\s*(.+?)\s*\}\}/s', $replace, $template);
+        $rendered = preg_replace_callback('/\{\{\s*(.+?)\s*\}\}/s', $replace, $template);
+
+        return is_string($rendered) ? $rendered : $template;
     }
 
     /**

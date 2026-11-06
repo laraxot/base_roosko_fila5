@@ -29,6 +29,8 @@ parameters:
         # - '#Cannot cast mixed to (string|float|double|int|bool|boolean).#' # Ignora errori di cast da mixed a tipi specifici
 
     excludePaths:
+        # Weighing/laravel is a nested Laravel checkout, not part of this application's module tree.
+        - ./Modules/Weighing/laravel/*
         - ./*/vendor/*
         - ./*/node_modules/*
         - ./*/build/*

@@ -15,10 +15,7 @@ use Modules\Notify\Tests\Fixtures\SendRecordsNotificationBulkActionSpy;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 
-<<<<<<< HEAD
-=======
 uses(\Modules\Notify\Tests\TestCase::class);
->>>>>>> laraxot/dev
 /**
  * @param  array<string, mixed>  $attributes
  */

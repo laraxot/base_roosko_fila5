@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\User\Models\Policies;
 
-use Modules\User\Models\Role as Post;
+use Modules\User\Models\Role;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Models\Policies\Concerns\DeniesUndeclaredFilamentAbilities;
 
@@ -29,7 +29,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(UserContract $_user, Post $_post): bool
+    public function view(UserContract $_user, Role $_role): bool
     {
         return true;
     }
@@ -45,7 +45,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(UserContract $_user, Post $_post): bool
+    public function update(UserContract $_user, Role $_role): bool
     {
         return false;
     }
@@ -53,7 +53,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can add team members.
      */
-    public function addTeamMember(UserContract $user, Post $post): bool
+    public function addTeamMember(UserContract $user, Role $role): bool
     {
         return false;
     }
@@ -61,7 +61,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can update team member permissions.
      */
-    public function updateTeamMember(UserContract $user, Post $post): bool
+    public function updateTeamMember(UserContract $user, Role $role): bool
     {
         return false;
     }
@@ -69,7 +69,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can remove team members.
      */
-    public function removeTeamMember(UserContract $user, Post $post): bool
+    public function removeTeamMember(UserContract $user, Role $role): bool
     {
         return false;
     }
@@ -77,7 +77,7 @@ class RolePolicy extends UserBasePolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(UserContract $_user, Post $_post): bool
+    public function delete(UserContract $_user, Role $_role): bool
     {
         return false;
     }

@@ -308,10 +308,6 @@ it('has a tests JSON in tenant and module for every manifest row', function (): 
         }
     }
 
-<<<<<<< HEAD
-    Assert::assertNotEmpty(contentGuardManifest(), 'Manifest vuoto.');
-=======
->>>>>>> laraxot/dev
     contentGuardAssertNone($missing, 'Righe del manifest senza JSON:');
 });
 

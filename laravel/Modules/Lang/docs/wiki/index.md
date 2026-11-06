@@ -26,10 +26,7 @@ status: draft
 - [frontmatter + GitHub](../../../../../docs/wiki/rules/wiki-markdown-frontmatter-mandatory.md)
 - [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md) _(target mancante, verificato 2026-10-14)_
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
-<<<<<<< HEAD
-=======
 - [migration-path-canonical](./concepts/migration-path-canonical.md): path attivo, naming additive e inventario delle migrazioni Lang
->>>>>>> laraxot/dev
 
 
 ## Indices
@@ -56,10 +53,7 @@ qmd search "Lang <topic>" --limit 5
 ---
 
 Updated: 2026-06-12
-<<<<<<< HEAD
-=======
 
 ## Model architecture
 
 - [model-trait-inventory](./architecture/model-trait-inventory.md): accessor gemelli, mutator e relazione del modello `Post` collocati nei trait owner.
->>>>>>> laraxot/dev

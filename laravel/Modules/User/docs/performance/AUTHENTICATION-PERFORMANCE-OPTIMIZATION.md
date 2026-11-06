@@ -1,18 +1,11 @@
 ---
 title: "Authentication Performance Optimization - User Module"
 type: note
-<<<<<<< HEAD
 updated: 2026-10-26
 tags: [docs, user, performance]
 qmd: "authentication performance optimization - user module user"
 status: superseded
 superseded_by: authentication-performance-optimization.md
-=======
-status: draft
-updated: 2026-10-26
-tags: [docs, user, performance]
-qmd: "authentication performance optimization - user module user"
->>>>>>> laraxot/dev
 ---
 # Authentication Performance Optimization - User Module
 
@@ -171,11 +164,7 @@ CREATE INDEX idx_sessions_last_activity ON sessions(last_activity);
 
 ## 📚 Related Documentation
 
-<<<<<<< HEAD
 - [authentication.md](../authentication.md)
-=======
-- [authentication.md](./authentication.md)
->>>>>>> laraxot/dev
 - [authentication.md](../authentication.md)
 - [session-management.md](./session-management.md)
 - [roles-permissions.md](./roles-permissions.md)

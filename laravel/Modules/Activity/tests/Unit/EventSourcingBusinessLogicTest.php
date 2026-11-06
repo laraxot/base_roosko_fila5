@@ -98,7 +98,7 @@ describe('Event Sourcing Business Logic', function () {
             Assert::assertArrayHasKey('new_values', $properties);
 
             // IP validation business logic
-            if (! is_string($properties['ip_address'] ?? null)) {
+            if (! is_string($properties['ip_address'])) {
                 throw new \RuntimeException('Activity IP address must be a string');
             }
             Assert::assertMatchesRegularExpression('/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/', $properties['ip_address']);
@@ -176,7 +176,7 @@ describe('Event Sourcing Business Logic', function () {
             Assert::assertArrayHasKey('correlation_id', $metadata);
             Assert::assertArrayHasKey('causation_id', $metadata);
 
-            if (! is_string($metadata['correlation_id'] ?? null) || ! is_string($metadata['causation_id'] ?? null)) {
+            if (! is_string($metadata['correlation_id']) || ! is_string($metadata['causation_id'])) {
                 throw new \RuntimeException('Event tracing identifiers must be strings');
             }
             Assert::assertStringStartsWith('corr-', $metadata['correlation_id']);

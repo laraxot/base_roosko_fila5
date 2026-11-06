@@ -67,7 +67,8 @@ class BuildLogViewerStateAction
                 $total = 0;
                 $tail = null;
                 // $modifiedAt resta null: filemtime() e' l'ultima istruzione del try e lancia prima di assegnare.
-                $error = (string) __('activity::log_viewer.messages.file_unavailable');
+                $message = __('activity::log_viewer.messages.file_unavailable');
+                $error = is_string($message) ? $message : null;
             }
         }
 

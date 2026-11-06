@@ -11,6 +11,12 @@ use Modules\Weighing\Exceptions\ScaleConnectionException;
 use Modules\Weighing\Exceptions\ScaleReadingParseException;
 use Modules\Weighing\Exceptions\ScaleTimeoutException;
 use Modules\Weighing\Models\Scale;
+use Throwable;
+
+use function Safe\fclose;
+use function Safe\fwrite;
+use function Safe\stream_set_timeout;
+use function Safe\stream_socket_client;
 
 /**
  * Indicatore di peso in rete che parla ASCII su TCP (anche tramite convertitore seriale/ethernet).
@@ -23,7 +29,7 @@ use Modules\Weighing\Models\Scale;
  */
 class TcpAsciiScaleDriver implements ScaleDriverContract
 {
-    private const MAX_LINE_LENGTH = 256;
+    private const int MAX_LINE_LENGTH = 256;
 
     public function read(Scale $scale): ScaleReadingData
     {
@@ -41,9 +47,18 @@ class TcpAsciiScaleDriver implements ScaleDriverContract
         $address = sprintf('tcp://%s:%d', str_contains($host, ':') ? '['.trim($host, '[]').']' : $host, $port);
         $errno = 0;
         $errstr = '';
-        $socket = @stream_socket_client($address, $errno, $errstr, $connectTimeout);
-        if ($socket === false) {
-            throw ScaleConnectionException::unreachable($scale, $host, $port, $errstr !== '' ? $errstr : 'errno '.$errno, $errno);
+        try {
+            $socket = stream_socket_client($address, $errno, $errstr, $connectTimeout);
+        } catch (Throwable $e) {
+            $code = $e->getCode();
+            $reason = is_string($errstr) && $errstr !== '' ? $errstr : $e->getMessage();
+            throw ScaleConnectionException::unreachable(
+                $scale,
+                $host,
+                $port,
+                $reason,
+                is_int($code) ? $code : (is_int($errno) ? $errno : 0),
+            );
         }
 
         $last = null;
@@ -54,8 +69,12 @@ class TcpAsciiScaleDriver implements ScaleDriverContract
             $seconds = (int) floor($readTimeout);
             stream_set_timeout($socket, $seconds, (int) round(($readTimeout - $seconds) * 1_000_000));
 
-            if (is_string($command) && $command !== '' && @fwrite($socket, $command) === false) {
-                throw ScaleConnectionException::closed($scale);
+            if (is_string($command) && $command !== '') {
+                try {
+                    fwrite($socket, $command);
+                } catch (Throwable) {
+                    throw ScaleConnectionException::closed($scale);
+                }
             }
 
             for ($i = 0; $i < $maxLines && microtime(true) < $deadline; $i++) {

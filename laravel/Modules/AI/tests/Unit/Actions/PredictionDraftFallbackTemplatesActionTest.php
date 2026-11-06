@@ -15,8 +15,7 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
         $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
-        $this->assertIsArray($result);
-        $this->assertNotEmpty($result);
+        Assert::assertNotEmpty($result);
 
         Assert::assertEqualsCanonicalizing(
             ['category', 'title', 'subtitle', 'description', 'analysis', 'tags', 'options'],
@@ -25,17 +24,17 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
 
         // Verify that we have multiple categories
         $categories = array_unique(array_column($result, 'category'));
-        $this->assertGreaterThanOrEqual(5, count($categories));
+        Assert::assertGreaterThanOrEqual(5, count($categories));
 
         // Verify required fields for each template
         foreach ($result as $template) {
-            $this->assertNotEmpty($template['category']);
-            $this->assertNotEmpty($template['title']);
-            $this->assertNotEmpty($template['subtitle']);
-            $this->assertNotEmpty($template['description']);
-            $this->assertNotEmpty($template['analysis']);
-            $this->assertIsArray($template['tags']);
-            $this->assertIsArray($template['options']);
+            Assert::assertNotEmpty($template['category']);
+            Assert::assertNotEmpty($template['title']);
+            Assert::assertNotEmpty($template['subtitle']);
+            Assert::assertNotEmpty($template['description']);
+            Assert::assertNotEmpty($template['analysis']);
+            Assert::assertIsArray($template['tags']);
+            Assert::assertIsArray($template['options']);
         }
     });
 
@@ -45,11 +44,11 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
 
         $categories = array_column($result, 'category');
 
-        $this->assertContains('Sport', $categories);
-        $this->assertContains('Crypto', $categories);
-        $this->assertContains('Politica', $categories);
-        $this->assertContains('Tecnologia', $categories);
-        $this->assertContains('Economia', $categories);
+        Assert::assertContains('Sport', $categories);
+        Assert::assertContains('Crypto', $categories);
+        Assert::assertContains('Politica', $categories);
+        Assert::assertContains('Tecnologia', $categories);
+        Assert::assertContains('Economia', $categories);
     });
 
     test('_templates_contain_options', function (): void {
@@ -58,13 +57,13 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
 
         foreach ($result as $template) {
             if ($template['category'] === 'Economia') {
-                $this->assertContains('0.25%', $template['options']);
-                $this->assertContains('0.50%', $template['options']);
-                $this->assertContains('Mantenimento', $template['options']);
-                $this->assertContains('Altro', $template['options']);
+                Assert::assertContains('0.25%', $template['options']);
+                Assert::assertContains('0.50%', $template['options']);
+                Assert::assertContains('Mantenimento', $template['options']);
+                Assert::assertContains('Altro', $template['options']);
             } else {
-                $this->assertContains('Sì', $template['options']);
-                $this->assertContains('No', $template['options']);
+                Assert::assertContains('Sì', $template['options']);
+                Assert::assertContains('No', $template['options']);
             }
         }
     });
@@ -74,9 +73,9 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
         $result = $action->execute();
 
         foreach ($result as $template) {
-            $this->assertNotEmpty($template['tags']);
-            $this->assertIsArray($template['tags']);
-            $this->assertNotEmpty(current($template['tags']));
+            Assert::assertNotEmpty($template['tags']);
+            Assert::assertIsArray($template['tags']);
+            Assert::assertNotEmpty(current($template['tags']));
         }
     });
 
@@ -84,24 +83,23 @@ describe('PredictionDraftFallbackTemplates Action', function (): void {
         $action = new PredictionDraftFallbackTemplatesAction;
         $result = $action->execute();
 
-        $this->assertIsArray($result);
-        $this->assertNotEmpty($result);
+        Assert::assertNotEmpty($result);
 
         // Verify the first template has all expected structure
         $firstTemplate = $result[0];
         $expectedKeys = ['category', 'title', 'subtitle', 'description', 'analysis', 'tags', 'options'];
 
         foreach ($expectedKeys as $key) {
-            $this->assertArrayHasKey($key, $firstTemplate);
+            Assert::assertArrayHasKey($key, $firstTemplate);
         }
 
         // Verify data types
-        $this->assertIsString($firstTemplate['category']);
-        $this->assertIsString($firstTemplate['title']);
-        $this->assertIsString($firstTemplate['subtitle']);
-        $this->assertIsString($firstTemplate['description']);
-        $this->assertIsString($firstTemplate['analysis']);
-        $this->assertIsArray($firstTemplate['tags']);
-        $this->assertIsArray($firstTemplate['options']);
+        Assert::assertIsString($firstTemplate['category']);
+        Assert::assertIsString($firstTemplate['title']);
+        Assert::assertIsString($firstTemplate['subtitle']);
+        Assert::assertIsString($firstTemplate['description']);
+        Assert::assertIsString($firstTemplate['analysis']);
+        Assert::assertIsArray($firstTemplate['tags']);
+        Assert::assertIsArray($firstTemplate['options']);
     });
 });

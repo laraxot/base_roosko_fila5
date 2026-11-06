@@ -28,7 +28,6 @@ class ConvertWidget extends XotBaseWidget
 
     public float $rate = 0.0;
 
-    /** @var view-string */
     protected string $view = 'media::filament.widgets.convert';
 
     protected static string $resource = MediaResource::class;

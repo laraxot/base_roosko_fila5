@@ -1,16 +1,7 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "visual testing playwright puppeteer"
 issues: []
 discussions: []
-=======
->>>>>>> laraxot/dev
-=======
-qmd: "visual testing playwright puppeteer"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: Visual Testing con Playwright e Puppeteer — Tema Meetup
 type: concept
 sources:
@@ -23,14 +14,7 @@ updated: 2026-05-04
 tags: [visual-testing, playwright, puppeteer, e2e, screenshot, laravel, theme, Meetup]
 related:
   - playwright-testing-policy
-<<<<<<< HEAD
-<<<<<<< HEAD
 status: active
-=======
->>>>>>> laraxot/dev
-=======
-status: active
->>>>>>> laraxot/dev
 ---
 
 # Visual Testing con Playwright e Puppeteer — Tema Meetup
@@ -39,16 +23,7 @@ status: active
 
 Il testing visivo permette di rilevare regressioni UI nel tema Meetup confrontando screenshot di riferimento con screenshot attuali.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 Per la policy di collocazione: vedi [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md).
-=======
-Per la policy di collocazione: vedi [Playwright Testing Policy](../../../../docs/wiki/concepts/playwright-testing-policy.md).
->>>>>>> laraxot/dev
-=======
-Per la policy di collocazione: vedi [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md).
-Per la policy di collocazione: vedi [Playwright Testing Policy](../../../../docs/wiki/concepts/playwright-testing-policy.md).
->>>>>>> laraxot/dev
 
 ## Collocazione Test
 
@@ -91,17 +66,5 @@ test('Meetup theme renders correctly', async ({ page }) => {
 ## Risorse
 
 - [Playwright Docs](https://playwright.dev/)
-<<<<<<< HEAD
-<<<<<<< HEAD
 - [Visual Control Mastery](../../../../../../docs/wiki/concepts/visual-control-mastery.md)
 - [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md)
-=======
-- [Visual Control Mastery](../../../../docs/wiki/concepts/visual-control-mastery.md)
-- [Playwright Testing Policy](../../../../docs/wiki/concepts/playwright-testing-policy.md)
->>>>>>> laraxot/dev
-=======
-- [Visual Control Mastery](../../../../../../docs/wiki/concepts/visual-control-mastery.md)
-- [Playwright Testing Policy](../../../../../../docs/wiki/concepts/playwright-testing-policy.md)
-- [Visual Control Mastery](../../../../docs/wiki/concepts/visual-control-mastery.md)
-- [Playwright Testing Policy](../../../../docs/wiki/concepts/playwright-testing-policy.md)
->>>>>>> laraxot/dev

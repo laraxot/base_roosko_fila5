@@ -50,9 +50,7 @@ class LogActivityAction
             $causerId = Auth::id();
         }
 
-        $activityClass = Activity::class;
-
-        return $activityClass::create([
+        return Activity::typedQuery()->create([
             'log_name' => $this->type,
             'description' => $this->description ?? sprintf('Activity: %s', $this->type),
             'subject_type' => $this->subject ? get_class($this->subject) : null,

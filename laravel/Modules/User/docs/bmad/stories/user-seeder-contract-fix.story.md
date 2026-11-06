@@ -4,10 +4,7 @@ type: story
 status: completed
 updated: 2026-10-21
 tags: [phpstan, user, seeder, contract, fix]
-<<<<<<< HEAD
 qmd: "user   seeders `getconsolecommand()` user"
-=======
->>>>>>> laraxot/dev
 ---
 # User: seeders `getConsoleCommand()`
 **Problema**: `RolesSeeder` / `UserMassSeeder` dichiaravano `getConsoleCommand()` senza dichiarare il tipo di ritorno; chiamavano `$this->getConsoleCommand()` assumendo non-null ma il contratto Laravel è `?Command`.

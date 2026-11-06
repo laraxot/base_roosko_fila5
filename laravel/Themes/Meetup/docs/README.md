@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
+
 ---
 title: "Meetup: ingresso alla documentazione"
 type: readme
@@ -37,16 +34,6 @@ Regole che valgono qui: radice del tema con al massimo 5 `.md` e zero `.txt` (`d
 
 Non creare `docs/archive/`: la cartella e' esclusa dal `.gitignore` del tema e
 la regola condivisa e' [no-docs-archive](../../../../bashscripts/ai/wiki/concepts/no-docs-archive-rule.md).
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-# Meetup theme docs
-
-- `wiki/` — canonical on-demand wiki (rules, skills, memories, commands); start at `wiki/index.md`
-- `llm-wiki/` — LLM-facing wiki artifacts
-- `raw/` — raw source notes
-- `codex-error-fix.md`, `PERFORMANCE-OPTIMIZATION.md`, `REDUNDANCY_ANALYSIS.md`, `ON-DEMAND-PATTERN.md`, `QMD-SETUP.md`, `redundancy-audit-2026-05-21.md`, `merge-conflicts-list.md`, `PROJECT-STRUCTURE.md` — standalone notes, not yet indexed
-=======
 # Theme Documentation
 
 This directory contains the documentation for the Meetup theme.
@@ -91,8 +78,3 @@ Developers are encouraged to contribute to this documentation to keep it accurat
 - **Component**: `resources/views/components/blocks/events/list.blade.php`.
     - **Props**: Receives `$eventsData` (array of `BlockData` objects).
     - **Visuals**: Uses Tailwind CSS grid layout.
-
->>>>>>> laraxot/dev
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev

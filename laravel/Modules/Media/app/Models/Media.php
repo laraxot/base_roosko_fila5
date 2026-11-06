@@ -141,11 +141,7 @@ class Media extends SpatieMedia
     protected function casts(): array
     {
         return [
-<<<<<<< HEAD
             'id' => 'string',
-=======
-            'id' => 'integer',
->>>>>>> laraxot/dev
             'uuid' => 'string',
             'created_at' => 'datetime',
             'updated_at' => 'datetime',

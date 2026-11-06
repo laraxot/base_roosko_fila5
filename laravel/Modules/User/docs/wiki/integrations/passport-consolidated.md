@@ -384,11 +384,7 @@ related:
 
 **Status**: ✅ COMPLETATO
 **Metodologia**: Super Mucca
-<<<<<<< HEAD
 **Vedi**: [passport-cluster-implementation-completed.md](../../passport-cluster-implementation-completed.md)
-=======
-**Vedi**: [passport-cluster-implementation-completed.md](./passport-cluster-implementation-completed.md)
->>>>>>> laraxot/dev
 
 ---
 
@@ -730,13 +726,8 @@ class ListOauthClients extends XotBaseListRecords
 
 ## 📚 Riferimenti
 
-<<<<<<< HEAD
 - [Passport Cluster Resources Pattern](../../passport-cluster-resources-pattern.md)
 - [Passport Cluster Summary](../../passport-cluster-summary.md)
-=======
-- [Passport Cluster Resources Pattern](./passport-cluster-resources-pattern.md)
-- [Passport Cluster Summary](./passport-cluster-summary.md)
->>>>>>> laraxot/dev
 - [Passport Cluster Summary](../../passport-cluster-summary.md)
 - [Filament Class Extension Rules](../../xot/docs/filament-class-extension-rules.md)
 
@@ -963,15 +954,9 @@ cd laravel
 
 ## References
 
-<<<<<<< HEAD
 - [Passport Cluster Proposal](../../passport-cluster-proposal.md)
 - [Passport Cluster Philosophy](../../passport-cluster-philosophy.md)
 - [Passport Cluster Inner Debate](../../passport-cluster-inner-debate.md)
-=======
-- [Passport Cluster Proposal](./passport-cluster-proposal.md)
-- [Passport Cluster Philosophy](./passport-cluster-philosophy.md)
-- [Passport Cluster Inner Debate](./passport-cluster-inner-debate.md)
->>>>>>> laraxot/dev
 - [Xot Filament Extension Rules](../../xot/docs/filament-class-extension-rules.md)
 - [PHPStan Quality Guide](../../xot/docs/phpstan-code-quality-guide.md)
 
@@ -1594,13 +1579,8 @@ find Modules/User/app/Filament/Clusters/Passport/Resources -name "*.php" -type f
 
 - [PSR-4 Autoloading Standard](https://www.php-fig.org/psr/psr-4/)
 - [Composer Autoload Documentation](https://getcomposer.org/doc/04-schema.md#psr-4)
-<<<<<<< HEAD
 - [Laraxot Module Structure](../../../../Xot/docs/module-structure.md)
 - [Previous Implementation Doc](../../passport-cluster-implementation-status.md)
-=======
-- [Laraxot Module Structure](../../xot/docs/module-structure.md)
-- [Previous Implementation Doc](./passport-cluster-implementation-status.md)
->>>>>>> laraxot/dev
 
 ---
 
@@ -1787,15 +1767,9 @@ find Modules/User/app/Filament/Clusters/Passport/Resources -name "*Resource.php"
 
 ## 📚 Riferimenti
 
-<<<<<<< HEAD
 - [Passport Cluster Summary](../../passport-cluster-summary.md)
 - [Passport Cluster Summary](../../passport-cluster-summary.md)
 - [Passport Cluster Implementation](../../passport-cluster-implementation-completed.md)
-=======
-- [Passport Cluster Summary](./passport-cluster-summary.md)
-- [Passport Cluster Summary](../../passport-cluster-summary.md)
-- [Passport Cluster Implementation](./passport-cluster-implementation-completed.md)
->>>>>>> laraxot/dev
 - [Filament Clusters Documentation](../../xot/docs/filament-class-extension-rules.md)
 
 ---
@@ -2257,15 +2231,9 @@ find Modules/User/app/Filament/Clusters/Passport/Resources -name "*Resource.php"
 
 ## 📚 Riferimenti
 
-<<<<<<< HEAD
 - [Passport Cluster Resources Only Rule](../../passport-cluster-resources-only-rule.md) - Regola critica
 - [Passport Cluster Implementation](../../passport-cluster-implementation-completed.md) - Implementazione
 - [Passport Cluster Summary](../../passport-cluster-summary.md) - Riepilogo
-=======
-- [Passport Cluster Resources Only Rule](./passport-cluster-resources-only-rule.md) - Regola critica
-- [Passport Cluster Implementation](./passport-cluster-implementation-completed.md) - Implementazione
-- [Passport Cluster Summary](./passport-cluster-summary.md) - Riepilogo
->>>>>>> laraxot/dev
 - [Passport Cluster Summary](../../passport-cluster-summary.md) - Riepilogo
 
 ---
@@ -3840,11 +3808,7 @@ find Modules/User/app/Filament/Resources -name "SocialProviderResource.php"
 
 ## 📚 Riferimenti
 
-<<<<<<< HEAD
 - [Passport Cluster Resources Only Rule](../../passport-cluster-resources-only-rule.md)
-=======
-- [Passport Cluster Resources Only Rule](./passport-cluster-resources-only-rule.md)
->>>>>>> laraxot/dev
 - [Filosofia Modulo User](./filosofia-modulo-user.md)
 - [Laravel Passport Documentation](https://laravel.com/docs/passport)
 - [Laravel Socialite Documentation](https://laravel.com/docs/socialite)

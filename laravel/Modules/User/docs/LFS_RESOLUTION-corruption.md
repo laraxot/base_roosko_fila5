@@ -3,13 +3,10 @@ title: LFS Corruption Resolution
 date: 2026-07-28
 status: superseded
 superseded_by: lfs-resolution.md
-<<<<<<< HEAD
 type: note
 updated: 2026-10-27
 tags: [docs, user]
 qmd: "lfs corruption resolution (2026-07-28) user"
-=======
->>>>>>> laraxot/dev
 ---
 
 # LFS Corruption Resolution (2026-07-28)

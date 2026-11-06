@@ -170,11 +170,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-[date].md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -327,11 +323,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-.md.md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -485,11 +477,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-.md.md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -642,11 +630,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-.md.md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -685,11 +669,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
 > Questo file è stato rinominato in [dry-kiss-analysis-4.md](../../dry-kiss-analysis.md). Non aggiungere date nel filename; usare `created/updated` nel front matter.
-=======
-> Questo file è stato rinominato in [dry-kiss-analysis-4.md](dry-kiss-analysis.md). Non aggiungere date nel filename; usare `created/updated` nel front matter.
->>>>>>> laraxot/dev
   - "./actions-path-convention.md"
   - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
@@ -838,11 +818,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-.md.md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -891,11 +867,7 @@ related:
 
 ## 📊 Situazione Attuale
 
-<<<<<<< HEAD
 L'analisi del 2025-10-15 (vedi [dry-kiss-analysis.md](../../dry-kiss-analysis.md)) è ancora valida e i problemi evidenziati persistono.
-=======
-L'analisi del 2025-10-15 (vedi [dry-kiss-analysis.md](./dry-kiss-analysis.md)) è ancora valida e i problemi evidenziati persistono.
->>>>>>> laraxot/dev
 
 ### Punti Critici Confermati:
 1.  **Numero eccessivo di Models (89)**: Necessaria suddivisione in namespace o moduli separati (OAuth, Device).
@@ -947,11 +919,7 @@ related:
   - "./actions-path-convention.md"
 ---
 
-<<<<<<< HEAD
 > Questo file è stato rinominato in [dry-kiss-analysis-.deprecated.md](../../dry-kiss-analysis-.deprecated.md). Non aggiungere date nel filename; usare `created/updated` nel front matter.
-=======
-> Questo file è stato rinominato in [dry-kiss-analysis-.deprecated.md](dry-kiss-analysis-.deprecated.md). Non aggiungere date nel filename; usare `created/updated` nel front matter.
->>>>>>> laraxot/dev
   - "./actions-path-convention.md"
   - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
@@ -1100,11 +1068,7 @@ class RouteServiceProvider extends XotBaseRouteServiceProvider
 
 ## 🔗 Collegamenti
 
-<<<<<<< HEAD
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
-=======
-- [Base Classes Hierarchy](./models/base-classes-hierarchy.md)
->>>>>>> laraxot/dev
 - [Base Classes Corrections](./fixes/base-classes-corrections-.md.md)
 - [Architecture](./core/architecture.md)
 - [Base Classes Hierarchy](../../models/base-classes-hierarchy.md)
@@ -1538,11 +1502,7 @@ related:
 
 ## 📊 Situazione Attuale
 
-<<<<<<< HEAD
 L'analisi del [DATE] (vedi [dry-kiss-analysis.md](../../dry-kiss-analysis.md)) è ancora valida e i problemi evidenziati persistono.
-=======
-L'analisi del [DATE] (vedi [dry-kiss-analysis.md](./dry-kiss-analysis.md)) è ancora valida e i problemi evidenziati persistono.
->>>>>>> laraxot/dev
 
 ### Punti Critici Confermati:
 1.  **Numero eccessivo di Models (89)**: Necessaria suddivisione in namespace o moduli separati (OAuth, Device).

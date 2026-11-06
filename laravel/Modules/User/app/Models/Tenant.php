@@ -16,9 +16,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 /**
  * Modules\User\Models\Tenant.
  *
- * @method static Builder|Tenant newModelQuery()
- * @method static Builder|Tenant newQuery()
- * @method static Builder|Tenant query()
+ * @method static Builder<static>|Tenant newModelQuery()
+ * @method static Builder<static>|Tenant newQuery()
+ * @method static Builder<static>|Tenant query()
  *
  * @property EloquentCollection<int, Model&UserContract> $members
  * @property int|null $members_count
@@ -77,6 +77,5 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  *
  * @method static Builder<static>|Tenant whereTrialEndsAt($value)
  *
- * @mixin \Eloquent
  */
 class Tenant extends BaseTenant {}

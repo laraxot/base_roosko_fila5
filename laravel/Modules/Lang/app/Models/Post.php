@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Modules\Lang\Models;
 
 use Illuminate\Database\Eloquent\Model;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
 // --- traits ---
@@ -13,13 +12,6 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Str;
 use Modules\Lang\Models\Traits\PostMutators;
 use Modules\Lang\Models\Traits\PostRelations;
-=======
-use Illuminate\Support\Carbon;
-// --- traits ---
-// use Laravel\Scout\Searchable;
-use Modules\Lang\Models\Traits\Mutators\PostMutators;
-use Modules\Lang\Models\Traits\Relationships\PostRelations;
->>>>>>> laraxot/dev
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
 use Spatie\Sluggable\HasSlug;
@@ -28,7 +20,6 @@ use Spatie\Sluggable\SlugOptions;
 /**
  * Colonne allineate a `2026_01_21_211814_create_posts_table`.
  *
-<<<<<<< HEAD
  * @property string                     $id
  * @property int|null                   $user_id
  * @property string|int|null            $post_id
@@ -71,50 +62,6 @@ use Spatie\Sluggable\SlugOptions;
  * @property ProfileContract|null       $deleter
  * @property Model|null                 $linkable
  * @property ProfileContract|null       $updater
-=======
- * @property string $id
- * @property int|null $user_id
- * @property string|int|null $post_id
- * @property string|null $lang
- * @property string|null $guid
- * @property string|null $title
- * @property string|null $subtitle
- * @property string|null $post_type
- * @property string|null $txt
- * @property string|null $content
- * @property string|null $excerpt
- * @property string|null $slug
- * @property string|null $status
- * @property Carbon|null $published_at
- * @property string|null $locale
- * @property string|null $category
- * @property string|null $image_src
- * @property string|null $image_alt
- * @property string|null $image_title
- * @property string|null $meta_title
- * @property string|null $meta_description
- * @property string|null $meta_keywords
- * @property int|null $author_id
- * @property string|null $url
- * @property array<string, string>|null $url_lang
- * @property string|null $image_resize_src
- * @property Carbon|null $created_at
- * @property Carbon|null $updated_at
- * @property int|null $category_id
- * @property string|null $image
- * @property int|null $published
- * @property string|null $created_by
- * @property string|null $updated_by
- * @property string|null $linked_count
- * @property string|null $related_count
- * @property string|null $relatedrev_count
- * @property string|null $linkable_type
- * @property int|null $views_count
- * @property ProfileContract|null $creator
- * @property ProfileContract|null $deleter
- * @property Model|null $linkable
- * @property ProfileContract|null $updater
->>>>>>> laraxot/dev
  *
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Post newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|Post newQuery()

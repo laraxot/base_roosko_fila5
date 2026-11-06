@@ -6,8 +6,8 @@ namespace Modules\User\Models;
 
 use Filament\Models\Contracts\HasAvatar;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
 use Modules\User\Contracts\TenantContract;
 use Modules\User\Models\Traits\BaseTenantRelationsTrait;
@@ -21,26 +21,22 @@ use Spatie\Sluggable\SlugOptions;
 /**
  * Modules\User\Models\Tenant.
  *
- * @method static Builder|Tenant newModelQuery()
- * @method static Builder|Tenant newQuery()
- * @method static Builder|Tenant query()
- *
  * @property EloquentCollection<int, Model&UserContract> $members
  * @property int|null $members_count
  * @property ProfileContract|null $creator
  * @property ProfileContract|null $updater
  *
- * @mixin \Eloquent
+ * @method static Builder<static> newModelQuery()
+ * @method static Builder<static> newQuery()
+ * @method static Builder<static> query()
  */
 abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, TenantContract
 {
-    use HasSlug {
-        \Spatie\Sluggable\HasSlug::resolveRouteBindingQuery as resolveRouteBindingQueryFromSlug;
-    }
-    /** La chiave è una stringa: senza un id esplicito viene generato un UUID. */
+    use HasSlug;
     use HasUuids {
         \Illuminate\Database\Eloquent\Concerns\HasUuids::resolveRouteBindingQuery as resolveRouteBindingQueryFromUuids;
     }
+    use BaseTenantRelationsTrait;
     use InteractsWithMedia;
 
     public $incrementing = false;
@@ -48,22 +44,8 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
     protected $keyType = 'string';
 
     /**
-     * Risolve la collisione tra HasSlug e HasUuids su resolveRouteBindingQuery:
-     * valida l'UUID per le chiavi univoche (HasUuids), poi risolve lo slug (HasSlug).
-     *
-     * @param Builder<\Illuminate\Database\Eloquent\Model>|\Illuminate\Database\Eloquent\Model $query
-     * @param string|int $value
-     * @param string|null $field
-     * @return Builder<\Illuminate\Database\Eloquent\Model>
+     * @var list<string>
      */
-    public function resolveRouteBindingQuery($query, $value, $field = null): Builder
-    {
-        $query = $this->resolveRouteBindingQueryFromUuids($query, $value, $field);
-
-        return $this->resolveRouteBindingQueryFromSlug($query, $value, $field);
-    }
-
-    /** @var list<string> */
     protected $fillable = [
         'id',
         'name',
@@ -77,34 +59,27 @@ abstract class BaseTenant extends BaseModel implements HasAvatar, HasMedia, Tena
     ];
 
     /**
-     * Get the options for generating the slug.
+     * @param Builder<Model>|Model $query
+     * @param string|int $value
+     * @param string|null $field
+     * @return Builder<Model>
      */
+    public function resolveRouteBindingQuery($query, $value, $field = null): Builder
+    {
+        if ($query instanceof Model) {
+            $query = $query->newQuery();
+        }
+
+        return $query->where($field ?? $this->getRouteKeyName(), $value);
+    }
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()->generateSlugsFrom('name')->saveSlugsTo('slug');
     }
 
-    /**
-     * Ottiene l'URL dell'avatar del tenant per Filament.
-     *
-     * @return string|null URL dell'avatar o null se non presente
-     */
     public function getFilamentAvatarUrl(): ?string
     {
-        // return $this->avatar_url;
         return $this->getFirstMediaUrl('avatar');
     }
-
-    // public function getSlugAttribute(?string $value): ?string
-    // {
-    //     if(is_string($value) || $this->getKey() == null) {
-    //         return $value;
-    //     }
-    //     $slug = Str::slug($this->name);
-    //     $this->slug = $slug;
-    //     $this->save();
-    //     return $slug;
-    // }
-
-    use BaseTenantRelationsTrait;
 }

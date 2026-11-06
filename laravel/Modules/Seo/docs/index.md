@@ -151,11 +151,7 @@ Attenzione: questa sezione elenca documenti, non funzioni. Esistono nel codice s
 
 - [conflict-resolution.md](./conflict-resolution.md)
 - [boost-skill-fix-summary.md](./boost-skill-fix-summary.md)
-<<<<<<< HEAD
-- [redundancy-audit.md](./redundancy-audit.md) - audit del 2026-05-21 (ex `redundancy-audit-2026-05-21.md`), distinct from the `redundancy_analysis.md`/`REDUNDANCY_ANALYSIS.md` stub pair (see Storico)
-=======
 - [redundancy-audit.md](./redundancy-audit.md) - audit del 2026-05-21 (ex `redundancy-audit.md`), distinct from the `redundancy_analysis.md`/`REDUNDANCY_ANALYSIS.md` stub pair (see Storico)
->>>>>>> laraxot/dev
 - [wiki/troubleshooting/git-merge-conflict-inventory.md](./wiki/troubleshooting/git-merge-conflict-inventory.md) (ex `...-2026-04-28.md`)
 
 ## Wiki / second brain (`docs/wiki/`)

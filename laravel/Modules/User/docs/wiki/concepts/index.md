@@ -23,23 +23,15 @@ Concetti specifici del modulo User. Carica on-demand via `qmd search` o consulta
 
 ## Filament auth FO
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_ydeohb
 - [filament-widget-no-validate-form](../../llm-wiki/concepts/filament-widget-no-validate-form.md) — validazione solo in `UserForm`; submit = `getState()`, no `validateForm()`
 - [filament-widget-no-validate-form](../../llm-wiki/concepts/filament-widget-no-validate-form.md) — validazione solo in `UserForm`; submit = `getState()`, no `validateForm()`
 - [filament-widget-linear-crud-model-create](filament-widget-linear-crud-model-create.md) — `getUserClass()::create($data)`, no Action banale
 - [filament-widget-resource-form-delegation](filament-widget-resource-form-delegation.md) — widget → `UserForm::get*FormSchema()`
-=======
-=======
->>>>>>> laraxot/dev
 - [filament-widget-no-validate-form](filament-widget-no-validate-form.md): validazione solo in `UserForm`; submit = `getState()`, no `validateForm()`
 - [filament-widget-no-validate-form](../../llm-wiki/concepts/filament-widget-no-validate-form.md): validazione solo in `UserForm`; submit = `getState()`, no `validateForm()`
 - [filament-widget-linear-crud-model-create](filament-widget-linear-crud-model-create.md): `getUserClass()::create($data)`, no Action banale
 - [filament-widget-resource-form-delegation](filament-widget-resource-form-delegation.md): widget → `UserForm::get*FormSchema()`
-<<<<<<< HEAD
->>>>>>> .merge_file_RWGyVf
-=======
->>>>>>> laraxot/dev
+
 
 ## Testing
 
@@ -67,8 +59,6 @@ Concetti specifici del modulo User. Carica on-demand via `qmd search` o consulta
 
 ## Folio FO (User = owner pagine)
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_ydeohb
 - [folio-pages-owner-pattern](folio-pages-owner-pattern.md) — `pages/` nel modulo, mount Cms, zero `web.php`
 - [notifications-folio-page](notifications-folio-page.md) — centro notifiche in-app
 - [notifications-folio-route](notifications-folio-route.md) — `route('notifications')` quick ref
@@ -77,9 +67,6 @@ Concetti specifici del modulo User. Carica on-demand via `qmd search` o consulta
 - Cms: [folio-filesystem-routing-no-web-php](../../../../Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md) — religione routing
 - Cms: [folio-list-vs-route-list](../../../../Cms/docs/wiki/concepts/folio-list-vs-route-list.md) — `folio:list` audit
 - Cms: [folio-filesystem-routing-no-web-php](../../../../Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md) — religione routing
-=======
-=======
->>>>>>> laraxot/dev
 - [folio-pages-owner-pattern](folio-pages-owner-pattern.md): `pages/` nel modulo, mount Cms, zero `web.php`
 - [notifications-folio-page](notifications-folio-page.md): centro notifiche in-app
 - [notifications-folio-route](notifications-folio-route.md): `route('notifications')` quick ref
@@ -88,8 +75,3 @@ Concetti specifici del modulo User. Carica on-demand via `qmd search` o consulta
 - Cms: [folio-filesystem-routing-no-web-php](../../Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md): religione routing
 - Cms: [folio-list-vs-route-list](../../../../Cms/docs/wiki/concepts/folio-list-vs-route-list.md): `folio:list` audit
 - Cms: [folio-filesystem-routing-no-web-php](../../../../Cms/docs/wiki/concepts/folio-filesystem-routing-no-web-php.md): religione routing
-<<<<<<< HEAD
->>>>>>> .merge_file_RWGyVf
-=======
->>>>>>> laraxot/dev
-

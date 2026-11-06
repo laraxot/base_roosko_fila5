@@ -1,36 +1,12 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< .merge_file_0TDtz2
-title: "Notify Module — Document"
-=======
 title: "Notify Module: Document"
->>>>>>> .merge_file_iof29n
-=======
-title: "Notify Module: Document"
->>>>>>> laraxot/dev
-=======
-title: "Notify Module: Document"
->>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "wiki/_integration/-repos.md"
 qmd: "_repos alias superseded"
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< .merge_file_0TDtz2
-# Notify Module — Document
-=======
 # Notify Module: Document
->>>>>>> .merge_file_iof29n
-=======
-# Notify Module: Document
->>>>>>> laraxot/dev
-=======
-# Notify Module: Document
->>>>>>> laraxot/dev
 
 Documento identico al canonico: [-repos.md](-repos.md).
 

@@ -10,21 +10,12 @@ discussions: ["https://github.com/provtv/<nome repository>/discussions/1"]
 related:
   - "./00-index.md"
   - "./00-index.md"
-<<<<<<< HEAD
   - "../../2fa-guide.md"
   - "./2fa.md"
   - "../../accessor-delegation-pattern.md"
   - "./actions-path-convention.md"
   - "./actions-path-convention.md"
   - "../../00-index-indice-documentazione-modulo-user.md"
-=======
-  - "./2fa-guide.md"
-  - "./2fa.md"
-  - "./accessor-delegation-pattern.md"
-  - "./actions-path-convention.md"
-  - "./actions-path-convention.md"
-  - "./00-index-indice-documentazione-modulo-user.md"
->>>>>>> laraxot/dev
   - "./00-index.md"
   - "../../2fa-guide.md"
   - "./2fa.md"
@@ -1057,11 +1048,7 @@ test('user can switch teams', function () {
 
 ### Troubleshooting
 - [Common Issues](./troubleshooting/common-issues.md) - Frequently encountered problems
-<<<<<<< HEAD
 - [Login Component Troubleshooting](../../troubleshooting-login-component.md) - Login widget issues
-=======
-- [Login Component Troubleshooting](./troubleshooting-login-component.md) - Login widget issues
->>>>>>> laraxot/dev
 - [FAQ](./troubleshooting/faq.md) - Frequently asked questions
 
 ---
@@ -1105,7 +1092,6 @@ See [ROADMAP.md](./roadmap.md) for details.
 ## 📖 Related Documentation
 
 ### Internal Modules
-<<<<<<< HEAD
 - [Xot Module](../../../../Xot/docs/README.md) - Core foundation
 - [Activity Module](../../../../Activity/docs/README.md) - Activity tracking
 - [Lang Module](../../../../Lang/docs/README.md) - Translations
@@ -1114,16 +1100,6 @@ See [ROADMAP.md](./roadmap.md) for details.
 ### Project Documentation
 - [CLAUDE.md](../../../../../CLAUDE.md) - Project architecture
 - [Security Guidelines](../../../../../../docs/security.md)
-=======
-- [Xot Module](../Xot/docs/README.md) - Core foundation
-- [Activity Module](../Activity/docs/README.md) - Activity tracking
-- [Lang Module](../Lang/docs/README.md) - Translations
-- [Tenant Module](../Tenant/docs/README.md) - Enhanced tenancy
-
-### Project Documentation
-- [CLAUDE.md](../../../CLAUDE.md) - Project architecture
-- [Security Guidelines](../../../docs/security.md)
->>>>>>> laraxot/dev
 - [Xot Module](../../../../Xot/docs/README.md) - Core foundation
 - [Activity Module](../../../../Activity/docs/README.md) - Activity tracking
 - [Lang Module](../../../../Lang/docs/README.md) - Translations

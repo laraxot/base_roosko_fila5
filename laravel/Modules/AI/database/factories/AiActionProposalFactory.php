@@ -23,7 +23,7 @@ class AiActionProposalFactory extends Factory
     {
         return [
             'public_id' => $this->faker->unique()->uuid(),
-            'ai_thread_id' => AiThreadFactory::new()->createOne()->id,
+            'ai_thread_id' => AiThreadFactory::new()->createOne()->getKey(),
             'proposed_by_user_id' => $this->faker->numberBetween(1, 50),
             'type' => $this->faker->randomElement(['create_work_order', 'update_status', 'assign_operator']),
             'payload' => ['reason' => $this->faker->sentence()],

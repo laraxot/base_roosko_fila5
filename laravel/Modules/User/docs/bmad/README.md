@@ -19,11 +19,7 @@ qmd: "user   bmad method integration user"
 
 ## Kit BMAD owner (canonico)
 
-<<<<<<< HEAD
 - [BMAD Planning](bmad-planning.md)
-=======
-- [BMAD Planning](../bmad-planning.md)
->>>>>>> laraxot/dev
 - [BMAD Brainstorming](../bmad-brainstorming.md)
 - [Filament blueprint](./filament-blueprint.md)
 - [Project context](./project-context.md)

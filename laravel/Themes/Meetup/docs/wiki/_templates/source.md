@@ -1,8 +1,5 @@
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
+
 title: "source"
 type: note
 tags: [documentation]
@@ -15,14 +12,6 @@ module: theme
 topic: source
 canonical: ../../../../docs/shared-components/source-Modules.md  # target mancante, verificato 2026-10-08
 status: stub
-<<<<<<< HEAD
-=======
-module: theme
-topic: source
-canonical: ../../../../docs/shared-components/source-Modules.md
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev
 ---
 
 See canonical documentation: ../../../../docs/shared-components/source-Modules.md

@@ -8,11 +8,7 @@ qmd: "coverage-clean coverage clean"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-<<<<<<< HEAD
   - "../00-index-indice-documentazione-modulo-user.md"
-=======
-  - "./00-index-indice-documentazione-modulo-user.md"
->>>>>>> laraxot/dev
   - "./00-index.md"
   - "../2fa-guide.md"
   - "./2fa.md"

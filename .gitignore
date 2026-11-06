@@ -1,7 +1,3 @@
-# Git attributes (legacy files - now handled by .gitignore)
-.gitattributes
-**/.gitattributes
-
 # System files
 .DS_Store
 *.exe

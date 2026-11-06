@@ -10,9 +10,6 @@ qmd: "MODEL_INHERITANCE_ANALYSIS alias superseded"
 
 Documento identico al canonico: [MODEL-INHERITANCE-ANALYSIS.md](MODEL-INHERITANCE-ANALYSIS.md).
 
-<<<<<<< HEAD
-<<<<<<< .merge_file_NfU8Gx
-<<<<<<< .merge_file_HynhnA
 **Nessun modello dentro i moduli deve estendere direttamente `Illuminate\Database\Eloquent\Model`.**
 
 Ogni modulo deve avere le proprie classi base che estendono le classi `XotBase*` del modulo Xot:
@@ -165,12 +162,5 @@ Dopo le modifiche, eseguire:
 - [XotBaseModel](../../../../Xot/app/Models/XotBaseModel.php)
 - [XotBasePivot](../../../../Xot/app/Models/XotBasePivot.php)
 - [XotBaseMorphPivot](../../../../Xot/app/Models/XotBaseMorphPivot.php)
-=======
 Canonico: `laravel/Modules/User/docs/wiki/integrations/MODEL-INHERITANCE-ANALYSIS.md`. Qui non ci sono istruzioni: seguire il file collegato.
->>>>>>> .merge_file_mlRLRo
-=======
 Canonico: `laravel/Modules/User/docs/wiki/integrations/MODEL-INHERITANCE-ANALYSIS.md`. Qui non ci sono istruzioni: seguire il file collegato.
->>>>>>> .merge_file_aFfp8r
-=======
-Canonico: `laravel/Modules/User/docs/wiki/integrations/MODEL-INHERITANCE-ANALYSIS.md`. Qui non ci sono istruzioni: seguire il file collegato.
->>>>>>> laraxot/dev

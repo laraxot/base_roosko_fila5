@@ -59,10 +59,7 @@ qmd search "Job <topic>" --limit 5
 
 - [model-policy-laravel-contract](./concepts/model-policy-laravel-contract.md)
 - [policy-restoration-incident](./concepts/policy-restoration-incident.md)
-<<<<<<< HEAD
-=======
 
 ## Model architecture
 
 - [model-trait-inventory](./architecture/model-trait-inventory.md): accessor/helper e relazioni delle classi Job estratti nei trait per modello.
->>>>>>> laraxot/dev

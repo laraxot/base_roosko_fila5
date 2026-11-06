@@ -174,7 +174,6 @@ class Task extends BaseModel
      *
      * throws \Exception
      */
-
     /**
      * Frequencies Relation.
      *

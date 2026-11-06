@@ -76,7 +76,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|NotifyTheme whereUpdatedBy($value)
  * @method static Builder<static>|NotifyTheme whereViewParams($value)
  *
- * @mixin Eloquent
+ * @mixin \Illuminate\Database\Eloquent\Model
  */
 class NotifyTheme extends BaseModel
 {

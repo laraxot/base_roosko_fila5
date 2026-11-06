@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Weighing\Actions;
 
+use function Safe\preg_replace;
+
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -20,7 +22,7 @@ class NormalizeVehiclePlateAction
             return null;
         }
 
-        $normalized = strtoupper(preg_replace('/[\s.\-]+/', '', $plate) ?? $plate);
+        $normalized = strtoupper(preg_replace('/[\s.\-]+/', '', $plate));
 
         return $normalized === '' ? null : $normalized;
     }

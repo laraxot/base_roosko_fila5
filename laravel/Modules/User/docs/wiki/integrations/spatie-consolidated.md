@@ -241,21 +241,12 @@ Laraxot keeps domain ownership inside modules. Spatie Permission is an infrastru
 - Spatie Laravel Permission prerequisites: https://spatie.be/docs/laravel-permission/v7/prerequisites
 - Spatie Laravel 7 installation notes: https://spatie.be/docs/laravel-permission/v7/installation-laravel
 - Spatie teams permissions: https://spatie.be/docs/laravel-permission/v7/basic-usage/teams-permissions
-<<<<<<< HEAD
 - Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../../../vendor/spatie/laravel-permission/config/permission.php)
 - Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
 - Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
 - Team model: [../app/Models/Team.php](../../../app/Models/Team.php)
 - HasTeams trait: [../app/Models/Traits/HasTeams.php](../../../app/Models/Traits/HasTeams.php)
 - Team switch component: [../app/Http/Livewire/Team/Change.php](../../../app/Http/Livewire/Team/Change.php)
-=======
-- Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../vendor/spatie/laravel-permission/config/permission.php)
-- Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
-- Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
-- Team model: [../app/Models/Team.php](../app/Models/Team.php)
-- HasTeams trait: [../app/Models/Traits/HasTeams.php](../app/Models/Traits/HasTeams.php)
-- Team switch component: [../app/Http/Livewire/Team/Change.php](../app/Http/Livewire/Team/Change.php)
->>>>>>> laraxot/dev
 - Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../../../vendor/spatie/laravel-permission/config/permission.php)
 - Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
 - Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
@@ -426,21 +417,12 @@ Laraxot keeps domain ownership inside modules. Spatie Permission is an infrastru
 - Spatie Laravel Permission prerequisites: https://spatie.be/docs/laravel-permission/v7/prerequisites
 - Spatie Laravel 7 installation notes: https://spatie.be/docs/laravel-permission/v7/installation-laravel
 - Spatie teams permissions: https://spatie.be/docs/laravel-permission/v7/basic-usage/teams-permissions
-<<<<<<< HEAD
 - Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../../../vendor/spatie/laravel-permission/config/permission.php)
 - Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
 - Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
 - Team model: [../app/Models/Team.php](../../../app/Models/Team.php)
 - HasTeams trait: [../app/Models/Traits/HasTeams.php](../../../app/Models/Traits/HasTeams.php)
 - Team switch component: [../app/Http/Livewire/Team/Change.php](../../../app/Http/Livewire/Team/Change.php)
-=======
-- Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../vendor/spatie/laravel-permission/config/permission.php)
-- Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
-- Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
-- Team model: [../app/Models/Team.php](../app/Models/Team.php)
-- HasTeams trait: [../app/Models/Traits/HasTeams.php](../app/Models/Traits/HasTeams.php)
-- Team switch component: [../app/Http/Livewire/Team/Change.php](../app/Http/Livewire/Team/Change.php)
->>>>>>> laraxot/dev
 - Local vendor config: [../../../vendor/spatie/laravel-permission/config/permission.php](../../../../../vendor/spatie/laravel-permission/config/permission.php)
 - Local vendor registrar: [../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php](../../../../../vendor/spatie/laravel-permission/src/PermissionRegistrar.php)
 - Local vendor team resolver: [../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php](../../../../../vendor/spatie/laravel-permission/src/DefaultTeamResolver.php)
@@ -691,11 +673,7 @@ use Spatie\Permission\Models\Permission;  // Confuso se si estende
 
 ## 📚 **RIFERIMENTI E REGOLE CORRELATE**
 
-<<<<<<< HEAD
 - [Vendor Extension Pattern](../../vendor-extension-pattern.md) - Pattern generale per estendere classi vendor
-=======
-- [Vendor Extension Pattern](vendor-extension-pattern.md) - Pattern generale per estendere classi vendor
->>>>>>> laraxot/dev
 - [BaseModel Philosophy](../xot/docs/models/model-architecture.md)
 - [External Package Integration](../Xot/docs/models/model-architecture.md#special-cases)
 - [Class Responsibility Separation](../xot/docs/critical-architecture-rules.md)

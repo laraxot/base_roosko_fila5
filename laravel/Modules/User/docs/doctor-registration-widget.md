@@ -266,11 +266,7 @@ The <nome progetto> Team'
 
 ## Collegamenti Bidirezionali
 
-<<<<<<< HEAD
 - [Email Doctor Registration](email-doctor-registration.md)
-=======
-- [Email Doctor Registration](docs/email-doctor-registration.md)
->>>>>>> laraxot/dev
 - [Email Doctor Registration](email-doctor-registration.md)
 - [Registrazione Odontoiatra](docs/roadmap_frontoffice/13-registrazione-odontoiatra.md)
 - [DoctorResource](Modules/Patient/app/Filament/Resources/DoctorResource.php)

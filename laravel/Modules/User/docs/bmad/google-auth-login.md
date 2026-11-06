@@ -9,11 +9,7 @@ related:
   - module: Fixcity
   - ./filament-blueprint.md
   - ./decision-log.md
-<<<<<<< HEAD
   - ../../../../Themes/Sixteen/docs/bmad/plans/oauth-login-locale-fix.md
-=======
-  - ../../../Themes/Sixteen/docs/bmad/plans/oauth-login-locale-fix.md
->>>>>>> laraxot/dev
 summary: |
   Login Google sul FO pubblico: stesso prefisso lingua della pagina login.
   Entry `/it/auth/login/google`, callback `/it/auth/login/google/callback`.
@@ -110,4 +106,3 @@ Con solo `$provider`, Laravel legava il segmento `it` a `$provider` →
 - Aprire OAuth in un nuovo tab (rompe state/session)
 - Nuovi controller o duplicare la logica Socialite nel tema
 - Tipizzare la Facade `Request` nel `__invoke` OAuth
-

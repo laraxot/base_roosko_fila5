@@ -25,7 +25,6 @@ use Sushi\Sushi;
  * @method static Builder<static>|TenantDomain whereId($value)
  * @method static Builder<static>|TenantDomain whereName($value)
  *
- * @mixin \Eloquent
  */
 class TenantDomain extends BaseModel
 {

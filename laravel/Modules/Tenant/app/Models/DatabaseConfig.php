@@ -9,7 +9,6 @@ namespace Modules\Tenant\Models;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DatabaseConfig newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|DatabaseConfig query()
  *
- * @mixin \Eloquent
  */
 class DatabaseConfig extends BaseModel
 {

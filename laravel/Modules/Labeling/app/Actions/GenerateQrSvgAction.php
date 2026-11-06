@@ -12,9 +12,11 @@ use Modules\Labeling\Exceptions\LabelRenderException;
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
 
+use function Safe\preg_replace;
+
 /**
  * SVG inline del QR (chillerlan/php-qrcode), senza header XML: si incolla nel template PDF come
- * `{!! $qrSvg !!}`. Correzione d'errore M (15%): regge graffi e sporco tipici di un piazzale.
+ * `{{ qr_svg }}`. Correzione d'errore M (15%): regge graffi e sporco tipici di un piazzale.
  * Le opzioni usate esistono sia in php-qrcode 5.x (PHP 8.3) sia in 6.x (PHP 8.4).
  */
 class GenerateQrSvgAction

@@ -258,6 +258,32 @@ cd /var/www/_bases/base_fixcity_fila5/laravel
 
 ## 🚀 Testing Strategy
 
+## Weighing scope checkpoint
+
+La verifica mirata del perimetro top-level `Modules/Weighing` (escludendo
+esplicitamente `Modules/Weighing/laravel`) ha rilevato 48 segnalazioni PHPStan.
+Le cause sono state corrette alla sorgente in:
+
+- azioni di normalizzazione/parsing con le funzioni `Safe`;
+- driver TCP e test socket con gestione esplicita delle eccezioni;
+- normalizzazione tipizzata dei dati ricevuti dalle azioni Filament;
+- script di conversione PHPUnit → Pest, inclusi iteratori, file I/O e array shape.
+
+Verifica conclusiva del perimetro:
+
+```bash
+cd laravel
+./vendor/bin/phpstan analyse \
+  Modules/Weighing/app Modules/Weighing/config Modules/Weighing/database \
+  Modules/Weighing/routes Modules/Weighing/tests Modules/Weighing/*.php \
+  --no-progress
+```
+
+Risultato: `[OK] No errors` (exit code `0`). Il lint PHP dei file modificati passa.
+Il test TCP mirato è stato avviato ma resta non verificato per il blocco ambientale
+del database (`SQLSTATE[HY000] [1045]`, credenziali assenti), non per un errore del
+driver.
+
 ### Pre-Correzioni
 ```bash
 ./vendor/bin/phpstan analyse Modules --no-progress

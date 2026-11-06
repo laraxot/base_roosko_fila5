@@ -23,7 +23,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static \Illuminate\Database\Eloquent\Builder<static>|NotificationChannel newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder<static>|NotificationChannel query()
  *
- * @mixin \Eloquent
+ * @mixin \Illuminate\Database\Eloquent\Model
  */
 class NotificationChannel extends BaseModel
 {

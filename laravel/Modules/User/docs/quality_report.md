@@ -1,13 +1,5 @@
 ---
-<<<<<<< HEAD
-<<<<<<< .merge_file_Mz2lUZ
-title: "Quality Report — User"
-=======
 title: "Quality Report: User"
->>>>>>> .merge_file_f0u8cR
-=======
-title: "Quality Report: User"
->>>>>>> laraxot/dev
 type: alias
 status: superseded
 canonical: "QUALITY_REPORT.md"

@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
+
 ---
 title: "AGENTS"
 type: note
@@ -14,11 +11,7 @@ discussions: []
 status: active
 ---
 
-<<<<<<< HEAD
-=======
->>>>>>> laraxot/dev
-=======
->>>>>>> laraxot/dev
+
 # Meetup Theme LLM Wiki Agent Instructions
 
 > **Module/Theme:** Meetup
@@ -43,18 +36,9 @@ You are the **Meetup Wiki Maintainer**. Your job is to:
 
 ```yaml
 ---
-<<<<<<< HEAD
-<<<<<<< HEAD
 qmd: "AGENTS"
 issues: []
 discussions: []
-=======
->>>>>>> laraxot/dev
-=======
-qmd: "AGENTS"
-issues: []
-discussions: []
->>>>>>> laraxot/dev
 title: "Page Title"
 type: concept|entity|source|comparison|decision|troubleshooting
 sources: ["raw/articles/filename.md"]
