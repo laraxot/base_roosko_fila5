@@ -45,10 +45,12 @@ jobs:
           restore-keys: composer-files-
 
       - name: Install dependencies
-        # composer.lock non e' versionato: la risoluzione avviene qui.
+        # composer.lock non e' versionato: la risoluzione avviene qui. Il primo passaggio installa
+        # wikimedia/composer-merge-plugin, il secondo risolve anche i composer.json dei moduli.
         run: |
           mkdir -p bootstrap/cache storage/framework/{cache,sessions,views} storage/logs
           composer install --no-interaction --no-progress --prefer-dist --no-scripts
+          composer update --no-interaction --no-progress --prefer-dist --no-scripts
 
       - name: Environment
         run: |
@@ -120,6 +122,7 @@ jobs:
         run: |
           mkdir -p bootstrap/cache
           composer install --no-interaction --no-progress --prefer-dist --no-scripts
+          composer update --no-interaction --no-progress --prefer-dist --no-scripts
 
       - name: PHPStan (config unica laravel/phpstan.neon)
         run: |

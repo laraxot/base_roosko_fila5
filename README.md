@@ -68,7 +68,8 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
 2. Installa le dipendenze:
    ```bash
    cd laravel
-   composer install
+   composer install   # installa anche wikimedia/composer-merge-plugin
+   composer update    # al primo giro: aggiunge le dipendenze dei moduli attivi (merge-plugin)
    cp .env.example .env
    php artisan key:generate
    ```
