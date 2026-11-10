@@ -49,7 +49,6 @@ jobs:
         run: |
           mkdir -p bootstrap/cache storage/framework/{cache,sessions,views} storage/logs
           composer install --no-interaction --no-progress --prefer-dist --no-scripts
-          composer dump-autoload
 
       - name: Environment
         run: |
@@ -81,6 +80,7 @@ jobs:
           ENV
           php artisan key:generate --force
           php artisan key:generate --force --env=testing
+          php artisan package:discover --ansi
 
       - name: Test database
         run: |

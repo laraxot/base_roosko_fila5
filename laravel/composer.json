@@ -65,7 +65,25 @@
         },
         "merge-plugin": {
             "include": [
-                "Modules/*/composer.json"
+                "Modules/Xot/composer.json",
+                "Modules/Tenant/composer.json",
+                "Modules/User/composer.json",
+                "Modules/UI/composer.json",
+                "Modules/Lang/composer.json",
+                "Modules/Media/composer.json",
+                "Modules/Geo/composer.json",
+                "Modules/Job/composer.json",
+                "Modules/Activity/composer.json",
+                "Modules/Notify/composer.json",
+                "Modules/Cms/composer.json",
+                "Modules/Gdpr/composer.json",
+                "Modules/Labeling/composer.json",
+                "Modules/Weighing/composer.json",
+                "Modules/Warehouse/composer.json",
+                "Modules/Processing/composer.json",
+                "Modules/Waste/composer.json",
+                "Modules/Rentri/composer.json",
+                "Modules/Roosko/composer.json"
             ]
         }
     },
