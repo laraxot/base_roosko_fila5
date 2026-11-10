@@ -1,1 +1,4 @@
-Nuovo SVG creato: logo-fixcity-heroicons-outline-v2.svg — stile outline navy, megafono + elementi urbani, ottimizzato, aria-label, testo FIXCITY, non sovrascrive.
+# Immagini pubbliche
+
+- `roosko-logo-light.svg`, `roosko-logo-dark.svg`: logo dei pannelli, configurato in `laravel/config/local/roosko/metatag.php` (`logo_header`, `logo_header_dark`).
+- `fire.svg`: icona usata dal tema.
