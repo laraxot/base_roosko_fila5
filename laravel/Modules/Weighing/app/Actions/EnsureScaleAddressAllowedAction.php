@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace Modules\Weighing\Actions;
 
 use Modules\Weighing\Exceptions\ScaleAddressNotAllowedException;
+use Safe\Exceptions\NetworkException;
 use Spatie\QueueableAction\QueueableAction;
+
+use function Safe\inet_pton;
+use function Safe\preg_match;
 
 /**
  * Indirizzo di rete di un indicatore di peso TCP: controlla host e porta e restituisce l'IP a cui collegarsi.
@@ -172,8 +176,9 @@ class EnsureScaleAddressAllowedAction
             return null;
         }
 
-        $packed = inet_pton($ip);
-        if ($packed === false) {
+        try {
+            $packed = inet_pton($ip);
+        } catch (NetworkException) {
             return null;
         }
 
