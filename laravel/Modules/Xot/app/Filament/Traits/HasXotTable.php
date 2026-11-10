@@ -346,7 +346,7 @@ trait HasXotTable
             $actions['view'] = self::withRecordReturnTo(
                 ViewAction::make()
                     ->iconButton()
-                    ->visible(static fn (Model $record): bool => (bool) $resource->canView($record)),
+                    ->visible(static fn (mixed $record): bool => $record instanceof Model && (bool) $resource->canView($record)),
                 isAnchor: true,
             );
         }
@@ -355,7 +355,7 @@ trait HasXotTable
             $actions['edit'] = self::withRecordReturnTo(
                 EditAction::make()
                     ->iconButton()
-                    ->visible(static fn (Model $record): bool => (bool) $resource->canEdit($record)),
+                    ->visible(static fn (mixed $record): bool => $record instanceof Model && (bool) $resource->canEdit($record)),
                 isAnchor: ! isset($actions['view']),
             );
         }
@@ -363,7 +363,7 @@ trait HasXotTable
         if (method_exists($resource, 'canDelete')) {
             $actions['delete'] = DeleteAction::make()
                 ->iconButton()
-                ->visible(static fn (Model $record): bool => (bool) $resource->canDelete($record));
+                ->visible(static fn (mixed $record): bool => $record instanceof Model && (bool) $resource->canDelete($record));
         }
 
         if ($this->shouldShowReplicateAction()) {
