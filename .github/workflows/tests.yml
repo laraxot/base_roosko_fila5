@@ -57,6 +57,7 @@ jobs:
           cat > .env <<'ENV'
           APP_NAME=Roosko
           APP_ENV=local
+          APP_KEY=
           APP_DEBUG=true
           APP_URL=http://roosko.local
           DB_CONNECTION=sqlite
@@ -69,6 +70,7 @@ jobs:
           cat > .env.testing <<'ENV'
           APP_NAME=Roosko
           APP_ENV=testing
+          APP_KEY=
           APP_DEBUG=true
           APP_URL=http://roosko.local
           DB_CONNECTION=sqlite
@@ -125,7 +127,11 @@ jobs:
           composer update --no-interaction --no-progress --prefer-dist --no-scripts
 
       - name: PHPStan (config unica laravel/phpstan.neon)
+        # Larastan avvia l'app: servono .env con chiave e le cartelle di storage.
         run: |
+          mkdir -p storage/framework/{cache,sessions,views} storage/logs
+          printf 'APP_NAME=Roosko\nAPP_ENV=local\nAPP_KEY=\nAPP_URL=http://roosko.local\nDB_CONNECTION=sqlite\n' > .env
+          php artisan key:generate --force
           php vendor/bin/phpstan analyse --memory-limit=2G --no-progress \
             Modules/Roosko/app Modules/Warehouse/app Modules/Processing/app Modules/Weighing/app \
             Modules/Labeling/app Modules/Waste/app Modules/Rentri/app
