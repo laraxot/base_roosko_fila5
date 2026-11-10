@@ -436,3 +436,6 @@ bin
 plans
 laravel/*.bak
 laravel/.phpstan-swarm*
+
+# file temporanei lasciati da merge interrotti
+.merge_file_*
