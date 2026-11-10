@@ -8,13 +8,16 @@ use Modules\Weighing\Models\Scale;
 
 class ScaleConnectionException extends WeighingException
 {
-    public static function unreachable(Scale $scale, string $host, int $port, string $reason, int $code = 0): self
+    /**
+     * Il motivo tecnico (errore del socket) non va all'operatore: distinguerebbe porte chiuse, filtrate
+     * o host assenti. Il driver lo scrive nel log.
+     */
+    public static function unreachable(Scale $scale, string $host, int $port, int $code = 0): self
     {
         return new self((string) __('weighing::exceptions.scale_unreachable', [
             'scale' => $scale->code,
             'host' => $host,
-            'port' => $port,
-            'reason' => $reason,
+            'port' => (string) $port,
         ]), $code);
     }
 

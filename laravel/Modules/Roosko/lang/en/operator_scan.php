@@ -15,6 +15,7 @@ return [
         'placeholder' => 'Scan a unit or a location',
         'placeholder_location' => 'Scan the destination location',
         'hint' => 'Use the handheld trigger or the camera. The field is always ready.',
+        'keyboard' => 'Show or hide the keyboard to type the code',
         'camera' => 'Camera',
         'camera_close' => 'Close',
         'not_found' => 'Code “:code” not recognized',
@@ -52,6 +53,7 @@ return [
         'reason' => ['label' => 'Reason'],
     ],
     'notifications' => [
+        'forbidden' => 'You are not allowed to do this',
         'error' => 'Operation not performed',
         'stored' => 'Unit :code in :location',
         'treatment_started' => 'Treatment started with :code',

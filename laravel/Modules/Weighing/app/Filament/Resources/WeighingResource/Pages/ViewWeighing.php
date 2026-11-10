@@ -22,7 +22,7 @@ use Modules\Xot\Actions\Cast\SafeFloatCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseViewRecord;
 
 /**
- * Header actions: leggi bilancia, chiudi (seconda pesata), annulla. Etichette e campi da
+ * Header actions: leggi bilancia (`readScale`), chiudi (`update`, seconda pesata), annulla (`void`). Etichette e campi da
  * Modules/Weighing/lang/{locale}/weighing.php.
  */
 class ViewWeighing extends XotBaseViewRecord
@@ -41,6 +41,7 @@ class ViewWeighing extends XotBaseViewRecord
                 ->visible(static fn (Weighing $record): bool => $record->status === WeighingStatusEnum::OPEN
                     && ($record->scale?->driver->canRead() ?? false)),
             'close_weighing' => Action::make('close_weighing')
+                ->authorize('update')
                 ->icon('heroicon-o-check-badge')
                 ->color('success')
                 ->visible(static fn (Weighing $record): bool => $record->status === WeighingStatusEnum::OPEN)
@@ -66,6 +67,7 @@ class ViewWeighing extends XotBaseViewRecord
                     }
                 }),
             'void_weighing' => Action::make('void_weighing')
+                ->authorize('void')
                 ->icon('heroicon-o-x-circle')
                 ->color('danger')
                 ->requiresConfirmation()

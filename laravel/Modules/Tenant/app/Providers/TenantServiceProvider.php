@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Modules\Tenant\Providers;
 
+use Illuminate\Database\Connection;
+use Illuminate\Database\ConnectionInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Arr;
@@ -101,7 +103,15 @@ class TenantServiceProvider extends XotBaseServiceProvider
             }
 
             DB::purge($name);
-            DB::extend($name, static fn (): \Illuminate\Database\ConnectionInterface => DB::connection($defaultConnection));
+            DB::extend($name, static function (array $config, string $connectionName) use ($defaultConnection): ConnectionInterface {
+                $default = DB::connection($defaultConnection);
+                // Alias solo finche' la config del modulo e' quella della default: una config
+                // ridefinita a runtime (es. un test su un file sqlite proprio) apre la sua connessione.
+                $defaultConfig = $default instanceof Connection ? $default->getConfig() : null;
+                $sameDatabase = \is_array($defaultConfig) && Arr::except($config, ['name']) == Arr::except($defaultConfig, ['name']);
+
+                return $sameDatabase ? $default : app('db.factory')->make($config, $connectionName);
+            });
         }
     }
 

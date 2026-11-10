@@ -24,7 +24,7 @@ use Modules\Xot\Filament\Actions\XotBaseAction;
 /**
  * Nuova uscita in bozza (CreateShipmentAction), poi si caricano le unita'.
  *
- * Etichetta/icona: `shipment.actions.create_shipment`; testi: `create_shipment_header.php`.
+ * Etichetta/icona: `shipment.actions.create_shipment`; testi: `shipment_header.php` (GetTransKeyAction toglie il prefisso `create_` dal nome della classe).
  */
 class CreateShipmentHeaderAction extends XotBaseAction
 {
@@ -41,6 +41,7 @@ class CreateShipmentHeaderAction extends XotBaseAction
         parent::setUp();
 
         $this->icon('heroicon-o-truck')
+            ->authorize('create')
             ->color('primary')
             ->modalHeading(static fn (): string => static::transAction('modal_heading'))
             ->schema([

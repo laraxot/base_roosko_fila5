@@ -6,12 +6,16 @@ namespace Modules\Weighing\Models\Policies;
 
 use Modules\User\Models\Policies\UserBasePolicy;
 use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Models\Policies\Concerns\DeniesUndeclaredFilamentAbilities;
 
 /**
- * `view` copre anche la lettura della bilancia ("Leggi bilancia").
+ * `readScale` copre "Leggi bilancia" (apre una connessione TCP verso l'indicatore): permesso dedicato,
+ * distinto da `view`. Le abilita' Filament non dichiarate sono negate ({@see DeniesUndeclaredFilamentAbilities}).
  */
 class ScalePolicy extends UserBasePolicy
 {
+    use DeniesUndeclaredFilamentAbilities;
+
     public function viewAny(UserContract $user): bool
     {
         return $user->hasPermissionTo('scale.viewAny');
@@ -35,5 +39,10 @@ class ScalePolicy extends UserBasePolicy
     public function delete(UserContract $user): bool
     {
         return $user->hasPermissionTo('scale.delete');
+    }
+
+    public function readScale(UserContract $user): bool
+    {
+        return $user->hasPermissionTo('scale.readScale');
     }
 }

@@ -24,14 +24,20 @@ describe('ReadScaleAction', function (): void {
     });
 
     test('refuses to read a manual scale', function (): void {
-        app(ReadScaleAction::class)->execute(Scale::factory()->manual()->create());
-    })->throws(ScaleUnavailableException::class);
+        TestCase::assertCallbackThrows(ScaleUnavailableException::class, function (): void {
+            app(ReadScaleAction::class)->execute(Scale::factory()->manual()->create());
+        });
+    });
 
     test('refuses an inactive scale', function (): void {
-        app(ReadScaleAction::class)->execute(Scale::factory()->inactive()->create());
-    })->throws(ScaleUnavailableException::class);
+        TestCase::assertCallbackThrows(ScaleUnavailableException::class, function (): void {
+            app(ReadScaleAction::class)->execute(Scale::factory()->inactive()->create());
+        });
+    });
 
     test('refuses a reading above the capacity', function (): void {
-        app(ReadScaleAction::class)->execute(Scale::factory()->platform()->create());
-    })->throws(ScaleUnavailableException::class);
+        TestCase::assertCallbackThrows(ScaleUnavailableException::class, function (): void {
+            app(ReadScaleAction::class)->execute(Scale::factory()->platform()->create());
+        });
+    });
 });

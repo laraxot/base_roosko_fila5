@@ -1,9 +1,0 @@
-{
-    "name": "laraxot/theme-barthelemy-fila5",
-    "private": true,
-    "version": "1.1.0",
-    "description": "Tema Barthelemy — Fixcity/Laraxot",
-    "devDependencies": {
-        "fontaine": "^1.0.1"
-    }
-}

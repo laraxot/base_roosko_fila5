@@ -9,7 +9,7 @@ use Illuminate\Support\Carbon;
 use Modules\Weighing\Database\Factories\WeighingSequenceFactory;
 
 /**
- * Contatore annuale dei ticket di pesata. La riga dell'anno si blocca con `lockForUpdate` dentro la
+ * Contatore annuale dei ticket di pesata. La riga dell'anno si crea o incrementa con un unico upsert dentro la
  * transazione che crea la pesata: bloccare righe di `weighings` non basterebbe per il primo ticket
  * dell'anno (non c'e' nessuna riga da bloccare).
  *

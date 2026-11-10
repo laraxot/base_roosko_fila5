@@ -6,12 +6,17 @@ namespace Modules\Weighing\Models\Policies;
 
 use Modules\User\Models\Policies\UserBasePolicy;
 use Modules\Xot\Contracts\UserContract;
+use Modules\Xot\Models\Policies\Concerns\DeniesUndeclaredFilamentAbilities;
 
 /**
- * `create` = aprire/registrare una pesata, `update` = chiuderla o annullarla. I ticket non si cancellano.
+ * `create` = aprire una pesata o registrare una pesata singola, `update` = chiuderla (seconda pesata),
+ * `void` = annullarla (permesso distinto: cambia il valore legale del ticket). I ticket non si cancellano.
+ * Le abilita' Filament non dichiarate sono negate ({@see DeniesUndeclaredFilamentAbilities}).
  */
 class WeighingPolicy extends UserBasePolicy
 {
+    use DeniesUndeclaredFilamentAbilities;
+
     public function viewAny(UserContract $user): bool
     {
         return $user->hasPermissionTo('weighing.viewAny');
@@ -30,6 +35,11 @@ class WeighingPolicy extends UserBasePolicy
     public function update(UserContract $user): bool
     {
         return $user->hasPermissionTo('weighing.update');
+    }
+
+    public function void(UserContract $user): bool
+    {
+        return $user->hasPermissionTo('weighing.void');
     }
 
     public function delete(UserContract $user): bool

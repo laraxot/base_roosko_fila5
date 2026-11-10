@@ -1,7 +1,0 @@
-.env
-.env.*
-!.env.example
-
-# graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
-graphify-out/
-docs/archive/

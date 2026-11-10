@@ -8,6 +8,7 @@ use Carbon\CarbonImmutable;
 use Modules\Weighing\Datas\ScaleReadingData;
 use Modules\Weighing\Exceptions\ScaleReadingParseException;
 use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 use Throwable;
 
 use function Safe\preg_match_all;
@@ -36,7 +37,9 @@ class ParseScaleReadingAction
         $pattern = config('weighing.tcp_ascii.weight_pattern');
         $pattern = is_string($pattern) && $pattern !== '' ? $pattern : self::DEFAULT_PATTERN;
 
-        $line = trim(preg_replace('/[\x00-\x1F\x7F]+/', ' ', $raw));
+        $line = preg_replace('/[\x00-\x1F\x7F]+/', ' ', $raw);
+        Assert::string($line);
+        $line = trim($line);
 
         try {
             $found = preg_match_all($pattern, $line, $matches);

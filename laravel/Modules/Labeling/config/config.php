@@ -23,6 +23,9 @@ return [
     'labelables' => [],
 
     /*
+     * Variabili d'ambiente lette da config('env.*') (config/env.php della base), non con env():
+     * cosi' reggono `config:cache`.
+     *
      * Codice della stampante usata quando PrintLabelAction riceve $printer = null, per formato
      * del template. Senza stampante un template ZPL fallisce (stampa `failed` con il motivo, errore
      * notificato all'operatore); un template PDF produce comunque il file.
@@ -63,4 +66,10 @@ return [
     'qr_size_px' => 256,
 
     'max_copies' => 100,
+
+    // Stampe e ristampe al minuto dalle azioni Filament (rateLimit: per IP, componente e azione).
+    'print_rate_limit' => 20,
+
+    // Richieste al minuto per IP sulla route pubblica GET /l/{code} (throttle).
+    'resolve_rate_limit' => 30,
 ];

@@ -4,23 +4,25 @@ declare(strict_types=1);
 
 namespace Modules\Roosko\Filament\Resources\ShipmentResource\RelationManagers;
 
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Filament\Actions\Action;
-use Filament\Actions\DeleteAction;
 use Filament\Tables\Columns\Column;
 use Filament\Tables\Columns\TextColumn;
-use Illuminate\Database\Eloquent\Model;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Modules\Roosko\Actions\ResolveWasteLotAction;
 use Modules\Roosko\Filament\Actions\AddShipmentItemHeaderAction;
+use Modules\Roosko\Filament\Actions\RemoveShipmentItemTableAction;
 use Modules\Roosko\Models\Shipment;
 use Modules\Roosko\Models\ShipmentItem;
 use Modules\Roosko\Models\WasteLot;
-use Modules\Waste\Models\EwcCode;
 use Modules\Warehouse\Models\StockUnit;
 use Modules\Xot\Filament\Resources\RelationManagers\XotBaseRelationManager;
 
 /**
  * Righe dell'uscita: carico con scansione/codice (AddShipmentItemHeaderAction), rimozione
- * finche' l'uscita e' aperta.
+ * finche' l'uscita e' aperta (RemoveShipmentItemTableAction, che libera l'unita').
  */
 class ShipmentItemsRelationManager extends XotBaseRelationManager
 {
@@ -62,7 +64,7 @@ class ShipmentItemsRelationManager extends XotBaseRelationManager
     public function getTableActions(): array
     {
         return [
-            'delete' => DeleteAction::make()->visible(static fn (Model $record): bool => $record instanceof ShipmentItem && $record->shipment->status->acceptsItems()),
+            'remove' => RemoveShipmentItemTableAction::make(),
         ];
     }
 
@@ -75,11 +77,24 @@ class ShipmentItemsRelationManager extends XotBaseRelationManager
         return [];
     }
 
+    /**
+     * Unita', lotto ed EER in eager loading: una query per tipo e per pagina (audit R13).
+     */
+    #[\Override]
+    public function table(Table $table): Table
+    {
+        return parent::table($table)->modifyQueryUsing(static fn (Builder $query): Builder => $query->with(['stockUnit.subject' => static function (Relation $relation): void {
+            if ($relation instanceof MorphTo) {
+                $relation->morphWith([WasteLot::class => ['ewcCode']]);
+            }
+        }]));
+    }
+
     private static function ewc(ShipmentItem $item): ?string
     {
-        $unit = StockUnit::query()->find($item->stock_unit_id);
+        $unit = $item->stockUnit;
         $lot = $unit instanceof StockUnit ? app(ResolveWasteLotAction::class)->find($unit) : null;
 
-        return $lot instanceof WasteLot ? EwcCode::query()->find($lot->ewc_code_id)?->code : null;
+        return $lot instanceof WasteLot ? $lot->ewcCode?->code : null;
     }
 }

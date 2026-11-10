@@ -63,6 +63,6 @@ class RecordSingleWeighingAction
             $weighing->save();
 
             return $weighing;
-        });
+        }, GenerateWeighingTicketNumberAction::ATTEMPTS);
     }
 }

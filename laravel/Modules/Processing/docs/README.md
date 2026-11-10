@@ -129,6 +129,9 @@ con `force = true` senza l'abilità viene rifiutata.
 Policy in `app/Models/Policies`, permessi `{model_snake}.{viewAny,view,create,update,delete}`
 (`machine.*`, `processing_order.*`, ...) più le abilità dei bottoni dell'ordine (tabella sopra). Per input,
 output e genealogia `update`/`delete` sono sempre negati.
+Policy con `DeniesUndeclaredFilamentAbilities`; permessi creati da `ProcessingPermissionSeeder` (idempotente,
+chiamato da `ProcessingDatabaseSeeder`). `TraceabilityPage::canAccess()` richiede `processing_order.viewAny`.
+
 
 ## Test
 
@@ -138,3 +141,10 @@ abilità dei bottoni, "forza chiusura" e punto di estensione delle azioni sul ma
 (`ProcessingOrderActionAuthorizationTest`).
 
 Storie: [`docs/stories/`](stories/).
+
+## Migrazioni
+
+Le migrazioni di `processing_inputs`, `processing_outputs`, `lineage_links` hanno un `down()` che rifiuta il rollback: sono dati legali o di tracciabilità e non si
+cancellano con `migrate:rollback` (audit database R15). Unique e soft delete: decisioni nella story
+[`legal-tables-migrations`](../../Waste/docs/stories/legal-tables-migrations.story.md) del modulo Waste.
+

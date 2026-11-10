@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Carbon\CarbonImmutable;
 use Modules\Weighing\Actions\AttachWeighingAction;
 use Modules\Weighing\Actions\CloseWeighingAction;
 use Modules\Weighing\Actions\GenerateWeighingTicketNumberAction;
@@ -14,6 +15,7 @@ use Modules\Weighing\Exceptions\ScaleUnavailableException;
 use Modules\Weighing\Exceptions\WeighingLockedException;
 use Modules\Weighing\Models\Scale;
 use Modules\Weighing\Models\Weighing;
+use Modules\Weighing\Models\WeighingSequence;
 use Modules\Weighing\Tests\TestCase;
 use PHPUnit\Framework\Assert;
 
@@ -64,29 +66,39 @@ describe('OpenWeighingAction / CloseWeighingAction', function (): void {
     });
 
     test('rejects a second weight that makes the net negative', function (): void {
-        $weighing = app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 10_000.0);
+        TestCase::assertCallbackThrows(InvalidArgumentException::class, function (): void {
+            $weighing = app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 10_000.0);
 
-        app(CloseWeighingAction::class)->execute($weighing, 12_000.0);
-    })->throws(InvalidArgumentException::class);
+            app(CloseWeighingAction::class)->execute($weighing, 12_000.0);
+        });
+    });
 
     test('cannot close a ticket twice', function (): void {
-        $weighing = app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 20_000.0);
-        app(CloseWeighingAction::class)->execute($weighing, 8_000.0);
+        TestCase::assertCallbackThrows(InvalidArgumentException::class, function (): void {
+            $weighing = app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 20_000.0);
+            app(CloseWeighingAction::class)->execute($weighing, 8_000.0);
 
-        app(CloseWeighingAction::class)->execute($weighing, 7_000.0);
-    })->throws(InvalidArgumentException::class);
+            app(CloseWeighingAction::class)->execute($weighing, 7_000.0);
+        });
+    });
 
     test('refuses a scale with expired verification', function (): void {
-        app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 20_000.0, Scale::factory()->verificationExpired()->create());
-    })->throws(ScaleUnavailableException::class);
+        TestCase::assertCallbackThrows(ScaleUnavailableException::class, function (): void {
+            app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 20_000.0, Scale::factory()->verificationExpired()->create());
+        });
+    });
 
     test('refuses a weight above the scale capacity', function (): void {
-        app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 70_000.0, Scale::factory()->create());
-    })->throws(ScaleUnavailableException::class);
+        TestCase::assertCallbackThrows(ScaleUnavailableException::class, function (): void {
+            app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 70_000.0, Scale::factory()->create());
+        });
+    });
 
     test('refuses a non positive weight', function (): void {
-        app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 0.0);
-    })->throws(InvalidArgumentException::class);
+        TestCase::assertCallbackThrows(InvalidArgumentException::class, function (): void {
+            app(OpenWeighingAction::class)->execute(WeighingDirectionEnum::INBOUND, 0.0);
+        });
+    });
 });
 
 describe('GenerateWeighingTicketNumberAction', function (): void {
@@ -96,6 +108,36 @@ describe('GenerateWeighingTicketNumberAction', function (): void {
 
         Assert::assertSame((int) substr($first, -6) + 1, (int) substr($second, -6));
         Assert::assertSame(substr($first, 0, 7), substr($second, 0, 7));
+    });
+
+    test('creates the counter of a new year with a single statement and starts from 1', function (): void {
+        $year = 2091;
+        WeighingSequence::query()->where('year', $year)->delete();
+        $at = CarbonImmutable::create($year, 3, 1);
+        Assert::assertInstanceOf(CarbonImmutable::class, $at);
+
+        Assert::assertSame('W-2091-000001', app(GenerateWeighingTicketNumberAction::class)->execute($at));
+        Assert::assertSame('W-2091-000002', app(GenerateWeighingTicketNumberAction::class)->execute($at));
+        Assert::assertSame(1, WeighingSequence::query()->where('year', $year)->count());
+        Assert::assertSame(2, WeighingSequence::query()->where('year', $year)->value('last_number'));
+    });
+
+    test('rolls the number back with the caller transaction, leaving no gap', function (): void {
+        $at = CarbonImmutable::create(2092, 1, 1);
+        Assert::assertInstanceOf(CarbonImmutable::class, $at);
+        $connection = (new WeighingSequence)->getConnection();
+        $first = app(GenerateWeighingTicketNumberAction::class)->execute($at);
+
+        try {
+            $connection->transaction(static function () use ($at): void {
+                app(GenerateWeighingTicketNumberAction::class)->execute($at);
+
+                throw new RuntimeException('rollback');
+            });
+        } catch (RuntimeException) {
+        }
+
+        Assert::assertSame((int) substr($first, -6) + 1, (int) substr(app(GenerateWeighingTicketNumberAction::class)->execute($at), -6));
     });
 });
 
@@ -135,16 +177,20 @@ describe('VoidWeighingAction / AttachWeighingAction / immutability', function ()
     });
 
     test('forbids changing the weights of a closed ticket', function (): void {
-        $weighing = app(RecordSingleWeighingAction::class)->execute(500.0);
+        TestCase::assertCallbackThrows(WeighingLockedException::class, function (): void {
+            $weighing = app(RecordSingleWeighingAction::class)->execute(500.0);
 
-        $weighing->net_kg = Weighing::kgToStorage(600.0);
-        $weighing->save();
-    })->throws(WeighingLockedException::class);
+            $weighing->net_kg = Weighing::kgToStorage(600.0);
+            $weighing->save();
+        });
+    });
 
     test('forbids voiding twice', function (): void {
-        $weighing = app(RecordSingleWeighingAction::class)->execute(500.0);
-        app(VoidWeighingAction::class)->execute($weighing, 'Errore');
+        TestCase::assertCallbackThrows(InvalidArgumentException::class, function (): void {
+            $weighing = app(RecordSingleWeighingAction::class)->execute(500.0);
+            app(VoidWeighingAction::class)->execute($weighing, 'Errore');
 
-        app(VoidWeighingAction::class)->execute($weighing, 'Ancora');
-    })->throws(InvalidArgumentException::class);
+            app(VoidWeighingAction::class)->execute($weighing, 'Ancora');
+        });
+    });
 });

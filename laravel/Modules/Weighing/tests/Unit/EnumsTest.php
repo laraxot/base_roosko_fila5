@@ -14,16 +14,22 @@ use PHPUnit\Framework\Assert;
 uses(TestCase::class);
 
 describe('WeighingStatusEnum', function (): void {
-    test('allows only the documented transitions', function (WeighingStatusEnum $from, WeighingStatusEnum $to, bool $allowed): void {
-        Assert::assertSame($allowed, $from->canTransitionTo($to));
-    })->with([
-        [WeighingStatusEnum::OPEN, WeighingStatusEnum::CLOSED, true],
-        [WeighingStatusEnum::OPEN, WeighingStatusEnum::VOIDED, true],
-        [WeighingStatusEnum::CLOSED, WeighingStatusEnum::VOIDED, true],
-        [WeighingStatusEnum::CLOSED, WeighingStatusEnum::OPEN, false],
-        [WeighingStatusEnum::VOIDED, WeighingStatusEnum::CLOSED, false],
-        [WeighingStatusEnum::OPEN, WeighingStatusEnum::OPEN, false],
-    ]);
+    test('allows only the documented transitions', function (): void {
+        $check = function (WeighingStatusEnum $from, WeighingStatusEnum $to, bool $allowed): void {
+            Assert::assertSame($allowed, $from->canTransitionTo($to));
+        };
+
+        foreach ([
+            [WeighingStatusEnum::OPEN, WeighingStatusEnum::CLOSED, true],
+            [WeighingStatusEnum::OPEN, WeighingStatusEnum::VOIDED, true],
+            [WeighingStatusEnum::CLOSED, WeighingStatusEnum::VOIDED, true],
+            [WeighingStatusEnum::CLOSED, WeighingStatusEnum::OPEN, false],
+            [WeighingStatusEnum::VOIDED, WeighingStatusEnum::CLOSED, false],
+            [WeighingStatusEnum::OPEN, WeighingStatusEnum::OPEN, false],
+        ] as $case) {
+            $check(...$case);
+        }
+    });
 });
 
 describe('WeighingDirectionEnum', function (): void {

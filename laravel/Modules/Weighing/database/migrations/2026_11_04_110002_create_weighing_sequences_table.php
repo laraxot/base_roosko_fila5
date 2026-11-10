@@ -7,8 +7,8 @@ use Modules\Weighing\Models\WeighingSequence;
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
 /*
- * Contatore annuale dei ticket (W-{anno}-{progr}), bloccato con lockForUpdate da
- * GenerateWeighingTicketNumberAction. L'unique su `year` rende sicuro l'insertOrIgnore concorrente.
+ * Contatore annuale dei ticket (W-{anno}-{progr}), creato o incrementato con un unico upsert da
+ * GenerateWeighingTicketNumberAction. L'unique su `year` e' la chiave dell'upsert.
  */
 return new class extends XotBaseMigration
 {

@@ -1,1 +1,0 @@
-<livewire:headernav.search-bar />

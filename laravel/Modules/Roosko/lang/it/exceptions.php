@@ -6,6 +6,7 @@ return [
     'invalid_transition' => ':code: passaggio di stato da «:from» a «:to» non consentito',
     'delivery' => [
         'fir_already_received' => 'Il FIR :fir è già in carico con il conferimento :delivery',
+        'fir_not_receivable' => 'Il FIR :fir è in stato «:status» e non può essere conferito',
         'wrong_recipient_site' => 'Il FIR :fir è destinato a un altro impianto',
         'not_weighed' => 'Il conferimento :delivery non ha una pesata in ingresso aperta',
         'units_mismatch' => 'Le unità sommano :units kg ma i kg accettati sono :accepted',
@@ -20,6 +21,7 @@ return [
     'lot' => [
         'not_a_waste_lot' => 'L\'unità :unit non contiene un lotto',
         'placement_denied' => ':unit non può andare in :location: :reason',
+        'unit_reserved' => 'L\'unità :unit è impegnata su un\'uscita: toglierla dall\'uscita prima di trattarla o spostarla',
         'eow_batch_code_required' => 'Un prodotto End of Waste richiede il codice di lotto EoW',
         'no_units_to_treat' => 'Nessuna unità da trattare',
         'order_without_inputs' => 'L\'ordine :order non ha input: aggiungere prima le unità da trattare',

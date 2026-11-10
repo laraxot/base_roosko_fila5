@@ -22,7 +22,7 @@ use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseListRecords;
 
 /**
- * Header actions: apri pesata (prima pesata) e pesata singola. Etichette e campi da
+ * Header actions (abilita' `create` della WeighingPolicy): apri pesata (prima pesata) e pesata singola. Etichette e campi da
  * Modules/Weighing/lang/{locale}/weighing.php.
  */
 class ListWeighings extends XotBaseListRecords
@@ -37,6 +37,7 @@ class ListWeighings extends XotBaseListRecords
     {
         return [
             'open_weighing' => Action::make('open_weighing')
+                ->authorize('create')
                 ->icon('heroicon-o-arrow-right-end-on-rectangle')
                 ->color('primary')
                 ->fillForm(['direction' => WeighingDirectionEnum::INBOUND->value])
@@ -74,6 +75,7 @@ class ListWeighings extends XotBaseListRecords
                     }
                 }),
             'record_single_weighing' => Action::make('record_single_weighing')
+                ->authorize('create')
                 ->icon('heroicon-o-scale')
                 ->color('gray')
                 ->schema([

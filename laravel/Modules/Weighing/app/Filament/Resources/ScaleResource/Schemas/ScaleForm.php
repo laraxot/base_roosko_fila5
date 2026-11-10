@@ -10,8 +10,11 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Utilities\Get;
+use Modules\Weighing\Actions\EnsureScaleAddressAllowedAction;
 use Modules\Weighing\Enums\ScaleDriverEnum;
 use Modules\Weighing\Enums\ScaleTypeEnum;
+use Modules\Weighing\Exceptions\ScaleAddressNotAllowedException;
+use Modules\Xot\Actions\Cast\SafeIntCastAction;
 use Modules\Xot\Filament\Resources\Schemas\XotBaseResourceForm;
 
 /**
@@ -47,11 +50,24 @@ class ScaleForm extends XotBaseResourceForm
             'host' => TextInput::make('host')
                 ->maxLength(255)
                 ->visible(static fn (Get $get): bool => self::driver($get)?->requiresHost() ?? false)
-                ->required(static fn (Get $get): bool => self::driver($get)?->requiresHost() ?? false),
+                ->required(static fn (Get $get): bool => self::driver($get)?->requiresHost() ?? false)
+                ->rule(
+                    static fn (Get $get): \Closure => static function (string $attribute, mixed $value, \Closure $fail) use ($get): void {
+                        try {
+                            app(EnsureScaleAddressAllowedAction::class)->execute(
+                                is_string($value) ? $value : null,
+                                SafeIntCastAction::cast($get('port'), config()->integer('weighing.tcp_ascii.default_port', 4001)),
+                            );
+                        } catch (ScaleAddressNotAllowedException $e) {
+                            $fail($e->getMessage());
+                        }
+                    },
+                    static fn (Get $get): bool => self::driver($get)?->requiresHost() ?? false,
+                ),
             'port' => TextInput::make('port')
                 ->integer()
-                ->minValue(1)
-                ->maxValue(65535)
+                ->minValue(static fn (): int => config()->integer('weighing.scale_ports.min', 1024))
+                ->maxValue(static fn (): int => config()->integer('weighing.scale_ports.max', 65535))
                 ->visible(static fn (Get $get): bool => self::driver($get)?->requiresHost() ?? false),
             'max_capacity_kg' => TextInput::make('max_capacity_kg')
                 ->numeric()

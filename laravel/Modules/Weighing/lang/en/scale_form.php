@@ -8,7 +8,7 @@ return [
         'name' => ['label' => 'Name', 'placeholder' => 'E.g. Inbound weighbridge', 'helper_text' => ''],
         'type' => ['label' => 'Type', 'placeholder' => '', 'helper_text' => ''],
         'driver' => ['label' => 'Connection', 'placeholder' => '', 'helper_text' => 'Manual: the weight is typed. Network: the indicator sends ASCII lines over TCP'],
-        'host' => ['label' => 'IP address / host', 'placeholder' => 'E.g. 192.168.1.60', 'helper_text' => 'Indicator or serial/ethernet converter'],
+        'host' => ['label' => 'IP address / host', 'placeholder' => 'E.g. 192.168.1.60', 'helper_text' => 'Indicator or serial/ethernet converter on the local network (10.x, 172.16-31.x, 192.168.x); other addresses only if listed in weighing.allowed_scale_hosts'],
         'port' => ['label' => 'Port', 'placeholder' => '4001', 'helper_text' => 'Empty: default port from config'],
         'max_capacity_kg' => ['label' => 'Maximum capacity (kg)', 'placeholder' => '60000', 'helper_text' => 'Readings above capacity are rejected'],
         'resolution_kg' => ['label' => 'Division (kg)', 'placeholder' => '20', 'helper_text' => 'Instrument resolution (e)'],

@@ -7,6 +7,7 @@ namespace Modules\Weighing\Actions;
 use function Safe\preg_replace;
 
 use Spatie\QueueableAction\QueueableAction;
+use Webmozart\Assert\Assert;
 
 /**
  * Targa in forma canonica (maiuscolo, senza spazi, trattini e punti): "ab 123 cd" → "AB123CD".
@@ -22,7 +23,9 @@ class NormalizeVehiclePlateAction
             return null;
         }
 
-        $normalized = strtoupper(preg_replace('/[\s.\-]+/', '', $plate));
+        $compact = preg_replace('/[\s.\-]+/', '', $plate);
+        Assert::string($compact);
+        $normalized = strtoupper($compact);
 
         return $normalized === '' ? null : $normalized;
     }

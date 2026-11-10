@@ -17,7 +17,8 @@ use Webmozart\Assert\Assert;
  * Apre una pesata a due passaggi con la prima pesata.
  *
  * - inbound / internal: primo peso = lordo; outbound: primo peso = tara;
- * - ticket `W-{anno}-{progr}` generato nella stessa transazione ({@see GenerateWeighingTicketNumberAction});
+ * - ticket `W-{anno}-{progr}` generato nella stessa transazione ({@see GenerateWeighingTicketNumberAction}),
+ *   ripetuta fino a 3 volte su deadlock quando e' la transazione esterna;
  * - targa normalizzata; bilancia (se indicata) attiva, verificata ed entro portata;
  * - `$rawReading` (riga ricevuta dall'indicatore, se letta da bilancia) finisce in `raw_readings`.
  *
@@ -78,6 +79,6 @@ class OpenWeighingAction
             $weighing->save();
 
             return $weighing;
-        });
+        }, GenerateWeighingTicketNumberAction::ATTEMPTS);
     }
 }
