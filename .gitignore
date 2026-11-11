@@ -25,6 +25,10 @@ npm-debug.log
 *.cache
 *.phar
 package-lock.json
+# lockfile versionati dove la CI ricompila i bundle (npm ci, build riproducibile)
+!laravel/Modules/Geo/package-lock.json
+!laravel/Modules/Roosko/package-lock.json
+!laravel/Themes/TwentyOne/package-lock.json
 yarn-error.log
 
 # Build directories
