@@ -3,12 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'sections' => [
-        'empty' => [
-            'label' => 'empty',
-            'heading' => 'empty',
-        ],
-    ],
     'fields' => [
         'first_name' => [
             'label' => 'First Name',
@@ -89,6 +83,4 @@ return [
     ],
     'label' => 'Missing Label',
     'plural_label' => 'Missing Plural label',
-    'actions' => [
-    ],
 ];

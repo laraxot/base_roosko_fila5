@@ -8,7 +8,10 @@ return [
     'navigation' => [
         'name' => 'Media',
         'plural' => 'Media',
-        'group' => ['name' => 'Sistema', 'description' => 'Gestione dei file multimediali'],
+        'group' => [
+            'name' => 'Sistema',
+            'description' => 'Gestione dei file multimediali',
+        ],
         'label' => 'Media',
         'sort' => 20,
         'icon' => 'media-main-animated',
@@ -94,30 +97,6 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
-        ],
-        'id' => [
-            'label' => 'id',
-        ],
-        'file_name' => [
-            'label' => 'file_name',
-        ],
-        'disk' => [
-            'label' => 'disk',
-        ],
-        'size' => [
-            'label' => 'size',
-        ],
-        'order_column' => [
-            'label' => 'order_column',
-        ],
-        'model_type' => [
-            'label' => 'model_type',
-        ],
-        'model_id' => [
-            'label' => 'model_id',
-        ],
-        'created_at' => [
-            'label' => 'created_at',
         ],
     ],
     'actions' => [

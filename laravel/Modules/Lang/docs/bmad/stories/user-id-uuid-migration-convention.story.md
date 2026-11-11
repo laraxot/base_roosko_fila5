@@ -4,7 +4,7 @@ type: story
 module: Lang
 status: in-progress
 created: 2026-11-05
-updated: 2026-11-05
+updated: 2026-11-10
 tags: [bmad, migrations, uuid, naming, user-id]
 qmd: "Lang UUID user_id migration naming timestamp action model plural table ledger"
 related:
@@ -67,6 +67,37 @@ conversione distruttiva.
   non null negli ambienti esistenti.
 - [ ] AC6: confrontare i ledger degli ambienti per le due coppie di migrazioni
   di creazione duplicate, poi definire una correzione forward-only.
+
+## Incidente 2026-11-10: errore 4078 su MariaDB 11.8
+
+`php artisan migrate` falliva su `2026_11_05_100000_update_posts_table` con
+`SQLSTATE[HY000] 4078 Cannot cast 'bigint unsigned' as 'uuid'` (SQL:
+`alter table posts modify user_id uuid null`). Causa radice: da MariaDB 10.7
+`uuid` è un tipo nativo e il server rifiuta `bigint -> uuid` a prescindere dai
+dati; il guard dell'helper vedeva correttamente 0 righe con valore, ma
+l'`ALTER` diretto veniva respinto lo stesso (colonna reale: `bigint(20)
+unsigned NULL`, tabella vuota, MariaDB 11.8.6).
+
+Correzione (owner Xot, un solo punto per tutti i chiamanti): su driver
+mysql/mariadb `XotBaseMigration::convertUserIdToUuidIfLegacyBigint()` emette
+prima `char(36) NULL` e poi `uuid`; `char(36) -> uuid` è accettato. Il guard
+sulle righe valorizzate resta invariato. Nessuna colonna rimossa, nessun dato
+riscritto.
+
+Verifica: uno script standalone (Pest non gira qui: `.env.testing` senza
+`DB_USERNAME`) esegue gli `ALTER` del Blueprint su una tabella `TEMPORARY` di
+sessione, senza toccare tabelle reali. RED: il solo `uuid` fallisce con 4078.
+GREEN: `char(36)` poi `uuid` passano e la colonna risulta `uuid NULL`. `php -l`,
+Pint e PHPStan (config di progetto) su `XotBaseMigration.php`: puliti.
+La migrazione reale non è stata rieseguita dall'agente: va rilanciata
+dall'utente con `php artisan migrate`.
+
+Nota di allineamento: la migrazione `update_posts_table` non chiama
+`tableExists()` come descritto sopra, e il file gemello
+`2026_11_05_100000_update_user_id_uuid_on_posts_table.php` ripete la stessa
+conversione con un `change()` diretto. Il gemello è un no-op finché
+`update_posts_table` gira per primo (ordine alfabetico), perché la colonna è
+già `uuid`. Da riconciliare con AC6.
 
 ## Esito dell'audit filename
 

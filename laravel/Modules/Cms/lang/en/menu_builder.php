@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 return [
     'sections' => [
-        'or' => [
-            'label' => 'or',
-        ],
         'create_new_menu' => [
             'label' => 'Create new menu',
         ],

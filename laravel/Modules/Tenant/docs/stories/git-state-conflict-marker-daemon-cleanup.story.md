@@ -1,7 +1,7 @@
 ---
 tags: [documentation]
 created: 2026-09-26
-updated: 2026-09-26
+updated: 2026-11-05
 qmd: "git state conflict marker daemon cleanup.story"
 issues: []
 discussions: []
@@ -82,3 +82,27 @@ Il "daemon auto-commit" che produce commit ".", autore `marco76tv` o
 remote pre-`35353af` (improbabile ora, ma controllare `git log --oneline -5`
 prima di assumere pulito), NON fare `git checkout -- <file>` alla cieca:
 verificare prima con `git show <ref>:<path>` quale versione e' quella buona.
+
+## Ricorrenza 2026-11-05 (P0: PHPStan non faceva il bootstrap)
+
+`merge_remote_repo_2.sh laraxot` aveva committato (`git add -A && git commit -am .`)
+marcatori `.merge_file_*` in 4 file PHP del modulo. `phpstan analyse Modules` si
+fermava con `syntax error, unexpected token "<<"` perche' `TenantServiceProvider`
+e' nel percorso di boot di tutti i moduli. Nessun merge in corso e nessun lock sul
+modulo: risolti a mano, regione per regione, studiando lo scopo di ciascun lato
+(non con una politica fissa "ours"/"theirs").
+
+| File | Scelta | Motivo verificato |
+|------|--------|-------------------|
+| `Providers/TenantServiceProvider.php` | lato con `aliasModuleConnectionsToDefault()` | funzione voluta: commit `1127551` + story `module-connection-alias`; il lato scartato era la versione precedente senza alias |
+| `Models/Tenant.php` (2 regioni) | `use ...\UserContract` + nome corto nel docblock | i due lati sono coerenti tra loro, l'import e' usato dal docblock |
+| `Models/TenantSetting.php`, `Models/TenantSubscription.php` | nessun `use ...\BelongsTo` | import mai usato nel file (le relazioni stanno nei trait `*Relations`) |
+
+Verifica: `php -l` pulito sui 4 file, `grep` marcatori = 0. Lock di file presi e
+rilasciati con `bashscripts/lock/{lock,unlock}.sh` (task `tenant-marker-cleanup`).
+
+**Lezione per chi risolve conflitti su altri moduli:** la scelta del lato e' stata
+opposta in Geo (`AdminPanelProvider`: il lato giusto era il nostro HEAD, con la
+guardia sulla build Vite e il suo test `AdminPanelAssetsAvailabilityTest`). Si
+decide con `git show HEAD:<f>` / `git show MERGE_HEAD:<f>` + `git log -S`, mai a
+priori.

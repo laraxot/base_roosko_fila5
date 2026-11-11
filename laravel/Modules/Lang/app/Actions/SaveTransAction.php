@@ -16,7 +16,7 @@ class SaveTransAction
     use QueueableAction;
 
     /**
-     * @param array<string, mixed>|int|string|Htmlable|null $data
+     * @param  array<string, mixed>|int|string|Htmlable|null  $data
      */
     public function execute(string $key, int|string|array|Htmlable|null $data): void
     {
@@ -30,10 +30,22 @@ class SaveTransAction
         // l'ambiente e' `testing`, quindi resta spento. L'override `lang.save_missing_translations`
         // (true o false) vince sempre; la config del modulo non e' caricata con questo nome, quindi
         // un default preso solo da li' sarebbe rimasto acceso proprio dove serve spento.
-        if (true !== Config::get('lang.save_missing_translations', app()->isLocal())) {
+        if (Config::get('lang.save_missing_translations', app()->isLocal()) !== true) {
             return;
         }
 
+        $this->persist($key, $data);
+    }
+
+    /**
+     * Scrive davvero nel file di lingua, senza il filtro sulle chiavi mancanti.
+     * Lo usa il pannello Lang quando il traduttore preme "Salva": li' la scrittura e'
+     * voluta anche in produzione (prima il salvataggio era ignorato fuori da `local`).
+     *
+     * @param  array<string, mixed>|int|string|Htmlable|null  $data
+     */
+    public function persist(string $key, int|string|array|Htmlable|null $data): void
+    {
         $cont = [];
 
         $filename = app(GetTransPathAction::class)->execute($key);
@@ -60,7 +72,7 @@ class SaveTransAction
         }
 
         $piece = implode('.', array_slice(explode('.', $key), 1));
-        if ('' !== $piece) {
+        if ($piece !== '') {
             Arr::set($cont, $piece, $data);
         } else {
             $cont = $data;

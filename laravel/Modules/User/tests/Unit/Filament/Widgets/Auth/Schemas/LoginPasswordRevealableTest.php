@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+use PHPUnit\Framework\TestCase;
 
 use function Safe\file_get_contents;
 
-uses(PHPUnit\Framework\TestCase::class);
+uses(TestCase::class);
 
 /**
  * Contratto Filament Blueprint: password login = TextInput::password()->revealable().
@@ -17,7 +18,7 @@ uses(PHPUnit\Framework\TestCase::class);
  */
 test('login form schema source keeps password revealable filament chain', function (): void {
     $source = (string) file_get_contents(
-        dirname(__DIR__, 6).'/app/Filament/Widgets/Auth/Schemas/UserForm.php'
+        dirname(__DIR__, 6).'/app/Filament/Resources/UserResource/Schemas/UserForm.php'
     );
 
     expect($source)

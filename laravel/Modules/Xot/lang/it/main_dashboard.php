@@ -12,18 +12,12 @@ return [
     'actions' => [
         'logout' => [
             'icon' => 'logout',
-            'label' => 'logout',
-            'tooltip' => 'logout',
         ],
         'profile' => [
             'icon' => 'profile',
-            'label' => 'profile',
-            'tooltip' => 'profile',
         ],
         'il-mio-profilo' => [
             'icon' => 'il-mio-profilo',
-            'label' => 'il-mio-profilo',
-            'tooltip' => 'il-mio-profilo',
         ],
     ],
     'label' => 'Main Dashboard',

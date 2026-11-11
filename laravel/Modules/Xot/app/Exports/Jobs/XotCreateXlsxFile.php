@@ -27,7 +27,7 @@ use function Safe\unlink;
  * Bound al posto del vendor in `XotServiceProvider::register()`
  * (`CanExportRecords` lo risolve con `app(CreateXlsxFile::class, [...])`).
  * Solo per exporter `XotBaseExporter`: gli altri tengono il comportamento vendor.
- * `handle()` e' la copia di filament/actions 5.7.8 con le due righe del reader.
+ * `handle()` e' la copia di filament/actions 5.6.8 (composer.lock) con le due righe del reader.
  */
 class XotCreateXlsxFile extends CreateXlsxFile
 {
@@ -45,8 +45,6 @@ class XotCreateXlsxFile extends CreateXlsxFile
         $writer = app(Writer::class, ['options' => $this->exporter->getXlsxWriterOptions()]);
         $temporaryFile = tempnam(sys_get_temp_dir(), (string) $this->export->file_name);
         $writer->openToFile($temporaryFile);
-
-        $this->exporter->configureXlsxWriterAfterOpen($writer);
 
         $csvDelimiter = $this->exporter::getCsvDelimiter();
 

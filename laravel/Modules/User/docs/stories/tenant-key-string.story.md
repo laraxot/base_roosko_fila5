@@ -46,3 +46,27 @@ così da **poter associare gli utenti ai tenant (`$user->tenants()`) e far funzi
   deve mantenere la generazione slug, la validazione UUID e il route binding Filament
   configurato con `slugAttribute: 'slug'`; implementazione in corso, il file model è
   temporaneamente lockato dalla story `user-model-relationships-to-traits`.
+<<<<<<< .merge_file_9oR95v
+=======
+
+## Effetto collaterale su un figlio con chiave intera (trovato il 2026-11-10)
+
+`HasUuids` in `BaseTenant` vale anche per `Modules\Quaeris\Models\Customer`, l'unico altro figlio, che
+dichiara `$keyType = 'int'` e `$incrementing = true` su `customers.id` `int unsigned auto_increment`.
+`HasUniqueStringIds` scavalca quelle proprieta': `uniqueIds() = ["id"]`, `getKeyType() = 'string'`,
+`getIncrementing() = false` (verificato con tinker). Conseguenze:
+
+- in inserimento Laravel (`Model::performInsert`, `setUniqueIds()`) scrive un UUID in `customers.id` e non
+  legge l'id generato dal DB: "Nuovo cliente" fallisce in strict mode o, senza strict, tronca l'UUID in un
+  intero (collisioni possibili);
+- `whereKey($customer)` lega la chiave come stringa (`` `customers`.`id` = '10' ``): lo ha rilevato
+  `Quaeris/tests/Feature/Filament/TenantSwitcherListsAllUserCustomersTest.php:52`.
+
+Correzione proposta, in attesa di decisione: dettagli in
+`laravel/Modules/Quaeris/docs/stories/quaeris-tenant-switcher-lists-all-user-customers.story.md`,
+sezione "Seguito 2026-11-10".
+
+Risolto lato Quaeris il 2026-11-10: `Customer::uniqueIds()` restituisce `[]` (estensione prevista da Laravel
+per `HasUuids`), `BaseTenant` non toccata. Chi aggiunge un altro figlio di `BaseTenant` con chiave intera deve
+fare lo stesso. Test: `laravel/Modules/Quaeris/tests/Unit/Models/CustomerIntegerKeyTest.php`.
+>>>>>>> .merge_file_nawHSC

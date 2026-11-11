@@ -3,38 +3,28 @@
 declare(strict_types=1);
 
 return [
-    'actions' => [
-        'create' => [
-            'label' => 'create',
-        ],
-    ],
     'fields' => [
         'collection_name' => [
-            'label' => 'collection_name',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'name' => [
-            'label' => 'name',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'mime_type' => [
-            'label' => 'mime_type',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'preview' => [
-            'label' => 'preview',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'human_readable_size' => [
-            'label' => 'human_readable_size',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -49,25 +39,21 @@ return [
             'description' => '',
         ],
         'created_at' => [
-            'label' => 'created_at',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
-            'label' => 'applyFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'toggleColumns' => [
-            'label' => 'toggleColumns',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',

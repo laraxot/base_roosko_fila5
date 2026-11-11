@@ -18,5 +18,5 @@ abstract class TestCase extends BaseTestCase
     use DatabaseTransactions;
 
     /** @var list<string> */
-    protected $connectionsToTransact = ['fixcity', 'mariadb', 'user', 'geo'];
+    protected $connectionsToTransact = ['sqlite', 'geo'];
 }

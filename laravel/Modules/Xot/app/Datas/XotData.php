@@ -497,6 +497,16 @@ class XotData extends Data implements Wireable
         if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] === '127.0.0.1') {
             return false;
         }
+        // IP privato/riservato (LAN, 192.168.x.x, 10.x, 172.16-31.x): niente TLS reale
+        // dietro `php artisan serve` — forzare https romperebbe tutti gli asset.
+        $serverName = $_SERVER['SERVER_NAME'] ?? null;
+        if (
+            \is_string($serverName)
+            && filter_var($serverName, FILTER_VALIDATE_IP) !== false
+            && filter_var($serverName, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false
+        ) {
+            return false;
+        }
         // AWS ELB
         if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
             return true;

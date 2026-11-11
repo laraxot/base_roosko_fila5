@@ -491,6 +491,12 @@ abstract class XotBaseMigration extends LaravelMigration
             ));
         }
 
+        // MariaDB 10.7+ has a native UUID type that refuses bigint -> uuid even on an empty
+        // column (error 4078 "Cannot cast 'bigint unsigned' as 'uuid'"); char(36) -> uuid is accepted.
+        if ($this->isMysqlFamilyDriver()) {
+            $table->char('user_id', 36)->nullable()->change();
+        }
+
         if ($nullable) {
             $table->uuid('user_id')->nullable()->change();
 

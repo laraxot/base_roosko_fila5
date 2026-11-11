@@ -314,3 +314,22 @@ riportata qui): resta nella cronologia git, va ruotata. (2) Un controllo automat
   suite toccate dalla funzione foto serve Pest su sqlite, un processo alla volta.
 - I marker `.merge_file_*` (DCP-440) tornano a ondate e ogni onda riporta `phpstan.parse`: la misura vale per l'albero di
   quell'istante, va ripetuta dopo ogni sync.
+
+### Misura a freddo (sessione claude-code)
+
+Chiude il limite "cache calda" del punto precedente. Il `tmpDir` di `phpstan.neon` non si cambia, ma un config d'appoggio
+fuori repo lo puo' sovrascrivere senza toccare la cache condivisa: `includes:` con il percorso assoluto di
+`laravel/phpstan.neon` e `parameters: tmpDir: <cartella nuova>`, poi `analyse Modules -c <quel file>`.
+
+| Run | Ora | Cache | Esito |
+|-----|-----|-------|-------|
+| `analyse Modules`, JSON, sotto `flock` | 21:00:28 - 21:01:08 | `/tmp/phpstan` (calda) | exit 0, `errors: 0`, `file_errors: 0` |
+| `analyse Modules/Trade`, formato normale | dopo | calda | exit 0, `[OK] No errors` |
+| `analyse Modules -c <include>`, JSON, sotto `flock` | 21:02:37 - 21:03:24 | **nuova, 166 MiB popolata** | exit 0, `errors: 0`, `file_errors: 0` |
+
+- Il run a freddo dura 47 s su 24 core, quindi la cache calda non nascondeva nulla.
+- Controllo positivo con la stessa configurazione: un file di prova fuori repo con `undefined_function_xyz()` esce 1 con
+  3 `file_errors` (`function.notFound`, `binaryOp.invalid`, `return.type`). Lo zero non viene da una config che non analizza.
+- Gli exit sono quelli reali di PHPStan, scritti su file (`...; echo $? > .exit`), non quelli del job in background.
+- Dei 29 errori di `TradeResults.php` visti a inizio sessione non resta nulla: li hanno chiusi i proprietari del file.
+- Da ripetere dopo ogni onda di sync deprecato, come scritto sopra.

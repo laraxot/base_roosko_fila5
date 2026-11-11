@@ -7,6 +7,9 @@ namespace Modules\Lang\Models\Traits\Relationships;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 
+/**
+ * Relationships exposed by the Post model.
+ */
 trait PostRelations
 {
     /**

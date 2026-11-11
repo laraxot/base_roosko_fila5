@@ -25,15 +25,11 @@ return [
         'title' => [
             'label' => 'Titolo',
             'placeholder' => 'Titolo della pagina',
-            'helper_text' => 'title',
-            'description' => 'title',
             'tooltip' => '',
         ],
         'slug' => [
             'label' => 'Slug',
             'placeholder' => 'Slug della pagina',
-            'helper_text' => 'slug',
-            'description' => 'slug',
             'tooltip' => '',
         ],
         'content' => [
@@ -117,67 +113,56 @@ return [
             'description' => '',
         ],
         'reorderRecords' => [
-            'label' => 'reorderRecords',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
-            'label' => 'resetFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'applyFilters' => [
-            'label' => 'applyFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'openFilters' => [
-            'label' => 'openFilters',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'delete' => [
-            'label' => 'delete',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'edit' => [
-            'label' => 'edit',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'view' => [
-            'label' => 'view',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'create' => [
-            'label' => 'create',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'message' => [
-            'label' => 'message',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'footer_blocks' => [
-            'label' => 'footer_blocks',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'caption' => [
-            'label' => 'caption',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -194,9 +179,6 @@ return [
         'archive' => 'Archivia',
         'restore' => 'Ripristina',
         'preview' => 'Anteprima',
-        'activeLocale' => [
-            'label' => 'activeLocale',
-        ],
     ],
     'messages' => [
         'created' => 'Pagina creata con successo',
@@ -214,20 +196,6 @@ return [
     ],
     'model' => [
         'label' => 'page.model',
-    ],
-    'sections' => [
-        'Content' => [
-            'label' => 'Content',
-            'heading' => 'Content',
-        ],
-        'Sidebar' => [
-            'label' => 'Sidebar',
-            'heading' => 'Sidebar',
-        ],
-        'Footer' => [
-            'label' => 'Footer',
-            'heading' => 'Footer',
-        ],
     ],
     'label' => 'Page',
     'plural_label' => 'Page (Plurale)',

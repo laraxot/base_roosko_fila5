@@ -3,11 +3,6 @@
 declare(strict_types=1);
 
 return [
-    'actions' => [
-        'search' => [
-            'label' => 'search',
-        ],
-    ],
     'sections' => [
         'table_name' => [
             'label' => 'Table name',

@@ -358,9 +358,13 @@ class Address extends BaseModel
      */
     public function scopeNearby(Builder $query, float $latitude, float $longitude, float $radiusKm = 10): Builder
     {
+        // `*` solo se la query non ha gia' colonne: `*, expr` dopo other
+        // select columns e' syntax error su MariaDB (vedi GeoTrait::scopeWithDistance).
+        $prefix = $query->getQuery()->columns === null ? '*,' : '';
+
         return $query
             ->selectRaw('
-            *,
+            '.$prefix.'
             (6371 * acos(cos(radians(?)) * cos(radians(latitude)) * cos(radians(longitude) - radians(?)) + sin(radians(?)) * sin(radians(latitude)))) AS distance
         ', [$latitude, $longitude, $latitude])
             ->having('distance', '<', $radiusKm)

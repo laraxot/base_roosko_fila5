@@ -6,6 +6,9 @@ namespace Modules\Lang\Models\Traits\Mutators;
 
 use Illuminate\Support\Str;
 
+/**
+ * Attribute mutators and accessors for the Post model.
+ */
 trait PostMutators
 {
     public function setTitleAttribute(string $value): void
@@ -20,13 +23,13 @@ trait PostMutators
             return $value;
         }
 
-        $value = $this->getTitle();
+        $postType = is_string($this->attributes['post_type'] ?? null) ? $this->attributes['post_type'] : '';
+        $postId = is_scalar($this->attributes['post_id'] ?? null) ? $this->attributes['post_id'] : '';
+        $value = $postType.' '.$postId;
         $this->title = $value;
 
         if ($this->getKey() !== null) {
-            $this->update([
-                'title' => $value,
-            ]);
+            $this->update(['title' => $value]);
         }
 
         return $value;
@@ -38,74 +41,18 @@ trait PostMutators
             return $value;
         }
 
-        $value = $this->getGuid();
+        $value = Str::slug($this->title ?? '');
         $this->guid = $value;
 
         if ($this->getKey() !== null) {
-            $this->update([
-                'guid' => $value,
-            ]);
+            $this->update(['guid' => $value]);
         }
 
         return $value;
     }
 
-    public function getTxtAttribute(?string $value): string
+    public function getTxtAttribute(?string $value): ?string
     {
-        return $this->getTxt($value);
-    }
-
-    public function getTxt(?string $value = null): string
-    {
-        if ($value === null) {
-            $rawValue = $this->attributes['txt'] ?? null;
-            $value = is_string($rawValue) ? $rawValue : null;
-        }
-
         return $value ?? '';
-    }
-
-    /**
-     * Titolo calcolato da post_type e post_id. Calcolo puro: nessuna scrittura.
-     */
-    public function getTitle(): string
-    {
-        if (isset($this->attributes['post_type']) && $this->attributes['post_type'] !== '' && $this->attributes['post_type'] !== '0') {
-            $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
-                ? $this->attributes['post_type']
-                : '';
-            $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
-                ? ((string) $this->attributes['post_id'])
-                : '';
-
-            return $postType.' '.$postId;
-        }
-
-        $postType = is_string($this->post_type) ? $this->post_type : '';
-        $postId = is_scalar($this->post_id) ? ((string) $this->post_id) : '';
-
-        return $postType.' '.$postId;
-    }
-
-    /**
-     * Slug del guid a partire dal titolo. Calcolo puro: nessuna scrittura.
-     */
-    public function getGuid(): string
-    {
-        $value = $this->title;
-        if ($value === '') {
-            $postType = isset($this->attributes['post_type']) && is_string($this->attributes['post_type'])
-                ? $this->attributes['post_type']
-                : '';
-            $postId = isset($this->attributes['post_id']) && is_scalar($this->attributes['post_id'])
-                ? ((string) $this->attributes['post_id'])
-                : '';
-            $value = $postType.' '.$postId;
-        }
-        if ($value === null) {
-            $value = 'u-'.random_int(1, 1000);
-        }
-
-        return Str::slug($value);
     }
 }

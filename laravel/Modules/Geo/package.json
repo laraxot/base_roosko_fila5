@@ -8,7 +8,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "copy": "cp -rv ./public/* ../../../public_html/assets/geo"
+        "copy": "echo 'public_html/assets/geo e' symlink di Modules/Geo/public: nessuna copia necessaria'"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.7",
