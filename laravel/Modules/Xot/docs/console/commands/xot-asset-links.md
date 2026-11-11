@@ -85,6 +85,9 @@ php artisan xot:module-link --force
 
 ## Comportamento
 
+- Ogni nome collegato finisce in `public_html/assets/.gitignore` (o `public_html/themes/.gitignore`) con due righe,
+  `<nome>/` per una cartella reale e `<nome>` per il symlink: per git il symlink è un file e il pattern con la barra non lo copre.
+  Il `.gitignore` è versionato e tiene la cartella nel repository; i link no, perché si creano in ogni installazione.
 - Link relativo gia' corretto → `link gia' corretto` (no-op).
 - Link **assoluto** verso la cartella giusta → sostituito automaticamente con quello relativo.
 - Link esistente che punta altrove → warning, serve `--force`.
