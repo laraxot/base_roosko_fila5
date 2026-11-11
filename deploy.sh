@@ -1,59 +1,66 @@
 #!/usr/bin/env bash
+# Rilascio di Roosko sul server. Uso (dalla radice del progetto, utente del web server o con sudo):
+#
+#   ./deploy.sh                # rilascio completo
+#   SKIP_ASSETS=1 ./deploy.sh  # senza ricompilare gli asset (nessun JS/CSS cambiato)
+#   SKIP_BACKUP=1 ./deploy.sh  # senza backup del database (sconsigliato)
+#
+# Passi: manutenzione -> backup DB -> dipendenze -> asset -> migrazioni -> cache -> riavvio code -> controlli.
+# Se un passo fallisce l'app RESTA in manutenzione: si guarda l'errore, si corregge e si rilancia;
+# `php artisan up` a mano solo se si e' sicuri che il database e il codice sono coerenti.
+set -euo pipefail
 
-# abilito l'uscita immediata in caso di errore
-set -e
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+APP="$ROOT/laravel"
+ASSET_DIRS="${ASSET_DIRS:-Modules/Geo Modules/Roosko Modules/Activity Themes/TwentyOne}"
+cd "$APP"
 
-echo "Inizio deploy..."
+step() { printf '\n==> %s\n' "$*"; }
 
-# mi sposto nella working dir
-#echo "Cambio directory..."
-#cd /var/www/<nome progetto>le
+step "Manutenzione"
+php artisan down --retry=60 --refresh=15 || true
 
-# evito l'errore "fatal: detected dubious ownership in repository"
-#echo "Configurazione safe.directory..."
-#git config --global --add safe.directory /var/www/<nome progetto>le
+if [ "${SKIP_BACKUP:-0}" != "1" ]; then
+    step "Backup del database"
+    "$ROOT/deploy/backup-db.sh"
+fi
 
-# eseguo pull
-#echo "Esecuzione git pull..."
-#if [ -z "$GITLAB_TOKEN" ]; then
-#  git pull
-#else
-#  # serve passare esplicitamente la variabile GITLAB_TOKEN a altrimenti la si perde
-#  GITLAB_TOKEN="$GITLAB_TOKEN" git -c credential.helper= -c credential.helper='!f() { echo username=gitlab-ci-token; #echo password=$GITLAB_TOKEN; }; f' pull
-#fi
+step "Dipendenze PHP"
+export COMPOSER_ALLOW_SUPERUSER=1
+if [ -f composer.lock ]; then
+    composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction
+else
+    # Senza composer.lock la risoluzione avviene qui (vedi README): il secondo giro applica il merge-plugin.
+    composer install --no-dev --prefer-dist --no-interaction --no-scripts
+    composer update --no-dev --prefer-dist --optimize-autoloader --no-interaction
+fi
 
-# aggiornamento applicazione
-cd laravel
-echo "Aggiorno composer..."
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-php -d memory_limit=-1 composer.phar selfupdate
-rm -rf ./app/View/Components/vendor/
-rm -rf ./resources/views/vendor/
-echo "Aggiorno librerie..."
-COMPOSER_ALLOW_SUPERUSER=1 php -d memory_limit=-1 composer.phar update -W --no-interaction 1>/dev/null
-echo "Pubblico variabili e configurazioni..."
-php artisan vendor:publish --all --quiet
-rm -rf database/migrations/*
-rm -rf ./app/View/Components/vendor/
-echo "Eseguo migrazioni..."
-php artisan migrate --force --no-interaction --quiet
-echo "Aggiorno Filament..."
-php artisan filament:upgrade --quiet
-echo "Ottimizzo Filament..."
-php artisan filament:optimize --quiet
-echo "Ottimizzo applicazione..."
-php artisan optimize --quiet
-echo "Pulizia route..."
-php artisan route:clear --quiet
-cd ..
+if [ "${SKIP_ASSETS:-0}" != "1" ]; then
+    step "Asset (Vite): $ASSET_DIRS"
+    for dir in $ASSET_DIRS; do
+        [ -f "$dir/package.json" ] || continue
+        ( cd "$dir" && { [ -f package-lock.json ] && npm ci --no-audit --no-fund || npm install --no-audit --no-fund; } && npm run build )
+    done
+fi
 
-# riaggiorno i permessi
-echo "Aggiornamento permessi..."
-sudo chown -R www-data:www-data .
-sudo chmod -R g+w .
+step "Migrazioni"
+php artisan migrate --force --no-interaction
 
-echo "Deploy completato con successo!"
+step "Cache di configurazione, route, viste ed eventi"
+php artisan optimize:clear
+php artisan optimize
+php artisan filament:optimize
+
+step "Riavvio dei worker delle code (ripartono con il codice nuovo)"
+php artisan queue:restart
+
+step "Permessi delle cartelle scrivibili"
+chmod -R ug+rwX storage bootstrap/cache
+
+step "Fuori manutenzione"
+php artisan up
+
+step "Controlli di produzione"
+php artisan roosko:production-check
 
 echo "DEPLOY_SUCCESS"

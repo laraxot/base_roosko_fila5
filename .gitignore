@@ -150,7 +150,9 @@ laravel/resources/views/vendor/
 !laravel/resources/views/vendor
 !laravel/resources/views/vendor/cookie-consent/
 !laravel/resources/views/vendor/cookie-consent/index.blade.php
-laravel/lang/vendor/
+laravel/lang/vendor/*
+# override per chiave delle traduzioni italiane mancanti in Filament 5 (solo le chiavi assenti)
+!laravel/lang/vendor/filament*/
 laravel/Themes/*/src/
 cache/models/*
 *.tar.gz

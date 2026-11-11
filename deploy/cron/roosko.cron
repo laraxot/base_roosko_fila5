@@ -1,0 +1,5 @@
+# Cron di Roosko (crontab -u www-data deploy/cron/roosko.cron, sostituendo /var/www/roosko).
+# Scheduler di Laravel: verifica esiti RENTRI ogni minuto, pulizia log, battito per roosko:production-check.
+* * * * * cd /var/www/roosko/laravel && php artisan schedule:run >> /dev/null 2>&1
+# Backup notturno del database (30 giorni in laravel/storage/backups).
+30 2 * * * /var/www/roosko/deploy/backup-db.sh >> /var/www/roosko/laravel/storage/logs/backup.log 2>&1
