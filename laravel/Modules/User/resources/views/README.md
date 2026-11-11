@@ -50,11 +50,7 @@ npm install
 npm run build
 ```
 
-6. Copia gli asset compilati:
-
-```bash
-npm run copy
-```
+6. Nessuna copia: gli asset sono serviti tramite symlink da `public_html/` (`php artisan xot:theme-link`): `npm run copy` non serve più.
 
 ## Configurazione
 

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
+use Modules\Geo\Actions\Address\FormatAddressAction;
 use Modules\Geo\Enums\AddressTypeEnum;
 use Modules\Geo\Models\Traits\GeoTrait;
 use Modules\Xot\Contracts\ProfileContract;
@@ -233,42 +234,16 @@ class Address extends BaseModel
     }
 
     /**
-     * Getter per l'indirizzo completo in formato italiano.
+     * Indirizzo completo in formato italiano, con i codici ISTAT convertiti in nomi (FormatAddressAction).
      */
     public function getFullAddressAttribute(): string
     {
-        $parts = array_filter([
-            is_string($this->route) && is_string($this->street_number) ? $this->route.($this->street_number !== '' ? ' '.$this->street_number : '') : null,
-            $this->locality,
-            $this->administrative_area_level_3, // Provincia
-            $this->administrative_area_level_2, // Regione
-            $this->postal_code,
-            $this->country,
-        ], function (mixed $part): bool {
-            // PHPStan L10: verifica prima il tipo, poi se è vuoto
-            if (! \is_string($part)) {
-                return false;
-            }
-
-            // Dopo is_string(), $part è string, quindi verifica se è vuoto
-            return $part !== '';
-        });
-
-        return implode(', ', $parts);
+        return app(FormatAddressAction::class)->execute($this);
     }
 
     public function getFullAddress(): ?string
     {
-        $parts = array_filter([
-            $this->route.($this->street_number ? ' '.$this->street_number : ''),
-            $this->locality,
-            $this->administrative_area_level_3, // Provincia
-            $this->administrative_area_level_2, // Regione
-            $this->postal_code,
-            $this->country,
-        ]);
-
-        return implode(', ', $parts);
+        return app(FormatAddressAction::class)->execute($this);
     }
 
     /**

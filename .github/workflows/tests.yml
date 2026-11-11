@@ -168,3 +168,66 @@ jobs:
             echo "::error::Bundle di ${{ matrix.dir }} non aggiornato: npm run build nel modulo e commit di public/"
             exit 1
           fi
+
+  concurrency-mariadb:
+    name: Numerazione del registro su MariaDB (concorrenza reale)
+    # Su sqlite lockForUpdate non blocca nulla: qui 4 processi scrivono sullo stesso registro su MariaDB,
+    # dove il lock di riga e' vero. Atteso: numeri 1..40 senza buchi ne' duplicati.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      mariadb:
+        image: mariadb:11.4
+        env:
+          MARIADB_ROOT_PASSWORD: root
+          MARIADB_DATABASE: waste_concurrency
+        ports: ['3306:3306']
+        options: >-
+          --health-cmd="healthcheck.sh --connect --innodb_initialized"
+          --health-interval=5s --health-timeout=5s --health-retries=20
+    defaults:
+      run:
+        working-directory: laravel
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, intl, bcmath, gd, zip, pdo_sqlite, sqlite3, pdo_mysql, pcntl, posix, exif
+          coverage: none
+
+      - name: Cache Composer
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/composer/files
+          key: composer-files-${{ hashFiles('laravel/composer.json', 'laravel/Modules/*/composer.json') }}
+          restore-keys: composer-files-
+
+      - name: Install dependencies
+        run: |
+          mkdir -p bootstrap/cache storage/framework/{cache,sessions,views} storage/logs
+          composer install --no-interaction --no-progress --prefer-dist --no-scripts
+          composer update --no-interaction --no-progress --prefer-dist --no-scripts
+
+      - name: Environment
+        run: |
+          printf 'APP_NAME=Roosko\nAPP_ENV=testing\nAPP_KEY=\nAPP_DEBUG=true\nAPP_URL=http://roosko.local\nDB_CONNECTION=sqlite\nDB_DATABASE=:memory:\nCACHE_STORE=array\nSESSION_DRIVER=array\nQUEUE_CONNECTION=sync\nMAIL_MAILER=array\nLOG_CHANNEL=single\n' > .env
+          cp .env .env.testing
+          php artisan key:generate --force
+          php artisan key:generate --force --env=testing
+          php artisan package:discover --ansi
+          rm -f database/test_data.sqlite database/test_user.sqlite
+          touch database/test_data.sqlite
+          ln -s test_data.sqlite database/test_user.sqlite
+          DB_DATABASE=test_data DB_DATABASE_USER=test_user php artisan migrate --force --no-interaction
+
+      - name: Pest (MariaDB)
+        env:
+          WASTE_CONCURRENCY_DRIVER: mariadb
+          WASTE_CONCURRENCY_HOST: 127.0.0.1
+          WASTE_CONCURRENCY_DATABASE: waste_concurrency
+          WASTE_CONCURRENCY_USERNAME: root
+          WASTE_CONCURRENCY_PASSWORD: root
+        run: php vendor/bin/pest Modules/Waste/tests/Feature/ConcurrentRegisterNumberingTest.php
