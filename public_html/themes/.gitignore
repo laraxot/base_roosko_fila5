@@ -1,0 +1,9 @@
+# public_html/themes/<Tema> = ln -s ../../laravel/Themes/<Tema>/public  (php artisan xot:theme-link)
+#
+# Il contenuto vive (ed e' versionato) in laravel/Themes/<Tema>/public: qui c'e' solo il link.
+# `<Tema>/` vale per una cartella reale (vecchia copia), `<Tema>` per il symlink.
+# xot:theme-link aggiunge da solo le righe dei temi che collega.
+Meetup/
+Meetup
+TwentyOne/
+TwentyOne

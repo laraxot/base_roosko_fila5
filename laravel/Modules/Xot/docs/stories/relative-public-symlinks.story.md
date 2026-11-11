@@ -25,6 +25,26 @@ Resta valido se il progetto cambia percorso: altro utente o home, container, car
 copia da sviluppo a produzione. Un link assoluto (`/home/utente/...`) invece si rompe. Per lo stesso
 motivo `npm run copy` non serve più.
 
+## Il link non si committa
+
+Il link si crea in ogni installazione e non va nel repository. La cartella del docroot ha un `.gitignore`
+versionato che lo elenca, e lo stesso file tiene la cartella nel repo (git non versiona cartelle vuote):
+
+```
+public_html/assets/.gitignore      public_html/themes/.gitignore
+geo/                               TwentyOne/
+geo                                TwentyOne
+```
+
+Per ogni nome servono due righe:
+- `geo/` copre una cartella reale, cioè una vecchia copia degli asset;
+- `geo` copre il symlink: per git un symlink è un file, quindi il pattern con la barra non lo copre.
+
+Il caso è verificato con `git check-ignore`.
+
+`xot:module-link` e `xot:theme-link` aggiungono da sole le righe dei nomi che collegano
+(`EnsureGitignoreEntriesAction`).
+
 ## Fatto
 
 - `CreateRelativeSymlinkAction`: calcola la destinazione relativa dalla cartella del link e crea il link.

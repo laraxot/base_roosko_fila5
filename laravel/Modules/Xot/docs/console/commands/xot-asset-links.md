@@ -4,7 +4,7 @@ type: reference
 module: Xot
 status: active
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 qmd: "xot theme-link module-link symlink public_html assets themes"
 issues: []
 discussions: []
@@ -22,12 +22,25 @@ Il document root e' `<repo>/public_html` (mai `laravel/public` — vedi
 Le risorse pubbliche dei temi e dei moduli entrano nel docroot **solo via symlink**,
 creati dai comandi dedicati in `app/Console/Commands/`:
 
-| Comando | Sorgente | Destinazione |
-|---|---|---|
-| `php artisan xot:theme-link` | `laravel/Themes/{Theme}/public` | `public_html/themes/{Theme}` |
-| `php artisan xot:module-link` | `laravel/Modules/{Modulo}/public` | `public_html/assets/{lower(modulo)}` |
+| Comando | Link creato (sempre **relativo**) |
+|---|---|
+| `php artisan xot:theme-link` | `public_html/themes/{Theme} -> ../../laravel/Themes/{Theme}/public` |
+| `php artisan xot:module-link` | `public_html/assets/{lower(modulo)} -> ../../laravel/Modules/{Modulo}/public` |
+| `php artisan symlink:publish` | entrambi, stessa regola |
+
+Equivale a, dalla radice del progetto:
+
+```bash
+cd public_html/themes && ln -s ../../laravel/Themes/Trattoria/public Trattoria
+```
 
 ## Il perche'
+
+- **Relativo, mai assoluto**: il link sta in `public_html/themes/` (o `assets/`), quindi `../../`
+  risale alla radice del progetto e scende in `laravel/`. Il percorso non contiene la cartella in cui
+  il progetto e' installato: il link resta valido se il progetto viene spostato, clonato su un altro
+  server o in un container, ripristinato da backup o pubblicato in una cartella di deploy diversa.
+  Un link assoluto (`/var/www/_bases/...`) si romperebbe in tutti questi casi.
 
 - `public/` del tema/modulo e' la sola cartella servibile: contiene `manifest.json`,
   asset Vite compilati e file statici.
@@ -72,7 +85,8 @@ php artisan xot:module-link --force
 
 ## Comportamento
 
-- Link gia' corretto → `link gia' corretto` (no-op).
+- Link relativo gia' corretto → `link gia' corretto` (no-op).
+- Link **assoluto** verso la cartella giusta → sostituito automaticamente con quello relativo.
 - Link esistente che punta altrove → warning, serve `--force`.
 - Cartella reale nella destinazione → warning, serve `--force` (backup `.bak-`).
 - `public/` mancante → riga `nessuna cartella public/, saltato`.
@@ -87,6 +101,7 @@ php artisan xot:module-link --force
 ## Files
 
 - `app/Console/Commands/ThemeLinkCommand.php`
-- `app/Console/Commands/ModuleLinkCommand.php`
+- `app/Console/Commands/ModuleLinkCommand.php`, `SymlinkPublishCommand.php`
+- Logica comune: `app/Actions/File/CreateRelativeSymlinkAction.php` (test: `tests/Unit/Actions/File/CreateRelativeSymlinkActionTest.php`, story [relative-public-symlinks](../../stories/relative-public-symlinks.story.md))
 - Registrazione: `XotServiceProvider::registerCommands()`
 - Log introduzione: `docs/wiki/log.md` (2026-11-09)

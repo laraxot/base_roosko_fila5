@@ -81,6 +81,8 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
 5. Collega gli asset alla document root con symlink relativi (`public_html/assets/<modulo>` →
    `../../laravel/Modules/<Modulo>/public`, `public_html/themes/<Tema>` → `../../laravel/Themes/<Tema>/public`).
    Niente copie: i bundle compilati sono già nella cartella `public/` di moduli e temi.
+   I link non si committano: sono elencati in `public_html/assets/.gitignore` e `public_html/themes/.gitignore`
+   (`<nome>/` per una cartella reale, `<nome>` per il symlink), che i due comandi aggiornano da soli.
    ```bash
    php artisan xot:module-link && php artisan xot:theme-link
    ```

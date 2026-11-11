@@ -21,16 +21,17 @@ base_<progetto>/
 │   ├── resources/      sorgenti CSS/JS
 │   └── public/         asset compilati da Vite (outDir)
 └── public_html/        DOCUMENT ROOT — non va mai cancellata
-    ├── themes/<Tema>  -> ../laravel/Themes/<Tema>/public      (symlink)
-    └── assets/xot     -> ../laravel/Modules/Xot/public        (symlink)
+    ├── themes/<Tema>  -> ../../laravel/Themes/<Tema>/public   (symlink relativo)
+    └── assets/xot     -> ../../laravel/Modules/Xot/public     (symlink relativo)
 ```
 
-I symlink si creano una volta per installazione:
+I symlink sono **relativi** (restano validi se il progetto cambia percorso) e si creano una volta
+per installazione:
 
 ```bash
 cd laravel
-php artisan xot:theme-link     # public_html/themes/<Tema>  -> Themes/<Tema>/public
-php artisan xot:module-link    # public_html/assets/<modulo> -> Modules/<Modulo>/public
+php artisan xot:theme-link     # public_html/themes/<Tema>   -> ../../laravel/Themes/<Tema>/public
+php artisan xot:module-link    # public_html/assets/<modulo> -> ../../laravel/Modules/<Modulo>/public
 ```
 
 Dettagli: [console/commands/xot-asset-links.md](console/commands/xot-asset-links.md).

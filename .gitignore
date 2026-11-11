@@ -43,13 +43,18 @@ public/storage
 public/hot
 public_html/storage
 public_html/hot
-public_html/assets
+# public_html/assets/<modulo> e' un symlink relativo a ../../laravel/Modules/<Modulo>/public (xot:module-link):
+# si versiona solo public_html/assets/.gitignore, che elenca i link da non committare
+public_html/assets/*
+!public_html/assets/.gitignore
 public_html/build
 public_html/css
 public_html/js
 public_html/deploy/config.php
 public_html/modules
-public_html/themes
+# public_html/themes/<Tema> e' un symlink relativo a ../../laravel/Themes/<Tema>/public (xot:theme-link)
+public_html/themes/*
+!public_html/themes/.gitignore
 public_html/uploads
 storage/*.key
 .env
@@ -126,7 +131,6 @@ laravel/composer.phar
 /public_html/deploy/config.php
 /public_html/storage
 public_html/modules
-public_html/themes
 /cache
 /tmp
 laravel/.phive/
@@ -402,7 +406,6 @@ laravel/resources/views/vendor/
 .cursor
 tools/freellmapi
 .cursor
-public_html/themes/
 laravel/.kiro
 laravel/.pi
 laravel/nativephp

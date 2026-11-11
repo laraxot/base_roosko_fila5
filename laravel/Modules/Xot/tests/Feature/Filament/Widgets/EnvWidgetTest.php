@@ -11,7 +11,7 @@ use Mockery;
 use Mockery\MockInterface;
 use Modules\Xot\Contracts\UserContract;
 use Modules\Xot\Filament\Widgets\EnvWidget;
-use Tests\TestCase;
+use Modules\Xot\Tests\TestCase;
 
 uses(TestCase::class);
 

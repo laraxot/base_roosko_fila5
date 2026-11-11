@@ -1,0 +1,13 @@
+# public_html/assets/<modulo> = ln -s ../../laravel/Modules/<Modulo>/public  (php artisan xot:module-link)
+#
+# Il contenuto vive (ed e' versionato) in laravel/Modules/<Modulo>/public: qui c'e' solo il link, creato
+# in ogni installazione e quindi mai committato. Questo file tiene anche la cartella nel repository.
+# Due righe per modulo: `<modulo>/` vale per una cartella reale (vecchia copia degli asset),
+# `<modulo>` per il symlink, che per git e' un file e non e' coperto dal pattern con la barra.
+# xot:module-link aggiunge da solo le righe dei moduli che collega.
+geo/
+geo
+roosko/
+roosko
+xot/
+xot
