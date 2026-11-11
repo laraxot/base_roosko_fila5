@@ -19,7 +19,7 @@ new class extends Component {
 <div>
     @volt()
     <div>
-        <button class="flex items-center space-x-1 text-sm font-semibold text-gray-600 hover:text-blue-600" data-dropdown-toggle="dropdown-markets">
+        <button type="button" class="flex items-center py-1.5 space-x-1 text-sm font-semibold text-gray-600 hover:text-blue-600" data-dropdown-toggle="dropdown-markets" aria-haspopup="true" aria-controls="dropdown-markets" aria-expanded="false">
             <x-heroicon-o-globe-europe-africa class="size-6" />
             <span>{{ __('pub_theme::headernav.markets') }}</span>
             <x-heroicon-o-chevron-down class="size-4" />

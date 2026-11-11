@@ -40,8 +40,8 @@ final class ResolveCinematicHeroDataAction
      *         participants:int,
      *         volume:float,
      *         ends_at_human:string|null,
-     *         outcomes:array<int, array{title:string,percentage:float,image_url:string|null}>,
-     *         lead_outcome:array{title:string,percentage:float,image_url:string|null}|null
+     *         outcomes:array<int, array{title:string,percentage:float,image_url:string|null,color:string|null}>,
+     *         lead_outcome:array{title:string,percentage:float,image_url:string|null,color:string|null}|null
      *     }>
      * }
      */
@@ -68,9 +68,9 @@ final class ResolveCinematicHeroDataAction
             ],
             'stats' => $this->buildStats($heroStats),
             'highlights' => [
-                $this->translateText('predict::home.hero.highlights.visual_first', 'Foto reali delle opzioni, non solo etichette'),
-                $this->translateText('predict::home.hero.highlights.multi_outcome', 'Solo mercati con almeno 4 possibili risposte'),
-                $this->translateText('predict::home.hero.highlights.db_backed', 'Percentuali e volumi derivati dai dati salvati nel DB'),
+                $this->translateText('predict::home.hero.highlights.visual_first', 'Gratis: si gioca con crediti virtuali'),
+                $this->translateText('predict::home.hero.highlights.multi_outcome', 'Sport, politica, tecnologia e spettacolo'),
+                $this->translateText('predict::home.hero.highlights.db_backed', 'Le percentuali cambiano a ogni scommessa'),
             ],
             'spotlightCards' => [],
         ];
@@ -139,17 +139,17 @@ final class ResolveCinematicHeroDataAction
         return [
             [
                 'value' => $this->formatCompact((int) $heroStats['marketsCount']),
-                'label' => $this->translateText('predict::home.hero.stats.active_markets', 'Mercati attivi'),
+                'label' => $this->translateText('predict::home.hero.stats.active_markets', 'Mercati aperti'),
                 'icon' => 'heroicon-o-presentation-chart-bar',
             ],
             [
                 'value' => $this->formatCompact((int) $heroStats['usersCount']),
-                'label' => $this->translateText('predict::home.hero.stats.users', 'Utenti registrati'),
+                'label' => $this->translateText('predict::home.hero.stats.users', 'Iscritti'),
                 'icon' => 'heroicon-o-user-group',
             ],
             [
                 'value' => $this->formatCompact((int) $heroStats['volumeCredits']),
-                'label' => $this->translateText('predict::home.hero.stats.volume', 'Crediti scambiati'),
+                'label' => $this->translateText('predict::home.hero.stats.volume', 'Crediti giocati'),
                 'icon' => 'heroicon-o-banknotes',
             ],
         ];
@@ -165,8 +165,8 @@ final class ResolveCinematicHeroDataAction
      *     participants:int,
      *     volume:float,
      *     ends_at_human:string|null,
-     *     outcomes:array<int, array{title:string,percentage:float,image_url:string|null}>,
-     *     lead_outcome:array{title:string,percentage:float,image_url:string|null}|null
+     *     outcomes:array<int, array{title:string,percentage:float,image_url:string|null,color:string|null}>,
+     *     lead_outcome:array{title:string,percentage:float,image_url:string|null,color:string|null}|null
      * }>
      */
     private function buildSpotlightCards(): array
@@ -206,6 +206,7 @@ final class ResolveCinematicHeroDataAction
                     $oTitle = $outcome['title'] ?? '';
                     $oPct = $outcome['percentage'] ?? 0;
                     $oImg = $outcome['image_url'] ?? null;
+                    $oColor = $outcome['color'] ?? null;
                     if (! is_string($oTitle)) {
                         continue;
                     }
@@ -213,6 +214,7 @@ final class ResolveCinematicHeroDataAction
                         'title' => $oTitle,
                         'percentage' => is_numeric($oPct) ? (float) $oPct : 0.0,
                         'image_url' => is_string($oImg) ? $oImg : null,
+                        'color' => is_string($oColor) ? $oColor : null,
                     ];
                 }
             }
@@ -254,7 +256,7 @@ final class ResolveCinematicHeroDataAction
             return number_format($value / 1000000, 1, ',', '.').'M';
         }
 
-        if ($value >= 1000) {
+        if ($value >= 100000) {
             return number_format($value / 1000, 1, ',', '.').'K';
         }
 

@@ -1,6 +1,6 @@
 @auth
 <div>
-    <button data-dropdown-toggle="dropdown-notification" class="grid px-4 py-3 text-sm font-semibold transition rounded-lg place-items-center">
+    <button type="button" aria-haspopup="true" aria-controls="dropdown-notification" aria-label="Notifications"  data-dropdown-toggle="dropdown-notification" class="grid px-4 py-3 text-sm font-semibold transition rounded-lg place-items-center">
         <div class="flex items-center space-x-1">
             <x-heroicon-o-bell class="size-5"/>
         </div>

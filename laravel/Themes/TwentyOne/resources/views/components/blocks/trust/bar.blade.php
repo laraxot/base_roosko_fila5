@@ -1,36 +1,24 @@
 {{--
-  Trust bar stile Kalshi: 3 link credibilità sotto hero.
-  Accessibile: nav con aria-label, link con min 44x44px.
-  Scroll reveal: entra in viewport con fade-in-up (rispetta prefers-reduced-motion).
+  Tre fatti verificabili sotto l'intestazione della home, ognuno collegato alla pagina che lo spiega.
+  Prima: "Credits Virtuali / Trasparenza Totale / Governance Community" in inglese, verso pagine inesistenti (404).
 --}}
 @php
-    $tCredits     = 'Credits Virtuali';
-    $tTransparent = 'Trasparenza Totale';
-    $tGovernance  = 'Governance Community';
-    $tAria        = 'Valori e trasparenza della piattaforma';
     $locale = app()->getLocale();
+    $items = [
+        ['icon' => 'heroicon-o-gift', 'label' => __('pub_theme::home.trust.free'), 'url' => url($locale.'/how-it-works')],
+        ['icon' => 'heroicon-o-scale', 'label' => __('pub_theme::home.trust.rules'), 'url' => url($locale.'/terms')],
+        ['icon' => 'heroicon-o-identification', 'label' => __('pub_theme::home.trust.adults'), 'url' => url($locale.'/terms')],
+    ];
 @endphp
-<nav class="border-b border-white/10 bg-slate-900/95 backdrop-blur-xl animate-fade-in-up" aria-label="{{ $tAria }}">
-    <div class="px-4 py-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            <a href="{{ url('/' . $locale . '/pages/credits') }}"
-               class="inline-flex items-center gap-2 min-h-[44px] min-w-[44px] text-sm font-medium text-slate-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg px-2 py-2 transition-colors"
-               aria-label="{{ $tCredits }}">
-                <x-filament::icon icon="heroicon-o-banknotes" class="w-5 h-5 text-cyan-400" aria-hidden="true" />
-                <span>{{ $tCredits }}</span>
-            </a>
-            <a href="{{ url('/' . $locale . '/pages/trasparenza') }}"
-               class="inline-flex items-center gap-2 min-h-[44px] min-w-[44px] text-sm font-medium text-slate-300 hover:text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg px-2 py-2 transition-colors"
-               aria-label="{{ $tTransparent }}">
-                <x-filament::icon icon="heroicon-o-eye" class="w-5 h-5 text-emerald-400" aria-hidden="true" />
-                <span>{{ $tTransparent }}</span>
-            </a>
-            <a href="{{ url('/' . $locale . '/pages/governance') }}"
-               class="inline-flex items-center gap-2 min-h-[44px] min-w-[44px] text-sm font-medium text-slate-300 hover:text-violet-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg px-2 py-2 transition-colors"
-               aria-label="{{ $tGovernance }}">
-                <x-filament::icon icon="heroicon-o-shield-check" class="w-5 h-5 text-violet-400" aria-hidden="true" />
-                <span>{{ $tGovernance }}</span>
-            </a>
-        </div>
-    </div>
+<nav class="border-b border-white/10 bg-slate-900" aria-label="{{ __('pub_theme::home.trust.aria') }}">
+    <ul class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-8 gap-y-2 px-4 py-3 sm:px-6 lg:px-8">
+        @foreach ($items as $item)
+            <li>
+                <a href="{{ $item['url'] }}" class="inline-flex min-h-11 items-center gap-2 rounded-lg px-2 text-sm font-medium text-slate-200 transition-colors duration-150 hover:text-white hover:underline">
+                    <x-filament::icon :icon="$item['icon']" class="h-5 w-5 text-sky-300" aria-hidden="true" />
+                    <span>{{ $item['label'] }}</span>
+                </a>
+            </li>
+        @endforeach
+    </ul>
 </nav>

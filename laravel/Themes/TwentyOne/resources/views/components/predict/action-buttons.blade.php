@@ -6,7 +6,7 @@
 
 <div class="flex items-center space-x-1">
     {{-- Pulsante visualizza --}}
-    <a href="{{ route('predict.view', ['lang' => app()->getLocale(), 'slug' => $predict->slug]) }}" 
+    <a href="{{ url('/' . app()->getLocale() . '/predicts/' . $predict->slug) }}" 
        class="inline-flex items-center px-2 py-1 text-xs font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
         <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>

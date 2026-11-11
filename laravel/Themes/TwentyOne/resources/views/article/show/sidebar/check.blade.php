@@ -17,7 +17,7 @@
                         class="
                         "
                         >
-                        <button
+                        <button type="button" aria-haspopup="true" aria-controls="dropdownHover" 
                             id="dropdownHoverButton"
                             data-dropdown-toggle="dropdownHover"
                             data-dropdown-trigger="hover"

@@ -62,7 +62,7 @@
                     $participants = $predict->transactions()->distinct('user_id')->count('user_id') ?: 0;
                 @endphp
 
-                <div class="reveal-kinetic group card-kinetic relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur transition-all duration-300 hover:scale-105 hover:border-cyan-400/30 hover:shadow-xl hover:shadow-cyan-500/10" data-kinetic-block="fade-up">
+                <div class="reveal-kinetic group card-kinetic relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur transition-all duration-300 hover:scale-105 hover:border-cyan-400/30 hover:shadow-xl hover:shadow-black/20" data-kinetic-block="fade-up">
                     {{-- Hot Badge --}}
                     @if($isHot)
                         <div class="absolute -right-2 -top-2 z-20">
@@ -153,7 +153,7 @@
 
                         {{-- CTA Button --}}
                         <a href="{{ url(app()->getLocale().'/predicts/'.$predict->slug) }}"
-                           class="btn-kinetic inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30">
+                           class="btn-kinetic inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg shadow-black/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/40">
                             <span>Prevedi Ora</span>
                             <x-filament::icon icon="heroicon-o-arrow-right" class="h-5 w-5" />
                         </a>

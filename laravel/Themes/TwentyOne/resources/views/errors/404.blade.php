@@ -48,7 +48,7 @@ name('404');
                 <div class="flex flex-wrap justify-center gap-4 text-sm">
                     <a href="{{ url('/categories') }}" class="text-emerald-400 hover:text-emerald-300 underline">Esplora Categorie</a>
                     <a href="{{ url('/search') }}" class="text-emerald-400 hover:text-emerald-300 underline">Cerca Predizioni</a>
-                    <a href="{{ url('/learn') }}" class="text-emerald-400 hover:text-emerald-300 underline">Come Funziona</a>
+                    <a href="{{ url(app()->getLocale().'/how-it-works') }}" class="text-emerald-400 hover:text-emerald-300 underline">Come Funziona</a>
                     <a href="{{ url('/contact') }}" class="text-emerald-400 hover:text-emerald-300 underline">Contattaci</a>
                 </div>
             </div>

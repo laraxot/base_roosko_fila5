@@ -8,6 +8,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
 	build: {
+		// Build nella cartella public/ del tema, servita da public_html/themes/TwentyOne tramite il
+		// symlink relativo ../../laravel/Themes/TwentyOne/public (php artisan xot:theme-link): niente copie.
 		outDir: "./public",
 		emptyOutDir: false,
         manifest: 'manifest.json',

@@ -12,10 +12,17 @@
             'label' => __('predict::common.labels.status.open.label'),
             'showAnimation' => true,
         ],
+        // Chiuso non è un errore: ambra (in attesa), non rosso.
         'closed' => [
-            'classes' => 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
-            'iconColor' => 'bg-red-400',
+            'classes' => 'bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100',
+            'iconColor' => 'bg-amber-500',
             'label' => __('predict::common.labels.status.closed.label'),
+            'showAnimation' => false,
+        ],
+        'resolved' => [
+            'classes' => 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200',
+            'iconColor' => 'bg-gray-400',
+            'label' => __('predict::common.labels.status.resolved.label'),
             'showAnimation' => false,
         ],
         default => [

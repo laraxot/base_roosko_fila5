@@ -1,21 +1,13 @@
 <?php
 
-use Modules\Blog\Models\Category;
-use Illuminate\Support\Arr;
-use Illuminate\View\View;
-use function Laravel\Folio\{withTrashed,middleware, name,render};
+declare(strict_types=1);
 
-withTrashed();
+use function Laravel\Folio\name;
+use function Laravel\Folio\render;
+
 name('articles.index');
-//middleware(['auth', 'verified']);
 
-// render(function (View $view) {
-//     $categories = Category::tree()->get()->toTree();
-//     return $view->with('categories', $categories);
-// });
-
-
+// Indirizzo storico: l'elenco dei mercati è /{lang}/predicts (prima qui c'era un elenco
+// deprecato vuoto con l'avviso "Deprecation Notice").
+render(static fn () => redirect()->to(url(app()->getLocale().'/predicts'), 301));
 ?>
-<x-layouts.app>
-    @include('predict::components.blocks.article_list.play_money_markets', ['method' => 'getAllArticles'])
-</x-layouts.app>

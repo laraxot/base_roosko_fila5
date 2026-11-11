@@ -1,5 +1,5 @@
 <div>
-	<button data-dropdown-toggle="dropdown-about" class="relative grid bg-gray-100 rounded-full size-10 overflow-clip hover:bg-gray-50 place-items-center">
+	<button type="button" data-dropdown-toggle="dropdown-about" aria-haspopup="true" aria-controls="dropdown-about" aria-label="{{ __('pub_theme::headernav.account') }}" class="relative grid bg-gray-100 rounded-full size-10 overflow-clip hover:bg-gray-50 place-items-center">
 		@auth
 			<img class="absolute inset-0 object-cover w-full h-full shrink-0" src="{{ $profile->getAvatarUrl() }}" alt="">
 		@else

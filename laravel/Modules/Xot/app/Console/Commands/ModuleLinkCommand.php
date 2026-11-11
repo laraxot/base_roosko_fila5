@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
+use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -75,15 +76,18 @@ class ModuleLinkCommand extends Command
     {
         if (is_link($link)) {
             $target = (string) readlink($link);
+            // \realpath nativo: false (non eccezione) se il link e' rotto.
             $resolved = str_starts_with($target, '/')
-                ? realpath($target)
-                : realpath(dirname($link).'/'.$target);
-            if ($resolved === realpath($source) || $target === $source) {
+                ? \realpath($target)
+                : \realpath(dirname($link).'/'.$target);
+            if (app(CreateRelativeSymlinkAction::class)->isRelativeLinkTo($link, $source)) {
                 $this->line('- '.basename($link).": link gia' corretto");
 
                 return 'skipped';
             }
-            if (! $force) {
+            // Stessa destinazione ma percorso assoluto: si riscrive relativo, senza bisogno di --force.
+            $sameTarget = $resolved !== false && $resolved === \realpath($source);
+            if (! $sameTarget && ! $force) {
                 $this->warn('- '.basename($link).": link esistente punta a {$target}, usa --force per sostituirlo");
 
                 return 'skipped';
@@ -102,9 +106,10 @@ class ModuleLinkCommand extends Command
             }
         }
 
-        $this->info(($dryRun ? '[dry-run] ' : '').'ln -s '.\Str::after($source, base_path()).' '.\Str::after($link, base_path('../')));
+        $relative = app(CreateRelativeSymlinkAction::class)->relativeTarget($source, $link);
+        $this->info(($dryRun ? '[dry-run] ' : '').'ln -s '.$relative.' '.\Str::after($link, base_path('../')));
         if (! $dryRun) {
-            symlink($source, $link);
+            symlink($relative, $link);
         }
 
         return 'linked';

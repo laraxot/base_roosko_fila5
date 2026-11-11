@@ -7,8 +7,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "watch": "vite build --watch",
-        "copy": "mkdir -p ../../../public_html/themes/TwentyOne && cp -rv ./public/* ../../../public_html/themes/TwentyOne/"
+        "watch": "vite build --watch"
     },
     "devDependencies": {
         "@alpinejs/focus": "^3.14.9",

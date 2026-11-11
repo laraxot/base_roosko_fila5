@@ -13,7 +13,7 @@
             }
         </script>
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'],'themes/TwentyOne/dist')
+        @vite(['resources/css/app.css', 'resources/js/app.js'],'themes/TwentyOne')
 
         <title>{{ $title ?? 'Genesis' }}</title>
     </head>

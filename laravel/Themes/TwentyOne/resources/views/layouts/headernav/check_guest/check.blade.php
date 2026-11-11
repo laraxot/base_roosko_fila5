@@ -1,4 +1,4 @@
-<button id="notification-button" data-dropdown-toggle="notification" class="grid w-10 h-10 transition-colors bg-gray-50 rounded-xl place-items-center hover:bg-white">
+<button type="button" aria-haspopup="true" aria-controls="notification" aria-label="Notifications"  id="notification-button" data-dropdown-toggle="notification" class="grid w-10 h-10 transition-colors bg-gray-50 rounded-xl place-items-center hover:bg-white">
 	<x-heroicon-o-bell class="w-6 h-6"/>
 </button>
 <!-- Dropdown -->

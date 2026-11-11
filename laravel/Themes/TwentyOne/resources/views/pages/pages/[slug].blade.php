@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\MultipleRecordsFoundException;
+use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Modules\Cms\Models\Page;
 use Illuminate\Support\Arr;
 use Illuminate\View\View;
@@ -9,13 +10,15 @@ use function Laravel\Folio\{withTrashed,middleware, name,render};
 
 withTrashed();
 name('page_slug.view');
-//middleware(['auth', 'verified']);
+// Applica i middleware dichiarati nel JSON della pagina (es. wallet e profile: ["auth"]).
+// Senza, le pagine personali si aprivano anche da ospite e andavano in 500.
+middleware(PageSlugMiddleware::class);
 
 render(function (View $view, string $slug) {
     try {
         $page = Page::query()->where('slug', $slug)->sole();
     } catch (ModelNotFoundException|MultipleRecordsFoundException) {
-        return view('pub_theme::404');
+        abort(404);
     }
 
     return $view->with('page', $page);

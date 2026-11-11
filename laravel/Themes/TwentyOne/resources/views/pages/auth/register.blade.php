@@ -1,80 +1,36 @@
 <?php
 
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Auth\Events\Registered;
-use Livewire\Volt\Component;
-use Livewire\Attributes\Validate;
+declare(strict_types=1);
+
 use function Laravel\Folio\{middleware, name};
 
 middleware(['guest']);
 name('register');
 
-new class extends Component
-{
-    #[Validate('required')]
-    public $name = '';
-
-    #[Validate('required|email|unique:users')]
-    public $email = '';
-
-    #[Validate('required|min:8|same:passwordConfirmation')]
-    public $password = '';
-
-    #[Validate('required|min:8|same:password')]
-    public $passwordConfirmation = '';
-
-    public function register()
-    {
-        $this->validate();
-
-        $user = User::create([
-            'email' => $this->email,
-            'name' => $this->name,
-            'password' => Hash::make($this->password),
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user, true);
-
-        return redirect()->intended('/');
-    }
-};
-
+/*
+ * Registrazione giocatore: stessa grafica della pagina di accesso.
+ * Logica (regole, limite tentativi, consensi GDPR, creazione utente) in
+ * Modules\Gdpr\Filament\Widgets\Auth\RegisterWidget; vestito in
+ * pub_theme::filament.widgets.auth.register. Prima qui c'era un form Volt in inglese
+ * che creava App\Models\User senza consensi privacy.
+ */
 ?>
+<x-layouts.app>
+    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div class="w-full max-w-md">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg mb-6" aria-hidden="true">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-bold text-gray-900 mb-2">{{ __('pub_theme::auth.register.title') }}</h1>
+                <p class="text-gray-600 text-sm">{{ __('pub_theme::auth.register.subtitle') }}</p>
+            </div>
 
-<x-layouts.main>
-
-    <div class="flex flex-col items-stretch justify-center w-screen min-h-screen py-10 sm:items-center">
-
-        <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <x-ui.link href="{{ route('home') }}">
-                <x-ui.logo class="w-auto h-10 mx-auto text-gray-700 fill-current dark:text-gray-100" />
-            </x-ui.link>
-            <h2 class="mt-5 text-2xl font-extrabold leading-9 text-center text-gray-800 dark:text-gray-200">Create a new
-                account</h2>
-            <div class="text-sm leading-5 text-center text-gray-600 dark:text-gray-400 space-x-0.5">
-                <span>Or</span>
-                <x-ui.text-link href="{{ route('login') }}">sign in to your account</x-ui.text-link>
+            <div class="bg-white/90 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl p-8">
+                @livewire(\Modules\Gdpr\Filament\Widgets\Auth\RegisterWidget::class)
             </div>
         </div>
-
-        <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
-                @volt('twentyone.auth.register')
-                <form wire:submit="register" class="space-y-6">
-                    <x-ui.input label="Name" type="text" id="name" name="name" wire:model="name" />
-                    <x-ui.input label="Email address" type="email" id="email" name="email" wire:model="email" />
-                    <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
-                    <x-ui.input label="Confirm Password" type="password" id="password_confirmation" name="password_confirmation" wire:model="passwordConfirmation" />
-                    <x-ui.button type="primary" rounded="md" submit="true">Register</x-ui.button>
-                </form>
-                @endvolt
-            </div>
-        </div>
-
     </div>
-
-</x-layouts.main>
+</x-layouts.app>

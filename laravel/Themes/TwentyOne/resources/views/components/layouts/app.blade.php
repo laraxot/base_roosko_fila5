@@ -1,53 +1,30 @@
+@props(['title' => null, 'description' => null])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-	<head>
-		{{--  
-		{{ $_theme->metatags() }}
-		--}}
-		{{-- <meta charset="utf-8">
-		<meta name="application-name" content="{{ config('app.name') }}">
-		<meta name="csrf-token" content="{{ csrf_token() }}">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>{{ config('app.name') }}</title>
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"> --}}
-
-		<style>
-			[x-cloak] {
-			display: none !important;
-			}
-		</style>
-		@filamentStyles
-
-		@vite(['resources/css/app.css'],'themes/TwentyOne')
-
-		<!-- Matomo -->
-		<script>
-			var _paq = window._paq = window._paq || [];
-			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-			_paq.push(['trackPageView']);
-			_paq.push(['enableLinkTracking']);
-			(function() {
-			var u="//stats.<nome progetto>officina.it/";
-			_paq.push(['setTrackerUrl', u+'matomo.php']);
-			_paq.push(['setSiteId', '2']);
-			var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-			g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-			})();
-		</script>
-		<!-- End Matomo Code -->
-
-
-	</head>
+	{{-- title/description: facoltativi, per le pagine di un oggetto (es. mercato) → <title>, og:*, twitter:*. --}}
+	<x-cms::head :title="$title" :description="$description" />
 	<body class="antialiased">
-        
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-gray-900 dark:focus:bg-gray-900 dark:focus:text-white">
+            {{ __('pub_theme::ui.skip_to_content') }}
+        </a>
+
+		{{-- Bonus del giorno prima dell'intestazione: così il saldo in alto include già i crediti. --}}
+		@auth
+			<x-predict::daily-bonus />
+		@endauth
+
 		<x-section slug="header" />
 
+        <main id="main-content" tabindex="-1">
         {{ $slot }}
+        </main>
         
 		<x-section slug="footer" />
+
+        {{-- Coriandoli e messaggio quando un mercato su cui avevi puntato si risolve a tuo favore. --}}
+        @auth
+            <x-predict::win-celebration />
+        @endauth
 
 
 		<!-- mobile tabs -->
@@ -55,13 +32,7 @@
 
 
 		
-        @livewire('notifications')
-
-		@filamentScripts
-    	@vite(['resources/js/app.js'],'themes/TwentyOne')
-		
-
-        @yield('scripts')
+		<x-cms::foot />
 
     </body>
 </html>

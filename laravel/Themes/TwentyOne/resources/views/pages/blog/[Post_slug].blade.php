@@ -1,39 +1,26 @@
-<x-layouts.marketing>
+<?php
 
-    <x-ui.marketing.breadcrumbs :crumbs="[
-        [
-            'href' => '/blog',
-            'text' => 'Blog'
-        ],
-        [
-            'text' => $post->title
-        ]
-    ]" />
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Database\MultipleRecordsFoundException;
+use Illuminate\Support\Facades\Redirect;
+use Modules\Blog\Models\Article;
+use function Laravel\Folio\{withTrashed, render};
 
-    <article class="relative w-full h-auto mx-auto prose-sm prose md:prose-2xl dark:prose-invert">
-        <div class="py-6 mx-auto heading md:py-12 lg:w-full md:text-center">
+withTrashed();
 
-            <div class="flex flex-col items-center justify-center mt-4 mb-0">
-                <h1 class="!mb-0 font-sans text-4xl font-bold heading md:text-6xl dark:text-white md:leading-tight">
-                    {{ $post->title }}
-                </h1>
-            </div>
+render(function (string $Post_slug) {
+    try {
+        $article = Article::query()
+            ->whereIn('type', ['event', 'article'])
+            ->where('slug', $Post_slug)
+            ->sole();
+    } catch (ModelNotFoundException|MultipleRecordsFoundException) {
+        $article = null;
+    }
 
-            <div class="flex items-center justify-center">
-                <div class="ml-2">
-                    <p class="text-sm text-gray-600 dark:text-gray-500">Posted on {{ $post->created_at->format('M d, Y') }}</p>
-                </div>
-            </div>
+    if ($article === null) {
+        return Redirect::route('articles.index');
+    }
 
-            @if ($post->image)
-                <img src="@if(str_starts_with($post->image, 'https') || str_starts_with($post->image, 'http')){{ $post->image }}@else{{ asset('storage/' . $post->image) }}@endif" alt="{{ $post->title }}" class="w-full mx-auto mt-4">
-            @endif
-
-            <div class="flex items-center justify-center mt-4 text-left">
-                <div class="max-w-full -mt-5 text-lg text-gray-600 whitespace-pre-line dark:text-gray-300">
-                    {!! $post->body !!}
-                </div>
-            </div>
-        </div>
-    </article>
-</x-layouts.marketing>
+    return redirect()->route('article.view', ['slug' => $article->slug]);
+});

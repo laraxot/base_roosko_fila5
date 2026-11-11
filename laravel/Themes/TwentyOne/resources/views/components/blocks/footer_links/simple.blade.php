@@ -17,7 +17,7 @@
                         {{-- {{ $menu['type'] == 'internal' ? route('page_slug.show', ['lang'=>$lang,'page_slug' => $menu['url'] ]) : $menu['url']}} --}}
                         {{ $_theme->getMenuUrl($menu) }}
                         "
-                    class="text-sm text-gray-300 hover:text-white"
+                    class="inline-block py-1.5 -my-1.5 text-sm text-gray-300 hover:text-white transition-colors"
                         >
                         {{ $menu['title'] }}
                     </a>
@@ -43,7 +43,7 @@
                         {{-- route('page_slug.show',['lang'=>$lang,'page_slug'=>$menu['slug']]) --}}
                         {{ $menu['type'] == 'internal' ? route('page_slug.view', ['lang'=>$lang,'slug' => $menu['url'] ]) : $menu['url']}}
                         "
-                    class="text-sm text-gray-300 hover:text-white"
+                    class="inline-block py-1.5 -my-1.5 text-sm text-gray-300 hover:text-white transition-colors"
                         >
                         {{ $menu['title'] }}
                     </a>
@@ -54,7 +54,7 @@
             {{-- <template x-for="link in links">
                 <li>
                     <a href="#"
-                         class="text-sm text-gray-300 hover:text-white"
+                         class="inline-block py-1.5 -my-1.5 text-sm text-gray-300 hover:text-white transition-colors"
                         x-text="link">
                     </a>
                 </li>

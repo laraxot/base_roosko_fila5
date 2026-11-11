@@ -11,32 +11,27 @@
         'rating_id' => $rating->id,
     ];
 
-    // Gestione dell'immagine con fallback sicuro
+    // Immagine dell'opzione; senza immagine un riquadro colorato (prima: foto casuali da picsum.photos,
+    // cioè una richiesta a un sito esterno per ogni opzione e immagini senza senso).
     $image = $rating->getFirstMedia();
-    $imageUrl = null;
-
-    if ($image == null) {
-        // Genera un URL casuale per l'immagine placeholder
-        $imageId = $rating->id ?? rand(1, 1000);
-        $imageUrl = "https://picsum.photos/seed/{$imageId}/200/300";
-
-        // Usa sempre l'URL diretto per evitare problemi di permessi filesystem
-        $image = (object)[
-            'url' => $imageUrl,
-            'alt' => $rating->title ?? 'Rating Image'
-        ];
-    }
+    $title = (string) ($rating->title ?? '');
+    $palette = ['from-blue-500 to-indigo-600', 'from-rose-500 to-pink-600', 'from-emerald-500 to-teal-600', 'from-amber-500 to-orange-600', 'from-violet-500 to-purple-600'];
+    $gradient = $palette[((int) ($rating->id ?? 0)) % count($palette)];
+    $rawPercentage = $rating->pivot?->percentage ?? null;
+    $percentage = is_numeric($rawPercentage) ? (float) $rawPercentage * 100 : null;
 @endphp
 
-<button wire:click="mountAction('{{ $action }}', @js($data))" class="block w-full">
+<button type="button" wire:click="mountAction('{{ $action }}', @js($data))" class="block w-full" aria-label="{{ __('predict::place_bet.widget.bet_on', ['option' => $title]) }}">
     <div class="relative overflow-hidden rounded-lg group/rating cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:z-10">
         {{-- Container quadrato per l'immagine --}}
         <div class="aspect-square bg-gray-100 dark:bg-gray-700 relative">
             {{-- Immagine principale --}}
-            @if(isset($image->url))
-                <img src="{{ $image->url }}" class="w-full h-full object-cover transition-transform duration-300 group-hover/rating:scale-110" alt="{{ $rating->title }}">
+            @if($image)
+                {{ $image('150x150')->attributes(['class' => 'w-full h-full object-cover transition-transform duration-300 group-hover/rating:scale-110', 'alt' => $title]) }}
             @else
-                {{ $image('150x150')->attributes(['class' => 'w-full h-full object-cover transition-transform duration-300 group-hover/rating:scale-110']) }}
+                <div class="w-full h-full bg-gradient-to-br {{ $gradient }} flex items-center justify-center" aria-hidden="true">
+                    <span class="text-3xl font-black text-white/90">{{ mb_strtoupper(mb_substr($title, 0, 1)) }}</span>
+                </div>
             @endif
 
             {{-- Overlay gradiente per migliore leggibilità --}}
@@ -45,7 +40,7 @@
             {{-- Badge percentuale --}}
             <div class="absolute top-1 right-1 transform transition-all duration-300 group-hover/rating:scale-110 group-hover/rating:rotate-3">
                 <div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white text-xs font-bold px-1.5 py-0.5 rounded shadow-lg border border-gray-200 dark:border-gray-600">
-                    {{ number_format($rating->pivot->percentage * 100, 1) }}%
+                    {{ $percentage !== null ? number_format($percentage, 0, ',', '.').'%' : '–' }}
                 </div>
             </div>
 

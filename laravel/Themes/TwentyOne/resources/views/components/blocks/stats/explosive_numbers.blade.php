@@ -149,6 +149,9 @@ $getColorClasses = function($color) {
     return $colors[$color] ?? $colors['blue'];
 };
 
+<?php 
+$title = $title ?? '📊 Numeri che Parlano Chiaro';
+$subtitle = $subtitle ?? 'I risultati della nostra community';
 ?>
 
 <div class="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">

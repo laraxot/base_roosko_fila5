@@ -14,14 +14,14 @@
     @foreach (['product' => $product, 'company' => $company, 'legal' => $legal] as $groupKey => $group)
         @if (!empty($group['links']))
             <div>
-                <h4 class="mb-2 text-sm font-semibold text-white">
+                <h3 class="mb-2 text-sm font-semibold text-white">
                     {{ $getLabel($group['title'] ?? $groupKey) }}
-                </h4>
-                <ul class="space-y-2">
+                </h3>
+                <ul class="space-y-1">
                     @foreach ($group['links'] as $link)
                         <li>
                             <a href="{{ $link['url'] ?? '#' }}"
-                               class="text-sm text-gray-300 hover:text-white transition-colors">
+                               class="inline-block py-1.5 -my-1.5 text-sm text-gray-300 hover:text-white transition-colors">
                                 {{ $getLabel($link['label'] ?? '') }}
                             </a>
                         </li>

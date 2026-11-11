@@ -1,5 +1,5 @@
 <div>
-	<button data-dropdown-toggle="dropdown-language" class="grid py-3 text-sm font-semibold transition rounded-lg place-items-center">
+	<button type="button" aria-haspopup="true" aria-controls="dropdown-language" aria-label="Language"  data-dropdown-toggle="dropdown-language" class="grid py-3 text-sm font-semibold transition rounded-lg place-items-center">
 		<div class="flex items-center space-x-1">
 			<x-heroicon-o-language class="size-5"/>
 			<span class="hidden sm:block">English</span>

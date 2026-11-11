@@ -1,5 +1,5 @@
 <div class="order-3">
-  <button id="play-money-dropdown-button" data-dropdown-toggle="play-money-dropdown" class="grid h-10 px-4 transition rounded-lg place-items-center hover:bg-white bg-gray-50">
+  <button type="button" aria-haspopup="true" aria-controls="play-money-dropdown"  id="play-money-dropdown-button" data-dropdown-toggle="play-money-dropdown" class="grid h-10 px-4 transition rounded-lg place-items-center hover:bg-white bg-gray-50">
   <div class="flex items-center space-x-1">
     <x-heroicon-o-language class="w-5 h-5"/>
     <div>English</div>

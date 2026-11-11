@@ -15,7 +15,7 @@ middleware(['auth', 'verified']);
 
 new class extends Component {
     #[Locked]
-    public ?Modules\Fixcity\Models\User $user = null;
+    public ?\Modules\User\Models\BaseUser $user = null;
 
     public string $name = '';
     public string $email = '';
@@ -29,8 +29,8 @@ new class extends Component {
     public function mount(): void
     {
         $user = auth()->user();
-        if (!$user instanceof \Modules\User\Models\User) {
-            throw new \RuntimeException('Authenticated user is not a Fixcity User');
+        if (! $user instanceof \Modules\User\Models\BaseUser) {
+            throw new \RuntimeException('Authenticated user is not a BaseUser');
         }
 
         $this->user = $user;
@@ -51,7 +51,7 @@ new class extends Component {
         }
 
         if ($this->user->name === $this->name && $this->user->email === $this->email) {
-            $this->dispatch('toast', message: 'Nothing to update.', data: ['position' => 'top-right', 'type' => 'info']);
+            $this->dispatch('toast', message: __('Nothing to update.'), data: ['position' => 'top-right', 'type' => 'info']);
             return;
         }
 
@@ -59,7 +59,7 @@ new class extends Component {
             $this->user->fill(['email' => $this->email, 'name' => $this->name])->save();
         }
 
-        $this->dispatch('toast', message: 'Successfully updated profile.', data: ['position' => 'top-right', 'type' => 'success']);
+        $this->dispatch('toast', message: __('Successfully updated profile.'), data: ['position' => 'top-right', 'type' => 'success']);
     }
 
     public function updatePassword(): void
@@ -67,14 +67,12 @@ new class extends Component {
         $validated = $this->validate();
 
         if (!$this->user || !Hash::check($this->current_password, $this->user->password)) {
-            $this->dispatch('toast', message: 'Current Password Incorrect', data: ['position' => 'top-right', 'type' => 'danger']);
+            $this->dispatch('toast', message: __('Current Password Incorrect'), data: ['position' => 'top-right', 'type' => 'danger']);
             return;
         }
 
-        $this->dispatch('toast', message: 'Successfully updated password.', data: ['position' => 'top-right', 'type' => 'success']);
-        if ($this->user) {
-            $this->user->fill(['password' => Hash::make($this->new_password), 'remember_token' => Str::random(60)])->save();
-        }
+        $this->user->fill(['password' => Hash::make($this->new_password), 'remember_token' => \Illuminate\Support\Str::random(60)])->save();
+        $this->dispatch('toast', message: __('Successfully updated password.'), data: ['position' => 'top-right', 'type' => 'success']);
 
         $this->reset(['current_password', 'new_password', 'new_password_confirmation']);
     }
@@ -82,7 +80,7 @@ new class extends Component {
     public function destroy(): \Illuminate\Http\RedirectResponse
     {
         if (!$this->user || !Hash::check($this->delete_confirm_password, $this->user->password)) {
-            $this->dispatch('toast', message: 'The Password you entered is incorrect', data: ['position' => 'top-right', 'type' => 'danger']);
+            $this->dispatch('toast', message: __('The Password you entered is incorrect'), data: ['position' => 'top-right', 'type' => 'danger']);
             $this->reset(['delete_confirm_password']);
             return redirect()->back();
         }
@@ -92,9 +90,11 @@ new class extends Component {
             return redirect('/');
         }
 
-        Auth::logout();
+        \Illuminate\Support\Facades\Auth::logout();
 
-        if ($user instanceof \Modules\User\Models\User) {
+        // L'utente del tenant è Modules\Predict\Models\User (estende BaseUser, non Modules\User\Models\User):
+        // con il vecchio controllo l'account non veniva mai cancellato, si veniva solo disconnessi.
+        if ($user instanceof \Modules\User\Models\BaseUser) {
             $user->delete();
         }
 
@@ -135,8 +135,8 @@ new class extends Component {
                                 {{ __("Update your account's profile information and email address.") }}</p>
                         </header>
                         <form wire:submit="updateProfile" class="mt-6 space-y-6">
-                            <x-ui.input label="Name" type="text" id="name" name="name" wire:model="name" />
-                            <x-ui.input label="Email address" type="email" id="email" name="email"
+                            <x-ui.input :label="__('Name')" type="text" id="name" name="name" wire:model="name" />
+                            <x-ui.input :label="__('Email address')" type="email" id="email" name="email"
                                 wire:model="email" />
                             <div class="flex items-start">
                                 <div>
@@ -160,11 +160,11 @@ new class extends Component {
                         </header>
                         <form wire:submit="updatePassword" class="mt-6 space-y-6">
 
-                            <x-ui.input label="Current Password" type="password" id="current_password"
+                            <x-ui.input :label="__('Current Password')" type="password" id="current_password"
                                 name="current_password" wire:model="current_password" />
-                            <x-ui.input label="New Password" type="password" id="new_password" name="new_password"
+                            <x-ui.input :label="__('New Password')" type="password" id="new_password" name="new_password"
                                 wire:model="new_password" />
-                            <x-ui.input label="Confirm New Password" type="password" id="new_password_confirmation"
+                            <x-ui.input :label="__('Confirm New Password')" type="password" id="new_password_confirmation"
                                 name="new_password_confirmation" wire:model="new_password_confirmation" />
 
                             <div class="flex items-start">
@@ -209,7 +209,7 @@ new class extends Component {
                                         {{ __('After deleting your account, all data and resources are permanently removed. Enter your password to confirm deletion.') }}
                                     </p>
 
-                                    <x-ui.input label="Password" type="password" id="delete_confirm_password"
+                                    <x-ui.input :label="__('Password')" type="password" id="delete_confirm_password"
                                         name="delete_confirm_password" wire:model="delete_confirm_password" />
 
                                     <div class="flex justify-end mt-6">

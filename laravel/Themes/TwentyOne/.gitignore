@@ -116,3 +116,7 @@ docs/**/archive/
 docs/archived/
 docs/**/archived/
 _docs/
+.claude-audit/
+audit-coverage
+node_modules
+Main_files

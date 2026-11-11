@@ -77,7 +77,7 @@
                             class="flex flex-wrap lg:flex-nowrap items-center gap-2"
                             >
                             <div class="min-w-max">
-                                <button
+                                <button type="button" aria-haspopup="true" aria-controls="dropdownDelay" 
                                     id="dropdownDelayButton"
                                     data-dropdown-toggle="dropdownDelay"
                                     data-dropdown-delay="500"

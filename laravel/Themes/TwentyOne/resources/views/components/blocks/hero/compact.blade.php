@@ -58,7 +58,7 @@
                     </span>
                 </a>
                 
-                <a href="/{{ app()->getLocale() }}/learn"
+                <a href="/{{ app()->getLocale() }}/how-it-works"
                    class="group inline-flex items-center justify-center min-h-[52px] min-w-[52px] px-8 py-4 text-lg font-bold text-white border-2 border-white/80 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 hover:border-white hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-600"
                    aria-label="{{ __('predict::home.hero.cta_learn.label') }}">
                     {{ __('predict::home.hero.cta_learn.label') }}

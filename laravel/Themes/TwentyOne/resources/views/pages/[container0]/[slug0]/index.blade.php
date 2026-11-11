@@ -7,6 +7,7 @@ use function Laravel\Folio\name;
 use Livewire\Volt\Component;
 use Modules\Cms\Actions\ResolvePageAction;
 use Modules\Cms\Http\Middleware\PageSlugMiddleware;
+use Modules\Cms\Models\Page;
 
 name('container0.view');
 middleware(PageSlugMiddleware::class);
@@ -30,6 +31,13 @@ new class extends Component {
 
         $this->pageSlug = $resolved->pageSlug;
 
+        // Pagina inesistente o oggetto non trovato (es. /predicts/titolo-sbagliato): 404 vero.
+        // Prima usciva una pagina vuota o "Mercato non trovato." con stato 200.
+        if (Page::findUniqueBySlug($resolved->pageSlug) === null
+            || ($resolved->item === null && $resolved->pageSlug === $container0.'.view')) {
+            abort(404);
+        }
+
         $item = $resolved->item;
         $predictId = is_object($item) && isset($item->id) ? $item->id : null;
 
@@ -43,8 +51,17 @@ new class extends Component {
     }
 };
 ?>
+@php
+    // Titolo e descrizione della scheda/anteprima social: quelli dell'oggetto (es. il mercato),
+    // non il titolo generico della pagina CMS. Prima ogni mercato condivisa usciva come "Predict".
+    $seoItem = app(\Modules\Cms\Actions\ResolvePageAction::class)->execute((string) ($container0 ?? ''), (string) ($slug0 ?? ''))->item;
+    $seoTitle = is_object($seoItem) && is_string($seoItem->title ?? null) ? $seoItem->title : null;
+    $seoDescription = is_object($seoItem) && is_string($seoItem->description ?? null)
+        ? \Illuminate\Support\Str::limit(trim(strip_tags($seoItem->description)), 160)
+        : null;
+@endphp
 
-<x-layouts.app>
+<x-layouts.app :title="$seoTitle" :description="$seoDescription">
     @volt('container0.view')
     <div class="page-content content" data-slug="{{ $pageSlug }}" data-side="content">
         <x-page side="content" :slug="$pageSlug" :data="$data" />

@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+/* Blade modules: classi Tailwind usate dalle view dei moduli (non auto-rilevate) */
+@source '../../../../Modules/**/resources/views/**/*.blade.php';
+@source '../../../../Modules/**/*.php';
+@source '../../../../storage/framework/views/*.php';
+
 /* Required by all components */
 @import '../../../../vendor/filament/support/resources/css/index.css';
 
@@ -75,4 +80,49 @@
 
 .btn-market-danger {
 	@apply bg-red-600 hover:bg-red-700 text-white;
+}
+
+/* WCAG: placeholder Filament >= 4.5:1 su bianco */
+.fi-input::placeholder {
+	color: #6b7280;
+}
+
+/*
+ * Superfici del browser e stati (passaggio impeccable/ui-ux-pro-max, 2026-11-10).
+ * Obiettivo WCAG 2.2 (PRODUCT.md): focus sempre visibile, contrasto, movimento ridotto.
+ */
+:root {
+	accent-color: #1d4ed8;
+}
+::selection {
+	background-color: #bfdbfe;
+	color: #0f172a;
+}
+:where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+	outline: 3px solid #1d4ed8;
+	outline-offset: 2px;
+	border-radius: 0.375rem;
+}
+:where(.dark) :where(a, button, [role="button"], input, select, textarea, summary):focus-visible {
+	outline-color: #93c5fd;
+}
+:where(button, [role="button"], summary, label[for]) {
+	cursor: pointer;
+}
+:where(a) {
+	text-underline-offset: 0.2em;
+}
+.tabular-nums,
+:where(table) {
+	font-variant-numeric: tabular-nums;
+}
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }

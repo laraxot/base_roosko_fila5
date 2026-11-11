@@ -1,5 +1,5 @@
 <div>
-	<button id="links-dropdown-button" data-dropdown-toggle="links-dropdown" class="relative w-10 h-10 rounded-xl overflow-clip">
+	<button type="button" aria-haspopup="true" aria-controls="links-dropdown" aria-label="Menu"  id="links-dropdown-button" data-dropdown-toggle="links-dropdown" class="relative w-10 h-10 rounded-xl overflow-clip">
 		@if(Auth::check())
 			<img class="absolute inset-0 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-T5QGVG2Min9C7j48bstorjAE8YXzOW8EDB4iFq1jFA&s" alt="">
 			{{-- <img class="absolute inset-0 object-cover" src="{{$_profile->getAvatarUrl()}}" alt=""> --}}

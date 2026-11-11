@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
+use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\Console\Attribute\AsCommand;
 
-use function Safe\readlink;
-use function Safe\symlink;
 use function Safe\unlink;
 
 #[AsCommand(name: 'symlink:publish')]
@@ -121,14 +120,17 @@ class SymlinkPublishCommand extends Command
                 File::makeDirectory($targetDir, 0755, true);
             }
 
+            $linker = app(CreateRelativeSymlinkAction::class);
             $isLink = is_link($targetPath);
             if ($isLink) {
-                if (readlink($targetPath) === $publicDir) {
+                if ($linker->isRelativeLinkTo($targetPath, $publicDir)) {
                     $this->line("  <info>=</info> {$type}/{$name} already linked correctly");
 
                     continue;
                 }
-                if (! $force) {
+                // Same target through an absolute path: rewritten as relative, no --force needed.
+                $sameTarget = \realpath($targetPath) !== false && \realpath($targetPath) === \realpath($publicDir);
+                if (! $sameTarget && ! $force) {
                     $errors[] = "{$type}/{$name}: symlink already exists at {$targetPath}";
 
                     continue;
@@ -147,14 +149,15 @@ class SymlinkPublishCommand extends Command
             }
 
             try {
-                // --force: replace the existing link or directory (Safe\* throw instead of returning false).
+                // --force: replace the existing link; a real directory is never deleted, it is moved aside
+                // (it lives under the document root and may hold files nobody else has).
                 if ($isLink) {
                     unlink($targetPath);
-                } elseif (is_dir($targetPath) && ! File::deleteDirectory($targetPath)) {
-                    throw new \RuntimeException("cannot remove directory {$targetPath}");
+                } elseif (is_dir($targetPath)) {
+                    File::moveDirectory($targetPath, $targetPath.'.bak-'.date('YmdHis'));
                 }
 
-                symlink($publicDir, $targetPath);
+                $linker->execute($publicDir, $targetPath);
                 $created[] = "{$type}/{$name} → {$targetPath}";
             } catch (\Throwable $e) {
                 $errors[] = "{$type}/{$name}: {$e->getMessage()}";
