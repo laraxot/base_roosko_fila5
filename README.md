@@ -58,7 +58,7 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
 ## Requisiti
 
 - PHP 8.4
-- Composer 2, Node e npm
+- Composer 2 (Node e npm solo per chi modifica JS o CSS: i bundle compilati sono nel repository)
 - Un database supportato da Laravel. Ogni modulo usa una connessione con il proprio nome (`labeling`, `weighing`, `warehouse`, `processing`, `waste`, `rentri`, `roosko`): il modulo Tenant la crea copiando la connessione predefinita, e in `laravel/config/local/roosko/database.php` si ridefinisce solo quella che deve puntare a un database diverso
 - HTTPS per la fotocamera della pagina operatore
 
@@ -78,11 +78,19 @@ Xot (basi Laraxot), User, Geo, Lang, Media, UI, Tenant, Job, Activity, Notify, G
    ```bash
    php artisan migrate
    ```
-5. Compila gli asset della pagina operatore:
+5. Collega gli asset alla document root con symlink relativi (`public_html/assets/<modulo>` →
+   `../../laravel/Modules/<Modulo>/public`, `public_html/themes/<Tema>` → `../../laravel/Themes/<Tema>/public`).
+   Niente copie: i bundle compilati sono già nella cartella `public/` di moduli e temi.
    ```bash
-   cd Modules/Roosko && npm install && npm run build
+   php artisan xot:module-link && php artisan xot:theme-link
    ```
+   Se modifichi JS o CSS di un modulo: `npm ci && npm run build` nel modulo e commit di `public/`. La CI
+   (job «Bundle Vite versionati») controlla che il bundle corrisponda ai sorgenti.
 6. Assegna agli utenti i ruoli `{modulo}::admin` dei moduli che devono vedere.
+
+In produzione si rilascia con `./deploy.sh`: backup, dipendenze, link degli asset, migrazioni, cache,
+riavvio delle code e `roosko:production-check`. Il runbook completo è in
+`laravel/Modules/Roosko/docs/operations/production-runbook.md`.
 
 Prima di andare in produzione su RENTRI configura una credenziale dell'ambiente **demo** (`https://demoapi.rentri.gov.it`) e verifica i punti segnati nella documentazione del modulo Rentri.
 

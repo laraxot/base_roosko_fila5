@@ -2,17 +2,17 @@
 # Rilascio di Roosko sul server. Uso (dalla radice del progetto, utente del web server o con sudo):
 #
 #   ./deploy.sh                # rilascio completo
-#   SKIP_ASSETS=1 ./deploy.sh  # senza ricompilare gli asset (nessun JS/CSS cambiato)
+#   BUILD_ASSETS=1 ./deploy.sh # ricompila anche gli asset Vite (serve Node 20+; di norma no: sono versionati)
 #   SKIP_BACKUP=1 ./deploy.sh  # senza backup del database (sconsigliato)
 #
-# Passi: manutenzione -> backup DB -> dipendenze -> asset -> migrazioni -> cache -> riavvio code -> controlli.
+# Passi: manutenzione -> backup DB -> dipendenze -> link degli asset -> migrazioni -> cache -> riavvio code -> controlli.
 # Se un passo fallisce l'app RESTA in manutenzione: si guarda l'errore, si corregge e si rilancia;
 # `php artisan up` a mano solo se si e' sicuri che il database e il codice sono coerenti.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 APP="$ROOT/laravel"
-ASSET_DIRS="${ASSET_DIRS:-Modules/Geo Modules/Roosko Modules/Activity Themes/TwentyOne}"
+ASSET_DIRS="${ASSET_DIRS:-Modules/Geo Modules/Roosko Themes/TwentyOne}"
 cd "$APP"
 
 step() { printf '\n==> %s\n' "$*"; }
@@ -35,8 +35,17 @@ else
     composer update --no-dev --prefer-dist --optimize-autoloader --no-interaction
 fi
 
-if [ "${SKIP_ASSETS:-0}" != "1" ]; then
-    step "Asset (Vite): $ASSET_DIRS"
+# Gli asset compilati sono nel repository, nella cartella public/ di ogni modulo e tema. La document root
+# li vede con symlink RELATIVI, che restano validi ovunque stia il progetto:
+#   public_html/assets/<modulo> -> ../../laravel/Modules/<Modulo>/public
+#   public_html/themes/<Tema>   -> ../../laravel/Themes/<Tema>/public
+# Nessuna copia in public_html. I comandi sono idempotenti: un link gia' giusto resta com'e'.
+step "Link degli asset di moduli e temi"
+php artisan xot:module-link
+php artisan xot:theme-link
+
+if [ "${BUILD_ASSETS:-0}" = "1" ]; then
+    step "Ricompilazione degli asset (Vite): $ASSET_DIRS"
     for dir in $ASSET_DIRS; do
         [ -f "$dir/package.json" ] || continue
         ( cd "$dir" && { [ -f package-lock.json ] && npm ci --no-audit --no-fund || npm install --no-audit --no-fund; } && npm run build )

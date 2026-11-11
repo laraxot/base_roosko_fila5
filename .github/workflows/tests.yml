@@ -135,3 +135,36 @@ jobs:
           php vendor/bin/phpstan analyse --memory-limit=2G --no-progress \
             Modules/Roosko/app Modules/Warehouse/app Modules/Processing/app Modules/Weighing/app \
             Modules/Labeling/app Modules/Waste/app Modules/Rentri/app
+
+  assets:
+    name: Bundle Vite versionati
+    # Gli asset compilati stanno nella cartella public/ dei moduli (servita da public_html/assets/<modulo>
+    # con un symlink relativo) e il server non compila: qui si ricompila e si controlla che il bundle
+    # committato corrisponda ai sorgenti.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: [laravel/Modules/Geo, laravel/Modules/Roosko]
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Build
+        working-directory: ${{ matrix.dir }}
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      - name: Bundle allineato ai sorgenti
+        run: |
+          if [ -n "$(git status --porcelain -- '${{ matrix.dir }}/public')" ]; then
+            git status --short -- '${{ matrix.dir }}/public'
+            echo "::error::Bundle di ${{ matrix.dir }} non aggiornato: npm run build nel modulo e commit di public/"
+            exit 1
+          fi
