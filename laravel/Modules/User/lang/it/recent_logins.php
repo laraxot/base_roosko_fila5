@@ -24,16 +24,19 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'login_at',
         ],
         'ip_address' => [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'ip_address',
         ],
         'user_agent' => [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'user_agent',
         ],
         'toggleColumns' => [
             'tooltip' => '',
@@ -64,38 +67,49 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+            'label' => 'user',
         ],
     ],
     'actions' => [
         'reorderRecords' => [
             'icon' => 'reorderRecords',
+            'label' => 'reorderRecords',
         ],
         'openColumnManager' => [
             'icon' => 'openColumnManager',
+            'label' => 'openColumnManager',
         ],
         'applyTableColumnManager' => [
             'icon' => 'applyTableColumnManager',
+            'label' => 'applyTableColumnManager',
         ],
         'resetFilters' => [
             'icon' => 'resetFilters',
+            'label' => 'resetFilters',
         ],
         'applyFilters' => [
             'icon' => 'applyFilters',
+            'label' => 'applyFilters',
         ],
         'openFilters' => [
             'icon' => 'openFilters',
+            'label' => 'openFilters',
         ],
         'resetColumnManager' => [
             'icon' => 'resetColumnManager',
+            'label' => 'resetColumnManager',
         ],
         'delete' => [
             'icon' => 'delete',
+            'label' => 'delete',
         ],
         'layout' => [
             'icon' => 'layout',
+            'label' => 'layout',
         ],
         'create' => [
             'icon' => 'create',
+            'label' => 'create',
         ],
     ],
     'navigation' => [

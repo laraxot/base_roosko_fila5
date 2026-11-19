@@ -195,7 +195,7 @@ grep -A 5 "autoload" laravel/Modules/*/composer.json | grep -i "database"
 
 ## 📚 Related Documentation
 
-- [Database Naming Convention](conventions/database-naming.md)
+- [Database Naming Convention](../conventions/database-naming.md)
 - [AGENTS.md](../../AGENTS.md)
 - [agents.md](../../agents.md)
 - [Database Naming Convention](../conventions/database-naming.md)

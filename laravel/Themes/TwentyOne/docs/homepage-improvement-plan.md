@@ -1,15 +1,3 @@
----
-title: "homepage improvement plan"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "homepage improvement plan"
-issues: []
-discussions: []
-status: draft
----
-
 # Homepage Improvement Plan — http://predict.local/it
 
 > **Data**: 2026-03-18  
@@ -17,6 +5,7 @@ status: draft
 > **Standard**: WCAG 2.2 AA, Core Web Vitals 2026, 10 Priorità Critiche (70% successo)
 
 ---
+
 ## 📊 Stato Attuale
 
 ### ✅ Cosa Abbiamo
@@ -138,7 +127,7 @@ status: draft
 - [ ] `.github/DISCUSSIONS/004-website-design-strategy.md` — Condividere progressi
 
 ### Creare Nuovi File
-- [ ] `Themes/TwentyOne/docs/HOMEPAGE_SEO.md` — SEO implementation
+- [ ] `Themes/TwentyOne/docs/homepage-seo.md` — SEO implementation
 - [ ] `Themes/TwentyOne/docs/HOMEPAGE_ACCESSIBILITY.md` — WCAG compliance
 - [ ] `Themes/TwentyOne/docs/HOMEPAGE_PERFORMANCE.md` — Core Web Vitals
 - [ ] `Modules/Predict/docs/HOMEPAGE_COMPONENTS.md` — Componenti creati

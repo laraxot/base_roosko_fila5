@@ -33,7 +33,7 @@
     $progressBar = $currentChallenge['progress_bar'] ?? null;
     $progressPercent = 0;
     
-    if ($progressBar && isset($progressBar['current'], $progressBar['total']) {
+    if ($progressBar && isset($progressBar['current'], $progressBar['total'])) {
         $progressPercent = round(($progressBar['current'] / $progressBar['total']) * 100);
     }
 @endphp
@@ -62,7 +62,7 @@
         <div class="text-center mb-6">
             <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-pink-500/20 to-purple-500/20 border border-pink-500/30 rounded-full px-4 py-2 mb-3">
                 <div class="w-2 h-2 bg-pink-400 rounded-full animate-ping"></div>
-                <span class="text-pink-300 text-xs font-bold uppercase tracking-wider">SFIDA LIVE</span>
+                <span class="text-pink-300 text-xs font-bold uppercase tracking-wider">{{ __('pub_theme::blocks_marketing.challenge.live.label') }}</span>
                 <div class="w-2 h-2 bg-purple-400 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
             </div>
 
@@ -100,7 +100,7 @@
                     <div class="text-red-400 font-black text-lg countdown" data-time="{{ $currentChallenge['time_left'] }}">
                         {{ $currentChallenge['time_left'] }}
                     </div>
-                    <div class="text-gray-400 text-xs">TEMPO RIMASTO</div>
+                    <div class="text-gray-400 text-xs">{{ __('pub_theme::blocks_marketing.challenge.time_left.label') }}</div>
                 </div>
             </div>
 
@@ -120,12 +120,12 @@
                         </div>
                         <div>
                             <div class="text-yellow-400 font-black text-lg">{{ $currentChallenge['prize'] }}</div>
-                            <div class="text-gray-400 text-xs">PREMIO GARANTITO</div>
+                            <div class="text-gray-400 text-xs">{{ __('pub_theme::blocks_marketing.challenge.guaranteed_prize.label') }}</div>
                         </div>
                     </div>
                     <div class="text-right">
                         <div class="text-white font-bold text-sm">{{ number_format($currentChallenge['participants']) }}</div>
-                        <div class="text-gray-400 text-xs">Partecipanti</div>
+                        <div class="text-gray-400 text-xs">{{ __('pub_theme::blocks_marketing.challenge.participants.label') }}</div>
                     </div>
                 </div>
             </div>
@@ -133,7 +133,7 @@
             <!-- Progress Bar -->
             <div class="mb-4">
                 <div class="flex justify-between text-xs text-gray-400 mb-2">
-                    <span>Progresso Globale</span>
+                    <span>{{ __('pub_theme::blocks_marketing.challenge.global_progress.label') }}</span>
                     <span>{{round($currentChallenge['progress_bar']['current'] /$currentChallenge['progress_bar']['total'] * 100) }}%</span>
                 </div>
                 <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
@@ -151,7 +151,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                         <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 00-1.071-.136 9.742 9.742 0 00-3.539 6.177A7.547 7.547 0 016.648 6.61a.75.75 0 00-1.152-.082A9 9 0 1015.68 4.534a7.46 7.46 0 01-2.717-2.248zM15.75 14.25a3.75 3.75 0 11-7.313-1.172c.628.465 1.35.81 2.133 1a5.99 5.99 0 011.925-3.545 3.75 3.75 0 013.255 3.717z" clip-rule="evenodd" />
                     </svg>
-                    <span>ACCETTA SFIDA</span>
+                    <span>{{ __('pub_theme::blocks_marketing.challenge.accept.label') }}</span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 animate-bounce">
                         <path fill-rule="evenodd" d="M16.72 7.72a.75.75 0 011.06 0l3.75 3.75a.75.75 0 010 1.06l-3.75 3.75a.75.75 0 11-1.06-1.06L19.19 12l-2.47-2.47a.75.75 0 010-1.06zM1.25 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H2a.75.75 0 01-.75-.75z" clip-rule="evenodd" />
                     </svg>
@@ -165,7 +165,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-yellow-400 mr-2">
                     <path fill-rule="evenodd" d="M5.166 2.621v.858c-1.035.148-2.059.33-3.071.543a.75.75 0 00-.584.859 6.753 6.753 0 006.138 5.6 6.73 6.73 0 002.743 1.346A6.707 6.707 0 019.279 15H8.54c-1.036 0-1.875.84-1.875 1.875V19.5h-.75a2.25 2.25 0 00-2.25 2.25c0 .414.336.75.75.75h15a.75.75 0 00.75-.75 2.25 2.25 0 00-2.25-2.25H15v-2.625c0-1.036-.84-1.875-1.875-1.875h-.739a6.706 6.706 0 01-1.112-3.173 6.73 6.73 0 002.743-1.347 6.753 6.753 0 006.139-5.6.75.75 0 00-.585-.858 47.077 47.077 0 00-3.07-.543V2.62a.75.75 0 00-.658-.744 49.22 49.22 0 00-6.093-.377c-2.063 0-4.096.128-6.093.377a.75.75 0 00-.657.744zm0 2.629c0 1.196.312 2.32.857 3.294A5.266 5.266 0 013.16 5.337a45.6 45.6 0 012.006-.343v.256zm13.5 0v-.256c.674.1 1.343.214 2.006.343a5.265 5.265 0 01-2.863 3.207A6.72 6.72 0 0018.666 5.25z" clip-rule="evenodd" />
                 </svg>
-                ULTIMI VINCITORI
+                {{ __('pub_theme::blocks_marketing.challenge.latest_winners.title') }}
             </h4>
 
             <div class="space-y-2 max-h-32 overflow-y-auto custom-scrollbar">

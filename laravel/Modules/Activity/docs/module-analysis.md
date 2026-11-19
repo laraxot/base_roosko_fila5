@@ -325,5 +325,6 @@ activity()->withProperties([
 ---
 
 **Versione**: v2.5.0-beta  
+**Stato**: Production Ready with Compliance Enhancement=======
 **Stato**: Production Ready with Compliance Enhancement
 - Machine learning capabilities

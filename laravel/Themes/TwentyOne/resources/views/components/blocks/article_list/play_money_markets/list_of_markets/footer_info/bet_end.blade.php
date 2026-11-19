@@ -10,7 +10,7 @@
         class="absolute z-10 inline-block w-max bottom-11 shadow-[0_2px_8px_0_#00000026] bg-white text-sm text-[#6b6a6a] rounded-lg">
         <div class="p-4 flex flex-col gap-2.5">
             <p class="text-sm font-semibold leading-none text-black">
-                Bet end date
+                {{ __('pub_theme::market_common.terms.bet_end_date.label') }}
             </p>
             <p class="text-sm leading-none text-neutral-3 font-roboto whitespace-nowrap"
                 {{-- x-text="formatDate(market.bet_end_date,year:'numeric',month:'long',day:'numeric')" --}}>

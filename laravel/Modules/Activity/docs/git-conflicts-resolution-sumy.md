@@ -1,3 +1,10 @@
+---
+title: "Risoluzione Conflitti Git - Modulo Activity"
+qmd: "activity git conflicts resolution sumy md"
+type: note
+tags: [documentation]
+---
+
 # Risoluzione Conflitti Git - Modulo Activity
 
 ## Data Risoluzione
@@ -53,12 +60,6 @@ Tutti i file risolti rispettano:
 module: theme
 topic: git-conflicts-resolution-sumy
 canonical: ../../../Themes/docs/shared-components/git-conflicts-resolution-summary-Modules.md
-title: "git conflicts resolution sumy"
-type: note
-status: stub
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "git conflicts resolution sumy activity"
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/git-conflicts-resolution-summary-Modules.md

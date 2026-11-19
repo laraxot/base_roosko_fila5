@@ -13,7 +13,6 @@ discussions:
 related:
   - ./concepts/ai-harness-geo-discipline.md
   - ../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md
-status: draft
 ---
 
 # Geo Module Wiki
@@ -24,16 +23,14 @@ status: draft
 - [coordinate-picker-field](./concepts/coordinate-picker-field.md) - il campo Filament del picker e il suo componente Lit
 - [coordinate-picker-design-comuni-runtime-rule](./concepts/coordinate-picker-design-comuni-runtime-rule.md) - regola runtime del picker nelle pagine Design Comuni
 - [geo-map-lit](./concepts/geo-map-lit.md) - il componente mappa `geo-map-lit`
-- [base-map-widget](./concepts/base-map-widget.md) - widget Filament mappa condiviso (cluster, controlli, permalink, fullscreen)
-- [mobile-viewport-zoom-contract](./concepts/mobile-viewport-zoom-contract.md) - zoom pagina accessibile sulle mappe statiche
-- [Elenco completo dei concept](./concepts/index.md) - tutti i 148 concept della cartella, uno per riga
+- [Elenco completo dei concept](./concepts/INDEX.md) - tutti i 148 concept della cartella, uno per riga
 
 ## AI / second brain
 
 - [ai-harness-geo-discipline](./concepts/ai-harness-geo-discipline.md)
 - [hackernoon-ai-coding-tips-fixcity-map](../../../../../docs/wiki/concepts/hackernoon-ai-coding-tips-fixcity-map.md)
 - [bmad/architecture](../../../../../docs/wiki/bmad/architecture.md)
-- [ai-harness-module-discipline](../../../Fixcity/docs/wiki/concepts/ai-harness-module-discipline.md) (unico file con questo nome nel repo, vive nel wiki di Fixcity)
+- [ai-harness-module-discipline](../../docs/wiki/concepts/ai-harness-module-discipline.md)
 - [second-brain-local-discipline](./concepts/second-brain-local-discipline.md) → canon Xot
 
 
@@ -42,7 +39,7 @@ status: draft
 - [Skills](skills/INDEX.md)
 - [Commands](commands/INDEX.md)
 - [Memories](memories/INDEX.md)
-- [Concepts](concepts/index.md)
+- [Concepts](concepts/INDEX.md)
 
 ## Nota frontoffice (tema Sixteen)
 
@@ -76,6 +73,3 @@ qmd search "Geo <topic>" --limit 5
 ## Composer / nwidart
 
 - [composer-root-minimal-nwidart](concepts/composer-root-minimal-nwidart.md) — root skeleton nwidart (modello fixcity)
-## Canonical boundary
-
-- [geo-data-and-map-boundary](./concepts/geo-data-and-map-boundary.md) — GeoJSON, geocoding e confine con Fixcity/Sixteen.

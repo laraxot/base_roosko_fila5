@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "homepage"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Homepage di il progetto
@@ -128,7 +127,7 @@ Per una documentazione più approfondita sull'architettura della homepage, consu
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](homepage-architecture.md) - Architettura della homepage
+- [Architettura](homepage_architecture.md) - Architettura della homepage
 - [Gestione](homepage-management.md) - Gestione della homepage
 - [Struttura](homepage-structure.md) - Struttura dettagliata
 - [Contenuti](homepage-contenuti.md) - Gestione dei contenuti
@@ -138,7 +137,7 @@ Per una documentazione più approfondita sull'architettura della homepage, consu
 ## Vedi Anche
 - [Modulo UI](../../UI/docs/README.md) - Componenti UI per la homepage
 - [Modulo Theme](../theme/docs/readme.md) - Personalizzazione tema
-- [Modulo Lang](../../Lang/docs/README.md) - Gestione traduzioni
+- [Modulo Lang](../../Lang/docs/readme.md) - Gestione traduzioni
 - [Gestione Contenuti](content-management.md) - Sistema di gestione contenuti
 - [Sezioni](sections.md) - Gestione delle sezioni
 - [Layout](struttura-layout-componenti-blade-<nome progetto>.md) - Struttura dei layout

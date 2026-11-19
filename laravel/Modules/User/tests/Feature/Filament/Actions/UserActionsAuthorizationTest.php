@@ -11,7 +11,7 @@ use Modules\User\Filament\Resources\UserResource\Actions\VerifyEmailAction;
 use Modules\User\Filament\Resources\UserResource\Tables\UsersTable;
 use Modules\User\Models\Role;
 use PHPUnit\Framework\Assert;
-use Tests\TestCase;
+use Modules\User\Tests\TestCase;
 
 use function Safe\file_get_contents;
 
@@ -88,7 +88,7 @@ test('attachRole limita le opzioni ruolo: senza operatore autenticato esclude il
     Assert::assertInstanceOf(Closure::class, $modify);
 
     /** @var MockInterface&Builder<Role> $query */
-    $query = \Mockery::mock(Builder::class);
+    $query = Mockery::mock(Builder::class);
     $query->shouldReceive('qualifyColumn')->with('name')->andReturn('roles.name');
     $query->shouldReceive('where')->once()->with('roles.name', '!=', Role::SUPER_ADMIN)->andReturnSelf();
 

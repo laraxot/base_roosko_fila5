@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "sessione analisi homepage"
 issues: []
 discussions: []
-status: draft
 ---
 
 # ✅ Sessione Completata - Homepage Analysis & Documentation
@@ -43,6 +42,15 @@ status: draft
 **Conformità Totale**: 67%
 
 ---
+
+title: "sessione analisi homepage"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "sessione analisi homepage"
+issues: []
+discussions: []
 #### 2. Screenshot Analysis
 **File**: `docs/screenshots/homepage/SCREENSHOT_ANALYSIS.md`
 
@@ -194,9 +202,6 @@ Themes/Sixteen/resources/views/
 - [Analisi Visiva](docs/screenshots/homepage/ANALISI_VISIVA.md)
 - [Screenshot Analysis](docs/screenshots/homepage/SCREENSHOT_ANALYSIS.md)
 - [Fix Plan](docs/screenshots/homepage/FIX_PLAN.md)
-- [Analisi Visiva](screenshots/homepage/ANALISI_VISIVA.md)
-- [Screenshot Analysis](screenshots/homepage/SCREENSHOT_ANALYSIS.md)
-- [Fix Plan](screenshots/homepage/FIX_PLAN.md)
 - [OpenViking Context](.openvikings/homepage_alignment_context.md)
 
 ### Link Esterni

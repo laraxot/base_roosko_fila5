@@ -1,9 +1,9 @@
 <div class="hidden lg:block">
-	<button type="button" aria-haspopup="true" aria-controls="markets-dropdown"  id="markets-dropdown-button" data-dropdown-toggle="markets-dropdown"
+	<button id="markets-dropdown-button" data-dropdown-toggle="markets-dropdown"
 		class="flex flex-col items-center p-2 capitalize transition-all ease-out bg-transparent rounded-lg hover:bg-white text-neutral-3 focus:bg-white">
 		<x-heroicon-o-globe-europe-africa class="w-6 h-6"/>
 		<span class="flex items-center gap-1 navlink-text">
-			<span>Markets</span>
+			<span>{{ __('pub_theme::headernav.links.markets.label') }}</span>
             <x-fas-chevron-down class="h-3" />
 		</span>
 	</button>

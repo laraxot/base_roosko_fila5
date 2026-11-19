@@ -15,7 +15,7 @@
 
 @if($predict && $predict->tags && $predict->tags->count() > 0)
 <div class="mb-6">
-    <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Tags:</h4>
+    <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">{{ __('pub_theme::market_detail.header.tags.label') }}:</h4>
     <div class="flex flex-wrap gap-2">
         @foreach($predict->tags as $tag)
             <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
@@ -34,7 +34,7 @@
             <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
             </svg>
-            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Volume</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">{{ __('pub_theme::market_common.terms.volume.label') }}</span>
         </div>
         <div class="text-2xl font-bold text-slate-900 dark:text-white">
             <span class="inline-flex items-center gap-1">{{ number_format(($predict->sum_credit_yes ?? 0) / 100, 0) }} <x-filament::icon icon="predict-currency" class="h-4 w-4" aria-hidden="true" /></span>
@@ -47,7 +47,7 @@
             <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
             </svg>
-            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Partecipanti</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">{{ __('pub_theme::market_detail.header.participants.label') }}</span>
         </div>
         <div class="text-2xl font-bold text-slate-900 dark:text-white">
             {{ number_format(($predict->count_credit_yes ?? 0) + ($predict->count_credit_no ?? 0), 0) }}
@@ -60,7 +60,7 @@
             <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Scadenza</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">{{ __('pub_theme::market_detail.header.expiry.label') }}</span>
         </div>
         <div class="text-lg font-bold text-slate-900 dark:text-white">
             @if($predict->closed_at)
@@ -77,7 +77,7 @@
             <svg class="w-5 h-5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
-            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">Stato</span>
+            <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase">{{ __('pub_theme::market_detail.header.status.label') }}</span>
         </div>
         <div class="text-lg font-bold text-emerald-600 dark:text-emerald-400">
             {{ ucfirst($predict->status ?? 'active') }}
@@ -88,7 +88,7 @@
 
 {{-- Share Buttons --}}
 <div class="mb-6">
-    <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">Condividi:</h4>
+    <h4 class="text-sm font-semibold text-slate-700 dark:text-slate-300 mb-3">{{ __('pub_theme::market_detail.header.share.label') }}:</h4>
     <div class="flex gap-2">
         <a href="https://twitter.com/intent/tweet?text={{ urlencode($predict->title ?? '') }}&url={{ urlencode(url()->current()) }}" 
            target="_blank"
@@ -111,7 +111,7 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
-            Copia Link
+            {{ __('pub_theme::market_detail.header.copy_link.label') }}
         </button>
     </div>
 </div>

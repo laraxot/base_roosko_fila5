@@ -12,9 +12,9 @@ updated: 2026-10-13
 tags: [cms, json, slug, asset, manifest, guardia, tdd]
 qmd: "dcp-101 guardie json slug duplicato asset 0 byte manifest design-comuni-pages blade view pub_theme tests tenant modulo identici"
 related:
-  - Themes/Sixteen/docs/bmad/stories/dcp-09-json-content-integrity-guard.story.md
-  - Themes/Sixteen/docs/bmad/stories/dcp-08-asset-integrity-and-fonts.story.md
-  - Themes/Sixteen/docs/bmad/decisions/parity-root-cause-and-guardrails.md
+  - Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-09-json-content-integrity-guard.story.md
+  - Themes/Sixteen/docs/bmad/stories/2026-10-13-dcp-08-asset-integrity-and-fonts.story.md
+  - Themes/Sixteen/docs/bmad/decisions/2026-10-13-parity-root-cause-and-guardrails.md
   - Modules/Cms/docs/json-content-slug-uniqueness.md
   - Modules/Fixcity/tests/Unit/TicketCreatePageMiddlewareGuardTest.php
 ---

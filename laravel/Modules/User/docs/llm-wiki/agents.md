@@ -10,8 +10,6 @@ discussions: []
 related:
   - "./index.md"
   - "./log.md"
-status: superseded
-superseded_by: AGENTS.md
 ---
 
 # User {{TYPE^}} LLM Wiki Agent Instructions

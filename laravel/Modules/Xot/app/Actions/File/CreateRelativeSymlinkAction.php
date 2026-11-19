@@ -4,7 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Actions\File;
 
+use Safe\Exceptions\FilesystemException;
 use Webmozart\Assert\Assert;
+
+use function Safe\readlink;
+use function Safe\realpath;
+use function Safe\symlink;
 
 /**
  * Crea un symlink con destinazione RELATIVA alla cartella del link, per esempio
@@ -33,8 +38,8 @@ class CreateRelativeSymlinkAction
      */
     public function relativeTarget(string $source, string $link): string
     {
-        $from = realpath(\dirname($link));
-        $to = realpath($source);
+        $from = $this->realpathOrFalse(\dirname($link));
+        $to = $this->realpathOrFalse($source);
         Assert::string($from, 'Cartella del link inesistente: '.\dirname($link));
         Assert::string($to, 'Destinazione del link inesistente: '.$source);
 
@@ -62,11 +67,27 @@ class CreateRelativeSymlinkAction
         if (! is_link($link)) {
             return false;
         }
-        $target = readlink($link);
-        if (! \is_string($target) || str_starts_with($target, DIRECTORY_SEPARATOR)) {
+        try {
+            $target = readlink($link);
+        } catch (FilesystemException) {
+            return false;
+        }
+        if (str_starts_with($target, DIRECTORY_SEPARATOR)) {
             return false;
         }
 
-        return realpath(\dirname($link).DIRECTORY_SEPARATOR.$target) === realpath($source);
+        return $this->realpathOrFalse(\dirname($link).DIRECTORY_SEPARATOR.$target) === $this->realpathOrFalse($source);
+    }
+
+    /**
+     * realpath che restituisce false (non eccezione) se il percorso non esiste o il link e' rotto.
+     */
+    private function realpathOrFalse(string $path): string|false
+    {
+        try {
+            return realpath($path);
+        } catch (FilesystemException) {
+            return false;
+        }
     }
 }

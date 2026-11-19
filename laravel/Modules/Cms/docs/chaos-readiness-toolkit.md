@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "chaos readiness toolkit"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Chaos Readiness Toolkit - CMS
@@ -22,7 +21,7 @@ bashscripts/quality/chaos-readiness-check.sh --tenant=laravelpizza
 
 1. JSON pages/sections parseable.
 2. `data.view` risolvibile su namespace noti (`pub_theme::`, `cms::`, `ui::`).
-3. Presenza pagine baseline: `home.json`, `events.json`, `events_view.json`.
+3. Presenza pagine baseline: `home.json`, `events.json`, `events/view.json`.
 
 ## Hardening applicato
 

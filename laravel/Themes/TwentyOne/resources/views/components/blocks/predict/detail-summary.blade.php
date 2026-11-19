@@ -72,22 +72,22 @@
 
                     <div class="flex flex-wrap gap-4">
                         <a href="#predict-main-content" class="inline-flex items-center justify-center rounded-full bg-emerald-400 px-5 py-3 text-sm font-bold text-slate-950 transition hover:scale-[1.02] hover:bg-emerald-300">
-                            Vai al mercato
+                            {{ __('pub_theme::market_detail.summary.go_to_market.label') }}
                         </a>
                     </div>
                 </div>
 
                 <aside class="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
                     <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Scommesse</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ __('pub_theme::market_detail.summary.bets.label') }}</p>
                         <p class="mt-3 text-3xl font-black text-white">{{ number_format((float) $betsCount, 0, ',', '.') }}</p>
                     </div>
                     <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Volume</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ __('pub_theme::market_common.terms.volume.label') }}</p>
                         <p class="mt-3 text-3xl font-black text-white">{{ number_format((float) $volume, 0, ',', '.') }}</p>
                     </div>
                     <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5 backdrop-blur">
-                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">Outcome</p>
+                        <p class="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">{{ __('pub_theme::market_detail.summary.outcome.label') }}</p>
                         <p class="mt-3 text-3xl font-black text-white">{{ number_format((float) ($predict->ratings?->count() ?? 0), 0, ',', '.') }}</p>
                     </div>
                 </aside>

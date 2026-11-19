@@ -26,6 +26,12 @@ status: draft
 
 # 🏆 PROGETTO <nome progetto> - 100% COMPLETATO!
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 **Data**: 1 Ottobre 2025 - Ore 22:30  
 **Status**: ✅✅✅ **PROGETTO COMPLETO AL 100%!** ✅✅✅  
 **Achievement**: 🏆🏆🏆 **STRAORDINARIO - OLTRE LE ASPETTATIVE** 🏆🏆🏆
@@ -348,7 +354,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 **[→ ANALISI COMPLETA](./analisi-completa.md)** - Executive Summary del progetto
 
 ### 🗺️ ROADMAP
-**[→ Master Roadmap Index](./roadmap-master-index.md)** - Indice completo roadmap moduli
+**[→ Master Roadmap Index](../../../roadmap-master-index.md)** - Indice completo roadmap moduli
 **[→ Master Roadmap Index](../../../roadmap-master-index.md)** - Indice completo roadmap moduli
 
 ### 📊 TECHNICAL
@@ -406,7 +412,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ```bash
 # Production build
 cd Themes/Sixteen
-npm run build && npm run copy
+npm run build
 
 # Run migrations
 php artisan migrate --force
@@ -568,7 +574,7 @@ php artisan queue:work --queue=high,notifications,default
 ## 🔗 LINK FINALI
 
 - [← Torna all'Indice](./index.md)
-- [← Master Roadmap](./roadmap-master-index.md)
+- [← Master Roadmap](../../../roadmap-master-index.md)
 - [← Master Roadmap](../../../roadmap-master-index.md)
 - [← Analisi Completa](./analisi-completa.md)
 
@@ -932,7 +938,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 **[→ ANALISI COMPLETA](./ANALISI-COMPLETA.md)** - Executive Summary del progetto
 
 ### 🗺️ ROADMAP
-**[→ Master Roadmap Index](./roadmap-master-index.md)** - Indice completo roadmap moduli
+**[→ Master Roadmap Index](../../../roadmap-master-index.md)** - Indice completo roadmap moduli
 **[→ ANALISI COMPLETA](../../../analisi-completa-ottobre-data.md)** - Executive Summary del progetto
 
 ### 🗺️ ROADMAP
@@ -996,7 +1002,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ```bash
 # Production build
 cd Themes/Sixteen
-npm run build && npm run copy
+npm run build
 
 # Run migrations
 php artisan migrate --force
@@ -1159,7 +1165,7 @@ php artisan queue:work --queue=high,notifications,default
 ## 🔗 LINK FINALI
 
 - [← Torna all'Indice](./index.md)
-- [← Master Roadmap](./roadmap-master-index.md)
+- [← Master Roadmap](../../../roadmap-master-index.md)
 - [← Analisi Completa](./ANALISI-COMPLETA.md)
 - [← Master Roadmap](../../../roadmap-master-index.md)
 - [← Analisi Completa](../../../analisi-completa-ottobre-data.md)

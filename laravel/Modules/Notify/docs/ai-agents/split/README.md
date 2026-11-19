@@ -116,7 +116,7 @@ Every split file contains links back to:
 - The original source file
 
 ### Related Documentation
-- [BMad Method Setup](../../docs/bmad/setup-guide.md)
+- [BMad Method Setup](../../bmad/setup-guide.md)
 - [Project Configuration](../../docs/project/configuration.md)
 - [Module Docs Index](../../docs/modules/index.md)
 - [BMad Method Setup](../../bmad/setup-guide.md)

@@ -5,7 +5,7 @@
         <h4
             class="mt-1 sm:max-w-full text-xl font-semibold text-neutral-4 block"
             >
-            Market Rules
+            {{ __('pub_theme::article_show.rules.title.title') }}
         </h4>
         <div class="">
             <div x-data="{ open: false }" class="text-sm text-gray-700">
@@ -23,7 +23,7 @@
                         @click="open = true"
                         class="text-blue-500 hover:text-blue-700"
                         >
-                    See More
+                    {{ __('pub_theme::article_show.rules.see_more.label') }}
                     </button>
                 </div>
                 <div x-show="open">
@@ -51,7 +51,7 @@
                         @click="open = false"
                         class="text-blue-500 hover:text-blue-700"
                         >
-                    See Less
+                    {{ __('pub_theme::article_show.rules.see_less.label') }}
                     </button>
                 </div>
             </div>
@@ -59,7 +59,7 @@
         <h4
             class="mt-1 sm:max-w-full text-xl font-semibold text-neutral-4 block"
             >
-            Tags
+            {{ __('pub_theme::article_show.rules.tags.title') }}
         </h4>
         <div class="flex flex-wrap gap-2 items-center">
             <a

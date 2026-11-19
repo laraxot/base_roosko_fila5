@@ -1,11 +1,10 @@
 ---
-title: "Activity Charts - Filament Widget Integration"
-type: index
-status: draft
-updated: 2026-10-23
-tags: [docs, activity, charts]
-qmd: "activity charts - filament widget integration activity"
+title: "📊 Activity Charts - Filament Widget Integration"
+qmd: "activity charts readme md"
+type: note
+tags: [documentation]
 ---
+
 # 📊 Activity Charts - Filament Widget Integration
 
 [![Module](https://img.shields.io/badge/Module-📊 Activity Charts - Filament Widget Integration-8B0000.svg)]()
@@ -16,6 +15,26 @@ qmd: "activity charts - filament widget integration activity"
 [![PSR-12](https://img.shields.io/badge/Code-PSR--12-blue?style=for-the-badge)](https://www.php-fig.org/psr/psr-12/)](https://www.php-fig.org/psr/psr-12/)
 [![Architecture](https://img.shields.io/badge/Architecture-Modular-purple?style=for-the-badge)](https://martinfowler.com/articles/paradigm-shifts.html)]()
 ]()
+
+> **Core module for the FixCity Platform.**
+
+## Perché esiste
+
+Core module for the FixCity Platform.
+
+## Superpoteri
+
+- Modular component with XotBase patterns
+- Professional-grade implementation
+- Integrated with FixCity Platform
+
+## Documentazione
+
+| Lingua | Link |
+|--------|------|
+| 🇮🇹 Presentazione | Questo file (`README.md`) |
+| 🇬🇧 Business card | [docs/readme-en.md](../readme-en.md) |
+| 📚 Wiki tecnica | [./docs/wiki/](..) |
 
 > **Core module for the FixCity Platform.**
 

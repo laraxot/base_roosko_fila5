@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
-use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
-use Modules\Xot\Actions\File\EnsureGitignoreEntriesAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
+use Modules\Xot\Actions\File\EnsureGitignoreEntriesAction;
+use Safe\Exceptions\FilesystemException;
 
 use function Safe\readlink;
 use function Safe\realpath;
@@ -89,17 +90,17 @@ class ModuleLinkCommand extends Command
 
         if (is_link($link)) {
             $target = (string) readlink($link);
-            // \realpath nativo: false (non eccezione) se il link e' rotto.
-            $resolved = str_starts_with($target, '/')
-                ? \realpath($target)
-                : \realpath(dirname($link).'/'.$target);
+            // realpathOrFalse: false (non eccezione) se il link e' rotto.
+            $resolved = $this->realpathOrFalse(
+                str_starts_with($target, '/') ? $target : dirname($link).'/'.$target
+            );
             if (app(CreateRelativeSymlinkAction::class)->isRelativeLinkTo($link, $source)) {
                 $this->line('- '.basename($link).": link gia' corretto");
 
                 return 'skipped';
             }
             // Stessa destinazione ma percorso assoluto: si riscrive relativo, senza bisogno di --force.
-            $sameTarget = $resolved !== false && $resolved === \realpath($source);
+            $sameTarget = $resolved !== false && $resolved === $this->realpathOrFalse($source);
             if (! $sameTarget && ! $force) {
                 $this->warn('- '.basename($link).": link esistente punta a {$target}, usa --force per sostituirlo");
 
@@ -126,5 +127,17 @@ class ModuleLinkCommand extends Command
         }
 
         return 'linked';
+    }
+
+    /**
+     * realpath che restituisce false (non eccezione) se il percorso non esiste o il link e' rotto.
+     */
+    private function realpathOrFalse(string $path): string|false
+    {
+        try {
+            return realpath($path);
+        } catch (FilesystemException) {
+            return false;
+        }
     }
 }

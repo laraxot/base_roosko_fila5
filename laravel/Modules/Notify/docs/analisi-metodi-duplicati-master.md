@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "analisi metodi duplicati master"
 issues: []
 discussions: []
-status: draft
 ---
 
 # 🐄✨ ANALISI DIVINA METODI DUPLICATI - MASTER EDITION ✨🐄
@@ -20,6 +19,15 @@ status: draft
 **Linee di Codice Totali:** ~2,777 (solo Models)  
 
 ---
+
+title: "analisi metodi duplicati master"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "analisi metodi duplicati master"
+issues: []
+discussions: []
 ## 🎯 Executive Summary Ultra-Preciso
 
 ### Dati Reali dal Codebase

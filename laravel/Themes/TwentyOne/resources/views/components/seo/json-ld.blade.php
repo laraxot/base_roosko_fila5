@@ -3,7 +3,7 @@
 {{-- Schema.org JSON-LD for BetOffer/Event --}}
 <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
+    "@@context": "https://schema.org",
     "@type": "BetOffer",
     "name": "{{ $predict->title ?? 'Prediction Market' }}",
     "description": "{{ $predict->description ?? 'Prediction market' }}",

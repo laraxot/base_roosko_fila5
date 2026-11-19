@@ -10,7 +10,6 @@ title: links
 description: links
 extends: _layouts.documentation
 section: content
-status: draft
 ---
 
 # links links
@@ -28,15 +27,6 @@ status: draft
 * [links.md](../../../job/docs/links.md)
 * [links.md](../../../tenant/docs/it/links/links.md)
 * [links.md](../../../cms/docs/links.md)
-* [links.md](../../../Gdpr/docs/links.md)
-* [links.md](../../../Notify/docs/links.md)
-* [links.md](../../../xot/docs/ci/links.md)
-* [links.md](../../../xot/docs/open_sources/links.md)
-* [links.md](../../../User/docs/links.md)
-* [links.md](../../../Lang/docs/links.md)
-* [links.md](../../../Job/docs/links.md)
-* [links.md](links/links.md)
-* [links.md](../../../Cms/docs/links.md)
 * [links.md](../../../../themes/one/docs/links.md)
 
 ### Versione Incoming

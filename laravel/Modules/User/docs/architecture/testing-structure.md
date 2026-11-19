@@ -12,11 +12,10 @@ related:
   - "./architecture.md"
   - "./auth-blade-structure.md"
   - "./component-registration.md"
-  - "./README.md"
+  - "./readme.md"
   - "./structure.md"
   - "./user-gdpr-decoupling.md"
   - "./user-gdpr-oupling.md"
-status: draft
 ---
 
 # Struttura dei Tests del Modulo User
@@ -306,9 +305,9 @@ dump($variable);
 
 ## Collegamenti
 
-- [README Modulo User](../README.md)
+- [README Modulo User](../readme.md)
 - [Best Practices Testing](../../../project_docs/testing-best-practices.md)
-- [Architettura Modulo User](README.md)
+- [Architettura Modulo User](../architecture/readme.md)
 - [Factory e Seeder](../models/factory-seeder-status.md)
 
 ---

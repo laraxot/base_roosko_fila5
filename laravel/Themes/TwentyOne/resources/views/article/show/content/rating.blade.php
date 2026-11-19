@@ -16,8 +16,8 @@
                             <div class="absolute inset-0 -z-[1]">
                                 <img
                                     class="object-cover h-full w-full"
-                                    alt="Yes"
-                                    title="Yes"
+                                    alt="{{ __('pub_theme::market_common.terms.yes.label') }}"
+                                    title="{{ __('pub_theme::market_common.terms.yes.label') }}"
                                     src="https://My_Company-media-production.s3.amazonaws.com/cache/5f/97/5f97a5a9ea6a404ce35c310c3571a03f.jpg"
                                     sizes="144px"
                                     />
@@ -31,7 +31,7 @@
                                 <span>60%</span>
                             </div>
                             <p class="text-sm font-medium text-white leading-[1.1]">
-                                Yes
+                                {{ __('pub_theme::market_common.terms.yes.label') }}
                             </p>
                         </div>
                         <!-- Outcome No -->

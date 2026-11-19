@@ -1,15 +1,3 @@
----
-title: "headernav cms architecture"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "headernav cms architecture"
-issues: []
-discussions: []
-status: draft
----
-
 # HeaderNav CMS Architecture - Filosofia, Religione, Politica e Zen
 
 **Data**: 2026-03-23  
@@ -17,6 +5,7 @@ status: draft
 **Version**: 1.0
 
 ---
+
 ## 🎯 FILOSOFIA: Il Header come Composable
 
 ### Il Principio Fondamentale
@@ -346,8 +335,8 @@ const applyTheme = (theme) => {
 ## 📚 RIFERIMENTI
 
 ### Interni
-- `Themes/TwentyOne/docs/THEME_PHILOSOPHY_ZEN.md` - Filosofia del tema
-- `Themes/TwentyOne/docs/THEME_ARCHITECTURE_ZEN_BLADE_NAMING.md` - Naming convention
+- `Themes/TwentyOne/docs/theme-philosophy-zen.md` - Filosofia del tema
+- `Themes/TwentyOne/docs/theme-architecture-zen-blade-naming.md` - Naming convention
 - `Modules/Predict/docs/ARCHITECTURE_PHILOSOPHY_ZEN.md` - Filosofia del modulo
 - `docs/project/CMS_JSON_ARCHITECTURE.md` - Pattern CMS JSON
 

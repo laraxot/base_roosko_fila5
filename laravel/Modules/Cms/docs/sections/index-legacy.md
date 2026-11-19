@@ -14,9 +14,8 @@ related:
   - ./index-legacy-2.md
   - ../blocks/index.md
   - ../README.md
-  - ../index.md
+  - ../INDEX.md
   - ../roadmap/README.md
-status: draft
 ---
 <!-- ponytail: variante legacy con contenuto duplicato/divergente dal canonico index.md, conservata per non perdere link storici. Consolidare manualmente e poi rimuovere. -->
 

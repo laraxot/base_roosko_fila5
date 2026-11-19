@@ -17,7 +17,7 @@
         $title = $title[app()->getLocale()] 
                ?? $title['en'] 
                ?? $title['it'] 
-               => reset($title);
+               ?? reset($title);
     }
     
     // Handle description
@@ -32,7 +32,7 @@
         $description = $description[app()->getLocale()] 
                      ?? $description['en'] 
                      ?? $description['it'] 
-                     => reset($description);
+                     ?? reset($description);
     }
     
     // Get probability and stats
@@ -65,7 +65,7 @@
 {{-- Schema.org Rich Snippet --}}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "Question",
   "name": "{{ addslashes($title) }}",
   "description": "{{ addslashes($description) }}",
@@ -87,7 +87,7 @@
 {{-- Event Schema for Predict --}}
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
+  "@@context": "https://schema.org",
   "@type": "Event",
   "name": "{{ addslashes($title) }}",
   "description": "{{ addslashes($description) }}",

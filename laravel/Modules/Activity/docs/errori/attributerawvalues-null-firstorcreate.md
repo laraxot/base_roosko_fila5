@@ -1,11 +1,10 @@
 ---
-title: "Errore: Attempt to read property 'attributeRawValues' on null durante firstOrCreate"
+title: "Errore: Attempt to read property \"attributeRawValues\" on null durante firstOrCreate"
+qmd: "activity errori attributerawvalues null firstorcreate md"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, activity, errori]
-qmd: "errore: attempt to read property 'attributerawvalues' on null durante firstorcreate activity"
+tags: [documentation]
 ---
+
 # Errore: Attempt to read property "attributeRawValues" on null durante firstOrCreate
 
 ## Problema
@@ -262,7 +261,11 @@ IndennitaResponsabilita::withoutEvents(function (): void {
 
 ---
 
-**=======
+**
+
 **Ultimo aggiornamento**: 19 Novembre 2025  
+
+**=======
 **Severità**: Alta (blocca operazioni batch)  
 **Soluzione**: Usare `withoutEvents()` durante `firstOrCreate()`
+

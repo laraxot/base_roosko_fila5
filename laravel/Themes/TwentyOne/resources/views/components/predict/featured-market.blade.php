@@ -48,7 +48,7 @@
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
             </span>
-            <x-filament::icon icon="heroicon-o-fire" class="h-4 w-4" aria-hidden="true" /> TRENDING
+            <x-filament::icon icon="heroicon-o-fire" class="h-4 w-4" aria-hidden="true" /> {{ __('pub_theme::market_detail.featured.trending.label') }}
         </span>
     </div>
     @endif
@@ -84,14 +84,14 @@
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
-                        <span class="font-bold inline-flex items-center gap-1">{{ number_format($volume) }} <x-filament::icon icon="predict-currency" class="h-4 w-4" aria-hidden="true" /> Volume</span>
+                        <span class="font-bold inline-flex items-center gap-1">{{ number_format($volume) }} <x-filament::icon icon="predict-currency" class="h-4 w-4" aria-hidden="true" /> {{ __('pub_theme::market_common.terms.volume.label') }}</span>
                     </div>
                     @if($endDate)
                     <div class="flex items-center gap-2 text-amber-400">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-                        <span class="font-semibold">Ends {{ $endDate->diffForHumans(['short' => true]) }}</span>
+                        <span class="font-semibold">{{ __('pub_theme::market_detail.featured.ends.label', ['time' => $endDate->diffForHumans(['short' => true])]) }}</span>
                     </div>
                     @endif
                 </div>
@@ -101,7 +101,7 @@
             <div class="flex-shrink-0">
                 <a href="{{ url('/' . app()->getLocale() . '/predicts/' . $predict->slug) }}" 
                    class="btn-kinetic inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/50 transition-all duration-200">
-                    Trade Now
+                    {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -143,13 +143,13 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                 </svg>
-                <span>{{ number_format($predict->count_credit_yes + $predict->count_credit_no) }} Participants</span>
+                <span>{{ trans_choice('pub_theme::market_common.stats.participants_count.label', $predict->count_credit_yes + $predict->count_credit_no, ['count' => number_format($predict->count_credit_yes + $predict->count_credit_no)]) }}</span>
             </div>
             <div class="flex items-center gap-2 text-indigo-300">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
                 </svg>
-                <span>{{ $predict->ratings->count() }} Outcomes</span>
+                <span>{{ trans_choice('pub_theme::market_detail.featured.outcomes_count.label', $predict->ratings->count(), ['count' => $predict->ratings->count()]) }}</span>
             </div>
         </div>
     </div>

@@ -8,7 +8,6 @@ type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
-status: draft
 ---
 
 # Fix Namespace PSR-4 - Modulo Notify
@@ -89,8 +88,8 @@ NON: Modules\{ModuleName}\App\{Subdirectory}
 
 ## Collegamenti
 
-- [Namespace Conventions](../../Xot/docs/namespace-conventions.md)
-- [PSR-4 Autoloading Pattern](../../Xot/docs/namespace-autoload-pattern.md)
+- [Namespace Conventions](../../xot/docs/namespace-conventions.md)
+- [PSR-4 Autoloading Pattern](../../xot/docs/namespace-autoload-pattern.md)
 
 **Status**: ✅ RISOLTO  
 **Impatto**: Nessuno (warning, non blocco funzionale)

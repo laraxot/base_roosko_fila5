@@ -81,7 +81,7 @@
                             📅 {{ $scadenza }}
                         </div>
                     @else
-                        <div class="text-gray-400 text-xs">Expired</div>
+                        <div class="text-gray-400 text-xs">{{ __('pub_theme::article_list.card.expired.label') }}</div>
                     @endif
                 </div>
             </div>

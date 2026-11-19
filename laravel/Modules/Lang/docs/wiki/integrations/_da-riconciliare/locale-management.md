@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "locale management"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Gestione delle Lingue in Laravel

@@ -1,16 +1,7 @@
----
-title: "Implementazione del Logout con LaravelLocalization"
-type: note
-status: draft
-updated: 2026-10-13
-tags: [docs, user]
-qmd: "implementazione del logout con laravellocalization user"
----
 # Implementazione del Logout con LaravelLocalization 
 
 ## Collegamenti correlati
 - [README modulo User](./README.md)
-- [Best Practices Componenti di Autenticazione](./auth_components_best_practices.md)
 - [Best Practices Componenti di Autenticazione](./auth_components_best_practices.md)
 - [Utilizzo di Laravel Localization](/laravel/Modules/Lang/docs/LARAVEL_LOCALIZATION_USAGE.md)
 - [Collegamenti Documentazione](/docs/collegamenti-documentazione.md)

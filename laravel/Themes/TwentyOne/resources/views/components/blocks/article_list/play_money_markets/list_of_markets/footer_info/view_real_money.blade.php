@@ -12,9 +12,7 @@
     <div x-cloak x-show.transition.origin.top="tooltip"
         class="absolute right-0 z-10 inline-block w-[330px] bottom-11 shadow-[0_2px_8px_0_#00000026] bg-white text-sm text-[#6b6a6a] rounded-lg">
         <p class="p-4">
-            You are viewing play-money markets. To view real-money
-            markets, please click on your account balance above
-            and select real-money.
+            {{ __('pub_theme::article_list.footer.view_real_money.message') }}
         </p>
         <div
             class="absolute size-3 bg-inherit rotate-45 bottom-0 translate-y-1/2 right-5 border-b border-r border-[#00000026]">

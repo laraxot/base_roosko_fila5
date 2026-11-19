@@ -80,14 +80,14 @@ return [
         'select_all' => [
             'name' => 'Seleziona Tutti',
             'message' => '',
-            'label' => '',
+            'label' => 'Seleziona tutto',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'creator' => [
             'name' => 'Creatore',
-            'label' => '',
+            'label' => 'Autore',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -97,6 +97,30 @@ return [
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
+        ],
+        'id' => [
+            'label' => 'ID',
+        ],
+        'file_name' => [
+            'label' => 'Nome del file',
+        ],
+        'disk' => [
+            'label' => 'Disco',
+        ],
+        'size' => [
+            'label' => 'Dimensione',
+        ],
+        'order_column' => [
+            'label' => 'Ordine',
+        ],
+        'model_type' => [
+            'label' => 'Tipo di oggetto',
+        ],
+        'model_id' => [
+            'label' => 'Oggetto',
+        ],
+        'created_at' => [
+            'label' => 'Creato il',
         ],
     ],
     'actions' => [
@@ -111,6 +135,10 @@ return [
                 'name' => 'Nome area',
                 'parent_name' => 'Nome area livello superiore',
             ],
+        ],
+        'delete' => [
+            'tooltip' => '',
+            'icon' => 'delete',
         ],
     ],
     'model' => [

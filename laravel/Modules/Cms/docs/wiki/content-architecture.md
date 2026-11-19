@@ -10,10 +10,7 @@ date: "2026-06-13"
 qmd: "cms-content-architecture"
 github_issue: ""
 github_discussion: ""
-status: stale
 ---
-
-> Nota 2026-10-14 (docs-audit): Descrive modelli ContentPage e ContentBlock (tabelle content_pages, FK page_id) e blocchi 'implementati' text/image/heading che non esistono: le pagine sono file JSON per tenant (Models/Page con SushiToJsons) e i blocchi hanno type come home.hero (verificato 2026-10-14, vedi README.md). Contenuto non riscritto, verificare prima di usarlo.
 
 # CMS Module - Content Architecture
 
@@ -137,5 +134,5 @@ POST /api/cms/pages
 
 ## Collegamenti
 
-- [Project Roadmap](../../../Activity/docs/wiki/project-roadmap.md)
+- [Project Roadmap](../../../Activity/docs/wiki/PROJECT-ROADMAP.md)
 - [Fixcity Module Status](../../../Fixcity/docs/wiki/MODULE-STATUS.md)

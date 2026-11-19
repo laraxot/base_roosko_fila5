@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "link relativi regole"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Regole per Link Relativi nella Documentazione
@@ -149,6 +148,15 @@ Aggiornare sempre le regole personali:
 "Un link relativo oggi, refactoring sereno domani"
 
 ---
+
+title: "link relativi regole"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "link relativi regole"
+issues: []
+discussions: []
 **Ultimo aggiornamento**: Gennaio 2025
 **Versione**: 1.0
 **Conformità**: Regole Laraxot per documentazione modulare e portabile

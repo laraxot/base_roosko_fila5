@@ -20,6 +20,11 @@ qmd: "performance optimization   module **activity** activity"
 **Dopo**: Carico solo what's needed (~2K startup)
 
 ```diff
+- 150+ rules embeddate in agents.md
+
+- 150+ rules embeddate in AGENTS.md
++ 0 rules embeddate — tutte on-demand
+
 - 150+ rules embeddate in agents.md+ 0 rules embeddate — tutte on-demand
 ```
 

@@ -1,11 +1,10 @@
 ---
 title: "Anti-Pattern: Environment-Specific Logic in Models"
+qmd: "activity anti pattern model env hack md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "anti-pattern: environment-specific logic in models activity"
+tags: [documentation]
 ---
+
 # Anti-Pattern: Environment-Specific Logic in Models
 
 ## Il Problema

@@ -16,13 +16,12 @@ related:
   - "./actions-path-convention.md"
   - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
-status: draft
 ---
 
 # Analisi dell'Errore di Implementazione Volt/Blade
 
 ## Collegamenti correlati
-- [README modulo User](./README.md)
+- [README modulo User](./readme.md)
 - [Convenzioni Path](./path-conventions-user.md)
 - [Best Practices Volt e Folio](../../xot/docs/volt_folio_best_practices.md)
 

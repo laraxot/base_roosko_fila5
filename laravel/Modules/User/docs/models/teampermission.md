@@ -10,11 +10,10 @@ discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./base-classes-hierarchy.md"
   - "./baseuser.md"
-  - "./README.md"
+  - "./readme.md"
   - "./team.md"
   - "./xotbaivot-migration.md"
   - "./xotbasepivot-migration.md"
-status: draft
 ---
 
 # TeamPermission

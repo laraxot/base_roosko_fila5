@@ -24,6 +24,8 @@ Nel modulo Lang, ogni modello database-backed ha esattamente una migrazione corr
 | `LanguageLine` | `2024_03_20_000001_create_language_lines_table.php` | ✅ DB-backed |
 | `Post` | `2026_01_21_211814_create_posts_table.php` + update UUID | ✅ DB-backed |
 | `Translation` | `2026_01_21_211815_create_translations_table.php` + update UUID | ✅ DB-backed |
+| `Post` | `2026_01_21_211814_create_posts_table.php` + `2026_11_05_100000_create_posts_table.php` | ✅ DB-backed |
+| `Translation` | `2026_01_21_211815_create_translations_table.php` + `2026_11_05_100001_create_translations_table.php` | ✅ DB-backed |
 | `TranslationFile` | *none* (uses Sushi trait) | ✅ In-memory |
 
 **Parity Rule**: `TranslationFile` estende `BaseModel` con il trait `Sushi` (in-memory model), quindi non richiede una migrazione di creazione. Le migrazioni additive di aggiornamento sono distinte dalle migrazioni di creazione e non violano la parità modello/tabella.
@@ -70,6 +72,10 @@ Tutti i filename mantengono timestamp, azione, tabella owner plurale in
 singularizza la tabella e ricava il modello. Le migrazioni additive usano un
 verbo descrittivo (per esempio `update_<table_plurale>_table`) e dichiarano
 `$model_class`, perché il modello non è derivabile dal pattern `create_*_table`.
+singularizza la tabella e ricava il modello. Una tabella ha una sola migrazione
+owner `create_*_table`: i cambi colonna si applicano dentro il suo `tableUpdate()`
+e si cambia il timestamp (one-migration-per-model). Le eccezioni `add_*` /
+`update_*` / `fix_*` già pubblicate restano finché non sono consolidate.
 
 Esempi:
 
@@ -78,6 +84,8 @@ Esempi:
 - `2026_01_21_211815_create_translations_table.php`: creazione `Translation`.
 - `2026_11_05_100000_update_posts_table.php`: aggiornamento `Post`.
 - `2026_11_05_100001_update_translations_table.php`: aggiornamento `Translation`.
+- `2026_11_05_100000_create_posts_table.php`: migrazione owner `Post`, inclusa la compatibilità UUID.
+- `2026_11_05_100001_create_translations_table.php`: migrazione owner `Translation`, inclusa la compatibilità UUID.
 
 L'audit del naming sulle migrazioni dei moduli è documentato nella
 [story BMAD di convenzione](./bmad/stories/user-id-uuid-migration-convention.story.md):

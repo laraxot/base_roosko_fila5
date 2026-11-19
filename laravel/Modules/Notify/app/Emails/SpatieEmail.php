@@ -74,6 +74,9 @@ class SpatieEmail extends TemplateMailable
         $this->data['login_url'] = route('login');
         $this->data['site_url'] = url('/'.$lang);
 
+        $sitename = MetatagData::make()->sitename;
+        $appName = config('app.name');
+        $this->data['brand_name'] = $sitename !== '' ? $sitename : (\is_string($appName) ? $appName : '');
         $this->data['logo_header'] = MetatagData::make()->getBrandLogo();
         $this->data['logo_header_base64'] = MetatagData::make()->getBrandLogoBase64();
         $this->data['logo_svg'] = MetatagData::make()->getBrandLogoSvg();
@@ -295,7 +298,7 @@ class SpatieEmail extends TemplateMailable
     /**
      * Mittente dell'SMS per questo template.
      *
-     * Story quaeris-send-invite-migrate-to-record-notification.md, Difetto 9:
+     * Story <nome progetto>-send-invite-migrate-to-record-notification.md, Difetto 9:
      * prima `RecordNotification::toSms()` scriveva il letterale 'Xot'. Catena:
      * `MailTemplate.sms_from` (per-survey, es. "VIVASERVIZI") → `config('sms.from')`
      * (globale) → `null` (il gateway usa il default del suo account).

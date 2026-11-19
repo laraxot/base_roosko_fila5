@@ -139,7 +139,9 @@ class Address extends BaseModel
      */
     public function addressable(): MorphTo
     {
-        return $this->morphTo('model');
+        // Il nome della relazione deve coincidere col metodo, altrimenti l'eager loading
+        // (with('addressable')) la registrerebbe come 'model'; le colonne restano model_type/model_id.
+        return $this->morphTo('addressable', 'model_type', 'model_id');
     }
 
     /*
@@ -177,22 +179,9 @@ class Address extends BaseModel
      */
     public function getRegione(): ?array
     {
-        $res = Comune::select('regione')
-            ->distinct()
-            ->orderBy('regione->nome')
-            ->where('regione->codice', $this->administrative_area_level_1)
-            ->get()
-            ->map(function (mixed $item) {
-                $regione = $item->regione;
-                if (! is_array($regione) || ! isset($regione['codice'], $regione['nome'])) {
-                    return;
-                }
+        $match = $this->findComuneArea('regione', $this->administrative_area_level_1);
 
-                return ['codice' => $regione['codice'], 'nome' => $regione['nome']];
-            })
-            ->filter();
-
-        return $res->first();
+        return $match === null ? null : ['codice' => $match['codice'], 'nome' => $match['nome']];
     }
 
     /**
@@ -200,21 +189,57 @@ class Address extends BaseModel
      */
     public function getProvincia(): ?array
     {
-        $res = Comune::select('provincia')
-            ->distinct()
-            ->orderBy('provincia->nome')
-            ->where('provincia->codice', $this->administrative_area_level_2)
-            ->get()
-            ->map(function (mixed $item): array {
-                $provincia = is_array($item->provincia ?? null) ? $item->provincia : [];
+        $match = $this->findComuneArea('provincia', $this->administrative_area_level_2);
 
-                return [
-                    'codice' => is_string($provincia['codice'] ?? null) ? $provincia['codice'] : '',
-                    'nome' => is_string($provincia['nome'] ?? null) ? $provincia['nome'] : '',
-                ];
-            });
+        if ($match === null) {
+            return null;
+        }
 
-        return $res->first();
+        return [
+            'codice' => is_string($match['codice']) ? $match['codice'] : '',
+            'nome' => is_string($match['nome']) ? $match['nome'] : '',
+        ];
+    }
+
+    /**
+     * Cerca fra i comuni l'area (regione/provincia) con il codice dato.
+     *
+     * Il filtro è fatto in PHP e non con json_extract(): i dati Sushi dei comuni possono
+     * contenere valori non-JSON (es. "Sicilia") e SQLite fallirebbe con "malformed JSON".
+     *
+     * @param 'regione'|'provincia' $column
+     *
+     * @return array{codice: mixed, nome: mixed}|null
+     */
+    private function findComuneArea(string $column, mixed $code): ?array
+    {
+        if (! is_scalar($code) || (string) $code === '') {
+            return null;
+        }
+
+        $matches = [];
+        foreach (Comune::query()->select($column)->distinct()->get() as $comune) {
+            $area = $comune->getAttribute($column);
+            if (! is_array($area) || ! isset($area['codice'], $area['nome'])) {
+                continue;
+            }
+            if (! is_scalar($area['codice']) || (string) $area['codice'] !== (string) $code) {
+                continue;
+            }
+
+            $matches[] = ['codice' => $area['codice'], 'nome' => $area['nome']];
+        }
+
+        if ($matches === []) {
+            return null;
+        }
+
+        usort($matches, static fn (array $a, array $b): int => strcmp(
+            is_scalar($a['nome']) ? (string) $a['nome'] : '',
+            is_scalar($b['nome']) ? (string) $b['nome'] : '',
+        ));
+
+        return $matches[0];
     }
 
     /**

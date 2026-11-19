@@ -33,9 +33,9 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `.devcontainer/README.md`: README
 - `AGENTS.md`: AGENTS.MD - Development Guidelines
 - `CLAUDE.md`: CLAUDE.md
-- `GEMINI.md`: Gemini Project Context: Quaeris Fila4 Mono - Laravel Survey Management System
-- `IFLOW.md`: Quaeris Fila4 Mono - 项目指南
-- `README.md`: Quaeris Fila4 Mono - Laravel Survey Management System
+- `GEMINI.md`: Gemini Project Context: <nome progetto> Fila4 Mono - Laravel Survey Management System
+- `IFLOW.md`: <nome progetto> Fila4 Mono - 项目指南
+- `README.md`: <nome progetto> Fila4 Mono - Laravel Survey Management System
 - `GEMINI.md`: Gemini Project Context: App Fila4 Mono - Laravel Survey Management System
 - `IFLOW.md`: App Fila4 Mono - 项目指南
 - `README.md`: App Fila4 Mono - Laravel Survey Management System
@@ -74,7 +74,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `bashscripts/backup/README.md`: Script di Backup
 - `bashscripts/ci-cd/README.md`: Script CI/CD - Analisi Qualità Codice
 - `bashscripts/docker/README.md`: Operazioni Docker 🐳
-- `bashscripts/docs/about.md`: BashScripts Fila3
+- `bashscripts/docs/about.md`: BashScripts fila5
 - `bashscripts/docs/analysis.md`: User Module Analysis
 - `bashscripts/docs/analyze-modules.md`: Script analyze_modules.sh
 - `bashscripts/docs/analyze_modules.md`: Script analyze_modules.sh
@@ -104,7 +104,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `bashscripts/docs/conflict-resolution-bash.md`: Risoluzione Manuale dei Conflitti negli Script Bash
 - `bashscripts/docs/conflict-resolution-critical-bug-analysis.md`: CRITICAL BUG: Conflict Resolution Scripts Take WRONG Change
 - `bashscripts/docs/conflict-resolution-final-report.md`: conflict-resolution-final-report
-- `bashscripts/docs/conflict-resolution-report.md`: Report Risoluzione Conflitti Git - BashScripts Fila3
+- `bashscripts/docs/conflict-resolution-report.md`: Report Risoluzione Conflitti Git - BashScripts fila5
 - `bashscripts/docs/conflict-resolution-success-report.md`: Report di Successo Risoluzione Conflitti
 - `bashscripts/docs/conflict_resolution_bash.md`: Risoluzione Manuale dei Conflitti negli Script Bash
 - `bashscripts/docs/conflict_resolution_final_report.md`: Report Finale Risoluzione Conflitti di Merge
@@ -345,16 +345,16 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/01-documentation-rules.md`: Regole Fondamentali per la Documentazione
 - `docs/AI_CODING_MEMORY.md`: AI Coding Memory - Critical Rules & Patterns
 - `docs/BUGFIX_SUMMARY_2025-10-22_HasXotFactory.md`: 🐛 Bugfix Summary - HasXotFactory Trait Restoration
-- `docs/BUGFIX_SUMMARY_2025-10-22_Quaeris_Dashboard.md`: 🐛 Bugfix Summary - Quaeris Dashboard & Chart Widgets
+- `docs/BUGFIX_SUMMARY_2025-10-22_<nome progetto>_Dashboard.md`: 🐛 Bugfix Summary - <nome progetto> Dashboard & Chart Widgets
 - `docs/BUGFIX_SUMMARY_2025-10-22_App_Dashboard.md`: 🐛 Bugfix Summary - App Dashboard & Chart Widgets
 - `docs/DRY-KISS-VIOLATIONS-SUMMARY.md`: DRY and KISS Violations Analysis Report
 - `docs/DRY_KISS_ANALYSIS_2025-10-15.md`: Analisi DRY & KISS - Tutti i Moduli
 - `docs/DRY_KISS_COMPLETE_IMPLEMENTATION_2025-10-15.md`: DRY & KISS - Implementazione Completa
 - `docs/DRY_KISS_IMPLEMENTATION_GUIDE.md`: Guida Implementazione DRY & KISS - Progetto Laraxot
-- `docs/ECOSYSTEM_ANALYSIS.md`: Quaeris Fila4 Mono - Comprehensive Ecosystem Analysis
+- `docs/ECOSYSTEM_ANALYSIS.md`: <nome progetto> Fila4 Mono - Comprehensive Ecosystem Analysis
 - `docs/ELOQUENT-MAGIC-PROPERTIES.md`: Eloquent Magic Properties - Regola Progetto
 - `docs/FILAMENT_5X_GUIDE.md`: GUIDE LINEE GUIDA PER SVILUPPO QUAEERIS
-- `docs/FILAMENT_NESTING_ANALYSIS.md`: Filament Nesting Analysis - Quaeris Module
+- `docs/FILAMENT_NESTING_ANALYSIS.md`: Filament Nesting Analysis - <nome progetto> Module
 - `docs/FINAL_DRY_KISS_SUMMARY.md`: Riepilogo Finale - Analisi e Correzioni DRY/KISS
 - `docs/GIT_CONFLICTS_RESOLUTION_PLAN.md`: 📋 Piano Risoluzione Conflitti Git - Approccio Pragmatico
 - `docs/IMPLEMENTATION_SUMMARY_2025-10-21.md`: Implementation Summary - 2025-10-21
@@ -374,7 +374,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/PROFESSIONAL_SYSTEM.md`: 📋 GUIDA COMPLETA - SISTEMA PROFESSIONALE PER VISUALIZZAZIONE DATI LIMEUREY
 - `docs/QUALITY-IMPROVEMENT-SESSION-2025-11-12.md`: Quality Improvement Session - 2025-11-12
 - `docs/QUALITY_IMPROVEMENT_SUMMARY.md`: Quality Improvement Summary
-- `docs/README.md`: Quaeris Fila4 Mono - Documentazione Operativa
+- `docs/README.md`: <nome progetto> Fila4 Mono - Documentazione Operativa
 - `docs/README.md`: App Fila4 Mono - Documentazione Operativa
 - `docs/README_DRY_KISS.md`: DRY & KISS - Indice Documentazione
 - `docs/README_FINAL_VERIFICATION.md`: ✅ Verifica Finale README.md - Super Mucca Completion Report
@@ -387,10 +387,10 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/SUMMARY_MODEL_CORRECTIONS_2025-10-15.md`: Riepilogo Correzione Ereditarietà Modelli - 15 Ottobre 2025
 - `docs/SUPER-MUCCA-FINAL-REPORT.md`: 🐮⚡ SUPER MUCCA MODE - Final Report
 - `docs/achievement-report.md`: 🏆 Achievement Report - Supermucca Session 2025-11-05
-- `docs/advanced-architecture-insights-limesurvey.md`: Advanced Architecture Insights: Lessons from LimeSurvey for Quaeris Fila5
+- `docs/advanced-architecture-insights-limesurvey.md`: Advanced Architecture Insights: Lessons from LimeSurvey for <nome progetto> Fila5
 - `docs/ai-folders-configuration.md`: Configurazione Cartelle AI - Guida Completa
 - `docs/ai-ide-configurations.md`: AI/IDE Configuration Folders - Complete Guide
-- `docs/all-agents-mcp-configuration.md`: All AI Agents MCP Configuration - Quaeris Fila5 Mono
+- `docs/all-agents-mcp-configuration.md`: All AI Agents MCP Configuration - <nome progetto> fila5
 - `docs/architecture/dry-kiss-principles.md`: Principi DRY & KISS - Architettura Progetto
 - `docs/cache-path-fix-solution.md`: Cache Path Fix - Soluzione Definitiva
 - `docs/chart-widget-fix-summary.md`: 🎯 CHART WIDGET SYSTEMATIC FIX SUMMARY
@@ -423,9 +423,9 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/gemini-documentation-structure.md`: Gemini Project Context: Documentation Structure
 - `docs/gemini-getting-started.md`: Gemini Project Context: Building and Running
 - `docs/gemini-key-technologies.md`: Gemini Project Context: Key Technologies
-- `docs/gemini-mcp-overview.md`: MCP Configuration for Quaeris Fila5 Mono
-- `docs/gemini-project-overview.md`: Gemini Project Context: Quaeris Fila4 Mono - Laravel Survey Management System
-- `docs/gemini-mcp-overview.md`: MCP Configuration for App Fila5 Mono
+- `docs/gemini-mcp-overview.md`: MCP Configuration for <nome progetto> fila5
+- `docs/gemini-project-overview.md`: Gemini Project Context: <nome progetto> Fila4 Mono - Laravel Survey Management System
+- `docs/gemini-mcp-overview.md`: MCP Configuration for App fila5
 - `docs/gemini-project-overview.md`: Gemini Project Context: App Fila4 Mono - Laravel Survey Management System
 - `docs/git-forward-only-rule.md`: Git Forward-Only Rule
 - `docs/github-actions-modules.md`: GitHub Actions per moduli e temi
@@ -442,26 +442,26 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/jpgraph-performance-optimization.md`: JpGraph Performance Optimization Guide
 - `docs/jpgraph-service-examples.md`: JpGraph Service Implementation Examples
 - `docs/jpgraph-vs-chartjs-comparison.md`: JpGraph vs Chart.js - Comprehensive Comparison Guide
-- `docs/laravel-boost-and-mcp-best-practices.md`: Laravel Boost and MCP Best Practices for Quaeris Fila5 Mono
-- `docs/laravel-boost-implementation-guide.md`: Laravel Boost Implementation Guide for Quaeris Fila5 Mono
+- `docs/laravel-boost-and-mcp-best-practices.md`: Laravel Boost and MCP Best Practices for <nome progetto> fila5
+- `docs/laravel-boost-implementation-guide.md`: Laravel Boost Implementation Guide for <nome progetto> fila5
 - `docs/laravel-boost-mcp.md`: Laravel Boost MCP – Configurazione progetto
 - `docs/mcp-all-agents-complete.md`: ✅ MCP Implementation Complete - All AI Agents Configured
-- `docs/mcp-configuration-complete.md`: MCP Configuration Complete Guide for Quaeris Fila5 Mono
-- `docs/mcp-configuration-guide.md`: MCP Configuration Guide - Quaeris Fila5 Mono
-- `docs/mcp-implementation-summary.md`: MCP Implementation Summary - Quaeris Fila5 Mono
+- `docs/mcp-configuration-complete.md`: MCP Configuration Complete Guide for <nome progetto> fila5
+- `docs/mcp-configuration-guide.md`: MCP Configuration Guide - <nome progetto> fila5
+- `docs/mcp-implementation-summary.md`: MCP Implementation Summary - <nome progetto> fila5
 - `docs/mcp-sistema-italiano-completo.md`: 🚀 **Sistema MCP Italiano Completo - Documentazione Finale**
 - `docs/model-architecture.md`: Model Architecture in Laraxot
 - `docs/modern-chart-implementation-roadmap.md`: Modern Chart Implementation Roadmap
-- `docs/moduli-scopo.md`: Scopo dei moduli - Quaeris Fila5 Mono
+- `docs/moduli-scopo.md`: Scopo dei moduli - <nome progetto> fila5
 - `docs/laravel-boost-mcp.md`: Laravel Boost MCP – Configurazione progetto
 - `docs/mcp-all-agents-complete.md`: ✅ MCP Implementation Complete - All AI Agents Configured
-- `docs/mcp-configuration-complete.md`: MCP Configuration Complete Guide for Quaeris Fila5 Mono
-- `docs/mcp-configuration-guide.md`: MCP Configuration Guide - Quaeris Fila5 Mono
-- `docs/mcp-implementation-summary.md`: MCP Implementation Summary - Quaeris Fila5 Mono
+- `docs/mcp-configuration-complete.md`: MCP Configuration Complete Guide for <nome progetto> fila5
+- `docs/mcp-configuration-guide.md`: MCP Configuration Guide - <nome progetto> fila5
+- `docs/mcp-implementation-summary.md`: MCP Implementation Summary - <nome progetto> fila5
 - `docs/mcp-sistema-italiano-completo.md`: 🚀 **Sistema MCP Italiano Completo - Documentazione Finale**
 - `docs/model-architecture.md`: Model Architecture in Laraxot
 - `docs/modern-chart-implementation-roadmap.md`: Modern Chart Implementation Roadmap
-- `docs/moduli-scopo.md`: Scopo dei moduli - Quaeris Fila5 Mono
+- `docs/moduli-scopo.md`: Scopo dei moduli - <nome progetto> fila5
 - `docs/mysql-testing-configuration.md`: MySQL Testing Configuration - Laraxot Database Standard
 - `docs/operational-rules/README.md`: Operational Rules - Regole Operative Assolute
 - `docs/operational-rules/action-classes-purity-rule.md`: Action Classes Purity Rule - Regola Fondamentale
@@ -483,9 +483,9 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/phpstan-fix-summary.md`: PHPStan Fix for User Class Configuration Issue
 - `docs/phpstan-fixes-session-february-2026.md`: PHPStan Fixes Session - February 5, 2026
 - `docs/phpstan-fixes-session.md`: PHPStan Fixes - Sessione 5 Novembre 2025
-- `docs/phpstan-master-roadmap-fila5.md`: PHPStan Error Resolution Master Roadmap - Quaeris Fila5 Mono
-- `docs/phpstan-master-roadmap.md`: PHPStan Error Resolution Master Roadmap - Quaeris Fila4 Mono
-- `docs/phpstan-master-roadmap-fila5.md`: PHPStan Error Resolution Master Roadmap - App Fila5 Mono
+- `docs/phpstan-master-roadmap-fila5.md`: PHPStan Error Resolution Master Roadmap - <nome progetto> fila5
+- `docs/phpstan-master-roadmap.md`: PHPStan Error Resolution Master Roadmap - <nome progetto> Fila4 Mono
+- `docs/phpstan-master-roadmap-fila5.md`: PHPStan Error Resolution Master Roadmap - App fila5
 - `docs/phpstan-master-roadmap.md`: PHPStan Error Resolution Master Roadmap - App Fila4 Mono
 - `docs/phpstan-phpmd-phpinsights-improvements.md`: PHPStan, PHPMD, and PHPInsights Improvements Report
 - `docs/phpstan-progress-snapshot.md`: 🐄⚡ PHPStan Progress - Supermucca Session 2025-11-05
@@ -494,9 +494,9 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/phpstan_progress_summary.md`: PHPStan Level 10 Enforcement - Complete Session Summary
 - `docs/profile-duplicate-issue-resolution.md`: Profile Duplicate Issue - Risoluzione Completa
 - `docs/progress-report-2025-11-15.md`: Quality Improvement Progress - Session 2 (November 15, 2025)
-- `docs/project-overview.md`: 🎯 Quaeris Fila4 Mono - Panoramica Progetto
-- `docs/quaeris-widget-week-complete-summary.md`: Quaeris Widget Settimana - Implementazione Completa Finale
-- `docs/quaeris-widget-week-final-summary.md`: Quaeris - Widget Settimana e Ottimizzazione Query: Implementazione Completa
+- `docs/project-overview.md`: 🎯 <nome progetto> Fila4 Mono - Panoramica Progetto
+- `docs/<nome progetto>-widget-week-complete-summary.md`: <nome progetto> Widget Settimana - Implementazione Completa Finale
+- `docs/<nome progetto>-widget-week-final-summary.md`: <nome progetto> - Widget Settimana e Ottimizzazione Query: Implementazione Completa
 - `docs/project-overview.md`: 🎯 App Fila4 Mono - Panoramica Progetto
 - `docs/this-project-widget-week-complete-summary.md`: App Widget Settimana - Implementazione Completa Finale
 - `docs/this-project-widget-week-final-summary.md`: App - Widget Settimana e Ottimizzazione Query: Implementazione Completa
@@ -520,7 +520,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `docs/ultimate-chart-widget-template.md`: 🏆 ULTIMATE CHART WIDGET TEMPLATE - MASTER PATTERN
 - `docs/victory-report.md`: 🏆 victory report - sessione 5 novembre 2025
 - `docs/viral-skills-implementation-summary.md`: 📋 **Aggiornamento Documentazione Moduli e Temi**
-- `docs/widgets/quaeris-week-widget-complete-implementation.md`: Implementazione Completa Widget Settimana - Modulo Quaeris
+- `docs/widgets/<nome progetto>-week-widget-complete-implementation.md`: Implementazione Completa Widget Settimana - Modulo <nome progetto>
 - `docs/widgets/this-project-week-widget-complete-implementation.md`: Implementazione Completa Widget Settimana - Modulo App
 - `docs/widgets/week-aggregation-widget-summary.md`: Widget Aggregazione Settimanale - Riepilogo Implementazione
 - `docs/work-summary-jan.md`: Work Summary - 2025-01-22
@@ -1151,7 +1151,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Chart/docs/performance/general-bottlenecks.md`: Analisi dei Colli di Bottiglia e Soluzioni
 - `laravel/Modules/Chart/docs/performance/general-optimizations.md`: Ottimizzazioni Performance
 - `laravel/Modules/Chart/docs/performance/priority-bottlenecks.md`: Priorità Colli di Bottiglia
-- `laravel/Modules/Chart/docs/performance/quaeris-bottlenecks.md`: Colli di Bottiglia nel Modulo Quaeris
+- `laravel/Modules/Chart/docs/performance/<nome progetto>-bottlenecks.md`: Colli di Bottiglia nel Modulo <nome progetto>
 - `laravel/Modules/Chart/docs/performance/this-project-bottlenecks.md`: Colli di Bottiglia nel Modulo App
 - `laravel/Modules/Chart/docs/performance/verified-bottlenecks.md`: Colli di Bottiglia Verificati
 - `laravel/Modules/Chart/docs/philosophy.md`: Modulo Chart - Filosofia, Religione, Politica, Zen
@@ -2206,11 +2206,11 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/DbForge/docs/coverage.md`: Code Coverage: DbForge
 - `laravel/Modules/DbForge/docs/database-structure.md`: Struttura Database - Modulo DbForge
 - `laravel/Modules/DbForge/docs/filament-integration.md`: Integrazione Filament - Modulo DbForge
-- `laravel/Modules/DbForge/docs/filament-nesting-complete-guide.md`: Guida Completa al Nesting di Filament - healthcare_app Fila5 Mono
+- `laravel/Modules/DbForge/docs/filament-nesting-complete-guide.md`: Guida Completa al Nesting di Filament - healthcare_app fila5
 - `laravel/Modules/DbForge/docs/git-conflicts-resolution.md`: DbForge Module - Git Conflicts Resolution - Luglio 2025
 - `laravel/Modules/DbForge/docs/index.md`: 📚 **Indice Documentazione Modulo DbForge**
 - `laravel/Modules/DbForge/docs/merge-conflicts-resolution.md`: Risoluzione Conflitti di Merge - Modulo DbForge
-- `laravel/Modules/DbForge/docs/migliora-roadmap.md`: Migliora Roadmap - Guida Completa al Nesting di Filament in healthcare_app Fila5 Mono
+- `laravel/Modules/DbForge/docs/migliora-roadmap.md`: Migliora Roadmap - Guida Completa al Nesting di Filament in healthcare_app fila5
 - `laravel/Modules/DbForge/docs/module-analysis.md`: DbForge Module - Comprehensive Analysis
 - `laravel/Modules/DbForge/docs/module-nesting-implementations.md`: Guide Specifiche per Implementazione Nesting per Modulo
 - `laravel/Modules/DbForge/docs/philosophy.md`: DbForge Module - Filosofia Completa
@@ -2219,7 +2219,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/DbForge/docs/phpstan-level10-analysis.md`: PHPStan Level 10 Analysis - DbForge Module
 - `laravel/Modules/DbForge/docs/phpstan-roadmap.md`: PHPStan Roadmap - DbForge Module
 - `laravel/Modules/DbForge/docs/provider-test.md`: Test Provider Filament - Modulo DbForge
-- `laravel/Modules/DbForge/docs/real-project-nesting-analysis.md`: Analisi del Nesting Reale nel Progetto healthcare_app Fila5 Mono
+- `laravel/Modules/DbForge/docs/real-project-nesting-analysis.md`: Analisi del Nesting Reale nel Progetto healthcare_app fila5
 - `laravel/Modules/DbForge/docs/roadmap/README.md`: DbForge Module - Roadmap
 - `laravel/Modules/DbForge/docs/roadmap/tasks/visual-schema-designer.md`: Task: Visual Database Schema Designer
 - `laravel/Modules/DbForge/docs/roadmap.md`: Roadmap Modulo DbForge - Database Engineering
@@ -2370,7 +2370,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Gdpr/docs/register-action-refactoring.md`: Architectural Refactoring: Implementing Spatie Queueable Actions
 - `laravel/Modules/Gdpr/docs/register-page-animations.md`: Register Page Animations System
 - `laravel/Modules/Gdpr/docs/register-page-color-system.md`: Register Page Color System
-- `laravel/Modules/Gdpr/docs/register-page-design-research-.md`: Register Page Design Research 2026
+- `laravel/Modules/Gdpr/docs/register-page-design-research.md`: Register Page Design Research 2026
 - `laravel/Modules/Gdpr/docs/register-page-enhancements.md`: Register Page Enhancements: Super Clickbait Strategy
 - `laravel/Modules/Gdpr/docs/register-page-layout-system.md`: Register Page Layout System
 - `laravel/Modules/Gdpr/docs/register-page-seo.md`: Register Page SEO
@@ -3518,7 +3518,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Limesurvey/docs/filament-5-nested-resources-complete-guide.md`: 🎯 Filament 5.x Nested Resources - Guida Completa 2024
 - `laravel/Modules/Limesurvey/docs/filament-charts-optimization.md`: Optimized Filament Charts for LimeSurvey Data
 - `laravel/Modules/Limesurvey/docs/filament-nesting-opportunities.md`: Filament 5.x Nested Resources - Opportunità di Applicazione
-- `laravel/Modules/Limesurvey/docs/final-assessment.md`: Project Status Assessment - Quaeris Fila4 Mono
+- `laravel/Modules/Limesurvey/docs/final-assessment.md`: Project Status Assessment - <nome progetto> Fila4 Mono
 - `laravel/Modules/Limesurvey/docs/final-assessment.md`: Project Status Assessment - App Fila4 Mono
 - `laravel/Modules/Limesurvey/docs/gap-analysis-2026-01.md`: Gap Analysis: Modulo Limesurvey
 - `laravel/Modules/Limesurvey/docs/gap-analysis.md`: Gap Analysis: Modulo Limesurvey
@@ -3526,8 +3526,8 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Limesurvey/docs/has-trans.md`: has-trans
 - `laravel/Modules/Limesurvey/docs/index-consolidated.md`: LimeSurvey Module Documentation Index
 - `laravel/Modules/Limesurvey/docs/index.md`: LimeSurvey Module Documentation
-- `laravel/Modules/Limesurvey/docs/integration-issues-action-plan.md`: Limesurvey-Quaeris Integration Issues - Action Plan
-- `laravel/Modules/Limesurvey/docs/integration-summary.md`: Project Integration Summary: LimeSurvey + MCP in Quaeris Fila4 Mono
+- `laravel/Modules/Limesurvey/docs/integration-issues-action-plan.md`: Limesurvey-<nome progetto> Integration Issues - Action Plan
+- `laravel/Modules/Limesurvey/docs/integration-summary.md`: Project Integration Summary: LimeSurvey + MCP in <nome progetto> Fila4 Mono
 - `laravel/Modules/Limesurvey/docs/integration-issues-action-plan.md`: Limesurvey-App Integration Issues - Action Plan
 - `laravel/Modules/Limesurvey/docs/integration-summary.md`: Project Integration Summary: LimeSurvey + MCP in App Fila4 Mono
 - `laravel/Modules/Limesurvey/docs/italian-chart-system-ultimate-template.md`: 🎯 Italian Chart System - Ultimate Template & Guide
@@ -7501,8 +7501,8 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Xot/docs/ai-init-script-fix.md`: Aggiornamento Importante: ai_init.sh Script
 - `laravel/Modules/Xot/docs/ai-init-script.md`: Aggiornamento Importante: ai_init.sh Script
 - `laravel/Modules/Xot/docs/ai-init.md`: Aggiornamento Documentazione - Problema con ai_init.sh
-- `laravel/Modules/Xot/docs/ai-prompt-fundamental-rules.md`: Regole Fondamentali per Prompt AI - healthcare_app Fila5 Mono
-- `laravel/Modules/Xot/docs/ai-prompt-fundamental.md`: Regole Fondamentali per Prompt AI - healthcare_app Fila5 Mono
+- `laravel/Modules/Xot/docs/ai-prompt-fundamental-rules.md`: Regole Fondamentali per Prompt AI - healthcare_app fila5
+- `laravel/Modules/Xot/docs/ai-prompt-fundamental.md`: Regole Fondamentali per Prompt AI - healthcare_app fila5
 - `laravel/Modules/Xot/docs/ai-skills.md`: Agent skills nei moduli
 - `laravel/Modules/Xot/docs/algolia-docsearch.md`: Algolia DocSearch {#algolia-docsearch}
 - `laravel/Modules/Xot/docs/algoliaocsearch.md`: Algolia DocSearch {#algolia-docsearch}
@@ -9808,8 +9808,8 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Modules/Xot/docs/zsh.md`: zsh
 - `laravel/Modules/Xot/packages/coolsam/panel-modules/README.md`: For each of these commands, the package will ask for the Model and Panel.
 - `laravel/Modules/docs/anti-pattern-question-chart-answers-triple-widget.md`: Anti-Pattern: QuestionChartAnswersTripleChartWidget
-- `laravel/Modules/docs/online-skills-research.md`: Ricerca Online su Skills Utili per Quaeris
-- `laravel/Modules/docs/skills-implementation-guide.md`: Guida all'Implementazione delle Skills per Quaeris
+- `laravel/Modules/docs/online-skills-research.md`: Ricerca Online su Skills Utili per <nome progetto>
+- `laravel/Modules/docs/skills-implementation-guide.md`: Guida all'Implementazione delle Skills per <nome progetto>
 - `laravel/Modules/docs/online-skills-research.md`: Ricerca Online su Skills Utili per App
 - `laravel/Modules/docs/skills-implementation-guide.md`: Guida all'Implementazione delle Skills per App
 - `laravel/Modules/docs/skills-overview.md`: Skills e Agent Capabilities - Panoramica
@@ -9882,27 +9882,27 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/Themes/Zero/docs/theme-documentation.md`: Zero Theme Documentation
 - `laravel/Themes/Zero/docs/themes-system-complete-guide.md`: 🎨 THEMES SYSTEM - IL VESTITO DI LARAXOT
 - `laravel/Themes/Zero/docs/troubleshooting.md`: Zero Theme Troubleshooting Guide
-- `laravel/docs/00-index.md`: 🏛️ **Quaeris Fila5 Master Documentation Index**
+- `laravel/docs/00-index.md`: 🏛️ **<nome progetto> Fila5 Master Documentation Index**
 - `laravel/docs/JPGRAPH_IMPLEMENTATION.md`: 📚 GUIDA JpGraph PDF Generation - COMPLETO IMPLEMENTAZIONE
 - `laravel/docs/README.md`: Testing Documentation Index
 - `laravel/docs/architecture/filament-extension-rules.md`: Filament Class Extension Rules (Laraxot Canonical Guide)
-- `laravel/docs/architecture.md`: Architettura del Progetto Quaeris
+- `laravel/docs/architecture.md`: Architettura del Progetto <nome progetto>
 - `laravel/docs/chartjs-datalabels-complete-integration-guide.md`: Chart.js Datalabels Plugin Integration - Complete Guide
 - `laravel/docs/charts-technology-overview.md`: JpGraph e Librerie di Grafici - Documentazione Principale
 - `laravel/docs/code-quality-improvements-report.md`: Code Quality Improvements Report
-- `laravel/docs/complete-project-philosophy.md`: Quaeris - Filosofia Completa del Progetto: Logica, Religione, Politica, Zen
+- `laravel/docs/complete-project-philosophy.md`: <nome progetto> - Filosofia Completa del Progetto: Logica, Religione, Politica, Zen
 - `laravel/docs/composer-merge-plugin.md`: Composer Merge Plugin Configuration
-- `laravel/docs/comprehensive-module-analysis-2026.md`: Quaeris Fila5 Mono - Complete Module Analysis & Documentation
+- `laravel/docs/comprehensive-module-analysis-2026.md`: <nome progetto> fila5 - Complete Module Analysis & Documentation
 - `laravel/docs/JPGRAPH_IMPLEMENTATION.md`: 📚 GUIDA JpGraph PDF Generation - COMPLETO IMPLEMENTAZIONE
 - `laravel/docs/README.md`: Testing Documentation Index
 - `laravel/docs/architecture/filament-extension-rules.md`: Filament Class Extension Rules (Laraxot Canonical Guide)
-- `laravel/docs/architecture.md`: Architettura del Progetto Quaeris
+- `laravel/docs/architecture.md`: Architettura del Progetto <nome progetto>
 - `laravel/docs/chartjs-datalabels-complete-integration-guide.md`: Chart.js Datalabels Plugin Integration - Complete Guide
 - `laravel/docs/charts-technology-overview.md`: JpGraph e Librerie di Grafici - Documentazione Principale
 - `laravel/docs/code-quality-improvements-report.md`: Code Quality Improvements Report
-- `laravel/docs/complete-project-philosophy.md`: Quaeris - Filosofia Completa del Progetto: Logica, Religione, Politica, Zen
+- `laravel/docs/complete-project-philosophy.md`: <nome progetto> - Filosofia Completa del Progetto: Logica, Religione, Politica, Zen
 - `laravel/docs/composer-merge-plugin.md`: Composer Merge Plugin Configuration
-- `laravel/docs/comprehensive-module-analysis-2026.md`: Quaeris Fila5 Mono - Complete Module Analysis & Documentation
+- `laravel/docs/comprehensive-module-analysis-2026.md`: <nome progetto> fila5 - Complete Module Analysis & Documentation
 - `laravel/docs/config/database-standard-laravel-12.md`: Config Database Standard Laravel 12.x - 2026-01-21
 - `laravel/docs/config/database-standard-summary-2026-01-21.md`: Riepilogo: Database Config Standard Laravel 12.x - 2026-01-21
 - `laravel/docs/config/database-standard-verification-2026-01-21.md`: Verifica: Database Config Standard Laravel 12.x - 2026-01-21
@@ -9918,7 +9918,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/database-laravel12-compatibility.md`: Configurazione Database Laravel 12.x - Compatibilità e Regole
 - `laravel/docs/database-testing.md`: Database Testing Rule - MySQL Only with Test Suffix
 - `laravel/docs/database-zen-complete-solution.md`: Database Environment Management - Laraxot Zen Complete Solution
-- `laravel/docs/deployment/deployment-guide.md`: Deployment del Progetto Quaeris
+- `laravel/docs/deployment/deployment-guide.md`: Deployment del Progetto <nome progetto>
 - `laravel/docs/deployment/deployment-guide.md`: Deployment del Progetto App
 - `laravel/docs/development/workflow.md`: Workflow di Sviluppo
 - `laravel/docs/docs-enhancement-strategy-complete.md`: 📚 Docs Enhancement Strategy - Complete Documentation System
@@ -9933,7 +9933,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/final-coverage-validation.md`: Final Coverage Validation Report
 - `laravel/docs/gemini-mcp-recommendations.md`: Recommended MCP Configuration
 - `laravel/docs/git-forward-only-rule.md`: 🔥 REGOLA GIT ASSOLUTA - FORWARD ONLY
-- `laravel/docs/index.md`: Documentazione del Progetto Quaeris
+- `laravel/docs/index.md`: Documentazione del Progetto <nome progetto>
 - `laravel/docs/index.md`: Documentazione del Progetto App
 - `laravel/docs/laraxot-boost-mcp-guide.md`: 🚀 **Laraxot Boost & MCP Integration Guide**
 - `laravel/docs/laraxot-complete-doctrine.md`: 🏛️ LARAXOT - LA DOTTRINA COMPLETA DEL PROGETTO
@@ -9941,7 +9941,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/limesurvey-charts-master-index.md`: LimeSurvey charts master index
 - `laravel/docs/limesurvey-integration-gap-analysis.md`: Analisi Gap Integrazione LimeSurvey - Panoramica Generale
 - `laravel/docs/limesurvey-integration-summary.md`: LimeSurvey GitHub Integration Analysis
-- `laravel/docs/master-documentation-index.md`: App Fila5 Mono - Master Documentation Index
+- `laravel/docs/master-documentation-index.md`: App fila5 - Master Documentation Index
 - `laravel/docs/mcp-chart-integration.md`: MCP Integration Guide for App Chart Development
 - `laravel/docs/mcp-installation-complete.md`: 🎉 MCP Installation Complete for App Chart Development
 - `laravel/docs/missing-parts-analysis.md`: Analisi Parti Mancanti - App Project
@@ -9954,39 +9954,39 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/nested-resources-implementation-summary.md`: Filament Nested Resources Implementation in Laraxot System
 - `laravel/docs/php-syntax-error-fixing-rules.md`: Regole per la correzione di errori di sintassi in PHP
 - `laravel/docs/phpdoc-annotation-corrections.md`: PHPDoc Annotation Corrections
-- `laravel/docs/phpstan-analysis-complete-2026-01-30.md`: PHPStan Level 10 Analysis Complete - Quaeris Fila5 Mono
-- `laravel/docs/phpstan-analysis-complete-2026-01-30.md`: PHPStan Level 10 Analysis Complete - App Fila5 Mono
+- `laravel/docs/phpstan-analysis-complete-2026-01-30.md`: PHPStan Level 10 Analysis Complete - <nome progetto> fila5
+- `laravel/docs/phpstan-analysis-complete-2026-01-30.md`: PHPStan Level 10 Analysis Complete - App fila5
 - `laravel/docs/phpstan-errors-resolution-roadmap.md`: PHPStan Level 10 Errors Resolution Roadmap - All Modules
 - `laravel/docs/phpstan-level-10-cross-module-fixes.md`: PHPStan Level 10 Improvements - Cross-Module Fixes
 - `laravel/docs/phpstan-level-10-improvements.md`: PHPStan Level 10 Improvements - November 2025
 - `laravel/docs/phpstan-minor-modules-roadmap.md`: PHPStan Level 10 Errors Resolution Roadmap - Minor Modules
-- `laravel/docs/phpstan-project-status.md`: PHPStan Project Status - Base Quaeris Fila5 Mono
+- `laravel/docs/phpstan-project-status.md`: PHPStan Project Status - Base <nome progetto> fila5
 - `laravel/docs/phpstan-roadmap-overview.md`: PHPStan Level 10 Compliance Roadmap
-- `laravel/docs/project-master-analysis.md`: Quaeris Fila5 Mono - Analisi Master Completa del Progetto
+- `laravel/docs/project-master-analysis.md`: <nome progetto> fila5 - Analisi Master Completa del Progetto
 - `laravel/docs/readme-pattern-template.md`: 📋 README Pattern Template - MODULO CONVINCENTE E STUPEFACENTE
 - `laravel/docs/roadmap-global-summary.md`: Roadmap Globale - Riepilogo Completo Moduli e Temi
 - `laravel/docs/roadmap-index.md`: Laraxot Framework - Roadmaps Index
-- `laravel/docs/security.md`: Sicurezza nel Progetto Quaeris
+- `laravel/docs/security.md`: Sicurezza nel Progetto <nome progetto>
 - `laravel/docs/simple-chartwidget-dual-labels-fix-completion-summary.md`: SimpleChartWidget Dual Labels Fix - Completion Summary
 - `laravel/docs/simple-chartwidget-dual-labels-pattern.md`: SimpleChartWidget Dual Labels Pattern - Implementation Guide
 - `laravel/docs/skills.md`: Skills e Agent Capabilities - Documentazione Principale
-- `laravel/docs/standards/coding-standards.md`: Standard di Codice per il Progetto Quaeris
+- `laravel/docs/standards/coding-standards.md`: Standard di Codice per il Progetto <nome progetto>
 - `laravel/docs/standards/large-data-processing.md`: Large Data Processing Standards
-- `laravel/docs/standards/security-standards.md`: Standard di Sicurezza per il Progetto Quaeris
-- `laravel/docs/standards/testing-standards.md`: Standard di Testing per il Progetto Quaeris
+- `laravel/docs/standards/security-standards.md`: Standard di Sicurezza per il Progetto <nome progetto>
+- `laravel/docs/standards/testing-standards.md`: Standard di Testing per il Progetto <nome progetto>
 - `laravel/docs/phpstan-roadmap-overview.md`: PHPStan Level 10 Compliance Roadmap
-- `laravel/docs/project-master-analysis.md`: Quaeris Fila5 Mono - Analisi Master Completa del Progetto
+- `laravel/docs/project-master-analysis.md`: <nome progetto> fila5 - Analisi Master Completa del Progetto
 - `laravel/docs/readme-pattern-template.md`: 📋 README Pattern Template - MODULO CONVINCENTE E STUPEFACENTE
 - `laravel/docs/roadmap-global-summary.md`: Roadmap Globale - Riepilogo Completo Moduli e Temi
 - `laravel/docs/roadmap-index.md`: Laraxot Framework - Roadmaps Index
-- `laravel/docs/security.md`: Sicurezza nel Progetto Quaeris
+- `laravel/docs/security.md`: Sicurezza nel Progetto <nome progetto>
 - `laravel/docs/simple-chartwidget-dual-labels-fix-completion-summary.md`: SimpleChartWidget Dual Labels Fix - Completion Summary
 - `laravel/docs/simple-chartwidget-dual-labels-pattern.md`: SimpleChartWidget Dual Labels Pattern - Implementation Guide
 - `laravel/docs/skills.md`: Skills e Agent Capabilities - Documentazione Principale
-- `laravel/docs/standards/coding-standards.md`: Standard di Codice per il Progetto Quaeris
+- `laravel/docs/standards/coding-standards.md`: Standard di Codice per il Progetto <nome progetto>
 - `laravel/docs/standards/large-data-processing.md`: Large Data Processing Standards
-- `laravel/docs/standards/security-standards.md`: Standard di Sicurezza per il Progetto Quaeris
-- `laravel/docs/standards/testing-standards.md`: Standard di Testing per il Progetto Quaeris
+- `laravel/docs/standards/security-standards.md`: Standard di Sicurezza per il Progetto <nome progetto>
+- `laravel/docs/standards/testing-standards.md`: Standard di Testing per il Progetto <nome progetto>
 - `laravel/docs/test-configuration-analysis-2026-01-30.md`: Test Configuration Analysis Report
 - `laravel/docs/testing/autoload-configuration.md`: Autoloading Configuration for Testing
 - `laravel/docs/testing/composer-merge-plugin.md`: Wikimedia Composer Merge Plugin
@@ -10005,7 +10005,7 @@ Indice generato automaticamente da file markdown in cartelle docs (esclusi vendo
 - `laravel/docs/testing-setup.md`: PestPHP Testing Setup
 - `laravel/docs/testing-with-pest.md`: Testing with Pest in Laraxot
 - `laravel/docs/testing-workflow.md`: Testing Implementation Summary
-- `laravel/docs/testing.md`: Testing nel Progetto Quaeris
+- `laravel/docs/testing.md`: Testing nel Progetto <nome progetto>
 - `laravel/docs/testing.md`: Testing nel Progetto App
 - `laravel/docs/troubleshooting.md`: Troubleshooting Guide
 - `laravel/docs/type-contravariance-fixes.md`: Type Contravariance Fixes

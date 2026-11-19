@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "AGENTS"
 issues: []
 discussions: []
-status: draft
 ---
 
 # LLM Wiki Agent Instructions

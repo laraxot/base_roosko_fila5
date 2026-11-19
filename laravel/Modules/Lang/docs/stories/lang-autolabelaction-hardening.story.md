@@ -27,7 +27,7 @@ owned_scope:
   - laravel/Modules/Lang/tests/Unit/Actions/Filament/AutoLabelActionTest.php
 ---
 
-# Lang: AutoLabelAction hardening and type safety
+# Lang — AutoLabelAction hardening and type safety
 
 ## Story
 

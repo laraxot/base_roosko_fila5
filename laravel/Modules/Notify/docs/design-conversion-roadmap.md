@@ -1,22 +1,36 @@
 ---
-title: "design conversion roadmap"
+title: "DESIGN CONVERSION ROADMAP"
 type: note
 tags: [documentation]
 created: 2026-09-26
 updated: 2026-09-26
-qmd: "design conversion roadmap"
+qmd: "DESIGN CONVERSION ROADMAP"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Design Comuni Conversion Roadmap
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 **Status**: 🟢 Phase 1 Complete - Visual Parity Assessment Done
 **Last Updated**: 2026-04-03
 **Target**: Make all 54 test pages visually identical to Design Comuni reference using Tailwind CSS + Alpine.js
 
 ---
+
+title: "DESIGN CONVERSION ROADMAP"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "DESIGN CONVERSION ROADMAP"
+issues: []
+discussions: []
 ## 📊 Executive Summary
 
 ### Current State
@@ -87,7 +101,7 @@ status: draft
 - [ ] CSS difference analysis
 - [ ] Identify container/section spacing issues
 - [ ] Apply targeted fixes
-- [ ] Build and verify (npm run build && npm run copy)
+- [ ] Build and verify (npm run build)
 - [ ] Cross-browser testing
 
 **Expected Outcome**: 15 total pages at 95%+ visual parity (28% conversion complete)
@@ -122,8 +136,8 @@ status: draft
 ### For Every Page (Automated)
 ```
 laravel/Themes/Sixteen/docs/pages/<page-name>/
-├── detailed-analysis.md           # Metrics and recommendations
-├── html-structure-diff.md         # Element comparison
+├── DETAILED-ANALYSIS.md           # Metrics and recommendations
+├── HTML-STRUCTURE-DIFF.md         # Element comparison
 ├── VISUAL-COMPARISON.md           # Screenshots
 ├── local-full.png                 # Full page local
 ├── reference-full.png             # Full page reference
@@ -137,11 +151,11 @@ laravel/Themes/Sixteen/docs/pages/<page-name>/
 ```
 laravel/Themes/Sixteen/docs/
 ├── INDEX.md                                    # Main index
-├── complete-visual-parity-report.md          # All 54 pages
+├── COMPLETE-VISUAL-PARITY-REPORT.md          # All 54 pages
 ├── PRIORITY-MATRIX.json                       # Workload planning
 ├── visual-parity-data.json                    # Machine-readable data
-├── container-width-resolution.md              # Technical docs
-├── section-structure-diff.md                  # Historical
+├── CONTAINER-WIDTH-RESOLUTION.md              # Technical docs
+├── SECTION-STRUCTURE-DIFF.md                  # Historical
 └── GITHUB-ISSUES-MAPPING.json                 # Issue tracking
 ```
 
@@ -178,10 +192,10 @@ cd laravel/Themes/Sixteen
 npm run build
 
 # Copy to public
-npm run copy
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 
 # View reports
-cat laravel/Themes/Sixteen/docs/complete-visual-parity-report.md
+cat laravel/Themes/Sixteen/docs/COMPLETE-VISUAL-PARITY-REPORT.md
 cat laravel/Themes/Sixteen/docs/visual-parity-data.json
 ```
 
@@ -206,7 +220,7 @@ gh issue list --repo laraxot/base_fixcity_fila5 --label "priority:critical"
 2. **Screenshot** → Compare local vs reference side-by-side
 3. **Identify** → Document CSS changes needed (spacing, colors, layout)
 4. **Modify** → Edit `laravel/Themes/Sixteen/resources/css/app.css`
-5. **Build** → Run `npm run build && npm run copy`
+5. **Build** → Run `npm run build`
 6. **Test** → View page at http://127.0.0.1:8000/it/tests/<page>
 7. **Verify** → Take screenshot, compare with reference
 8. **Iterate** → Repeat steps 3-7 until visual parity achieved
@@ -221,7 +235,7 @@ gh issue list --repo laraxot/base_fixcity_fila5 --label "priority:critical"
 ```bash
 cd laravel/Themes/Sixteen
 npm run build    # ~2 seconds
-npm run copy     # ~1 second
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 # New CSS hash appears in output (e.g., app-DCbieyUp.css)
 ```
 
@@ -256,7 +270,7 @@ npm run copy     # ~1 second
 ```bash
 # 1. Review the analysis
 cd /var/www/_bases/base_fixcity_fila5
-cat laravel/Themes/Sixteen/docs/complete-visual-parity-report.md
+cat laravel/Themes/Sixteen/docs/COMPLETE-VISUAL-PARITY-REPORT.md
 
 # 2. Create GitHub issues
 node bashscripts/github/create-design-issues.mjs
@@ -307,7 +321,7 @@ open laravel/Themes/Sixteen/docs/pages/persona/DETAILED-ANALYSIS.md
 
 1. **No Bootstrap Italia** - Use only Tailwind CSS + Alpine.js
 2. **CSS-Only Fixes** - Modify only CSS/JS, not HTML templates (unless absolutely needed)
-3. **Build & Copy** - Always run `npm run build && npm run copy` to test changes
+3. **Build & Copy** - Always run `npm run build` to test changes
 4. **Screenshots** - Compare local vs reference using same viewport (1920px default)
 5. **Git Commits** - Include screenshot comparisons in commit descriptions
 6. **Parallel Work** - Pages are independent, can be worked on simultaneously
@@ -319,7 +333,7 @@ open laravel/Themes/Sixteen/docs/pages/persona/DETAILED-ANALYSIS.md
 ### Real-Time Metrics
 ```bash
 # Current status
-cat laravel/Themes/Sixteen/docs/complete-visual-parity-report.md | grep "Parity"
+cat laravel/Themes/Sixteen/docs/COMPLETE-VISUAL-PARITY-REPORT.md | grep "Parity"
 
 # JSON for dashboards
 cat laravel/Themes/Sixteen/docs/visual-parity-data.json

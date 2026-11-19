@@ -202,7 +202,7 @@ curl -I http://laraxot.local
 | **Project Docs** | `docs/project/vhost-configuration.md` | ✅ | [Link](docs/project/vhost-configuration.md) |
 | **Modules Docs** | `laravel/Modules/docs/vhost-configuration.md` | ✅ | [Link](laravel/Modules/docs/vhost-configuration.md) |
 | **Themes Docs** | `laravel/Themes/docs/vhost-configuration.md` | ✅ | [Link](laravel/Themes/docs/vhost-configuration.md) |
-| **Governance** | `docs/rules/vhost-governance.md` | ✅ | [Link](docs/rules/vhost-governance.md) |
+| **Governance** | `docs/rules/vhost-governance.md` | ✅ | [Link](../rules/vhost-governance.md) |
 | **Project Index** | `docs/project/README.md` | ✅ | [Link](docs/project/README.md) |
 | **Rules Index** | `docs/rules/README.md` | ✅ | [Link](docs/rules/README.md) |
 | **Main Index** | `docs/index.md` | ✅ Updated | [Link](docs/index.md) |
@@ -293,7 +293,7 @@ curl -I http://laraxot.local
 
 ### For DevOps
 
-- [Governance Rules](docs/rules/vhost-governance.md)
+- [Governance Rules](../rules/vhost-governance.md)
 - [Governance Rules](../rules/vhost-governance.md)
 - [Management Skill](.github/skills/vhost-management/SKILL.md)
 - [Configuration File](laravel/config/vhost/laraxot.local.conf)

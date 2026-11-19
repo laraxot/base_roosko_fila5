@@ -1,11 +1,10 @@
 ---
 title: "Activity Module - Third-Party Model Patterns"
+qmd: "activity third party model patterns md"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, activity]
-qmd: "activity module - third-party model patterns activity"
+tags: [documentation]
 ---
+
 # Activity Module - Third-Party Model Patterns
 
 ## Spatie Package Integration

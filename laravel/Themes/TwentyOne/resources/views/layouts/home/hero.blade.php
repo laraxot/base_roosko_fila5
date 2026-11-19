@@ -60,7 +60,7 @@
                 <!-- AI Personalization Badge -->
                 <div class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
                     <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span class="text-sm font-medium text-white">Contenuto Personalizzato</span>
+                    <span class="text-sm font-medium text-white">{{ __('pub_theme::home_sections.hero.personalized.label') }}</span>
                 </div>
 
                 <!-- Main Title with Liquid Glass Effect -->
@@ -87,7 +87,7 @@
                     
                     <!-- Secondary Action -->
                     <button class="px-6 py-3 text-slate-300 hover:text-white transition-colors duration-300 font-medium">
-                        Scopri di Più
+                        {{ __('pub_theme::home_sections.hero.learn_more.label') }}
                     </button>
                 </div>
             </div>
@@ -128,7 +128,7 @@
     <div class="absolute bottom-6 left-6 right-6 lg:left-auto lg:right-6 lg:bottom-8">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 backdrop-blur-md rounded-full border border-green-400/20">
             <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-green-400">Sostenibile & Responsabile</span>
+            <span class="text-sm font-medium text-green-400">{{ __('pub_theme::home_sections.hero.sustainable.label') }}</span>
         </div>
     </div>
 
@@ -136,7 +136,7 @@
     <div class="absolute top-6 right-6 lg:top-8 lg:right-8">
         <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 backdrop-blur-md rounded-full border border-blue-400/20 animate-float">
             <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-            <span class="text-sm font-medium text-blue-400">AI Personalizzato</span>
+            <span class="text-sm font-medium text-blue-400">{{ __('pub_theme::home_sections.hero.ai_personalized.label') }}</span>
         </div>
     </div>
 </section>

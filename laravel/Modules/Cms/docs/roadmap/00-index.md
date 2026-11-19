@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "00 index"
 issues: []
 discussions: []
-status: superseded
-superseded_by: 00-INDEX.md
 ---
 
 # Cms Module - Roadmap

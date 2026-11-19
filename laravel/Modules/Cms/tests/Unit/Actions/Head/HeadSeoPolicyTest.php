@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Tests\Unit\Actions\Head;
 
+use Laravel\Head\Schema\SchemaObject;
+use Modules\Cms\Actions\BuildPageSchemaAction;
 use Modules\Cms\Actions\Head\BuildHeadSchemaAction;
 use Modules\Cms\Actions\Head\ResolveHreflangAlternatesAction;
 use Modules\Cms\Actions\Head\ResolveRobotsPolicyAction;
-use Modules\Cms\Actions\BuildPageSchemaAction;
+use Modules\Cms\Tests\TestCase;
 use Modules\Xot\Datas\MetatagData;
-use Laravel\Head\Schema\SchemaObject;
 use PHPUnit\Framework\Assert;
 
+// TestCase legato per file (laravel/tests/Pest.php): MetatagData::make() legge la config.
+uses(TestCase::class);
+
 /**
- * @param SchemaObject|array<string, mixed> $schema
+ * @param  SchemaObject|array<string, mixed>  $schema
  */
 function schemaType(SchemaObject|array $schema): ?string
 {
@@ -24,7 +28,7 @@ function schemaType(SchemaObject|array $schema): ?string
 }
 
 test('robots policy hides private and untranslated pages', function (): void {
-    $policy = new ResolveRobotsPolicyAction();
+    $policy = new ResolveRobotsPolicyAction;
     $locales = ['it', 'en'];
 
     Assert::assertSame('noindex, follow', $policy->execute('it/auth/login', $locales));
@@ -33,7 +37,7 @@ test('robots policy hides private and untranslated pages', function (): void {
 });
 
 test('hreflang policy removes query fragments and adds the default locale', function (): void {
-    $policy = new ResolveHreflangAlternatesAction();
+    $policy = new ResolveHreflangAlternatesAction;
 
     Assert::assertSame(
         [
@@ -51,7 +55,7 @@ test('hreflang policy removes query fragments and adds the default locale', func
 });
 
 test('head schema separates homepage identity from page breadcrumbs', function (): void {
-    $builder = new BuildHeadSchemaAction();
+    $builder = new BuildHeadSchemaAction;
 
     $home = $builder->execute(
         isHome: true,
@@ -84,7 +88,7 @@ test('head schema separates homepage identity from page breadcrumbs', function (
 });
 
 test('page schema accepts the canonical URL rendered by the head component', function (): void {
-    $schema = (new BuildPageSchemaAction())->execute(
+    $schema = (new BuildPageSchemaAction)->execute(
         meta: MetatagData::make(),
         routeName: 'home',
         path: '/',

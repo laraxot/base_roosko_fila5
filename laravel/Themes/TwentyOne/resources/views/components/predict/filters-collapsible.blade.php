@@ -52,7 +52,7 @@
                        transition-all duration-200
                        focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 :aria-expanded="filtersOpen"
-                aria-label="Toggle filters"
+                aria-label="{{ __('pub_theme::market_filters.fields.toggle.label') }}"
             >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -78,14 +78,14 @@
                        focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
                        transition-all duration-200
                        cursor-pointer"
-                aria-label="Sort markets"
+                aria-label="{{ __('pub_theme::market_filters.fields.sort.label') }}"
             >
-                <option value="hot">Hot</option>
-                <option value="new">Nuovi</option>
-                <option value="volume">Volume</option>
-                <option value="participants">Partecipanti</option>
-                <option value="ending">Scadenza</option>
-                <option value="probability">Probabilità</option>
+                <option value="hot">{{ __('pub_theme::market_filters.sort.hot.label') }}</option>
+                <option value="new">{{ __('pub_theme::market_filters.sort.new.label') }}</option>
+                <option value="volume">{{ __('pub_theme::market_filters.sort.volume.label') }}</option>
+                <option value="participants">{{ __('pub_theme::market_filters.sort.participants.label') }}</option>
+                <option value="ending">{{ __('pub_theme::market_filters.sort.ending.label') }}</option>
+                <option value="probability">{{ __('pub_theme::market_filters.sort.probability.label') }}</option>
             </select>
         </div>
     </div>
@@ -114,7 +114,7 @@
             {{-- Category Filter --}}
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    Categoria
+                    {{ __('pub_theme::market_filters.sections.category.title') }}
                 </label>
                 <select
                     @change="$dispatch('filter-category', { category: $event.target.value })"
@@ -126,7 +126,7 @@
                            focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
                            transition-all duration-200"
                 >
-                    <option value="">Tutte le Categorie</option>
+                    <option value="">{{ __('pub_theme::market_filters.category.all.label') }}</option>
                     @foreach($filters['categories'] ?? [] as $id => $title)
                         <option value="{{ $id }}">{{ $title }}</option>
                     @endforeach
@@ -136,7 +136,7 @@
             {{-- Status Filter --}}
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    Status
+                    {{ __('pub_theme::market_filters.sections.status.title') }}
                 </label>
                 <select
                     @change="$dispatch('filter-status', { status: $event.target.value })"
@@ -148,19 +148,19 @@
                            focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
                            transition-all duration-200"
                 >
-                    <option value="">Tutti gli Status</option>
-                    <option value="active">Aperti</option>
-                    <option value="open">In Corso</option>
-                    <option value="published">Pubblicati</option>
-                    <option value="closed">Chiusi</option>
-                    <option value="resolved">Risolti</option>
+                    <option value="">{{ __('pub_theme::market_filters.status.all.label') }}</option>
+                    <option value="active">{{ __('pub_theme::market_filters.status.active.label') }}</option>
+                    <option value="open">{{ __('pub_theme::market_filters.status.open.label') }}</option>
+                    <option value="published">{{ __('pub_theme::market_filters.status.published.label') }}</option>
+                    <option value="closed">{{ __('pub_theme::market_filters.status.closed.label') }}</option>
+                    <option value="resolved">{{ __('pub_theme::market_filters.status.resolved.label') }}</option>
                 </select>
             </div>
 
             {{-- Outcome Type Filter --}}
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    Tipo di Mercato
+                    {{ __('pub_theme::market_filters.sections.type.title') }}
                 </label>
                 <select
                     @change="$dispatch('filter-outcome-type', { type: $event.target.value })"
@@ -172,16 +172,16 @@
                            focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
                            transition-all duration-200"
                 >
-                    <option value="">Tutti i Tipi</option>
-                    <option value="binary">Binario (2 opzioni)</option>
-                    <option value="multi">Multiplo (3+ opzioni)</option>
+                    <option value="">{{ __('pub_theme::market_filters.type.all.label') }}</option>
+                    <option value="binary">{{ __('pub_theme::market_filters.type.binary.label') }}</option>
+                    <option value="multi">{{ __('pub_theme::market_filters.type.multi.label') }}</option>
                 </select>
             </div>
 
             {{-- Expiration Filter --}}
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">
-                    Scadenza
+                    {{ __('pub_theme::market_filters.sections.expiry.title') }}
                 </label>
                 <select
                     @change="$dispatch('filter-expiration', { expiration: $event.target.value })"
@@ -193,11 +193,11 @@
                            focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 
                            transition-all duration-200"
                 >
-                    <option value="">Tutte le Scadenze</option>
-                    <option value="24h">Prossime 24 ore</option>
-                    <option value="7d">Prossimi 7 giorni</option>
-                    <option value="30d">Prossimi 30 giorni</option>
-                    <option value="90d">Prossimi 90 giorni</option>
+                    <option value="">{{ __('pub_theme::market_filters.expiry.all.label') }}</option>
+                    <option value="24h">{{ __('pub_theme::market_filters.expiry.next_24h.label') }}</option>
+                    <option value="7d">{{ __('pub_theme::market_filters.expiry.next_7d.label') }}</option>
+                    <option value="30d">{{ __('pub_theme::market_filters.expiry.next_30d.label') }}</option>
+                    <option value="90d">{{ __('pub_theme::market_filters.expiry.next_90d.label') }}</option>
                 </select>
             </div>
         </div>
@@ -220,7 +220,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M5 13l4 4L19 7"/>
                 </svg>
-                Applica Filtri
+                {{ __('pub_theme::market_filters.actions.apply.label') }}
             </button>
             <button
                 @click="
@@ -241,7 +241,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                           d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
                 </svg>
-                Reset
+                {{ __('pub_theme::market_filters.actions.reset.label') }}
             </button>
         </div>
     </div>

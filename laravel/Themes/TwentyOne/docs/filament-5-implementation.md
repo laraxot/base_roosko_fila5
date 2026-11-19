@@ -1,15 +1,3 @@
----
-title: "filament 5 implementation"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "filament 5 implementation"
-issues: []
-discussions: []
-status: draft
----
-
 # Filament 5.x Implementation Guide
 
 **Last Updated**: 2026-03-22  
@@ -19,6 +7,7 @@ status: draft
 **PHP**: 8.3.30
 
 ---
+
 ## 📋 Overview
 
 Questo documento descrive l'implementazione di Filament 5.x nel tema TwentyOne, basata sulla documentazione ufficiale:
@@ -299,7 +288,7 @@ app.js:  308.56 kB (gzip: 82.48 kB)
 
 ### Local Documentation
 - `laravel/Modules/Predict/docs/FILAMENT_WIDGETS_IMPLEMENTATION.md`
-- `laravel/Themes/TwentyOne/docs/FILAMENT_5_IMPLEMENTATION.md` (this file)
+- `laravel/Themes/TwentyOne/docs/filament-5-implementation.md` (this file)
 - `docs/project/FILAMENT_WIDGETS_FOR_LISTS_RULE.md`
 
 ---

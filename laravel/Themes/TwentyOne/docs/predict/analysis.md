@@ -1,21 +1,9 @@
----
-title: "analysis"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "analysis"
-issues: []
-discussions: []
-status: draft
----
-
 # Analisi Pagina Prediction Market - TwentyOne Theme
 
 ## 📊 Analisi del Codice Attuale
 
 ### File Analizzato
-`/var/www/html/_bases/base_predict_fila5_mono/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
+`/var/www/html/_bases/base_predict_fila5/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
 
 ### Struttura Attuale
 La pagina utilizza un layout moderno con:
@@ -183,40 +171,40 @@ const priceChart = new Chart(ctx, {
 {{-- Nuovo componente: Advanced Trading Form --}}
 <div class="bg-white/80 rounded-xl p-6 backdrop-blur-sm">
     <div class="flex space-x-4 mb-6">
-        <button 
-            @click="tradeType = 'buy'" 
+        <button
+            @click="tradeType = 'buy'"
             :class="tradeType === 'buy' ? 'bg-green-500 text-white' : 'bg-gray-200'"
             class="flex-1 py-2 px-4 rounded-lg font-medium transition-colors">
             Acquista
         </button>
-        <button 
-            @click="tradeType = 'sell'" 
+        <button
+            @click="tradeType = 'sell'"
             :class="tradeType === 'sell' ? 'bg-red-500 text-white' : 'bg-gray-200'"
             class="flex-1 py-2 px-4 rounded-lg font-medium transition-colors">
             Venditi
         </button>
     </div>
-    
+
     <div class="space-y-4">
         <div>
             <label class="block text-sm font-medium mb-2">Quantità</label>
             <div class="relative">
-                <input 
-                    type="number" 
+                <input
+                    type="number"
                     v-model="quantity"
                     class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500"
                     placeholder="Inserisci quantità">
                 <div class="absolute right-3 top-3 text-gray-400">€</div>
             </div>
         </div>
-        
+
         <div>
             <label class="block text-sm font-medium mb-2">Prezzo per quota</label>
             <div class="text-2xl font-bold text-gray-900">
                 €{{ currentPrice.toFixed(2) }}
             </div>
         </div>
-        
+
         {{-- Preview Costi --}}
         <div class="bg-gray-50 rounded-lg p-4 space-y-2">
             <div class="flex justify-between">
@@ -232,8 +220,8 @@ const priceChart = new Chart(ctx, {
                 <span class="font-bold text-lg">€{{ totalCost.toFixed(2) }}</span>
             </div>
         </div>
-        
-        <button 
+
+        <button
             @click="placeTrade"
             class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
             Conferma {{ tradeType === 'buy' ? 'Acquisto' : 'Vendita' }}
@@ -275,7 +263,7 @@ Echo.private(`market.${marketId}`)
         updatePriceDisplay(e.newPrice);
         updateVolumeDisplay(e.volume);
         updateOrderBook(e.orderBook);
-        
+
         // Mostra notifica
         showNotification('Mercato aggiornato', 'info');
     });
@@ -288,21 +276,21 @@ Echo.private(`market.${marketId}`)
 {{-- Nuovo componente: Market Discussion --}}
 <div class="bg-white/80 rounded-xl p-6 backdrop-blur-sm">
     <h3 class="text-lg font-semibold mb-4">Discussione</h3>
-    
+
     {{-- Form commento --}}
     <div class="mb-6">
-        <textarea 
+        <textarea
             v-model="newComment"
             class="w-full p-3 border rounded-lg resize-none"
             rows="3"
             placeholder="Condividi la tua opinione..."></textarea>
-        <button 
+        <button
             @click="postComment"
             class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg">
             Pubblica
         </button>
     </div>
-    
+
     {{-- Lista commenti --}}
     <div class="space-y-4">
         @foreach($comments as $comment)
@@ -337,13 +325,13 @@ Echo.private(`market.${marketId}`)
         box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
         z-index: 50;
     }
-    
+
     .quick-trade-buttons {
         display: flex;
         gap: 8px;
         margin-bottom: 16px;
     }
-    
+
     .quick-trade-button {
         flex: 1;
         padding: 12px;
@@ -362,7 +350,7 @@ Echo.private(`market.${marketId}`)
 {{-- Nuovo componente: Market Analytics --}}
 <div class="bg-white/80 rounded-xl p-6 backdrop-blur-sm">
     <h3 class="text-lg font-semibold mb-4">Analisi di Mercato</h3>
-    
+
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         <div class="text-center">
             <div class="text-2xl font-bold text-blue-600">{{ $market->totalVolume }}</div>
@@ -381,7 +369,7 @@ Echo.private(`market.${marketId}`)
             <div class="text-sm text-gray-600">Volatilità</div>
         </div>
     </div>
-    
+
     {{-- Trend Indicators --}}
     <div class="space-y-3">
         <div class="flex items-center justify-between">
@@ -393,7 +381,7 @@ Echo.private(`market.${marketId}`)
                 <span class="text-sm font-semibold text-green-600">+{{ $market->trend24h }}%</span>
             </div>
         </div>
-        
+
         <div class="flex items-center justify-between">
             <span class="text-sm">Liquidità</span>
             <div class="flex items-center">
@@ -460,18 +448,18 @@ class MarketChartWidget extends Widget
 {
     public string $marketId;
     public array $priceHistory = [];
-    
+
     public function mount(string $marketId): void
     {
         $this->marketId = $marketId;
         $this->loadPriceHistory();
     }
-    
+
     public function loadPriceHistory(): void
     {
         $this->priceHistory = MarketService::getPriceHistory($this->marketId);
     }
-    
+
     protected function getViewData(): array
     {
         return [
@@ -491,18 +479,18 @@ class MarketApiController extends Controller
     public function getOrderBook(string $marketId): JsonResponse
     {
         $orderBook = MarketService::getOrderBook($marketId);
-        
+
         return response()->json([
             'buy_orders' => $orderBook['buy'],
             'sell_orders' => $orderBook['sell'],
             'spread' => $orderBook['spread'],
         ]);
     }
-    
+
     public function getPriceHistory(string $marketId): JsonResponse
     {
         $history = MarketService::getPriceHistory($marketId);
-        
+
         return response()->json([
             'prices' => $history['prices'],
             'volumes' => $history['volumes'],
@@ -641,9 +629,9 @@ public function test_lmsr_calculation(): void
 {
     $market = Predict::factory()->create();
     $lmsr = new LMSRCalculator();
-    
+
     $result = $lmsr->calculatePrice($market, 100, 'buy');
-    
+
     $this->assertGreaterThan(0, $result['price']);
     $this->assertLessThan(100, $result['price']);
 }
@@ -656,13 +644,13 @@ public function test_user_can_place_trade(): void
 {
     $user = User::factory()->create();
     $market = Predict::factory()->create();
-    
+
     $response = $this->actingAs($user)
         ->post("/markets/{$market->id}/trade", [
             'quantity' => 100,
             'trade_type' => 'buy',
         ]);
-    
+
     $response->assertStatus(200);
     $this->assertDatabaseHas('trades', [
         'user_id' => $user->id,
@@ -707,12 +695,12 @@ function trackTradeEvent(tradeData) {
 public function show(string $slug)
 {
     $startTime = microtime(true);
-    
+
     $market = Predict::with(['ratings', 'category'])->where('slug', $slug)->firstOrFail();
-    
+
     $loadTime = microtime(true) - $startTime;
     Log::info('Market page load time', ['slug' => $slug, 'time' => $loadTime]);
-    
+
     return view('predicts.show', compact('market'));
 }
 ```
@@ -749,5 +737,6 @@ public function show(string $slug)
 - [Lighthouse CI](https://github.com/GoogleChrome/lighthouse-ci)
 
 ---
+
 *Documento creato il: {{ date('Y-m-d H:i:s') }}*
-*Ultimo aggiornamento: {{ date('Y-m-d H:i:s') }}* 
+*Ultimo aggiornamento: {{ date('Y-m-d H:i:s') }}*

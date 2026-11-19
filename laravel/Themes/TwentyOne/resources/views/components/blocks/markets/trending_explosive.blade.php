@@ -168,7 +168,7 @@ $getDemoMarkets = function() {
                                         <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"></path>
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd"></path>
                                     </svg>
-                                    {{ number_format($market['volume']) }} crediti
+                                    {{ trans_choice('pub_theme::market_common.stats.credits_count.label', $market['volume'], ['count' => number_format($market['volume'])]) }}
                                 </div>
                             @endif
                             
@@ -177,7 +177,7 @@ $getDemoMarkets = function() {
                                     <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
                                         <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
                                     </svg>
-                                    {{ number_format($market['participants']) }} partecipanti
+                                    {{ trans_choice('pub_theme::market_common.stats.participants_count.label', $market['participants'], ['count' => number_format($market['participants'])]) }}
                                 </div>
                             @endif
                         </div>
@@ -204,11 +204,11 @@ $getDemoMarkets = function() {
                     <div class="px-6 py-4 bg-gray-50 dark:bg-gray-700/30 border-t border-gray-200 dark:border-gray-600">
                         <div class="flex items-center justify-between">
                             <div class="text-sm text-gray-500 dark:text-gray-400">
-                                Chiude: {{ \Carbon\Carbon::parse($market['closes_at'])->format('d/m/Y') }}
+                                {{ __('pub_theme::blocks_markets.trending.closes.label') }}: {{ \Carbon\Carbon::parse($market['closes_at'])->format('d/m/Y') }}
                             </div>
                             <a href="/markets/{{ $market['slug'] }}" 
                                class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200">
-                                Partecipa
+                                {{ __('pub_theme::blocks_markets.trending.participate.label') }}
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                                 </svg>
@@ -223,7 +223,7 @@ $getDemoMarkets = function() {
         <div class="text-center mt-12">
             <a href="/markets" 
                class="inline-flex items-center px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-full hover:from-purple-700 hover:to-pink-700 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                Vedi Tutti i Mercati
+                {{ __('pub_theme::blocks_markets.trending.view_all.label') }}
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                 </svg>

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "qwen split index"
 issues: []
 discussions: []
-status: draft
 ---
 
 # QWEN.md Split Index
@@ -27,7 +26,6 @@ status: draft
 ## 🔗 Collegamento
 
 - [QWEN.md originale](../../QWEN.md)
-- [QWEN.md originale](../QWEN.md)
 - [Index principale](./index.md)
 
 ## Note

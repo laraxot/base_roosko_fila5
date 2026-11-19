@@ -46,44 +46,44 @@
             
             {{-- Column 2: Product --}}
             <div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">Product</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">{{ __('pub_theme::predict_footer.columns.product.title') }}</h3>
                 <ul class="space-y-3">
-                    <li><a href="{{ url('/' . app()->getLocale() . '/predicts') }}" class="text-slate-400 hover:text-white transition-colors text-sm">Browse Markets</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Create Market</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Leaderboard</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">API Documentation</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Rewards</a></li>
+                    <li><a href="{{ url('/' . app()->getLocale() . '/predicts') }}" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.browse_markets.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.create_market.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.leaderboard.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.api_documentation.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.rewards.label') }}</a></li>
                 </ul>
             </div>
             
             {{-- Column 3: Company --}}
             <div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">Company</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">{{ __('pub_theme::predict_footer.columns.company.title') }}</h3>
                 <ul class="space-y-3">
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">About Us</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Careers</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Blog</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Press Kit</a></li>
-                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">Contact</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.about_us.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.careers.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.blog.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.press_kit.label') }}</a></li>
+                    <li><a href="#" class="text-slate-400 hover:text-white transition-colors text-sm">{{ __('pub_theme::predict_footer.links.contact.label') }}</a></li>
                 </ul>
             </div>
             
             {{-- Column 4: Newsletter --}}
             <div>
-                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">Stay Updated</h3>
+                <h3 class="text-sm font-bold uppercase tracking-wider mb-4">{{ __('pub_theme::predict_footer.columns.newsletter.title') }}</h3>
                 <p class="text-slate-400 text-sm mb-4">
-                    Subscribe to our newsletter for the latest markets and updates.
+                    {{ __('pub_theme::predict_footer.newsletter.intro.description') }}
                 </p>
                 <form action="{{ $newsletterAction }}" method="POST" class="space-y-2">
                     @csrf
                     <input type="email" 
                            name="email" 
-                           placeholder="Enter your email" 
+                           placeholder="{{ __('pub_theme::predict_footer.newsletter.email.placeholder') }}" 
                            class="w-full px-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm"
                            required>
                     <button type="submit" 
                             class="w-full px-4 py-3 bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-bold rounded-lg transition-all duration-200 text-sm">
-                        Subscribe
+                        {{ __('pub_theme::predict_footer.newsletter.submit.label') }}
                     </button>
                 </form>
             </div>
@@ -93,21 +93,20 @@
         <div class="pt-8 border-t border-slate-800">
             {{-- Legal Links --}}
             <div class="flex flex-wrap gap-4 mb-4 text-sm">
-                <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="text-slate-400 hover:text-white transition-colors">Cookie Policy</a>
-                <a href="#" class="text-slate-400 hover:text-white transition-colors">Help Center</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">{{ __('pub_theme::predict_footer.legal.terms.label') }}</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">{{ __('pub_theme::predict_footer.legal.privacy.label') }}</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">{{ __('pub_theme::predict_footer.legal.cookies.label') }}</a>
+                <a href="#" class="text-slate-400 hover:text-white transition-colors">{{ __('pub_theme::predict_footer.legal.help.label') }}</a>
             </div>
             
             {{-- Disclaimer --}}
             <div class="text-slate-500 text-xs mb-2">
-                <p>© 2026 Predict. All rights reserved.</p>
+                <p>© 2026 Predict. {{ __('pub_theme::blocks_footer.social.rights_reserved.message') }}</p>
                 <p class="mt-2">
-                    <strong>Disclaimer:</strong> Credits are virtual currency and have no real-world monetary value. 
-                    Predict is a prediction market platform for entertainment and educational purposes only.
+                    <strong>{{ __('pub_theme::predict_footer.disclaimer.heading.label') }}</strong> {{ __('pub_theme::predict_footer.disclaimer.credits.description') }}
                 </p>
                 <p class="mt-2">
-                    Trading involves substantial risk of loss. Past performance does not guarantee future results.
+                    {{ __('pub_theme::predict_footer.disclaimer.risk.description') }}
                 </p>
             </div>
         </div>

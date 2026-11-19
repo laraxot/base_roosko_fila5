@@ -75,6 +75,9 @@ return [
         ],
     ],
     'reminder' => [
+        'tomorrow' => [
+            'label' => 'tomorrow',
+        ],
         'countdown' => [
             'description' => 'Only 1 day left until your appointment!',
         ],

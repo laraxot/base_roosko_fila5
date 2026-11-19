@@ -60,7 +60,7 @@ Replicazione delle 38 pagine statiche del progetto [Design Comuni Italia](https:
 | **Screenshots Argomenti** | [screenshots/argomenti/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/argomenti/) | Screenshots argomenti |
 | **Screenshots All Pages** | [screenshots/all-pages/](../laravel/Themes/Sixteen/docs/design-comuni/screenshots/all-pages/) | Screenshots tutte 54 pagine |
 | **All Pages Analysis** | [ALL_PAGES_ANALYSIS.md](../laravel/Themes/Sixteen/docs/design-comuni/all-pages-analysis.md) | Analisi completa 54 pagine |
-| **Progress Report** | [PROGRESS_REPORT.md](../laravel/Themes/Sixteen/docs/design-comuni/progress-report.md) | Report progresso aggiornato |
+| **Progress Report** | [PROGRESS_REPORT.md](../progress-report.md) | Report progresso aggiornato |
 | **Fail Pages Analysis** | [FAIL_PAGES_ANALYSIS.md](../laravel/Themes/Sixteen/docs/design-comuni/fail-pages-analysis.md) | Analisi pagine fail |
 | **Skills & Rules** | [SKILLS_RULES.md](../laravel/Themes/Sixteen/docs/design-comuni/skills-rules.md) | Skills, rules e best practices |
 | **Segnalazioni Elenco Analisi** | [SEGNALAZIONI_ELENCO_ANALISI.md](../laravel/Themes/Sixteen/docs/design-comuni/segnalazioni-elenco-analisi.md) | Analisi segnalazioni elenco (95.7%) |

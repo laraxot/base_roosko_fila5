@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
 use Modules\Xot\Tests\TestCase;
 
+use function Safe\readlink;
+use function Safe\symlink;
+
 uses(TestCase::class);
 
 beforeEach(function (): void {

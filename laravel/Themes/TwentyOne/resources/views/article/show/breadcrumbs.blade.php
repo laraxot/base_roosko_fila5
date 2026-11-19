@@ -1,5 +1,5 @@
 <div>
-    <nav class="text-sm text-gray-600" aria-label="Breadcrumb">
+    <nav class="text-sm text-gray-600" aria-label="{{ __('pub_theme::market_common.nav.breadcrumb.label') }}">
         <ol class="flex items-center space-x-2">
             <li>
                 <div class="flex items-center">

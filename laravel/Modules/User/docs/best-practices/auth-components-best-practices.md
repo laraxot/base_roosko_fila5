@@ -16,7 +16,6 @@ related:
   - "./component-verification.md"
   - "./dependency-rules.md"
   - "./dependency.md"
-status: draft
 ---
 
 # Best Practices per i Componenti di Autenticazione 

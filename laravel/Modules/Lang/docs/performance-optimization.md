@@ -1,5 +1,5 @@
 ---
-qmd: "performance optimization"
+qmd: "PERFORMANCE OPTIMIZATION"
 issues: []
 discussions: []
 title: "Performance Optimization: Module Lang"
@@ -8,9 +8,10 @@ created: 2026-05-11
 updated: 2026-05-11
 tags: [performance, optimization, tokens, context]
 related:
-  - ../../docs/wiki/concepts/llm-wiki-operational-discipline.md
   - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
-status: draft
+  - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
+status: superseded
+superseded_by: performance-optimization.md
 ---
 
 # Performance Optimization: Module **Lang**
@@ -23,7 +24,7 @@ status: draft
 **Dopo**: Carico solo what's needed (~2K startup)
 
 \`\`\`diff
-- 150+ rules embeddate in agents.md
+- 150+ rules embeddate in AGENTS.md
 + 0 rules embeddate: tutte on-demand
 \`\`\`
 
@@ -48,7 +49,7 @@ status: draft
 
 ### 4. Wiki Indici Locali
 
-Ogni modulo ha i propri `rules/skills/commands/memories/index.md`:
+Ogni modulo ha i propri `rules/skills/commands/memories/INDEX.md`:
 - Ricerca più rapida (scope limitato)
 - Context rilevante per il modulo
 - Non mischia contenuti eterogenei

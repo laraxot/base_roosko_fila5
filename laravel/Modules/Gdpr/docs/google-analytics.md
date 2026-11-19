@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "google analytics"
 issues: []
 discussions: []
-status: draft
 ---
 
 https://plausible.io/

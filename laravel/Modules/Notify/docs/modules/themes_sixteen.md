@@ -12,6 +12,12 @@ status: draft
 
 # Gestione asset Vite per il tema Sixteen
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 Se riscontri l'errore:
 
 ```
@@ -22,11 +28,11 @@ Segui questi passaggi per risolvere:
 
 1. Vai nella cartella del tema:
    ```bash
-   cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
+   cd /var/www/html/_bases/base_fixcity_fila5/laravel/Themes/Sixteen
    ```
 2. Esegui il comando:
    ```bash
-   npm run copy
+   # niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
    ```
 
 Questo comando pubblica gli asset necessari e risolve l'errore.

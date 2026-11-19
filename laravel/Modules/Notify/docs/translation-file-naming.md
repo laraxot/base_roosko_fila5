@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "translation file naming"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Regole di Naming per i File di Traduzione
@@ -49,7 +48,4 @@ Se si identifica un file con naming non conforme:
 - [Regole Generali per le Traduzioni](../../lang/docs/translation_keys_rules.md)
 - [Best Practices per le Traduzioni](../../lang/docs/translation_keys_best_practices.md)
 - [Best Practices per le Traduzioni](../../lang/docs/translation-keys-best-practices.md)
-- [Regole Generali per le Traduzioni](../../Lang/docs/translation_keys_rules.md)
-- [Best Practices per le Traduzioni](../../Lang/docs/translation_keys_best_practices.md)
-- [Best Practices per le Traduzioni](../../Lang/docs/translation-keys-best-practices.md)
 - [Convenzioni di Traduzione nel Modulo Notify](./translation_conventions.md)

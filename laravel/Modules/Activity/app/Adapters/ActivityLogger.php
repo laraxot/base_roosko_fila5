@@ -38,7 +38,7 @@ class ActivityLogger
         ?array $properties = null,
         ?string $description = null,
     ): Activity {
-        if ($user !== null && (! $user instanceof UserContract || ! $user instanceof Model)) {
+        if ($user !== null && ! $user instanceof UserContract) {
             throw new InvalidArgumentException('User must implement UserContract');
         }
 

@@ -294,7 +294,7 @@ Agent: [Systematic debugging]
 ### Internal
 
 - [Main README](docs/superpowers/README.md)
-- [Installation Guide](docs/superpowers/installation.md)
+- [Installation Guide](installation.md)
 - [Workflow Guide](docs/superpowers/workflow.md)
 - [Skills Reference](docs/superpowers/skills-reference.md)
 - [Quick Index](docs/superpowers/INDEX.md)

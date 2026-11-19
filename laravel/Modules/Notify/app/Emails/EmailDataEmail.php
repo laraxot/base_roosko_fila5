@@ -33,7 +33,7 @@ class EmailDataEmail extends Mailable
             $this->email_data->from = $from;
         }
         if ($this->email_data->from_email === null) {
-            Assert::string($from_email = config('mail.from.address', 'default@example.com'));
+            Assert::string($from_email = config('mail.from.address', 'noreply@fixcity.eu'));
             $this->email_data->from_email = $from_email;
         }
 
@@ -48,9 +48,14 @@ class EmailDataEmail extends Mailable
      */
     public function content(): Content
     {
+        /** @var view-string $htmlView */
+        $htmlView = 'notify::emails.html';
+        /** @var view-string $textView */
+        $textView = 'notify::emails.text';
+
         return new Content(
-            html: 'notify::emails.html',
-            text: 'notify::emails.text',
+            html: $htmlView,
+            text: $textView,
             with: [
                 'email_data' => $this->email_data,
             ],

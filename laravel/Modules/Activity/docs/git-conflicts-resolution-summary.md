@@ -1,11 +1,10 @@
 ---
 title: "Risoluzione Conflitti Git - Modulo Activity"
+qmd: "activity git conflicts resolution summary md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "risoluzione conflitti git - modulo activity activity"
+tags: [documentation]
 ---
+
 # Risoluzione Conflitti Git - Modulo Activity
 
 ## Data Risoluzione

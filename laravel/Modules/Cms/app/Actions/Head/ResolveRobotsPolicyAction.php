@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions\Head;
 
+use Modules\Tenant\Actions\Config\GetTenantConfigArrayAction;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
@@ -37,8 +38,8 @@ final class ResolveRobotsPolicyAction
     public const array HIDDEN_SLUGS = ['tickets.confirmation', 'segnalazione-dettaglio', 'segnalazioni.index'];
 
     /**
-     * @param list<string> $localeCodes codici lingua che possono prefissare il percorso (`it`, `en`, ...)
-     * @param bool         $translated  `false` se la pagina non ha contenuto nella lingua corrente (duplicato della lingua di ripiego)
+     * @param  list<string>  $localeCodes  codici lingua che possono prefissare il percorso (`it`, `en`, ...)
+     * @param  bool  $translated  `false` se la pagina non ha contenuto nella lingua corrente (duplicato della lingua di ripiego)
      */
     public function execute(string $path, array $localeCodes, bool $translated = true): string
     {
@@ -52,7 +53,7 @@ final class ResolveRobotsPolicyAction
     }
 
     /**
-     * @param list<string> $localeCodes
+     * @param  list<string>  $localeCodes
      */
     public function isIndexable(string $path, array $localeCodes, bool $translated = true): bool
     {
@@ -60,7 +61,21 @@ final class ResolveRobotsPolicyAction
             return false;
         }
 
-        return ! in_array($this->pathSegments($path, $localeCodes)[0] ?? '', self::HIDDEN_SEGMENTS, true);
+        $segments = $this->pathSegments($path, $localeCodes);
+        if (in_array($segments[0] ?? '', self::HIDDEN_SEGMENTS, true)) {
+            return false;
+        }
+
+        // Prefissi di percorso senza lingua (`tickets/create`, `tests/...`): il tenant li dichiara in
+        // `config/{tenant}/fixcity/head.php` → `noindex_paths`, senza toccare il codice del modulo (D-3).
+        $pathKey = implode('/', $segments);
+        foreach ($this->headStrings('noindex_paths') as $private) {
+            if ($pathKey === $private || str_starts_with($pathKey, $private.'/')) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
@@ -69,11 +84,12 @@ final class ResolveRobotsPolicyAction
      */
     public function isPageIndexable(string $slug, mixed $middleware): bool
     {
-        if ('' === $slug || 'tests' === $slug || str_starts_with($slug, 'tests.') || str_starts_with($slug, 'auth.') || str_ends_with($slug, '.view')) {
+        if ($slug === '' || $slug === 'tests' || str_starts_with($slug, 'tests.') || str_starts_with($slug, 'auth.') || str_ends_with($slug, '.view')) {
             return false;
         }
 
-        if (in_array($slug, self::HIDDEN_SLUGS, true)) {
+        $hiddenSlugs = array_merge(self::HIDDEN_SLUGS, $this->headStrings('noindex_slugs'));
+        if (in_array($slug, $hiddenSlugs, true)) {
             return false;
         }
 
@@ -84,13 +100,12 @@ final class ResolveRobotsPolicyAction
      * Segmenti del percorso come li vede il router: decodificati, in minuscolo, senza segmenti vuoti o punto e senza il prefisso lingua.
      * `/IT/preview-content`, `/it/%61uth` e `/it/./auth` sono lo stesso percorso riservato di `/it/auth`.
      *
-     * @param list<string> $localeCodes
-     *
+     * @param  list<string>  $localeCodes
      * @return list<string>
      */
     public function pathSegments(string $path, array $localeCodes): array
     {
-        $segments = (new CollapsePathSegmentsAction())->segments(mb_strtolower(rawurldecode($path)));
+        $segments = (new CollapsePathSegmentsAction)->segments(mb_strtolower(rawurldecode($path)));
 
         $locales = array_map(mb_strtolower(...), $localeCodes);
         if (isset($segments[0]) && in_array($segments[0], $locales, true)) {
@@ -98,5 +113,29 @@ final class ResolveRobotsPolicyAction
         }
 
         return $segments;
+    }
+
+    /**
+     * Stringhe di una chiave del file tenant `head.php` (`noindex_paths`, `noindex_slugs`);
+     * file assente o chiave non lista → `[]`, il comportamento resta quello dei default del modulo.
+     *
+     * @return list<string>
+     */
+    private function headStrings(string $key): array
+    {
+        // I test unitari puri non bootstrappano il container: senza `app()` si usano i default del modulo.
+        try {
+            $config = app(GetTenantConfigArrayAction::class)->execute('head');
+        } catch (\Throwable) {
+            return [];
+        }
+
+        $value = $config[$key] ?? [];
+
+        if (! is_array($value)) {
+            return [];
+        }
+
+        return array_values(array_filter($value, 'is_string'));
     }
 }

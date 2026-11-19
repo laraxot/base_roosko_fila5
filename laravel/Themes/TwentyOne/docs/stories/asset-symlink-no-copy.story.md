@@ -26,3 +26,10 @@ updated: 2026-11-11
 
 La build legge il CSS di Filament da `laravel/vendor`, quindi va lanciata dal tema dentro `laravel/Themes/TwentyOne`
 dopo `composer install`. I bundle sono versionati: il server di produzione non compila.
+
+## 12 novembre: dipendenze e bundle
+
+- `npm audit fix` (senza `--force`) ha chiuso i 2 critical, i 7 high e il moderate. Restano 4 low legati a `flowbite`, per
+  cui l'unica correzione proposta è tornare a flowbite 2.3, un downgrade di major che non si fa senza provare il tema.
+- Il bundle committato non corrispondeva più ai sorgenti: ricompilato, e rimossi i vecchi `app-*` che il manifest non usa.
+- La CI del base ora ricompila anche il tema e controlla che il bundle sia allineato.

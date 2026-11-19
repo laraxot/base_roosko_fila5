@@ -1,8 +1,11 @@
 <?php
 
 declare(strict_types=1);
+use Modules\Cms\Tests\TestCase;
 
-it('GET /it/auth/register/thank-you acceptable', function (): void {
+uses(TestCase::class);
+
+it('GET /it/auth/register/thank-you remains absent after legacy page removal', function (): void {
     $res = $this->get('/it/auth/register/thank-you');
-    expect($res->getStatusCode())->toBeIn([200, 204, 301, 302, 303, 307, 308]);
+    expect($res->getStatusCode())->toBe(404);
 });

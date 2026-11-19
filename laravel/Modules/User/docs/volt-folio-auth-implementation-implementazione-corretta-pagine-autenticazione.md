@@ -16,16 +16,15 @@ related:
   - "./actions-path-convention.md"
   - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
-status: draft
 ---
 
 # Implementazione Corretta delle Pagine di Autenticazione con Volt e Folio
 
 ## Collegamenti correlati
-- [README modulo User](./README.md)
+- [README modulo User](./readme.md)
 - [Convenzioni Path](./path-conventions-user.md)
 - [Volt Errors](./volt-errors.md)
-- [Volt Folio Logout](./volt-folio-logout-panoramica.md)
+- [Volt Folio Logout](./volt-folio-logout-2.md)
 
 ## Introduzione
 

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "index generated"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Tenant Module Documentation Index
@@ -27,20 +26,20 @@ The root level contains strategic documents, analyses, and consolidated guides:
 
 - [00-INDEX.md](00-INDEX.md)
 - [00-index.md](00-index.md)
-- [API.md](api.md)
+- [API.md](API.md)
 - [ARCHITECTURE.md](ARCHITECTURE.md)
 - [LICENSE-full.md](license-full.md)
-- [METODI_DUPLICATI_ANALISI.md](metodi-duplicati-analisi.md)
+- [METODI_DUPLICATI_ANALISI.md](METODI_DUPLICATI_ANALISI.md)
 - [PRD.md](prd.md)
-- [PRODUCT_LAUNCH_PLAN.md](product-launch-plan.md)
-- [PRODUCT_ROADMAP.md](product-roadmap.md)
-- [PRODUCT_STRATEGY.md](product-strategy.md)
+- [PRODUCT_LAUNCH_PLAN.md](product_launch_plan.md)
+- [PRODUCT_ROADMAP.md](product_roadmap.md)
+- [PRODUCT_STRATEGY.md](product_strategy.md)
 - [README.md](README.md)
-- [REDUNDANCY_ANALYSIS.md](redundancy-analysis.md)
-- [SPRINT_PLANNING.md](sprint-planning.md)
-- [SUSHI_TO_JSON_FIX_PLAN.md](sushi-to-json-fix-plan.md)
-- [TODO.md](todo.md)
-- [USER_RESEARCH.md](user-research.md)
+- [REDUNDANCY_ANALYSIS.md](redundancy_analysis.md)
+- [SPRINT_PLANNING.md](sprint_planning.md)
+- [SUSHI_TO_JSON_FIX_PLAN.md](sushi_to_json_fix_plan.md)
+- [TODO.md](TODO.md)
+- [USER_RESEARCH.md](user_research.md)
 - [about.md](about.md)
 - [activitylog.md](activitylog.md)
 - [ai-methodologies.md](ai-methodologies.md)
@@ -111,9 +110,6 @@ Comprehensive wiki system with concepts, how-to guides, rules, and troubleshooti
   - [git-merge-conflict-inventory-2026-04-28.md](wiki/troubleshooting/git-merge-conflict-inventory-2026-04-28.md)
   - [git-merge-conflict-inventory.md](wiki/troubleshooting/git-merge-conflict-inventory.md)
   - [phpstan-fixes-2026-05-06.md](wiki/troubleshooting/phpstan-fixes-2026-05-06.md)
-  - [git-merge-conflict-inventory-2026-04-28.md](wiki/troubleshooting/git-merge-conflict-inventory.md)
-  - [git-merge-conflict-inventory.md](wiki/troubleshooting/git-merge-conflict-inventory.md)
-  - [phpstan-fixes-2026-05-06.md](wiki/troubleshooting/phpstan-fixes.md)
   - [phpstan-fixes.md](wiki/troubleshooting/phpstan-fixes.md)
 
 **Memories** (3 files)
@@ -150,8 +146,7 @@ Strategic planning and vision documents:
 - [04-milestones.md](roadmap/04-milestones.md)
 - [04-risks.md](roadmap/04-risks.md)
 - [05-risks.md](roadmap/05-risks.md)
-- [2025-q4-roadmap.md](roadmap/roadmap.md)
-- [2025-q4-roadmap.md](roadmap/roadmap-deprecated-aggiungere.md)
+- [2025-q4-roadmap.md](roadmap/2025-q4-roadmap.md)
 - [chaos-readiness.md](roadmap/chaos-readiness.md)
 - [documentation-consolidation.md](roadmap/documentation-consolidation.md)
 - [missing-models.md](roadmap/missing-models.md)
@@ -224,7 +219,6 @@ Consolidated root-level markdown documentation:
 - [license.md](root-md-files/license.md)
 - [links.md](root-md-files/links.md)
 - [readme-en.md](root-md-files/readme-en.md)
-- [readme-it.md](root-md-files/readme-it.md)
 - [readme-it.md](raw/root-import/readme-it.md)
 - [readme-it-1.md](root-md-files/readme-it-1.md)
 - [readme-it-2.md](root-md-files/readme-it-2.md)
@@ -266,7 +260,6 @@ Legacy and superseded documentation:
 - [license.md](archived/license.md)
 - [links.md](archived/links.md)
 - [readme-en.md](archived/readme-en.md)
-- [readme-it.md](archived/readme-it.md)
 - [readme-it.md](raw/root-import/readme-it.md)
 - [readme.en.md](archived/readme.en.md)
 - [readme.it.md](archived/readme.it.md)
@@ -296,7 +289,7 @@ Machine learning and documentation knowledge base:
 - [AGENTS.md](llm-wiki/AGENTS.md)
 - [index.md](llm-wiki/index.md)
 - [log.md](llm-wiki/log.md)
-- [agents.md](llm-wiki/AGENTS.md)
+- [agents.md](llm-wiki/agents.md)
 - [_templates/concept.md](llm-wiki/_templates/concept.md)
 - [_templates/entity.md](llm-wiki/_templates/entity.md)
 - [_templates/source.md](llm-wiki/_templates/source.md)
@@ -310,9 +303,7 @@ Documents pending integration:
 - [to-integrate.md](_integration/to-integrate.md)
 - [to-integrate-1.md](_integration/to-integrate-1.md)
 - [to-integrate_1.md](_integration/to-integrate_1.md)
-- [to-integrate-1.md](_integration/to-integrate-contenuto-migrato.md)
-- [to-integrate_1.md](_integration/to-integrate-contenuto-migrato.md)
-- [to_integrate.md](_integration/to_integrate.md)
+- [to_integrate.md](_integration/archive/to_integrate.md)
 
 ### HTML to PDF (6 files)
 
@@ -392,6 +383,15 @@ Log analysis and audit trails.
 Visual references and UI screenshots.
 
 ---
+
+title: "index generated"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "index generated"
+issues: []
+discussions: []
 ## Recently Updated
 
 **Last 20 files by modification date**
@@ -399,13 +399,13 @@ Visual references and UI screenshots.
 | Date | File | Category |
 |------|------|----------|
 | 2026-07-28 | [00-INDEX.md](00-INDEX.md) | root |
-| 2026-07-28 | [API.md](api.md) | root |
+| 2026-07-28 | [API.md](API.md) | root |
 | 2026-07-28 | [ARCHITECTURE.md](ARCHITECTURE.md) | root |
 | 2026-07-28 | [PRD.md](prd.md) | root |
 | 2026-07-28 | [README.md](README.md) | root |
-| 2026-07-28 | [PRODUCT_STRATEGY.md](product-strategy.md) | root |
-| 2026-07-28 | [SPRINT_PLANNING.md](sprint-planning.md) | root |
-| 2026-07-28 | [TODO.md](todo.md) | root |
+| 2026-07-28 | [PRODUCT_STRATEGY.md](product_strategy.md) | root |
+| 2026-07-28 | [SPRINT_PLANNING.md](sprint_planning.md) | root |
+| 2026-07-28 | [TODO.md](TODO.md) | root |
 | 2026-07-28 | [best-practices.md](best-practices.md) | root |
 | 2026-07-28 | [changelog.md](changelog.md) | root |
 | 2026-07-28 | [configuration.md](configuration.md) | root |

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "boost skill solution plan"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Boost Skill Installation - Solution Plan

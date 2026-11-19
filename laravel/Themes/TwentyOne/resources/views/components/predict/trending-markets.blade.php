@@ -28,12 +28,12 @@
                     {{ $title }}
                 </h2>
                 <p class="text-slate-600 dark:text-slate-400">
-                    I mercati più popolari di oggi
+                    {{ __('pub_theme::predict_cards.trending.intro.description') }}
                 </p>
             </div>
             <a href="{{ url('/' . app()->getLocale() . '/predicts') }}" 
                class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-semibold hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors">
-                Show all
+                {{ __('pub_theme::predict_cards.trending.show_all.label') }}
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                 </svg>
@@ -63,7 +63,7 @@
                     @if($isHot)
                     <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r from-orange-500 to-red-500 text-white mb-3">
                         <x-filament::icon icon="heroicon-o-fire" class="h-3.5 w-3.5" aria-hidden="true" />
-                        Hot
+                        {{ __('pub_theme::predict_cards.trending.hot.label') }}
                     </span>
                     @endif
 

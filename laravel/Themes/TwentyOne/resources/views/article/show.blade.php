@@ -1,7 +1,7 @@
 <!-- container -->
 <div class="max-w-[calc(100%-30px)] sm:max-w-[calc(100%-80px)] lg:max-w-[996px] mx-auto pb-12">
   <!-- play money markets -->
-  <section class="pt-8" aria-label="Play Money Markets" {{-- x-data="playmarkets"id="playmarkets" --}}>
+  <section class="pt-8" aria-label="{{ __('pub_theme::article_show.page.play_money_markets.label') }}" {{-- x-data="playmarkets"id="playmarkets" --}}>
     <!-- list of markets -->
     <div class="flex flex-wrap lg:flex-nowrap w-full ">
 
@@ -13,7 +13,7 @@
     <div class="py-12 flex justify-center">
       <button type="button"
         class="max-w-[320px] w-[90%] bg-white px-10 h-14 rounded-lg text-blue-1 hover:text-[#0f79c8]">
-      Load more
+      {{ __('pub_theme::market_common.actions.load_more.label') }}
       </button>
     </div>
   </section>

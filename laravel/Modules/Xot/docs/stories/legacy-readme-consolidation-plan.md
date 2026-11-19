@@ -1,4 +1,5 @@
 ---
+qmd: "xot stories legacy readme consolidation plan md"
 title: "Xot - legacy-readme-consolidation-plan.md"
 module: Xot
 bmad: true

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Modules\User\Datas\PasswordData;
 use PHPUnit\Framework\Assert;
-use Tests\TestCase;
+use Modules\User\Tests\TestCase;
 
 use function Safe\file_get_contents;
 
@@ -58,7 +58,7 @@ test('password data can be created with custom parameters', function (): void {
 });
 
 test('password data has default values', function (): void {
-    $defaultPasswordData = new PasswordData();
+    $defaultPasswordData = new PasswordData;
 
     expect($defaultPasswordData->otp_expiration_minutes)->toBe(5);
     expect($defaultPasswordData->otp_length)->toBe(6);

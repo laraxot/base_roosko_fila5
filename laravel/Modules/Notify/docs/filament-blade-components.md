@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "filament blade components"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Standard <nome progetto>: Componenti Blade Filament
@@ -37,5 +36,5 @@ In <nome progetto>, la **prima scelta per i componenti Blade** sono SEMPRE i [co
 ## Collegamenti
 - [Documentazione Filament Blade Components](https://filamentphp.com/project_docs/3.x/support/blade-components/overview)
 - [Documentazione Filament Blade Components](https://filamentphp.com/docs/3.x/support/blade-components/overview)
-- [README Notify](README.md)
+- [README Notify](readme.md)
 - [queueable-action.md](queueable-action.md)

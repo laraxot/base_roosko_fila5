@@ -1,11 +1,10 @@
 ---
 title: "Use Case Shop – Event Sourcing e Console Commands"
-type: index
-status: draft
-updated: 2026-10-23
-tags: [docs, activity, use_cases]
-qmd: "use case shop   event sourcing e console commands activity"
+qmd: "activity use cases shop readme md"
+type: note
+tags: [documentation]
 ---
+
 # Use Case Shop – Event Sourcing e Console Commands
 
 ## Introduzione
@@ -84,6 +83,7 @@ php artisan activity:shop:checkout cart_12345_xxx
 | 🇮🇹 Presentazione | Questo file (`README.md`) |
 | 🇬🇧 Business card | [docs/readme-en.md](../../readme-en.md) |
 | 📚 Wiki tecnica | [./docs/wiki/](../..) |
+=======
 
 ---
 **Questa documentazione è neutra e riutilizzabile, senza riferimenti a progetti specifici, e segue le regole di neutralità e modularità.**

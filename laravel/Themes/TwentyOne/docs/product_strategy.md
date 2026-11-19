@@ -1,16 +1,3 @@
----
-title: "product strategy"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product strategy"
-issues: []
-discussions: []
-status: superseded
-superseded_by: product-strategy.md
----
-
 # Product Strategy - Theme TwentyOne
 
 ## Modern Tailwind + Vite Theme
@@ -21,6 +8,7 @@ superseded_by: product-strategy.md
 **Owner:** Theme Product Team
 
 ---
+
 ## Executive Summary
 
 Theme TwentyOne occupies a unique position as the "developer-first" theme in the Laravel Themes ecosystem. While Theme Sixteen dominates the compliance-focused public administration segment, TwentyOne targets developers and teams who prioritize velocity, modern tooling, and developer experience. This document outlines our strategy to complete the theme, achieve product-market fit, and build a sustainable developer community.
@@ -626,9 +614,9 @@ Theme TwentyOne occupies a unique position as the "developer-first" theme in the
 
 ### Related Documents
 - [Product Requirements Document](prd.md)
-- [Product Roadmap](product_roadmap.md)
-- [Product Launch Plan](product_launch_plan.md)
-- [User Research](user_research.md)
+- [Product Roadmap](product-roadmap.md)
+- [Product Launch Plan](product-launch-plan.md)
+- [User Research](user-research.md)
 
 ### References
 - Vite Documentation: https://vitejs.dev/

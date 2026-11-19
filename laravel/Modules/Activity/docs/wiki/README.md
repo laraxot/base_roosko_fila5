@@ -1,11 +1,8 @@
 ---
-title: Readme
-module: Activity
-type: index
-status: draft
-updated: 2026-10-22
-tags: [docs, activity, wiki]
-qmd: "llm wiki (module) activity"
+title: "LLM Wiki (module)"
+qmd: "activity wiki readme md"
+type: note
+tags: [documentation]
 ---
 
 # LLM Wiki (module)

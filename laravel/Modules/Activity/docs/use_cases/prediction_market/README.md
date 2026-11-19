@@ -1,11 +1,10 @@
 ---
 title: "Use Case <nome progetto>ion Market – Event Sourcing e Console Commands"
-type: index
-status: draft
-updated: 2026-10-23
-tags: [docs, activity, use_cases]
-qmd: "use case <nome progetto>ion market   event sourcing e console commands activity"
+qmd: "activity use cases prediction market readme md"
+type: note
+tags: [documentation]
 ---
+
 # Use Case <nome progetto>ion Market – Event Sourcing e Console Commands
 
 ## Introduzione

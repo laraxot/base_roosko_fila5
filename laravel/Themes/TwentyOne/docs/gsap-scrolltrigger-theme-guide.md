@@ -1,15 +1,3 @@
----
-title: "gsap scrolltrigger theme guide"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "gsap scrolltrigger theme guide"
-issues: []
-discussions: []
-status: draft
----
-
 # 🎬 GSAP & SCROLLTRIGGER - Theme Implementation
 
 **Data**: 2026-03-23  
@@ -17,6 +5,7 @@ status: draft
 **Status**: ✅ THEME REFERENCE
 
 ---
+
 ## 🏗 ARCHITETTURA TEMA
 
 ### File Structure
@@ -37,7 +26,7 @@ Themes/TwentyOne/
 │       └── components/
 │           └── filament-widgets.css  ← Widget styling
 └── docs/
-    └── GSAP_SCROLLTRIGGER_CONFIGURATION.md
+    └── gsap-scrolltrigger-configuration.md
 ```
 
 ---

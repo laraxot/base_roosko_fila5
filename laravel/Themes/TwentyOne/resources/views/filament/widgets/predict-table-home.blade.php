@@ -62,13 +62,13 @@
                     $participants = $predict->transactions()->distinct('user_id')->count('user_id') ?: 0;
                 @endphp
 
-                <div class="reveal-kinetic group card-kinetic relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur transition-all duration-300 hover:scale-105 hover:border-cyan-400/30 hover:shadow-xl hover:shadow-black/20" data-kinetic-block="fade-up">
+                <div class="reveal-kinetic group card-kinetic relative overflow-hidden rounded-2xl border border-white/10 bg-slate-800/50 backdrop-blur transition-all duration-300 hover:scale-105 hover:border-cyan-400/30 hover:shadow-xl hover:shadow-cyan-500/10" data-kinetic-block="fade-up">
                     {{-- Hot Badge --}}
                     @if($isHot)
                         <div class="absolute -right-2 -top-2 z-20">
                             <span class="inline-flex items-center gap-1 rounded-full border border-orange-400/30 bg-orange-500/20 px-3 py-1 text-xs font-bold text-orange-300 backdrop-blur">
                                 <x-filament::icon icon="heroicon-s-fire" class="h-3 w-3" />
-                                HOT
+                                {{ __('pub_theme::widgets_predict.table_home.hot.label') }}
                             </span>
                         </div>
                     @endif
@@ -78,7 +78,7 @@
                         <div class="absolute -right-2 -top-2 z-20">
                             <span class="inline-flex items-center gap-1 rounded-full border border-cyan-400/30 bg-cyan-500/20 px-3 py-1 text-xs font-bold text-cyan-300 backdrop-blur">
                                 <x-filament::icon icon="heroicon-s-arrow-trending-up" class="h-3 w-3" />
-                                Trending
+                                {{ __('pub_theme::widgets_predict.table_home.trending.label') }}
                             </span>
                         </div>
                     @endif
@@ -153,8 +153,8 @@
 
                         {{-- CTA Button --}}
                         <a href="{{ url(app()->getLocale().'/predicts/'.$predict->slug) }}"
-                           class="btn-kinetic inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg shadow-black/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-black/40">
-                            <span>Prevedi Ora</span>
+                           class="btn-kinetic inline-flex w-full items-center justify-center gap-2 rounded-xl border border-cyan-400/30 bg-gradient-to-r from-cyan-500 to-sky-500 px-6 py-3 text-base font-bold text-slate-950 shadow-lg shadow-cyan-500/20 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-cyan-500/30">
+                            <span>{{ __('pub_theme::widgets_predict.table_home.predict_now.label') }}</span>
                             <x-filament::icon icon="heroicon-o-arrow-right" class="h-5 w-5" />
                         </a>
                     </div>
@@ -163,8 +163,8 @@
                 {{-- Empty state --}}
                 <div class="col-span-full rounded-2xl border border-dashed border-white/10 bg-slate-800/30 p-12 text-center">
                     <x-filament::icon icon="heroicon-o-chart-bar" class="mx-auto mb-4 h-16 w-16 text-slate-600" />
-                    <h3 class="mb-2 text-xl font-bold text-white">Nessun mercato disponibile</h3>
-                    <p class="text-slate-400">Torna presto per nuovi prediction market!</p>
+                    <h3 class="mb-2 text-xl font-bold text-white">{{ __('pub_theme::widgets_predict.table_home.empty.title') }}</h3>
+                    <p class="text-slate-400">{{ __('pub_theme::widgets_predict.table_home.empty.message') }}</p>
                 </div>
             @endforelse
         </div>
@@ -173,7 +173,7 @@
         <div class="mt-12 text-center">
             <a href="{{ url(app()->getLocale().'/predicts') }}"
                class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-8 py-4 text-base font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/20">
-                <span>Vedi Tutti i Mercati</span>
+                <span>{{ __('pub_theme::widgets_predict.table_home.view_all.label') }}</span>
                 <x-filament::icon icon="heroicon-o-arrow-right" class="h-5 w-5" />
             </a>
         </div>

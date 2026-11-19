@@ -1,11 +1,10 @@
 ---
 title: "Configurazione .env.development - Ambiente di Sviluppo"
+qmd: "activity env development configuration md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "configurazione .env.development - ambiente di sviluppo activity"
+tags: [documentation]
 ---
+
 # Configurazione .env.development - Ambiente di Sviluppo
 
 ## Panoramica
@@ -241,7 +240,7 @@ DB_PORT=3306
 DB_DATABASE=Quaeris_data
 DB_DATABASE=healthcare_app_data
 DB_USERNAME=marco
-DB_PASSWORD=[segreto locale, non nel repo]
+DB_PASSWORD=marco
 ```
 
 ### 2. Cache e Queue

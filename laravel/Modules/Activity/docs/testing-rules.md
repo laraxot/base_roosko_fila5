@@ -1,11 +1,10 @@
 ---
 title: "Testing Rules Summary"
+qmd: "activity testing rules md"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, activity]
-qmd: "testing rules summary activity"
+tags: [documentation]
 ---
+
 # Testing Rules Summary
 
 ## Regole Fondamentali dei Test

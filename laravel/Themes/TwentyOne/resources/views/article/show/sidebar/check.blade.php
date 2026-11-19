@@ -17,7 +17,7 @@
                         class="
                         "
                         >
-                        <button type="button" aria-haspopup="true" aria-controls="dropdownHover" 
+                        <button
                             id="dropdownHoverButton"
                             data-dropdown-toggle="dropdownHover"
                             data-dropdown-trigger="hover"
@@ -54,7 +54,7 @@
                                     <a
                                         href="#"
                                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                        >Yes</a
+                                        >{{ __('pub_theme::market_common.terms.yes.label') }}</a
                                         >
                                 </li>
                                 <li>
@@ -104,22 +104,22 @@
         </div>
         <div class="flex w-full items-center justify-center py-3 mb-3">
             <a href="/m/cash-in" class="text-blue-1 font-semibold"
-                >Add real money</a
+                >{{ __('pub_theme::article_show.sidebar.add_real_money.label') }}</a
                 >
         </div>
         <div class="px-4 mb-3">
             <div
                 class="flex justify-between items-center py-2 text-neutral-4 text-base"
                 >
-                <span>Av. price / share</span>
+                <span>{{ __('pub_theme::article_show.sidebar.avg_price_per_share.label') }}</span>
                 <span class="font-bold text-black"
-                    >0<span> / Share</span></span
+                    >0<span> {{ __('pub_theme::article_show.sidebar.per_share.label') }}</span></span
                     >
             </div>
             <div
                 class="flex justify-between items-center py-2 text-neutral-4 text-base"
                 >
-                <span>Bet Amount</span>
+                <span>{{ __('pub_theme::article_show.sidebar.bet_amount.label') }}</span>
                 <span class="font-bold text-black"
                     >100<span class="ml-1">Ooms</span></span
                     >
@@ -127,7 +127,7 @@
             <div
                 class="flex justify-between items-center py-2 text-neutral-4 text-base"
                 >
-                <span>Bet Amount</span>
+                <span>{{ __('pub_theme::article_show.sidebar.bet_amount.label') }}</span>
                 <span class="font-bold text-green-400"
                     >0<span class="ml-1">Ooms</span></span
                     >
@@ -137,7 +137,7 @@
                 class="px-5 my-2 mt-4 w-full flex items-center justify-center py-3 text-lg font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 disabled:bg-opacity-15"
                 disabled
                 >
-            Please select an outcome
+            {{ __('pub_theme::article_show.sidebar.select_outcome.message') }}
             </button>
         </div>
     </div>

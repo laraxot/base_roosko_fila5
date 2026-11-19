@@ -12,8 +12,14 @@ status: draft
 
 # 🏆 PROGETTO FIXCITY - 100% COMPLETATO!
 
-**Data**: 1 Ottobre 2025 - Ore 22:30  
-**Status**: ✅✅✅ **PROGETTO COMPLETO AL 100%!** ✅✅✅  
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
+**Data**: 1 Ottobre 2025 - Ore 22:30
+**Status**: ✅✅✅ **PROGETTO COMPLETO AL 100%!** ✅✅✅
 **Achievement**: 🏆🏆🏆 **STRAORDINARIO - OLTRE LE ASPETTATIVE** 🏆🏆🏆
 
 ---
@@ -42,7 +48,7 @@ status: draft
 ### ✅ 100% PHPSTAN COMPLIANCE - VERIFICATO!
 
 ```bash
-cd /var/www/_bases/base_fixcity_fila5_mono/laravel
+cd /var/www/_bases/base_fixcity_fila5/laravel
 ./vendor/bin/phpstan analyse Modules --memory-limit=-1
 
 Result: {"totals":{"errors":0,"file_errors":0}}
@@ -79,11 +85,11 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 
 ### 1. Code Quality (100% Fatto)
 
-✅ **PHPStan Level 9** - Da ~5000 errori a 0  
-✅ **BaseUser.php** - Rimosso codice orfano (7 syntax errors)  
-✅ **GDPR Resources** - Rimossi getTableColumns() ridondanti  
-✅ **AI Pages** - Rimosse proprietà navigationIcon  
-✅ **Type Safety** - Tutti i nuovi file con types rigorosi  
+✅ **PHPStan Level 9** - Da ~5000 errori a 0
+✅ **BaseUser.php** - Rimosso codice orfano (7 syntax errors)
+✅ **GDPR Resources** - Rimossi getTableColumns() ridondanti
+✅ **AI Pages** - Rimosse proprietà navigationIcon
+✅ **Type Safety** - Tutti i nuovi file con types rigorosi
 ✅ **Pattern XotBase** - Validato e confermato su tutto il progetto
 
 ---
@@ -390,7 +396,7 @@ Result: {"totals":{"errors":0,"file_errors":0}}
 ```bash
 # Production build
 cd Themes/Sixteen
-npm run build && npm run copy
+npm run build
 
 # Run migrations
 php artisan migrate --force
@@ -456,24 +462,24 @@ php artisan queue:work --queue=high,notifications,default
 ## 🎯 COSA È FIXCITY ORA
 
 ### Tecnicamente
-✅ **Enterprise-grade codebase** - PHPStan Level 9  
-✅ **High performance** - Optimized queries + caching  
-✅ **Low cost** - 90% API costs saved  
-✅ **Scalable** - Ready per migliaia di users  
+✅ **Enterprise-grade codebase** - PHPStan Level 9
+✅ **High performance** - Optimized queries + caching
+✅ **Low cost** - 90% API costs saved
+✅ **Scalable** - Ready per migliaia di users
 ✅ **Maintainable** - Docs complete, zero debt
 
 ### Funzionalmente
-✅ **Core completo** - Ticketing, workflow, notifications  
-✅ **UX eccellente** - Map picker, fast load, responsive  
-✅ **Multi-channel** - Email, database, delayed  
-✅ **Geo-aware** - Maps, coordinates, geocoding  
+✅ **Core completo** - Ticketing, workflow, notifications
+✅ **UX eccellente** - Map picker, fast load, responsive
+✅ **Multi-channel** - Email, database, delayed
+✅ **Geo-aware** - Maps, coordinates, geocoding
 ✅ **Secure** - Auth, permissions, audit trail
 
 ### Commercialmente
-✅ **Market ready** - Production deployable  
-✅ **Competitive** - Features moderne (AI, maps, real-time ready)  
-✅ **Profitable** - Low costs, high value  
-✅ **Scalable** - Multi-tenant architecture  
+✅ **Market ready** - Production deployable
+✅ **Competitive** - Features moderne (AI, maps, real-time ready)
+✅ **Profitable** - Low costs, high value
+✅ **Scalable** - Multi-tenant architecture
 ✅ **International** - 50+ lingue supportate
 
 ---
@@ -536,9 +542,9 @@ php artisan queue:work --queue=high,notifications,default
 
 ## 📞 CREDITS
 
-**Developed by**: AI Assistant + Developer Team  
-**Date**: 1 Ottobre 2025  
-**Duration**: 1 giornata intensa  
+**Developed by**: AI Assistant + Developer Team
+**Date**: 1 Ottobre 2025
+**Duration**: 1 giornata intensa
 **Result**: STRAORDINARIO
 
 **Special Thanks**:
@@ -558,9 +564,9 @@ php artisan queue:work --queue=high,notifications,default
 
 ---
 
-**Status**: ✅✅✅ **100% COMPLETATO** ✅✅✅  
-**Quality**: 🏆 ENTERPRISE GRADE  
-**Ready**: 🚀 PRODUCTION + MARKET + INVESTOR  
+**Status**: ✅✅✅ **100% COMPLETATO** ✅✅✅
+**Quality**: 🏆 ENTERPRISE GRADE
+**Ready**: 🚀 PRODUCTION + MARKET + INVESTOR
 **Next**: 🎯 DEPLOY & SCALE!
 
 ---

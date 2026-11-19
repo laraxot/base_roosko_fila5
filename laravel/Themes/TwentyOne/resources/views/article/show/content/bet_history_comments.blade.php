@@ -17,7 +17,7 @@
                         aria-controls="profile"
                         aria-selected="false"
                         >
-                    Bet History
+                    {{ __('pub_theme::article_show.history.title.title') }}
                     </button>
                 </li>
                 <li class="me-2" role="presentation">
@@ -30,7 +30,7 @@
                         aria-controls="dashboard"
                         aria-selected="false"
                         >
-                    Comments
+                    {{ __('pub_theme::article_show.comments.title.title') }}
                     </button>
                 </li>
             </ul>
@@ -53,7 +53,7 @@
                             <input
                                 type="text"
                                 class="w-auto outline-none bg-transparent border-none px-3 py-3 text-[12px] lg:text-sm focus:outline-none"
-                                placeholder="Search markets and outcomes"
+                                placeholder="{{ __('pub_theme::article_show.history.search.placeholder') }}"
                                 />
                             <button
                                 type="button "
@@ -77,7 +77,7 @@
                             class="flex flex-wrap lg:flex-nowrap items-center gap-2"
                             >
                             <div class="min-w-max">
-                                <button type="button" aria-haspopup="true" aria-controls="dropdownDelay" 
+                                <button
                                     id="dropdownDelayButton"
                                     data-dropdown-toggle="dropdownDelay"
                                     data-dropdown-delay="500"
@@ -85,7 +85,7 @@
                                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-1.5 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                     type="button"
                                     >
-                                    Play Money
+                                    {{ __('pub_theme::article_show.history.play_money.label') }}
                                     <svg
                                         class="w-2.5 h-2.5 ms-3 ml-2"
                                         aria-hidden="true"
@@ -115,21 +115,21 @@
                                             <a
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >All</a
+                                                >{{ __('pub_theme::market_common.terms.all.label') }}</a
                                                 >
                                         </li>
                                         <li>
                                             <a
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Play Money</a
+                                                >{{ __('pub_theme::article_show.history.play_money.label') }}</a
                                                 >
                                         </li>
                                         <li>
                                             <a
                                                 href="#"
                                                 class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                                                >Real Money</a
+                                                >{{ __('pub_theme::article_show.history.real_money.label') }}</a
                                                 >
                                         </li>
                                     </ul>
@@ -142,13 +142,13 @@
                                     type="button"
                                     class="py-2 px-3 me-2 text-[12px] lg:text-sm min-w-max font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                                     >
-                                Only people I follow
+                                {{ __('pub_theme::article_show.history.only_followed.label') }}
                                 </button>
                                 <button
                                     type="button"
                                     class="py-2 px-5 me-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
                                     >
-                                My Bets
+                                {{ __('pub_theme::article_show.history.my_bets.label') }}
                                 </button>
                             </div>
                         </div>
@@ -159,12 +159,12 @@
                                 class="text-[12px] font-medium uppercase bg-white"
                                 >
                                 <tr class="*text-black">
-                                    <th class="px-4 py-2">Date</th>
-                                    <th class="px-4 py-2">Action</th>
-                                    <th class="px-4 py-2">User</th>
-                                    <th class="px-4 py-2">Outcome</th>
-                                    <th class="px-4 py-2">Av. Share Price</th>
-                                    <th class="px-4 py-2">Amount</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_date.label') }}</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_action.label') }}</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_user.label') }}</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_outcome.label') }}</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_avg_price.label') }}</th>
+                                    <th class="px-4 py-2">{{ __('pub_theme::article_show.history.col_amount.label') }}</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -182,7 +182,7 @@
                                             type="button"
                                             class="bg-blue-700 text-blue-700 bg-opacity-20 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                             >
-                                        Bet
+                                        {{ __('pub_theme::article_show.history.bet.label') }}
                                         </button>
                                     </td>
                                     <td class="px-4 py-2">
@@ -222,7 +222,7 @@
                                             type="button"
                                             class="bg-blue-700 text-blue-700 bg-opacity-20 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-3xl text-sm px-4 py-2 text-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                             >
-                                        Bet
+                                        {{ __('pub_theme::article_show.history.bet.label') }}
                                         </button>
                                     </td>
                                     <td class="px-4 py-2">
@@ -264,7 +264,7 @@
                         type="button"
                         class="text-white mb-4 w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 lg:text-lg me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                         >
-                    Login
+                    {{ __('pub_theme::market_common.auth.login.label') }}
                     </button>
                     <div class="flex gap-4">
                         <div

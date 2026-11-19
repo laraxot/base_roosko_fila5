@@ -28,7 +28,7 @@ status: draft
 
 ### Per Sviluppatori
 - [Architecture Overview](./architecture/README.md)
-- [Getting Started](./GETTING_STARTED.md)
+- [Getting Started](../../../GETTING_STARTED.md)
 - [Getting Started](../../../GETTING_STARTED.md)
 - [Coding Standards](./conventions/README.md)
 
@@ -68,7 +68,7 @@ status: draft
 
 ### 📊 Reports
 - [Status Reports](./reports/README.md)
-- [Quality Reports](./reports/quality.md)
+- [Quality Reports](../../../roadmap/quality.md)
 - [Quality Reports](../../../roadmap/quality.md)
 - [Performance Reports](./reports/performance.md)
 

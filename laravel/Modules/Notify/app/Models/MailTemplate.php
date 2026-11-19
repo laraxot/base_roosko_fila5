@@ -9,6 +9,7 @@ use Exception;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 use Modules\Notify\Database\Factories\MailTemplateFactory;
 use Spatie\MailTemplates\Interfaces\MailTemplateInterface;
@@ -71,15 +72,15 @@ use Spatie\Translatable\HasTranslations;
  * @method static Builder<static>|MailTemplate whereUpdatedBy($value)
  * @method static Builder<static>|MailTemplate whereVersion($value)
  *
- * @mixin \Illuminate\Database\Eloquent\Model
+ * @mixin Model
  */
 class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
 {
     /** @use HasFactory<MailTemplateFactory> */
     use HasFactory;
+
     use HasSlug;
 
-    // use SoftDeletes;
     use HasTranslations;
 
     /** @var list<string> */
@@ -112,7 +113,7 @@ class MailTemplate extends SpatieMailTemplate implements MailTemplateInterface
      * impostato a mano (es. `survey-pdf-44-invito` dalla scheda "Inviti" o dallo
      * script di migrazione) veniva silenziosamente sovrascritto col
      * subject-slug, e il lookup successivo `findForMailable()` non lo trovava più
-     * (story quaeris-send-invite-migrate-to-record-notification.md, Difetto 10).
+     * (story <nome progetto>-send-invite-migrate-to-record-notification.md, Difetto 10).
      * Con `preventOverwrite()` lo slug si genera solo se il campo è vuoto.
      */
     public function getSlugOptions(): SlugOptions

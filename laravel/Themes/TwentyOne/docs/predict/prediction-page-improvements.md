@@ -1,21 +1,9 @@
----
-title: "prediction page improvements"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "prediction page improvements"
-issues: []
-discussions: []
-status: draft
----
-
 # Miglioramenti Pagina Prediction Market - Analisi Completa
 
 ## 📊 Analisi del Codice Attuale
 
 ### File Analizzato
-`/var/www/html/_bases/base_predict_fila5_mono/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
+`/var/www/html/_bases/base_predict_fila5/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
 
 ### Struttura Attuale
 La pagina utilizza un layout moderno con:
@@ -113,7 +101,7 @@ La pagina utilizza un layout moderno con:
                     @endforeach
                 </div>
             </div>
-            
+
             {{-- Ask Orders --}}
             <div>
                 <h4 class="text-sm font-medium text-red-600 mb-3">Vendite</h4>
@@ -158,12 +146,12 @@ La pagina utilizza un layout moderno con:
                 <span class="text-sm font-medium text-gray-900">€{{ number_format($market->volume24h) }}</span>
             </div>
         </div>
-        
+
         {{-- Trading Form --}}
         <form wire:submit.prevent="placeTrade">
             {{-- Trade Type --}}
             <div class="flex space-x-2 mb-4">
-                <button type="button" 
+                <button type="button"
                         wire:click="setTradeType('buy')"
                         class="flex-1 py-2 px-4 rounded-lg border-2 transition-colors {{ $tradeType === 'buy' ? 'border-green-500 bg-green-50 text-green-700' : 'border-gray-300 text-gray-700' }}">
                     <svg class="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
@@ -171,7 +159,7 @@ La pagina utilizza un layout moderno con:
                     </svg>
                     Compra
                 </button>
-                <button type="button" 
+                <button type="button"
                         wire:click="setTradeType('sell')"
                         class="flex-1 py-2 px-4 rounded-lg border-2 transition-colors {{ $tradeType === 'sell' ? 'border-red-500 bg-red-50 text-red-700' : 'border-gray-300 text-gray-700' }}">
                     <svg class="w-4 h-4 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
@@ -180,14 +168,14 @@ La pagina utilizza un layout moderno con:
                     Vendi
                 </button>
             </div>
-            
+
             {{-- Quantity Input --}}
             <div class="space-y-2">
                 <label class="block text-sm font-medium text-gray-700">Quantità Quote</label>
                 <div class="relative">
-                    <input type="number" 
-                           wire:model="quantity" 
-                           min="1" 
+                    <input type="number"
+                           wire:model="quantity"
+                           min="1"
                            step="1"
                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -195,15 +183,15 @@ La pagina utilizza un layout moderno con:
                     </div>
                 </div>
             </div>
-            
+
             {{-- Price Input --}}
             <div class="space-y-2">
                 <label class="block text-sm font-medium text-gray-700">Prezzo per Quote</label>
                 <div class="relative">
-                    <input type="number" 
-                           wire:model="price" 
-                           min="0.01" 
-                           max="100" 
+                    <input type="number"
+                           wire:model="price"
+                           min="0.01"
+                           max="100"
                            step="0.01"
                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -211,7 +199,7 @@ La pagina utilizza un layout moderno con:
                     </div>
                 </div>
             </div>
-            
+
             {{-- Cost Preview --}}
             <div class="bg-gray-50 rounded-lg p-4 space-y-2">
                 <div class="flex justify-between">
@@ -229,9 +217,9 @@ La pagina utilizza un layout moderno con:
                     </div>
                 </div>
             </div>
-            
+
             {{-- Submit Button --}}
-            <button type="submit" 
+            <button type="submit"
                     class="w-full py-3 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
                 {{ $tradeType === 'buy' ? 'Compra Quote' : 'Vendi Quote' }}
             </button>
@@ -255,19 +243,19 @@ La pagina utilizza un layout moderno con:
         <div class="flex justify-between items-center">
             <h3 class="text-lg font-medium text-gray-900">Andamento Prezzi</h3>
             <div class="flex space-x-2">
-                <button wire:click="setTimeframe('1h')" 
+                <button wire:click="setTimeframe('1h')"
                         class="px-3 py-1 text-sm rounded {{ $timeframe === '1h' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100' }}">
                     1H
                 </button>
-                <button wire:click="setTimeframe('24h')" 
+                <button wire:click="setTimeframe('24h')"
                         class="px-3 py-1 text-sm rounded {{ $timeframe === '24h' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100' }}">
                     24H
                 </button>
-                <button wire:click="setTimeframe('7d')" 
+                <button wire:click="setTimeframe('7d')"
                         class="px-3 py-1 text-sm rounded {{ $timeframe === '7d' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100' }}">
                     7G
                 </button>
-                <button wire:click="setTimeframe('30d')" 
+                <button wire:click="setTimeframe('30d')"
                         class="px-3 py-1 text-sm rounded {{ $timeframe === '30d' ? 'bg-blue-100 text-blue-700' : 'text-gray-600 hover:bg-gray-100' }}">
                     30G
                 </button>
@@ -321,7 +309,7 @@ document.addEventListener('livewire:load', function () {
             }
         }
     });
-    
+
     // Update chart when timeframe changes
     Livewire.on('chartDataUpdated', (data) => {
         chart.data.labels = data.labels;
@@ -345,7 +333,7 @@ document.addEventListener('livewire:load', function () {
 {{-- Toast Notifications --}}
 <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2">
     @foreach($notifications as $notification)
-    <div id="toast-{{ $notification->id }}" 
+    <div id="toast-{{ $notification->id }}"
          class="bg-white border border-gray-200 rounded-lg shadow-lg p-4 max-w-sm transform transition-all duration-300 translate-x-full">
         <div class="flex items-start">
             <div class="flex-shrink-0">
@@ -368,7 +356,7 @@ document.addEventListener('livewire:load', function () {
                 <p class="text-sm text-gray-500">{{ $notification->message }}</p>
             </div>
             <div class="ml-4 flex-shrink-0">
-                <button onclick="dismissToast('{{ $notification->id }}')" 
+                <button onclick="dismissToast('{{ $notification->id }}')"
                         class="text-gray-400 hover:text-gray-600">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
@@ -385,17 +373,17 @@ function showToast(type, title, message) {
     const container = document.getElementById('toast-container');
     const toast = document.createElement('div');
     const id = Date.now();
-    
+
     toast.id = `toast-${id}`;
     toast.className = 'bg-white border border-gray-200 rounded-lg shadow-lg p-4 max-w-sm transform transition-all duration-300 translate-x-full';
-    
+
     const icon = type === 'success' ? 'text-green-400' : type === 'error' ? 'text-red-400' : 'text-blue-400';
-    const iconPath = type === 'success' ? 
+    const iconPath = type === 'success' ?
         'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z' :
         type === 'error' ?
         'M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z' :
         'M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z';
-    
+
     toast.innerHTML = `
         <div class="flex items-start">
             <div class="flex-shrink-0">
@@ -416,14 +404,14 @@ function showToast(type, title, message) {
             </div>
         </div>
     `;
-    
+
     container.appendChild(toast);
-    
+
     // Animate in
     setTimeout(() => {
         toast.classList.remove('translate-x-full');
     }, 100);
-    
+
     // Auto dismiss after 5 seconds
     setTimeout(() => {
         dismissToast(id);
@@ -474,7 +462,7 @@ Livewire.on('showNotification', (data) => {
             </div>
         </div>
     </div>
-    
+
     {{-- Desktop Header --}}
     <div class="hidden lg:block bg-white shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
@@ -486,7 +474,7 @@ Livewire.on('showNotification', (data) => {
             </div>
         </div>
     </div>
-    
+
     {{-- Main Content --}}
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -498,7 +486,7 @@ Livewire.on('showNotification', (data) => {
                         @livewire(\Modules\Predict\Filament\Widgets\ViewPredictWidget::class, ['slug' => $slug])
                     </div>
                 </div>
-                
+
                 {{-- Chart Card --}}
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200">
                     <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
@@ -508,7 +496,7 @@ Livewire.on('showNotification', (data) => {
                         <canvas id="priceChart" width="400" height="200"></canvas>
                     </div>
                 </div>
-                
+
                 {{-- Order Book Card --}}
                 <div class="bg-white rounded-xl shadow-sm border border-gray-200">
                     <div class="px-6 py-4 border-b border-gray-200 bg-gray-50">
@@ -519,7 +507,7 @@ Livewire.on('showNotification', (data) => {
                     </div>
                 </div>
             </div>
-            
+
             {{-- Sidebar (Mobile: bottom sheet, Desktop: sticky) --}}
             <div class="lg:space-y-6">
                 {{-- Trading Widget --}}
@@ -545,7 +533,7 @@ Livewire.on('showNotification', (data) => {
 function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
     const sheet = menu.querySelector('.absolute.bottom-0');
-    
+
     if (menu.classList.contains('hidden')) {
         menu.classList.remove('hidden');
         setTimeout(() => {
@@ -707,5 +695,6 @@ function toggleMobileMenu() {
 - [Hotjar](https://www.hotjar.com/)
 
 ---
+
 *Documento creato il: {{ date('Y-m-d H:i:s') }}*
-*Basato sull'analisi dei principali prediction market del 2024* 
+*Basato sull'analisi dei principali prediction market del 2024*

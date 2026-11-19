@@ -1,11 +1,10 @@
 ---
 title: "Filament Resources nel Modulo Activity"
+qmd: "activity filament resources md"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, activity]
-qmd: "filament resources nel modulo activity activity"
+tags: [documentation]
 ---
+
 # Filament Resources nel Modulo Activity
 
 ## Struttura delle Risorse
@@ -173,11 +172,16 @@ class ListSnapshots extends XotBaseListRecords
 - [Documentazione Filament](https://filamentphp.com/project_docs/tables)
 - [XotBaseListRecords](../Xot/project_docs/filament-pages.md)
 - [Best Practices Filament](../Xot/project_docs/filament-best-practices.md)
+- [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php) 
+- [Documentazione Filament](https://filamentphp.com/docs/tables)
+- [Documentazione Filament](https://filamentphp.com/project_docs/tables)
+- [XotBaseListRecords](../Xot/project_docs/filament-pages.md)
+- [Best Practices Filament](../Xot/project_docs/filament-best-practices.md)
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php) - [Documentazione Filament](https://filamentphp.com/docs/tables)
 - [XotBaseListRecords](../Xot/docs/filament-pages.md)
-- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
+- [Best Practices Filament](../Xot/docs/filament-best-practices.md)
 - [XotBaseListRecords](../xot/docs/filament-pages.md)
-- [Best Practices Filament](../../Xot/docs/filament-best-practices.md)
+- [Best Practices Filament](../xot/docs/filament-best-practices.md)
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
 # Filament Resources nel Modulo Activity
 
@@ -348,4 +352,5 @@ class ListSnapshots extends XotBaseListRecords
 - [Best Practices Filament](../Xot/project_docs/filament-best-practices.md)
 - [XotBaseListRecords](../xot/project_docs/filament-pages.md)
 - [Best Practices Filament](../xot/project_docs/filament-best-practices.md)
+- [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)
 - [Compatibilità dei Metodi in PHP](https://www.php.net/manual/en/language.oop5.inheritance.php)

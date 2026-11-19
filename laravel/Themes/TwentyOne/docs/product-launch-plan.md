@@ -1,15 +1,3 @@
----
-title: "product launch plan"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product launch plan"
-issues: []
-discussions: []
-status: draft
----
-
 # Product Launch Plan - Theme TwentyOne
 
 ## Modern Tailwind + Vite Theme
@@ -20,6 +8,7 @@ status: draft
 **Owner:** Theme Product Team
 
 ---
+
 ## Executive Summary
 
 This document outlines the launch plan for Theme TwentyOne v1.0, marking the transition from beta to production-ready status. The launch positions TwentyOne as the developer's choice for modern Laravel applications, emphasizing speed, developer experience, and production-ready components.
@@ -473,9 +462,9 @@ This document outlines the launch plan for Theme TwentyOne v1.0, marking the tra
 
 ### Related Documents
 - [Product Requirements Document](prd.md)
-- [Product Roadmap](product_roadmap.md)
+- [Product Roadmap](product-roadmap.md)
 - [Product Strategy](product_strategy.md)
-- [User Research](user_research.md)
+- [User Research](user-research.md)
 
 ### Contacts
 - Press: press@themetwentyone.example

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "advanced features"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Funzionalità Avanzate del Modulo Geo

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "quick reference"
 issues: []
 discussions: []
-status: draft
 ---
 
 # LLM Wiki Quick Reference
@@ -185,5 +184,4 @@ Templates available:
 - [Agent Instructions](wiki/AGENTS.md)
 - [Wiki Overview](wiki/overview.md)
 - [Obsidian Setup](.obsidian/README.md)
-- [Obsidian Setup](.obsidian/readme.md)
 - [Module Wiki Guide](Modules/Xot/docs/llm-wiki-integration.md)

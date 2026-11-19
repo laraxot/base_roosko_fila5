@@ -86,8 +86,8 @@ return [
             'label' => 'Ripristina',
             'tooltip' => 'Ripristina stato precedente',
         ],
-        'delete' => [
-            'icon' => 'delete',
+        'logout' => [
+            'tooltip' => 'logout',
         ],
     ],
     'messages' => [

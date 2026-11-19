@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "job reports"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Job Module PDF Reports
@@ -17,6 +16,15 @@ status: draft
 Guida completa per generare report PDF del sistema di code e job utilizzando HTML2PDF con integrazione nativa nel modulo Job.
 
 ---
+
+title: "job reports"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "job reports"
+issues: []
+discussions: []
 ## 🎯 Tipi di Report Disponibili
 
 ### 1. Queue System Report

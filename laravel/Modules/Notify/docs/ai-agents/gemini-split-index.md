@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "gemini split index"
 issues: []
 discussions: []
-status: draft
 ---
 
 # GEMINI.md Split Index
@@ -27,5 +26,4 @@ status: draft
 ## 🔗 Collegamento
 
 - [GEMINI.md originale](../../GEMINI.md)
-- [GEMINI.md originale](../GEMINI.md)
 - [Index principale](./index.md)

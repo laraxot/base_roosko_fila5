@@ -79,7 +79,7 @@ Il modulo Notify è il sistema di gestione notifiche e comunicazioni riutilizzab
 
 ### 1. **Notification - Gestione Notifiche**
 - **Responsabilità**: Gestire notifiche del sistema
-- **Business Logic**: 
+- **Business Logic**:
   - Gestione stato notifiche
   - Gestione destinatari notifiche
   - Gestione contenuti notifiche
@@ -300,12 +300,12 @@ Il modulo Notify è il sistema di gestione notifiche e comunicazioni riutilizzab
 
 
 ## Module Overview
-**Module Name**: Notify  
-**Type**: Notification & Communication Module  
-**Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
-**Notification Channels**: Email, SMS, Database, Push  
-**Language**: Multi-language (IT/EN/DE)  
+**Module Name**: Notify
+**Type**: Notification & Communication Module
+**Status**: ✅ Active
+**Framework**: Laravel 12.x + Filament 4.x
+**Notification Channels**: Email, SMS, Database, Push
+**Language**: Multi-language (IT/EN/DE)
 
 ## Purpose
 The Notify module provides comprehensive notification and communication functionality:
@@ -421,13 +421,13 @@ related:
 
 # Master Documentation Index - Notify Fila5
 
-**Project:** Notify Fila5  
+**Project:** Notify Fila5
 # Master Documentation Index - <nome progetto> Fila5
 
-**Project:** <nome progetto> Fila5  
-**Date:** 2026-04-01  
-**Status:** ✅ **Active**  
-**Total Docs:** 7,137+ markdown files  
+**Project:** <nome progetto> Fila5
+**Date:** 2026-04-01
+**Status:** ✅ **Active**
+**Total Docs:** 7,137+ markdown files
 
 ---
 
@@ -604,8 +604,8 @@ Notify Fila5 Documentation
 
 ### Sixteen Theme
 
-**Location:** `laravel/Themes/Sixteen/docs/`  
-**Files:** 325  
+**Location:** `laravel/Themes/Sixteen/docs/`
+**Files:** 325
 **Index:** [README.md](Themes/Sixteen/docs/README.md)
 
 **Key Documents:**
@@ -630,8 +630,8 @@ Notify Fila5 Documentation
 
 ## 📁 BMad Documentation
 
-**Location:** `_bmad-output/`  
-**Files:** 9  
+**Location:** `_bmad-output/`
+**Files:** 9
 **Status:** ✅ Complete
 
 | Document | File | Lines | Purpose |
@@ -813,10 +813,10 @@ Themes/Sixteen/docs/
 ```markdown
 # Document Title
 
-**Created:** YYYY-MM-DD  
-**Updated:** YYYY-MM-DD  
-**Status:** Draft | Active | Archived  
-**Type:** Guide | Reference | ADR | Fix Report  
+**Created:** YYYY-MM-DD
+**Updated:** YYYY-MM-DD
+**Status:** Draft | Active | Archived
+**Type:** Guide | Reference | ADR | Fix Report
 
 ---
 
@@ -840,8 +840,8 @@ Main content here.
 
 ---
 
-**Last Updated:** YYYY-MM-DD  
-**Author:** Name  
+**Last Updated:** YYYY-MM-DD
+**Author:** Name
 **Review Date:** YYYY-MM-DD
 ```
 
@@ -874,9 +874,9 @@ Main content here.
 
 ---
 
-**Last Updated:** 2026-04-01  
-**Next Review:** 2026-04-08  
-**Owner:** Documentation Team  
+**Last Updated:** 2026-04-01
+**Next Review:** 2026-04-08
+**Owner:** Documentation Team
 **Status:** ✅ **Active**
 
 🐮 **Master Documentation Index Complete!**
@@ -1008,7 +1008,7 @@ composer format        # Formatta il codice
 ## Changelog
 ### Versione HEAD
 
-Le modifiche vengono tracciate nel repository GitHub. 
+Le modifiche vengono tracciate nel repository GitHub.
 ## Collegamenti tra versioni di module_notify.md
 * [module_notify.md](docs/module_notify.md)
 * [module_notify.md](../../../notify/docs/module_notify.md)
@@ -1016,7 +1016,7 @@ Le modifiche vengono tracciate nel repository GitHub.
 
 ### Versione Incoming
 
-Le modifiche vengono tracciate nel repository GitHub. 
+Le modifiche vengono tracciate nel repository GitHub.
 
 ---
 
@@ -1026,12 +1026,12 @@ Le modifiche vengono tracciate nel repository GitHub.
 
 
 ## Module Overview
-**Module Name**: Notify  
-**Type**: Notification & Communication Module  
-**Status**: ✅ Active  
-**Framework**: Laravel 12.x + Filament 4.x  
-**Notification Channels**: Email, SMS, Database, Push  
-**Language**: Multi-language (IT/EN/DE)  
+**Module Name**: Notify
+**Type**: Notification & Communication Module
+**Status**: ✅ Active
+**Framework**: Laravel 12.x + Filament 4.x
+**Notification Channels**: Email, SMS, Database, Push
+**Language**: Multi-language (IT/EN/DE)
 
 ## Purpose
 The Notify module provides comprehensive notification and communication functionality:
@@ -1082,7 +1082,7 @@ The Notify module provides comprehensive notification and communication function
 ## Integration with Other Modules
 - **User**: Communication with system users
 - **App**: Survey participant notifications
-- **Quaeris**: Survey participant notifications
+- **<nome progetto>**: Survey participant notifications
 - **Limesurvey**: Survey response notifications
 - **Xot**: Base notification infrastructure
 - **Filament**: Management interface

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "translation process"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Processo di Traduzione: Da Sviluppatore a Traduttore

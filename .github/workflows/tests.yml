@@ -169,6 +169,54 @@ jobs:
             exit 1
           fi
 
+  theme-bundle:
+    name: Bundle del tema TwentyOne
+    # Il CSS del tema importa quello di Filament da laravel/vendor: serve composer prima di vite.
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+          extensions: mbstring, intl, bcmath, gd, zip, pdo_sqlite, sqlite3
+          coverage: none
+
+      - name: Cache Composer
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/composer/files
+          key: composer-files-${{ hashFiles('laravel/composer.json', 'laravel/Modules/*/composer.json') }}
+          restore-keys: composer-files-
+
+      - name: Install dependencies
+        working-directory: laravel
+        run: |
+          mkdir -p bootstrap/cache
+          composer install --no-interaction --no-progress --prefer-dist --no-scripts
+          composer update --no-interaction --no-progress --prefer-dist --no-scripts
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+
+      - name: Build
+        working-directory: laravel/Themes/TwentyOne
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+
+      - name: Bundle allineato ai sorgenti
+        run: |
+          if [ -n "$(git status --porcelain -- laravel/Themes/TwentyOne/public)" ]; then
+            git status --short -- laravel/Themes/TwentyOne/public
+            echo "::error::Bundle del tema non aggiornato: npm run build in laravel/Themes/TwentyOne e commit di public/"
+            exit 1
+          fi
+
   concurrency-mariadb:
     name: Numerazione del registro su MariaDB (concorrenza reale)
     # Su sqlite lockForUpdate non blocca nulla: qui 4 processi scrivono sullo stesso registro su MariaDB,

@@ -1,5 +1,5 @@
 <div>
-	<button type="button" data-dropdown-toggle="dropdown-about" aria-haspopup="true" aria-expanded="false" aria-label="{{ __('pub_theme::headernav.account') }}" class="relative grid bg-gray-100 rounded-full size-10 overflow-clip hover:bg-gray-50 place-items-center">
+	<button data-dropdown-toggle="dropdown-about" class="relative grid bg-gray-100 rounded-full size-10 overflow-clip hover:bg-gray-50 place-items-center">
 		@auth
 			<img class="absolute inset-0 object-cover w-full h-full shrink-0" src="{{ $_profile->getAvatarUrl() }}" alt="">
 		@else
@@ -12,18 +12,18 @@
 				<li>
 					<a href="{{ url(app()->getLocale().'/pages/setting') }}" class="flex items-center p-2 space-x-2 transition-colors rounded hover:text-blue-500 hover:bg-white">
 						<x-heroicon-o-user-circle class="size-6"/>
-						<span>Profile</span>
+						<span>{{ __('pub_theme::headernav.user_menu.profile.label') }}</span>
 					</a>
 				</li>
 			@else
 				<li class="block lg:hidden">
 					<a href="{{route('register')}}" class="flex items-center p-2 space-x-2 text-blue-500 transition-colors rounded hover:text-blue-600 hover:bg-white">
-						<span>Sign Up</span>
+						<span>{{ __('pub_theme::headernav.auth.signup.label') }}</span>
 					</a>
 				</li>
 				<li class="block lg:hidden">
 					<a href="{{route('login')}}" class="flex items-center p-2 space-x-2 transition-colors rounded hover:text-blue-500 hover:bg-white">
-						<span>Login</span>
+						<span>{{ __('pub_theme::headernav.auth.login.label') }}</span>
 					</a>
 				</li>
 			@endauth
@@ -43,7 +43,7 @@
 					<form action="{{ route('logout') }}" method="post"> @csrf
 						<button type="submit" class="flex items-center w-full p-2 space-x-2 text-red-500 rounded hover:text-red-600 hover:bg-white">
 							<x-heroicon-o-power class="size-6" />
-							<span>{{ __('Logout') }}</span>
+							<span>{{ __('pub_theme::headernav.user_menu.logout.label') }}</span>
 						</button>
 					</form>
 				</li>

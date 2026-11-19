@@ -13,7 +13,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C0 0.195157 0.193484 0 0 0V16V32V48V64C0 63.8048 0.193484 64 0 64H16.0054C15.8123 64 16.0057 63.8048 16.0054 64V48C16.0057 48.0517 16.1999 47.8558 16.0054 48H32.0108C31.818 47.8558 32.0108 47.6607 32.0108 48V32C31.818 31.7124 32.0108 31.9075 32.0108 32H1.33378C1.1212 31.7124 0.9602 31.3199 1.33378 30.6667L30.677 1.33333C31.5451 0.470417 31.3531 0 30.677 0H0Z" fill="var(--color-Neutral-1)"></path>
                 </svg>
             </a> --}}
-            <h1 class="text-[64px] leading-tight font-semibold">Make your<br/>prediction</h1>
+            <h1 class="text-[64px] leading-tight font-semibold">{{ __('pub_theme::auth_pages.hero.make_your.title') }}<br/>{{ __('pub_theme::auth_pages.hero.prediction.title') }}</h1>
         </div>
     </div>
     <div class="bg-[#ECEFED] relative">
@@ -24,7 +24,7 @@
         </button>
         <main class="container max-w-sm px-5 mx-auto">
             <div class="py-16 space-y-6">
-                <h4 class="text-3xl font-semibold text-center">Reset password</h4>
+                <h4 class="text-3xl font-semibold text-center">{{ __('pub_theme::auth_pages.passwords.reset_title.title') }}</h4>
                 {{-- <div class="space-y-4">
                     <button class="flex items-center w-full px-4 py-4 font-semibold transition-colors duration-500 border rounded-lg border-slate-400 hover:bg-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.18em" height="1.2em" viewBox="0 0 256 262">
@@ -33,31 +33,31 @@
                             <path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z" />
                             <path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251" />
                         </svg>
-                        <span class="block tracking-widest text-center grow">Enter with Google</span>
+                        <span class="block tracking-widest text-center grow">{{ __('pub_theme::auth_pages.social.google.label') }}</span>
                     </button>
                     <button class="flex items-center w-full px-4 py-4 font-semibold transition-colors duration-500 border rounded-lg border-slate-400 hover:bg-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 24 24">
                             <path class="fill-[#1977F2]" d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z" />
                         </svg>
-                        <span class="block tracking-widest text-center grow">Enter with Facebook</span>
+                        <span class="block tracking-widest text-center grow">{{ __('pub_theme::auth_pages.social.facebook.label') }}</span>
                     </button>
                 </div>
                 <div class="flex items-center py-2">
                     <div class="flex-1 border-t border-slate-400"></div>
-                    <span class="px-3 text-sm text-slate-800">or</span>
+                    <span class="px-3 text-sm text-slate-800">{{ __('pub_theme::auth_pages.common.or_divider.label') }}</span>
                     <div class="flex-1 border-t border-slate-400"></div>
                 </div> --}}
                 <form class="space-y-4" wire:submit.prevent="resetPassword">
                     <input wire:model="token" type="hidden">
                     <div class="space-y-1">
-                        <label for="email" class="block font-semibold">E-mail</label>
+                        <label for="email" class="block font-semibold">{{ __('pub_theme::auth_pages.fields.email.label') }}</label>
                         <input wire:model.lazy="email" id="email" type="email" class="block w-full p-4 transition bg-transparent border rounded-lg h-14 border-slate-400 hover:bg-slate-300 hover:border-slate-300 focus:bg-transparent focus:border-slate-400" placeholder="example@email.com"/>
                         @error('email')
                             <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
                     <div class="space-y-1">
-                        <label for="password" class="block font-semibold">Password</label>
+                        <label for="password" class="block font-semibold">{{ __('pub_theme::auth_pages.fields.password.label') }}</label>
                         <div class="relative">
                             <input wire:model.lazy="password" id="password" type="password" class="block w-full p-4 transition bg-transparent border rounded-lg h-14 border-slate-400 hover:bg-slate-300 hover:border-slate-300 focus:bg-transparent focus:border-slate-400" />
                             {{-- <button id="visibilityToggler" type="button" class="absolute inset-y-0 p-2 right-2">
@@ -105,7 +105,7 @@
 
                     <div>
                         <button class="flex bg-[#0027cc] text-white items-center w-full px-4 py-4 font-semibold transition-colors duration-500 border rounded-lg border-slate-400 hover:bg-[#061989]">
-                            <span class="block tracking-widest text-center grow">Reset password</span>
+                            <span class="block tracking-widest text-center grow">{{ __('pub_theme::auth_pages.passwords.reset_submit.label') }}</span>
                         </button>
                     </div>
                 </form>

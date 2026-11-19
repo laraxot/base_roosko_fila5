@@ -8,29 +8,12 @@
 ])
 
 @php
-    /**
-     * Scopo hero: fino a 3 market trend dal CMS/block props.
-     * Nessun Service: il modulo Predict non esiste qui; i dati arrivano gia' shaped
-     * (slug, title, trending_up, yes_percent) dal chiamante del blocco.
-     */
+    // Convert to collection and ensure we have max 3 trending markets
     $trending_markets = collect($trending_markets)->take(3);
-    $market_data = $trending_markets->map(static function (mixed $market): array {
-        if (is_array($market)) {
-            return [
-                'slug' => (string) ($market['slug'] ?? ''),
-                'title' => (string) ($market['title'] ?? ''),
-                'trending_up' => (bool) ($market['trending_up'] ?? true),
-                'yes_percent' => $market['yes_percent'] ?? $market['change'] ?? '',
-            ];
-        }
-
-        return [
-            'slug' => '',
-            'title' => is_scalar($market) ? (string) $market : '',
-            'trending_up' => true,
-            'yes_percent' => '',
-        ];
-    });
+    
+    // Get market data from PredictService
+    $market_data = app('Modules\\Predict\\Services\\PredictService')
+        ->getMarketsData($trending_markets->all());
 @endphp
 
 <section class="relative bg-gray-900 text-white py-20 md:py-32 overflow-hidden" style="background-image: url('{{ $background_image }}'); background-size: cover; background-position: center;">
@@ -49,7 +32,7 @@
             
             @if($trending_markets->isNotEmpty())
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
-                    <h3 class="text-lg font-semibold mb-4">🔥 Trending Right Now</h3>
+                    <h3 class="text-lg font-semibold mb-4">🔥 {{ __('pub_theme::blocks_hero.dynamic.trending.title') }}</h3>
                     <div class="flex flex-wrap justify-center gap-4">
                         @foreach($market_data as $market)
                             <a href="/markets/{{ $market['slug'] }}" class="bg-white/5 hover:bg-white/20 transition-colors px-4 py-2 rounded-full flex items-center gap-2">

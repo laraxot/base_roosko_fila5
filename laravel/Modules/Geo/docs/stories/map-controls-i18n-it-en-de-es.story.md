@@ -3,8 +3,8 @@
 - Stato: done (2026-10-07)
 - Fase BMAD: Quick Flow (sweep delle pagine, causa, fix, verifica in browser)
 - Owner: Modules/Geo (`resources/js/components/map/`)
-- Collegata a: [auth-pages-i18n-en-de-es-2026-10-07.story.md](../../../User/docs/stories/auth-pages-i18n-en-de-es.story.md),
-  [tickets-ux-theme-symlink-geolocation-2026-10-07.story.md](../../../../Themes/Sixteen/docs/stories/tickets-ux-theme-symlink-geolocation.story.md)
+- Collegata a: [auth-pages-i18n-en-de-es-2026-10-07.story.md](../../../User/docs/stories/auth-pages-i18n-en-de-es-2026-10-07.story.md),
+  [tickets-ux-theme-symlink-geolocation-2026-10-07.story.md](../../../../Themes/Sixteen/docs/stories/tickets-ux-theme-symlink-geolocation-2026-10-07.story.md)
 
 ## Problema
 

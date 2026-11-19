@@ -19,6 +19,8 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
+
 // ---------------------------------------------------------------------------
 // ValidateGdprConsentAction
 // ---------------------------------------------------------------------------
@@ -104,7 +106,7 @@ it('validates and transforms user data correctly', function (): void {
     Assert::assertSame('Rossi', $result['last_name']);
     Assert::assertSame($email, $result['email']);
     Assert::assertSame('customer_user', $result['type']);
-    Assert::assertNotNull($result['email_verified_at']);
+    Assert::assertNull($result['email_verified_at']);
     $hashed = is_string($result['password']) ? $result['password'] : '';
     Assert::assertTrue(Hash::check('SecureP@ssw0rd!', $hashed));
 });

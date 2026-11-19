@@ -1,15 +1,7 @@
 ---
 title: "Media Wiki Index"
 module: "Media"
-type: index
-status: superseded
-superseded_by: INDEX.md
-updated: 2026-10-14
-tags: [docs, media, wiki]
-qmd: "media module wiki media"
 ---
-
-> Superseded il 2026-10-14: copia per sola differenza di maiuscole di [INDEX.md](./INDEX.md), che e' l'indice canonico della wiki. Contenuto conservato per storia.
 
 # Media Module Wiki
 
@@ -37,14 +29,19 @@ qmd search "Media <topic>" --limit 5
 
 <!-- Merged from INDEX.md, which collided with this file on case-insensitive filesystems. -->
 
+---
+title: "Media Wiki Index"
+module: "Media"
+---
+
 # Media Module Wiki
 
 ## Indices
 - [Rules](rules/index.md)
-- [Skills](skills/index.md)
-- [Commands](commands/index.md)
-- [Memories](memories/index.md)
-- [Concepts](concepts/index.md)
+- [Skills](skills/INDEX.md)
+- [Commands](commands/INDEX.md)
+- [Memories](memories/INDEX.md)
+- [Concepts](concepts/INDEX.md)
 
 ## On-Demand Workflow
 
@@ -57,4 +54,4 @@ qmd search "Media <topic>" --limit 5
 
 ## Composer / nwidart
 
-- [composer-root-minimal-nwidart](concepts/composer-root-minimal-nwidart.md) — root skeleton nwidart (modello fixcity)
+- [composer-root-minimal-nwidart](concepts/composer-root-minimal-nwidart.md) — root skeleton nwidart (modello laraxot)

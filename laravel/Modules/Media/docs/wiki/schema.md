@@ -11,7 +11,6 @@ tags:
   - conventions
   - llm-instructions
 created: 2026-04-15
-status: draft
 ---
 
 # Wiki Schema - Media
@@ -45,6 +44,7 @@ docs/
 <!-- Merged from SCHEMA.md, which collided with this file on case-insensitive filesystems. -->
 
 ---
+title: "Rimando a schema.md"
 description: "Documento unificato: il contenuto canonico vive in schema.md."
 status: merged
 tags: [merge, duplicato, case-only]

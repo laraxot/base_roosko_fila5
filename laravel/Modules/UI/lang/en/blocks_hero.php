@@ -280,6 +280,9 @@ return [
         'data_policy' => [
             'label' => 'Data Policy',
         ],
+        'and' => [
+            'label' => 'and',
+        ],
         'cookies_policy' => [
             'label' => 'Cookies Policy',
         ],

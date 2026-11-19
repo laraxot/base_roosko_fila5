@@ -1,11 +1,10 @@
 ---
-title: "Activity — English presentation"
+title: "📋 Activity — English presentation"
+qmd: "activity readme en md"
 type: note
-status: draft
-updated: 2026-10-20
-tags: [docs, activity]
-qmd: "activity   english presentation activity"
+tags: [documentation]
 ---
+
 # 📋 Activity — English presentation
 
 [![Domain-Audit](https://img.shields.io/badge/Domain-Activity%20Log-455A64.svg)](#)
@@ -47,7 +46,7 @@ Traceability on sensitive system entities.
 
 Accountability is **non-negotiable** in digital government.
 
-Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
+Frontoffice stack: **Tailwind · Alpine · Lit · DaisyUI · Flowbite · Filament v5** — see [STORY-133](../../../docs/stories/STORY-133-frontend-stack-religion-tailwind-alpine-lit.md).
 
 ---
 

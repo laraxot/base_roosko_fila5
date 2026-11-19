@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "gsd integration summary"
 issues: []
 discussions: []
-status: superseded
-superseded_by: gsd-integration-summary.md
 ---
 
 # GSD (Get Shit Done) Integration Summary
@@ -19,6 +17,15 @@ superseded_by: gsd-integration-summary.md
 **Integration**: GSD + BMAD-METHOD
 
 ---
+
+title: "gsd integration summary"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gsd integration summary"
+issues: []
+discussions: []
 ## 🎯 What is GSD?
 
 **GSD (Get Shit Done)** è un framework di **meta-prompting, context engineering, e spec-driven development** per AI coding assistants.

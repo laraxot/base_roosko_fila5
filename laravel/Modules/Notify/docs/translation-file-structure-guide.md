@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "translation file structure guide"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Guida alla Struttura dei File di Traduzione
@@ -162,5 +161,3 @@ return [
 ## Riferimenti
 - [Regole di Naming per i File di Traduzione](./TRANSLATION_FILE_NAMING_RULES.md)
 - [Regole Generali per le Traduzioni](../../Lang/docs/TRANSLATION_KEYS_RULES.md)
-- [Regole di Naming per i File di Traduzione](./translation_file_naming_rules.md)
-- [Regole Generali per le Traduzioni](../../Lang/docs/translation_keys_rules.md)

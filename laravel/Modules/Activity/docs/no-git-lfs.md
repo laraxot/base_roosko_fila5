@@ -47,44 +47,8 @@ bash bashscripts/templates/sync-gitattributes-modules.sh
 ```
 
 ```gitattributes
-# Prototipo .gitattributes per laravel/Modules/* e laravel/Themes/*
-# Canon: bashscripts/ai/wiki/rules/no-git-lfs.md
-# Sync:  bash bashscripts/templates/sync-gitattributes-modules.sh
-#
-# Git LFS VIETATO. I binari sono blob git normali.
-# Mai: filter=lfs / diff=lfs / merge=lfs
-
-* text=auto
-
-*.css linguist-vendored
-*.scss linguist-vendored
-*.js linguist-vendored
-CHANGELOG.md export-ignore
-
-# Binari come blob git normali: NIENTE git-lfs.
-# `binary` disattiva diff e normalizzazione di fine riga.
-# `!filter` annulla un eventuale filter.lfs ereditato dalla configurazione di sistema:
-# e' questa la protezione vera, perche' filter.lfs.* puo' restare installato sulla
-# macchina per altri progetti e senza `!filter` verrebbe applicato anche qui.
-*.png binary !filter
-*.jpg binary !filter
-*.jpeg binary !filter
-*.gif binary !filter
-*.webp binary !filter
-*.ico binary !filter
-*.svg binary !filter
-*.pdf binary !filter
-*.zip binary !filter
-*.woff binary !filter
-*.woff2 binary !filter
-*.ttf binary !filter
-*.eot binary !filter
-*.otf binary !filter
-*.mp4 binary !filter
-*.psd binary !filter
-*.phar binary !filter
-*.db binary !filter
-*.sqlite binary !filter
+# Copia live: bashscripts/templates/gitattributes.module
+# (non duplicare qui: sync sovrascrive Modules/* e Themes/*)
 ```
 
 ### Perche' `binary !filter` e non solo `binary`

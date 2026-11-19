@@ -16,7 +16,6 @@ related:
   - ../notifications/readme.md
   - ../integrations/readme.md
   - ../templates/readme.md
-status: draft
 ---
 # Indice Documentazione Template Email
 
@@ -27,8 +26,6 @@ status: draft
 - [Template Email](../email_templates.md)
 - [Documentazione Generale ](../../../../../../docs/readme.md)
 - [Documentazione Generale <nome progetto>](../../../../../../docs/readme.md)
-- [Documentazione Generale ](../../../../../docs/README.md)
-- [Documentazione Generale <nome progetto>](../../../../../docs/README.md)
 - [Collegamenti Documentazione](../../../../../../docs/collegamenti-documentazione.md)
 
 ## Struttura e Architettura

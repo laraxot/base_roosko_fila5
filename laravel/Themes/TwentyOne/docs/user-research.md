@@ -1,15 +1,3 @@
----
-title: "user research"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "user research"
-issues: []
-discussions: []
-status: draft
----
-
 # User Research - Theme TwentyOne
 
 ## Modern Tailwind + Vite Theme
@@ -19,6 +7,7 @@ status: draft
 **Owner:** Theme Product Team
 
 ---
+
 ## Executive Summary
 
 This document presents user research findings for Theme TwentyOne, the modern Tailwind + Vite theme currently in beta. Research was conducted between November 2025 and February 2026, involving 35 participants across startups, digital agencies, and freelance developers.
@@ -428,9 +417,9 @@ This document presents user research findings for Theme TwentyOne, the modern Ta
 
 ### Related Documents
 - [Product Requirements Document](prd.md)
-- [Product Roadmap](product_roadmap.md)
+- [Product Roadmap](product-roadmap.md)
 - [Product Strategy](product_strategy.md)
-- [Sprint Planning](sprint_planning.md)
+- [Sprint Planning](sprint-planning.md)
 
 ---
 

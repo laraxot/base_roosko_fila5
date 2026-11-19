@@ -502,8 +502,8 @@ Ogni modulo ha la sua documentazione in `Modules/ModuleName/docs/`:
 
 ### Documentazione
 - **[Indice Documentazione](./documentation-index.md)**
-- **[Roadmap Status](./roadmap-status-summary.md)**
-- **[Documentation Status](./project_docs/documentation-status.md)**
+- **[Roadmap Status](../../../roadmap-status-summary.md)**
+- **[Documentation Status](../../../project_docs/documentation-status.md)**
 - **[Roadmap Status](../../../roadmap-status-summary.md)**
 - **[Documentation Status](../../../project_docs/documentation-status.md)**
 
@@ -514,7 +514,7 @@ Ogni modulo ha la sua documentazione in `Modules/ModuleName/docs/`:
 
 ### Regole Progetto
 - **[Laraxot Rules](./.windsurf/rules/user_15338591596331277449.md)**
-- **[Code Quality](./.windsurf/rules/code-quality.md)**
+- **[Code Quality](../../../ai-agents/code-quality.md)**
 - **[Code Quality](../../../ai-agents/code-quality.md)**
 - **[Project Rules](./.windsurf/rules/project-rules.md)**
 

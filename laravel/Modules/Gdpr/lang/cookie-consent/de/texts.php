@@ -7,7 +7,7 @@ return [
     'alert_title_info' => 'Cookies',
     'alert_text_info' => 'Diese Website verwendet nur technische Cookies, die für ihren Betrieb nötig sind: Dafür ist keine Einwilligung erforderlich. Wir verwenden keine Profiling- oder Analyse-Cookies.',
     'alert_title_consent' => 'Diese Website verwendet Cookies',
-    'alert_text_consent' => 'Wir verwenden technische Cookies, die für den Betrieb nötig sind, und nur mit Ihrer Einwilligung Analyse- und Marketing-Cookies. Wenn Sie das Banner schließen, ohne zu wählen, bleiben nur die technischen Cookies aktiv.',
+    'alert_text_consent' => 'Wir verwenden technische Cookies, die für den Betrieb nötig sind, und nur mit Ihrer Einwilligung Analyse- und Marketing-Cookies. Wenn Sie das Banner schließen, ohne zu wählen, bleiben nur die technischen Cookies aktiv. Ihre Auswahl können Sie über den Link „Cookies verwalten“ am Seitenende ändern.',
     'alert_accept' => 'Alle akzeptieren',
     'alert_reject' => 'Alle ablehnen',
     'alert_settings' => 'Anpassen',
@@ -48,6 +48,6 @@ return [
     'policy_how_text' => 'Sie können die Einstellungen jederzeit über den Link „Cookies verwalten“ am Ende jeder Seite erneut öffnen oder die Cookies in Ihrem Browser löschen.',
     'policy_manage_button' => 'Cookie-Einstellungen öffnen',
     'policy_external_title' => 'Karten und externe Dienste',
-    'policy_external_text' => 'Um Karten anzuzeigen und Adressen zu suchen, kontaktiert Ihr Browser direkt OpenStreetMap. Diese Anfragen setzen keine Cookies, aber der Dienst erhält Ihre IP-Adresse.',
+    'policy_external_text' => 'Karten und Adresssuche nutzen Daten von OpenStreetMap, laufen aber über den Server dieser Website: Ihr Browser kontaktiert OpenStreetMap nicht, und kein externer Dienst erhält Ihre IP-Adresse. Nur wenn Sie die Satelliten-, topografische oder humanitäre Kartenansicht wählen, fordert Ihr Browser die Bilder direkt bei Esri oder OpenStreetMap France an.',
     'policy_privacy_link' => 'Lesen Sie auch die Datenschutzerklärung',
 ];

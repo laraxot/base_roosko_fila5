@@ -1,54 +1,43 @@
 <?php
 
 declare(strict_types=1);
-use Illuminate\Database\Eloquent\Model;
+
 use Modules\Activity\Actions\LogModelCreatedAction;
-use Modules\Activity\Models\Activity;
+use Modules\Activity\Tests\Fixtures\LogModelCreatedActionTestModel;
 use Modules\Activity\Tests\TestCase;
-use Modules\User\Database\Factories\UserFactory;
+use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-test('LogModelCreatedAction can execute for a model', function (): void {
-    $model = UserFactory::new()->createOne();
-    $action = new LogModelCreatedAction;
-    $activity = $action->execute($model);
+test('LogModelCreatedAction execute persiste created con subject e causer', function (): void {
+    $model = new LogModelCreatedActionTestModel;
+    $model->forceFill(['id' => 'created-1', 'name' => 'Created']);
+    $model->exists = true;
+
+    $user = new User;
+    $user->forceFill([
+        'id' => 'causer-created-1',
+        'name' => 'Causer',
+        'email' => 'causer-created-1@example.test',
+    ]);
+    $user->exists = true;
+
+    $activity = (new LogModelCreatedAction($model, $user))->execute();
 
     Assert::assertSame('created', $activity->event);
-    Assert::assertSame($model->getKey(), $activity->subject_id);
-});
-
-test('LogModelCreatedAction accepts any Eloquent model', function (): void {
-    $model = new class extends Model
-    {
-        protected $table = 'test_models';
-
-        protected $fillable = ['name'];
-    };
-    $action = new LogModelCreatedAction;
-    $activity = $action->execute($model);
-
     Assert::assertSame($model::class, $activity->subject_type);
-
-    $user = UserFactory::new()->createOne();
-    $action = new LogModelCreatedAction($model, $user);
-
-    Assert::assertSame($user, $action->user);
+    Assert::assertSame($model->getKey(), $activity->subject_id);
+    Assert::assertSame($user->id, $activity->causer_id);
 });
 
-test('LogModelCreatedAction can execute', function () {
-    $modelClass = get_class(new class extends Model
-    {
-        protected $table = 'test_models';
+test('LogModelCreatedAction execute accetta model passato a execute', function (): void {
+    $model = new LogModelCreatedActionTestModel;
+    $model->forceFill(['id' => 'created-2', 'name' => 'ViaExecute']);
+    $model->exists = true;
 
-        protected $fillable = ['name'];
-    });
-    $model = new $modelClass(['name' => 'Test']);
-    $user = UserFactory::new()->createOne();
-    Assert::assertInstanceOf(Model::class, $user);
+    $activity = (new LogModelCreatedAction)->execute($model);
 
-    $action = new LogModelCreatedAction($model, $user);
-
-    Assert::assertSame($model, $action->model);
+    Assert::assertSame('created', $activity->event);
+    Assert::assertSame($model::class, $activity->subject_type);
 });

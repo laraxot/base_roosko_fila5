@@ -3,7 +3,7 @@
 - Stato: done (2026-10-07), con aperti elencati sotto
 - Fase BMAD: Quick Flow (analisi, fix, verifica a browser e test)
 - Owner: Modules/User (lang), Themes/Sixteen (view)
-- Collegata a: [login-page-it-translations-fix-2026-10-07.story.md](./login-page-it-translations-fix.story.md)
+- Collegata a: [login-page-it-translations-fix-2026-10-07.story.md](./login-page-it-translations-fix-2026-10-07.story.md)
   (la sua voce "Aperto" sui locali non italiani e' chiusa qui)
 
 ## Problema

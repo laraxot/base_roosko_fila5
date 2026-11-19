@@ -143,7 +143,7 @@
                     type="button"
                     class="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-slate-950/70 text-white"
                     x-on:click="activeOutcome = null"
-                    aria-label="Chiudi"
+                    aria-label="{{ __('pub_theme::widgets_predict.outcome_modal.close.aria_label') }}"
                 >
                     <x-filament::icon icon="heroicon-o-x-mark" class="h-5 w-5" />
                 </button>
@@ -157,7 +157,7 @@
 
                 <div class="space-y-2">
                     <div class="flex items-center justify-between text-sm text-slate-300">
-                        <span>Distribuzione crediti</span>
+                        <span>{{ __('pub_theme::widgets_predict.outcome_modal.credit_distribution.label') }}</span>
                         <span x-text="activeOutcome?.percentage_label"></span>
                     </div>
                     <div class="h-3 overflow-hidden rounded-full bg-white/10">

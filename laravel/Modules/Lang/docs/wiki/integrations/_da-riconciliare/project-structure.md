@@ -2,15 +2,14 @@
 qmd: "project structure"
 issues: []
 discussions: []
-title: "Project Structure: Module Lang"
+title: "Project Structure — Module Lang"
 type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
-status: draft
 ---
 
-# Project Structure: Module **Lang**
+# Project Structure — Module **Lang**
 
 ## Directory Structure
 
@@ -36,7 +35,7 @@ status: draft
 │   │   └── *.md
 │   ├── decisions/                # Architecture decision records
 │   └── troubleshooting/          # Bug fixes, error resolutions
-├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE: Pattern on-demand
+├── ON-DEMAND-PATTERN.md          # 🌟 QUESTO FILE — Pattern on-demand
 ├── QMD-SETUP.md                  # Configurazione QMD
 ├── PERFORMANCE-OPTIMIZATION.md    # Metriche e best practice
 ├── ARCHITECTURE.md               # (opzionale) Architettura modulo
@@ -51,7 +50,7 @@ status: draft
 | `wiki/log.md` | Storico attività (ingest/query/lint) |
 | `wiki/rules/` | Regole + trigger map locale |
 | `wiki/concepts/` | Concetti specifici del modulo |
-| `ON-DEMAND-PATTERN.md` | **Leggi prima**: pattern da seguire |
+| `ON-DEMAND-PATTERN.md` | **Leggi prima** — pattern da seguire |
 
 ## Convenzioni
 
@@ -103,11 +102,6 @@ graph TD
 - [Global Skills](../../docs/wiki/skills/)
 - [Global Commands](../../docs/wiki/commands/)
 - [Global Memories](../../docs/wiki/memories/)
-- [Project Wiki Root](../..)
-- [Global Rules](../../rules)
-- [Global Skills](../../skills)
-- [Global Commands](../../commands)
-- [Global Memories](../../memories)
 
 ## Setup Iniziale (per nuovi moduli)
 

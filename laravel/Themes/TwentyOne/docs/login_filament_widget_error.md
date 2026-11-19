@@ -1,15 +1,3 @@
----
-title: "login filament widget error"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "login filament widget error"
-issues: []
-discussions: []
-status: draft
----
-
 # Analisi dell'Errore: Login senza Widget Filament nel Modulo User
 
 ## Descrizione dell'Errore
@@ -64,7 +52,7 @@ class LoginWidget extends XotBaseWidget
 ## Collegamenti contestuali
 
 - **[LOGIN_FILAMENT_WIDGET_PRO_CONS.md](login_filament_widget_pro_cons.md)** — Per un confronto approfondito tra approcci, vantaggi/svantaggi e best practice, consulta questo file: aiuta a scegliere la soluzione più adatta e conforme alle regole Windsurf/Xot.
-- **[WIDGETS_STRUCTURE.md](../../../Modules/User/docs/widgets_structure.md)** — Per capire come strutturare correttamente i widget Filament, consulta questo file: contiene pattern, esempi e regole architetturali fondamentali per evitare errori strutturali.
+- **[WIDGETS_STRUCTURE.md](../../../Modules/User/docs/WIDGETS_STRUCTURE.md)** — Per capire come strutturare correttamente i widget Filament, consulta questo file: contiene pattern, esempi e regole architetturali fondamentali per evitare errori strutturali.
 
 ---
 

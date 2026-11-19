@@ -8,7 +8,6 @@ tags: [migrazione, filament, 4]
 created: 2026-07-14
 updated: 2026-07-14
 qmd: "migrazione filament 4"
-status: draft
 ---
 type: rule
 tags: [migration, filament]

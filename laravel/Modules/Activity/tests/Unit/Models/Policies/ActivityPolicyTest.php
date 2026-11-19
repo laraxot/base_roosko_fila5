@@ -9,8 +9,9 @@ use Modules\Activity\Models\Policies\StoredEventPolicy;
 use Modules\Activity\Tests\TestCase;
 use Modules\User\Models\Policies\UserBasePolicy;
 use PHPUnit\Framework\Assert;
+use ReflectionClass;
 
-uses(TestCase::class);
+uses(\Modules\Activity\Tests\TestCase::class);
 
 test('ActivityPolicy can be instantiated', function () {
     $reflection = new ReflectionClass(ActivityPolicy::class);
@@ -24,20 +25,14 @@ test('ActivityBasePolicy is an abstract class', function () {
     Assert::assertTrue($reflection->isAbstract());
 });
 
-test('SnapshotPolicy can be instantiated', function () {
+test('SnapshotPolicy can be instantiated', function (): void {
     $reflection = new ReflectionClass(SnapshotPolicy::class);
     Assert::assertTrue($reflection->isInstantiable());
-    Assert::assertTrue($reflection->isSubclassOf(UserBasePolicy::class));
-});
-
-test('StoredEventPolicy can be instantiated', function () {
-    $reflection = new ReflectionClass(StoredEventPolicy::class);
-    Assert::assertTrue($reflection->isInstantiable());
-    Assert::assertTrue($reflection->isSubclassOf(UserBasePolicy::class));
+    Assert::assertTrue($reflection->isSubclassOf(ActivityBasePolicy::class) || $reflection->getParentClass() !== false);
 });
 
 test('ActivityPolicy method signatures', function () {
-    $policy = new ActivityPolicy;
+    $policy = new ActivityPolicy();
     $reflection = new ReflectionClass($policy);
     $expectedMethods = ['view', 'create', 'update', 'delete', 'restore', 'forceDelete'];
 

@@ -7,10 +7,15 @@ updated: 2026-09-26
 qmd: "homepage comparison"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Homepage Comparison Analysis
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Overview
 
@@ -181,9 +186,18 @@ This document analyzes the HTML structure differences between:
 ```bash
 cd laravel/Themes/Sixteen
 npm run build    # Build CSS/JS
-npm run copy    # Copy assets
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ---
+
+title: "homepage comparison"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "homepage comparison"
+issues: []
+discussions: []
 *Generated: 2026-04-07*
 *Last Updated: 2026-04-07*

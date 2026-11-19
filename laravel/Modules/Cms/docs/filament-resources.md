@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "filament resources"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Filament Resources nel CMS
@@ -125,7 +124,7 @@ return [
 ## Collegamenti tra versioni di filament-resources.md
 * [filament-resources.md](docs/tecnico/filament/filament-resources.md)
 * [filament-resources.md](docs/regole/filament-resources.md)
-* [filament-resources.md](../../Gdpr/docs/filament-resources.md)
+* [filament-resources.md](laravel/modules/gdpr/project_docs/filament-resources.md)
 * [filament-resources.md](laravel/modules/xot/project_docs/filament-resources.md)
 * [filament-resources.md](laravel/modules/cms/project_docs/filament-resources.md)
 

@@ -11,6 +11,12 @@ discussions: []
 
 # Design Comuni Pages Conversion Project
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 > **Goal**: Convert all 32 Design Comuni pages from Bootstrap Italia to Tailwind CSS + Alpine.js  
 > **Status**: 🚀 Phase 2 (CSS + Alpine implementation starting)  
 > **Progress**: HTML structure verified ✅ | CSS/Alpine in progress 🔄
@@ -83,7 +89,7 @@ discussions: []
 - [ ] Performance testing
 
 ### Phase 5: Deployment ⏳ PENDING
-- [ ] Final build: `npm run build && npm run copy`
+- [ ] Final build: `npm run build`
 - [ ] Comprehensive testing
 - [ ] Documentation finalization
 - [ ] Merge to main
@@ -93,10 +99,10 @@ discussions: []
 ## 📂 Documentation
 
 ### Main Resources
-- [🗂️ Master Index](./laravel/Themes/Sixteen/docs/design-comuni-replication-index.md)
-- [📋 Strategy & Phases](./laravel/Themes/Sixteen/docs/implementation/strategy.md)
-- [👥 Team Coordination](./laravel/Themes/Sixteen/docs/implementation/team-coordination.md)
-- [📊 Reference Analysis](./laravel/Themes/Sixteen/docs/analysis/reference-design-analysis.md)
+- [🗂️ Master Index](./laravel/Themes/Sixteen/docs/DESIGN_COMUNI_REPLICATION_INDEX.md)
+- [📋 Strategy & Phases](./laravel/Themes/Sixteen/docs/implementation/STRATEGY.md)
+- [👥 Team Coordination](./laravel/Themes/Sixteen/docs/implementation/TEAM_COORDINATION.md)
+- [📊 Reference Analysis](./laravel/Themes/Sixteen/docs/analysis/REFERENCE_DESIGN_ANALYSIS.md)
 
 ### Per-Page Issues
 Each page has a dedicated GitHub issue:
@@ -139,7 +145,7 @@ npm install
 npm run build
 
 # Copy assets to public_html
-npm run copy
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 
 # Test in browser
 open http://127.0.0.1:8000/it/tests/
@@ -186,7 +192,7 @@ npm run test
 ### Communication
 - **GitHub Issues**: Per-page coordination
 - **GitHub Discussions**: Real-time team coordination
-- **Docs**: [TEAM_COORDINATION.md](./laravel/Themes/Sixteen/docs/implementation/team-coordination.md)
+- **Docs**: [TEAM_COORDINATION.md](./laravel/Themes/Sixteen/docs/implementation/TEAM_COORDINATION.md)
 
 ### Daily Standup
 Teams post status in issue comments:

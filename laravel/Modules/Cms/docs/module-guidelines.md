@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "module guidelines"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Linee Guida per la Documentazione dei Moduli
@@ -97,7 +96,7 @@ Modifica il file `header.blade.php` in questa posizione per personalizzare l'hea
 
 ## Collegamenti Bidirezionali
 - [README](README.md) - Documentazione principale del modulo
-- [Architettura](frontoffice/architecture.md) - Architettura del modulo
+- [Architettura](architecture.md) - Architettura del modulo
 - [Struttura](structure.md) - Struttura del modulo
 - [Namespace](namespace-moduli-laravel-<nome progetto>.md) - Convenzioni namespace
 - [Case Sensitivity](case-sensitivity-percorsi-moduli.md) - Gestione case sensitivity

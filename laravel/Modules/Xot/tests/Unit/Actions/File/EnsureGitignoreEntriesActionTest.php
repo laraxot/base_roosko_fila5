@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\File;
 use Modules\Xot\Actions\File\EnsureGitignoreEntriesAction;
 use Modules\Xot\Tests\TestCase;
 
+use function Safe\exec;
+use function Safe\symlink;
+
 uses(TestCase::class);
 
 beforeEach(function (): void {

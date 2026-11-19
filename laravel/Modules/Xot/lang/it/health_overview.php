@@ -3,6 +3,12 @@
 declare(strict_types=1);
 
 return [
+    'sections' => [
+        'empty' => [
+            'label' => '',
+            'heading' => '',
+        ],
+    ],
     'label' => 'Health Overview',
     'plural_label' => 'Health Overview (Plurale)',
     'navigation' => [

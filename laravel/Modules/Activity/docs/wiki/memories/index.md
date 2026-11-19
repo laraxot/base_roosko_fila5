@@ -23,7 +23,7 @@ Persistent memories and decision records for Activity module development.
 ## Memories (Rules, Checklist, Decisions)
 
 ### Testing Architecture
-- [testcase-hierarchy-decision-2026-06-10](./testcase-hierarchy-decision-2026-06-10.md) — **ACTIVE**
+- [testcase-hierarchy-decision](./testcase-hierarchy-decision.md) — **ACTIVE**
   - Activity TestCase -> `Modules\Xot\Tests\XotBaseTestCase` -> Laravel TestCase
   - `Nwidart\Modules\Tests\BaseTestCase` is not available in the installed package
   - Rules for platform vs module logic separation

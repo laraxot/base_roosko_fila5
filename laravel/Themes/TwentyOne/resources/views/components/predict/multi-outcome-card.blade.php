@@ -47,7 +47,7 @@
         tabindex="0"
         @keydown.enter="open = true"
         @keydown.space.prevent="open = true"
-        aria-label="{{ $label }} - {{ number_format($percentage, 1) }}% probabilità"
+        aria-label="{{ __('pub_theme::predict_cards.multi_outcome.card.aria_label', ['label' => $label, 'percentage' => number_format($percentage, 1)]) }}"
     >
         {{-- Image Header with Overlay --}}
         <div class="relative aspect-[4/3] overflow-hidden bg-gray-100 dark:bg-gray-700">
@@ -117,7 +117,7 @@
                 @click="open = false"
                 type="button"
                 class="absolute top-4 right-4 rounded-full bg-gray-100 p-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-700 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-gray-200"
-                aria-label="Chiudi modale"
+                aria-label="{{ __('pub_theme::predict_cards.multi_outcome.close_modal.aria_label') }}"
             >
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -154,7 +154,7 @@
                 <div class="grid grid-cols-3 gap-4">
                     {{-- Percentage --}}
                     <div class="rounded-xl bg-emerald-50 p-4 dark:bg-emerald-900/20">
-                        <p class="text-sm font-medium text-emerald-700 dark:text-emerald-300">Probabilità</p>
+                        <p class="text-sm font-medium text-emerald-700 dark:text-emerald-300">{{ __('pub_theme::predict_cards.multi_outcome.probability.label') }}</p>
                         <p class="mt-1 text-3xl font-bold text-emerald-600 dark:text-emerald-400">
                             {{ number_format($percentage, 1) }}%
                         </p>
@@ -181,7 +181,7 @@
                 {{-- Progress Bar --}}
                 <div>
                     <div class="mb-2 flex items-center justify-between">
-                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Distribuzione voti</span>
+                        <span class="text-sm font-medium text-gray-600 dark:text-gray-400">{{ __('pub_theme::predict_cards.multi_outcome.vote_distribution.label') }}</span>
                         <span class="text-sm font-bold text-emerald-600 dark:text-emerald-400">{{ number_format($percentage, 1) }}%</span>
                     </div>
                     <div class="h-4 overflow-hidden rounded-full bg-gray-200 dark:bg-gray-700">
@@ -197,7 +197,7 @@
                     href="{{ url('/' . app()->getLocale() . '/predicts/' . $predict->slug) }}"
                     class="block w-full py-4 text-center font-bold text-white bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/50"
                 >
-                    Vedi Dettagli Mercato
+                    {{ __('pub_theme::predict_cards.multi_outcome.view_details.label') }}
                 </a>
             </div>
         </div>

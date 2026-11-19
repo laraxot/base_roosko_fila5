@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "module architecture"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Module Architecture
@@ -76,6 +75,3 @@ class User extends Illuminate\Database\Eloquent\Model
 - [CLAUDE.md - Architecture Section](../../CLAUDE.md)
 - [AGENTS.md - Module Architecture Section](../../AGENTS.md)
 - [agents.md - Module Architecture Section](../../agents.md)
-- [CLAUDE.md - Architecture Section](../CLAUDE.md)
-- [AGENTS.md - Module Architecture Section](../AGENTS.md)
-- [agents.md - Module Architecture Section](../agents.md)

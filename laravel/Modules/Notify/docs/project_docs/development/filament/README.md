@@ -16,7 +16,6 @@ related:
   - ../../../notifications/readme.md
   - ../../../integrations/readme.md
   - ../../../templates/readme.md
-status: draft
 ---
 # Filament Development Guide
 
@@ -114,10 +113,6 @@ Widget personalizzati in Filament.
 - [Form Components](./form-components.md)
 - [Form Validation](./form-validation.md)
 - [Translations](./translations.md)
-- [Best Practices](../../../best-practices.md)
-- [Form Components](./form-components.md)
-- [Form Validation](./form-validation.md)
-- [Translations](../../../translations.md)
 - [Actions](./actions.md)
 - [Widgets](./widgets.md)
 - [PHPStan](../phpstan/)

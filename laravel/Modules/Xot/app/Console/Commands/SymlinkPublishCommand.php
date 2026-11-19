@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Modules\Xot\Console\Commands;
 
-use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Modules\Xot\Actions\File\CreateRelativeSymlinkAction;
+use Safe\Exceptions\FilesystemException;
 use Symfony\Component\Console\Attribute\AsCommand;
 
+use function Safe\realpath;
 use function Safe\unlink;
 
 #[AsCommand(name: 'symlink:publish')]
@@ -129,7 +131,8 @@ class SymlinkPublishCommand extends Command
                     continue;
                 }
                 // Same target through an absolute path: rewritten as relative, no --force needed.
-                $sameTarget = \realpath($targetPath) !== false && \realpath($targetPath) === \realpath($publicDir);
+                $resolvedTarget = $this->realpathOrFalse($targetPath);
+                $sameTarget = $resolvedTarget !== false && $resolvedTarget === $this->realpathOrFalse($publicDir);
                 if (! $sameTarget && ! $force) {
                     $errors[] = "{$type}/{$name}: symlink already exists at {$targetPath}";
 
@@ -162,6 +165,18 @@ class SymlinkPublishCommand extends Command
             } catch (\Throwable $e) {
                 $errors[] = "{$type}/{$name}: {$e->getMessage()}";
             }
+        }
+    }
+
+    /**
+     * realpath che restituisce false (non eccezione) se il percorso non esiste o il link e' rotto.
+     */
+    private function realpathOrFalse(string $path): string|false
+    {
+        try {
+            return realpath($path);
+        } catch (FilesystemException) {
+            return false;
         }
     }
 }

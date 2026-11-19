@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "08 verified commit governance"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Verified Commit Governance

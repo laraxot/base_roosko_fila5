@@ -3,17 +3,70 @@
 declare(strict_types=1);
 
 return [
-    'main' => 'Navigazione Principale',
-    'markets' => 'Mercati',
-    'leaderboard' => 'Classifica',
-    'search' => 'Cerca',
-    'account' => 'Account',
-    'wallet' => 'Portafoglio',
-    'profile' => 'Il mio profilo',
-    'sign_up' => 'Registrati',
-    'login' => 'Accedi',
-    'logout' => 'Esci',
-    'user_menu' => 'Menu utente',
-    'my_data' => 'I miei dati',
-    'credits_aria' => ':credits crediti virtuali: apri il portafoglio',
+    'sections' => [
+        'main' => [
+            'label' => 'Navigazione Principale',
+        ],
+        'markets' => [
+            'label' => 'Mercati',
+        ],
+        'leaderboard' => [
+            'label' => 'Classifica',
+        ],
+        'account' => [
+            'label' => 'Account',
+        ],
+    ],
+    'actions' => [
+        'search' => [
+            'label' => 'Cerca',
+        ],
+    ],
+    'user_menu' => [
+        'profile' => [
+            'label' => 'Profilo',
+        ],
+        'logout' => [
+            'label' => 'Esci',
+        ],
+    ],
+    'auth' => [
+        'signup' => [
+            'label' => 'Registrati',
+        ],
+        'login' => [
+            'label' => 'Accedi',
+        ],
+    ],
+    'notifications' => [
+        'activity' => [
+            'label' => 'La tua attività',
+        ],
+    ],
+    'links' => [
+        'markets' => [
+            'label' => 'Mercati',
+        ],
+        'about' => [
+            'label' => 'Informazioni su My_Company',
+        ],
+        'contact' => [
+            'label' => 'Contattaci',
+        ],
+        'suggest_market' => [
+            'label' => 'Suggerisci un mercato',
+        ],
+        'community' => [
+            'label' => 'Community',
+        ],
+        'privacy' => [
+            'label' => 'Informativa sulla privacy',
+        ],
+        'terms' => [
+            'label' => 'Termini e condizioni',
+        ],
+        'faq' => [
+            'label' => 'FAQ',
+        ],
+    ],
 ];

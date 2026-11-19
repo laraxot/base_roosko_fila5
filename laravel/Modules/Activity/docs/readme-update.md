@@ -1,11 +1,10 @@
 ---
 title: "Aggiornamento README Activity - Sezione Testing"
+qmd: "activity readme update md"
 type: note
-status: draft
-updated: 2026-10-08
-tags: [docs, activity]
-qmd: "aggiornamento readme activity - sezione testing activity"
+tags: [documentation]
 ---
+
 # Aggiornamento README Activity - Sezione Testing
 
 ## Sezione da Aggiungere
@@ -71,4 +70,3 @@ php artisan test --filter=Snapshot
 
 # Con coverage
 php artisan test Modules/Activity --coverage
-```

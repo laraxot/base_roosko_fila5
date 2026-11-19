@@ -1,4 +1,5 @@
 ---
+qmd: "ui wiki overview md"
 title: "Wiki Overview"
 module: "UI"
 type: overview
@@ -10,9 +11,6 @@ related:
   - "./context-compression.md"
   - "./index.md"
   - "./log.md"
-status: draft
-tags: [docs, ui, wiki]
-qmd: "ui wiki overview ui"
 ---
 
 # UI Wiki Overview

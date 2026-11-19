@@ -38,5 +38,13 @@ Core module for the FixCity Platform.
 | 📚 Wiki tecnica | [./docs/wiki/](..) |
 
 ---
+title: "Activity"
+type: index
+status: draft
+updated: 2026-10-23
+tags: [docs, activity, outputs]
+qmd: "activity activity"
+---
+# Activity
 
 See canonical documentation: ../../../../Themes/docs/shared-components/README-Modules.md

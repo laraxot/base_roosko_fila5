@@ -11,6 +11,12 @@ discussions: []
 
 # 🎉 REPLIKATE Phase 1 - COMPLETE
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 **Date**: 2026-04-07  
 **Status**: ✅ **PHASE 1 STRUCTURAL ANALYSIS COMPLETE**
 
@@ -97,7 +103,7 @@ discussions: []
 3. ✅ DIFF HTML - Document differences
 4. ⏳ FIX HTML - Modify blade/blocks
 5. ⏳ FIX CSS/JS - Tailwind + Alpine
-6. ⏳ BUILD - npm run build && npm run copy
+6. ⏳ BUILD - npm run build
 7. ⏳ VALIDATE - Check ≥90% match
 8. ⏳ DOCUMENT - Save analysis + screenshots
 
@@ -238,7 +244,7 @@ bashscripts ←→ Theme Docs ←→ Component Catalog
 - [ ] Update col-lg-4 → col-lg-6 in grid layouts
 - [ ] Add missing CSS classes
 - [ ] Remove Bootstrap classes
-- [ ] Run `npm run build && npm run copy`
+- [ ] Run `npm run build`
 - [ ] Verify HTML match ≥90%
 - [ ] Test responsive behavior
 - [ ] Update documentation with results

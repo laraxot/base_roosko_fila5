@@ -15,7 +15,7 @@ middleware(['auth', 'verified']);
 
 new class extends Component {
     #[Locked]
-    public ?\Modules\User\Models\BaseUser $user = null;
+    public ?Modules\Fixcity\Models\User $user = null;
 
     public string $name = '';
     public string $email = '';
@@ -29,8 +29,8 @@ new class extends Component {
     public function mount(): void
     {
         $user = auth()->user();
-        if (! $user instanceof \Modules\User\Models\BaseUser) {
-            throw new \RuntimeException('Authenticated user is not a BaseUser');
+        if (!$user instanceof \Modules\Fixcity\Models\User) {
+            throw new \RuntimeException('Authenticated user is not a Fixcity User');
         }
 
         $this->user = $user;
@@ -51,7 +51,7 @@ new class extends Component {
         }
 
         if ($this->user->name === $this->name && $this->user->email === $this->email) {
-            $this->dispatch('toast', message: __('Nothing to update.'), data: ['position' => 'top-right', 'type' => 'info']);
+            $this->dispatch('toast', message: 'Nothing to update.', data: ['position' => 'top-right', 'type' => 'info']);
             return;
         }
 
@@ -59,7 +59,7 @@ new class extends Component {
             $this->user->fill(['email' => $this->email, 'name' => $this->name])->save();
         }
 
-        $this->dispatch('toast', message: __('Successfully updated profile.'), data: ['position' => 'top-right', 'type' => 'success']);
+        $this->dispatch('toast', message: 'Successfully updated profile.', data: ['position' => 'top-right', 'type' => 'success']);
     }
 
     public function updatePassword(): void
@@ -67,12 +67,14 @@ new class extends Component {
         $validated = $this->validate();
 
         if (!$this->user || !Hash::check($this->current_password, $this->user->password)) {
-            $this->dispatch('toast', message: __('Current Password Incorrect'), data: ['position' => 'top-right', 'type' => 'danger']);
+            $this->dispatch('toast', message: 'Current Password Incorrect', data: ['position' => 'top-right', 'type' => 'danger']);
             return;
         }
 
-        $this->user->fill(['password' => Hash::make($this->new_password), 'remember_token' => \Illuminate\Support\Str::random(60)])->save();
-        $this->dispatch('toast', message: __('Successfully updated password.'), data: ['position' => 'top-right', 'type' => 'success']);
+        $this->dispatch('toast', message: 'Successfully updated password.', data: ['position' => 'top-right', 'type' => 'success']);
+        if ($this->user) {
+            $this->user->fill(['password' => Hash::make($this->new_password), 'remember_token' => Str::random(60)])->save();
+        }
 
         $this->reset(['current_password', 'new_password', 'new_password_confirmation']);
     }
@@ -80,7 +82,7 @@ new class extends Component {
     public function destroy(): \Illuminate\Http\RedirectResponse
     {
         if (!$this->user || !Hash::check($this->delete_confirm_password, $this->user->password)) {
-            $this->dispatch('toast', message: __('The Password you entered is incorrect'), data: ['position' => 'top-right', 'type' => 'danger']);
+            $this->dispatch('toast', message: 'The Password you entered is incorrect', data: ['position' => 'top-right', 'type' => 'danger']);
             $this->reset(['delete_confirm_password']);
             return redirect()->back();
         }
@@ -90,11 +92,9 @@ new class extends Component {
             return redirect('/');
         }
 
-        \Illuminate\Support\Facades\Auth::logout();
+        Auth::logout();
 
-        // L'utente del tenant è Modules\Predict\Models\User (estende BaseUser, non Modules\User\Models\User):
-        // con il vecchio controllo l'account non veniva mai cancellato, si veniva solo disconnessi.
-        if ($user instanceof \Modules\User\Models\BaseUser) {
+        if ($user instanceof \Modules\Fixcity\Models\User) {
             $user->delete();
         }
 
@@ -116,7 +116,7 @@ new class extends Component {
 
     <x-slot name="header">
         <h2 class="text-lg font-semibold leading-tight text-gray-800 dark:text-gray-200">
-            {{ __('Profile') }}
+            {{ __('pub_theme::profile_page.page.title.title') }}
         </h2>
     </x-slot>
 
@@ -129,18 +129,18 @@ new class extends Component {
                     class="p-4 bg-white shadow sm:p-8 dark:bg-gray-800 sm:rounded-lg dark:bg-gray-900/50 dark:border dark:border-gray-200/10">
                     <div class="max-w-xl">
                         <header>
-                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('Profile Information') }}
+                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('pub_theme::profile_page.information.title.title') }}
                             </h2>
                             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                {{ __("Update your account's profile information and email address.") }}</p>
+                                {{ __('pub_theme::profile_page.information.description.description') }}</p>
                         </header>
                         <form wire:submit="updateProfile" class="mt-6 space-y-6">
-                            <x-ui.input :label="__('Name')" type="text" id="name" name="name" wire:model="name" />
-                            <x-ui.input :label="__('Email address')" type="email" id="email" name="email"
+                            <x-ui.input :label="__('pub_theme::auth_pages.fields.name.label')" type="text" id="name" name="name" wire:model="name" />
+                            <x-ui.input :label="__('pub_theme::auth_pages.fields.email_address.label')" type="email" id="email" name="email"
                                 wire:model="email" />
                             <div class="flex items-start">
                                 <div>
-                                    <x-ui.button type="primary" submit="true">{{ __('Update') }}</x-ui.button>
+                                    <x-ui.button type="primary" submit="true">{{ __('pub_theme::profile_page.actions.update.label') }}</x-ui.button>
                                 </div>
                             </div>
                         </form>
@@ -153,23 +153,23 @@ new class extends Component {
                     class="p-4 bg-white shadow sm:p-8 dark:bg-gray-800 sm:rounded-lg dark:bg-gray-900/50 dark:border dark:border-gray-200/10">
                     <div class="max-w-xl">
                         <header>
-                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('Update Password') }}
+                            <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('pub_theme::profile_page.password.title.title') }}
                             </h2>
                             <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                {{ __('Ensure your account is using a long, random password to stay secure.') }}</p>
+                                {{ __('pub_theme::profile_page.password.description.description') }}</p>
                         </header>
                         <form wire:submit="updatePassword" class="mt-6 space-y-6">
 
-                            <x-ui.input :label="__('Current Password')" type="password" id="current_password"
+                            <x-ui.input :label="__('pub_theme::profile_page.fields.current_password.label')" type="password" id="current_password"
                                 name="current_password" wire:model="current_password" />
-                            <x-ui.input :label="__('New Password')" type="password" id="new_password" name="new_password"
+                            <x-ui.input :label="__('pub_theme::profile_page.fields.new_password.label')" type="password" id="new_password" name="new_password"
                                 wire:model="new_password" />
-                            <x-ui.input :label="__('Confirm New Password')" type="password" id="new_password_confirmation"
+                            <x-ui.input :label="__('pub_theme::profile_page.fields.new_password_confirmation.label')" type="password" id="new_password_confirmation"
                                 name="new_password_confirmation" wire:model="new_password_confirmation" />
 
                             <div class="flex items-start">
                                 <div>
-                                    <x-ui.button type="primary" submit="true">{{ __('Update') }}</x-ui.button>
+                                    <x-ui.button type="primary" submit="true">{{ __('pub_theme::profile_page.actions.update.label') }}</x-ui.button>
                                 </div>
                             </div>
                         </form>
@@ -184,10 +184,10 @@ new class extends Component {
                         {{-- Delete User Form --}}
                         <section class="space-y-6">
                             <header>
-                                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('Delete Account') }}
+                                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">{{ __('pub_theme::profile_page.delete.title.title') }}
                                 </h2>
                                 <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                                    {{ __('After deleting your account, all data and resources are permanently removed. Enter your password to confirm deletion.') }}
+                                    {{ __('pub_theme::profile_page.delete.description.description') }}
                                 </p>
                             </header>
 
@@ -195,7 +195,7 @@ new class extends Component {
                                 <div>
                                     <x-ui.button type="danger" x-data
                                         @click.prevent="$dispatch('open-modal', 'confirm-user-deletion')">
-                                        {{ __('Delete Account') }}
+                                        {{ __('pub_theme::profile_page.delete.open.label') }}
                                     </x-ui.button>
                                 </div>
                             </div>
@@ -204,24 +204,24 @@ new class extends Component {
                                 <form wire:submit="destroy" class="p-6">
 
                                     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                                        {{ __('Are you sure you want to delete your account?') }}</h2>
+                                        {{ __('pub_theme::profile_page.delete.confirm_question.title') }}</h2>
                                     <p class="mt-1 mb-6 text-sm text-gray-600 dark:text-gray-400">
-                                        {{ __('After deleting your account, all data and resources are permanently removed. Enter your password to confirm deletion.') }}
+                                        {{ __('pub_theme::profile_page.delete.description.description') }}
                                     </p>
 
-                                    <x-ui.input :label="__('Password')" type="password" id="delete_confirm_password"
+                                    <x-ui.input :label="__('pub_theme::auth_pages.fields.password.label')" type="password" id="delete_confirm_password"
                                         name="delete_confirm_password" wire:model="delete_confirm_password" />
 
                                     <div class="flex justify-end mt-6">
                                         <div>
                                             <x-ui.button type="secondary" x-on:click="$dispatch('close')">
-                                                {{ __('Cancel') }}
+                                                {{ __('pub_theme::profile_page.actions.cancel.label') }}
                                             </x-ui.button>
                                         </div>
 
                                         <div class="ml-3">
                                             <x-ui.button type="danger" submit="true">
-                                                {{ __('Delete Account') }}
+                                                {{ __('pub_theme::profile_page.delete.confirm.label') }}
                                             </x-ui.button>
                                         </div>
                                     </div>

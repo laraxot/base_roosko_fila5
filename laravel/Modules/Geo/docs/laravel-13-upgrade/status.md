@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "status"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Laravel 13 Upgrade Status - Root Project 🐄✨
@@ -35,4 +34,12 @@ This document tracks the overall progress of the Laravel 13 upgrade for the enti
 4. Run full test suite.
 
 ---
+title: "status"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "status"
+issues: []
+discussions: []
 **Status**: Ready for final verification.

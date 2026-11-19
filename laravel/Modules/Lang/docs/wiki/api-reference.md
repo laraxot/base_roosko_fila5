@@ -8,8 +8,6 @@ updated: 2026-07-14
 qmd: "lang service helper text fix"
 related:
   - "./italian-text-refined-audit-report.md"
-  - "../italian-text-refined-audit-report.md"
-status: draft
 ---
 # 📚 **API Reference Modulo Lang - Laraxot**
 
@@ -853,18 +851,6 @@ public function get(string $key, array $replace = [], ?string $locale = null): s
 ### **2. Esempi**
 - [Examples/](../Examples/) - Esempi di utilizzo
 - [Tests/](../Tests/) - Test unitari e di integrazione
-- [TROUBLESHOOTING.md](../troubleshooting.md) - Troubleshooting
-- [README.md](README.md) - Documentazione principale
-- [BEST_PRACTICES.md](best_practices.md) - Best practices
-- [TROUBLESHOOTING.md](../troubleshooting.md) - Troubleshooting
-- [README.md](README.md) - Documentazione principale
-- [BEST_PRACTICES.md](best_practices.md) - Best practices
-- [TROUBLESHOOTING.md](../troubleshooting.md) - Troubleshooting
-- [config/lang.php](../../config/lang.php) - Configurazione
-
-### **2. Esempi**
-- [Examples/](../Examples/) - Esempi di utilizzo
-- [Tests/](../../tests) - Test unitari e di integrazione
 
 ### **3. Framework**
 - [Laraxot Framework](https://github.com/laraxot/laraxot)

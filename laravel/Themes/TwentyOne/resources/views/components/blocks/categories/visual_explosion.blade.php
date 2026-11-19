@@ -38,17 +38,17 @@
 
                     <div class="space-y-2 mb-4">
                         <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-400">Mercati Attivi:</span>
+                            <span class="text-gray-400">{{ __('pub_theme::blocks_marketing.categories.active_markets.label') }}:</span>
                             <span class="text-{{ $category['color'] }}-400 font-bold">{{ $category['hot_markets'] }}</span>
                         </div>
                         <div class="flex items-center justify-between text-sm">
-                            <span class="text-gray-400">Volume:</span>
+                            <span class="text-gray-400">{{ __('pub_theme::market_common.terms.volume.label') }}:</span>
                             <span class="text-{{ $category['color'] }}-400 font-bold">{{ $category['volume'] }}</span>
                         </div>
                     </div>
 
                     <button class="w-full bg-gradient-to-r from-{{ $category['color'] }}-600/20 to-{{ $category['color'] }}-500/20 border border-{{ $category['color'] }}-500/30 hover:from-{{ $category['color'] }}-600/40 hover:to-{{ $category['color'] }}-500/40 text-{{ $category['color'] }}-300 font-bold py-2 rounded-lg transition-all">
-                        ESPLORA
+                        {{ __('pub_theme::blocks_marketing.categories.explore.label') }}
                     </button>
                 </div>
             </div>
@@ -62,7 +62,7 @@
     <!-- Bottom CTA -->
     <div class="text-center mt-8">
         <button class="px-8 py-4 bg-gradient-to-r from-purple-600 via-blue-600 to-teal-600 hover:from-purple-700 hover:via-blue-700 hover:to-teal-700 text-white font-black rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl">
-            🚀 VEDI TUTTE LE CATEGORIE
+            🚀 {{ __('pub_theme::blocks_marketing.categories.view_all.label') }}
         </button>
     </div>
 </div>

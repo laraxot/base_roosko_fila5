@@ -7,8 +7,9 @@ tags: [performance, optimization, tokens, context]
 related:
   - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
   - ../../../../docs/wiki/concepts/llm-wiki-operational-discipline.md
-status: draft
 qmd: "performance optimization   module **user** user"
+status: superseded
+superseded_by: performance-optimization.md
 ---
 
 # Performance Optimization: Module **User**

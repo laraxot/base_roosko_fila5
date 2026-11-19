@@ -69,6 +69,6 @@
             </defs>
         </svg>
     </div>
-    <h4 class="text-2xl font-bold">No articles found</h4>
-    <p class="text-gray-400">We don't have any recent articles, try to search another articles.</p>
+    <h4 class="text-2xl font-bold">{{ __('pub_theme::article_list.empty.title.title') }}</h4>
+    <p class="text-gray-400">{{ __('pub_theme::article_list.empty.message.message') }}</p>
 </div>

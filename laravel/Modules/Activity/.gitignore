@@ -147,6 +147,7 @@ test_activity_logs.sql
 
 # END OF ACTIVITY .GITIGNORE
 
+# END OF ACTIVITY .GITIGNORE
 # File specifici del progetto
 *.fila2
 laravel
@@ -179,6 +180,7 @@ tests/AuditCoverage/
 phpinsights.php
 rector.php
 # graphify-out: generated AST/knowledge graph — never commit (no git-lfs; rebuild with graphify update)
+graphify-out
 graphify-out/
 .agents
 tools
@@ -206,9 +208,4 @@ workbench/
 .cursor~*
 .windsurf~*
 tests/activity_coverage.xml
-
-# module-root-hygiene (story module-root-hygiene)
-/.github/skills/
-docs/graphify
-resources/lang
-Activity
+Activity/

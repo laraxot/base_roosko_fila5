@@ -11,7 +11,7 @@ updated: 2026-10-13
 tags: [geo, coordinate-picker, geolocalizzazione, http, gdpr, wizard, guardia-clic]
 related:
   - Modules/Geo/docs/stories/dcp-93-geo-namespace-blade-e-mappa-sola-lettura-follow-up.story.md
-  - Modules/Fixcity/docs/stories/dcp-146-wizard-passo-dati-mappa-sempre-funzionante.story.md
+  - Modules/Fixcity/docs/stories/2026-10-13-dcp-146-wizard-passo-dati-mappa-sempre-funzionante.story.md
   - Themes/Sixteen/docs/bmad/geo-dynamic-user-location.md
   - Themes/Sixteen/docs/bmad/decisions/decision-user-location.md
 qmd: "dcp-127 geo coordinate picker centratura posizione utente gps http https fuso orario default_view guardia clic zoom sonda playwright"
@@ -81,4 +81,4 @@ Altre prove:
 6. Non ho verificato: GPS reale su dispositivo, HTTPS vero (127.0.0.1 e' sicuro per specifica; la posizione e' simulata da Playwright), tile e Nominatim reali (finti nella sonda), il comportamento su telefono (touch/pan), `de`/`es` della nota di posizione sul DOM (le chiavi `location_unavailable`/`no_position` sono di W2-GEO; ho misurato solo `it`).
 
 ## Coordinamento
-Claim e proposte nel log di DCP-146 (`Modules/Fixcity/docs/stories/dcp-146-wizard-passo-dati-mappa-sempre-funzionante.story.md`); decisione di DCP-129 recepita. Documenti collegati: `Themes/Sixteen/docs/bmad/geo-dynamic-user-location.md` e `.../decisions/decision-user-location.md` (corretti dove la misura li smentiva), `Modules/Geo/docs/map-vista-di-default-e-posizione-non-disponibile.md` (W2-GEO).
+Claim e proposte nel log di DCP-146 (`Modules/Fixcity/docs/stories/2026-10-13-dcp-146-wizard-passo-dati-mappa-sempre-funzionante.story.md`); decisione di DCP-129 recepita. Documenti collegati: `Themes/Sixteen/docs/bmad/geo-dynamic-user-location.md` e `.../decisions/decision-user-location.md` (corretti dove la misura li smentiva), `Modules/Geo/docs/map-vista-di-default-e-posizione-non-disponibile.md` (W2-GEO).

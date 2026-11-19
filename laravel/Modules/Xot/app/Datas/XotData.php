@@ -125,7 +125,7 @@ class XotData extends Data implements Wireable
     public function getUserByEmail(string $email): UserContract
     {
         $user_class = $this->getUserClass();
-        $userInstance = new $user_class;
+        $userInstance = new $user_class();
         if (! in_array('email', $userInstance->getFillable(), true)) {
             throw new \Exception("Attribute 'email' not found in model ".$userInstance::class);
         }
@@ -366,9 +366,21 @@ class XotData extends Data implements Wireable
         return asset('themes/'.$this->pub_theme.'/'.$key);
     }
 
+    /**
+     * Layout HTML delle e-mail: prima quelli del tema pubblico, poi quelli del modulo Notify.
+     * Un tema senza `resources/mail-layouts` (es. Two) non deve far fallire l'invio
+     * (reset password, modelli e-mail, pagina «Nuovo modello e-mail»).
+     */
     public function getMailHtmlLayoutPath(string $key = ''): string
     {
-        return base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
+        $themePath = base_path('Themes/'.$this->pub_theme.'/resources/mail-layouts/'.$key);
+        if ($key === '' || is_file($themePath)) {
+            return $themePath;
+        }
+
+        $notifyPath = base_path('Modules/Notify/resources/mail-layouts/'.$key);
+
+        return is_file($notifyPath) ? $notifyPath : $themePath;
     }
 
     /**

@@ -89,12 +89,12 @@ $podiumColors = [
                 </div>
                 <div class="ml-3">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $title }}</h3>
-                    <p class="text-sm text-gray-500 dark:text-gray-400">Classifica {{ $period }}</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_social.leaderboard.ranking.label', ['period' => $period]) }}</p>
                 </div>
             </div>
             <div class="text-right">
                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
-                    🏆 Top Performers
+                    🏆 {{ __('pub_theme::blocks_social.leaderboard.top_performers.title') }}
                 </span>
             </div>
         </div>
@@ -129,7 +129,7 @@ $podiumColors = [
                             <p class="text-xs text-gray-500 dark:text-gray-400">@{{ $hero['username'] ?? strtolower(str_replace(' ', '_', $hero['name'])) }}</p>
                             <div class="flex items-center justify-center space-x-2 mt-1">
                                 <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-200">
-                                    {{ $hero['accuracy'] }}% precisione
+                                    {{ __('pub_theme::blocks_social.leaderboard.accuracy.label', ['value' => $hero['accuracy']]) }}
                                 </span>
                                 @if(isset($hero['streak']) && $hero['streak'] > 0)
                                     <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200">
@@ -153,7 +153,7 @@ $podiumColors = [
         <!-- Additional Top Performers -->
         @if(count($topPerformers) > 0)
             <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-3">{{ __('Altri Top Performers') }}</h4>
+                <h4 class="text-sm font-medium text-gray-900 dark:text-white mb-3">{{ __('pub_theme::blocks_social.leaderboard.other_performers.title') }}</h4>
                 <div class="space-y-2">
                     @foreach(array_slice($topPerformers, 0, $limit) as $performer)
                         <div class="flex items-center justify-between p-3 rounded-lg bg-white/60 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-700 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-all duration-200">
@@ -163,12 +163,12 @@ $podiumColors = [
                                 </div>
                                 <div class="ml-3">
                                     <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ $performer['name'] }}</p>
-                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{ $performer['accuracy'] }}% precisione</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_social.leaderboard.accuracy.label', ['value' => $performer['accuracy']]) }}</p>
                                 </div>
                             </div>
                             <div class="text-right">
                                 <span class="text-sm font-semibold text-blue-600 dark:text-blue-400">{{ $performer['points'] }}</span>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">punti</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_social.leaderboard.points.label') }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -182,7 +182,7 @@ $podiumColors = [
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
-                {{ __('Entra in Classifica') }}
+                {{ __('pub_theme::blocks_social.leaderboard.join.label') }}
             </a>
         </div>
     </div>

@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Modules\Notify\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 use Modules\Media\Models\Media;
+use Modules\Notify\Database\Factories\MailTemplateVersionFactory;
 use Modules\Notify\Models\Traits\MailTemplateVersionRelations;
 use Modules\Xot\Contracts\ProfileContract;
 use Modules\Xot\Traits\Updater;
@@ -15,6 +17,8 @@ use RuntimeException;
 use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
 
 /**
+ * @method static MailTemplateVersionFactory factory($count = null, $state = [])
+ *
  * @property-read ProfileContract|null $creator
  * @property-read MediaCollection<int, Media> $media
  * @property-read int|null $media_count
@@ -58,12 +62,14 @@ use Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection;
  * @method static Builder<static>|MailTemplateVersion whereUpdatedBy($value)
  * @method static Builder<static>|MailTemplateVersion whereVersion($value)
  *
- * @mixin \Illuminate\Database\Eloquent\Model
+ * @mixin Model
  */
 class MailTemplateVersion extends BaseModel
 {
     use MailTemplateVersionRelations;
-    use SoftDeletes, Updater;
+    use SoftDeletes;
+    use Updater;
+
 
     protected $connection = 'notify';
 

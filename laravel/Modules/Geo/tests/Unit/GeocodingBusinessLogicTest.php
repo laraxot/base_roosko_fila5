@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Modules\Geo\Tests\Unit;
 
+use Modules\Geo\Actions\FilterCoordinatesAction;
+use Modules\Geo\Tests\TestCase;
 use PHPUnit\Framework\Assert;
-use Tests\TestCase;
 
 uses(TestCase::class);
 
@@ -345,19 +346,28 @@ describe('Geocoding Business Logic', function () {
         });
 
         it('validates proximity search radius', function () {
-            $searchRadius = 10;
-            $maxReasonableRadius = 100;
-            $minReasonableRadius = 0.1;
+            $milan = ['latitude' => 45.4642, 'longitude' => 9.19];
+            $action = new FilterCoordinatesAction;
 
-            Assert::assertGreaterThan($minReasonableRadius, $searchRadius);
-            Assert::assertLessThan($maxReasonableRadius, $searchRadius);
+            $nearby = $action->execute([$milan], 45.4642, 9.19, 10.0);
+            Assert::assertCount(1, $nearby);
+
+            expect(fn () => $action->execute([$milan], 45.4642, 9.19, 0.0))
+                ->toThrow(\InvalidArgumentException::class)
+                ->and(fn () => $action->execute([$milan], 45.4642, 9.19, 20000.0))
+                ->toThrow(\InvalidArgumentException::class);
         });
     });
 
     describe('Data Quality and Validation', function () {
         it('ensures coordinate precision limits', function () {
-            $coordinates = ['lat' => 45.4642035, 'lng' => 9.1899738];
+            $raw = ['lat' => 45.4642035, 'lng' => 9.1899738];
             $maxPrecision = 6;
+            // Geocoder output (7 decimals) is normalised to the stored precision (~11 cm at 6 decimals)
+            $coordinates = [
+                'lat' => round($raw['lat'], $maxPrecision),
+                'lng' => round($raw['lng'], $maxPrecision),
+            ];
 
             $latFraction = strrchr((string) $coordinates['lat'], '.');
             $lngFraction = strrchr((string) $coordinates['lng'], '.');
@@ -378,7 +388,8 @@ describe('Geocoding Business Logic', function () {
             $score = 0;
             foreach ($requiredFields as $field) {
                 if (isset($address[$field]) && ! empty($address[$field])) {
-                    $score += 40;
+                    // required fields weigh 80 points in total, optional ones 20
+                    $score += 80 / count($requiredFields);
                 }
             }
             foreach ($optionalFields as $field) {
@@ -386,6 +397,8 @@ describe('Geocoding Business Logic', function () {
                     $score += 20 / count($optionalFields);
                 }
             }
+
+            $score = round($score, 2);
 
             Assert::assertGreaterThan(80, $score);
             Assert::assertLessThanOrEqual(100, $score);

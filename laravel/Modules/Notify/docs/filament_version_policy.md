@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "filament version policy"
 issues: []
 discussions: []
-status: draft
 ---
 
 # 🎯 Filament Version Policy - ALWAYS LATEST
@@ -269,6 +268,15 @@ composer update "filament/*" -W
 - [ ] No old versions
 
 ---
+
+title: "filament version policy"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "filament version policy"
+issues: []
+discussions: []
 **Stato**: ✅ **POLITICA UFFICIALE - SEMPRE FILAMENT 5**  
 **Versione Attuale**: **Filament 5.x**  
 **Prossimo Aggiornamento**: **Quando esce Filament 6**  

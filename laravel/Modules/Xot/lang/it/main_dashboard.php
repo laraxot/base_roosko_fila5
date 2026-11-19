@@ -12,6 +12,7 @@ return [
     'actions' => [
         'logout' => [
             'icon' => 'logout',
+            'label' => 'logout',
         ],
         'profile' => [
             'icon' => 'profile',

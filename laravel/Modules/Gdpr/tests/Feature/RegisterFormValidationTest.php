@@ -8,8 +8,11 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use Modules\Gdpr\Actions\Validation\ValidateGdprConsentAction;
 use Modules\Gdpr\Actions\Validation\ValidateUserDataAction;
+use Modules\Gdpr\Tests\TestCase;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
+
+uses(TestCase::class);
 
 /*
  * Form Validation Tests for Registration.
@@ -91,7 +94,7 @@ it('always sets type to customer_user and lang', function (): void {
     Assert::assertArrayHasKey('lang', $result);
 });
 
-it('sets email_verified_at on registration', function (): void {
+it('leaves email_verified_at empty on registration (PRD-02)', function (): void {
     $formData = [
         'first_name' => 'Mario',
         'last_name' => 'Rossi',
@@ -101,7 +104,8 @@ it('sets email_verified_at on registration', function (): void {
     ];
 
     $result = app(ValidateUserDataAction::class)->execute($formData);
-    Assert::assertNotNull($result['email_verified_at']);
+    Assert::assertArrayHasKey('email_verified_at', $result);
+    Assert::assertNull($result['email_verified_at']);
 });
 
 it('prevents duplicate email registration', function (): void {

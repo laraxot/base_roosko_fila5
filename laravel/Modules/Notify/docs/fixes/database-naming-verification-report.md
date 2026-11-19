@@ -234,9 +234,9 @@ find docs/ laravel/Modules/*/docs/ -type f -name "*.md" -exec sed -i \
 
 ## 📚 Related Documents
 
-- [Database Naming Convention](conventions/database-naming.md)
+- [Database Naming Convention](../conventions/database-naming.md)
 - [AGENTS.md](../../AGENTS.md)
-- [Fix Summary](fixes/database-naming-fix-summary.md)
+- [Fix Summary](database-naming-fix-summary.md)
 - [Database Naming Convention](../conventions/database-naming.md)
 - [AGENTS.md](../AGENTS.md)
 - [Fix Summary](database-naming-fix-summary.md)

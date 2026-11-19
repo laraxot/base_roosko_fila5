@@ -36,7 +36,7 @@
         <div class="text-center mb-8">
             <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500/20 to-blue-500/20 border border-green-500/30 rounded-full px-4 py-2 mb-4">
                 <div class="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
-                <span class="text-green-300 text-xs font-bold uppercase tracking-wider">OFFERTA LIMITATA</span>
+                <span class="text-green-300 text-xs font-bold uppercase tracking-wider">{{ __('pub_theme::blocks_marketing.cta.limited_offer.label') }}</span>
                 <div class="w-2 h-2 bg-blue-400 rounded-full animate-ping" style="animation-delay: 0.5s;"></div>
             </div>
 
@@ -70,9 +70,9 @@
         <!-- Urgency Counter -->
         <div class="bg-red-500/20 border border-red-500/30 rounded-xl p-4 mb-6">
             <div class="text-center">
-                <div class="text-red-300 text-sm font-bold mb-2">⏰ OFFERTA LIMITATA - Solo per i primi 100 utenti oggi</div>
+                <div class="text-red-300 text-sm font-bold mb-2">⏰ {{ __('pub_theme::blocks_marketing.cta.limited_offer.message') }}</div>
                 <div class="flex items-center justify-center space-x-2">
-                    <div class="text-white font-bold">47 posti rimasti</div>
+                    <div class="text-white font-bold">47 {{ __('pub_theme::blocks_marketing.cta.seats_left.label') }}</div>
                     <div class="w-32 bg-gray-700 rounded-full h-2">
                         <div class="bg-gradient-to-r from-red-500 to-orange-500 h-2 rounded-full" style="width: 53%"></div>
                     </div>
@@ -86,7 +86,7 @@
                 <div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                 <div class="flex items-center justify-center space-x-3 relative">
                     <span class="text-3xl">🚀</span>
-                    <span>INIZIA GRATIS ORA</span>
+                    <span>{{ __('pub_theme::blocks_marketing.cta.start_free_now.label') }}</span>
                     <span class="text-3xl animate-bounce">🎁</span>
                 </div>
             </button>
@@ -96,17 +96,17 @@
         <div class="flex items-center justify-center space-x-6 text-sm text-gray-400">
             <div class="flex items-center space-x-1">
                 <span>🔒</span>
-                <span>Nessuna carta di credito</span>
+                <span>{{ __('pub_theme::blocks_marketing.cta.no_credit_card.label') }}</span>
             </div>
             <div class="w-px h-4 bg-gray-600"></div>
             <div class="flex items-center space-x-1">
                 <span>⚡</span>
-                <span>Accesso immediato</span>
+                <span>{{ __('pub_theme::blocks_marketing.cta.instant_access.label') }}</span>
             </div>
             <div class="w-px h-4 bg-gray-600"></div>
             <div class="flex items-center space-x-1">
                 <span>🎯</span>
-                <span>Solo crediti virtuali</span>
+                <span>{{ __('pub_theme::blocks_marketing.cta.virtual_credits_only.label') }}</span>
             </div>
         </div>
     </div>

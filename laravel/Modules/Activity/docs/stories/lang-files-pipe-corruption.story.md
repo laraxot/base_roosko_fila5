@@ -1,3 +1,10 @@
+---
+title: "Story: file di lingua corrotti da una pipe prima di ogni carattere"
+qmd: "activity stories lang files pipe corruption story md"
+type: note
+tags: [documentation]
+---
+
 # Story: file di lingua corrotti da una pipe prima di ogni carattere
 
 Status: done

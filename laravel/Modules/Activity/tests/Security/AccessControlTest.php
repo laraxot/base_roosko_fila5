@@ -16,13 +16,12 @@ use Modules\Activity\Models\Activity;
 use Modules\Activity\Models\Policies\ActivityPolicy;
 use Modules\Activity\Tests\TestCase;
 use Modules\User\Database\Factories\UserFactory;
-use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
 it('denies activity viewAny to users without permission', function (): void {
-    $user = UserFactory::new()->createOne();
+    $user = TestCase::activityCreateUser();
     $policy = new ActivityPolicy;
 
     Assert::assertFalse($policy->viewAny($user));
@@ -37,7 +36,7 @@ it('allows activity viewAny to users with the correct permission', function (): 
 });
 
 it('denies activity view to users without permission', function (): void {
-    $user = UserFactory::new()->createOne();
+    $user = TestCase::activityCreateUser();
     $policy = new ActivityPolicy;
 
     Assert::assertFalse($policy->view($user));

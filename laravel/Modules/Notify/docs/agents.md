@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "agents"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Project Agents (Modular)
@@ -66,9 +65,6 @@ docs/
 - [Schema Wiki](./docs/.schema/WIKI_SCHEMA.md) - Istruzioni per l'LLM
 - [Index Globale](./docs/wiki/index.md) - Catalogo di tutte le wiki
 - [Log](./docs/log.md) - Cronologia delle operazioni
-- [Schema Wiki](.schema/WIKI_SCHEMA.md) - Istruzioni per l'LLM
-- [Index Globale](./wiki/index.md) - Catalogo di tutte le wiki
-- [Log](./log.md) - Cronologia delle operazioni
 
 ### Workflow
 
@@ -77,6 +73,15 @@ docs/
 - **Lint**: Verifica consistenza e cross-references
 
 ---
+
+title: "agents"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents"
+issues: []
+discussions: []
 ## Reusable Tasks
 
 - [Task: validate-next-story](./.agents/docs/main-rules/task-validate-next-story.md)
@@ -166,9 +171,6 @@ docs/
 - [Schema Wiki](./docs/.schema/wiki-schema.md) - Istruzioni per l'LLM
 - [Index Globale](./docs/wiki/index.md) - Catalogo di tutte le wiki
 - [Log](./docs/log.md) - Cronologia delle operazioni
-- [Schema Wiki](.schema/wiki-schema.md) - Istruzioni per l'LLM
-- [Index Globale](./wiki/index.md) - Catalogo di tutte le wiki
-- [Log](./log.md) - Cronologia delle operazioni
 
 ### Workflow
 

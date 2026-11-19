@@ -10,10 +10,7 @@ discussions: []
 module: Tenant
 concept: Architecture
 last_updated: 2026-04-15
-status: stale
 ---
-
-> Nota 2026-10-14 (docs-audit): Descrive isolamento per connessione, identificazione da sottodominio e un TenantService che non esistono nel codice: il tenant e' la cartella config/<host invertito>/ scelta da GetTenantNameAction (verificato 2026-10-14, vedi README.md). Contenuto non riscritto, verificare prima di usarlo.
 
 # Tenant Module Architecture
 

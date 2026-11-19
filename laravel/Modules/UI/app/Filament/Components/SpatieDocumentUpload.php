@@ -18,8 +18,8 @@ final class SpatieDocumentUpload
     /**
      * Configurazione base per upload documenti con collection specifica.
      *
-     * @param  string  $name  Nome del campo
-     * @param  string  $collection  Nome della media collection
+     * @param string $name       Nome del campo
+     * @param string $collection Nome della media collection
      */
     public static function make(string $name, string $collection): SpatieMediaLibraryFileUpload
     {
@@ -32,7 +32,7 @@ final class SpatieDocumentUpload
             ->previewable()
             ->maxSize(10240) // 10MB - limite ragionevole per documenti
             ->acceptedFileTypes([
-                'image/jpeg', 'image/png', 'image/heic', 'image/webp', 'application/pdf'
+                'image/jpeg', 'image/png', 'image/heic', 'image/webp', 'application/pdf',
             ])
             ->imagePreviewHeight('150');
     }
@@ -96,10 +96,10 @@ final class SpatieDocumentUpload
     /**
      * Upload documento generico con collection personalizzata.
      *
-     * @param  string  $name  Nome del campo
-     * @param  string  $collection  Nome della collection
-     * @param  array<string>  $mimeTypes  Tipi MIME accettati
-     * @param  int  $maxSize  Dimensione massima in KB
+     * @param string        $name       Nome del campo
+     * @param string        $collection Nome della collection
+     * @param array<string> $mimeTypes  Tipi MIME accettati
+     * @param int           $maxSize    Dimensione massima in KB
      */
     public static function custom(
         string $name,

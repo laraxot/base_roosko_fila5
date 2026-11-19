@@ -1,15 +1,3 @@
----
-title: "homepage seo"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "homepage seo"
-issues: []
-discussions: []
-status: draft
----
-
 # Homepage Improvements — Sprint 1 (Critical)
 
 > **Data**: 2026-03-18  
@@ -17,6 +5,7 @@ status: draft
 > **Stato**: 🔄 IN PROGRESS
 
 ---
+
 ## ✅ Completati
 
 ### 1. SEO Meta Tags + JSON-LD
@@ -60,8 +49,8 @@ input[type="button"], input[type="submit"] {
 ```
 
 ### 3. Documentazione
-- [x] Creato `HOMEPAGE_IMPROVEMENT_PLAN.md`
-- [x] Creato `HOMEPAGE_SEO.md` (questo file)
+- [x] Creato `homepage-improvement-plan.md`
+- [x] Creato `homepage-seo.md` (questo file)
 - [x] Aggiornato `home.json` con meta title/description
 
 ---
@@ -126,7 +115,7 @@ input[type="button"], input[type="submit"] {
 ## 🔗 Riferimenti
 
 - [website-checklist.md](../../../docs/project/website-checklist.md)
-- [HOMEPAGE_IMPROVEMENT_PLAN.md](HOMEPAGE_IMPROVEMENT_PLAN.md)
+- [HOMEPAGE_IMPROVEMENT_PLAN.md](homepage-improvement-plan.md)
 - [044-website-checklist.md](../../../.github/ISSUES/044-website-checklist.md)
 
 ---

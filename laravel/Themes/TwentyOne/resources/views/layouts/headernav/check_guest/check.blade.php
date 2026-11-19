@@ -1,4 +1,4 @@
-<button type="button" aria-haspopup="true" aria-controls="notification" aria-label="Notifications"  id="notification-button" data-dropdown-toggle="notification" class="grid w-10 h-10 transition-colors bg-gray-50 rounded-xl place-items-center hover:bg-white">
+<button id="notification-button" data-dropdown-toggle="notification" class="grid w-10 h-10 transition-colors bg-gray-50 rounded-xl place-items-center hover:bg-white">
 	<x-heroicon-o-bell class="w-6 h-6"/>
 </button>
 <!-- Dropdown -->
@@ -22,14 +22,14 @@
                 <span
                     class="relative flex items-center justify-around h-8 px-4 py-0 m-0 text-base font-semibold border-0 rounded-lg cursor-pointer border-sky-500 text-sky-500"
                     style="vertical-align: initial; transition: border-bottom-width 0.25s cubic-bezier(0.005, 0.75, 0.25, 1) 0s, color 0.25s cubic-bezier(0.005, 0.75, 0.25, 1) 0s;"
-                    >Your activity<span
+                    >{{ __('pub_theme::headernav.notifications.activity.label') }}<span
                     class="absolute block w-full h-px p-0 m-0 border-0 bg-sky-500"
                     style="vertical-align: initial; bottom: -10px;"
                     ></span></span
                     ><span
                     class="flex items-center justify-around h-8 px-4 py-0 m-0 border-0 rounded-lg cursor-pointer text-neutral-500"
                     style="vertical-align: initial; transition: border-bottom-width 0.25s cubic-bezier(0.005, 0.75, 0.25, 1) 0s, color 0.25s cubic-bezier(0.005, 0.75, 0.25, 1) 0s;"
-                    >Forecasters you follow</span
+                    >{{ __('pub_theme::blocks_nav.notifications.followed_forecasters.label') }}</span
                     >
             </nav>
             <div

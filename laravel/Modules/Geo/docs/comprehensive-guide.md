@@ -10,8 +10,6 @@ discussions: []
 module: theme
 topic: comprehensive-guide
 canonical: ../../../Themes/docs/shared-components/COMPREHENSIVE_GUIDE.md
-status: superseded
-superseded_by: comprehensive.md
 ---
 
 See canonical documentation: ../../../Themes/docs/shared-components/COMPREHENSIVE_GUIDE.md

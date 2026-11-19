@@ -10,7 +10,6 @@ updated: 2026-07-14
 qmd: "file naming rules"
 related:
   - "./phpstan-corrections-january.md"
-status: draft
 ---
 # Regole di Naming per File
 

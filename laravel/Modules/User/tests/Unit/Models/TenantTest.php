@@ -9,11 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Str;
-use Modules\User\Models\Tenant;
 use Mockery\MockInterface;
-use Tests\TestCase;
-
-use function Safe\json_encode;
+use Modules\User\Models\Tenant;
+use Modules\User\Tests\TestCase;
 
 uses(\Modules\User\Tests\TestCase::class);
 
@@ -28,7 +26,7 @@ class TenantTest extends TestCase
         $this->assertDatabaseHas('tenants', [
             'id' => $tenant->id,
             'name' => 'Test Tenant',
-        ]);
+        ], 'user');
     }
 
     public function test_can_create_tenant_with_all_fields(): void
@@ -52,7 +50,7 @@ class TenantTest extends TestCase
             'domain' => 'fulltenant.com',
             'database' => 'fulltenant_db',
             'is_active' => true,
-        ]);
+        ], 'user');
 
         // Verifica campi JSON
         static::assertSame(['theme' => 'dark', 'features' => ['chat', 'analytics']], $tenant->settings);
@@ -153,7 +151,7 @@ class TenantTest extends TestCase
         $this->assertDatabaseHas('tenants', [
             'id' => $tenant->id,
             'name' => 'New Name',
-        ]);
+        ], 'user');
     }
 
     public function test_can_handle_null_values(): void
@@ -165,12 +163,13 @@ class TenantTest extends TestCase
             'database' => null,
         ]);
 
+        // Lo slug non resta mai null: HasSlug lo genera dal nome al salvataggio.
         $this->assertDatabaseHas('tenants', [
             'id' => $tenant->id,
-            'slug' => null,
+            'slug' => 'test-tenant',
             'domain' => null,
             'database' => null,
-        ]);
+        ], 'user');
     }
 
     public function test_can_find_tenants_by_multiple_criteria(): void
@@ -241,14 +240,14 @@ class TenantTest extends TestCase
 
     public function test_can_find_tenants_by_settings_value(): void
     {
-        // `tenants.settings` e' una colonna json (migration 2026_09_01_150110) ma il model
-        // non ha il cast `array`: si scrive il json a mano e si cerca per id.
+        // `tenants.settings` e' una colonna json castata ad `array`: si passa l'array,
+        // una stringa json verrebbe codificata due volte.
         $darkTenant = Tenant::factory()->create([
-            'settings' => json_encode(['theme' => 'dark', 'features' => ['chat']]),
+            'settings' => ['theme' => 'dark', 'features' => ['chat']],
         ]);
 
         Tenant::factory()->create([
-            'settings' => json_encode(['theme' => 'light', 'features' => ['analytics']]),
+            'settings' => ['theme' => 'light', 'features' => ['analytics']],
         ]);
 
         $darkThemeTenants = Tenant::whereJsonContains('settings->theme', 'dark')->get();
@@ -259,7 +258,7 @@ class TenantTest extends TestCase
 
     public function test_resolve_route_binding_query_preserve_slug_per_has_slug(): void
     {
-        $tenant = new Tenant();
+        $tenant = new Tenant;
 
         /** @var list<array{string, string|int}> $calls */
         $calls = [];
@@ -281,7 +280,7 @@ class TenantTest extends TestCase
 
     public function test_resolve_route_binding_query_uses_id_for_non_uuid_value(): void
     {
-        $tenant = new Tenant();
+        $tenant = new Tenant;
 
         /** @var list<array{string, string|int}> $calls */
         $calls = [];
@@ -303,7 +302,7 @@ class TenantTest extends TestCase
 
     public function test_resolve_route_binding_query_accetta_uuid_valido_sulla_chiave_univoca(): void
     {
-        $tenant = new Tenant();
+        $tenant = new Tenant;
 
         $uuid = (string) Str::uuid();
 

@@ -7,7 +7,7 @@ return [
     'alert_title_info' => 'Cookies',
     'alert_text_info' => 'Este sitio solo usa cookies técnicas, necesarias para su funcionamiento: no requieren su consentimiento. No usamos cookies de perfilado ni de análisis.',
     'alert_title_consent' => 'Este sitio usa cookies',
-    'alert_text_consent' => 'Usamos cookies técnicas, necesarias para el funcionamiento, y, solo si usted lo permite, cookies de análisis y de marketing. Si cierra el aviso sin elegir, solo permanecen activas las cookies técnicas.',
+    'alert_text_consent' => 'Usamos cookies técnicas, necesarias para el funcionamiento, y, solo si usted lo permite, cookies de análisis y de marketing. Si cierra el aviso sin elegir, solo permanecen activas las cookies técnicas. Puede cambiar su elección con el enlace «Gestionar cookies» al final de la página.',
     'alert_accept' => 'Aceptar todas',
     'alert_reject' => 'Rechazar todas',
     'alert_settings' => 'Personalizar',
@@ -48,6 +48,6 @@ return [
     'policy_how_text' => 'Puede volver a abrir las preferencias en cualquier momento con el enlace «Gestionar cookies» al final de cada página, o borrar las cookies de su navegador.',
     'policy_manage_button' => 'Abrir las preferencias de cookies',
     'policy_external_title' => 'Mapas y servicios externos',
-    'policy_external_text' => 'Para mostrar mapas y buscar direcciones, su navegador contacta directamente con OpenStreetMap. Estas peticiones no instalan cookies, pero el servicio recibe su dirección IP.',
+    'policy_external_text' => 'Los mapas y la búsqueda de direcciones usan datos de OpenStreetMap, pero pasan por el servidor de este sitio: tu navegador no contacta con OpenStreetMap y ningún servicio externo recibe tu dirección IP. Solo si eliges la vista de satélite, topográfica o humanitaria del mapa, tu navegador pide las imágenes directamente a Esri o a OpenStreetMap France.',
     'policy_privacy_link' => 'Lea también el aviso de privacidad',
 ];

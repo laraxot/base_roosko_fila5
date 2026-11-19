@@ -1,4 +1,5 @@
 ---
+qmd: "xot bmad stories phpstan analyse modules story md"
 id: "Xot/phpstan-analyse-modules-2026-09-24"
 title: "PHPStan analyse Modules — verifica corrente e remediation swarm"
 type: story

@@ -6,7 +6,7 @@
             <div class="p-4 border border-gray-300 rounded-2xl shadow-md bg-white space-y-4">
                 <div class="flex items-center">
                     <!-- Icon -->
-                    <img src="{{ asset($rating['image']) }}" alt="Bet Icon" class="w-10 h-10 rounded-full">
+                    <img src="{{ asset($rating['image']) }}" alt="{{ __('pub_theme::widgets_ratings.done.bet_icon.alt') }}" class="w-10 h-10 rounded-full">
                     <!-- Text -->
                     <div class="ml-3 flex-grow">
                         <p class="text-sm font-semibold text-gray-500">{{ __('predict::article.your_bet') }}</p>

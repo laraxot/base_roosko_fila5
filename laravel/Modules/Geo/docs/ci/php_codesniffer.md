@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "php codesniffer"
 issues: []
 discussions: []
-status: superseded
-superseded_by: php-codesniffer.md
 ---
 
 [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)

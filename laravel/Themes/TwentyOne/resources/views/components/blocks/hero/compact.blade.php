@@ -58,7 +58,7 @@
                     </span>
                 </a>
                 
-                <a href="/{{ app()->getLocale() }}/how-it-works"
+                <a href="/{{ app()->getLocale() }}/learn"
                    class="group inline-flex items-center justify-center min-h-[52px] min-w-[52px] px-8 py-4 text-lg font-bold text-white border-2 border-white/80 bg-white/10 backdrop-blur-sm rounded-xl hover:bg-white/20 hover:border-white hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-emerald-600"
                    aria-label="{{ __('predict::home.hero.cta_learn.label') }}">
                     {{ __('predict::home.hero.cta_learn.label') }}
@@ -69,19 +69,19 @@
             <div class="grid grid-cols-2 gap-6 max-w-2xl mx-auto mt-16 sm:grid-cols-4 animate-kinetic-scaleIn kinetic-delay-5">
                 <div class="p-4 text-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                     <p class="text-3xl font-bold text-white">100%</p>
-                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">Gratis</p>
+                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">{{ __('pub_theme::blocks_hero.compact.free.label') }}</p>
                 </div>
                 <div class="p-4 text-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                     <p class="text-3xl font-bold text-white">3+</p>
-                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">Opzioni</p>
+                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">{{ __('pub_theme::blocks_hero.compact.options.label') }}</p>
                 </div>
                 <div class="p-4 text-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                     <p class="text-3xl font-bold text-white">24/7</p>
-                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">Trading</p>
+                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">{{ __('pub_theme::blocks_hero.compact.trading.label') }}</p>
                 </div>
                 <div class="p-4 text-center rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
                     <p class="text-3xl font-bold text-white">100%</p>
-                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">Trasparente</p>
+                    <p class="mt-1 text-xs font-medium text-emerald-100 uppercase tracking-wide">{{ __('pub_theme::blocks_hero.compact.transparent.label') }}</p>
                 </div>
             </div>
         </div>

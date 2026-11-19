@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "agents gsd bmad"
 issues: []
 discussions: []
-status: draft
 ---
 
 # 🚀 GSD + BMAD Workflow
@@ -17,6 +16,15 @@ status: draft
 **Stato**: ✅ IMPLEMENTATO
 
 ---
+
+title: "agents gsd bmad"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "agents gsd bmad"
+issues: []
+discussions: []
 ## 🎯 GSD (Get Shit Done)
 
 ### Comandi Principali

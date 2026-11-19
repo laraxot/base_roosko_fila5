@@ -74,6 +74,7 @@ class Role extends SpatieRole
 {
     use HasXotFactory;
     use RelationX;
+    use RoleRelationsTrait;
     use Updater;
 
     // use HasUuids;
@@ -112,6 +113,15 @@ class Role extends SpatieRole
     public static function mayAssignSuperAdmin(?Authenticatable $actor): bool
     {
         return $actor instanceof UserContract && $actor->hasRole(self::SUPER_ADMIN);
+    }
+
+    /** Human label of a role code; falls back to the code itself. */
+    public static function displayName(string $name): string
+    {
+        $key = 'user::role.labels.'.str_replace('::', '__', $name);
+        $label = trans($key);
+
+        return $label === $key ? $name : $label;
     }
 
     /**

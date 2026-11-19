@@ -1,6 +1,6 @@
 <div class="py-4 bg-white mt-4 p-4 rounded">
     <h4 class="font-semibold text-lg font-roboto text-neutral-5">
-        Related Markets
+        {{ __('pub_theme::article_show.related.title.title') }}
     </h4>
     <div class="flex flex-col gap-4 mt-4">
         <div class="px-4 py-3 border border-neutral-2 rounded-lg">
@@ -65,7 +65,7 @@
                                     <!-- forecasters -->
                                     <div class="flex flex-col gap-2.5 mb-2.5">
                                         <p class="text-black font-semibold text-sm">
-                                            Forecasters
+                                            {{ __('pub_theme::market_common.terms.forecasters.label') }}
                                         </p>
                                         <div class="flex items-center gap-2">
                                             <svg
@@ -114,7 +114,7 @@
                                 <!-- forecasters -->
                                 <div class="flex flex-col gap-2.5 mb-2.5">
                                     <p class="text-black font-semibold text-sm">
-                                        Forecasters
+                                        {{ __('pub_theme::market_common.terms.forecasters.label') }}
                                     </p>
                                     <div class="flex items-center gap-2">
                                         <svg
@@ -163,13 +163,12 @@
                             <!-- volume -->
                             <div class="flex flex-col gap-2.5">
                                 <p class="text-black font-semibold text-sm">
-                                    Volume
+                                    {{ __('pub_theme::market_common.terms.volume.label') }}
                                 </p>
                                 <p
                                     class="text-sm leading-none text-neutral-3 font-roboto"
                                     >
-                                    Amount traded in a market, plus its initial
-                                    liquity.
+                                    {{ __('pub_theme::market_common.terms.volume_help.help') }}
                                 </p>
                                 <div class="flex items-center gap-2">
                                     <svg
@@ -246,7 +245,7 @@
                             <p
                                 class="text-black font-semibold text-sm leading-none"
                                 >
-                                Bet end date
+                                {{ __('pub_theme::market_common.terms.bet_end_date.label') }}
                             </p>
                             <p
                                 class="text-sm leading-none text-neutral-3 font-roboto whitespace-nowrap"
@@ -324,7 +323,7 @@
                                     <!-- forecasters -->
                                     <div class="flex flex-col gap-2.5 mb-2.5">
                                         <p class="text-black font-semibold text-sm">
-                                            Forecasters
+                                            {{ __('pub_theme::market_common.terms.forecasters.label') }}
                                         </p>
                                         <div class="flex items-center gap-2">
                                             <svg
@@ -373,7 +372,7 @@
                                 <!-- forecasters -->
                                 <div class="flex flex-col gap-2.5 mb-2.5">
                                     <p class="text-black font-semibold text-sm">
-                                        Forecasters
+                                        {{ __('pub_theme::market_common.terms.forecasters.label') }}
                                     </p>
                                     <div class="flex items-center gap-2">
                                         <svg
@@ -422,13 +421,12 @@
                             <!-- volume -->
                             <div class="flex flex-col gap-2.5">
                                 <p class="text-black font-semibold text-sm">
-                                    Volume
+                                    {{ __('pub_theme::market_common.terms.volume.label') }}
                                 </p>
                                 <p
                                     class="text-sm leading-none text-neutral-3 font-roboto"
                                     >
-                                    Amount traded in a market, plus its initial
-                                    liquity.
+                                    {{ __('pub_theme::market_common.terms.volume_help.help') }}
                                 </p>
                                 <div class="flex items-center gap-2">
                                     <svg
@@ -506,7 +504,7 @@
                             <p
                                 class="text-black font-semibold text-sm leading-none"
                                 >
-                                Bet end date
+                                {{ __('pub_theme::market_common.terms.bet_end_date.label') }}
                             </p>
                             <p
                                 class="text-sm leading-none text-neutral-3 font-roboto whitespace-nowrap"

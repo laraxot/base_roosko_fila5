@@ -1,15 +1,3 @@
----
-title: "homepage architecture"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "homepage architecture"
-issues: []
-discussions: []
-status: draft
----
-
 # Homepage Implementation — Predict Platform
 
 **Ultimo aggiornamento**: 2026-03-18  
@@ -18,6 +6,7 @@ status: draft
 **Modulo**: Predict  
 
 ---
+
 ## 📋 Panoramica
 
 La homepage di Predict Platform utilizza un'architettura **theme-first** con integrazione CMS dinamica tramite blocchi.
@@ -274,7 +263,7 @@ Dallo studio di **27 fonti specializzate**, implementiamo:
 ### Documentazione Tema
 
 - `Themes/TwentyOne/docs/web-design-study.md` — Studio tema TwentyOne
-- `Themes/TwentyOne/docs/HOMEPAGE_IMPROVEMENT_PLAN.md` — Piano miglioramenti
+- `Themes/TwentyOne/docs/homepage-improvement-plan.md` — Piano miglioramenti
 
 ### GitHub
 

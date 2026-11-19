@@ -1,18 +1,6 @@
----
-title: "predict detail agnostic contract"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "predict detail agnostic contract"
-issues: []
-discussions: []
-status: draft
----
-
 # Predict Detail Agnostic Contract
 
-Path: `laravel/Themes/TwentyOne/docs/PREDICT_DETAIL_AGNOSTIC_CONTRACT.md`
+Path: `laravel/Themes/TwentyOne/docs/predict-detail-agnostic-contract.md`
 
 ## Scopo
 

@@ -1,20 +1,13 @@
 ---
-title: "twentyone theme"
-tags: [documentation]
-created: 2026-09-26
-qmd: "twentyone theme"
-issues: []
-discussions: []
 type: overview
 theme: TwentyOne
 sources:
-  - ../../../docs/ZEN_ARCHITECTURE_PHILOSOPHY.md
-  - ../../../docs/KINETIC_WEB_DESIGN_SPEC.md
-  - ../../../docs/HOMEPAGE_ARCHITECTURE.md
-  - ../../../docs/LAYOUT_ARCHITECTURE_PHILOSOPHY.md
+  - ../../../docs/zen-architecture-philosophy.md
+  - ../../../docs/kinetic-web-design-spec.md
+  - ../../../docs/homepage-architecture.md
+  - ../../../docs/layout-architecture-philosophy.md
 confidence: high
 updated: 2026-04-15
-status: draft
 ---
 
 # TwentyOne Theme — Overview
@@ -108,7 +101,7 @@ Il tema implementa **motion design** come elemento centrale:
 
 - **Dark mode nativo** (priorità rispetto a light)
 - **Tailwind CSS** — no Bootstrap, no Bootstrap Italia
-- Semantic CSS guide in `SEMANTIC_CSS_GUIDE.md`
+- Semantic CSS guide in `semantic-css-guide.md`
 - Icone: policy separata (`icon-rendering-policy.md`) — no SVG hardcoded
 
 ## Struttura File Principali
@@ -147,11 +140,11 @@ resources/
 
 ## Raw Sources Prioritari
 
-- `docs/ZEN_ARCHITECTURE_PHILOSOPHY.md` — regola agnostic container, anti-pattern
-- `docs/KINETIC_WEB_DESIGN_SPEC.md` — spec animazioni cinetiche, GSAP
-- `docs/HOMEPAGE_ARCHITECTURE.md` — architettura theme→CMS→module
-- `docs/LAYOUT_ARCHITECTURE_PHILOSOPHY.md` — filosofia layout
-- `docs/THEME_ARCHITECTURE_ZEN_BLADE_NAMING.md` — naming convention Blade
-- `docs/GSAP_SCROLLTRIGGER_THEME_GUIDE.md` — guida GSAP ScrollTrigger
-- `docs/SEMANTIC_CSS_GUIDE.md` — CSS semantico e Tailwind usage
+- `docs/zen-architecture-philosophy.md` — regola agnostic container, anti-pattern
+- `docs/kinetic-web-design-spec.md` — spec animazioni cinetiche, GSAP
+- `docs/homepage-architecture.md` — architettura theme→CMS→module
+- `docs/layout-architecture-philosophy.md` — filosofia layout
+- `docs/theme-architecture-zen-blade-naming.md` — naming convention Blade
+- `docs/gsap-scrolltrigger-theme-guide.md` — guida GSAP ScrollTrigger
+- `docs/semantic-css-guide.md` — CSS semantico e Tailwind usage
 - `docs/file-naming-rules.md` — regole naming file Folio

@@ -1,15 +1,3 @@
----
-title: "troubleshooting homepage"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "troubleshooting homepage"
-issues: []
-discussions: []
-status: draft
----
-
 # Troubleshooting Homepage - Error 500
 
 ## Problema
@@ -151,4 +139,4 @@ curl -I http://predict.local/themes/TwentyOne/assets/app-D5P4IeE3.css
 ## Risorse
 - [Laravel Vite Documentation](https://laravel.com/docs/vite)
 - [Vite Manifest Format](https://vitejs.dev/guide/backend-integration.html)
-- [Laravel Themes Integration](https://github.com/laraxot/theme-twentyone-fila3)
+- [Laravel Themes Integration](https://github.com/laraxot/theme-twentyone-fila5)

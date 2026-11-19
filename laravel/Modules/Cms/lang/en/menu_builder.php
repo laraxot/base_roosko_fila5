@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 return [
     'sections' => [
+        'or' => [
+            'label' => 'or',
+        ],
         'create_new_menu' => [
             'label' => 'Create new menu',
         ],
@@ -44,7 +47,7 @@ return [
             'label' => 'Link',
         ],
         'class_css' => [
-            'label' => 'Class CSS (optional)',
+            'label' => 'CSS Class (optional)',
         ],
         'move' => [
             'label' => 'Move',

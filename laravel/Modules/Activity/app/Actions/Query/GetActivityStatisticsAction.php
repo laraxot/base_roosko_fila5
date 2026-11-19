@@ -13,7 +13,9 @@ use Modules\Xot\Contracts\UserContract;
 use Spatie\QueueableAction\QueueableAction;
 
 /**
- * Get activity statistics, cached 5 minutes.
+ * Statistiche activity log (totali / per tipo / finestre temporali), cache 5 minuti.
+ *
+ * Scopo: dashboard audit senza query ripetute; `typedQuery`/`typedGet` tengono il contratto tipizzato.
  */
 class GetActivityStatisticsAction
 {
@@ -61,7 +63,10 @@ class GetActivityStatisticsAction
                 ->whereDate('created_at', now()->toDateString())
                 ->count(),
             'this_week' => $query->clone()
-                ->whereBetween('created_at', [now()->startOfWeek(), now()->endOfWeek()])
+                ->whereBetween('created_at', [
+                    now()->startOfWeek(),
+                    now()->endOfWeek(),
+                ])
                 ->count(),
             'this_month' => $query->clone()
                 ->whereMonth('created_at', now()->month)
@@ -101,7 +106,7 @@ class GetActivityStatisticsAction
     }
 
     /**
-     * @param array<mixed, mixed> $statistics
+     * @param  array<mixed, mixed>  $statistics
      * @return array{total: int, by_type: array<string, int>, today: int, this_week: int, this_month: int}
      */
     private function normalizeStatistics(array $statistics): array
@@ -124,6 +129,8 @@ class GetActivityStatisticsAction
 
     private function normalizeInteger(mixed $value): int
     {
-        return is_int($value) ? $value : (is_string($value) && is_numeric($value) ? (int) $value : 0);
+        return is_int($value)
+            ? $value
+            : (is_string($value) && is_numeric($value) ? (int) $value : 0);
     }
 }

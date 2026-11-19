@@ -1,15 +1,3 @@
----
-title: "filament structure analysis"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "filament structure analysis"
-issues: []
-discussions: []
-status: draft
----
-
 # Analisi della Struttura Filament e Correzione degli Errori
 
 ## Errore Grave Commesso
@@ -35,7 +23,7 @@ status: draft
 
 ### 1. Organizzazione dei Widget
 ```
-/var/www/html/_bases/base_predict_fila5_mono/
+/var/www/html/_bases/base_predict_fila5/
 └── laravel/
     └── Modules/
         └── User/
@@ -102,9 +90,9 @@ use Modules\User\Actions\HandleLoginAction;
 class LoginWidget extends Widget
 {
     protected static string $view = 'user::filament.widgets.login-widget';
-    
+
     public ?LoginData $data = null;
-    
+
     // ... resto dell'implementazione
 }
 ```
@@ -174,4 +162,4 @@ Per evitare errori simili in futuro:
 2. Verificare i namespace corretti
 3. Rispettare l'architettura modulare
 4. Documentare le decisioni
-5. Seguire le best practices 
+5. Seguire le best practices

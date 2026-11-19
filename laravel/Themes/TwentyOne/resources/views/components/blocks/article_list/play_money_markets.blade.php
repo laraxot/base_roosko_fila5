@@ -29,7 +29,7 @@
 						{{ __('predict::category.show.title') }} "{{ $category->title }}"
 						{{-- <span class="mt-1 text-sm font-normal text-gray-500">{{ $articles->total() }}</span> --}}
 					@else
-						Articoli
+						{{ __('pub_theme::article_list.list.articles.title') }}
 					@endif
 				
 					<span class="mt-1 text-sm font-normal text-gray-500">{{ count($articles) }}</span>

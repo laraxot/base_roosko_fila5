@@ -161,9 +161,9 @@ Perimetro ridotto dal coordinatore: Codex (`codex`, task `collision-rewrite-2026
 
 Perimetro: le sei violazioni di `md-filenames.py check` in `User/docs` (quattro serie), piu' lo studio di `archive/` e `bug-fixes/` per l'indice del modulo. Metodo: letti tutti i file di ogni serie e i loro fratelli, ricostruito lo scopo, riscritto un documento unico col nome senza numeri o date, front matter valido (data utile in `created`/`updated`, nessun `issues:`/`discussions:` verso l'altro repository `provtv/base_ptv_fila5`, nessun `related` verso file inesistenti), originali ritirati come `.md.old` nella stessa cartella (convenzione di `md-filenames.py apply`), lock per file presi e rilasciati. Nessun commit.
 
-**`archive/quality-status.md`** (nuovo; ritirati `quality-status-11.md` e `quality-status-2025-11.md`)
+**`archive/quality-status.md`** (nuovo; ritirati `quality-status-11.md` e `quality-status.md`)
 - Scopo: istantanea PHPStan del modulo di autenticazione a novembre 2025 (13 errori scesi a circa 5: `ChangeTypeCommand`, `EditUserWidget`).
-- Da `-11`: tutto il corpo. Da `-2025-11`: nulla in piu' del corpo (identico riga per riga, verificato con `diff`); il suo front matter aveva `related` verso file mai esistiti (`00-index-1.md`, `actions-path-convention-1.md`, ...) e un issue di un altro repository, tolti. La data reale (15 novembre 2025, dal piede del documento) va in `created`.
+- Da `-11`: tutto il corpo. Da `-2025-11`: nulla in piu' del corpo (identico riga per riga, verificato con `diff`); il suo front matter aveva `related` verso file mai esistiti (`00-index-1.md`, `actions-path-convention.md`, ...) e un issue di un altro repository, tolti. La data reale (15 novembre 2025, dal piede del documento) va in `created`.
 - Migliorato: sezione "Stato verificato oggi" (`EditUserWidget` usa ancora `Assert::classExists`/`subclassOf` e `array_fill_keys` annotato; `ChangeTypeCommand` conserva `method_exists(..., 'getLabel')` a riga 66; User a zero errori nel run intero del 2026-11-06); i controlli segnati come eseguiti senza prova sono ora un elenco di controlli, non una prova; le metriche senza misura (+40%) dichiarate stime.
 - Verifica: `frontmatter-check` 0 invalidi; tutti i link relativi risolti.
 

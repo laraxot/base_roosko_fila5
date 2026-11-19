@@ -1,11 +1,10 @@
 ---
 title: "Analisi Metodi Duplicati - Modulo Activity"
+qmd: "activity duplicate methods analysis md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "analisi metodi duplicati - modulo activity activity"
+tags: [documentation]
 ---
+
 # Analisi Metodi Duplicati - Modulo Activity
 
 **Totale Gruppi di Duplicati**:

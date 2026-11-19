@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\MultipleRecordsFoundException;
-use Modules\Cms\Http\Middleware\PageSlugMiddleware;
 use Modules\Cms\Models\Page;
 use Illuminate\Support\Arr;
 use Illuminate\View\View;
@@ -10,15 +9,13 @@ use function Laravel\Folio\{withTrashed,middleware, name,render};
 
 withTrashed();
 name('page_slug.view');
-// Applica i middleware dichiarati nel JSON della pagina (es. wallet e profile: ["auth"]).
-// Senza, le pagine personali si aprivano anche da ospite e andavano in 500.
-middleware(PageSlugMiddleware::class);
+//middleware(['auth', 'verified']);
 
 render(function (View $view, string $slug) {
     try {
         $page = Page::query()->where('slug', $slug)->sole();
     } catch (ModelNotFoundException|MultipleRecordsFoundException) {
-        abort(404);
+        return view('pub_theme::404');
     }
 
     return $view->with('page', $page);
@@ -61,9 +58,9 @@ render(function (View $view, string $slug) {
         @else
             <div class="py-10">
                 <h1 class="text-[2rem] mb-4  font-semibold text-neutral-5">
-                    Pagina non trovata
+                    {{ __('pub_theme::pages_misc.not_found.title.title') }}
                 </h1>
-                <p>La pagina richiesta non esiste.</p>
+                <p>{{ __('pub_theme::pages_misc.not_found.description.message') }}</p>
             </div>
         @endif
     </div>

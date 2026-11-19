@@ -58,16 +58,19 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
+            'label' => 'Colonne',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
+            'label' => 'Riordina',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
+            'label' => 'Azzera filtri',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -92,6 +95,13 @@ return [
         ],
         'delete' => [
             'label' => 'Elimina Treatment',
+        ],
+        'logout' => [
+            'tooltip' => '',
+            'icon' => 'logout',
+        ],
+        'profile' => [
+            'icon' => 'profile',
         ],
     ],
 ];

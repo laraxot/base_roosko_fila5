@@ -32,10 +32,10 @@ new class extends Component
             </x-ui.link>
 
             <h2 class="mt-5 text-2xl font-extrabold leading-9 text-center text-gray-800 dark:text-gray-200">
-                Confirm your password
+                {{ __('pub_theme::auth_pages.passwords.confirm_title.title') }}
             </h2>
             <p class="text-sm leading-5 text-center text-gray-600 dark:text-gray-400 space-x-0.5">
-                Please confirm your password before continuing
+                {{ __('pub_theme::auth_pages.passwords.confirm_intro.description') }}
             </p>
         </div>
 
@@ -43,11 +43,11 @@ new class extends Component
             <div class="px-10 py-0 sm:py-8 sm:shadow-sm sm:bg-white dark:sm:bg-gray-950/50 dark:border-gray-200/10 sm:border sm:rounded-lg border-gray-200/60">
                 @volt('auth.password.confirm')
                 <form wire:submit="confirm" class="space-y-6">
-                    <x-ui.input label="Password" type="password" id="password" name="password" wire:model="password" />
+                    <x-ui.input :label="__('pub_theme::auth_pages.fields.password.label')" type="password" id="password" name="password" wire:model="password" />
                     <div class="flex items-center justify-end text-sm">
-                        <x-ui.text-link href="{{ route('password.request') }}">Forgot your password?</x-ui.text-link>
+                        <x-ui.text-link href="{{ route('password.request') }}">{{ __('pub_theme::auth_pages.login.forgot_password.label') }}</x-ui.text-link>
                     </div>
-                    <x-ui.button type="primary" rounded="md" submit="true">Confirm password</x-ui.button>
+                    <x-ui.button type="primary" rounded="md" submit="true">{{ __('pub_theme::auth_pages.passwords.confirm_submit.label') }}</x-ui.button>
                 </form>
                 @endvolt
             </div>

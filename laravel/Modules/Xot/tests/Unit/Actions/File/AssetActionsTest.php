@@ -67,7 +67,7 @@ it('resolves a module asset to its public url without copying anything into publ
 
     try {
         $result = app(AssetAction::class)->execute('XotAssetTest::css/style.css');
-        Assert::assertStringContainsString('assets/XotAssetTest/css/style.css', $result);
+Assert::assertStringContainsString('assets/xotassettest/css/style.css', $result);
         Assert::assertFileDoesNotExist($dest, 'the asset must be served through the symlink, never copied');
     } finally {
         if (is_file($resourceFile)) {
@@ -82,7 +82,7 @@ it('does not throw when public assets dir is a plain file left by a checkout wit
     mkdir(\dirname($publicFile), 0o755, true);
     file_put_contents($publicFile, 'body{}');
 
-    $standIn = public_path('assets/XotStandInTest');
+    $standIn = public_path('assets/xotstandintest'); // link in minuscolo, come gli URL
     file_put_contents($standIn, '../../laravel/Modules/XotStandInTest/public');
 
     app()->instance(GetModulePathAction::class, new class($moduleRoot) extends GetModulePathAction
@@ -97,7 +97,7 @@ it('does not throw when public assets dir is a plain file left by a checkout wit
 
     try {
         $result = app(AssetAction::class)->execute('XotStandInTest::css/style.css');
-        Assert::assertStringContainsString('assets/XotStandInTest/css/style.css', $result);
+        Assert::assertStringContainsString('assets/xotstandintest/css/style.css', $result);
         Assert::assertTrue(is_file($standIn), 'the stand-in file must be left untouched');
     } finally {
         foreach ([$standIn, $publicFile] as $file) {
@@ -118,4 +118,11 @@ it('calculates asset path correctly in AssetPathAction', function (): void {
     $result = $action->execute('User::js/app.js');
 
     Assert::assertSame('/path/to/User/resources/js/app.js', $result);
+});
+
+it('resolves a public URL path to a file under the document root', function (): void {
+    $action = app(AssetPathAction::class);
+
+    Assert::assertSame(public_path('themes/Trattoria/images/logo.svg'), $action->execute('/themes/Trattoria/images/logo.svg?v=2'));
+    Assert::assertSame(public_path('images/logo.png'), $action->execute('images/logo.png'));
 });

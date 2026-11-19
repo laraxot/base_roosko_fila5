@@ -303,14 +303,19 @@ test('activity module handles data consistency across models', function () {
 
     $activityPropertiesValue = $activity->properties;
     Assert::assertNotNull($activityPropertiesValue);
+    // SchemalessAttributes is Arrayable (toArray), not Collection (all).
     $activityProperties = is_array($activityPropertiesValue)
         ? $activityPropertiesValue
-        : $activityPropertiesValue->all();
+        : ($activityPropertiesValue instanceof \Illuminate\Contracts\Support\Arrayable
+            ? $activityPropertiesValue->toArray()
+            : []);
     $snapshotStateValue = $snapshot->state;
     Assert::assertNotNull($snapshotStateValue);
     $snapshotState = is_array($snapshotStateValue)
         ? $snapshotStateValue
-        : $snapshotStateValue->all();
+        : ($snapshotStateValue instanceof \Illuminate\Contracts\Support\Arrayable
+            ? $snapshotStateValue->toArray()
+            : (array) $snapshotStateValue);
     $storedEventPropertiesValue = $storedEvent->event_properties;
     Assert::assertIsArray($storedEventPropertiesValue);
     $storedEventProperties = $storedEventPropertiesValue;
@@ -331,7 +336,9 @@ test('activity module handles data consistency across models', function () {
     Assert::assertNotNull($freshActivityPropertiesValue);
     $freshActivityProperties = is_array($freshActivityPropertiesValue)
         ? $freshActivityPropertiesValue
-        : $freshActivityPropertiesValue->all();
+        : ($freshActivityPropertiesValue instanceof \Illuminate\Contracts\Support\Arrayable
+            ? $freshActivityPropertiesValue->toArray()
+            : []);
     $freshSnapshotState = $freshSnapshot->state;
     $freshEventProperties = $freshEvent->event_properties;
 
@@ -382,12 +389,16 @@ test('activity module supports bulk operations efficiently', function () {
     Assert::assertNotNull($firstActivityPropertiesValue);
     $firstActivityProperties = is_array($firstActivityPropertiesValue)
         ? $firstActivityPropertiesValue
-        : $firstActivityPropertiesValue->all();
+        : ($firstActivityPropertiesValue instanceof \Illuminate\Contracts\Support\Arrayable
+            ? $firstActivityPropertiesValue->toArray()
+            : []);
     $lastActivityPropertiesValue = $lastActivity->properties;
     Assert::assertNotNull($lastActivityPropertiesValue);
     $lastActivityProperties = is_array($lastActivityPropertiesValue)
         ? $lastActivityPropertiesValue
-        : $lastActivityPropertiesValue->all();
+        : ($lastActivityPropertiesValue instanceof \Illuminate\Contracts\Support\Arrayable
+            ? $lastActivityPropertiesValue->toArray()
+            : []);
 
     Assert::assertSame($user->id, $firstActivity->causer_id);
     Assert::assertSame($user->id, $lastActivity->causer_id);

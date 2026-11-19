@@ -1,15 +1,3 @@
----
-title: "vite error"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "vite error"
-issues: []
-discussions: []
-status: draft
----
-
 # Errore Vite: Unable to locate file in Vite manifest
 
 ## Descrizione dell'Errore
@@ -40,7 +28,7 @@ Unable to locate file in Vite manifest: resources/css/app.css
 ### 1. Pubblicare il Tema
 
 ```bash
-cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/TwentyOne
+cd /var/www/html/_bases/base_predict_fila5/laravel/Themes/TwentyOne
 npm run copy
 ```
 
@@ -103,4 +91,4 @@ tail -f storage/logs/laravel.log
 
 - L'errore può verificarsi anche dopo aggiornamenti di Laravel o Vite
 - È importante mantenere sincronizzati i percorsi tra il codice e il manifest
-- In ambiente di sviluppo, assicurarsi che il server di sviluppo Vite sia in esecuzione 
+- In ambiente di sviluppo, assicurarsi che il server di sviluppo Vite sia in esecuzione

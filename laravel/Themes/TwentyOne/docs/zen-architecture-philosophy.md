@@ -1,15 +1,3 @@
----
-title: "zen architecture philosophy"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "zen architecture philosophy"
-issues: []
-discussions: []
-status: draft
----
-
 # 🧘 Zen Architecture Philosophy
 
 **Tema**: TwentyOne  
@@ -17,6 +5,7 @@ status: draft
 **Stato**: ✅ FOUNDATIONAL - Leggere PRIMA di modificare qualsiasi file
 
 ---
+
 ## 🔴 CRITICAL RULE: AGNOSTIC CONTAINER BLADE
 
 ### La Filosofia Zen
@@ -436,7 +425,7 @@ Se **ALMENO UNA** è **NO** → ❌ REFACTOR PRIMA DI COMMIT
 
 | File | Descrizione |
 |------|-------------|
-| `docs/ZEN_NAKED_PAGE_PHILOSOPHY.md` | NO styling hardcoded |
+| `docs/zen-naked-page-philosophy.md` | NO styling hardcoded |
 | `docs/CONTAINER_AGNOSTICISM.md` | Container non sa cosa contiene |
 | `docs/WIDGET_BRIDGE_PATTERN.md` | Widgets come ponte Tema↔Moduli |
 | `docs/CMS_JSON_ARCHITECTURE.md` | CMS guida i blocks |

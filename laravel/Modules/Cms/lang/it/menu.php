@@ -124,15 +124,31 @@ return [
             'helper_text' => '',
         ],
         'items' => [
+            'label' => 'Voci',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
             'tooltip' => '',
         ],
         'url' => [
+            'label' => 'Link',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
             'tooltip' => '',
         ],
         'target' => [
+            'label' => 'Apri in',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
             'tooltip' => '',
         ],
         'icon' => [
+            'label' => 'Icona',
+            'placeholder' => '',
+            'helper_text' => '',
+            'description' => '',
             'tooltip' => '',
         ],
     ],
@@ -142,6 +158,10 @@ return [
         'delete' => 'Elimina Menu',
         'sort' => 'Ordina Voci',
         'add_item' => 'Aggiungi Voce',
+        'logout' => [
+            'tooltip' => '',
+            'icon' => 'logout',
+        ],
     ],
     'messages' => [
         'created' => 'Menu creato con successo',

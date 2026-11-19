@@ -82,7 +82,8 @@ describe('TeamChangeWidget mount + render', function (): void {
         $widget = $component->instance();
         Assert::assertInstanceOf(TeamChangeWidget::class, $widget);
         $rendered = $widget->render();
-        Assert::assertSame('ui::livewire.empty', $rendered->getData()['view'] ?? null);
+        // render() sceglie la vista vuota condivisa: e' il nome della View, non un dato passato alla vista.
+        Assert::assertSame('ui::livewire.empty', $rendered->name());
         Assert::assertSame([], $component->get('teams'));
     });
 });

@@ -25,6 +25,8 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
  * Flat form design following modern signup UX best practices.
  * GDPR consents are Livewire public properties so the Blade view
  * can render custom HTML with clickable links to privacy/terms pages.
+ *
+ * @see Modules/Gdpr/docs/register-widget-copy-ownership.md
  */
 class RegisterWidget extends XotBaseWidget
 {
@@ -103,11 +105,6 @@ class RegisterWidget extends XotBaseWidget
         return ! Auth::check();
     }
 
-    protected function getView(): string
-    {
-        return 'filament.widgets.auth.register';
-    }
-
     /**
      * @return array<string, mixed>
      */
@@ -147,6 +144,8 @@ class RegisterWidget extends XotBaseWidget
         ];
 
         $validatedData = app(ValidateUserDataAction::class)->execute($formData);
+        // `name` e' il nome mostrato in testata, nei commenti e nelle email: senza, la testata mostrava l'indirizzo email.
+        $validatedData['name'] = trim($this->first_name.' '.$this->last_name);
         $this->logRegistrationAttempt($formData);
 
         $user = DB::connection('user')->transaction(function () use ($validatedData) {

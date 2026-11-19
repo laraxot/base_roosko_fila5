@@ -15,6 +15,7 @@ return [
         ],
         'filter' => [
             'icon' => 'filter',
+            'label' => 'Filtro',
         ],
     ],
     'fields' => [

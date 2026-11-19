@@ -104,7 +104,7 @@ $colorMap = [
                             {{ $market['category_info']['icon'] }} {{ $market['category_info']['name'] }}
                         </span>
                         <div class="text-sm text-gray-500 dark:text-gray-400">
-                            Resolves: {{ date('M Y', strtotime($market['resolution_date'])) }}
+                            {{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => date('M Y', strtotime($market['resolution_date']))]) }}
                         </div>
                     </div>
                     @endif
@@ -121,7 +121,7 @@ $colorMap = [
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">
                                     {{ number_format($market['yes_price'] * 100) }}¢
                                 </span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">
@@ -138,14 +138,14 @@ $colorMap = [
                     {{-- Volume Info --}}
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €{{ number_format($market['volume'] / 1000, 1) }}K</span>
-                        <span>{{ number_format($market['traders']) }} traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€'.number_format($market['volume'] / 1000, 1).'K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', $market['traders'], ['count' => number_format($market['traders'])]) }}</span>
                     </div>
                     @endif
 
                     {{-- Action Button --}}
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -153,8 +153,8 @@ $colorMap = [
             {{-- No Markets Found --}}
             <div class="col-span-full text-center py-12">
                 <div class="text-gray-400 dark:text-gray-600 text-6xl mb-4">📊</div>
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">No Markets Found</h3>
-                <p class="text-gray-600 dark:text-gray-400">No markets available for the selected criteria.</p>
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{{ __('pub_theme::blocks_markets.card.no_markets.title') }}</h3>
+                <p class="text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.no_markets.message') }}</p>
             </div>
             @endforelse
         </div>
@@ -164,7 +164,7 @@ $colorMap = [
         <div class="text-center">
             <a href="/markets?source={{ $source }}&category={{ $category }}" 
                class="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-800 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-                View All Markets
+                {{ __('pub_theme::market_common.actions.view_all_markets.label') }}
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Media\Tests\Unit\Actions;
 
-uses(\Modules\Media\Tests\TestCase::class);
-
 use Modules\Media\Actions\AttachMediaAction;
+use Modules\Media\Tests\TestCase;
 use Spatie\QueueableAction\QueueableAction;
+
+uses(TestCase::class);
 
 describe('AttachMediaAction', function () {
     it('uses QueueableAction trait', function (): void {

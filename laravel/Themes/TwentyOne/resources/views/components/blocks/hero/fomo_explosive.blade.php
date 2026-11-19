@@ -58,7 +58,7 @@
                 </div>
                 <div class="text-right">
                     <div class="text-3xl font-black text-green-400">{{ $last_big_win['amount'] ?? '' }}</div>
-                    <div class="text-xs text-gray-400">VINCITA EPICA!</div>
+                    <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_hero.fomo.epic_win.label') }}</div>
                 </div>
             </div>
         </div>
@@ -74,15 +74,15 @@
         <div class="grid grid-cols-3 gap-4 max-w-2xl mx-auto mt-12">
             <div class="text-center">
                 <div class="text-2xl font-black text-white">€2.4M</div>
-                <div class="text-xs text-gray-400">PAGATI OGGI</div>
+                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_hero.fomo.paid_today.label') }}</div>
             </div>
             <div class="text-center">
                 <div class="text-2xl font-black text-white">47K+</div>
-                <div class="text-xs text-gray-400">UTENTI ATTIVI</div>
+                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_hero.fomo.active_users.label') }}</div>
             </div>
             <div class="text-center">
                 <div class="text-2xl font-black text-white">94%</div>
-                <div class="text-xs text-gray-400">ACCURACY TOP</div>
+                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_hero.fomo.top_accuracy.label') }}</div>
             </div>
         </div>
     </div>

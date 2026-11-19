@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Unit\Actions;
 
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Schema;
 use Modules\Activity\Actions\ActivityLogger as ActivityLoggerAction;
 use Modules\Activity\Actions\ActivityMaintenanceAction;
 use Modules\Activity\Actions\LogActivityAction;
@@ -101,6 +104,19 @@ test('LogModel lifecycle actions e login logout eseguiti', function (): void {
 test('RecordSubjectActivityAction e query actions coprono execute', function (): void {
     $subject = activityUnitSubject('subj-q');
     $user = activityUnitUser('causer-q');
+
+    // La tabella harness non esiste nel DB di sviluppo da cui parte lo scratch:
+    // `with('subject')` farebbe una query su `activity_subject_harness`.
+    if (! Schema::hasTable('activity_subject_harness')) {
+        Schema::create('activity_subject_harness', function (Blueprint $table): void {
+            $table->string('id')->primary();
+            $table->string('name')->nullable();
+        });
+    }
+    DB::table('activity_subject_harness')->updateOrInsert(
+        ['id' => $subject->id],
+        ['name' => 'Subject'],
+    );
 
     $recorded = (new RecordSubjectActivityAction)->execute(
         ActivitySubjectHarness::class,
@@ -231,5 +247,5 @@ test('ActivityLogger Adapter rifiuta user non User', function (): void {
     $invalid = new LogActivityActionTestModel(['name' => 'bad']);
 
     expect(fn (): Activity => (new ActivityLoggerAdapter)->log('x', $invalid))
-        ->toThrow(\InvalidArgumentException::class, 'User must be an instance of User');
+        ->toThrow(\InvalidArgumentException::class, 'User must implement UserContract');
 });

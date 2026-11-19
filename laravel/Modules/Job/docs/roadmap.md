@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "roadmap"
 issues: []
 discussions: []
-status: draft
 ---
 
 # 🎯 JOB MODULE - ROADMAP 2025
@@ -19,6 +18,15 @@ status: draft
 **Filament**: 🚧 4.x Compatibile  
 
 ---
+
+title: "roadmap"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "roadmap"
+issues: []
+discussions: []
 ## 🎯 MODULE OVERVIEW
 
 Il modulo **Job** [descrizione del modulo].

@@ -117,7 +117,7 @@
           <div class="flex flex-col gap-2 max-h-[160px] overflow-y-auto pr-2 scrollbar-custom">
               <button type="button" wire:click="openBetModal('{{ $ratings[0]['id'] }}')"
                   class="w-full bg-emerald-500 text-white px-4 py-2 rounded-md transition hover:opacity-80 hover:scale-105 pulse-glow">
-                  Yes
+                  {{ __('pub_theme::widgets_ratings.options.yes.label') }}
               </button>
               <button type="button" wire:click="openBetModal('{{ $ratings[0]['id'] }}')"
                   class="w-full bg-sky-500 text-white px-4 py-2 rounded-md transition hover:opacity-80 hover:scale-105 pulse-glow">
@@ -149,7 +149,7 @@
                           @if (isset($rating['pivot']['yes_or_no']) && $rating['pivot']['yes_or_no'])
                               <div class="absolute right-0 hidden space-x-1 group-hover:flex bg-gray-900/80 px-1 py-0.5 rounded shadow">
                                   <button type="button"
-                                      class="px-2 py-1 text-xs bg-emerald-500 text-white rounded transition hover:scale-105 pulse-glow">Yes</button>
+                                      class="px-2 py-1 text-xs bg-emerald-500 text-white rounded transition hover:scale-105 pulse-glow">{{ __('pub_theme::widgets_ratings.options.yes.label') }}</button>
                                   <button type="button"
                                       class="px-2 py-1 text-xs bg-sky-500 text-white rounded transition hover:scale-105 pulse-glow">No</button>
                               </div>

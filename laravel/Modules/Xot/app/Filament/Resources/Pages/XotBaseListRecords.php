@@ -84,6 +84,7 @@ abstract class XotBaseListRecords extends FilamentListRecords
         return [
             'create' => CreateAction::make()
                 ->icon('heroicon-o-plus')
+                ->visible(fn (): bool => static::getResource()::canCreate())
                 ->url(fn (): string => RecordAnchor::appendReturnTo(
                     static::getResource()::getUrl('create'),
                     RecordAnchor::currentUrl(),

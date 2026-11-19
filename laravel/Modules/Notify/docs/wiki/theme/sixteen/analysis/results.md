@@ -1,16 +1,20 @@
 ---
-title: "Notify Module: Document"
+title: "Notify Module — Document"
 type: docs/bmad
 status: active
 module: Notify
 scope: documentation
 bmad_version: 1.0
 updated: 2026-10-06
-tags: [docs, notify, wiki]
-qmd: "homepage visual comparison - results notify"
 ---
 
 # Homepage Visual Comparison - RESULTS
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Comparison Screenshots
 
@@ -38,7 +42,7 @@ qmd: "homepage visual comparison - results notify"
 ```bash
 cd laravel/Themes/Sixteen
 npm run build    # ✓
-npm run copy     # ✓
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ### Remaining Differences (Acceptable):

@@ -1,17 +1,15 @@
 ---
 title: "Indice documentazione — Modulo Activity"
 type: index
-status: draft
-updated: 2026-10-23
+status: active
+updated: 2026-11-16
 tags: [docs, activity]
-qmd: "indice documentazione   modulo activity activity"
+qmd: "indice documentazione modulo activity architecture naming debt kebab-case"
 ---
 # Indice documentazione — Modulo Activity
 
-Indice organizzato per argomento. Copre tutti i file `.md` sotto `Modules/Activity/docs/`
-(890 file al 2026-10-14, 755 al 2026-09-03, non 362 come indicato nel task originale — la cartella e'
-cresciuta molto oltre le stime precedenti, vedi `docs/task-consolidare-documentazione.md`
-e `docs/docs-health.md`).
+Indice per argomento sotto `Modules/Activity/docs/`. Vedi [docs-health.md](docs-health.md).
+Nomi: kebab-case, senza date nel filename ([55-md-conventions](../../../../bashscripts/docs/prompts/55-md-conventions.md)).
 
 ## Key Features
 - **Activity Logging**: Automatic logging of user and system activities
@@ -33,7 +31,7 @@ The module follows the Laraxot architecture principles:
 - `Activity` - Main activity model
 - `ActivityLog` - Detailed activity logging
 
-- [architecture.md](ARCHITECTURE.md) — architettura generale del modulo.
+- [architecture.md](architecture.md) — architettura generale del modulo.
 - [architecture/structure.md](architecture/structure.md) — organizzazione interna dettagliata.
 - [structure.md](structure.md) — nota: contenuto quasi identico a `architecture/structure.md` (stesso titolo "Modulo Activity", 414 vs 413 righe); vedi Storico.
 - [architecture-rules.md](architecture-rules.md) — puntatore alle regole architetturali generali.
@@ -332,7 +330,7 @@ solo in [llm-wiki/agents.md](llm-wiki/agents.md) e [llm-wiki/log.md](llm-wiki/lo
 
 - [env-development-configuration.md](env-development-configuration.md) — configurazione ambiente di sviluppo.
 - [mcp-configuration.md](mcp-configuration.md) — configurazione server MCP.
-- [mcp-server-recommended.md](mcp-server-recommended.md) — MCP consigliati per il modulo (MCP-SERVER-RECOMMENDED.md duplicato maiuscolo; `mcp_server_recommended.md`/`MCP_SERVER_RECOMMENDED.md` sono invece stub puntatori a Themes, vedi Storico — attenzione: 4 file quasi omonimi con due ruoli diversi).
+- [mcp-server-recommended.md](mcp-server-recommended.md) — MCP consigliati per il modulo (MCP-SERVER-RECOMMENDED.md duplicato maiuscolo; `mcp_server_recommended.md`/`mcp-server-recommended.md` sono invece stub puntatori a Themes, vedi Storico — attenzione: 4 file quasi omonimi con due ruoli diversi).
 - [qmd-setup.md](qmd-setup.md) — setup QMD per il modulo (QMD-SETUP.md duplicato maiuscolo, vedi Storico).
 - [boost-skill-fix-summary.md](boost-skill-fix-summary.md) — fix skill Boost (`boost_skill_fix_summary.md` e' invece uno stub puntatore Themes, vedi Storico).
 - [laravel-13-upgrade.md](laravel-13-upgrade.md) — upgrade Laravel 13 (contenuto simile a `wiki/integrations/laravel-13-upgrade.md`, non identico).
@@ -409,7 +407,7 @@ variante e' collegata come riferimento primario nelle sezioni sopra.
 `use_cases/shop/archive/console-commands.md`/`console_commands.md` (entrambi stub vuoti) ·
 `00-index.md`/`00-INDEX.md` (+ `00-index-documentation.md` quasi vuoto).
 
-**Nota**: `bad-practices.md`, `best-practices.md`, `code-quality.md`, `mcp_server_recommended.md`/`MCP_SERVER_RECOMMENDED.md`,
+**Nota**: `bad-practices.md`, `best-practices.md`, `code-quality.md`, `mcp_server_recommended.md`/`mcp-server-recommended.md`,
 `boost_skill_fix_summary.md`, `phpmd_analysis.md`/`PHPMD_ANALYSIS.md` non sono duplicati del contenuto reale:
 sono stub con frontmatter `canonical:` che puntano a `Themes/docs/shared-components/...` (vedi sezione dedicata
 sotto). Coesistono per coincidenza di nome con le varianti che invece hanno contenuto reale — non vanno confusi.
@@ -427,7 +425,7 @@ sotto). Coesistono per coincidenza di nome con le varianti che invece hanno cont
 `metodi-duplicati-analisi.md` (+ maiuscolo/underscore) · `modelli-factory-seeder-analisi.md` (+ `-1.md`, underscore) ·
 `phpstan-analysis-november.md`/`phpstan-analysis-november-2025.md` · `phpstan-fixes.md` (+ `-1.md`, stub underscore) ·
 `phpstan-fixes-activity.md` (+ `-1.md`, underscore) · `quality-status.md` (+ `-.md`, `-2025-11.md`; `-nov.md` e' stub) ·
-`roadmap-2025.md`/`roadmap-.md` (+ `roadmap-archive-1.md`, quasi identico con 2 righe di differenza) ·
+`roadmap-2025.md`/`roadmap-.md` (+ `roadmap-archive.md`, quasi identico con 2 righe di differenza) ·
 `event-sourcing-examples-duplicate.md`/`event_sourcing_examples.md` (+ stub `event-sourcing-examples.md`) ·
 `event-sourcing-introduction-duplicate.md`/`event_sourcing_introduction.md` (+ stub `event-sourcing-introduction.md`) ·
 `test-archive-1.md`/`test-archive-2.md` (entrambi vuoti).
@@ -437,7 +435,7 @@ sotto). Coesistono per coincidenza di nome con le varianti che invece hanno cont
 - `module-analysis.md` (87 righe, "Comprehensive Analysis") vs `module_analysis.md` (319 righe, "Modulo Activity - Logging e Event Sourcing"): nomi quasi identici, contenuto diverso. `module_analysis.md` e' invece un quasi-duplicato di `module.md` (320 righe, stesso titolo).
 - `structure.md` (root, 414 righe) vs `architecture/structure.md` (413 righe): stesso titolo "Modulo Activity", da verificare a mano se sono la stessa cosa copiata in due posti o se sono divergenti.
 - `testing-structure-login-analysis.md` (root, 186 righe) vs `architecture/testing-structure-login-analysis.md` (174 righe): stesso titolo "Struttura Corretta dei Test di Login - Analisi Completa".
-- `mcp-server-recommended.md`/`MCP-SERVER-RECOMMENDED.md` (contenuto reale, 23 righe) vs `mcp_server_recommended.md`/`MCP_SERVER_RECOMMENDED.md` (stub puntatore Themes, 7 righe): quattro file quasi omonimi, due ruoli diversi.
+- `mcp-server-recommended.md`/`MCP-SERVER-RECOMMENDED.md` (contenuto reale, 23 righe) vs `mcp_server_recommended.md`/`mcp-server-recommended.md` (stub puntatore Themes, 7 righe): quattro file quasi omonimi, due ruoli diversi.
 - `bad-practices.md`/`best-practices.md` (trattino, stub puntatore Themes) vs `bad_practices.md`/`best_practices.md` (underscore, contenuto reale locale): stesso schema del punto precedente.
 - `git-conflicts-resolution-summary.md` (contenuto reale) vs `git-conflicts-resolution-sumy.md` (stub puntatore Themes, refuso "sumy" per "summary").
 - `merge-conflicts-list.md` (contenuto reale) vs `merge-conflict-files-list.md` (stub puntatore Themes, nome simile ma non identico).
@@ -470,7 +468,7 @@ intenzionale di "on-demand", non un incidente di duplicazione): `ai-methodologie
 `filament/filament-v4-upgrade.md`, `filaments.md`, `file-naming-rules.md`,
 `git-conflicts-resolution-sumy.md`, `guides/event-sourcing.md`, `guides/event_sourcing.md`,
 `jpgraph.md`, `logging_optimization.md`, `login-test-implementation.md`,
-`mcp_server_recommended.md`, `MCP_SERVER_RECOMMENDED.md`, `merge-conflict-files-list.md`,
+`mcp_server_recommended.md`, `mcp-server-recommended.md`, `merge-conflict-files-list.md`,
 `metodiuplicati-analisi.md`, `migration-filament.md`, `migration-filament.md`,
 `migrazione-filament.md`, `migrazione-filament.md`, `outputs/README.md`,
 `performance/archive/activity_log_optimization-renamed.md`, `phpinsightss.md`,
@@ -482,6 +480,14 @@ intenzionale di "on-demand", non un incidente di duplicazione): `ai-methodologie
 "analysis"/"flusso-utente"/"console-commands" dentro `use_cases/bank/`,
 `use_cases/prediction_market/` e `use_cases/shop/` (incluso `use_cases/shop/archive/`).
 Non richiedono consolidamento: sono puntatori voluti, non copie accidentali.
+
+## Related Modules
+- [User Module](../User/docs/README.md) - User authentication and management
+- [Notify Module](../Notify/docs/index.md) - Notification system
+- [Xot Module](../Xot/docs/index.md) - Core base classes
+- [User Module](../user/docs/readme.md) - User authentication and management
+- [Notify Module](../notify/docs/index.md) - Notification system
+- [Xot Module](../xot/docs/index.md) - Core base classes
 
 ## Related Modules
 - [User Module](../User/docs/README.md) - User authentication and management
@@ -510,7 +516,7 @@ Questi 4 gruppi restano come testimonianza storica di un import automatico mal r
 
 `domain-logic.md`, `data-models.md`, `validation.md`, `integration.md`, `workflows.md`,
 `troubleshooting.md`, `2024-03-27.md`, `archived-note.md`, `documentation.md`,
-`documentation-archive-1.md` e i loro equivalenti nelle
+`documentation-archive.md` e i loro equivalenti nelle
 cartelle di import grezzo sopra citate (49 file a 0 righe in tutto il modulo).
 
 ## Numeri di questo audit
@@ -520,3 +526,21 @@ cartelle di import grezzo sopra citate (49 file a 0 righe in tutto il modulo).
 - File completamente vuoti (0 righe): 49.
 - File stub con puntatore `canonical:` verso `Themes/docs/shared-components/`: 73 (di cui 6 template `_templates/`, 4 ibridi con contenuto reale aggiuntivo, 63 stub puri).
 - File indicizzati esplicitamente per argomento in questo documento: la quasi totalita' dei restanti file con contenuto reale; le eccezioni (import grezzo/placeholder vuoti) sono referenziate per gruppo con comando `find` riproducibile, non singolarmente.
+## Debito naming (date nel filename — flag, non cancellare)
+
+Storici con data nel nome: restano `superseded`/archivio finche' i riferimenti non
+sono migrati. Canonici nuovi: senza data. Misura:
+
+```bash
+python3 -I bashscripts/tools/docs/md-filenames.py check --paths laravel/Modules/Activity/docs
+```
+
+Esempi ancora presenti: `documentation-2024-03-27.md`, `quality-status.md`,
+`stories/phpstan-cleanup-activity.story.md`,
+`bmad/stories/*-20260928*.story.md`, `wiki/troubleshooting/git-merge-conflict-inventory-april.md`,
+`raw/root-import/*2024*`. Procedura: [docs-clean.md](../../../../bashscripts/docs/prompts/docs-clean.md).
+
+## Troubleshooting
+
+- Performance log grandi, entry mancanti, config: vedi wiki troubleshooting del modulo.
+- File vuoti/import grezzo: referenziati per gruppo sopra, non cancellare a tappeto.

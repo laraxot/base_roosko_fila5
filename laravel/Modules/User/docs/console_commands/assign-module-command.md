@@ -9,14 +9,12 @@ issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
   - "./change-password-command.md"
-  - "./console-commands-philosophy.md"
+  - "./console-commands-philosophy-1-1.md"
   - "./console-commands-philosophy.md"
   - "./console-commands-philosophy.md"
   - "./console-commands-philosophy.md"
   - "./console-commands.md"
-  - "./README.md"
-status: superseded
-superseded_by: ../console-commands/assign-module-command.md
+  - "./readme.md"
 ---
 
 # AssignModuleCommand - Gestione Moduli Utente
@@ -178,7 +176,7 @@ Result: No changes made to user modules.
 - [Console Commands Philosophy](console-commands-philosophy.md)
 - [User Models](models/readme.md)
 - [Role Management](models/role-management.md)
-- [README.md](../README.md)
+- [README.md](../readme.md)
 
 ## Aggiornamenti
 

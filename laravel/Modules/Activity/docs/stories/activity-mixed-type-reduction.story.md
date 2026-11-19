@@ -1,3 +1,10 @@
+---
+title: "Story: Riduzione uso di `mixed`: Activity"
+qmd: "activity stories activity mixed type reduction story md"
+type: note
+tags: [documentation]
+---
+
 # Story: Riduzione uso di `mixed`: Activity
 
 **Modulo**: Activity

@@ -1,5 +1,5 @@
 <div>
-    <nav class="text-sm text-gray-600" aria-label="Breadcrumb">
+    <nav class="text-sm text-gray-600" aria-label="{{ __('pub_theme::widgets_predict.breadcrumb.nav.aria_label') }}">
         <ol class="flex items-center space-x-2">
             @if ($predict->category)
                 @foreach ($predict->category->ancestorsAndSelf()->get()->reverse() as $category)

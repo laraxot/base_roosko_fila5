@@ -9,7 +9,7 @@ issues: []
 discussions: []
 ---
 
-# Story: Lang: CHANGELOG.MD duplicato + conflitto di merge non risolto in CHANGELOG.md
+# Story: Lang — CHANGELOG.MD duplicato + conflitto di merge non risolto in CHANGELOG.md
 
 ## Status
 Done.

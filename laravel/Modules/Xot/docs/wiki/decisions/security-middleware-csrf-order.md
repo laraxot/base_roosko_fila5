@@ -34,8 +34,6 @@ Rate limiting → `validateInputs()` → `enhanceCSRFProtection()` → `$next()`
 
 Non spostare i controlli dopo `$next()`. Chi sincronizza il modulo Xot fra progetti deve
 portare questa versione anche nel repository del modulo (`laraxot/module_xot_fila5`).
-<<<<<<< .merge_file_22WD26
-=======
 
 ## Aggiornamento 2026-11-10 — rate limiting
 
@@ -51,4 +49,3 @@ Il rate limiting dello stesso middleware bloccava il sito con 429:
 Decisione: un solo contatore `RateLimiter` per **IP + gruppo** (finestra fissa 60 s).
 Limite generale 300 richieste/minuto; limiti stretti (login 10, registrazione 5, reset password 5)
 solo per gli invii (metodi non GET/HEAD): aprire una pagina non consuma il limite di login.
->>>>>>> .merge_file_raGNeB

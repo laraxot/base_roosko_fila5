@@ -48,7 +48,7 @@
                     <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                         <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd" />
                     </svg>
-                    HOT
+                    {{ __('pub_theme::predict_cards.market_card.hot.label') }}
                 </span>
             </div>
         @endif
@@ -84,7 +84,7 @@
             {{-- Binary Outcome (SI/NO Classic) --}}
             <div class="mb-5">
                 <div class="flex justify-between items-center mb-2">
-                    <span class="text-sm font-medium text-gray-600">Probabilità</span>
+                    <span class="text-sm font-medium text-gray-600">{{ __('pub_theme::predict_cards.market_card.probability.label') }}</span>
                     <span class="text-lg font-bold text-emerald-600">{{ number_format($probability, 1) }}%</span>
                 </div>
                 <div class="w-full bg-gray-200 rounded-full h-5 overflow-hidden shadow-inner">
@@ -100,14 +100,14 @@
                 <div class="bg-gray-50 rounded-lg p-3">
                     <div class="flex items-center gap-2 mb-1">
                         <x-filament::icon icon="heroicon-o-currency-dollar" class="w-4 h-4 text-gray-400" />
-                        <span class="text-xs text-gray-500">Volume</span>
+                        <span class="text-xs text-gray-500">{{ __('pub_theme::predict_cards.market_card.volume.label') }}</span>
                     </div>
                     <p class="text-lg font-bold text-gray-900">{{ number_format($volume, 0, ',', '.') }} CR</p>
                 </div>
                 <div class="bg-gray-50 rounded-lg p-3">
                     <div class="flex items-center gap-2 mb-1">
                         <x-filament::icon icon="heroicon-o-user-group" class="w-4 h-4 text-gray-400" />
-                        <span class="text-xs text-gray-500">Traders</span>
+                        <span class="text-xs text-gray-500">{{ __('pub_theme::predict_cards.market_card.traders.label') }}</span>
                     </div>
                     <p class="text-lg font-bold text-gray-900">{{ number_format($participants) }}</p>
                 </div>
@@ -120,7 +120,7 @@
             class="group/btn relative block w-full py-4 px-6 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-center font-bold rounded-xl hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-lg shadow-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/50 overflow-hidden"
         >
             <span class="relative z-10 flex items-center justify-center gap-2">
-                Trade Now
+                {{ __('pub_theme::predict_cards.market_card.trade_now.label') }}
                 <x-filament::icon icon="heroicon-o-arrow-right" class="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
             </span>
             <div class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-emerald-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>

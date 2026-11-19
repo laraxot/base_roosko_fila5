@@ -1,15 +1,3 @@
----
-title: "homepage sprint1 summary"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "homepage sprint1 summary"
-issues: []
-discussions: []
-status: draft
----
-
 # 🚀 Homepage Improvements — Riepilogo Sprint 1
 
 > **Data**: 2026-03-18  
@@ -18,6 +6,7 @@ status: draft
 > **Prossimo Sprint**: 2 (Micro-Interazioni + Performance)
 
 ---
+
 ## 📊 Cosa Abbiamo Fatto
 
 ### 1. ✅ SEO Implementation Completa
@@ -84,8 +73,8 @@ button, a.btn, [role="button"] {
 ### 3. ✅ Documentazione Completa
 
 **File Creati**:
-1. `Themes/TwentyOne/docs/HOMEPAGE_IMPROVEMENT_PLAN.md` — Piano completo
-2. `Themes/TwentyOne/docs/HOMEPAGE_SEO.md` — Implementazione SEO
+1. `Themes/TwentyOne/docs/homepage-improvement-plan.md` — Piano completo
+2. `Themes/TwentyOne/docs/homepage-seo.md` — Implementazione SEO
 3. `Modules/Predict/docs/WEB_DESIGN_STUDY.md` — Applicazione Predict
 4. `docs/project/website-checklist.md` — 19 sezioni, 150+ voci (AGGIORNATO)
 5. `docs/project/web-design-study-coordination.md` — Multi-agente (AGGIORNATO)
@@ -146,8 +135,8 @@ button, a.btn, [role="button"] {
 ## 📚 Riferimenti
 
 - [website-checklist.md](docs/project/website-checklist.md)
-- [HOMEPAGE_IMPROVEMENT_PLAN.md](HOMEPAGE_IMPROVEMENT_PLAN.md)
-- [HOMEPAGE_SEO.md](HOMEPAGE_SEO.md)
+- [HOMEPAGE_IMPROVEMENT_PLAN.md](homepage-improvement-plan.md)
+- [HOMEPAGE_SEO.md](homepage-seo.md)
 - [044-website-checklist.md](.github/ISSUES/044-website-checklist.md)
 
 ---

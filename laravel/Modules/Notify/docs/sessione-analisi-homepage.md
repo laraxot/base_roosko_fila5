@@ -206,9 +206,9 @@ Themes/Sixteen/resources/views/
 ## 📚 Risorse
 
 ### Documentazione
-- [Analisi Visiva](docs/screenshots/homepage/analisi-visiva.md)
+- [Analisi Visiva](screenshots/homepage/analisi-visiva.md)
 - [Screenshot Analysis](docs/screenshots/homepage/SCREENSHOT_analysis.md)
-- [Fix Plan](docs/screenshots/homepage/fix-plan.md)
+- [Fix Plan](screenshots/homepage/fix-plan.md)
 - [Analisi Visiva](screenshots/homepage/analisi-visiva.md)
 - [Screenshot Analysis](docs/screenshots/homepage/SCREENSHOT_analysis.md)
 - [Fix Plan](screenshots/homepage/fix-plan.md)

@@ -53,7 +53,7 @@ Nove file `*.php.up`: backup pre-migrazione Filament 3/5, **duplicano** classi e
 
 ## Audit precedente
 
-- [redundancy-audit-2026-05-21.md](../../../redundancy-audit-2026-05-21.md): fragment email case, config annidate.
+- [redundancy-audit-2026-05-21.md](../../redundancy-audit-2026-05-21.md): fragment email case, config annidate.
 - [redundancy-audit-2026-05-21.md](../../redundancy-audit-notify.md): fragment email case, config annidate.
 
 ## Collegamenti

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "security"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Sicurezza Frontend
@@ -146,6 +145,6 @@ export function validateForm(data) {
    - Testare gli input
 
 ## Collegamenti tra versioni di security.md
-* [security.md](../../../Gdpr/docs/packages/security.md)
+* [security.md](laravel/modules/gdpr/docs/packages/security.md)
 * [security.md](laravel/modules/cms/docs/frontoffice/security.md)
 * [security.md](laravel/themes/one/docs/security.md)

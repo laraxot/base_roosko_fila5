@@ -13,10 +13,9 @@ discussions:
 related:
   - ../README.md
   - ../wiki/index.md
-  - ../notifications/README.md
+  - ../notifications/readme.md
   - readme.md
-  - ../templates/README.md
-status: draft
+  - ../templates/readme.md
 ---
 # Integrazioni
 

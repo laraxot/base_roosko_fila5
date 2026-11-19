@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "bmad integration summary"
 issues: []
 discussions: []
-status: draft
 ---
 
 # bmad integration summary

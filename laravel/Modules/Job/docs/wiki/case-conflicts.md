@@ -7,9 +7,7 @@ created: 2026-07-14
 updated: 2026-07-14
 qmd: "case conflicts"
 related:
-  - "./phpstan-fixes-archive-2.md"
-status: superseded
-superseded_by: ../case-conflicts.md
+  - "./phpstan-fixes-archive-gennaio.md"
 ---
 # Case-Insensitive File Conflicts
 

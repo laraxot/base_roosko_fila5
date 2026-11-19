@@ -25,7 +25,7 @@ render(function (View $view, Request $request, string $slug) {
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center space-x-4">
                         <a href="/it" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
-                            ← Back to Markets
+                            {{ __('pub_theme::pages_misc.market.back.label') }}
                         </a>
                     </div>
                     
@@ -66,10 +66,10 @@ render(function (View $view, Request $request, string $slug) {
         @else
             <div class="flex flex-col items-center justify-center py-8 space-y-4">
                 <div class="space-y-2 text-center">
-                    <h2 class="text-2xl font-bold md:text-4xl lg:text-6xl">Market not found!</h2>
-                    <p class="text-gray-400">The market you're looking for doesn't exist.</p>
+                    <h2 class="text-2xl font-bold md:text-4xl lg:text-6xl">{{ __('pub_theme::pages_misc.market.not_found_title.title') }}</h2>
+                    <p class="text-gray-400">{{ __('pub_theme::pages_misc.market.not_found_message.message') }}</p>
                     <a href="/it" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg">
-                        ← Back to Markets
+                        {{ __('pub_theme::pages_misc.market.back.label') }}
                     </a>
                 </div>
             </div>

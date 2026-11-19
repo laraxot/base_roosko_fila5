@@ -48,9 +48,17 @@ return [
             'tooltip' => '',
         ],
         'to' => [
+            'description' => 'to',
+            'helper_text' => 'to',
+            'placeholder' => 'to',
+            'label' => 'to',
             'tooltip' => '',
         ],
         'template_slug' => [
+            'description' => 'template_slug',
+            'helper_text' => 'template_slug',
+            'placeholder' => 'template_slug',
+            'label' => 'template_slug',
             'tooltip' => '',
         ],
     ],
@@ -69,7 +77,9 @@ return [
             'error_message' => 'Errore nella verifica della connessione',
         ],
         'save' => [
+            'label' => 'save',
             'icon' => 'save',
+            'tooltip' => 'save',
         ],
     ],
     'messages' => [

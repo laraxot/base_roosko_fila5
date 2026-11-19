@@ -12,6 +12,12 @@ status: draft
 
 # Modulo CMS
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 ## Descrizione
 Il modulo CMS gestisce i contenuti, le pagine e i temi dell'applicazione. Fornisce un'interfaccia completa per la gestione dei contenuti e l'integrazione con i temi frontend.
 
@@ -30,9 +36,9 @@ Il modulo CMS include funzionalità per la gestione dei temi, inclusi:
 Per risolvere l'errore "Unable to locate file in Vite manifest", eseguire:
 
 ```bash
-cd /var/www/html/_bases/base_fixcity_fila5_mono/laravel/Themes/Sixteen
-cd /var/www/html/_bases/base_ptvx_fila5_mono/laravel/Themes/Sixteen
-npm run copy
+cd /var/www/html/_bases/base_fixcity_fila5/laravel/Themes/Sixteen
+cd /var/www/html/_bases/base_ptvx_fila5/laravel/Themes/Sixteen
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 ### Temi Supportati
@@ -74,4 +80,4 @@ Il modulo CMS si integra con Filament per offrire un'interfaccia di amministrazi
 ## Collegamenti
 - [Indice generale](/docs/index.md)
 - [Documentazione moduli](/docs/modules/index.md)
-- [Gestione Temi](/docs/themes.md) 
+- [Gestione Temi](/docs/themes.md)

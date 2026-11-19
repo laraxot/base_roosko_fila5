@@ -16,32 +16,26 @@ return [
     ],
     'fields' => [
         'model_type' => [
+            'label' => 'Tipo Modello',
             'tooltip' => '',
         ],
         'model_id' => [
+            'label' => 'ID Modello',
             'tooltip' => '',
         ],
         'state' => [
+            'label' => 'Stato',
             'tooltip' => '',
         ],
         'created_by_type' => [
+            'label' => 'Tipo Creatore',
             'tooltip' => '',
         ],
         'created_by_id' => [
+            'label' => 'ID Creatore',
             'tooltip' => '',
         ],
     ],
-    'actions' => [
-        'view' => [
-            'icon' => 'view',
-        ],
-        'edit' => [
-            'icon' => 'edit',
-        ],
-        'delete' => [
-            'icon' => 'delete',
-        ],
-    ],
     'label' => 'Snapshot',
-    'plural_label' => 'Snapshot (Plurale)',
+    'plural_label' => 'Snapshot',
 ];

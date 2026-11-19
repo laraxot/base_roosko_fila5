@@ -1,18 +1,6 @@
----
-title: "order book multi outcome contract"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "order book multi outcome contract"
-issues: []
-discussions: []
-status: draft
----
-
 # Order Book Multi Outcome Contract
 
-Path: `laravel/Themes/TwentyOne/docs/ORDER_BOOK_MULTI_OUTCOME_CONTRACT.md`
+Path: `laravel/Themes/TwentyOne/docs/order-book-multi-outcome-contract.md`
 
 ## Scopo
 

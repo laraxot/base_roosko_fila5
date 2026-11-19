@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "laraxot rules"
 issues: []
 discussions: []
-status: draft
 ---
 
 # LARAXOT FRAMEWORK RULES

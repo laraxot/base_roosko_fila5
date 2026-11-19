@@ -2,13 +2,15 @@
 qmd: "testing"
 issues: []
 discussions: []
+title: "Testing"
+type: documentation
 tags: [gdpr, module]
 created: 2026-10-06
+updated: 2026-10-06
 title: "Gdpr — testing"
 type: guide
 module: Gdpr
 updated: 2026-09-24
-status: draft
 ---
 
 # Testing Documentation
@@ -276,7 +278,7 @@ protected function createApplication()
 
 - [Testing Setup Guide](../../../docs/testing-setup.md)
 - [Testing Best Practices](../../../docs/testing-best-practices.md)
-- [Troubleshooting Guide](../../../../../docs/troubleshooting.md)
+- [Troubleshooting Guide](../../../docs/troubleshooting.md)
 
 ## Testing Examples
 

@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "tests routing normalization"
 issues: []
 discussions: []
-status: superseded
-superseded_by: tests-routing-normalization.md
 ---
 
 # Tests Routing Normalization

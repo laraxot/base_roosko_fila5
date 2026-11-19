@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "case conflicts"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Case-Insensitive File Conflicts

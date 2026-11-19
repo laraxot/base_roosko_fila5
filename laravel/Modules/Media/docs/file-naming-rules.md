@@ -10,7 +10,6 @@ updated: 2026-07-14
 qmd: "file naming rules"
 related:
   - "./webm.md"
-status: draft
 ---
 # Regole di Naming per File
 

@@ -9,11 +9,10 @@ use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Support\Facades\Log;
 use Modules\Geo\Datas\LocationData;
 use Modules\Geo\Infrastructure\Config\GeoApiEndpoints;
-
-use function Safe\json_decode;
-
 use Spatie\QueueableAction\QueueableAction;
 use Webmozart\Assert\Assert;
+
+use function Safe\json_decode;
 
 /**
  * Action per ottenere l'indirizzo da coordinate tramite Google Maps.
@@ -29,8 +28,7 @@ class GetAddressByLatLngFromGoogleMapsAction
 
     public function __construct(
         private readonly Client $client,
-    ) {
-    }
+    ) {}
 
     /**
      * Ottiene l'indirizzo dalle coordinate.
@@ -63,7 +61,9 @@ class GetAddressByLatLngFromGoogleMapsAction
     private function validateInput(float $latitude, float $longitude): void
     {
         $apiKey = config('services.google.maps_api_key');
-        Assert::notEmpty($apiKey, 'Google Maps API key not configured');
+        if (! \is_string($apiKey) || '' === $apiKey) {
+            throw new \RuntimeException('Google Maps API key not configured');
+        }
         Assert::range($latitude, -90, 90, 'Invalid latitude');
         Assert::range($longitude, -180, 180, 'Invalid longitude');
     }
@@ -106,7 +106,7 @@ class GetAddressByLatLngFromGoogleMapsAction
          * } $data */
         $data = json_decode($response, true);
 
-        if ('OK' !== $data['status'] || empty($data['results'][0])) {
+        if ($data['status'] !== 'OK' || empty($data['results'][0])) {
             throw new \RuntimeException('No address found for coordinates');
         }
 

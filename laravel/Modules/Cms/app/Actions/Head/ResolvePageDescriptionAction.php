@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Modules\Cms\Actions\Head;
 
+use Illuminate\Support\Str;
 use Modules\Cms\Models\Page;
 use Spatie\QueueableAction\QueueableAction;
 
@@ -34,8 +35,8 @@ final class ResolvePageDescriptionAction
 
     public function fromRaw(mixed $rawBlocks, string $locale): ?string
     {
-        $map = (new ResolveWrittenLocalesAction())->localeMap($rawBlocks);
-        $blocks = null !== $map ? ($map[$locale] ?? null) : null;
+        $map = (new ResolveWrittenLocalesAction)->localeMap($rawBlocks);
+        $blocks = $map !== null ? ($map[$locale] ?? null) : null;
         if (! is_array($blocks)) {
             return null;
         }
@@ -48,7 +49,7 @@ final class ResolvePageDescriptionAction
 
             foreach (self::KEYS as $key) {
                 $text = $this->clean($data[$key] ?? null);
-                if (null !== $text) {
+                if ($text !== null) {
                     return $this->truncate($text);
                 }
             }
@@ -63,7 +64,7 @@ final class ResolvePageDescriptionAction
             return null;
         }
 
-        $text = trim(preg_replace('/\s+/u', ' ', html_entity_decode(strip_tags($value), ENT_QUOTES | ENT_HTML5, 'UTF-8')));
+        $text = Str::of(html_entity_decode(strip_tags($value), ENT_QUOTES | ENT_HTML5, 'UTF-8'))->replaceMatches('/\s+/u', ' ')->trim()->toString();
 
         // Una chiave di traduzione grezza («ns::file.chiave») non è testo da pubblicare.
         return mb_strlen($text) >= self::MINIMUM && ! str_contains($text, '::') ? $text : null;
@@ -78,6 +79,6 @@ final class ResolvePageDescriptionAction
         $cut = mb_substr($text, 0, self::LIMIT - 1);
         $space = mb_strrpos($cut, ' ');
 
-        return rtrim(false !== $space && $space > self::LIMIT / 2 ? mb_substr($cut, 0, $space) : $cut, " ,.;:-").'…';
+        return rtrim($space !== false && $space > self::LIMIT / 2 ? mb_substr($cut, 0, $space) : $cut, ' ,.;:-').'…';
     }
 }

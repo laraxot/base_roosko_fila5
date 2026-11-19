@@ -42,7 +42,7 @@
 
     <!-- Payment Methods -->
     <div class="text-center">
-        <div class="text-gray-400 text-sm mb-3">Metodi di pagamento sicuri:</div>
+        <div class="text-gray-400 text-sm mb-3">{{ __('pub_theme::blocks_marketing.trust.secure_payments.label') }}:</div>
         <div class="flex justify-center items-center space-x-4">
             @foreach(['💳', '🏦', '₿', '💰'] as $payment)
             <div class="w-12 h-8 bg-gray-700/50 rounded border border-gray-600/30 flex items-center justify-center text-lg">

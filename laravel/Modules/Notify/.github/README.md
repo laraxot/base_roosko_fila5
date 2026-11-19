@@ -16,8 +16,8 @@ Benvenuto nel sistema di tracking delle issue per il progetto **Design Comuni Re
 ## 📋 Quick Links
 
 - **🗺️ Roadmap**: [View 12-week plan](../.planning/ROADMAP.md)
-- **📊 Project Summary**: [View status](../laravel/Themes/Sixteen/docs/design-comuni-project-summary.md)
-- **📚 Team Guide**: [Read guide](../laravel/Themes/Sixteen/docs/design-comuni-team-guide.md)
+- **📊 Project Summary**: [View status](../laravel/Themes/Sixteen/docs/DESIGN_COMUNI_PROJECT_SUMMARY.md)
+- **📚 Team Guide**: [Read guide](../laravel/Themes/Sixteen/docs/DESIGN_COMUNI_TEAM_GUIDE.md)
 - **🏗️ Architecture**: [View decisions](../_bmad-output/design-comuni-architecture.md)
 - **🔍 Research**: [View analysis](../.planning/research/design-comuni-pages.md)
 
@@ -267,7 +267,7 @@ We use GitHub Projects to track progress:
 **A**: Update the component catalog (`Themes/Sixteen/docs/COMPONENT_CATALOG.md`) and add bidirectional links to the [Master Index](../docs/MODULE_DOCS_INDEX.md).
 
 ### Q: How do I run tests?
-**A**: See the [Team Guide](../laravel/Themes/Sixteen/docs/design-comuni-team-guide.md#testing) for test commands and examples.
+**A**: See the [Team Guide](../laravel/Themes/Sixteen/docs/DESIGN_COMUNI_TEAM_GUIDE.md#testing) for test commands and examples.
 
 ---
 
@@ -349,7 +349,7 @@ Maintain professional communication at all times.
 
 ## 🔗 Quick Navigation
 
-- [Back to Project Summary](../laravel/Themes/Sixteen/docs/design-comuni-project-summary.md)
-- [Back to Team Guide](../laravel/Themes/Sixteen/docs/design-comuni-team-guide.md)
+- [Back to Project Summary](../laravel/Themes/Sixteen/docs/DESIGN_COMUNI_PROJECT_SUMMARY.md)
+- [Back to Team Guide](../laravel/Themes/Sixteen/docs/DESIGN_COMUNI_TEAM_GUIDE.md)
 - [Back to Master Index](../docs/MODULE_DOCS_INDEX.md)
 - [View Roadmap](../.planning/ROADMAP.md)

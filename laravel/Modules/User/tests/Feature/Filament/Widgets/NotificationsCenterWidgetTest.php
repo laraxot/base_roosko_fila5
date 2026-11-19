@@ -10,7 +10,8 @@ use function Pest\Laravel\get;
 uses(TestCase::class);
 
 it('redirects guests from notifiche page', function (): void {
-    $response = get('/it/area-personale/notifications');
+    // Pagina CMS `area-personale/notifiche` (config/local/<progetto>/database/content/pages), middleware `auth`.
+    $response = get('/it/area-personale/notifiche');
 
     $response->assertRedirect();
 });

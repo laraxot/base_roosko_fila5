@@ -1,5 +1,11 @@
 # Tema One per il progetto
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 ## Introduzione
 
 Tema One è il tema predefinito per il progetto, basato su Filament 3.3. Offre un'interfaccia moderna e responsive per la gestione dei contenuti del sito web.
@@ -50,6 +56,10 @@ npm install
 npm run build
 ```
 
+6. Copia gli asset compilati:
+
+```bash
+```
 6. Nessuna copia: gli asset sono serviti tramite symlink da `public_html/` (`php artisan xot:theme-link`): `npm run copy` non serve più.
 
 ## Configurazione

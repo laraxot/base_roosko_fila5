@@ -1,10 +1,11 @@
 ---
 title: "Code Quality Analysis - User Module"
 type: note
-status: draft
-updated: 2026-10-08
+updated: 2026-10-07
 tags: [docs, user]
 qmd: "code quality analysis - user module user"
+status: superseded
+superseded_by: code-quality-analysis.md
 ---
 # Code Quality Analysis - User Module
 

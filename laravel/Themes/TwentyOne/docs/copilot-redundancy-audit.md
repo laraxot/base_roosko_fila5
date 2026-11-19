@@ -1,22 +1,12 @@
 ---
-title: "copilot redundancy audit 2026 05 25"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "copilot redundancy audit 2026 05 25"
-issues: []
-discussions: []
-status: draft
+title: "Copilot redundancy audit (TwentyOne)"
+type: audit
+theme: TwentyOne
+status: superseded
+superseded_by: redundancy-audit.md
+canonical: ./redundancy-audit.md
+created: 2026-05-25
+updated: 2026-10-28
 ---
 
-Copilot Redundancy Audit (Theme: TwentyOne) — 2026-05-25
-
-Sintesi
-- Duplicated layout and header/nav components found in multiple paths.
-
-Raccomandazioni
-- Move canonical header/nav to a shared theme components folder and update includes.
-- Standardize component naming and document in theme docs index.
-
-Autore: Copilot CLI
+Contenuto unito in [redundancy-audit.md](./redundancy-audit.md) (sezione "Addendum Copilot CLI"). Autore originale: Copilot CLI.

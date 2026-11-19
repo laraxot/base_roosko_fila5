@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "produzione migration checklist"
 issues: []
 discussions: []
-status: superseded
-superseded_by: produzione-migration-checklist.md
 ---
 
 # 📋 Produzione Migration Checklist
@@ -28,6 +26,15 @@ superseded_by: produzione-migration-checklist.md
 ```
 
 ---
+
+title: "produzione migration checklist"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "produzione migration checklist"
+issues: []
+discussions: []
 ## Procedura Step-by-Step
 
 ### Step 1: Test in Locale

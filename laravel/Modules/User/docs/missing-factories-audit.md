@@ -8,19 +8,14 @@ qmd: "missing-factories-audit factory mancanti - modulo user"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index.md"
   - "./00-index-indice-documentazione-modulo-user.md"
   - "./00-index.md"
   - "./2fa-guide.md"
   - "./2fa.md"
   - "./accessor-delegation-pattern.md"
   - "./actions-path-convention.md"
-  - "./actions-path-convention.md"
-  - "./actions-path-convention.md"
-  - "./actions-path-convention.md"
   - "./actions-path-convention-convenzione-percorsi.md"
   - "./actions-path-convention.md"
-status: draft
 ---
 
 # Factory Mancanti - Modulo User
@@ -158,9 +153,9 @@ status: draft
 
 ## Collegamenti
 
-- [README Modulo User](./README.md)
+- [README Modulo User](./readme.md)
 - [Factory Audit Root](../../../../docs/project/factory-audit-2025.md)
-- [Models Documentation](./models/README.md)
+- [Models Documentation](./models/readme.md)
 
 ---
 **Errore gravissimo da non ripetere mai più**  

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "code quality analysis "
 issues: []
 discussions: []
-status: draft
 ---
 
 # Code Quality Analysis - CMS Module - November 2025
@@ -22,6 +21,15 @@ status: draft
 **Rector Improvements:** 27 files ready (with corrupted test files)
 
 ---
+
+title: "code quality analysis "
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "code quality analysis "
+issues: []
+discussions: []
 ## 🚨 Status Critico
 
 ### ❌ PHPStan Errors (6)

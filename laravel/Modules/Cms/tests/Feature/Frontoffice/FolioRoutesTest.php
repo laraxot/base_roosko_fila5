@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 use Illuminate\Support\Facades\Artisan;
+use Modules\Cms\Tests\TestCase;
 
 use function Safe\preg_match;
 use function Safe\preg_split;
+
+uses(TestCase::class);
 
 /**
  * Parse Folio routes from `artisan folio:list` output and return a list of path strings.
@@ -24,7 +27,7 @@ function getFolioPaths(): array
             continue;
         }
         // Lines look like: "  GET       /it ...."
-        if (1 === preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) && isset($m[1]) && is_string($m[1])) {
+        if (preg_match('#\bGET\s+(/[^\s]+)#', $line, $m) === 1 && isset($m[1]) && is_string($m[1])) {
             $paths[] = $m[1];
         }
     }
@@ -44,7 +47,7 @@ it('validates Folio routes basic accessibility and localization', function (): v
 
     foreach ($paths as $path) {
         // Root should redirect to /{locale}
-        if ('/' === $path) {
+        if ($path === '/') {
             $response = $this->get($path);
             $response->assertRedirect('/'.$locale);
 
@@ -60,10 +63,9 @@ it('validates Folio routes basic accessibility and localization', function (): v
         $status = $response->getStatusCode();
 
         // Skip Not Found (routing misalignment) and any server error with context
-        if (404 === $status) {
+        if ($status === 404) {
             $this->markTestSkipped("Folio route not found (404): {$path}");
-        }
-        elseif ($status >= 500) {
+        } elseif ($status >= 500) {
             $this->markTestSkipped("Folio route returned server error ({$status}): {$path}");
         }
 

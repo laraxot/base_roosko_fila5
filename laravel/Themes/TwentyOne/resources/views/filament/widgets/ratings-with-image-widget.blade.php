@@ -24,7 +24,7 @@
                         fill="currentColor">
                         <path d="M15 19l-7-7 7-7" />
                     </svg>
-                    Back
+                    {{ __('pub_theme::widgets_ratings.image.back.label') }}
                 </button>
             </div>
         @else

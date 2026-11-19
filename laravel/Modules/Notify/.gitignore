@@ -114,5 +114,16 @@ notify.code-workspace
 
 # module-root-hygiene (story module-root-hygiene)
 /.github/skills/
+/.github/ISSUE_CONTENT/
+/.github/agents/
 docs/graphify
 resources/lang
+.github/issue_content/
+
+# Tooling/configurazione locale (module-theme-root-hygiene)
+.agents/
+.codex/
+.opencode/
+.qwen/
+.php-cs-fixer.php
+.php-cs-fixer.dist.php

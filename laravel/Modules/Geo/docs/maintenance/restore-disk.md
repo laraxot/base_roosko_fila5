@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "restore disk"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Funzione restore_disk

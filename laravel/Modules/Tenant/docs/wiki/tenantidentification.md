@@ -10,10 +10,7 @@ discussions: []
 module: Tenant
 concept: Tenant Identification
 last_updated: 2026-04-15
-status: stale
 ---
-
-> Nota 2026-10-14 (docs-audit): Cita sottodomini {tenant}.localhost, config('app.tenant_default'), cache Redis e TenantService::getName(): nessuno esiste. GetTenantNameAction legge SERVER_NAME o l'host di APP_URL, inverte le parti e cerca la cartella config/ corrispondente (verificato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
 
 # Tenant Identification
 

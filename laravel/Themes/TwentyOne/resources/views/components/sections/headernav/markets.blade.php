@@ -1,7 +1,7 @@
 <div>
-	<button type="button" aria-haspopup="true" aria-controls="dropdown-markets"  class="flex items-center py-1.5 space-x-1 text-sm font-semibold text-gray-600 hover:text-blue-600" data-dropdown-toggle="dropdown-markets">
+	<button class="flex items-center space-x-1 text-sm font-semibold text-gray-600 hover:text-blue-600" data-dropdown-toggle="dropdown-markets">
 		<x-heroicon-o-globe-europe-africa class="size-6"/>
-		<span>{{ __('pub_theme::headernav.markets') }}</span>
+		<span>{{ __('pub_theme::headernav.sections.markets.label') }}</span>
 		<x-heroicon-o-chevron-down class="size-4"/>
 	</button>
 	<div id="dropdown-markets" class="absolute z-20 hidden p-2 overflow-hidden text-sm bg-white border border-white rounded-lg">

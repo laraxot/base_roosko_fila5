@@ -26,8 +26,8 @@ $positionClasses = match($position) {
     <div class="flex items-center space-x-3">
         @if($show_label)
         <span class="text-sm font-medium text-gray-700 dark:text-gray-300">
-            <span class="dark:hidden">Light</span>
-            <span class="hidden dark:inline">Dark</span>
+            <span class="dark:hidden">{{ __('pub_theme::ui_components.dark_mode.light.label') }}</span>
+            <span class="hidden dark:inline">{{ __('pub_theme::ui_components.dark_mode.dark.label') }}</span>
         </span>
         @endif
         
@@ -36,7 +36,7 @@ $positionClasses = match($position) {
                 class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-gray-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800"
                 role="switch"
                 aria-checked="false">
-            <span class="sr-only">{{ __('pub_theme::ui.toggle_theme') }}</span>
+            <span class="sr-only">{{ __('pub_theme::ui_components.dark_mode.toggle.label') }}</span>
             <span class="inline-block h-4 w-4 transform rounded-full bg-white shadow-lg transition-transform dark:translate-x-6 translate-x-1 dark:bg-gray-200">
             </span>
         </button>
@@ -47,8 +47,8 @@ $positionClasses = match($position) {
     <button type="button" 
             onclick="toggleDarkMode()"
             class="{{ $sizeClasses }} inline-flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-600 transition-all duration-200 shadow-sm hover:shadow-md"
-            title="{{ __('pub_theme::ui.toggle_theme') }}">
-        <span class="sr-only">{{ __('pub_theme::ui.toggle_theme') }}</span>
+            title="{{ __('pub_theme::ui_components.dark_mode.toggle.title') }}">
+        <span class="sr-only">{{ __('pub_theme::ui_components.dark_mode.toggle.label') }}</span>
         {{-- Sun Icon (shown in dark mode) --}}
         <svg class="hidden dark:block w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
@@ -66,8 +66,8 @@ $positionClasses = match($position) {
             class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition-all duration-200 shadow-sm hover:shadow-md">
         @if($show_label)
         <span class="mr-2">
-            <span class="dark:hidden">Dark</span>
-            <span class="hidden dark:inline">Light</span>
+            <span class="dark:hidden">{{ __('pub_theme::ui_components.dark_mode.dark.label') }}</span>
+            <span class="hidden dark:inline">{{ __('pub_theme::ui_components.dark_mode.light.label') }}</span>
         </span>
         @endif
         
@@ -91,15 +91,12 @@ function toggleDarkMode() {
     
     if (isDark) {
         html.classList.remove('dark');
-        localStorage.setItem('dark_mode', 'false');
+        localStorage.setItem('darkMode', 'false');
     } else {
         html.classList.add('dark');
-        localStorage.setItem('dark_mode', 'true');
+        localStorage.setItem('darkMode', 'true');
     }
     
-    document.querySelectorAll('[role="switch"][aria-checked]').forEach(function(el){
-        el.setAttribute('aria-checked', String(!isDark));
-    });
     // Dispatch custom event for other components to listen
     window.dispatchEvent(new CustomEvent('darkModeToggled', {
         detail: { isDark: !isDark }
@@ -108,23 +105,19 @@ function toggleDarkMode() {
 
 // Initialize dark mode on page load
 document.addEventListener('DOMContentLoaded', function() {
-    const savedMode = localStorage.getItem('dark_mode');
+    const savedMode = localStorage.getItem('darkMode');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    var isDark = savedMode === 'true' || (savedMode === null && prefersDark);
-    if (isDark) {
+    if (savedMode === 'true' || (savedMode === null && prefersDark)) {
         document.documentElement.classList.add('dark');
     } else {
         document.documentElement.classList.remove('dark');
     }
-    document.querySelectorAll('[role="switch"][aria-checked]').forEach(function(el){
-        el.setAttribute('aria-checked', String(isDark));
-    });
 });
 
 // Listen for system theme changes
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-    if (localStorage.getItem('dark_mode') === null) {
+    if (localStorage.getItem('darkMode') === null) {
         if (e.matches) {
             document.documentElement.classList.add('dark');
         } else {

@@ -27,6 +27,14 @@ use Modules\Xot\Filament\Widgets\XotBaseWidget;
  */
 final class GeoMapWidget extends XotBaseWidget
 {
+    /**
+     * Vista esplicita: la risoluzione per classe di XotBaseWidget non trova `geo-map-widget`
+     * e ripiegherebbe su `xot::filament.widgets.base`, senza la mappa.
+     *
+     * @var view-string
+     */
+    protected string $view = 'geo::filament.widgets.geo-map-widget';
+
     protected int|string|array $columnSpan = 'full';
 
     protected string $datasetRelativePath =
@@ -115,7 +123,7 @@ final class GeoMapWidget extends XotBaseWidget
     }
 
     /**
-     * @param array<string, mixed> $payload
+     * @param  array<string, mixed>  $payload
      */
     private function encodeJson(array $payload, string $message): string
     {

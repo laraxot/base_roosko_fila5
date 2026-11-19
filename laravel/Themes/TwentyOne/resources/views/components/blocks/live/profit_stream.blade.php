@@ -35,7 +35,7 @@
                     </span>
                     <div class="inline-flex items-center ml-2">
                         <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                        <span class="text-green-400 text-sm font-bold ml-1">LIVE</span>
+                        <span class="text-green-400 text-sm font-bold ml-1">{{ __('pub_theme::market_common.terms.live_upper.label') }}</span>
                     </div>
                 </h3>
                 <p class="text-gray-300 text-sm">{{ $subtitle }}</p>
@@ -44,7 +44,7 @@
             <!-- Live Stats -->
             <div class="text-right">
                 <div class="text-green-400 font-black text-xl">€147,892</div>
-                <div class="text-gray-400 text-xs">Profitti oggi</div>
+                <div class="text-gray-400 text-xs">{{ __('pub_theme::blocks_marketing.live.profit_today.label') }}</div>
             </div>
         </div>
 
@@ -92,9 +92,9 @@
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                     <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z" clip-rule="evenodd" />
                 </svg>
-                <span>INIZIA A GUADAGNARE ORA</span>
+                <span>{{ __('pub_theme::blocks_marketing.live.start_earning.label') }}</span>
             </button>
-            <p class="text-gray-400 text-xs mt-2">Unisciti a chi sta già guadagnando!</p>
+            <p class="text-gray-400 text-xs mt-2">{{ __('pub_theme::blocks_marketing.live.join_winners.message') }}</p>
         </div>
     </div>
 </div>

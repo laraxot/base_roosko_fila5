@@ -52,16 +52,19 @@ return [
             'description' => '',
         ],
         'toggleColumns' => [
+            'label' => 'Colonne',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'reorderRecords' => [
+            'label' => 'Riordina',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
         ],
         'resetFilters' => [
+            'label' => 'Azzera filtri',
             'tooltip' => '',
             'helper_text' => '',
             'description' => '',
@@ -78,6 +81,10 @@ return [
         'deny' => 'Nega',
         'withdraw' => 'Revoca',
         'renew' => 'Rinnova',
+        'logout' => [
+            'tooltip' => '',
+            'icon' => 'logout',
+        ],
     ],
     'label' => 'Consent',
     'plural_label' => 'Consent (Plurale)',

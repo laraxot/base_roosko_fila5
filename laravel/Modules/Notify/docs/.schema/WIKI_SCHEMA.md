@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "WIKI SCHEMA"
 issues: []
 discussions: []
-status: draft
 ---
 
 # LLM Wiki Schema

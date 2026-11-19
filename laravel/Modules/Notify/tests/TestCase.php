@@ -6,7 +6,7 @@ namespace Modules\Notify\Tests;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Modules\Xot\Tests\XotBaseTestCase;
 use Illuminate\Support\Facades\DB;
 use Mockery;
 use Mockery\Expectation;
@@ -15,7 +15,6 @@ use Modules\Notify\Models\NotificationType;
 use Modules\Notify\Models\NotifyTheme;
 use Modules\Notify\Models\NotifyThemeable;
 use Modules\Notify\Providers\NotifyServiceProvider;
-use Modules\Xot\Tests\CreatesApplication;
 use Modules\Xot\Tests\XotBasePest;
 use PHPUnit\Framework\Assert;
 use ReflectionClass;
@@ -32,13 +31,31 @@ use function Safe\json_decode;
  * non di `Illuminate\Foundation\Testing\TestCase`, e non esiste qui.
  * Mai RefreshDatabase: wipea il MariaDB `*_test` condiviso con Fixcity.
  */
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends XotBaseTestCase
 {
-    use CreatesApplication;
+    protected function setUp(): void
+    {
+        // Prima di parent::setUp(): DatabaseTransactions apre le transazioni subito; senza questo la
+        // connessione `user` (mysql) va in "Connection refused" dove non c'e' MariaDB (vedi XotBaseTestCase).
+        $this->prepareSharedSqliteForTesting();
+
+        parent::setUp();
+    }
+
     use DatabaseTransactions;
 
-    /** @var list<string> */
-    protected $connectionsToTransact = ['user', 'notify'];
+    /**
+     * Connessioni da riportare indietro dopo ogni test. Prima elencava `fixcity`, la connessione di
+     * un altro progetto: in ogni altro progetto ogni test falliva con «connection [fixcity] not configured».
+     *
+     * @return list<string>
+     */
+    protected function connectionsToTransact()
+    {
+        $default = config('database.default');
+
+        return array_values(array_unique(array_filter([\is_string($default) ? $default : null, 'user', 'notify'])));
+    }
 
     /**
      * Type-guard: accetta un valore arbitrario e asserisce che sia un array.

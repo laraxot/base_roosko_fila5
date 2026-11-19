@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "infolist schema guidelines"
 issues: []
 discussions: []
-status: superseded
-superseded_by: infolist-schema-guidelines.md
 ---
 
 # Linee Guida per l'Implementazione di getInfolistSchema

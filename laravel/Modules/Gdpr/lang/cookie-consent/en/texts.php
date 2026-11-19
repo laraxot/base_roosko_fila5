@@ -7,7 +7,7 @@ return [
     'alert_title_info' => 'Cookies',
     'alert_text_info' => 'This site only uses technical cookies, which it needs to work: they do not require your consent. We do not use profiling or analytics cookies.',
     'alert_title_consent' => 'This site uses cookies',
-    'alert_text_consent' => 'We use technical cookies, which are needed for the site to work, and, only if you allow it, analytics and marketing cookies. If you close the banner without choosing, only technical cookies stay active.',
+    'alert_text_consent' => 'We use technical cookies, which are needed for the site to work, and, only if you allow it, analytics and marketing cookies. If you close the banner without choosing, only technical cookies stay active. You can change your choice with the "Manage cookies" link at the bottom of the page.',
     'alert_accept' => 'Accept all',
     'alert_reject' => 'Reject all',
     'alert_settings' => 'Customise',
@@ -48,6 +48,6 @@ return [
     'policy_how_text' => 'You can reopen the preferences at any time with the "Manage cookies" link at the bottom of every page, or delete the cookies from your browser.',
     'policy_manage_button' => 'Open cookie preferences',
     'policy_external_title' => 'Maps and external services',
-    'policy_external_text' => 'To show maps and search addresses, your browser contacts OpenStreetMap directly. These requests do not set cookies, but the service receives your IP address.',
+    'policy_external_text' => 'Maps and address search use OpenStreetMap data, but they go through this site\'s server: your browser does not contact OpenStreetMap and no external service receives your IP address. Only if you choose the satellite, topographic or humanitarian map view does your browser request the images directly from Esri or OpenStreetMap France.',
     'policy_privacy_link' => 'Also read the privacy notice',
 ];

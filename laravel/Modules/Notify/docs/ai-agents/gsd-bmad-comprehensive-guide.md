@@ -7,10 +7,9 @@ updated: 2026-09-26
 qmd: "gsd bmad comprehensive guide"
 issues: []
 discussions: []
-status: draft
 ---
 
-# GSD & BMAD: Guida Completa per Agenti AI
+# GSD & BMAD — Guida Completa per Agenti AI
 
 > **Scopo**: Questa guida è la risorsa definitiva per tutti gli agenti AI che lavorano sul progetto PTVX Fila5.
 > 
@@ -19,6 +18,15 @@ status: draft
 > **Versione**: 2.0 (GSD v1.26.0 + BMAD v6)
 
 ---
+
+title: "gsd bmad comprehensive guide"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gsd bmad comprehensive guide"
+issues: []
+discussions: []
 ## 📖 Indice
 
 1. [Introduzione](#introduzione)

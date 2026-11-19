@@ -194,13 +194,13 @@
 					<div class="space-y-6">
 						<div class="flex justify-between items-center">
 							<p class="text-neutral-3 text-sm font-medium font-roboto">
-								Forecaster rank
+								{{ __('pub_theme::pages_show.sidebar.rank.label') }}
 							</p>
 							<span class="text-sm text-neutral-4 font-semibold">#</span>
 						</div>
 						<div class="flex justify-between items-center">
 							<p class="text-neutral-3 text-sm font-medium font-roboto">
-								Lifetime profit
+								{{ __('pub_theme::pages_show.sidebar.lifetime_profit.label') }}
 							</p>
 							<p class="text-sm">
 								<span class="text-neutral-4 font-semibold">0.00</span>
@@ -210,7 +210,7 @@
 					</div>
 					<div class="text-center">
 						<a href="#" class="text-sm font-semibold text-blue-6"
-							>Go to my profile</a
+							>{{ __('pub_theme::pages_show.sidebar.profile_link.label') }}</a
 							>
 					</div>
 				</div>
@@ -220,20 +220,20 @@
 					class="bg-white rounded-2xl text-sm space-y-10 p-6"
 					>
 					<p class="text-base font-semibold">
-						Sign up or login to participate
+						{{ __('pub_theme::pages_show.sidebar.join_prompt.message') }}
 					</p>
 					<div class="flex gap-4">
 						<button
 							type="button"
 							class="border border-blue-6 font-semibold hover:bg-blue-6 hover:text-white text-blue-6 focus:ring-4 focus:outline-none focus:ring-blue rounded-lg text-sm px-10 h-10 flex items-center justify-center text-center"
 							>
-						Sign Up
+						{{ __('pub_theme::pages_show.sidebar.signup.label') }}
 						</button>
 						<button
 							type="button"
 							class="bg-blue-6 text-white hover:bg-[#061989] focus:ring-4 focus:outline-none focus:ring-blue font-semibold rounded-lg text-sm px-10 h-10 flex items-center justify-center text-center"
 							>
-						Login
+						{{ __('pub_theme::pages_show.sidebar.login.label') }}
 						</button>
 					</div>
 				</div>
@@ -591,7 +591,7 @@
 					<button
 						class="text-blue-6 hover:text-[#0f79c8] font-semibold text-base max-w-[320px] w-[90%]"
 						>
-					Load more
+					{{ __('pub_theme::pages_show.list.load_more.label') }}
 					</button>
 				</div>
 			</div>

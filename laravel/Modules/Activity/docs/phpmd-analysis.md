@@ -1,11 +1,10 @@
 ---
 title: "PHPMD Analysis & Fixes - Activity Module"
+qmd: "activity phpmd analysis md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "phpmd analysis & fixes - activity module activity"
+tags: [documentation]
 ---
+
 # PHPMD Analysis & Fixes - Activity Module
 
 ## 📊 Current Status

@@ -19,22 +19,22 @@
             {{-- Badge —}}
             <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium animate-kinetic-float">
                 <x-heroicon-o-sparkles class="w-4 h-4" />
-                <span>La Prima Piattaforma Italiana di Prediction Market</span>
+                <span>{{ __('pub_theme::home_page.hero.badge.label') }}</span>
             </div>
             
             {{-- Headline with Gradient —}}
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight">
                 <span class="bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent animate-gradient">
-                    Prevedi il Futuro
+                    {{ __('pub_theme::home_page.hero.title_line1.title') }}
                 </span>
                 <br />
-                <span class="text-white">Oggi</span>
+                <span class="text-white">{{ __('pub_theme::home_page.hero.title_line2.title') }}</span>
             </h1>
             
             {{-- Subheadline —}}
             <p class="mt-6 max-w-3xl mx-auto text-lg md:text-2xl text-slate-300 leading-relaxed">
-                Esplora i mercati predittivi multi-opzione, confronta le probabilità e partecipa con le tue previsioni. 
-                <span class="text-emerald-400 font-semibold">Senza soldi reali, solo abilità.</span>
+                {{ __('pub_theme::home_page.hero.intro.description') }} 
+                <span class="text-emerald-400 font-semibold">{{ __('pub_theme::home_page.hero.highlight.description') }}</span>
             </p>
             
             {{-- Social Proof Stats —}}
@@ -43,19 +43,19 @@
                     <div class="text-3xl md:text-4xl font-bold text-emerald-400">
                         <span class="counter-value" data-prefix="" data-suffix="+">0</span>
                     </div>
-                    <div class="text-sm md:text-base text-slate-400 mt-1">Utenti Attivi</div>
+                    <div class="text-sm md:text-base text-slate-400 mt-1">{{ __('pub_theme::home_page.stats.active_users.label') }}</div>
                 </div>
                 <div class="text-center" data-kinetic-counter="{{ $stats['predictions'] ?? 0 }}" data-kinetic-duration="2000">
                     <div class="text-3xl md:text-4xl font-bold text-cyan-400">
                         <span class="counter-value" data-prefix="" data-suffix="">0</span>
                     </div>
-                    <div class="text-sm md:text-base text-slate-400 mt-1">Previsioni</div>
+                    <div class="text-sm md:text-base text-slate-400 mt-1">{{ __('pub_theme::home_page.stats.predictions.label') }}</div>
                 </div>
                 <div class="text-center" data-kinetic-counter="{{ $stats['volume'] ?? 0 }}" data-kinetic-duration="2000">
                     <div class="text-3xl md:text-4xl font-bold text-purple-400">
                         <span class="counter-value" data-prefix="€" data-suffix="K">0</span>
                     </div>
-                    <div class="text-sm md:text-base text-slate-400 mt-1">Volume Trading</div>
+                    <div class="text-sm md:text-base text-slate-400 mt-1">{{ __('pub_theme::home_page.stats.trading_volume.label') }}</div>
                 </div>
             </div>
             
@@ -64,12 +64,12 @@
                 <a href="{{ url('/' . app()->getLocale() . '/predicts') }}" 
                    class="btn btn-primary btn-lg gap-2 btn-kinetic shadow-lg shadow-emerald-500/30">
                     <x-heroicon-o-magnifying-glass class="w-5 h-5" />
-                    Esplora i Mercati
+                    {{ __('pub_theme::home_page.cta.explore.label') }}
                 </a>
                 <a href="{{ url('/' . app()->getLocale() . '/register') }}" 
                    class="btn btn-outline btn-lg gap-2 btn-kinetic border-slate-600 hover:border-slate-400">
                     <x-heroicon-o-user-plus class="w-5 h-5" />
-                    Inizia Gratis
+                    {{ __('pub_theme::home_page.cta.start_free.label') }}
                 </a>
             </div>
             
@@ -77,15 +77,15 @@
             <div class="flex flex-wrap justify-center items-center gap-6 mt-12 text-sm text-slate-400">
                 <div class="flex items-center gap-2">
                     <x-heroicon-o-shield-check class="w-5 h-5 text-emerald-400" />
-                    <span>Sicuro e Verificato</span>
+                    <span>{{ __('pub_theme::home_page.trust.secure.label') }}</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <x-heroicon-o-bolt class="w-5 h-5 text-yellow-400" />
-                    <span>Aggiornamenti in Tempo Reale</span>
+                    <span>{{ __('pub_theme::home_page.trust.realtime.label') }}</span>
                 </div>
                 <div class="flex items-center gap-2">
                     <x-heroicon-o-device-phone-mobile class="w-5 h-5 text-cyan-400" />
-                    <span>100% Mobile Friendly</span>
+                    <span>{{ __('pub_theme::home_page.trust.mobile.label') }}</span>
                 </div>
             </div>
             
@@ -108,13 +108,13 @@
             <div class="text-center mb-12">
                 <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-medium">
                     <x-heroicon-o-fire class="w-3 h-3" />
-                    <span>Trending Markets</span>
+                    <span>{{ __('pub_theme::home_page.featured.badge.label') }}</span>
                 </div>
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-                    Mercati in <span class="text-emerald-400">Evidenza</span>
+                    {{ __('pub_theme::home_page.featured.title_lead.title') }} <span class="text-emerald-400">{{ __('pub_theme::home_page.featured.title_accent.title') }}</span>
                 </h2>
                 <p class="text-slate-400 text-lg max-w-2xl mx-auto">
-                    Scopri i mercati predittivi più popolari con outcome multipli (2-30+ opzioni)
+                    {{ __('pub_theme::home_page.featured.intro.description') }}
                 </p>
             </div>
             
@@ -134,7 +134,7 @@
             <div class="text-center mt-12">
                 <a href="{{ url('/' . app()->getLocale() . '/predicts') }}" 
                    class="btn btn-outline btn-lg gap-2">
-                    Vedi Tutti i Mercati
+                    {{ __('pub_theme::home_page.featured.view_all.label') }}
                     <x-heroicon-o-arrow-right class="w-5 h-5" />
                 </a>
             </div>
@@ -147,8 +147,8 @@
     <section class="py-16 md:py-24 bg-slate-900">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Come Funziona</h2>
-                <p class="text-slate-400 text-lg">Inizia a prevedere in 3 semplici passi</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ __('pub_theme::home_page.how.title.title') }}</h2>
+                <p class="text-slate-400 text-lg">{{ __('pub_theme::home_page.how.subtitle.description') }}</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -158,8 +158,8 @@
                         <div class="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center mb-4">
                             <x-heroicon-o-magnifying-glass class="w-8 h-8 text-emerald-400" />
                         </div>
-                        <h3 class="card-title text-xl text-white">1. Esplora</h3>
-                        <p class="text-slate-400">Scopri centinaia di mercati predittivi su sport, politica, economia e intrattenimento</p>
+                        <h3 class="card-title text-xl text-white">{{ __('pub_theme::home_page.how.step_explore_title.title') }}</h3>
+                        <p class="text-slate-400">{{ __('pub_theme::home_page.how.step_explore_text.description') }}</p>
                     </div>
                 </div>
                 
@@ -169,8 +169,8 @@
                         <div class="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mb-4">
                             <x-heroicon-o-chart-bar class="w-8 h-8 text-cyan-400" />
                         </div>
-                        <h3 class="card-title text-xl text-white">2. Analizza</h3>
-                        <p class="text-slate-400">Studia le probabilità, il volume di trading e le tendenze del mercato</p>
+                        <h3 class="card-title text-xl text-white">{{ __('pub_theme::home_page.how.step_analyze_title.title') }}</h3>
+                        <p class="text-slate-400">{{ __('pub_theme::home_page.how.step_analyze_text.description') }}</p>
                     </div>
                 </div>
                 
@@ -180,8 +180,8 @@
                         <div class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center mb-4">
                             <x-heroicon-o-trophy class="w-8 h-8 text-purple-400" />
                         </div>
-                        <h3 class="card-title text-xl text-white">3. Prevedi</h3>
-                        <p class="text-slate-400">Fai la tua previsione e scala la leaderboard dimostrando la tua abilità</p>
+                        <h3 class="card-title text-xl text-white">{{ __('pub_theme::home_page.how.step_predict_title.title') }}</h3>
+                        <p class="text-slate-400">{{ __('pub_theme::home_page.how.step_predict_text.description') }}</p>
                     </div>
                 </div>
             </div>
@@ -196,9 +196,9 @@
             <div class="text-center mb-12">
                 <div class="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-medium">
                     <x-heroicon-o-chat-bubble-left-right class="w-3 h-3" />
-                    <span>Community</span>
+                    <span>{{ __('pub_theme::home_page.testimonials.badge.label') }}</span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Cosa Dicono i Nostri Utenti</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ __('pub_theme::home_page.testimonials.title.title') }}</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6">
@@ -210,14 +210,14 @@
                                 <x-heroicon-s-star class="w-4 h-4 text-yellow-400" />
                             @endfor
                         </div>
-                        <p class="text-slate-300 mb-4">"La migliore piattaforma italiana per i prediction market. Interfaccia intuitiva e mercati sempre aggiornati."</p>
+                        <p class="text-slate-300 mb-4">{{ __('pub_theme::home_page.testimonials.quote_one.message') }}</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-400 flex items-center justify-center text-white font-bold">
                                 M
                             </div>
                             <div>
                                 <div class="font-semibold text-white">Marco R.</div>
-                                <div class="text-xs text-slate-400">Top Trader</div>
+                                <div class="text-xs text-slate-400">{{ __('pub_theme::home_page.testimonials.role_top_trader.label') }}</div>
                             </div>
                         </div>
                     </div>
@@ -231,14 +231,14 @@
                                 <x-heroicon-s-star class="w-4 h-4 text-yellow-400" />
                             @endfor
                         </div>
-                        <p class="text-slate-300 mb-4">"Finalmente un'alternativa italiana a Polymarket. Perfetta per chi vuole mettere alla prova le proprie previsioni."</p>
+                        <p class="text-slate-300 mb-4">{{ __('pub_theme::home_page.testimonials.quote_two.message') }}</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center text-white font-bold">
                                 L
                             </div>
                             <div>
                                 <div class="font-semibold text-white">Laura B.</div>
-                                <div class="text-xs text-slate-400">Analista</div>
+                                <div class="text-xs text-slate-400">{{ __('pub_theme::home_page.testimonials.role_analyst.label') }}</div>
                             </div>
                         </div>
                     </div>
@@ -252,14 +252,14 @@
                                 <x-heroicon-s-star class="w-4 h-4 text-yellow-400" />
                             @endfor
                         </div>
-                        <p class="text-slate-300 mb-4">"Uso questa piattaforma da mesi e sono impressionato dalla qualità e dalla varietà dei mercati disponibili."</p>
+                        <p class="text-slate-300 mb-4">{{ __('pub_theme::home_page.testimonials.quote_three.message') }}</p>
                         <div class="flex items-center gap-3">
                             <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-red-400 flex items-center justify-center text-white font-bold">
                                 A
                             </div>
                             <div>
                                 <div class="font-semibold text-white">Alessandro T.</div>
-                                <div class="text-xs text-slate-400">Enthusiast</div>
+                                <div class="text-xs text-slate-400">{{ __('pub_theme::home_page.testimonials.role_enthusiast.label') }}</div>
                             </div>
                         </div>
                     </div>
@@ -274,25 +274,25 @@
     <section class="py-20 md:py-24 bg-gradient-to-br from-emerald-950/50 to-slate-950">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                Pronto a Iniziare?
+                {{ __('pub_theme::home_page.final_cta.title.title') }}
             </h2>
             <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-                Unisciti alla nostra community e inizia a prevedere il futuro. 
-                <span class="text-emerald-400 font-semibold">Gratis, senza rischi.</span>
+                {{ __('pub_theme::home_page.final_cta.intro.description') }} 
+                <span class="text-emerald-400 font-semibold">{{ __('pub_theme::home_page.final_cta.highlight.description') }}</span>
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ url('/' . app()->getLocale() . '/register') }}" 
                    class="btn btn-primary btn-lg btn-kinetic shadow-lg shadow-emerald-500/30">
-                    Crea Account Gratis
+                    {{ __('pub_theme::home_page.final_cta.create_account.label') }}
                 </a>
                 <a href="{{ url('/' . app()->getLocale() . '/predicts') }}" 
                    class="btn btn-ghost btn-lg gap-2">
-                    Esplora i Mercati
+                    {{ __('pub_theme::home_page.cta.explore.label') }}
                     <x-heroicon-o-arrow-right class="w-5 h-5" />
                 </a>
             </div>
             <p class="text-sm text-slate-400 mt-6">
-                Nessuna carta di credito richiesta • Setup in 2 minuti
+                {{ __('pub_theme::home_page.final_cta.footnote.description') }}
             </p>
         </div>
     </section>

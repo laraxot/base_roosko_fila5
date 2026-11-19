@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Modules\Activity\Tests\Feature;
+
 use Filament\Actions\Action;
 use Filament\Tables\Table;
 use Modules\Activity\Events\ActivityEvent;
@@ -25,9 +26,10 @@ use Modules\Activity\Tests\TestCase;
 use Modules\Xot\Filament\Actions\XotBaseAction;
 use Modules\Xot\Filament\Resources\Pages\XotBaseEditRecord;
 use PHPUnit\Framework\Assert;
+
 use function Safe\class_uses;
 
-uses(\Modules\Activity\Tests\TestCase::class);
+uses(TestCase::class);
 
 describe('ActivityEvent', function (): void {
     test('can be instantiated', function (): void {
@@ -159,7 +161,9 @@ describe('ListActivities page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListActivities;
-        $table = $page->table(Table::make($page));
+        // La tabella si costruisce dalla Resource (XotBaseResource::table -> ActivitiesTable),
+        // non dalla pagina: XotBaseListRecords non usa piu' HasXotTable.
+        $table = ActivityResource::table(Table::make($page));
         $columns = $table->getColumns();
 
         Assert::assertArrayHasKey('id', $columns);
@@ -185,11 +189,9 @@ describe('SnapshotResource', function (): void {
         $instance = app(SnapshotForm::class);
         $schema = $instance->getFormSchema();
 
-        Assert::assertArrayHasKey('model_type', $schema);
-        Assert::assertArrayHasKey('model_id', $schema);
+        Assert::assertArrayHasKey('aggregate_uuid', $schema);
+        Assert::assertArrayHasKey('aggregate_version', $schema);
         Assert::assertArrayHasKey('state', $schema);
-        Assert::assertArrayHasKey('created_by_type', $schema);
-        Assert::assertArrayHasKey('created_by_id', $schema);
     });
 });
 
@@ -209,7 +211,7 @@ describe('ListSnapshots page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListSnapshots;
-        $table = $page->table(Table::make($page));
+        $table = SnapshotResource::table(Table::make($page));
         $columns = $table->getColumns();
 
         Assert::assertArrayHasKey('id', $columns);
@@ -222,7 +224,7 @@ describe('ListSnapshots page', function (): void {
 
     test('has table filters', function (): void {
         $page = new ListSnapshots;
-        $table = $page->table(Table::make($page));
+        $table = SnapshotResource::table(Table::make($page));
         $filters = $table->getFilters();
 
         Assert::assertNotEmpty($filters);
@@ -230,8 +232,10 @@ describe('ListSnapshots page', function (): void {
 
     test('has table actions', function (): void {
         $page = new ListSnapshots;
-        $table = $page->table(Table::make($page));
-        $actions = $table->getRecordActions();
+        $table = SnapshotResource::table(Table::make($page));
+        // Filament 5: getRecordActions() restituisce una lista; i nomi
+        // sono in getFlatActions(), indicizzata per nome azione.
+        $actions = $table->getFlatActions();
 
         Assert::assertArrayHasKey('view', $actions);
         Assert::assertArrayHasKey('edit', $actions);
@@ -240,7 +244,7 @@ describe('ListSnapshots page', function (): void {
 
     test('has bulk actions', function (): void {
         $page = new ListSnapshots;
-        $table = $page->table(Table::make($page));
+        $table = SnapshotResource::table(Table::make($page));
         $bulkActions = $table->getFlatBulkActions();
 
         Assert::assertNotEmpty($bulkActions);
@@ -285,7 +289,7 @@ describe('ListStoredEvents page', function (): void {
 
     test('has table columns', function (): void {
         $page = new ListStoredEvents;
-        $table = $page->table(Table::make($page));
+        $table = StoredEventResource::table(Table::make($page));
         $columns = $table->getColumns();
 
         Assert::assertArrayHasKey('id', $columns);

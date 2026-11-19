@@ -1,15 +1,3 @@
----
-title: "blade old files in pages rule"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "blade old files in pages rule"
-issues: []
-discussions: []
-status: draft
----
-
 # 🔴 REGOLA: File .blade.php.old Nella Cartella Pages
 
 **Data**: 2026-03-22  
@@ -17,6 +5,7 @@ status: draft
 **Priorità**: CRITICAL  
 
 ---
+
 ## 📜 La Regola
 
 ```
@@ -135,8 +124,8 @@ $files = $this->directory->getFiles('*.blade.php');
 ## 🔗 Riferimenti
 
 - `docs/project/ARCHITECTURE_ZEN.md` - Architettura base
-- `NO_PREDICT_SPECIFIC_PAGES.md` - Regola pagine specifiche
-- `THEME_PHILOSOPHY_ZEN.md` - Filosofia theme
+- `no-predict-specific-pages.md` - Regola pagine specifiche
+- `theme-philosophy-zen.md` - Filosofia theme
 
 ---
 

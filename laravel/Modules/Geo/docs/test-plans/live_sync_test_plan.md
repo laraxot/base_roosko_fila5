@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "live sync test plan"
 issues: []
 discussions: []
-status: superseded
-superseded_by: live-sync-test-plan.md
 ---
 
 # Live Sync Test Plan
@@ -22,6 +20,15 @@ superseded_by: live-sync-test-plan.md
 > **Team:** sync-test-team
 
 ---
+
+title: "live sync test plan"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "live sync test plan"
+issues: []
+discussions: []
 ## Objective
 
 Execute a **real-world test** of `sync_remote_repo.sh` on an actual GitHub repository to verify:

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "documentation index"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Indice della Documentazione del Modulo Geo
@@ -158,5 +157,14 @@ Alcuni documenti potrebbero avere nomi simili ma contenuti diversi, in particola
 - Documenti con prefisso lingua (es. `en-` o `it-`) contengono versioni in lingue specifiche
 
 ---
+
+title: "documentation index"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "documentation index"
+issues: []
+discussions: []
 *Documento creato il: 28/05/2025*
 *Autore: Team <main module>*

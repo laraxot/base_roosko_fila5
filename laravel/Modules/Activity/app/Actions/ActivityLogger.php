@@ -46,7 +46,9 @@ class ActivityLogger
             $userId = $user->getAttribute('id');
         }
         if ($userId === null) {
-            $userId = Auth::id();
+            $authId = Auth::id();
+            // Auth::id() e' int|string|null; un mock o un driver buggato puo' restituire altro.
+            $userId = is_int($authId) || is_string($authId) ? $authId : null;
         }
 
         /** @var Activity $activity */
@@ -145,8 +147,7 @@ class ActivityLogger
             ->whereIn('causer_id', $userKeyValues)
             ->where('causer_type', $user::class)
             ->latest()
-            ->limit($limit)
-            ;
+            ->limit($limit);
 
         return Activity::typedGet($query);
     }
@@ -163,8 +164,7 @@ class ActivityLogger
             ->where('subject_type', $model::class)
             ->where('subject_id', $model->getKey())
             ->latest()
-            ->limit($limit)
-            ;
+            ->limit($limit);
 
         return Activity::typedGet($query);
     }
@@ -187,8 +187,7 @@ class ActivityLogger
             ->with(['causer', 'subject'])
             ->where('event', $type)
             ->latest()
-            ->limit($limit)
-            ;
+            ->limit($limit);
 
         return Activity::typedGet($query);
     }
@@ -207,8 +206,7 @@ class ActivityLogger
         $query = Activity::typedQuery()
             ->with(['causer', 'subject'])
             ->latest()
-            ->limit($limit)
-            ;
+            ->limit($limit);
 
         return Activity::typedGet($query);
     }

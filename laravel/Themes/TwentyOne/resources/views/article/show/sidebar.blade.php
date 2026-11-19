@@ -8,7 +8,7 @@
 	@else
 		@if (isset($article->closed_at) && $article->closed_at->lte(now()))
 			<div class="p-6 space-y-2 text-center rounded text-rose-600 ring-1 bg-rose-400/5 ring-rose-400/10">
-				<h4 class="text-xl font-semibold">Uh No!</h4>
+				<h4 class="text-xl font-semibold">{{ __('pub_theme::article_show.sidebar.error.title') }}</h4>
 				<p class="text-sm">
 					{{ __('blog::article.no_vote', ['time' => $article->closed_at->diffForHumans()]) }}
 					{{-- 

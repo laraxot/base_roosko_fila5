@@ -10,7 +10,6 @@ created: 2026-05-21
 related:
   - ../wiki/how-to/module-docs-deduplication.md
   - ../wiki/how-to/github-issue-agent-discipline.md
-status: draft
 ---
 
 ## Campagna deduplica docs (2026-05-21)

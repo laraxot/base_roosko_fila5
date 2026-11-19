@@ -4,9 +4,10 @@ title: Riorganizzazione massiva docs moduli, temi e prompt
 type: story
 module: Xot
 epic: documentation/second-brain
-status: in-progress
+status: review
 created: 2026-10-09
-updated: 2026-10-28
+baseline_commit: bd1c12c5736bad347e5f89981af2293507c5a6cc
+updated: 2026-11-11
 tags: [bmad, docs, prompts, second-brain, swarm]
 qmd: "riorganizzazione docs prompt moduli temi second brain"
 ---
@@ -58,15 +59,24 @@ pagina breve o lo si sposta in `_archive/` con lock sul file interessato.
       preflight BMAD/lock/second brain/Pest coerente.
 - [ ] Marker merge nelle docs e prompt risolti solo dopo confronto del contenuto.
 - [x] Link relativi principali verificati e QMD aggiornato.
-- [ ] Report di esito per ogni gruppo e gate `git diff --check`.
+- [x] Report di esito per i gruppi lavorati e gate `git diff --check`.
 
 ## Gate della tranche 1
 
 - `git diff --check`: verde.
-- `qmd update`: eseguito, ma l'installazione locale indicizza ancora
-  `base_fixcity_fila5`; non è una prova di indicizzazione PTVX.
+- `qmd setup/update`: eseguito sull'indice `trade-fila5`; 16.933 documenti
+  risultano indicizzati. L'embedding completo resta asincrono e parziale.
 - `graphify update .`: eseguito sul repository PTVX.
 - Test/PHPStan: non eseguiti; la tranche modifica solo documentazione.
+
+## Verifica aggiuntiva
+
+- PHPStan globale `php -d memory_limit=2G ./vendor/bin/phpstan analyse Modules`:
+  0 errori.
+- `audit-prompts.sh`: 83 prompt, 0 bloccanti; restano solo avvisi di ruolo e
+  8 prompt voluminosi già noti.
+- Marker risolti nelle tranche Performance e IndennitaResponsabilita; nessun
+  lock residuo.
 
 ## Vincoli
 
@@ -111,3 +121,18 @@ il codice applicativo durante questo epic documentale.
 - Criterio: conservare l'intento autonomo dei prompt, eliminare solo istruzioni
   duplicate o che contraddicono le regole correnti e documentare ogni marker con
   confronto delle versioni sorgenti.
+
+## Handoff: contratto README/INDEX/MANIFEST e frontmatter
+
+- Aggiornati `bashscripts/docs/prompts/README.md`, `INDEX.md`, `MANIFEST.md` e
+  `97-yaml-frontmatter-convention.md`: distinti gli owner di navigazione e
+  procedure; rimossi comandi di validazione non presenti; chiariti `id` e
+  `source_of_truth`; corretti i controlli dei marker e degli ID.
+- Verificati YAML e link relativi dei quattro file, `git diff --check`, ID
+  duplicati e marker merge: nessun problema in questi controlli.
+- Residuo: il controllo case-folded trova anche `START.md`/`start.md`, oltre
+  all'alias frontmatter; alcune note correnti dichiarano una sola collisione.
+  Non rinominare: analizzare riferimenti e contenuti quando si riprende il
+  gruppo. La query QMD MCP è andata in timeout; `qmd update` resta da eseguire.
+- Tranche sospesa per priorità al bug Login Pulse; lock rilasciati dopo questo
+  handoff. Nessun commit creato.

@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+use PHPUnit\Framework\TestCase;
 
 use function Safe\file_get_contents;
 
-uses(PHPUnit\Framework\TestCase::class);
+uses(TestCase::class);
 
 /**
  * Gate facts:
@@ -32,7 +33,7 @@ test('record authentication log action guards missing table', function (): void 
 
     expect($source)
         ->toContain('hasTable')
-        ->toContain("Log::warning")
+        ->toContain('Log::warning')
         ->toContain('authentication_logs missing on user connection');
 });
 
@@ -62,5 +63,20 @@ test('auth login listeners guard UserContract not BaseUser', function (): void {
             ->toContain('instanceof UserContract')
             ->toContain('instanceof HasAuthentications')
             ->not->toContain('instanceof BaseUser');
+    }
+});
+
+test('auth login listeners record the pulse metric for the same timestamp', function (): void {
+    $sources = [
+        file_get_contents(dirname(__DIR__, 4).'/app/Listeners/LoginListener.php'),
+        file_get_contents(dirname(__DIR__, 4).'/app/Listeners/FailedLoginListener.php'),
+    ];
+
+    foreach ($sources as $source) {
+        expect($source)
+            ->toContain('use Modules\User\Actions\Login\RecordLoginPulseAction')
+            ->toContain('$loginAt = now()')
+            ->toContain("'login_at' => \$loginAt")
+            ->toContain('app(RecordLoginPulseAction::class)->execute($loginAt)');
     }
 });

@@ -20,7 +20,7 @@ class LogUserLogoutAction
     use QueueableAction;
 
     public function __construct(
-        public ?UserContract $user = null
+        public ?UserContract $user = null,
     ) {}
 
     public function execute(?UserContract $user = null): Activity
@@ -34,7 +34,7 @@ class LogUserLogoutAction
             type: 'logout',
             user: $user,
             subject: $user,
-            description: 'User logged out'
+            description: 'User logged out',
         );
 
         return $action->execute();

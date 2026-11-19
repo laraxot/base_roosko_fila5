@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "module docs template"
 issues: []
 discussions: []
-status: draft
 ---
 
 # {ModuleName} Module

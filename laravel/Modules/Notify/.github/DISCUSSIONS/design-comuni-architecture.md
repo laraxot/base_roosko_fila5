@@ -13,6 +13,12 @@ labels: ['design-comuni', 'architecture', 'decision-record']
 
 # Design Comuni Italia - Architectural Decisions
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 This discussion documents the key architectural decisions for replicating the 38 static pages from [Design Comuni Italia](https://italia.github.io/design-comuni-pagine-statiche/) in the FixCity project.
 
 ---
@@ -62,6 +68,7 @@ Replicate **EXACTLY** 38 static pages with:
 
 **Decision**: Content stored in JSON files, structure in Blade.
 
+**Files**: `laravel/config/local/fixcity/database/content/pages/tests.[slug].json`
 **Files**: `laravel/config/local/ptv/database/content/pages/tests.[slug].json`
 
 **Rationale**:
@@ -250,7 +257,7 @@ x-layouts.main (base HTML: DOCTYPE, head, body, scripts)
 
 ---
 
-### 9. Vite Build: outDir: './public' + npm run copy ✅
+niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
 
 **Decision**: Build theme independently, copy to public_html.
 
@@ -278,7 +285,7 @@ cd laravel/Themes/Sixteen
 composer update -W
 npm install
 npm run build
-npm run copy
+# niente npm run copy: public_html/themes/<Tema> è un symlink a ../../laravel/Themes/<Tema>/public
 ```
 
 **Alternatives Rejected**:
@@ -372,9 +379,9 @@ npm run copy
 
 ## 📖 Related Documentation
 
-- [MASTER_IMPLEMENTATION_PLAN.md](../../laravel/Themes/Sixteen/docs/design-comuni/master-implementation-plan.md)
-- [ARCHITECTURAL_DECISIONS.md](../../laravel/Themes/Sixteen/docs/design-comuni/architectural-decisions.md)
-- [HTML_PARITY_VERIFICATION_REPORT.md](../../laravel/Themes/Sixteen/docs/design-comuni/html-parity-verification-report.md)
+- [MASTER_IMPLEMENTATION_PLAN.md](../../laravel/Themes/Sixteen/docs/design-comuni/MASTER_IMPLEMENTATION_PLAN.md)
+- [ARCHITECTURAL_DECISIONS.md](../../laravel/Themes/Sixteen/docs/design-comuni/ARCHITECTURAL_DECISIONS.md)
+- [HTML_PARITY_VERIFICATION_REPORT.md](../../laravel/Themes/Sixteen/docs/design-comuni/HTML_PARITY_VERIFICATION_REPORT.md)
 - [QWEN.md](../../QWEN.md)
 
 ---

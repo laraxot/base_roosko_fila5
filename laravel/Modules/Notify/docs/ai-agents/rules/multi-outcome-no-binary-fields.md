@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "multi outcome no binary fields"
 issues: []
 discussions: []
-status: draft
 ---
 
 # 🔴 MULTI-OUTCOME UNIVERSAL - NO BINARY FIELDS
@@ -18,6 +17,15 @@ status: draft
 **Priority**: BLOCKER
 
 ---
+
+title: "multi outcome no binary fields"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "multi outcome no binary fields"
+issues: []
+discussions: []
 ## 🎯 The Rule
 
 > **NON ESISTONO** predict di tipo SÌ/NO!

@@ -1,15 +1,3 @@
----
-title: "json architecture"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "json architecture"
-issues: []
-discussions: []
-status: draft
----
-
 # TwentyOne Theme — JSON-Based Architecture
 
 > **Data**: 2026-03-18  
@@ -18,6 +6,7 @@ status: draft
 > **Back Office**: Filament Builder ready
 
 ---
+
 ## 🎯 Filosofia del Tema
 
 ### 1. **Agnosticismo**
@@ -103,10 +92,10 @@ Themes/TwentyOne/
 │       │   └── trending_explosive.blade.php
 │       └── ...
 └── docs/
-    ├── HOMEPAGE_IMPROVEMENT_PLAN.md
-    ├── HOMEPAGE_SEO.md
-    ├── HOMEPAGE_SPRINT1_SUMMARY.md
-    └── JSON_ARCHITECTURE.md         ← Questo file
+    ├── homepage-improvement-plan.md
+    ├── homepage-seo.md
+    ├── homepage-sprint1-summary.md
+    └── json-architecture.md         ← Questo file
 ```
 
 ---
@@ -423,7 +412,7 @@ Builder::make('content_blocks')
 
 ### Theme Architecture
 - [`FOLIO_VOLT_ARCHITECTURE.md`](../laravel/docs/FOLIO_VOLT_ARCHITECTURE.md)
-- [`page-component-context-data.md`](../../../Modules/Cms/docs/page-component-context-data.md)
+- [`page-component-context-data.md`](../laravel/Modules/Cms/docs/page-component-context-data.md)
 
 ---
 

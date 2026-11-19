@@ -36,7 +36,7 @@
         <!-- Header: Date and Balance -->
         <div class="flex justify-between items-center border-b pb-2 mb-3">
             <div class="text-gray-800 font-semibold text-sm">{{ \Carbon\Carbon::parse($date)->format('Y/m/d') }}</div>
-            <div class="text-gray-600 text-sm">Balance : <span class="font-bold text-black">{{ $dailyBalances[$date] ?? '0,00' }}</span></div>
+            <div class="text-gray-600 text-sm">{{ __('pub_theme::widgets_ratings.transactions.balance.label') }} <span class="font-bold text-black">{{ $dailyBalances[$date] ?? '0,00' }}</span></div>
         </div>
 
         <!-- Transactions List -->

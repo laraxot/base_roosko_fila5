@@ -29,3 +29,12 @@ updated: 2026-11-11
 ## Verifica
 
 `npm ci && npm run build` nel modulo, sia da solo sia dentro `laravel/Modules/Geo`.
+
+## 12 novembre: lockfile
+
+Un riordino successivo della build di Geo ha tolto `package-lock.json`. Senza lockfile `npm ci` fallisce, e lo usano sia il job
+CI «Bundle Vite versionati» sia `deploy.sh` con `BUILD_ASSETS=1`. Il lockfile è stato rigenerato (`npm audit`:
+restano 2 moderate in `@tailwindcss/typography`, che la build non usa) e la build ricompila lo stesso bundle committato.
+
+Da decidere per chi mantiene Geo: `vue`, `jquery`, `bootstrap`, `sass-loader`, `vue-loader` e altri pacchetti dell'era
+webpack compaiono solo in file che la build non compila (gli input sono `app.css` e `coordinate-picker-lit.js`).

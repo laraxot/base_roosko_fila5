@@ -9,16 +9,13 @@ use PHPUnit\Framework\Assert;
 
 uses(TestCase::class);
 
-test('Snapshot model can be instantiated', function () {
-    Assert::assertTrue((new ReflectionClass(Snapshot::class))->isInstantiable());
+test('Snapshot model can be instantiated', function (): void {
+    $snapshot = new Snapshot;
+    Assert::assertSame('snapshots', $snapshot->getTable());
 });
 
-test('StoredEvent model can be instantiated', function () {
-    Assert::assertTrue((new ReflectionClass(StoredEvent::class))->isInstantiable());
-});
-
-test('BaseModel model can be instantiated', function () {
-    $baseModel = new class extends BaseModel
+test('BaseModel model can be instantiated', function (): void {
+    $baseModel = new class() extends BaseModel
     {
         protected $table = 'activity_base_models';
     };
@@ -26,20 +23,20 @@ test('BaseModel model can be instantiated', function () {
     Assert::assertSame('activity_base_models', $baseModel->getTable());
 });
 
-test('Snapshot model has correct connection', function () {
-    $snapshot = new Snapshot;
+test('Snapshot model has correct connection', function (): void {
+    $snapshot = new Snapshot();
 
     Assert::assertIsString($snapshot->getConnectionName());
 });
 
-test('StoredEvent model has correct connection', function () {
-    $storedEvent = new StoredEvent;
+test('StoredEvent model has correct connection', function (): void {
+    $storedEvent = new StoredEvent();
 
     Assert::assertIsString($storedEvent->getConnectionName());
 });
 
-test('BaseModel model has correct connection', function () {
-    $baseModel = new class extends BaseModel
+test('BaseModel model has correct connection', function (): void {
+    $baseModel = new class() extends BaseModel
     {
         protected $table = 'activity_base_models';
     };

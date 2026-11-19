@@ -57,19 +57,19 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
                 <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div class="text-3xl lg:text-4xl font-bold text-white mb-2">250+</div>
-                    <div class="text-slate-400 font-medium">Active Markets</div>
+                    <div class="text-slate-400 font-medium">{{ __('pub_theme::blocks_hero.kalshi.active_markets.label') }}</div>
                 </div>
                 <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div class="text-3xl lg:text-4xl font-bold text-white mb-2">50K+</div>
-                    <div class="text-slate-400 font-medium">Total Predictions</div>
+                    <div class="text-slate-400 font-medium">{{ __('pub_theme::blocks_hero.kalshi.total_predictions.label') }}</div>
                 </div>
                 <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div class="text-3xl lg:text-4xl font-bold text-white mb-2">89%</div>
-                    <div class="text-slate-400 font-medium">Accuracy Rate</div>
+                    <div class="text-slate-400 font-medium">{{ __('pub_theme::blocks_hero.kalshi.accuracy_rate.label') }}</div>
                 </div>
                 <div class="text-center p-6 rounded-2xl bg-white/5 backdrop-blur border border-white/10 hover:bg-white/10 transition-all duration-300">
                     <div class="text-3xl lg:text-4xl font-bold text-white mb-2">5K+</div>
-                    <div class="text-slate-400 font-medium">Active Traders</div>
+                    <div class="text-slate-400 font-medium">{{ __('pub_theme::blocks_hero.kalshi.active_traders.label') }}</div>
                 </div>
             </div>
             @endif
@@ -77,37 +77,37 @@
             {{-- Category Preview --}}
             @if($show_categories)
             <div class="bg-white/5 backdrop-blur rounded-3xl border border-white/10 p-8">
-                <h3 class="text-2xl font-semibold text-white text-center mb-8">Popular Categories</h3>
+                <h3 class="text-2xl font-semibold text-white text-center mb-8">{{ __('pub_theme::blocks_hero.kalshi.popular_categories.title') }}</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">🗳️</div>
-                        <div class="text-white font-medium text-center mb-1">Politics</div>
-                        <div class="text-slate-400 text-sm">45 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_politics.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 45, ['count' => 45]) }}</div>
                     </a>
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">⚽</div>
-                        <div class="text-white font-medium text-center mb-1">Sports</div>
-                        <div class="text-slate-400 text-sm">67 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_sports.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 67, ['count' => 67]) }}</div>
                     </a>
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">📈</div>
-                        <div class="text-white font-medium text-center mb-1">Economics</div>
-                        <div class="text-slate-400 text-sm">34 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_economics.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 34, ['count' => 34]) }}</div>
                     </a>
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">💻</div>
-                        <div class="text-white font-medium text-center mb-1">Technology</div>
-                        <div class="text-slate-400 text-sm">28 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_technology.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 28, ['count' => 28]) }}</div>
                     </a>
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">🎬</div>
-                        <div class="text-white font-medium text-center mb-1">Entertainment</div>
-                        <div class="text-slate-400 text-sm">23 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_entertainment.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 23, ['count' => 23]) }}</div>
                     </a>
                     <a href="#" class="group flex flex-col items-center p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105">
                         <div class="text-3xl mb-3 group-hover:scale-110 transition-transform">₿</div>
-                        <div class="text-white font-medium text-center mb-1">Crypto</div>
-                        <div class="text-slate-400 text-sm">19 markets</div>
+                        <div class="text-white font-medium text-center mb-1">{{ __('pub_theme::blocks_hero.kalshi.cat_crypto.label') }}</div>
+                        <div class="text-slate-400 text-sm">{{ trans_choice('pub_theme::blocks_hero.kalshi.markets_count.label', 19, ['count' => 19]) }}</div>
                     </a>
                 </div>
             </div>

@@ -30,7 +30,7 @@
         <div class="flex items-center justify-between gap-3">
             <h3 class="flex items-center gap-2 text-base font-semibold text-gray-900">
                 <x-filament::icon icon="heroicon-m-signal" class="h-5 w-5 text-sky-600" />
-                Stato del mercato
+                {{ __('pub_theme::article_show.summary.title.title') }}
             </h3>
             <span class="inline-flex items-center gap-1 rounded-full bg-{{ $statusTone }}-50 px-2.5 py-1 text-xs font-medium text-{{ $statusTone }}-700 ring-1 ring-inset ring-{{ $statusTone }}-200">
                 <x-filament::icon icon="heroicon-m-bolt" class="h-3.5 w-3.5" />
@@ -44,21 +44,21 @@
             <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
                 <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-500">
                     <x-filament::icon icon="heroicon-m-user-group" class="h-4 w-4" />
-                    Posizioni
+                    {{ __('pub_theme::article_show.summary.positions.label') }}
                 </div>
                 <p class="mt-2 text-lg font-semibold text-gray-900">{{ number_format($positionsCount) }}</p>
             </div>
             <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
                 <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-500">
                     <x-filament::icon icon="heroicon-m-banknotes" class="h-4 w-4" />
-                    Volume
+                    {{ __('pub_theme::market_common.terms.volume.label') }}
                 </div>
                 <p class="mt-2 text-lg font-semibold text-gray-900">{{ number_format($creditsVolume, 0, ',', '.') }} ø</p>
             </div>
             <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
                 <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-500">
                     <x-filament::icon icon="heroicon-m-arrows-right-left" class="h-4 w-4" />
-                    Liquidita'
+                    {{ __('pub_theme::article_show.summary.liquidity.label') }}
                 </div>
                 <p class="mt-2 text-lg font-semibold text-gray-900">
                     {{ $liquidity !== null ? number_format((float) $liquidity, 0, ',', '.') . ' ø' : 'n/d' }}
@@ -67,7 +67,7 @@
             <div class="rounded-xl border border-gray-100 bg-gray-50 p-3">
                 <div class="flex items-center gap-2 text-xs font-medium uppercase tracking-wide text-gray-500">
                     <x-filament::icon icon="heroicon-m-queue-list" class="h-4 w-4" />
-                    Ordini
+                    {{ __('pub_theme::article_show.summary.orders.label') }}
                 </div>
                 <p class="mt-2 text-lg font-semibold text-gray-900">{{ number_format($ordersCount) }}</p>
             </div>
@@ -77,7 +77,7 @@
             <div class="flex items-start gap-3">
                 <x-filament::icon icon="heroicon-m-clock" class="mt-0.5 h-4 w-4 text-slate-500" />
                 <div>
-                    <p class="text-sm font-medium text-slate-900">Chiusura trading</p>
+                    <p class="text-sm font-medium text-slate-900">{{ __('pub_theme::article_show.summary.trading_close.label') }}</p>
                     <p class="text-sm text-slate-600">
                         {{ $closedAt ? $closedAt->translatedFormat('d M Y H:i') : 'non impostata' }}
                     </p>
@@ -86,7 +86,7 @@
             <div class="flex items-start gap-3">
                 <x-filament::icon icon="heroicon-m-flag" class="mt-0.5 h-4 w-4 text-slate-500" />
                 <div>
-                    <p class="text-sm font-medium text-slate-900">Fine evento</p>
+                    <p class="text-sm font-medium text-slate-900">{{ __('pub_theme::article_show.summary.event_end.label') }}</p>
                     <p class="text-sm text-slate-600">
                         {{ $eventEndsAt ? $eventEndsAt->translatedFormat('d M Y H:i') : 'non impostata' }}
                     </p>
@@ -95,7 +95,7 @@
             <div class="flex items-start gap-3">
                 <x-filament::icon icon="heroicon-m-check-badge" class="mt-0.5 h-4 w-4 text-slate-500" />
                 <div>
-                    <p class="text-sm font-medium text-slate-900">Risoluzione finale</p>
+                    <p class="text-sm font-medium text-slate-900">{{ __('pub_theme::article_show.summary.final_resolution.label') }}</p>
                     <p class="text-sm text-slate-600">
                         {{ $resolvedAt ? $resolvedAt->translatedFormat('d M Y H:i') : 'non ancora registrata' }}
                     </p>

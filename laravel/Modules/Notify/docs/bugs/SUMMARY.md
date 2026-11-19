@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "SUMMARY"
 issues: []
 discussions: []
-status: superseded
-superseded_by: summary.md
 ---
 
 # Bug Fixes Summary

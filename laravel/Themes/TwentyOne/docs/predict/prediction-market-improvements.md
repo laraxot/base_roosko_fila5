@@ -1,21 +1,9 @@
----
-title: "prediction market improvements"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "prediction market improvements"
-issues: []
-discussions: []
-status: draft
----
-
 # Analisi e Miglioramenti Pagina Prediction Market
 
 ## 📊 Analisi del Codice Attuale
 
 ### File Analizzato
-`/var/www/html/_bases/base_predict_fila5_mono/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
+`/var/www/html/_bases/base_predict_fila5/laravel/Modules/Predict/resources/views/pages/predicts/[slug].blade.php`
 
 ### Struttura Attuale
 La pagina utilizza un layout moderno con:
@@ -150,7 +138,7 @@ La pagina utilizza un layout moderno con:
                     @endforeach
                 </div>
             </div>
-            
+
             {{-- Sell Orders --}}
             <div class="space-y-2">
                 <h4 class="text-sm font-medium text-red-600 flex items-center">
@@ -195,21 +183,21 @@ La pagina utilizza un layout moderno con:
         <form wire:submit.prevent="placeOrder" class="space-y-4">
             {{-- Order Type Selection --}}
             <div class="flex rounded-lg border border-gray-200 p-1">
-                <button type="button" wire:click="setOrderType('buy')" 
+                <button type="button" wire:click="setOrderType('buy')"
                         class="flex-1 py-2 px-4 text-sm font-medium rounded-md transition-colors {{ $orderType === 'buy' ? 'bg-green-500 text-white' : 'text-gray-700 hover:bg-gray-50' }}">
                     Acquista
                 </button>
-                <button type="button" wire:click="setOrderType('sell')" 
+                <button type="button" wire:click="setOrderType('sell')"
                         class="flex-1 py-2 px-4 text-sm font-medium rounded-md transition-colors {{ $orderType === 'sell' ? 'bg-red-500 text-white' : 'text-gray-700 hover:bg-gray-50' }}">
                     Vendi
                 </button>
             </div>
-            
+
             {{-- Quantity Input --}}
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Quantità Quote</label>
                 <div class="relative">
-                    <input type="number" wire:model.live="quantity" 
+                    <input type="number" wire:model.live="quantity"
                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                            placeholder="0" min="1" step="1">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-3">
@@ -217,7 +205,7 @@ La pagina utilizza un layout moderno con:
                     </div>
                 </div>
             </div>
-            
+
             {{-- Price Display --}}
             <div class="bg-gray-50 rounded-lg p-4">
                 <div class="flex justify-between items-center">
@@ -241,9 +229,9 @@ La pagina utilizza un layout moderno con:
                     </div>
                 @endif
             </div>
-            
+
             {{-- Submit Button --}}
-            <button type="submit" 
+            <button type="submit"
                     class="w-full py-3 px-4 bg-gradient-to-r {{ $orderType === 'buy' ? 'from-green-500 to-green-600' : 'from-red-500 to-red-600' }} text-white font-medium rounded-lg hover:shadow-lg transition-all duration-200 transform hover:scale-[1.02]">
                 {{ $orderType === 'buy' ? 'Acquista Quote' : 'Vendi Quote' }}
             </button>
@@ -270,19 +258,19 @@ La pagina utilizza un layout moderno con:
                 <p class="text-sm text-gray-600">Analisi storica e trend</p>
             </div>
             <div class="flex space-x-2">
-                <button wire:click="setTimeframe('1h')" 
+                <button wire:click="setTimeframe('1h')"
                         class="px-3 py-1 text-sm rounded-md transition-colors {{ $timeframe === '1h' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
                     1H
                 </button>
-                <button wire:click="setTimeframe('24h')" 
+                <button wire:click="setTimeframe('24h')"
                         class="px-3 py-1 text-sm rounded-md transition-colors {{ $timeframe === '24h' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
                     24H
                 </button>
-                <button wire:click="setTimeframe('7d')" 
+                <button wire:click="setTimeframe('7d')"
                         class="px-3 py-1 text-sm rounded-md transition-colors {{ $timeframe === '7d' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
                     7G
                 </button>
-                <button wire:click="setTimeframe('30d')" 
+                <button wire:click="setTimeframe('30d')"
                         class="px-3 py-1 text-sm rounded-md transition-colors {{ $timeframe === '30d' ? 'bg-blue-500 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200' }}">
                     30G
                 </button>
@@ -293,7 +281,7 @@ La pagina utilizza un layout moderno con:
         <div class="h-64">
             <canvas id="priceChart" wire:ignore></canvas>
         </div>
-        
+
         {{-- Price Statistics --}}
         <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-200">
             <div class="text-center">
@@ -358,7 +346,7 @@ document.addEventListener('livewire:init', () => {
             }
         }
     });
-    
+
     Livewire.on('chartDataUpdated', (data) => {
         chart.data.labels = data.labels;
         chart.data.datasets[0].data = data.prices;
@@ -567,7 +555,7 @@ document.addEventListener('livewire:init', () => {
         {{-- Comment Form --}}
         <div class="mb-6">
             <form wire:submit.prevent="addComment" class="space-y-3">
-                <textarea wire:model="newComment" 
+                <textarea wire:model="newComment"
                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                           placeholder="Condividi la tua opinione..."
                           rows="3"></textarea>
@@ -578,7 +566,7 @@ document.addEventListener('livewire:init', () => {
                             <span class="ml-2 text-sm text-gray-600">Commento anonimo</span>
                         </label>
                     </div>
-                    <button type="submit" 
+                    <button type="submit"
                             class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
                         Pubblica
                     </button>
@@ -599,7 +587,7 @@ document.addEventListener('livewire:init', () => {
                                     </svg>
                                 </div>
                             @else
-                                <img src="{{ $comment->user->avatar }}" alt="{{ $comment->user->name }}" 
+                                <img src="{{ $comment->user->avatar }}" alt="{{ $comment->user->name }}"
                                      class="w-8 h-8 rounded-full">
                             @endif
                         </div>
@@ -617,14 +605,14 @@ document.addEventListener('livewire:init', () => {
                             </div>
                             <p class="text-sm text-gray-700 mt-1">{{ $comment->content }}</p>
                             <div class="flex items-center space-x-4 mt-2">
-                                <button wire:click="likeComment({{ $comment->id }})" 
+                                <button wire:click="likeComment({{ $comment->id }})"
                                         class="flex items-center space-x-1 text-xs text-gray-500 hover:text-blue-600">
                                     <svg class="w-4 h-4" fill="{{ $comment->isLikedByUser() ? 'currentColor' : 'none' }}" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5"/>
                                     </svg>
                                     <span>{{ $comment->likes_count }}</span>
                                 </button>
-                                <button wire:click="replyToComment({{ $comment->id }})" 
+                                <button wire:click="replyToComment({{ $comment->id }})"
                                         class="text-xs text-gray-500 hover:text-blue-600">Rispondi</button>
                             </div>
                         </div>
@@ -673,7 +661,7 @@ class PredictionMarketService
             ];
         });
     }
-    
+
     public function getOrderBook(string $slug): array
     {
         return DB::table('orders')
@@ -694,14 +682,14 @@ class PredictionMarketService
 class OrderPlaced implements ShouldBroadcast
 {
     use InteractsWithSockets;
-    
+
     public function broadcastOn(): array
     {
         return [
             new Channel("prediction.{$this->prediction->slug}")
         ];
     }
-    
+
     public function broadcastWith(): array
     {
         return [
@@ -762,4 +750,4 @@ La pagina prediction market attuale presenta una buona base visiva ma manca di f
 4. **Social Features**: Commenti, reputazione, community
 5. **Security**: Rate limiting, validazione, audit trail
 
-L'implementazione di questi miglioramenti posizionerà la piattaforma come competitor serio nel mercato delle prediction markets, seguendo le best practices dei leader di settore come Polymarket, PredictIt e Kalshi. 
+L'implementazione di questi miglioramenti posizionerà la piattaforma come competitor serio nel mercato delle prediction markets, seguendo le best practices dei leader di settore come Polymarket, PredictIt e Kalshi.

@@ -14,9 +14,8 @@ related:
   - ../README.md
   - ../wiki/index.md
   - readme.md
-  - ../integrations/README.md
-  - ../templates/README.md
-status: draft
+  - ../integrations/readme.md
+  - ../templates/readme.md
 ---
 # Notifiche
 

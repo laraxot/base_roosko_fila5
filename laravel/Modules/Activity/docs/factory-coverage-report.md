@@ -1,11 +1,10 @@
 ---
 title: "Factory Coverage Report - Activity Module"
+qmd: "activity factory coverage report md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity]
-qmd: "factory coverage report - activity module activity"
+tags: [documentation]
 ---
+
 # Factory Coverage Report - Activity Module
 
 ## 📊 Status Report

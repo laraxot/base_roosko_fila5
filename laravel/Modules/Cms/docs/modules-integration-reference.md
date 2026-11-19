@@ -7,10 +7,15 @@ updated: 2026-09-26
 qmd: "modules integration reference"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Modules Integration Reference
+
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
 
 ## Overview
 
@@ -438,7 +443,9 @@ Vite Build Process:
 2. Compiles resources/css/app.css
 3. Compiles resources/js/app.js
 4. Outputs to public/
-5. npm run copy (copies to public_html/themes/Meetup)
+5. niente `npm run copy`: `public_html/themes/<Tema>` è un symlink a `../../laravel/Themes/<Tema>/public`
+
+5. npm run copy (dismesso: symlink public_html/themes/<Tema>) (copies to public_html/themes/Meetup)
 ```
 
 ## Common Integration Patterns

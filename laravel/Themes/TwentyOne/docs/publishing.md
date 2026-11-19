@@ -1,15 +1,3 @@
----
-title: "publishing"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "publishing"
-issues: []
-discussions: []
-status: draft
----
-
 # Processo di Pubblicazione del Tema TwentyOne
 
 ## Panoramica
@@ -35,7 +23,7 @@ TwentyOne/
 ### 1. Installazione Dependencies
 
 ```bash
-cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/TwentyOne
+cd /var/www/html/_bases/base_predict_fila5/laravel/Themes/TwentyOne
 npm install
 ```
 
@@ -146,7 +134,7 @@ npm run copy
 #!/bin/bash
 
 # Pubblicazione automatica del tema
-cd /var/www/html/_bases/base_predict_fila5_mono/laravel/Themes/TwentyOne
+cd /var/www/html/_bases/base_predict_fila5/laravel/Themes/TwentyOne
 
 # Installazione dipendenze
 npm install
@@ -184,4 +172,4 @@ php artisan view:clear
 2. **Backup**
    - Mantenere backup degli asset
    - Documentare le modifiche
-   - Utilizzare versioni stabili 
+   - Utilizzare versioni stabili

@@ -19,6 +19,12 @@ return [
         'my_events' => [
             'label' => 'Mis eventos',
         ],
+        'edit_profile' => [
+            'label' => 'Editar perfil',
+        ],
+        'all_events' => [
+            'label' => 'Todos los eventos',
+        ],
         'nearby_events' => [
             'label' => 'Eventos cercanos',
         ],

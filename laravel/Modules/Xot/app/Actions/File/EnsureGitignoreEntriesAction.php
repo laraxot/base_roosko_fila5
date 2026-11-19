@@ -6,6 +6,8 @@ namespace Modules\Xot\Actions\File;
 
 use Illuminate\Support\Facades\File;
 
+use function Safe\preg_split;
+
 /**
  * Aggiunge a un `.gitignore` le righe di un link di asset, se mancano.
  *
@@ -24,7 +26,10 @@ class EnsureGitignoreEntriesAction
     public function execute(string $gitignorePath, string $name, string $header = ''): array
     {
         $content = File::exists($gitignorePath) ? File::get($gitignorePath) : ($header !== '' ? rtrim($header)."\n" : '');
-        $lines = array_map('trim', preg_split('/\R/', $content) ?: []);
+        // Safe\preg_split e' tipizzato come list generica: il pattern \R produce solo stringhe.
+        /** @var list<string> $rawLines */
+        $rawLines = preg_split('/\R/', $content);
+        $lines = array_map('trim', $rawLines);
 
         $added = [];
         foreach ([$name.'/', $name] as $entry) {

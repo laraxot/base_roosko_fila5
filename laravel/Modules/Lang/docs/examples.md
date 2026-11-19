@@ -10,7 +10,6 @@ updated: 2026-07-14
 qmd: "git conflicts resolution summary"
 related:
   - "./italian-text-refined-audit-report.md"
-status: draft
 ---
 # 💡 **Esempi Pratici Modulo Lang - Laraxot**
 

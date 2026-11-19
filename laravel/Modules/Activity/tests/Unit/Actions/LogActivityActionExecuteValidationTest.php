@@ -24,7 +24,7 @@ test('LogActivityAction execute rifiuta user non User', function (): void {
     );
 
     expect(fn (): Activity => $action->execute())
-        ->toThrow(InvalidArgumentException::class, 'User must be an instance of User');
+        ->toThrow(InvalidArgumentException::class, 'User must implement UserContract');
 });
 
 test('LogActivityAction execute accetta user null senza persistenza', function (): void {

@@ -9,7 +9,6 @@ issues: []
 discussions: []
 related:
   - ./coding-agent-manifests.md
-status: draft
 ---
 
 # Job {{TYPE^}} LLM Wiki Agent Instructions
@@ -150,5 +149,5 @@ Related:
 ## Related Documentation
 
 - [Project Wiki Integration](../../docs/wiki/README.md)
-- [Project Wiki Agent Instructions](../wiki/agents.md)
+- [Project Wiki Agent Instructions](../../docs/wiki/AGENTS.md)
 - [Module Documentation](../README.md)

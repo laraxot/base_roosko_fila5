@@ -1,12 +1,7 @@
 ---
+qmd: "activity wiki concepts accessor delegation pattern md"
 title: Accessor delegation pattern
 module: Activity
-type: note
-updated: 2026-10-08
-tags: [docs, activity, wiki]
-qmd: "accessor delegation pattern (sacro) activity"
-status: superseded
-superseded_by: ../../accessor-delegation-pattern.md
 ---
 
 # Accessor Delegation Pattern (SACRO)

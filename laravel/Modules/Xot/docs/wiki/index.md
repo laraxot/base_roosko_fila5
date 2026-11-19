@@ -72,14 +72,14 @@ Core framework Laraxot: XotBase classes, Actions, PHPStan Level 10, Filament int
 ## Completamento piattaforma
 
 - [overviews/platform-completion-roadmap.md](./overviews/platform-completion-roadmap.md): **SSoT** roadmap 16 moduli + 4 temi (2026-06-13)
-- [PHPStan troubleshooting](../troubleshooting/phpstan.md)
+- [PHPStan troubleshooting](../archive/_integration/phpstan.md)
 
 ## Compiled Pages
 
 | Pagina | Tipo | Argomento | Data |
 |--------|------|-----------|------|
 | [platform-completion-roadmap](./overviews/platform-completion-roadmap.md) | Overview | Hub completamento progetto Fixcity | 2026-06-13 |
-| [PHPStan troubleshooting](../troubleshooting/phpstan.md) | Guideline | Pattern test PHPStan maximum | 2026-06-13 |
+| [PHPStan troubleshooting](../archive/_integration/phpstan.md) | Guideline | Pattern test PHPStan maximum | 2026-06-13 |
 | [ridondanze-cross-cutting-codebase](./concepts/ridondanze-cross-cutting-codebase.md) | Concept | DRY codebase + doc duplicazioni cross-moduli | 2026-05-21 |
 | [policy-inheritance-boundary](../User/docs/wiki/concepts/policy-inheritance-boundary.md) | Decision | Cross-module | 2026-04-27 |
 | [redundancy-catalog](./concepts/redundancy-catalog.md) | Concept | Indice ridondanza e link report trasversale | 2026-05-21 |
@@ -101,7 +101,7 @@ Core framework Laraxot: XotBase classes, Actions, PHPStan Level 10, Filament int
 - Ogni modulo Nwidart deve avere `config/config.php` (vedi [module-config-php-religion](./concepts/module-config-php-religion.md))
 - Usare Actions non Services (vedi [actions-over-services-governance](https://github.com/laraxot/base_fixcity_fila5/blob/main/.opencode/skills/actions-over-services-governance/SKILL.md))
 - Implementare `casts()` method non `$casts` property (vedi [custom-casts](../-integration/custom-casts.md))
-- PHPStan enforcement (vedi [PHPStan troubleshooting](../troubleshooting/phpstan.md))
+- PHPStan enforcement (vedi [PHPStan troubleshooting](../archive/_integration/phpstan.md))
 - Test PHPStan remediation: Pest resta Pest; bridge/helper condivisi solo quando riducono duplicazione cross-modulo.
 
 ## Bad Practices

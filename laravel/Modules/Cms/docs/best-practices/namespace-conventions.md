@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "namespace conventions"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Convenzioni dei Namespace
@@ -161,6 +160,6 @@ it('uses correct namespace for view models', function () {
 - [Architettura Modulare](/laravel/modules/cms/docs/architecture.md)
 
 ## Collegamenti tra versioni di namespace-conventions.md
-* [namespace-conventions.md](../../../Xot/docs/namespace-conventions.md)
-* [namespace-conventions.md](../../../User/docs/namespace-conventions.md)
+* [namespace-conventions.md](laravel/modules/xot/docs/namespace-conventions.md)
+* [namespace-conventions.md](laravel/modules/user/docs/namespace-conventions.md)
 * [namespace-conventions.md](laravel/modules/cms/docs/best-practices/namespace-conventions.md)

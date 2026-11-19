@@ -10,16 +10,16 @@
         <div class="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
             <div class="text-center">
                 <h2 class="text-2xl font-bold text-gray-900">
-                    {{ __('Logout effettuato con successo') }}
+                    {{ __('pub_theme::auth_pages.logout.success.title') }}
                 </h2>
                 <p class="mt-2 text-sm text-gray-600">
-                    {{ __('Verrai reindirizzato alla home page tra pochi secondi...') }}
+                    {{ __('pub_theme::auth_pages.logout.redirect.message') }}
                 </p>
             </div>
             <div class="mt-6">
                 <a href="{{ route('home') }}"
                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    {{ __('Torna alla Home') }}
+                    {{ __('pub_theme::auth_pages.logout.home.label') }}
                 </a>
             </div>
         </div>

@@ -1,15 +1,3 @@
----
-title: "product roadmap"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "product roadmap"
-issues: []
-discussions: []
-status: draft
----
-
 # Product Roadmap - Theme TwentyOne
 
 ## Modern Tailwind + Vite Theme
@@ -19,6 +7,7 @@ status: draft
 **Status:** Active - Beta Phase
 
 ---
+
 ## Vision Statement
 
 > **Become the developer's choice for modern Laravel applications - the fastest, most enjoyable theme to build with, combining cutting-edge tooling with production-ready components.**
@@ -449,7 +438,7 @@ status: draft
 
 - [Product Requirements Document](prd.md)
 - [Product Strategy](product_strategy.md)
-- [Sprint Planning](sprint_planning.md)
+- [Sprint Planning](sprint-planning.md)
 - [Component Status](components.md)
 
 ### Change Log

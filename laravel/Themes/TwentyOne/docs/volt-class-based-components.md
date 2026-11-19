@@ -1,15 +1,3 @@
----
-title: "volt class based components"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "volt class based components"
-issues: []
-discussions: []
-status: draft
----
-
 # ⚡ VOLT CLASS-BASED COMPONENTS - TwentyOne Theme
 
 **Data**: 2026-03-20  
@@ -18,6 +6,7 @@ status: draft
 **Riferimento**: `docs/project/VOLT_CLASS_BASED_COMPONENTS.md`
 
 ---
+
 ## 🎯 FILOSOFIA TWENTYONE
 
 ### Ruolo del Theme con Volt
@@ -787,7 +776,7 @@ public function boot(): void
 - **Volt Class-Based**: `docs/project/VOLT_CLASS_BASED_COMPONENTS.md`
 - **Architecture Zen**: `docs/project/ARCHITECTURE_ZEN.md`
 - **Folio Routing**: `docs/project/FOLIO_ROUTING.md`
-- **JSON Architecture**: `JSON_ARCHITECTURE.md`
+- **JSON Architecture**: `json-architecture.md`
 
 ### Esterni
 - **Livewire Volt**: https://livewire.laravel.com/docs/volt

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "docs4"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Docs4
@@ -355,7 +354,7 @@ bashscripts/update-doc-links.sh       # Aggiorna collegamenti
 
 ## 13. BACKEND E ARCHITETTURA
 - **Namespace**: mai includere segmento 'app' (es: `Modules\{ModuleName}\Models`)
-- **Spatie Data Objects**: in `Modules/{ModuleName}/app/Datas/`
+- **Spatie Data Objects**: in `Modules/{ModuleName}/Data/`
 - **Spatie QueueableAction**: in `Modules/{ModuleName}/Actions/`
 - **Usare `Modules\Xot\Contracts\UserContract`**
 - **Ottenere classe User**: `XotData::make()->getUserClass()`

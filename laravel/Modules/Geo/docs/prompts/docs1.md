@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "docs1"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Docs1
@@ -32,6 +31,15 @@ status: draft
 ### 13. RIFERIMENTI E COLLEGAMENTI
 
 ---
+
+title: "docs1"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "docs1"
+issues: []
+discussions: []
 ## 1. ARCHITETTURA E STRUTTURA
 
 ### 1.1 Stack Tecnologico Laraxot
@@ -825,7 +833,7 @@ protected function casts(): array
 - [Architecture Overview](../../docs/architecture-overview.md)
 - [Coding Standards](../../docs/coding-standards.md)
 - [Testing Guidelines](../../docs/testing-guidelines.md)
-- [Filament Best Practices](../raw/history/filament-best-practices.md)
+- [Filament Best Practices](../../docs/filament-best-practices.md)
 
 ### 13.2 Moduli Principali
 - [Xot Module](../../../Xot/docs/README.md)

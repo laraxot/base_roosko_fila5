@@ -39,6 +39,13 @@ new class extends Component {
         }
 
         $item = $resolved->item;
+
+        // Item mancante su vista dinamica '.view' o pagina CMS inesistente: 404, mai pagina vuota.
+        $isMissingView = $item === null
+            && (str_ends_with($this->pageSlug, '.view') || ! Page::where('slug', $this->pageSlug)->exists());
+        if ($isMissingView) {
+            abort(404);
+        }
         $predictId = is_object($item) && isset($item->id) ? $item->id : null;
 
         $this->data = [

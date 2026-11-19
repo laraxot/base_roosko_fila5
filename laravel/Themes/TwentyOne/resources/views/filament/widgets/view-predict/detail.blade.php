@@ -23,24 +23,24 @@ $statusClasses = match($card['status_tone']) {
 
 {{-- Skip Link for Accessibility --}}
 <a href="#predict-main-content" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-slate-900 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500">
-    Salta al contenuto principale
+    {{ __('pub_theme::widgets_predict.detail.skip_link.label') }}
 </a>
 
 {{-- Breadcrumb Navigation --}}
-<nav aria-label="Breadcrumb" class="mb-6">
+<nav aria-label="{{ __('pub_theme::widgets_predict.breadcrumb.nav.aria_label') }}" class="mb-6">
     <ol class="flex items-center gap-2 text-sm">
         <li>
             <a href="{{ url('/' . app()->getLocale()) }}" class="text-slate-400 hover:text-white transition-colors flex items-center gap-1">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
-                <span>Home</span>
+                <span>{{ __('pub_theme::widgets_predict.detail.home.label') }}</span>
             </a>
         </li>
         <li class="text-slate-600">/</li>
         <li>
             <a href="{{ url('/' . app()->getLocale() . '/predicts') }}" class="text-slate-400 hover:text-white transition-colors">
-                Mercati
+                {{ __('pub_theme::widgets_predict.detail.markets.label') }}
             </a>
         </li>
         <li class="text-slate-600">/</li>
@@ -57,7 +57,7 @@ $statusClasses = match($card['status_tone']) {
             <svg class="h-4 w-4 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-            <span>Torna ai mercati</span>
+            <span>{{ __('pub_theme::widgets_predict.detail.back_to_markets.label') }}</span>
         </a>
         <div class="flex flex-wrap items-center gap-2 mb-3">
             <span class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-wider {{ $statusClasses }}" role="status">
@@ -82,7 +82,7 @@ $statusClasses = match($card['status_tone']) {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <time datetime="{{ $record->resolution_at?->format('Y-m-d') ?? '' }}">
-                    Risoluzione: {{ $record->resolution_at?->format('d/m/Y') ?? 'Da definire' }}
+                    {{ __('pub_theme::widgets_predict.detail.resolution.label') }} {{ $record->resolution_at?->format('d/m/Y') ?? __('pub_theme::widgets_predict.detail.to_be_defined.label') }}
                 </time>
             </span>
             @if($record->created_at)
@@ -91,7 +91,7 @@ $statusClasses = match($card['status_tone']) {
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <time datetime="{{ $record->created_at->format('Y-m-d') }}">
-                    Creato: {{ $record->created_at->format('d/m/Y') }}
+                    {{ __('pub_theme::widgets_predict.detail.created.label') }} {{ $record->created_at->format('d/m/Y') }}
                 </time>
             </span>
             @endif
@@ -108,7 +108,7 @@ $statusClasses = match($card['status_tone']) {
                         <svg class="h-5 w-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
-                        Esiti Disponibili
+                        {{ __('pub_theme::widgets_predict.detail.available_outcomes.title') }}
                     </h2>
                     <span class="text-xs text-slate-500 uppercase tracking-wider">{{ $marketShapeLabel }}</span>
                 </div>
@@ -135,7 +135,7 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                 </svg>
-                                Favorto
+                                {{ __('pub_theme::widgets_predict.detail.favorite.label') }}
                             </span>
                         </div>
                         @endif
@@ -145,7 +145,7 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clip-rule="evenodd" />
                                 </svg>
-                                Sorpresa
+                                {{ __('pub_theme::widgets_predict.detail.underdog.label') }}
                             </span>
                         </div>
                         @endif
@@ -168,7 +168,7 @@ $statusClasses = match($card['status_tone']) {
                                             <span class="ml-2 text-sm font-medium text-slate-400">@ {{ $odds }}x</span>
                                             @endif
                                         </div>
-                                        <span class="rounded-full bg-slate-950/80 px-4 py-2 text-2xl font-bold text-white" aria-label="Probabilità {{ number_format($percentage, 1) }} percento">
+                                        <span class="rounded-full bg-slate-950/80 px-4 py-2 text-2xl font-bold text-white" aria-label="{{ __('pub_theme::widgets_predict.detail.probability.aria_label', ['percentage' => number_format($percentage, 1)]) }}">
                                             {{ number_format($percentage, 1) }}%
                                         </span>
                                     </div>
@@ -182,13 +182,13 @@ $statusClasses = match($card['status_tone']) {
             
             {{-- Trading Form Section --}}
             <section aria-labelledby="trading-heading">
-                <h2 id="trading-heading" class="sr-only">Piazza Ordine</h2>
+                <h2 id="trading-heading" class="sr-only">{{ __('pub_theme::widgets_predict.detail.place_order.title') }}</h2>
                 <x-predict.trading-form :predict="$record" />
             </section>
         </main>
 
         {{-- Sidebar --}}
-        <aside class="lg:col-span-1" aria-label="Statistiche del mercato">
+        <aside class="lg:col-span-1" aria-label="{{ __('pub_theme::widgets_predict.detail.market_stats.aria_label') }}">
             <div class="space-y-4">
                 {{-- Main Stats Card --}}
                 <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
@@ -196,7 +196,7 @@ $statusClasses = match($card['status_tone']) {
                         <svg class="h-5 w-5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         </svg>
-                        Statistiche
+                        {{ __('pub_theme::widgets_predict.detail.statistics.title') }}
                     </h3>
                     <dl class="space-y-4">
                         <div class="flex justify-between items-center py-2 border-b border-slate-800">
@@ -204,7 +204,7 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                Volume
+                                {{ __('pub_theme::widgets_predict.detail.volume.label') }}
                             </dt>
                             <dd class="font-bold text-white">{{ number_format($card['volume'], 0, ',', '.') }} Credits</dd>
                         </div>
@@ -213,7 +213,7 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
-                                Trader
+                                {{ __('pub_theme::widgets_predict.detail.traders.label') }}
                             </dt>
                             <dd class="font-bold text-white">{{ number_format($card['participants']) }}</dd>
                         </div>
@@ -222,7 +222,7 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                                 </svg>
-                                Opzioni
+                                {{ __('pub_theme::widgets_predict.detail.options.label') }}
                             </dt>
                             <dd class="font-bold text-white">{{ $card['total_options'] }}</dd>
                         </div>
@@ -231,16 +231,16 @@ $statusClasses = match($card['status_tone']) {
                                 <svg class="h-4 w-4 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                                 </svg>
-                                Tipo
+                                {{ __('pub_theme::widgets_predict.detail.type.label') }}
                             </dt>
-                            <dd class="font-bold text-white">{{ $card['is_binary'] ? 'Binario' : 'Multi-esito' }}</dd>
+                            <dd class="font-bold text-white">{{ $card['is_binary'] ? __('pub_theme::widgets_predict.detail.binary.label') : __('pub_theme::widgets_predict.detail.multi_outcome.label') }}</dd>
                         </div>
                         <div class="flex justify-between items-center py-2">
                             <dt class="text-slate-400 flex items-center gap-2">
                                 <svg class="h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
                                 </svg>
-                                Opzioni
+                                {{ __('pub_theme::widgets_predict.detail.options.label') }}
                             </dt>
                             <dd class="font-bold text-white">{{ $outcomesCount }}</dd>
                         </div>
@@ -253,20 +253,20 @@ $statusClasses = match($card['status_tone']) {
                         <svg class="h-5 w-5 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        Come Funziona
+                        {{ __('pub_theme::widgets_predict.detail.how_it_works.title') }}
                     </h3>
                     <ol class="space-y-3 text-sm">
                         <li class="flex gap-3">
                             <span class="flex h-6 w-6 items-center justify-center rounded-full bg-cyan-500/20 text-xs font-bold text-cyan-400">1</span>
-                            <span class="text-slate-300">Scegli un esito e decidi quanto puntare</span>
+                            <span class="text-slate-300">{{ __('pub_theme::widgets_predict.detail.step_choose.label') }}</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/20 text-xs font-bold text-blue-400">2</span>
-                            <span class="text-slate-300">Se indovini ricevi 10x la puntata</span>
+                            <span class="text-slate-300">{{ __('pub_theme::widgets_predict.detail.step_payout.label') }}</span>
                         </li>
                         <li class="flex gap-3">
                             <span class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500/20 text-xs font-bold text-emerald-400">3</span>
-                            <span class="text-slate-300">I crediti vengono accreditati subito</span>
+                            <span class="text-slate-300">{{ __('pub_theme::widgets_predict.detail.step_credits.label') }}</span>
                         </li>
                     </ol>
                 </div>
@@ -277,7 +277,7 @@ $statusClasses = match($card['status_tone']) {
                         <svg class="h-5 w-5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                         </svg>
-                        Condividi
+                        {{ __('pub_theme::widgets_predict.detail.share.title') }}
                     </h3>
                     <div class="flex gap-3">
                         <button class="flex-1 flex items-center justify-center gap-2 rounded-lg bg-slate-800 hover:bg-slate-700 py-2 text-sm text-slate-300 transition-colors">

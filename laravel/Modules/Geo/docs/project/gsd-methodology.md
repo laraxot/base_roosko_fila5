@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "gsd methodology"
 issues: []
 discussions: []
-status: draft
 ---
 
 # GSD (Get Shit Done) - Metodologia Spec-Driven per AI Agents
@@ -32,6 +31,15 @@ GSD è un sistema leggero e potente di **meta-prompting**, **context engineering
 - [Antigravity Port: toonight/get-shit-done-for-antigravity](https://github.com/toonight/get-shit-done-for-antigravity)
 
 ---
+
+title: "gsd methodology"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "gsd methodology"
+issues: []
+discussions: []
 ## Workflow GSD (6 Step)
 
 ```

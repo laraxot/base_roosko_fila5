@@ -9,6 +9,8 @@ use Modules\User\Database\Factories\UserFactory;
 use Modules\User\Models\User;
 use PHPUnit\Framework\Assert;
 
+uses(TestCase::class);
+
 beforeEach(function (): void {
     /* @var \Modules\Gdpr\Tests\TestCase $this */
     User::query()->delete();

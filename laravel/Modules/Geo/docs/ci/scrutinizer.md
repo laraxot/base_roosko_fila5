@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "scrutinizer"
 issues: []
 discussions: []
-status: draft
 ---
 
 https://scrutinizer-ci.com/

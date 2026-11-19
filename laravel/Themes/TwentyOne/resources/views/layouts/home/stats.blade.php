@@ -9,13 +9,13 @@
         <!-- Section heading -->
         <div class="text-center mb-14 reveal">
             <span class="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest text-purple-400 uppercase bg-purple-400/10 rounded-full border border-purple-400/20">
-                La piattaforma in numeri
+                {{ __('pub_theme::home_sections.stats.eyebrow.label') }}
             </span>
             <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-                Risultati che parlano da soli
+                {{ __('pub_theme::home_sections.stats.title.title') }}
             </h2>
             <p class="text-slate-400 max-w-xl mx-auto text-base sm:text-lg leading-relaxed">
-                Una community in crescita, predizioni affidabili e performance verificate nel tempo.
+                {{ __('pub_theme::home_sections.stats.intro.description') }}
             </p>
         </div>
 
@@ -31,7 +31,7 @@
                     </svg>
                 </div>
                 <div class="text-3xl sm:text-4xl font-bold text-white stat-number mb-1" x-text="display" aria-live="polite"></div>
-                <div class="text-sm text-slate-400 font-medium">Predizioni Attive</div>
+                <div class="text-sm text-slate-400 font-medium">{{ __('pub_theme::home_sections.stats.active_predictions.label') }}</div>
             </div>
 
             <!-- Stat 2 — Utenti Registrati -->
@@ -43,7 +43,7 @@
                     </svg>
                 </div>
                 <div class="text-3xl sm:text-4xl font-bold text-white stat-number mb-1" x-text="display" aria-live="polite"></div>
-                <div class="text-sm text-slate-400 font-medium">Utenti Registrati</div>
+                <div class="text-sm text-slate-400 font-medium">{{ __('pub_theme::home_sections.stats.registered_users.label') }}</div>
             </div>
 
             <!-- Stat 3 — Accuratezza Media -->
@@ -55,7 +55,7 @@
                     </svg>
                 </div>
                 <div class="text-3xl sm:text-4xl font-bold text-white stat-number mb-1" x-text="display" aria-live="polite"></div>
-                <div class="text-sm text-slate-400 font-medium">Accuratezza Media</div>
+                <div class="text-sm text-slate-400 font-medium">{{ __('pub_theme::home_sections.stats.average_accuracy.label') }}</div>
             </div>
 
             <!-- Stat 4 — Volume Totale -->
@@ -67,7 +67,7 @@
                     </svg>
                 </div>
                 <div class="text-3xl sm:text-4xl font-bold text-white stat-number mb-1" x-text="display" aria-live="polite"></div>
-                <div class="text-sm text-slate-400 font-medium">Volume Totale</div>
+                <div class="text-sm text-slate-400 font-medium">{{ __('pub_theme::home_sections.stats.total_volume.label') }}</div>
             </div>
         </div>
 
@@ -77,7 +77,7 @@
             <div class="reveal bg-white/5 rounded-2xl border border-white/10 p-6"
                  x-data="progressBar(84)">
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-medium text-slate-300">Sport</span>
+                    <span class="text-sm font-medium text-slate-300">{{ __('pub_theme::home_sections.stats.category_sport.label') }}</span>
                     <span class="text-sm font-semibold text-emerald-400">84%</span>
                 </div>
                 <div class="h-2 bg-white/10 rounded-full overflow-hidden">
@@ -89,7 +89,7 @@
             <div class="reveal bg-white/5 rounded-2xl border border-white/10 p-6"
                  x-data="progressBar(78)">
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-medium text-slate-300">Finanza</span>
+                    <span class="text-sm font-medium text-slate-300">{{ __('pub_theme::home_sections.stats.category_finance.label') }}</span>
                     <span class="text-sm font-semibold text-blue-400">78%</span>
                 </div>
                 <div class="h-2 bg-white/10 rounded-full overflow-hidden">
@@ -101,7 +101,7 @@
             <div class="reveal bg-white/5 rounded-2xl border border-white/10 p-6"
                  x-data="progressBar(91)">
                 <div class="flex justify-between items-center mb-3">
-                    <span class="text-sm font-medium text-slate-300">Politica</span>
+                    <span class="text-sm font-medium text-slate-300">{{ __('pub_theme::home_sections.stats.category_politics.label') }}</span>
                     <span class="text-sm font-semibold text-purple-400">91%</span>
                 </div>
                 <div class="h-2 bg-white/10 rounded-full overflow-hidden">

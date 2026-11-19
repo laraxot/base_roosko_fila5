@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "integrations"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Integrazioni
@@ -106,6 +105,15 @@ SlackAlert::to('channel-name')->message('Job in corso...');
 ### Versione Incoming
 
 ---
+
+title: "integrations"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "integrations"
+issues: []
+discussions: []
 ### Versione Incoming
 
 ---

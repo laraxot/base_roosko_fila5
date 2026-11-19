@@ -3,12 +3,12 @@
     'title' => '',
 ])
 
-<nav aria-label="Breadcrumb" class="mb-6">
+<nav aria-label="{{ __('pub_theme::market_common.nav.breadcrumb.label') }}" class="mb-6">
     <ol class="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
         <li>
             <a href="{{ url('/' . app()->getLocale()) }}" 
                class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                Home
+                {{ __('pub_theme::market_common.nav.home.label') }}
             </a>
         </li>
         <li>

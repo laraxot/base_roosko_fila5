@@ -68,9 +68,9 @@ $getRecentWinners = function() {
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="text-lg font-bold text-white flex items-center">
                             <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse mr-2"></div>
-                            🔥 Vincite in Tempo Reale
+                            🔥 {{ __('pub_theme::blocks_footer.social.realtime_wins.title') }}
                         </h3>
-                        <div class="text-sm text-gray-300">Aggiornato ogni minuto</div>
+                        <div class="text-sm text-gray-300">{{ __('pub_theme::blocks_footer.social.updated_every_minute.label') }}</div>
                     </div>
                     
                     {{-- Contenuto feed live --}}
@@ -85,7 +85,7 @@ $getRecentWinners = function() {
         <div class="border-t border-white/10 py-8">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-6">
-                    <h4 class="text-lg font-semibold text-white mb-2">📰 Citati da</h4>
+                    <h4 class="text-lg font-semibold text-white mb-2">📰 {{ __('pub_theme::blocks_footer.social.cited_by.title') }}</h4>
                 </div>
                 <div class="flex flex-wrap justify-center items-center space-x-8 opacity-60">
                     @foreach($media_mentions as $media)
@@ -111,34 +111,34 @@ $getRecentWinners = function() {
                             <h3 class="text-2xl font-bold">PredictFuture</h3>
                         </div>
                         <p class="text-gray-300 mb-6 max-w-md">
-                            La piattaforma leader per previsioni intelligenti. Unisciti a migliaia di utenti che stanno già guadagnando prevedendo il futuro.
+                            {{ __('pub_theme::blocks_footer.social.about.message') }}
                         </p>
                         
                         <!-- Quick Stats -->
                         <div class="grid grid-cols-3 gap-4 mb-6">
                             <div class="text-center">
                                 <div class="text-2xl font-bold text-green-400">€2.4M+</div>
-                                <div class="text-xs text-gray-400">Pagati</div>
+                                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_footer.social.stat_paid.label') }}</div>
                             </div>
                             <div class="text-center">
                                 <div class="text-2xl font-bold text-blue-400">12K+</div>
-                                <div class="text-xs text-gray-400">Utenti</div>
+                                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_footer.social.stat_users.label') }}</div>
                             </div>
                             <div class="text-center">
                                 <div class="text-2xl font-bold text-purple-400">4.9★</div>
-                                <div class="text-xs text-gray-400">Rating</div>
+                                <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_footer.social.stat_rating.label') }}</div>
                             </div>
                         </div>
                         
                         <!-- Newsletter -->
                         <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                            <h4 class="font-semibold mb-2">🚀 Newsletter VIP</h4>
-                            <p class="text-sm text-gray-300 mb-3">Ricevi previsioni esclusive e bonus</p>
+                            <h4 class="font-semibold mb-2">🚀 {{ __('pub_theme::blocks_footer.social.newsletter.title') }}</h4>
+                            <p class="text-sm text-gray-300 mb-3">{{ __('pub_theme::blocks_footer.social.newsletter.message') }}</p>
                             <div class="flex">
-                                <input type="email" placeholder="La tua email" 
+                                <input type="email" placeholder="{{ __('pub_theme::blocks_footer.social.newsletter_email.placeholder') }}" 
                                        class="flex-1 px-3 py-2 bg-white/20 border border-white/30 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500">
                                 <button class="px-4 py-2 bg-gradient-to-r from-purple-600 to-pink-600 rounded-r-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-200">
-                                    Iscriviti
+                                    {{ __('pub_theme::blocks_footer.social.newsletter_subscribe.label') }}
                                 </button>
                             </div>
                         </div>
@@ -146,25 +146,25 @@ $getRecentWinners = function() {
                     
                     <!-- Quick Links -->
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">🎯 Mercati</h4>
+                        <h4 class="text-lg font-semibold mb-4">🎯 {{ __('pub_theme::blocks_footer.social.markets.title') }}</h4>
                         <ul class="space-y-2">
-                            <li><a href="/markets/crypto" class="text-gray-300 hover:text-white transition-colors">Crypto</a></li>
-                            <li><a href="/markets/sports" class="text-gray-300 hover:text-white transition-colors">Sport</a></li>
-                            <li><a href="/markets/politics" class="text-gray-300 hover:text-white transition-colors">Politica</a></li>
-                            <li><a href="/markets/tech" class="text-gray-300 hover:text-white transition-colors">Tech</a></li>
-                            <li><a href="/markets/finance" class="text-gray-300 hover:text-white transition-colors">Finanza</a></li>
+                            <li><a href="/markets/crypto" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.market_crypto.label') }}</a></li>
+                            <li><a href="/markets/sports" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.market_sports.label') }}</a></li>
+                            <li><a href="/markets/politics" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.market_politics.label') }}</a></li>
+                            <li><a href="/markets/tech" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.market_tech.label') }}</a></li>
+                            <li><a href="/markets/finance" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.market_finance.label') }}</a></li>
                         </ul>
                     </div>
                     
                     <!-- Support -->
                     <div>
-                        <h4 class="text-lg font-semibold mb-4">🛟 Supporto</h4>
+                        <h4 class="text-lg font-semibold mb-4">🛟 {{ __('pub_theme::blocks_footer.social.support.title') }}</h4>
                         <ul class="space-y-2">
-                            <li><a href="/help" class="text-gray-300 hover:text-white transition-colors">Centro Aiuto</a></li>
-                            <li><a href="/tutorial" class="text-gray-300 hover:text-white transition-colors">Come Funziona</a></li>
-                            <li><a href="/faq" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
-                            <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">Contatti</a></li>
-                            <li><a href="/terms" class="text-gray-300 hover:text-white transition-colors">Termini</a></li>
+                            <li><a href="/help" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.help_center.label') }}</a></li>
+                            <li><a href="/tutorial" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.how_it_works.label') }}</a></li>
+                            <li><a href="/faq" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.faq.label') }}</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.contacts.label') }}</a></li>
+                            <li><a href="/terms" class="text-gray-300 hover:text-white transition-colors">{{ __('pub_theme::blocks_footer.social.terms.label') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ $getRecentWinners = function() {
             <div class="border-t border-white/10 py-8">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-6">
-                        <h4 class="text-lg font-semibold text-white mb-2">📰 Citati da</h4>
+                        <h4 class="text-lg font-semibold text-white mb-2">📰 {{ __('pub_theme::blocks_footer.social.cited_by.title') }}</h4>
                     </div>
                     <div class="flex flex-wrap justify-center items-center space-x-8 opacity-60">
                         @foreach($media_mentions as $media)
@@ -195,7 +195,7 @@ $getRecentWinners = function() {
                         
                         <!-- Social Links -->
                         <div class="flex items-center space-x-6 mb-4 md:mb-0">
-                            <span class="text-gray-300">Seguici:</span>
+                            <span class="text-gray-300">{{ __('pub_theme::blocks_footer.social.follow_us.label') }}:</span>
                             
                             <a href="#" class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg transition-colors">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -222,10 +222,10 @@ $getRecentWinners = function() {
                         <!-- Copyright -->
                         <div class="text-center md:text-right">
                             <p class="text-gray-400 text-sm">
-                                © {{ date('Y') }} PredictFuture. Tutti i diritti riservati.
+                                © {{ date('Y') }} PredictFuture. {{ __('pub_theme::blocks_footer.social.rights_reserved.message') }}
                             </p>
                             <p class="text-gray-500 text-xs mt-1">
-                                Piattaforma sicura e regolamentata
+                                {{ __('pub_theme::blocks_footer.social.secure_platform.message') }}
                             </p>
                         </div>
                     </div>

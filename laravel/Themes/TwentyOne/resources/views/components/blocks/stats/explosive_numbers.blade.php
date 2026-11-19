@@ -149,9 +149,6 @@ $getColorClasses = function($color) {
     return $colors[$color] ?? $colors['blue'];
 };
 
-<?php 
-$title = $title ?? '📊 Numeri che Parlano Chiaro';
-$subtitle = $subtitle ?? 'I risultati della nostra community';
 ?>
 
 <div class="py-16 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative overflow-hidden">
@@ -260,10 +257,10 @@ $subtitle = $subtitle ?? 'I risultati della nostra community';
                 <div class="flex items-center justify-between mb-6">
                     <h3 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center">
                         <div class="w-4 h-4 bg-green-400 rounded-full animate-pulse mr-3"></div>
-                        🔥 Attività in Tempo Reale
+                        🔥 {{ __('pub_theme::blocks_marketing.stats.realtime_activity.title') }}
                     </h3>
                     <div class="text-sm text-gray-500 dark:text-gray-400">
-                        Aggiornato ogni secondo
+                        {{ __('pub_theme::blocks_marketing.stats.updated_every_second.label') }}
                     </div>
                 </div>
                 
@@ -274,7 +271,7 @@ $subtitle = $subtitle ?? 'I risultati della nostra community';
                              x-init="setInterval(() => count = Math.floor(Math.random() * 50) + 1200, 2000)">
                             €<span x-text="count.toLocaleString()"></span>
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Guadagnati ora</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.stats.earned_now.label') }}</div>
                     </div>
                     
                     <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl">
@@ -283,7 +280,7 @@ $subtitle = $subtitle ?? 'I risultati della nostra community';
                              x-init="setInterval(() => count = Math.floor(Math.random() * 20) + 80, 3000)">
                             <span x-text="count"></span>
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Utenti online</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.stats.users_online.label') }}</div>
                     </div>
                     
                     <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-xl">
@@ -292,7 +289,7 @@ $subtitle = $subtitle ?? 'I risultati della nostra community';
                              x-init="setInterval(() => count = Math.floor(Math.random() * 10) + 25, 1500)">
                             <span x-text="count"></span>
                         </div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Previsioni/min</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.stats.predictions_per_min.label') }}</div>
                     </div>
                 </div>
             </div>
@@ -300,21 +297,21 @@ $subtitle = $subtitle ?? 'I risultati della nostra community';
         
         <!-- Call to Action -->
         <div class="text-center bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-12 text-white">
-            <h3 class="text-3xl font-bold mb-4">Pronto a Far Parte di Questi Numeri?</h3>
+            <h3 class="text-3xl font-bold mb-4">{{ __('pub_theme::blocks_marketing.stats.ready.title') }}</h3>
             <p class="text-purple-100 mb-8 max-w-2xl mx-auto text-lg">
-                Unisciti alla community di predictor più vincente d'Italia. I numeri parlano chiaro: qui si guadagna davvero!
+                {{ __('pub_theme::blocks_marketing.stats.ready.message') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="/register" 
                    class="inline-flex items-center px-8 py-4 text-lg font-bold text-purple-600 bg-white rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                    🚀 Inizia Gratis
+                    🚀 {{ __('pub_theme::blocks_marketing.stats.start_free.label') }}
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                     </svg>
                 </a>
                 <a href="/demo" 
                    class="inline-flex items-center px-6 py-4 text-lg font-semibold text-white border-2 border-white/30 rounded-full hover:bg-white/10 transition-all duration-300">
-                    📊 Vedi Demo
+                    📊 {{ __('pub_theme::blocks_marketing.stats.view_demo.label') }}
                 </a>
             </div>
         </div>

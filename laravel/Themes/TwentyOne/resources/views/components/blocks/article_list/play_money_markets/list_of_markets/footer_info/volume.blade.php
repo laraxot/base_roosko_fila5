@@ -1,10 +1,9 @@
 <div class="flex flex-col gap-2.5">
     <p class="text-black font-semibold text-sm">
-        Volume
+        {{ __('pub_theme::market_common.terms.volume.label') }}
     </p>
     <p class="text-sm leading-none text-neutral-3 font-roboto">
-        Amount traded in a market, plus its initial
-        liquity.
+        {{ __('pub_theme::market_common.terms.volume_help.help') }}
     </p>
     <div class="flex items-center gap-2">
         {{-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="16px">

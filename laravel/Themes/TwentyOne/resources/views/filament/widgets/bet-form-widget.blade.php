@@ -44,7 +44,7 @@ $watch('currentRatingChoice', () => calculateBetValues());" class="flex flex-col
                     <template x-if="selected && images[selected]">
                         <img :src="images[selected]" alt="" class="w-6 h-6 rounded-full object-cover">
                     </template>
-                    <span x-text="options[selected] || '{{ __('Select') }}'"></span>
+                    <span x-text="options[selected] || '{{ __('pub_theme::widgets_ratings.bet_form.select.placeholder') }}'"></span>
                 </div>
                 <svg class="w-4 h-4 ml-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />

@@ -7,14 +7,28 @@ updated: 2026-09-26
 qmd: "iflow getting started"
 issues: []
 discussions: []
-status: draft
 ---
 
 # IFLOW Getting Started
 
+> **Obsoleto: `npm run copy` non esiste piu' (2026-11-11).** Gli asset dei temi
+> arrivano nella document root con un symlink, non con una copia. Per il
+> procedimento valido vedi
+> [Xot/docs/theme-assets-workflow.md](/laravel/Modules/Xot/docs/theme-assets-workflow.md).
+> Le istruzioni di copia qui sotto sono lasciate come documentazione storica.
+
 Come iniziare a lavorare sul progetto.
 
 ---
+
+title: "iflow getting started"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "iflow getting started"
+issues: []
+discussions: []
 ## 🚀 In 3 Passi
 
 > Non serve essere "guru": serve voglia di imparare e rispetto per le regole del progetto.
@@ -44,7 +58,7 @@ Dal tema Meetup:
 ```bash
 cd Themes/Meetup
 npm install
-npm run build && npm run copy  # OBBLIGATORIO dopo ogni cambio CSS/JS
+npm run build  # OBBLIGATORIO dopo ogni cambio CSS/JS
 ```
 
 ---

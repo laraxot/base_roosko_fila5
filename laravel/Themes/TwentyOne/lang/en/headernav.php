@@ -3,17 +3,70 @@
 declare(strict_types=1);
 
 return [
-    'main' => 'Main Navigation',
-    'markets' => 'Categories',
-    'leaderboard' => 'Leaderboard',
-    'search' => 'Search',
-    'account' => 'Account',
-    'wallet' => 'Wallet',
-    'profile' => 'My profile',
-    'sign_up' => 'Sign up',
-    'login' => 'Log in',
-    'logout' => 'Log out',
-    'user_menu' => 'User menu',
-    'my_data' => 'My details',
-    'credits_aria' => ':credits virtual credits: open wallet',
+    'sections' => [
+        'main' => [
+            'label' => 'Main Navigation',
+        ],
+        'markets' => [
+            'label' => 'Categories',
+        ],
+        'leaderboard' => [
+            'label' => 'Leaderboard',
+        ],
+        'account' => [
+            'label' => 'Account',
+        ],
+    ],
+    'actions' => [
+        'search' => [
+            'label' => 'Search',
+        ],
+    ],
+    'user_menu' => [
+        'profile' => [
+            'label' => 'Profile',
+        ],
+        'logout' => [
+            'label' => 'Logout',
+        ],
+    ],
+    'auth' => [
+        'signup' => [
+            'label' => 'Sign Up',
+        ],
+        'login' => [
+            'label' => 'Login',
+        ],
+    ],
+    'notifications' => [
+        'activity' => [
+            'label' => 'Your activity',
+        ],
+    ],
+    'links' => [
+        'markets' => [
+            'label' => 'Markets',
+        ],
+        'about' => [
+            'label' => 'About My_Company',
+        ],
+        'contact' => [
+            'label' => 'Contact Us',
+        ],
+        'suggest_market' => [
+            'label' => 'Suggest a Market',
+        ],
+        'community' => [
+            'label' => 'Community',
+        ],
+        'privacy' => [
+            'label' => 'Privacy Policy',
+        ],
+        'terms' => [
+            'label' => 'Terms and Conditions',
+        ],
+        'faq' => [
+            'label' => 'FAQ',
+        ],
+    ],
 ];

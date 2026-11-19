@@ -1,5 +1,5 @@
 <div>
-	<button type="button" aria-haspopup="true" aria-controls="links-dropdown" aria-label="Menu"  id="links-dropdown-button" data-dropdown-toggle="links-dropdown" class="relative w-10 h-10 rounded-xl overflow-clip">
+	<button id="links-dropdown-button" data-dropdown-toggle="links-dropdown" class="relative w-10 h-10 rounded-xl overflow-clip">
 		@if(Auth::check())
 			<img class="absolute inset-0 object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-T5QGVG2Min9C7j48bstorjAE8YXzOW8EDB4iFq1jFA&s" alt="">
 			{{-- <img class="absolute inset-0 object-cover" src="{{$_profile->getAvatarUrl()}}" alt=""> --}}
@@ -18,7 +18,7 @@
 					<path d="M0,0 h14 l-14,14 h14 v7 h-7 v7 h-7 z"></path>
 				</svg>
 			</span>
-			About My_Company
+			{{ __('pub_theme::headernav.links.about.label') }}
 		</a>
 		<a class="link-item" href="/i/feedback/contact">
 			<span class="item-icon">
@@ -29,7 +29,7 @@
 					</path>
 				</svg>
 			</span>
-			Contact Us
+			{{ __('pub_theme::headernav.links.contact.label') }}
 		</a>
 		<a class="link-item" href="/i/feedback/suggestion">
 			<span class="item-icon">
@@ -40,7 +40,7 @@
 					</path>
 				</svg>
 			</span>
-			Suggest a Market
+			{{ __('pub_theme::headernav.links.suggest_market.label') }}
 		</a>
 		<a href="https://community.My_Company.com" class="link-item" target="_blank">
 			<span class="item-icon">
@@ -51,7 +51,7 @@
 					</path>
 				</svg>
 			</span>
-			Community
+			{{ __('pub_theme::headernav.links.community.label') }}
 		</a>
 		<a href="https://docs.My_Company.com/privacy-policy" class="link-item" target="_blank">
 			<span
@@ -62,7 +62,7 @@
 					</path>
 				</svg>
 			</span>
-			Privacy Policy
+			{{ __('pub_theme::headernav.links.privacy.label') }}
 		</a>
 		<a href="https://docs.My_Company.com/terms-of-service" class="link-item" target="_blank">
 			<span
@@ -74,7 +74,7 @@
 						fill="currentColor"></path>
 				</svg>
 			</span>
-			Terms and Conditions
+			{{ __('pub_theme::headernav.links.terms.label') }}
 		</a>
 		<a href="https://docs.My_Company.com/faqs" class="link-item" target="">
 			<span class="item-icon">
@@ -85,7 +85,7 @@
 						fill="currentColor"></path>
 				</svg>
 			</span>
-			FAQ
+			{{ __('pub_theme::headernav.links.faq.label') }}
 		</a>
         {{--
         <a href="{{ route('logout') }}" class="link-item" target="">
@@ -98,7 +98,7 @@
             @csrf
             <x-fas-sign-out-alt />
             <button type="submit">
-                 {{ __('Logout') }}
+                 {{ __('pub_theme::headernav.user_menu.logout.label') }}
             </button>
         </form>
         @endauth

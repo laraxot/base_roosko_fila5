@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-2.5 mb-2.5">
     <p class="text-black font-semibold text-sm">
-        Forecasters
+        {{ __('pub_theme::market_common.terms.forecasters.label') }}
     </p>
     <div class="flex items-center gap-2">
         {{-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20" width="16px">

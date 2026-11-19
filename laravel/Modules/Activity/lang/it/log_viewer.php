@@ -28,9 +28,6 @@ return [
         'refresh' => [
             'label' => 'Aggiorna',
         ],
-        'download' => [
-            'label' => 'Scarica il file',
-        ],
     ],
     'messages' => [
         'no_files' => 'Nessun file di log trovato in storage/logs.',

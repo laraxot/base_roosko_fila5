@@ -10,10 +10,7 @@ discussions: []
 module: Tenant
 concept: Configuration Distribution
 last_updated: 2026-04-15
-status: stale
 ---
-
-> Nota 2026-10-14 (docs-audit): Cita TenantService::config() e cartelle tenant_acme: TenantService e' stato eliminato; la fusione la fa ResolveTenantConfigValueAction su config/<host invertito>/<gruppo>.php (verificato 2026-10-14). Contenuto non riscritto, verificare prima di usarlo.
 
 # Configuration Distribution
 

@@ -64,7 +64,7 @@ $market = [
       <div class="text-3xl font-black {{ $market['yes_percent'] > 50 ? 'text-green-400' : 'text-red-400' }}">
         {{ $market['yes_percent'] }}%
       </div>
-      <div class="text-xs text-gray-400">PROBABILITÀ</div>
+      <div class="text-xs text-gray-400">{{ __('pub_theme::blocks_trading.one_click.probability.label') }}</div>
     </div>
   </div>
 
@@ -83,7 +83,7 @@ $market = [
   <div class="flex items-center justify-center mb-4">
     <div class="flex items-center space-x-2 {{ str_starts_with($market['trend'], '+') ? 'text-green-400' : 'text-red-400' }}">
       <span class="text-sm">{{ str_starts_with($market['trend'], '+') ? '📈' : '📉' }}</span>
-      <span class="font-bold">{{ $market['trend'] }} nelle ultime 24h</span>
+      <span class="font-bold">{{ __('pub_theme::blocks_trading.one_click.trend_24h.label', ['trend' => $market['trend']]) }}</span>
     </div>
   </div>
 
@@ -112,10 +112,10 @@ $market = [
   <!-- Quick Info -->
   <div class="text-center">
     <div class="text-xs text-gray-400 mb-2">
-      💸 Bet minimo €10 • ⚡ Esecuzione istantanea • 🚫 0% commissioni
+      💸 {{ __('pub_theme::blocks_trading.one_click.conditions.message') }}
     </div>
     <div class="text-xs text-yellow-400 font-semibold">
-      💡 Tip: {{ $market['yes_percent'] > 50 ? 'Mercato rialzista' : 'Mercato ribassista' }}
+      💡 {{ __('pub_theme::blocks_trading.one_click.tip.label') }}: {{ $market['yes_percent'] > 50 ? __('pub_theme::blocks_trading.one_click.bullish.label') : __('pub_theme::blocks_trading.one_click.bearish.label') }}
     </div>
   </div>
 

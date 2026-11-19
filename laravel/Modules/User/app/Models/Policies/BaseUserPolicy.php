@@ -24,7 +24,7 @@ class BaseUserPolicy extends XotBasePolicy
      *
      * @var list<string>
      */
-    public const array ADMIN_ROLES = ['admin', 'user::admin'];
+    public const array ADMIN_ROLES = ['admin', 'user::admin', 'restaurant::admin'];
 
     /**
      * Abilita' che non si esercitano mai sul proprio utente.
@@ -40,7 +40,10 @@ class BaseUserPolicy extends XotBasePolicy
             return false;
         }
 
-        return parent::before($user, $ability);
+        // Solo il super-admin passa a priori. Il bypass generico di XotBasePolicy per il ruolo `{modulo}::admin`
+        // qui non vale: `user::admin` e' un amministratore come `admin` (ADMIN_ROLES) e le regole sotto
+        // gli vietano di toccare un super-admin, di ripristinare o eliminare definitivamente.
+        return $user->hasRole('super-admin') ? true : null;
     }
 
     /**

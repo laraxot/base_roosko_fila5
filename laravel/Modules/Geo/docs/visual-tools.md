@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "visual tools"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Visual Regression & Documentation Tool (Playwright)
@@ -38,4 +37,12 @@ Ogni nuovo componente UI (es. `MapPositioner`) deve essere accompagnato da:
 2. Uno screenshot aggiornato nella cartella `docs/img` del modulo di appartenenza.
 
 ---
+title: "visual tools"
+type: note
+tags: [documentation]
+created: 2026-09-26
+updated: 2026-09-26
+qmd: "visual tools"
+issues: []
+discussions: []
 *Ultimo aggiornamento: Aprile 2026*

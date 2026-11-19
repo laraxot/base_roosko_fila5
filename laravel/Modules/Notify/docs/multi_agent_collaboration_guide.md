@@ -1,5 +1,5 @@
 ---
-qmd: "multi agent collaboration guide"
+qmd: "MULTI AGENT COLLABORATION GUIDE"
 issues: []
 discussions: []
 title: "Multi-Agent Collaboration Rules & Guidelines"
@@ -8,7 +8,6 @@ type: integration
 tags: [integrations, modules, notify]
 created: 2026-08-24
 updated: 2026-08-24
-status: draft
 ---
 
 # Multi-Agent Collaboration Rules & Guidelines

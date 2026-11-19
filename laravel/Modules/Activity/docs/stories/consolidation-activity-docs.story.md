@@ -24,7 +24,7 @@ Organize 41 orphaned `.md` files in Activity module into structured BMAD hierarc
 Activity module `docs/` contained 155 .md files with:
 - 41 orphaned files in root directory
 - 5+ duplicate event-sourcing pattern files
-- 3 variant index files (`00-index.md`, `00-index.md`, `00-INDEX.md`)
+- 3 variant index files (`00-index.md`, `00-index-1.md`, `00-INDEX.md`)
 - 2 API documentation files (`api.md`, `API.md`)
 - Scattered coverage, analysis, and feature docs
 - Unclear categorization and file relationships
@@ -112,7 +112,7 @@ Activity/docs/
 ### Deleted
 - `api.md` (duplicate, kept API.md)
 - `00-index.md` (duplicate, kept 00-INDEX.md)
-- `00-index.md` (duplicate, kept 00-INDEX.md)
+- `00-index-1.md` (duplicate, kept 00-INDEX.md)
 - `architecture.md` (duplicate, kept ARCHITECTURE.md)
 - `readme-*.md`, `readme_*.md` (old variants, archived)
 - `ai-methodologies.md` (unclear, archived)

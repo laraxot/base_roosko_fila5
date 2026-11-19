@@ -10,7 +10,6 @@ updated: 2026-07-14
 qmd: "filament4 migration"
 related:
   - "./italian-text-refined-audit-report.md"
-status: draft
 ---
 # Ottimizzazioni Approfondite Modulo Lang - DRY + KISS
 
@@ -307,16 +306,6 @@ php artisan test --testsuite=Lang
 - [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
 - [**Convenzioni Sistema**](../../docs/core/conventions.md)
 - [**Template Moduli**](../../docs/templates/)
-- [**Documentazione Core Sistema**](core)
-- [**PHPStan Guide**](../../../docs/core/phpstan-guide.md)
-- [**Filament Best Practices**](../../../docs/core/filament-best-practices.md)
-- [**Convenzioni Sistema**](../../../docs/core/conventions.md)
-- [**Template Moduli**](../../../../docs/templates)
-- [**Documentazione Core Sistema**](core)
-- [**PHPStan Guide**](../../docs/core/phpstan-guide.md)
-- [**Filament Best Practices**](../../docs/core/filament-best-practices.md)
-- [**Convenzioni Sistema**](../../docs/core/conventions.md)
-- [**Template Moduli**](templates)
 
 ---
 

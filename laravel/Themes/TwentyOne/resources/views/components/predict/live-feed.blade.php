@@ -17,10 +17,10 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
                 </span>
-                <span class="font-semibold text-white">LIVE</span>
+                <span class="font-semibold text-white">{{ __('pub_theme::predict_home.live_feed.live.label') }}</span>
             </div>
             <span class="text-slate-500">•</span>
-            <span class="text-slate-300 font-medium">Ultime previsioni:</span>
+            <span class="text-slate-300 font-medium">{{ __('pub_theme::predict_home.live_feed.intro.label') }}</span>
             
             {{-- Scrolling Feed --}}
             <div class="flex-1 overflow-hidden">
@@ -28,7 +28,7 @@
                     @foreach($predictions as $pred)
                     <div class="flex items-center gap-2 text-sm whitespace-nowrap">
                         <span class="text-indigo-400 font-semibold">{{ $pred['user'] }}</span>
-                        <span class="text-slate-500">ha predetto</span>
+                        <span class="text-slate-500">{{ __('pub_theme::predict_home.live_feed.predicted.label') }}</span>
                         <span class="{{ $pred['action'] === 'YES' ? 'text-emerald-400' : 'text-rose-400' }} font-bold">
                             {{ $pred['action'] }}
                         </span>

@@ -129,19 +129,19 @@ $getDefaultTestimonials = function() {
                     @endphp
                     <div class="text-center">
                         <div class="text-3xl font-black text-green-600 dark:text-green-400">{{ $formattedVolume }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Crediti in gioco</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.credits_in_play.label') }}</div>
                     </div>
                     <div class="text-center">
                         <div class="text-3xl font-black text-blue-600 dark:text-blue-400">{{ number_format($totalUsers) }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Utenti Registrati</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.registered_users.label') }}</div>
                     </div>
                     <div class="text-center">
                         <div class="text-3xl font-black text-purple-600 dark:text-purple-400">{{ $totalPredicts }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Mercati Attivi</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.active_markets.label') }}</div>
                     </div>
                     <div class="text-center">
                         <div class="text-3xl font-black text-orange-600 dark:text-orange-400">{{ $totalPredicts > 0 ? number_format($totalUsers / max($totalPredicts, 1), 1) : '0' }}</div>
-                        <div class="text-sm text-gray-600 dark:text-gray-400">Utenti/Mercato</div>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.users_per_market.label') }}</div>
                     </div>
                 </div>
             @endif
@@ -202,11 +202,11 @@ $getDefaultTestimonials = function() {
                     <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                         <div class="text-center">
                             <div class="text-2xl font-bold text-green-600 dark:text-green-400">{{ $testimonial['prediction_accuracy'] }}%</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">Precisione</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.accuracy.label') }}</div>
                         </div>
                         <div class="text-center">
                             <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">{{ $testimonial['total_predictions'] }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">Previsioni</div>
+                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_marketing.testimonials.predictions.label') }}</div>
                         </div>
                     </div>
                     
@@ -216,10 +216,10 @@ $getDefaultTestimonials = function() {
                             💎 {{ $testimonial['favorite_market'] }}
                         </span>
                         <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800 dark:bg-orange-900/50 dark:text-orange-200">
-                            🏆 Max: {{ $testimonial['biggest_win'] }}
+                            🏆 {{ __('pub_theme::blocks_marketing.testimonials.max.label') }}: {{ $testimonial['biggest_win'] }}
                         </span>
                         <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
-                            📅 Dal {{ \Carbon\Carbon::parse($testimonial['join_date'])->format('M Y') }}
+                            📅 {{ __('pub_theme::blocks_marketing.testimonials.since.label') }} {{ \Carbon\Carbon::parse($testimonial['join_date'])->format('M Y') }}
                         </span>
                     </div>
                 </div>
@@ -228,18 +228,18 @@ $getDefaultTestimonials = function() {
         
         <!-- CTA Section -->
         <div class="text-center bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-white">
-            <h3 class="text-2xl font-bold mb-4">Pronto a Diventare il Prossimo Vincitore?</h3>
+            <h3 class="text-2xl font-bold mb-4">{{ __('pub_theme::blocks_marketing.testimonials.ready.title') }}</h3>
             <p class="text-green-100 mb-6 max-w-2xl mx-auto">
-                Unisciti a migliaia di utenti che stanno già guadagnando con le loro previsioni. Inizia gratis oggi stesso!
+                {{ __('pub_theme::blocks_marketing.testimonials.ready.message') }}
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
                 <a href="/register" 
                    class="inline-flex items-center px-8 py-3 text-lg font-bold text-green-600 bg-white rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                    🚀 Inizia Gratis Ora
+                    🚀 {{ __('pub_theme::blocks_marketing.testimonials.start_free_now.label') }}
                 </a>
                 <a href="/demo" 
                    class="inline-flex items-center px-6 py-3 text-lg font-semibold text-white border-2 border-white/30 rounded-full hover:bg-white/10 transition-all duration-300">
-                    📊 Vedi Demo
+                    📊 {{ __('pub_theme::blocks_marketing.stats.view_demo.label') }}
                 </a>
             </div>
         </div>

@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "theme reusability"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Best Practices per la Riusabilità dei Temi

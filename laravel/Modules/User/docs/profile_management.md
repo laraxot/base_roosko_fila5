@@ -5,8 +5,6 @@ type: integration
 tags: [integrations, modules, user]
 created: 2026-08-24
 updated: 2026-08-24
-status: draft
-qmd: "profile management in laravel modules user"
 ---
 
 # Profile Management in Laravel Modules
@@ -77,11 +75,7 @@ This document outlines the best practices for managing user profiles within a La
 ## Links to Related Documentation
 - [User Module Index](./index.md)
 
-- [User Module Index](./index.md)
-- [BaseUser Model](./baseuser.md)
-- [Authentication Pages Implementation](./auth_pages_implementation.md)
-- [Routing Best Practices](./routing_best_practices.md)
-- [Session Management](./session_management.md)
+- [User Module Index](./INDEX.md)
 - [BaseUser Model](./baseuser.md)
 - [Authentication Pages Implementation](./auth_pages_implementation.md)
 - [Routing Best Practices](./routing_best_practices.md)

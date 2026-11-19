@@ -1,18 +1,6 @@
----
-title: "theme philosophy zen"
-type: note
-tags: [documentation]
-created: 2026-09-26
-updated: 2026-09-26
-qmd: "theme philosophy zen"
-issues: []
-discussions: []
-status: draft
----
-
 # Theme philosophy zen
 
-**Path**: `laravel/Themes/TwentyOne/docs/THEME_PHILOSOPHY_ZEN.md`
+**Path**: `laravel/Themes/TwentyOne/docs/theme-philosophy-zen.md`
 **Last updated**: 2026-03-26
 
 ## Il ruolo del tema
@@ -48,6 +36,6 @@ Non fa:
 ## Riferimenti bidirezionali
 
 - [TwentyOne docs index](./00-INDEX.md)
-- [Predict detail agnostic contract](./PREDICT_DETAIL_AGNOSTIC_CONTRACT.md)
+- [Predict detail agnostic contract](./predict-detail-agnostic-contract.md)
 - [Predict docs index](../../../Modules/Predict/docs/00-INDEX.md)
 - [AI agents architecture rule](../../../../bashscripts/ai/.agents/docs/architecture/filament-table-vs-blade-component.md)

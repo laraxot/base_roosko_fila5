@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "09 NOTEBOOKLM SKILL"
 issues: []
 discussions: []
-status: superseded
-superseded_by: 09-notebooklm-skill.md
 ---
 
 # NotebookLM Skill - Guida Installazione e Utilizzo

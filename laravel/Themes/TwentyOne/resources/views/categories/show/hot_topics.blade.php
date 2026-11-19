@@ -1,6 +1,6 @@
 <div class="container max-w-6xl p-6 mx-auto space-y-4">
     <p class="flex items-center gap-3 mb-4 text-sm text-gray-400">
-        <span>All</span>
+        <span>{{ __('pub_theme::market_common.terms.all.label') }}</span>
         @foreach($category->ancestors()->breadthFirst()->get() as $ancestor)
             <span>
                 <x-heroicon-o-chevron-right width="15px"/>

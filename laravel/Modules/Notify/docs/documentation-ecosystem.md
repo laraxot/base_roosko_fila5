@@ -4,24 +4,19 @@ type: concept
 tags: [documentation, ecosystem]
 created: 2026-07-14
 updated: 2026-07-14
+qmd: "documentation-ecosystem fixcity documentation ecosystem - visual map"
 qmd: "documentation-ecosystem ptv documentation ecosystem - visual map"
 issues: ["https://github.com/provtv/base_ptv_fila5/issues/124"]
 discussions: ["https://github.com/provtv/base_ptv_fila5/discussions/1"]
 related:
-  - "./00-index.md"
+  - "./00-index-1.md"
   - "./00-index-2.md"
   - "./00-index.md"
-  - "./absolute-completion.md"
+  - "./absolute-completion-100.md"
   - "./acronym-naming-conventions.md"
-  - "./00-index-documentation.md"
-  - "./00-index-2.md"
-  - "./00-index.md"
-  - "./absolute-completion-completamento-assoluto.md"
-  - "./acronym-naming-conventions.md"
-  - "./acronym-naming-conventions.md"
+  - "./acronym-naming-conventions-2.md"
   - "./acronym-naming-conventions.md"
   - "./action-plan-immediate.md"
-status: draft
 ---
 
 # FixCity Documentation Ecosystem - Visual Map
@@ -113,8 +108,7 @@ status: draft
 ```
 Each Module/Theme has:
 
-00-index.md
-00-index-documentation.md
+00-index-1.md
 ├─ Purpose & scope
 ├─ Key classes & files
 ├─ Dependencies
@@ -283,17 +277,6 @@ Xot (Core) ◄──────────────────────
 | Track changes | [Activity Docs](../laravel/Modules/Activity/docs/) | [Audit Trail](../laravel/Modules/Activity/docs/guides/) | Examples |
 | Code standards | [claude.md](../laravel/claude.md) | [Copilot Inst.](../../.github/copilot-instructions.md) | Review |
 | Architecture | [Architecture](architecture-diagrams.md) | [Design Comuni](../laravel/Themes/Sixteen/docs/design-comuni/) | Deep dive |
-| Quick start | [Copilot Inst.](../.github/copilot-instructions.md) | [Architecture](architecture-diagrams.md) | Your task |
-| Module overview | [Module Index](module-docs-index.md) | `Modules/{Name}/docs/00-index-1.md` | Details |
-| Theme overview | [Theme Index](THEMES_documentation-index.md) | `Themes/{Name}/docs/00-index-1.md` | Details |
-| Create content | [Cms Docs](../../Cms/docs) | [Block Catalog](../laravel/Themes/Sixteen/docs/COMPONENT_CATALOG.md) | Examples |
-| Add component | [Component Guide](../laravel/Themes/Sixteen/docs/guides/adding-components.md) | [Layout Hierarchy](../../../Themes/Sixteen/docs/layout-hierarchy.md) | Code |
-| Authentication | [User Docs](../../User/docs) | [Auth Guide](../laravel/Modules/User/docs/guides/) | Examples |
-| Handle files | [Media Docs](../../Media/docs) | [File Upload](../laravel/Modules/Media/docs/guides/) | Examples |
-| Send notifications | [Notify Docs](.) | [Channels](guides) | Examples |
-| Track changes | [Activity Docs](../../Activity/docs) | [Audit Trail](../../Activity/docs/guides) | Examples |
-| Code standards | [claude.md](../../../CLAUDE.md) | [Copilot Inst.](../.github/copilot-instructions.md) | Review |
-| Architecture | [Architecture](architecture-diagrams.md) | [Design Comuni](../../../Themes/Sixteen/docs/design-comuni) | Deep dive |
 
 ---
 
@@ -317,8 +300,7 @@ Relevant Master Index (MODULE or THEME)
   │ (Module Index or Theme Index)
   │
   ▼
-Module/Theme 00-index.md
-Module/Theme 00-index-documentation.md
+Module/Theme 00-index-1.md
   │ (Component details)
   │
   ▼
@@ -351,8 +333,7 @@ Module Documentation (module-docs-index.md)
   │ (Get module overview)
   │
   ▼
-Module 00-index.md
-Module 00-index-documentation.md
+Module 00-index-1.md
   │ (Dependencies, classes)
   │
   ▼
@@ -416,15 +397,13 @@ laravel/
 ```
 laravel/Modules/
 ├── Xot/docs/
-│   ├── 00-index.md
-│   ├── 00-index-documentation.md
+│   ├── 00-index-1.md
 │   ├── architecture/
 │   ├── guides/
 │   └── reference/
 │
 ├── Cms/docs/
-│   ├── 00-index.md
-│   ├── 00-index-documentation.md
+│   ├── 00-index-1.md
 │   ├── architecture/
 │   ├── guides/
 │   └── reference/
@@ -437,8 +416,7 @@ laravel/Modules/
 ```
 laravel/Themes/
 ├── Sixteen/docs/
-│   ├── 00-index.md
-│   ├── 00-index-documentation.md
+│   ├── 00-index-1.md
 │   ├── architecture/
 │   ├── design-comuni/
 │   ├── components/
@@ -447,8 +425,7 @@ laravel/Themes/
 │   └── screenshots/
 │
 └── TwentyOne/docs/
-    ├── 00-index.md
-    ├── 00-index-documentation.md
+    ├── 00-index-1.md
     └── (similar structure)
 ```
 
@@ -466,8 +443,6 @@ laravel/Themes/
 - **Code Quality** → [CODE_QUALITY_STANDARDS.md](CODE_QUALITY_STANDARDS.md)
 - **Framework Rules** → [laravel/claude.md](../laravel/claude.md)
 - **Copilot Usage** → [.github/copilot-instructions.md](../../.github/copilot-instructions.md)
-- **Framework Rules** → [laravel/claude.md](../../../CLAUDE.md)
-- **Copilot Usage** → [.github/copilot-instructions.md](../.github/copilot-instructions.md)
 - **Design Comuni** → Search for `DESIGN_COMUNI_` files
 
 ### By Use Case
@@ -504,8 +479,7 @@ laravel/Themes/
    - General? → docs/
 
 2. Follow structure:
-   - 00-index.md (always)
-   - 00-index-documentation.md (always)
+   - 00-index-1.md (always)
    - architecture/ (how it works)
    - guides/ (how-to)
    - reference/ (API)
@@ -527,8 +501,7 @@ laravel/Themes/
 
 Every documentation hub should have:
 
-- [ ] **00-index.md** - Master index for the section
-- [ ] **00-index-documentation.md** - Master index for the section
+- [ ] **00-index-1.md** - Master index for the section
 - [ ] **architecture/** - Diagrams and structure
 - [ ] **guides/** - How-to guides and examples
 - [ ] **reference/** - API and configuration reference
@@ -552,8 +525,7 @@ Master Indexes:
 ├─ module-docs-index.md (Module hub)
 ├─ THEMES_documentation-index.md (Theme hub)
 ├─ architecture-diagrams.md (System overview)
-├─ docs/00-index.md (Root index)
-├─ docs/00-index-documentation.md (Root index)
+├─ docs/00-index-1.md (Root index)
 └─ documentation-ecosystem.md (You are here)
 
 Connected Via:
@@ -573,11 +545,7 @@ Connected Via:
 1. Start: [Copilot Instructions](../../.github/copilot-instructions.md)
 2. Understand: [Architecture Diagrams](architecture-diagrams.md)
 3. Explore: [Module Index](module-docs-index.md) or [Theme Index](THEMES_documentation-index.md)
-4. Deep Dive: Relevant module/theme 00-index.md
-1. Start: [Copilot Instructions](../.github/copilot-instructions.md)
-2. Understand: [Architecture Diagrams](architecture-diagrams.md)
-3. Explore: [Module Index](module-docs-index.md) or [Theme Index](THEMES_documentation-index.md)
-4. Deep Dive: Relevant module/theme 00-index-documentation.md
+4. Deep Dive: Relevant module/theme 00-index-1.md
 5. Implement: Using guides and examples
 6. Validate: Against claude.md standards
 
@@ -592,7 +560,6 @@ Connected Via:
 ### For New Project Members
 
 1. Read: [Copilot Instructions](../../.github/copilot-instructions.md)
-1. Read: [Copilot Instructions](../.github/copilot-instructions.md)
 2. Watch: Architecture diagrams in this file
 3. Explore: Master indexes for your area
 4. Ask: Use GitHub discussions for questions

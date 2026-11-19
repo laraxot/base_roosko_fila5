@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "mail template model changes"
 issues: []
 discussions: []
-status: superseded
-superseded_by: mail-template-model-changes.md
 ---
 
 # Modifiche al Modello MailTemplate
@@ -147,10 +145,6 @@ protected $casts = [
 - [Regole Migrazioni](./MIGRATION_RULES.md)
 - [Documentazione Template](./EMAIL_TEMPLATES.md)
 - [Best Practices](./BEST-PRACTICES.md)
-- [Modifiche Migrazione](./migration_changes.md)
-- [Regole Migrazioni](./migration_rules.md)
-- [Documentazione Template](./email_templates.md)
-- [Best Practices](./best-practices.md)
 
 ## Note Importanti
 

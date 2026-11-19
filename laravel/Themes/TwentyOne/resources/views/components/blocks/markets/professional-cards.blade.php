@@ -26,9 +26,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300">
-                            🗳️ Politics
+                            🗳️ {{ __('pub_theme::blocks_markets.professional.cat_politics.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: Dec 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'Dec 2025']) }}</div>
                     </div>
                     @endif
 
@@ -42,7 +42,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">67¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">33¢</span>
@@ -57,14 +57,14 @@
                     {{-- Volume Info --}}
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €25.2K</span>
-                        <span>1,234 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€25.2K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 1234, ['count' => '1,234']) }}</span>
                     </div>
                     @endif
 
                     {{-- Action Button --}}
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -75,9 +75,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300">
-                            ⚽ Sports
+                            ⚽ {{ __('pub_theme::blocks_markets.professional.cat_sports.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: May 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'May 2025']) }}</div>
                     </div>
                     @endif
 
@@ -89,7 +89,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">23¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">77¢</span>
@@ -103,13 +103,13 @@
 
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €45.8K</span>
-                        <span>2,156 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€45.8K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 2156, ['count' => '2,156']) }}</span>
                     </div>
                     @endif
 
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -120,9 +120,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300">
-                            ₿ Crypto
+                            ₿ {{ __('pub_theme::blocks_markets.professional.cat_crypto.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: Jun 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'Jun 2025']) }}</div>
                     </div>
                     @endif
 
@@ -134,7 +134,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">42¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">58¢</span>
@@ -148,13 +148,13 @@
 
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €89.3K</span>
-                        <span>3,789 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€89.3K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 3789, ['count' => '3,789']) }}</span>
                     </div>
                     @endif
 
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -165,9 +165,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-300">
-                            💻 Technology
+                            💻 {{ __('pub_theme::blocks_markets.professional.cat_technology.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: Dec 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'Dec 2025']) }}</div>
                     </div>
                     @endif
 
@@ -179,7 +179,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">29¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">71¢</span>
@@ -193,13 +193,13 @@
 
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €67.1K</span>
-                        <span>1,890 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€67.1K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 1890, ['count' => '1,890']) }}</span>
                     </div>
                     @endif
 
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -210,9 +210,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 dark:bg-indigo-900/20 dark:text-indigo-300">
-                            📈 Economics
+                            📈 {{ __('pub_theme::blocks_markets.professional.cat_economics.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: Mar 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'Mar 2025']) }}</div>
                     </div>
                     @endif
 
@@ -224,7 +224,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">78¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">22¢</span>
@@ -238,13 +238,13 @@
 
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €34.7K</span>
-                        <span>967 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€34.7K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 967, ['count' => '967']) }}</span>
                     </div>
                     @endif
 
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -255,9 +255,9 @@
                     @if($show_categories)
                     <div class="flex items-center justify-between mb-4">
                         <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-pink-100 text-pink-800 dark:bg-pink-900/20 dark:text-pink-300">
-                            🎬 Entertainment
+                            🎬 {{ __('pub_theme::blocks_markets.professional.cat_entertainment.label') }}
                         </span>
-                        <div class="text-sm text-gray-500 dark:text-gray-400">Resolves: Feb 2025</div>
+                        <div class="text-sm text-gray-500 dark:text-gray-400">{{ __('pub_theme::blocks_markets.card.resolves_on.label', ['date' => 'Feb 2025']) }}</div>
                     </div>
                     @endif
 
@@ -269,7 +269,7 @@
                         <div class="flex items-center space-x-4">
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-green-600 dark:text-green-400">56¢</span>
-                                <span class="text-sm text-gray-500">YES</span>
+                                <span class="text-sm text-gray-500">{{ __('pub_theme::market_common.terms.yes_upper.label') }}</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <span class="text-2xl font-bold text-red-600 dark:text-red-400">44¢</span>
@@ -283,13 +283,13 @@
 
                     @if($show_volume)
                     <div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
-                        <span>Volume: €19.4K</span>
-                        <span>743 traders</span>
+                        <span>{{ __('pub_theme::blocks_markets.card.volume_amount.label', ['amount' => '€19.4K']) }}</span>
+                        <span>{{ trans_choice('pub_theme::market_common.stats.traders_count.label', 743, ['count' => '743']) }}</span>
                     </div>
                     @endif
 
                     <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition-colors">
-                        Trade Now
+                        {{ __('pub_theme::market_common.actions.trade_now.label') }}
                     </button>
                 </div>
             </div>
@@ -298,7 +298,7 @@
         {{-- View All Button --}}
         <div class="text-center">
             <a href="/markets" class="inline-flex items-center px-8 py-4 bg-white dark:bg-slate-800 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
-                View All Markets
+                {{ __('pub_theme::market_common.actions.view_all_markets.label') }}
                 <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                 </svg>

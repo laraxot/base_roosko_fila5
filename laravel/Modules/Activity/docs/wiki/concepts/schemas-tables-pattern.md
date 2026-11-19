@@ -1,11 +1,10 @@
 ---
 title: "Schemas & Tables Pattern"
+qmd: "activity wiki concepts schemas tables pattern md"
 type: note
-status: draft
-updated: 2026-10-07
-tags: [docs, activity, wiki]
-qmd: "schemas & tables pattern activity"
+tags: [documentation]
 ---
+
 # Schemas & Tables Pattern
 
 ## 1. Overview

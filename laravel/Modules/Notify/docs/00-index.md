@@ -48,6 +48,7 @@ status: draft
 - 🧾 **[SMS Actions consolidation decision](./wiki/decisions/sms-actions-consolidation.md)** - Cosa è stato consolidato in `.bak`, cosa resta attivo (netfun/smsfactor raggiungibili da Filament `SendSmsPage`) e perché.
 
 ## 🧹 **Manutenzione**
+- 🔄 **[Services → Actions debt](./wiki/concepts/notify-services-support-to-actions.md)** · [services.md](./services.md) · [merge bootstrap story](./stories/phpstan-merge-bootstrap.story.md)
 - 🗑️ **[Cleanup Plan](./translation-cleanup-plan.md)** - Rimozione dei 500+ file obsoleti accumulati.
 - 🛡️ **[Security Analysis](./security-analysis.md)** - Protezione dei webhook dei provider (es. WhatsApp).
 

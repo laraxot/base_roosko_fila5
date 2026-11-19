@@ -1,11 +1,3 @@
----
-title: "User Module - Architecture Documentation"
-type: index
-status: draft
-updated: 2026-10-07
-tags: [docs, user, architecture]
-qmd: "user module - architecture documentation user"
----
 # User Module - Architecture Documentation
 
 Architettura tecnica del modulo User, inclusi pattern, componenti e integrazioni.

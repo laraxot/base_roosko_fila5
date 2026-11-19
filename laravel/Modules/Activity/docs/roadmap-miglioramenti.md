@@ -32,7 +32,7 @@ strato racconta una sessione diversa che non ha letto lo strato sotto:
 - 6 varianti di `phpstan-fixes*.md`, altre 6 di `phpstan-analysis*.md`
 - 4 varianti di `business-logic-analysis*.md` (compreso uno SCREAMING_CASE)
 - `roadmap.md`, `roadmap-.md`, `roadmap-2025.md`, `roadmap-and-issues.md`,
-  `roadmap-archive-1.md`, `roadmap-vision.md`: sei roadmap per un modulo,
+  `roadmap-archive.md`, `roadmap-vision.md`: sei roadmap per un modulo,
   nessuna delle quali probabilmente letta prima di scriverne una nuova
 - `README.md`, `readme.md`, `README.md.update`, `readme.md.update`,
   `readme_update.md`, `readme-update.md`: sei README, contando le

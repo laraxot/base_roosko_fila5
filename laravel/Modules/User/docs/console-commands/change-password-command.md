@@ -11,8 +11,7 @@ related:
   - "./assign-module-command.md"
   - "./console-commands-philosophy.md"
   - "./console-commands.md"
-  - "./README.md"
-status: draft
+  - "./readme.md"
 ---
 
 # ChangePasswordCommand
@@ -358,7 +357,7 @@ php artisan test --filter=ChangePasswordCommandIntegrationTest
 - `Modules\Xot\Datas\XotData`: Accesso centralizzato dati
 
 ## Collegamenti
-- [README Comandi Console](README.md)
+- [README Comandi Console](readme.md)
 - [PasswordData](../datas/passworddata.md)
 - [NewPasswordSet Event](../events/newpasswordset.md)
 - [User Model](../models/user.md)

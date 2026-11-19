@@ -18,6 +18,7 @@ milestone: 'v1.0 - Design Comuni Replication'
 Replicate the Design Comuni homepage achieving 100% HTML and visual parity with the original template.
 
 **Source**: https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html  
+**Target**: http://fixcity.local/it/tests/homepage  
 **Target**: http://ptv.local/it/tests/homepage  
 **Timeline**: Weeks 1-2 (April 1-14, 2026)  
 **Status**: 🟡 IN PROGRESS
@@ -29,6 +30,7 @@ Replicate the Design Comuni homepage achieving 100% HTML and visual parity with 
 ### Primary Goal
 Achieve 100% HTML parity (inside `<body>` tag, excluding scripts) between:
 - ✅ Source: `view-source:https://italia.github.io/design-comuni-pagine-statiche/sito/homepage.html`
+- ✅ Target: `view-source:http://fixcity.local/it/tests/homepage`
 - ✅ Target: `view-source:http://ptv.local/it/tests/homepage`
 
 ### Secondary Goals

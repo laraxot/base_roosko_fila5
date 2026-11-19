@@ -4,8 +4,9 @@ type: documentation
 created: 2026-05-11
 updated: 2026-05-11
 tags: [structure, architecture, module]
-status: draft
 qmd: "project structure   module **user** user"
+status: superseded
+superseded_by: project-structure.md
 ---
 
 # Project Structure: Module **User**

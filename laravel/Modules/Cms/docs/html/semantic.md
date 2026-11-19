@@ -7,7 +7,6 @@ updated: 2026-09-26
 qmd: "semantic"
 issues: []
 discussions: []
-status: draft
 ---
 
 # Elementi Semantici HTML5
@@ -159,7 +158,7 @@ Contenuto autonomo con didascalia:
 | `<time>` | Data/ora |
 
 ## Collegamenti
-- [Struttura Layout](../architecture/structure/layout.md)
+- [Struttura Layout](../structure/layout.md)
 - [Componenti HTML](../components/html.md)
 - [Accessibilità](../accessibility/readme.md)
 

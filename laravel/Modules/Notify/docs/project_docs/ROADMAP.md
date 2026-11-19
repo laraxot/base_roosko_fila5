@@ -7,8 +7,6 @@ updated: 2026-09-26
 qmd: "ROADMAP"
 issues: []
 discussions: []
-status: superseded
-superseded_by: roadmap.md
 ---
 
 # Project Roadmap
