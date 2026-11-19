@@ -83,7 +83,7 @@ jobs:
           } > storage/app/ci-reports/quality-report.md
 
       - name: Upload quality report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: comprehensive-quality-report
           path: laravel/storage/app/ci-reports/quality-report.md
@@ -164,7 +164,7 @@ jobs:
           fi
 
       - name: Upload coverage snapshot
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: comprehensive-coverage-report
           path: |
